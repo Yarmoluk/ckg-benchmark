@@ -6,3 +6,11 @@ __pycache__/
 site
 .cache
 ~$*
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/sections/*.aux
