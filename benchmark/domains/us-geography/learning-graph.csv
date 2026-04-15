@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Geography Definition,,FOUND
+2,Map Reading Basics,1,MAPS
+3,Cardinal Directions,2,MAPS
+4,Compass Rose,3,MAPS
+5,Map Scale,2,MAPS
+6,Map Legend,2,MAPS
+7,Political Maps,2|6,MAPS
+8,Physical Maps,2|6,MAPS
+9,Thematic Maps,7|8,MAPS
+10,Topographic Maps,8,MAPS
+11,Latitude,2|3,MAPS
+12,Longitude,2|3,MAPS
+13,Equator,11,MAPS
+14,Prime Meridian,12,MAPS
+15,Coordinates,11|12,MAPS
+16,Hemispheres,13|14,FOUND
+17,Continents,1|16,FOUND
+18,North America,17,FOUND
+19,United States Location,18|15,FOUND
+20,US Borders,19|7,FOUND
+21,US Size Comparison,19|5,FOUND
+22,Time Zones,12|19,FOUND
+23,Landforms,1|8,PHYS
+24,Mountains,23,PHYS
+25,Plains,23,PHYS
+26,Plateaus,23,PHYS
+27,Valleys,23|24,PHYS
+28,Hills,23,PHYS
+29,Deserts,23|66,PHYS
+30,Coastal Areas,23|62,PHYS
+31,Islands,23|30,PHYS
+32,Peninsulas,23|30,PHYS
+33,Rocky Mountains,24|19,PHYS
+34,Appalachian Mountains,24|19,PHYS
+35,Sierra Nevada,24|33,PHYS
+36,Cascade Range,24|33,PHYS
+37,Great Plains,25|19,PHYS
+38,Central Valley,27|101,PHYS
+39,Colorado Plateau,26|33,PHYS
+40,Columbia Plateau,26|36,PHYS
+41,Rivers,8|23,WATER
+42,Mississippi River,41|19,WATER
+43,Missouri River,41|42,WATER
+44,Colorado River,41|33,WATER
+45,Columbia River,41|40,WATER
+46,Ohio River,41|42,WATER
+47,Rio Grande,41|19,WATER
+48,Hudson River,41|128,WATER
+49,Lakes,8|23,WATER
+50,Great Lakes,49|19,WATER
+51,Lake Superior,50,WATER
+52,Lake Michigan,50,WATER
+53,Lake Huron,50,WATER
+54,Lake Erie,50,WATER
+55,Lake Ontario,50,WATER
+56,Great Salt Lake,49|140,WATER
+57,Oceans,1|17,WATER
+58,Atlantic Ocean,57|19,WATER
+59,Pacific Ocean,57|19,WATER
+60,Gulf of Mexico,57|19,WATER
+61,Arctic Ocean,57,WATER
+62,Coastlines,57,WATER
+63,Bays,62,WATER
+64,Chesapeake Bay,63|116,WATER
+65,San Francisco Bay,63|101,WATER
+66,Climate Definition,1,CLIM
+67,Weather vs Climate,66,CLIM
+68,Climate Zones,66|19,CLIM
+69,Tropical Climate,68,CLIM
+70,Arid Climate,68,CLIM
+71,Mediterranean Climate,68,CLIM
+72,Humid Subtropical,68,CLIM
+73,Humid Continental,68,CLIM
+74,Subarctic Climate,68,CLIM
+75,Temperature Patterns,67|68,CLIM
+76,Precipitation,67,CLIM
+77,Rainfall Patterns,76|68,CLIM
+78,Snowfall Regions,76|68,CLIM
+79,Seasons,67|11,CLIM
+80,Extreme Weather,67,CLIM
+81,Hurricanes,80|60,CLIM
+82,Tornadoes,80|88,CLIM
+83,Blizzards,80|78,CLIM
+84,Droughts,80|70,CLIM
+85,Regions Definition,1|19,REG
+86,Northeast Region,85,REG
+87,Southeast Region,85,REG
+88,Midwest Region,85,REG
+89,Southwest Region,85,REG
+90,West Region,85,REG
+91,New England,86,REG
+92,Mid-Atlantic States,86,REG
+93,Southern States,87,REG
+94,Great Lakes States,88|50,REG
+95,Mountain States,90|33,REG
+96,Pacific States,90|59,REG
+97,Alabama,87|7,STATE
+98,Alaska,90|7|61,STATE
+99,Arizona,89|7,STATE
+100,Arkansas,87|7,STATE
+101,California,96|7,STATE
+102,Colorado,95|7,STATE
+103,Connecticut,91|7,STATE
+104,Delaware,92|7,STATE
+105,Florida,87|7|69,STATE
+106,Georgia,87|7,STATE
+107,Hawaii,96|7|69,STATE
+108,Idaho,95|7,STATE
+109,Illinois,88|7,STATE
+110,Indiana,88|7,STATE
+111,Iowa,88|7,STATE
+112,Kansas,88|7,STATE
+113,Kentucky,87|7,STATE
+114,Louisiana,87|7|60,STATE
+115,Maine,91|7,STATE
+116,Maryland,92|7,STATE
+117,Massachusetts,91|7,STATE
+118,Michigan,94|7,STATE
+119,Minnesota,94|7,STATE
+120,Mississippi,87|7,STATE
+121,Missouri,88|7,STATE
+122,Montana,95|7,STATE
+123,Nebraska,88|7,STATE
+124,Nevada,95|7,STATE
+125,New Hampshire,91|7,STATE
+126,New Jersey,92|7,STATE
+127,New Mexico,89|7,STATE
+128,New York,92|7,STATE
+129,North Carolina,87|7,STATE
+130,North Dakota,88|7,STATE
+131,Ohio,94|7,STATE
+132,Oklahoma,89|7,STATE
+133,Oregon,96|7,STATE
+134,Pennsylvania,92|7,STATE
+135,Rhode Island,91|7,STATE
+136,South Carolina,87|7,STATE
+137,South Dakota,88|7,STATE
+138,Tennessee,87|7,STATE
+139,Texas,89|7,STATE
+140,Utah,95|7,STATE
+141,Vermont,91|7,STATE
+142,Virginia,92|7,STATE
+143,Washington,96|7,STATE
+144,West Virginia,92|7,STATE
+145,Wisconsin,94|7,STATE
+146,Wyoming,95|7,STATE
+147,State Capitals,7|97,ATTR
+148,Washington DC,147|20,ATTR
+149,State Borders,7|20,ATTR
+150,State Symbols,147,ATTR
+151,State Flags,150,ATTR
+152,Population,1|19,HUMAN
+153,Population Density,152|5,HUMAN
+154,Urban Areas,152,HUMAN
+155,Rural Areas,152,HUMAN
+156,Suburbs,154|155,HUMAN
+157,Metropolitan Areas,154,HUMAN
+158,Major Cities,157,HUMAN
+159,New York City,158|128,HUMAN
+160,Los Angeles,158|101,HUMAN
+161,Chicago,158|109,HUMAN
+162,Houston,158|139,HUMAN
+163,Phoenix,158|99,HUMAN
+164,Natural Resources,1|8,ECON
+165,Agriculture,164|25,ECON
+166,Farming Regions,165|68,ECON
+167,Corn Belt,166|88,ECON
+168,Wheat Belt,166|37,ECON
+169,Cotton Belt,166|87,ECON
+170,Dairy Farming,166|94,ECON
+171,Ranching,165|37,ECON
+172,Mining,164|24,ECON
+173,Oil and Gas,164|139,ECON
+174,Forestry,164|90,ECON
+175,Fishing Industry,164|62,ECON
+176,Manufacturing,164|158,ECON
+177,Technology Hubs,176|154,ECON
+178,Silicon Valley,177|101,ECON
+179,Transportation,1|19,TRANS
+180,Interstate Highways,179|158,TRANS
+181,Railroads,179,TRANS
+182,Airports,179|158,TRANS
+183,Ports,179|62,TRANS
+184,National Parks,8|164,LAND
+185,Yellowstone,184|146,LAND
+186,Grand Canyon,184|99|44,LAND
+187,Yosemite,184|101,LAND
+188,Great Smoky Mountains,184|138,LAND
+189,Landmarks,19|9,LAND
+190,Statue of Liberty,189|128,LAND
+191,Mount Rushmore,189|137,LAND
+192,Golden Gate Bridge,189|101,LAND
+193,Cultural Regions,85|152,CULT
+194,Native American Lands,193|19,CULT
+195,Immigration Patterns,152|158,CULT
+196,Demographic Changes,152|195,CULT
+197,Economic Geography,164|176,ECON
+198,Trade and Commerce,197|183,ECON
+199,Environmental Issues,164|197,CULT
+200,Conservation,199|184,CULT

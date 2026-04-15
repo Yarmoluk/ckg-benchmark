@@ -1,0 +1,301 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Electric Charge,,FOUND
+2,Voltage,1,FOUND
+3,Current,1,FOUND
+4,Electrical Energy,1|2,FOUND
+5,Power,2|3|4,FOUND
+6,Resistance,2|3,FOUND
+7,Ohm's Law,2|3|6,FOUND
+8,Conductance,6,FOUND
+9,Electrical Ground,2,FOUND
+10,Circuit Schematic Symbols,,FOUND
+11,Voltage Source,2|10,FOUND
+12,Current Source,3|10,FOUND
+13,Dependent Sources,11|12,FOUND
+14,Series Circuits,3|6|7,FOUND
+15,Parallel Circuits,3|6|7,FOUND
+16,Series-Parallel Circuits,14|15,FOUND
+17,Voltage Divider,7|14,FOUND
+18,Current Divider,7|15,FOUND
+19,Kirchhoff's Voltage Law,2|14|23,FOUND
+20,Kirchhoff's Current Law,3|15|21,FOUND
+21,Node,3,FOUND
+22,Branch,3,FOUND
+23,Loop,22|30,FOUND
+24,Mesh,23,FOUND
+25,Open Circuit,3|6,FOUND
+26,Short Circuit,3|6,FOUND
+27,Power Dissipation,5|6,FOUND
+28,Energy Conservation,4|5,FOUND
+29,SI Units for Circuits,2|3|5|6,FOUND
+30,Circuit Topology,10|21|22,FOUND
+31,Node Voltage Method,19|20|21|32,ANLYS
+32,Reference Node,9|21,ANLYS
+33,Supernode,31|11,ANLYS
+34,Mesh Current Method,19|24,ANLYS
+35,Supermesh,34|12,ANLYS
+36,Linearity,7,ANLYS
+37,Superposition Principle,36|11|12,ANLYS
+38,Source Transformation,11|12|39,ANLYS
+39,Thevenin's Theorem,7|11|19|20,ANLYS
+40,Thevenin Equivalent,39,ANLYS
+41,Norton's Theorem,7|12|19|20,ANLYS
+42,Norton Equivalent,41,ANLYS
+43,Maximum Power Transfer,40|44,ANLYS
+44,Load Resistance,6|40,ANLYS
+45,Equivalent Resistance,14|15,ANLYS
+46,Delta Configuration,15|30,ANLYS
+47,Wye Configuration,14|30,ANLYS
+48,Delta-Wye Transformation,46|47,ANLYS
+49,Circuit Simplification,45|48,ANLYS
+50,Nodal Analysis,31|33,ANLYS
+51,Mesh Analysis,34|35,ANLYS
+52,Two-Port Networks,53|54,ANLYS
+53,Input Resistance,40|6,ANLYS
+54,Output Resistance,40|6,ANLYS
+55,Loading Effect,53|54|44,ANLYS
+56,Resistor,6|10,PASV
+57,Resistor Color Code,56,PASV
+58,Resistor Tolerance,56|57,PASV
+59,Potentiometer,56,PASV
+60,Capacitor,1|2|10,PASV
+61,Capacitance,60,PASV
+62,Parallel Plate Capacitor,61|63,PASV
+63,Dielectric Material,61,PASV
+64,Capacitor Energy Storage,4|61,PASV
+65,Capacitors in Series,61|14,PASV
+66,Capacitors in Parallel,61|15,PASV
+67,Inductor,3|69|10,PASV
+68,Inductance,67,PASV
+69,Magnetic Field,3,PASV
+70,Inductor Energy Storage,4|68,PASV
+71,Inductors in Series,68|14,PASV
+72,Inductors in Parallel,68|15,PASV
+73,Mutual Inductance,68|69,PASV
+74,Coupling Coefficient,73,PASV
+75,Wire Resistance,6|56,PASV
+76,Parasitic Capacitance,61|80,PASV
+77,Parasitic Inductance,68|80,PASV
+78,Component Power Rating,5|27,PASV
+79,Component Derating,78,PASV
+80,Real vs Ideal Components,56|60|67,PASV
+81,Transient Response,82,TRANS
+82,Steady-State Response,7|134,TRANS
+83,Time Constant,84|87,TRANS
+84,RC Circuit,56|60|7,TRANS
+85,RC Charging,84|64|91,TRANS
+86,RC Discharging,84|64|91,TRANS
+87,RL Circuit,56|67|7,TRANS
+88,RL Energizing,87|70|91,TRANS
+89,RL De-energizing,87|70|91,TRANS
+90,Exponential Response,83|85|86|88|89,TRANS
+91,Initial Conditions,84|87,TRANS
+92,Final Conditions,82|84|87,TRANS
+93,Natural Response,90|91,TRANS
+94,Forced Response,82|11,TRANS
+95,Complete Response,93|94,TRANS
+96,First-Order Circuits,84|87|83,TRANS
+97,Second-Order Circuits,98|102|103,TRANS
+98,RLC Circuit,84|87|56|60|67,TRANS
+99,Overdamped Response,97|102,TRANS
+100,Underdamped Response,97|102,TRANS
+101,Critically Damped Response,97|102,TRANS
+102,Damping Ratio,98|103,TRANS
+103,Natural Frequency,98,TRANS
+104,Step Response,95|96,TRANS
+105,Pulse Response,104,TRANS
+106,Alternating Current,3|107,ACFND
+107,Sinusoidal Waveform,108|109|112,ACFND
+108,Amplitude,2|3,ACFND
+109,Frequency,110,ACFND
+110,Period,,ACFND
+111,Angular Frequency,109,ACFND
+112,Phase Angle,111,ACFND
+113,Phase Shift,112,ACFND
+114,Peak Value,108,ACFND
+115,Peak-to-Peak Value,114,ACFND
+116,RMS Value,114|117,ACFND
+117,Average Value,114,ACFND
+118,Complex Numbers,,ACFND
+119,Rectangular Form,118,ACFND
+120,Polar Form,118,ACFND
+121,Euler's Formula,118|111,ACFND
+122,Phasor,107|120|121,ACFND
+123,Phasor Diagram,122,ACFND
+124,Phasor Addition,122|123,ACFND
+125,Impedance,6|126|133,ACFND
+126,Reactance,127|128,ACFND
+127,Capacitive Reactance,61|111,ACFND
+128,Inductive Reactance,68|111,ACFND
+129,Admittance,8|125,ACFND
+130,Susceptance,129,ACFND
+131,AC Resistance,6|106,ACFND
+132,Impedance Triangle,125|126|131,ACFND
+133,Complex Impedance,118|126,ACFND
+134,AC Circuit Analysis,122|125|19|20,ACFND
+135,Phasor Domain,122|134,ACFND
+136,Instantaneous Power,5|107,POWER
+137,Average Power,136|116,POWER
+138,Real Power,137|143,POWER
+139,Reactive Power,126|137,POWER
+140,Apparent Power,137|139,POWER
+141,Complex Power,138|139|118,POWER
+142,Power Triangle,138|139|140,POWER
+143,Power Factor,137|140,POWER
+144,Leading Power Factor,143|127,POWER
+145,Lagging Power Factor,143|128,POWER
+146,Power Factor Correction,143|144|145|66,POWER
+147,VAR,139,POWER
+148,Watt,138,POWER
+149,Volt-Ampere,140,POWER
+150,Maximum Power in AC,43|134,POWER
+151,RMS Power Calculation,116|137,POWER
+152,Power in Resistors,5|131,POWER
+153,Power in Capacitors,139|127,POWER
+154,Power in Inductors,139|128,POWER
+155,Efficiency,5|138,POWER
+156,Frequency Response,109|157,FREQ
+157,Transfer Function,125|134,FREQ
+158,Magnitude Response,156|163,FREQ
+159,Phase Response,156|112,FREQ
+160,Bode Plot,161|162,FREQ
+161,Bode Magnitude Plot,158|163|164,FREQ
+162,Bode Phase Plot,159|164,FREQ
+163,Decibel,5,FREQ
+164,Decade,109,FREQ
+165,Octave,109,FREQ
+166,Cutoff Frequency,156|168,FREQ
+167,Corner Frequency,166,FREQ
+168,Half-Power Point,137|163,FREQ
+169,Bandwidth,166|170|171,FREQ
+170,Passband,156,FREQ
+171,Stopband,156,FREQ
+172,Roll-Off Rate,169|189,FREQ
+173,Asymptotic Approximation,160|161,FREQ
+174,Poles and Zeros,157|118,FREQ
+175,Resonance,176|177,FREQ
+176,Resonant Frequency,103|127|128,FREQ
+177,Quality Factor,169|176,FREQ
+178,Selectivity,177|169,FREQ
+179,Series Resonance,175|98|14,FREQ
+180,Parallel Resonance,175|98|15,FREQ
+181,Filter,156|170|171,FILT
+182,Low-Pass Filter,181|166,FILT
+183,High-Pass Filter,181|166,FILT
+184,Band-Pass Filter,181|169|175,FILT
+185,Band-Reject Filter,181|169,FILT
+186,Notch Filter,185|176,FILT
+187,First-Order Filter,182|183|96,FILT
+188,Second-Order Filter,184|185|97,FILT
+189,Filter Order,187|188,FILT
+190,RC Low-Pass Filter,84|182,FILT
+191,RC High-Pass Filter,84|183,FILT
+192,RL Low-Pass Filter,87|182,FILT
+193,RL High-Pass Filter,87|183,FILT
+194,RLC Band-Pass Filter,98|184,FILT
+195,Passive Filter,181|56|60|67,FILT
+196,Active Filter,181|201,FILT
+197,Filter Design,189|195|196,FILT
+198,Audio Tone Control,199|200|197,FILT
+199,Bass Filter,182|251,FILT
+200,Treble Filter,183|251,FILT
+201,Operational Amplifier,2|3|10,OPAMP
+202,Ideal Op-Amp,201|207,OPAMP
+203,Op-Amp Symbol,201|10,OPAMP
+204,Inverting Input,201|203,OPAMP
+205,Non-Inverting Input,201|203,OPAMP
+206,Op-Amp Output,201|203,OPAMP
+207,Open-Loop Gain,201|259,OPAMP
+208,Closed-Loop Gain,207|209,OPAMP
+209,Negative Feedback,201|206,OPAMP
+210,Positive Feedback,201|206,OPAMP
+211,Virtual Short,202|209,OPAMP
+212,Virtual Ground,211|9,OPAMP
+213,Inverting Amplifier,202|209|212|56,OPAMP
+214,Non-Inverting Amplifier,202|209|211|56,OPAMP
+215,Voltage Follower,214|208,OPAMP
+216,Buffer Amplifier,215|53|54,OPAMP
+217,Summing Amplifier,213|37,OPAMP
+218,Difference Amplifier,213|214,OPAMP
+219,Instrumentation Amplifier,218,OPAMP
+220,Integrator Circuit,213|60|84,OPAMP
+221,Differentiator Circuit,213|60|84,OPAMP
+222,Op-Amp Bandwidth,201|169,OPAMP
+223,Gain-Bandwidth Product,208|222,OPAMP
+224,Slew Rate,201|206,OPAMP
+225,Input Offset Voltage,201|204|205,OPAMP
+226,Input Bias Current,201|204|205,OPAMP
+227,Common Mode Rejection,218|228,OPAMP
+228,CMRR,218|163,OPAMP
+229,Op-Amp Saturation,201|206|11,OPAMP
+230,Rail-to-Rail Op-Amp,201|229,OPAMP
+231,Signal,2|3,SIGNAL
+232,Periodic Signal,231|110,SIGNAL
+233,Aperiodic Signal,231,SIGNAL
+234,Fourier Series,232|235|236,SIGNAL
+235,Fundamental Frequency,109|232,SIGNAL
+236,Harmonics,235,SIGNAL
+237,Harmonic Content,234|236,SIGNAL
+238,Spectrum,237|239,SIGNAL
+239,Frequency Spectrum,109|237,SIGNAL
+240,Time Domain,231|110,SIGNAL
+241,Frequency Domain,231|109|239,SIGNAL
+242,Waveform Symmetry,243|244|245,SIGNAL
+243,Even Symmetry,107|234,SIGNAL
+244,Odd Symmetry,107|234,SIGNAL
+245,Half-Wave Symmetry,107|234,SIGNAL
+246,DC Component,231|117,SIGNAL
+247,AC Component,231|106,SIGNAL
+248,Signal Amplitude,108|231,SIGNAL
+249,Crest Factor,114|116,SIGNAL
+250,Form Factor,116|117,SIGNAL
+251,Audio Signal,231|252,AUDIO
+252,Audio Frequency Range,109|253,AUDIO
+253,Human Hearing Range,109,AUDIO
+254,Microphone,251|231,AUDIO
+255,Speaker,251|231|5,AUDIO
+256,Audio Amplifier,201|251|259,AUDIO
+257,Preamplifier,256|216,AUDIO
+258,Power Amplifier,256|262,AUDIO
+259,Amplifier Gain,260|261|262,AUDIO
+260,Voltage Gain,2|163,AUDIO
+261,Current Gain,3|163,AUDIO
+262,Power Gain,5|163,AUDIO
+263,Decibels in Audio,163|251,AUDIO
+264,dBV,263|2,AUDIO
+265,dBu,263|2,AUDIO
+266,Headroom,229|267,AUDIO
+267,Dynamic Range,268|269,AUDIO
+268,Signal-to-Noise Ratio,231|269,AUDIO
+269,Noise Floor,270,AUDIO
+270,Thermal Noise,6|56,AUDIO
+271,Audio Distortion,251|272|274,AUDIO
+272,Harmonic Distortion,236,AUDIO
+273,THD,272|163,AUDIO
+274,Intermodulation Distortion,251|109,AUDIO
+275,Clipping,229|271,AUDIO
+276,Multimeter,2|3|6,LAB
+277,Oscilloscope,2|107|110,LAB
+278,Function Generator,107|11,LAB
+279,DC Power Supply,11|2,LAB
+280,Spectrum Analyzer,239|277,LAB
+281,Voltage Measurement,2|276,LAB
+282,Current Measurement,3|276,LAB
+283,Resistance Measurement,6|276,LAB
+284,Frequency Measurement,109|277,LAB
+285,Phase Measurement,112|277,LAB
+286,Oscilloscope Probe,277,LAB
+287,Probe Compensation,286|60,LAB
+288,Triggering,277|107,LAB
+289,Time Base,277|110,LAB
+290,Vertical Sensitivity,277|108,LAB
+291,AC Coupling,277|60|247,LAB
+292,DC Coupling,277|246,LAB
+293,Breadboard,294,LAB
+294,Prototyping,10|56|60|67,LAB
+295,Soldering,294,LAB
+296,Circuit Debugging,276|277|297,LAB
+297,Measurement Error,298|299,LAB
+298,Loading Error,55|276|277,LAB
+299,Calibration,276|277,LAB
+300,Safety Practices,5|27|279,LAB

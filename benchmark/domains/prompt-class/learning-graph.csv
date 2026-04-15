@@ -1,0 +1,306 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Artificial Intelligence,,FOUND
+2,Machine Learning,1,FOUND
+3,Natural Language Processing,1|2,FOUND
+4,Large Language Model,3|5|6,FOUND
+5,Neural Network Basics,2,FOUND
+6,Transformer Architecture,5,FOUND
+7,Token,4,FOUND
+8,Tokenization,7,FOUND
+9,Context Window,7|8,FOUND
+10,Training Data,2,FOUND
+11,Model Parameters,5|10,FOUND
+12,Inference,4|11,FOUND
+13,Generative AI,4|12,FOUND
+14,Foundation Model,4|10|11,FOUND
+15,Pre-Training,10|11,FOUND
+16,Fine-Tuning,14|15,FOUND
+17,Transfer Learning,2|16,FOUND
+18,API,12,FOUND
+19,Chatbot Interface,4|18,FOUND
+20,Human-AI Interaction,19,FOUND
+21,Prompt,4|7,PFUND
+22,Prompt Engineering,21,PFUND
+23,Input-Output Paradigm,21|12,PFUND
+24,Prompt Structure,21|25|26,PFUND
+25,Instruction Clarity,21,PFUND
+26,Specificity,21|25,PFUND
+27,Ambiguity Avoidance,25|26,PFUND
+28,Task Decomposition,21|24,PFUND
+29,Prompt Length,9|24,PFUND
+30,Prompt Iteration,21|31|33,PFUND
+31,Prompt Testing,21|33,PFUND
+32,Response Quality,23|33|34|35,PFUND
+33,Response Evaluation,23,PFUND
+34,Relevance,23|26,PFUND
+35,Accuracy,23|34,PFUND
+36,Completeness,32|35,PFUND
+37,Conciseness,24|29,PFUND
+38,Tone Control,24|57,PFUND
+39,Audience Adaptation,24|38,PFUND
+40,Natural Language Command,21|25,PFUND
+41,Directive Prompts,21|40,PTYPE
+42,Interrogative Prompts,21|40,PTYPE
+43,Open-Ended Prompts,21|42,PTYPE
+44,Closed-Ended Prompts,21|42,PTYPE
+45,Conversational Prompts,21|43|44,PTYPE
+46,Zero-Shot Prompting,21|24,PTECH
+47,One-Shot Prompting,46|49,PTECH
+48,Few-Shot Prompting,47|49,PTECH
+49,Example Selection,46,PTECH
+50,Chain-of-Thought Prompting,46|51,PTECH
+51,Step-by-Step Reasoning,28|46,PTECH
+52,Self-Consistency,50,PTECH
+53,Tree of Thoughts,50|52,PTECH
+54,Prompt Chaining,28|50,PTECH
+55,Prompt Templates,24,PTECH
+56,Reusable Prompts,24|55,PTECH
+57,Role Assignment,24|58,PTECH
+58,Persona Prompting,24,PTECH
+59,System Prompt,24|57|63,PTECH
+60,User Prompt,21|24,PTECH
+61,Assistant Response,23|60,PTECH
+62,Instruction Following,25|59,PTECH
+63,Constraint Setting,24|26,PTECH
+64,Negative Prompting,63|27,PTECH
+65,Delimiter Usage,24|63,PTECH
+66,Contextual Priming,24|59,PTECH
+67,Socratic Prompting,42|50,PTECH
+68,Analogical Prompting,46|58,PTECH
+69,Reflective Prompting,50|67,PTECH
+70,Meta-Prompting,22|54|69,PTECH
+71,Prompt Compression,29|37|103,PTECH
+72,Prompt Expansion,29|71,PTECH
+73,Temperature Setting,12,PARAM
+74,Top-P Sampling,12|73,PARAM
+75,Frequency Penalty,73,PARAM
+76,Presence Penalty,73|75,PARAM
+77,Max Tokens Setting,7|9|73,PARAM
+78,Stop Sequences,77,PARAM
+79,Seed Parameter,73|80,PARAM
+80,Reproducibility,31|73,PARAM
+81,Output Format Specification,24|63,OUTFMT
+82,Markdown Generation,81,OUTFMT
+83,JSON Output,81,OUTFMT
+84,CSV Output,81,OUTFMT
+85,Table Generation,81|82,OUTFMT
+86,List Generation,81|82,OUTFMT
+87,Code Generation,81,OUTFMT
+88,Structured Data Output,81|83,OUTFMT
+89,Schema-Guided Output,81|88,OUTFMT
+90,XML Output,81|88,OUTFMT
+91,YAML Output,81|88,OUTFMT
+92,HTML Generation,81|82,OUTFMT
+93,Bullet Points,86,OUTFMT
+94,Numbered Lists,86|93,OUTFMT
+95,Hierarchical Output,86|94,OUTFMT
+96,Summary Generation,81|37|110,OUTFMT
+97,Report Generation,81|85|96,OUTFMT
+98,Narrative Output,81|38,OUTFMT
+99,Technical Writing,81|97|98,OUTFMT
+100,Plain Language Output,81|37|39,OUTFMT
+101,Context Management,9|102,CTXMEM
+102,Context Window Limits,9|103,CTXMEM
+103,Token Counting,7|8,CTXMEM
+104,Conversation History,9|101,CTXMEM
+105,Memory in AI Systems,104,CTXMEM
+106,Stateless Interaction,104|105,CTXMEM
+107,Session Persistence,104|105,CTXMEM
+108,Long-Form Context,9|101|102,CTXMEM
+109,Document Summarization,96|108,CTXMEM
+110,Information Extraction,21|24|108,CTXMEM
+111,Key Point Identification,110,CTXMEM
+112,Relevance Filtering,34|110,CTXMEM
+113,Context Injection,59|101,CTXMEM
+114,Background Information,113,CTXMEM
+115,Domain Knowledge Priming,66|113,CTXMEM
+116,Retrieval-Augmented Gen,117|119,RAG
+117,Knowledge Base,110,RAG
+118,Vector Database,117|119,RAG
+119,Embedding,3|7,RAG
+120,Semantic Search,118|119,RAG
+121,Document Chunking,108|118,RAG
+122,Source Citation,116|125,RAG
+123,Grounding,116|125,RAG
+124,Hallucination,4|35,RAG
+125,Factual Accuracy,35|124,RAG
+126,Knowledge Cutoff,4|10|125,RAG
+127,Real-Time Information,116|126,RAG
+128,External Data Integration,116|118,RAG
+129,Search-Enhanced Prompting,116|120,RAG
+130,Evidence-Based Responses,116|122|125,RAG
+131,Multimodal AI,4|13,MULTI
+132,Image Prompting,131,MULTI
+133,Image Description,131|132,MULTI
+134,Visual Question Answering,131|133,MULTI
+135,Document Analysis,131|110,MULTI
+136,PDF Processing,135,MULTI
+137,Code Interpretation,87|131,MULTI
+138,Chart Reading,131|134,MULTI
+139,Diagram Understanding,131|134,MULTI
+140,Screenshot Analysis,131|133,MULTI
+141,Audio Transcription,131,MULTI
+142,Video Understanding,131|141,MULTI
+143,Image Generation Prompts,131|132,MULTI
+144,Alt Text Generation,133|143,MULTI
+145,Data Visualization Prompt,131|138|85,MULTI
+146,AI Agent,4|28,AGENT
+147,Agent Architecture,146|148|150,AGENT
+148,Tool Use,18|146,AGENT
+149,Function Calling,18|148,AGENT
+150,Planning,28|146,AGENT
+151,Goal Decomposition,28|150,AGENT
+152,Action Selection,150|151,AGENT
+153,Execution Monitoring,152,AGENT
+154,Feedback Loop,30|153,AGENT
+155,Self-Correction,50|154,AGENT
+156,Autonomous Workflow,146|152|155,AGENT
+157,Multi-Step Reasoning,50|54|150,AGENT
+158,Agent Orchestration,146|156,AGENT
+159,Skill,146|148,AGENT
+160,Skill Library,159,AGENT
+161,Agent Memory,105|146,AGENT
+162,Agent Context,101|146|161,AGENT
+163,Human-in-the-Loop,146,AGENT
+164,Approval Workflow,163,AGENT
+165,Sandboxed Execution,146|175,AGENT
+166,Agent Evaluation,146|241,AGENT
+167,Reliability,146|166,AGENT
+168,Error Recovery,155|167,AGENT
+169,Retry Logic,168,AGENT
+170,Task Automation,146|156,AGENT
+171,Workflow Design,146|156,AGENT
+172,Pipeline Construction,54|171,AGENT
+173,Agent Collaboration,146,AGENT
+174,Multi-Agent Systems,158|173,AGENT
+175,Agent Safety,146|185|190,AGENT
+176,Prompt Injection,59,SECUR
+177,Direct Injection,176,SECUR
+178,Indirect Injection,176,SECUR
+179,Jailbreaking,176|180,SECUR
+180,Adversarial Prompts,21|176,SECUR
+181,Input Validation,176|185,SECUR
+182,Output Filtering,176|183,SECUR
+183,Content Moderation,176|184,SECUR
+184,Safety Guidelines,176,SECUR
+185,Guardrails,59|184,SECUR
+186,Red Teaming,176|180,SECUR
+187,Prompt Leaking,59|176,SECUR
+188,Data Exfiltration Risk,176|187,SECUR
+189,Defense Strategies,176|181|185,SECUR
+190,Responsible Disclosure,186|189,SECUR
+191,AI Ethics,1,ETHIC
+192,Bias in AI,10|191,ETHIC
+193,Fairness,191|192,ETHIC
+194,Transparency,191,ETHIC
+195,Explainability,194,ETHIC
+196,Accountability,191|194,ETHIC
+197,Privacy Considerations,191,ETHIC
+198,Consent and Data Use,197,ETHIC
+199,Intellectual Property,191,ETHIC
+200,Copyright Considerations,199,ETHIC
+201,Attribution,122|200,ETHIC
+202,Misinformation Risk,124|191,ETHIC
+203,Deepfake Awareness,131|202,ETHIC
+204,Environmental Impact,191|248,ETHIC
+205,Inclusive Language,39|191,ETHIC
+206,Business Use Cases,22,BIZAP
+207,Customer Service Chatbot,19|48|59,BIZAP
+208,Content Marketing,81,BIZAP
+209,Email Drafting,81|38|98,BIZAP
+210,Meeting Summarization,96|109,BIZAP
+211,Report Automation,97|170,BIZAP
+212,Data Analysis Prompting,84|110|145,BIZAP
+213,Market Research,110|212,BIZAP
+214,Competitive Analysis,110|213,BIZAP
+215,Product Description,81|208,BIZAP
+216,Social Media Content,81|98|208,BIZAP
+217,SEO Optimization,208|216,BIZAP
+218,Proposal Writing,97|99,BIZAP
+219,Contract Review,110|135,BIZAP
+220,Training Material Design,81|230,BIZAP
+221,Knowledge Management,117|281,BIZAP
+222,Process Documentation,97|99,BIZAP
+223,Decision Support,110|212,BIZAP
+224,Brainstorming Facilitation,43|67,BIZAP
+225,Project Planning,150|151,BIZAP
+226,AI-Assisted Learning,4,EDUAP
+227,Personalized Tutoring,48|58|226,EDUAP
+228,Quiz Generation,44|81|226,EDUAP
+229,Rubric Creation,81|228|237,EDUAP
+230,Lesson Plan Design,226|237|238,EDUAP
+231,Differentiated Instruction,227|230,EDUAP
+232,Formative Assessment,228|233,EDUAP
+233,Feedback Generation,32|226,EDUAP
+234,Study Guide Creation,86|96|226,EDUAP
+235,Concept Explanation,68|96|226,EDUAP
+236,Analogy Generation,68|235,EDUAP
+237,Bloom Taxonomy Alignment,226,EDUAP
+238,Learning Objective Design,237,EDUAP
+239,Curriculum Development,230|238,EDUAP
+240,Accessibility in Education,205|226,EDUAP
+241,Prompt Evaluation,31|32,EVAL
+242,A/B Testing Prompts,31|241,EVAL
+243,Evaluation Metrics,32|241,EVAL
+244,Human Evaluation,241|243,EVAL
+245,Automated Evaluation,241|243,EVAL
+246,Benchmark Testing,241|245,EVAL
+247,Quality Rubric Design,241|243,EVAL
+248,Cost Optimization,250|259,EVAL
+249,Latency Optimization,248|250,EVAL
+250,Token Efficiency,7|29|103,EVAL
+251,Batch Processing,170|250,EVAL
+252,Model Selection,4|14,EVAL
+253,Model Comparison,241|252,EVAL
+254,Performance Monitoring,241|245,EVAL
+255,API Pricing Models,18|259|264,EVAL
+256,Rate Limiting,18|257,USAGE
+257,Usage Quota,18,USAGE
+258,Five-Hour Token Window,256|257|259,USAGE
+259,Token Budget,103|257,USAGE
+260,Token Cost Estimation,103|259,USAGE
+261,Token Usage Monitoring,260,USAGE
+262,Input Token Count,7|103|260,USAGE
+263,Output Token Count,7|103|260,USAGE
+264,Prompt Cost Calculation,260|262|263,USAGE
+265,Usage Dashboard,264,USAGE
+266,Throttling,256|258,USAGE
+267,Cooldown Period,256|266,USAGE
+268,Plan Tiers and Limits,257|255,USAGE
+269,Overage Handling,258|268,USAGE
+270,Cost-Effective Prompting,37|71|248|264,USAGE
+271,Capstone Project Design,22|28,CAP
+272,Customer Support Bot,207|54|59|148,CAP
+273,FAQ Generator System,110|117|228,CAP
+274,Content Pipeline,54|172|208,CAP
+275,Research Assistant,116|120|129,CAP
+276,Code Review Assistant,87|137|148,CAP
+277,Technical Doc Generator,97|99|172,CAP
+278,Meeting Notes System,109|141|210,CAP
+279,Email Triage System,110|112|209,CAP
+280,Data Dashboard Narrator,145|212|97,CAP
+281,Personalized Tutor App,227|231|161,CAP
+282,Quiz and Test Generator,228|229|232,CAP
+283,Writing Coach System,98|155|233,CAP
+284,Resume Analyzer,110|135|81,CAP
+285,Job Description Writer,81|110|215,CAP
+286,Interview Prep Coach,48|67|227,CAP
+287,Social Media Manager,156|216|217,CAP
+288,Brand Voice System,38|58|59|216,CAP
+289,Legal Document Analyzer,110|135|219,CAP
+290,Compliance Checker,110|185|189,CAP
+291,Product Review Analyzer,110|192|212,CAP
+292,Sentiment Analysis System,3|110|212,CAP
+293,Translation Assistant,3|131|48,CAP
+294,Accessibility Auditor,205|240|135,CAP
+295,Onboarding Guide System,55|220|230,CAP
+296,Knowledge Base Builder,117|118|121|128,CAP
+297,Prompt Library Manager,55|56|160,CAP
+298,AI Workflow Automator,156|170|172,CAP
+299,Multi-Agent Task Runner,158|174|172,CAP
+300,RAG Pipeline Builder,116|118|121|172,CAP
+301,Evaluation Framework,241|243|247,CAP
+302,Red Team Test Suite,176|186|189,CAP
+303,AI Ethics Audit Tool,191|192|193|196,CAP
+304,Course Content Generator,226|230|239,CAP
+305,Intelligent Textbook,226|239|275|304,CAP

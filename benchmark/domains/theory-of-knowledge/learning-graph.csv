@@ -1,0 +1,276 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Knowledge,,FOUND
+2,Belief,1,FOUND
+3,Truth,1,FOUND
+4,Justification,1|2|3,FOUND
+5,Evidence,1|4,FOUND
+6,Certainty,1|3,FOUND
+7,Objectivity,1|9,FOUND
+8,Subjectivity,1|9,FOUND
+9,Perspective,1,FOUND
+10,Bias,9,FOUND
+11,Knowledge Claims,1|3|4,FOUND
+12,Personal Knowledge,1,FOUND
+13,Shared Knowledge,1|12,FOUND
+14,Propositional Knowledge,1|11,FOUND
+15,Procedural Knowledge,1|14,FOUND
+16,Acquaintance Knowledge,1|14,FOUND
+17,A Priori Knowledge,1|5,FOUND
+18,A Posteriori Knowledge,1|5|31,FOUND
+19,Correspondence Theory,3,THEO
+20,Coherence Theory,3,THEO
+21,Pragmatic Theory of Truth,3,THEO
+22,Justified True Belief,2|3|4,THEO
+23,Gettier Problem,22,THEO
+24,Fallibilism,6|22,THEO
+25,Epistemic Humility,24|6,THEO
+26,Intersubjectivity,7|8,THEO
+27,Value-Laden Inquiry,7|8|10,THEO
+28,Knowledge Production,1|5|44,THEO
+29,Knowledge Dissemination,28|13,THEO
+30,Knowledge Validation,28|5|36,THEO
+31,Empirical Evidence,5,EVID
+32,Testimonial Evidence,5,EVID
+33,Statistical Evidence,5,EVID
+34,Anecdotal Evidence,5,EVID
+35,Burden of Proof,5|4,EVID
+36,Standards of Evidence,5|31,EVID
+37,Sufficient Evidence,5|36,EVID
+38,Absence of Evidence,5|35,EVID
+39,Source Evaluation,5|42,EVID
+40,Provenance,39,EVID
+41,Corroboration,39,EVID
+42,Credibility,5|3,EVID
+43,Reliability,42,EVID
+44,Methodology,5|140,EVID
+45,Verification,5|42,EVID
+46,Cognitive Biases,10|63,BIAS
+47,Confirmation Bias,46,BIAS
+48,Anchoring Bias,46,BIAS
+49,Availability Heuristic,46,BIAS
+50,Cultural Bias,46|218,BIAS
+51,Selection Bias,46,BIAS
+52,Observer Bias,46,BIAS
+53,Groupthink,46|13,BIAS
+54,Dunning-Kruger Effect,46|12,BIAS
+55,Motivated Reasoning,46|2,BIAS
+56,Hindsight Bias,46,BIAS
+57,Framing Effect,46|229,BIAS
+58,Bandwagon Effect,46|53,BIAS
+59,Authority Bias,46|215,BIAS
+60,Status Quo Bias,46,BIAS
+61,Belief Perseverance,46|2,BIAS
+62,Cognitive Dissonance,46|2,BIAS
+63,Critical Thinking,1|9,SKEP
+64,Skepticism,63|6,SKEP
+65,Scientific Skepticism,64|156,SKEP
+66,Philosophical Skepticism,64,SKEP
+67,Cartesian Doubt,66,SKEP
+68,Pyrrhonian Skepticism,66,SKEP
+69,Healthy Skepticism,64|25,SKEP
+70,Pseudoscience,65|71,SKEP
+71,Demarcation Problem,156|157,SKEP
+72,Unfalsifiable Claims,157|35,SKEP
+73,Conspiracy Theories,55|81,SKEP
+74,Denialism,64|61,SKEP
+75,Science Denial,74|168,SKEP
+76,Intellectual Virtues,63|80,SKEP
+77,Intellectual Courage,76,SKEP
+78,Open-Mindedness,76|9,SKEP
+79,Intellectual Honesty,76|3,SKEP
+80,Epistemic Responsibility,63|25,SKEP
+81,Misinformation,11|3,MISN
+82,Disinformation,81,MISN
+83,Malinformation,81,MISN
+84,Propaganda,82|111,MISN
+85,Fact Checking,81|45,MISN
+86,Claim Verification,85|39,MISN
+87,Source Verification,85|39|40,MISN
+88,Lateral Reading,86|249,MISN
+89,Debunking,85|5,MISN
+90,Prebunking,89|91,MISN
+91,Inoculation Theory,81|111,MISN
+92,Media Literacy,81|94,MISN
+93,News Literacy,92|85,MISN
+94,Information Literacy,63|5,MISN
+95,Deepfakes,96|82,MISN
+96,Synthetic Media,242|82,MISN
+97,Information Warfare,82|84,MISN
+98,Post-Truth,81|62,MISN
+99,Information Ecosystem,81|29,MISN
+100,Echo Chambers,47|99,MISN
+101,Filter Bubbles,244|99,MISN
+102,Viral Misinformation,81|99,MISN
+103,Bot Networks,97,MISN
+104,Astroturfing,82|97,MISN
+105,Content Moderation,99|253,MISN
+106,Argumentation,4|5|126,ARGU
+107,Premises,106,ARGU
+108,Conclusions,106|107,ARGU
+109,Inductive Reasoning,106|31,ARGU
+110,Deductive Reasoning,106,ARGU
+111,Persuasion,106,ARGU
+112,Valid Arguments,110,ARGU
+113,Sound Arguments,112|3,ARGU
+114,Strong Induction,109,ARGU
+115,Weak Induction,109,ARGU
+116,Logical Fallacies,106,ARGU
+117,Ad Hominem Fallacy,116,ARGU
+118,Straw Man Fallacy,116,ARGU
+119,Appeal to Authority,116|215,ARGU
+120,False Dilemma,116,ARGU
+121,Circular Reasoning,116,ARGU
+122,Red Herring,116,ARGU
+123,Slippery Slope,116,ARGU
+124,Counterclaims,106|11,ARGU
+125,Claim and Evidence,11|5,ARGU
+126,Reasoning,63|4,ARGU
+127,Counterexamples,106|112,ARGU
+128,Reductio Ad Absurdum,110|127,ARGU
+129,Burden of Proof Fallacy,116|35,ARGU
+130,Tu Quoque Fallacy,116,ARGU
+131,Areas of Knowledge,1|140,AOK
+132,Mathematics AOK,131,AOK
+133,Natural Sciences AOK,131,AOK
+134,Human Sciences AOK,131,AOK
+135,History AOK,131,AOK
+136,The Arts AOK,131,AOK
+137,Ethics AOK,131,AOK
+138,Indigenous Knowledge,131,AOK
+139,Religious Knowledge,131,AOK
+140,Methods of Inquiry,1|5,AOK
+141,Interdisciplinary Inquiry,131|184,AOK
+142,Cross-Cultural Knowledge,13|218,AOK
+143,Epistemological Frameworks,1|4|5,AOK
+144,Ways of Knowing,1|12,AOK
+145,Scope and Application,131|143,AOK
+146,Axioms,132,METH
+147,Mathematical Proof,146|110,METH
+148,Abstraction,132,METH
+149,Mathematical Modeling,132|148,METH
+150,Formal Systems,146|147,METH
+151,Empiricism,31|140,METH
+152,Rationalism,17|140,METH
+153,Certainty in Mathematics,6|132|150,METH
+154,Beauty in Mathematics,132|148,METH
+155,Incompleteness Theorems,150|153,METH
+156,Scientific Method,140|133,METH
+157,Falsifiability,156,METH
+158,Hypothesis Testing,156|33,METH
+159,Replication,156|43,METH
+160,Peer Review,156|42,METH
+161,Paradigm,133|156,METH
+162,Paradigm Shift,161|166,METH
+163,Thomas Kuhn,161|162,METH
+164,Scientific Revolutions,162|163,METH
+165,Normal Science,161,METH
+166,Anomalies,165|161,METH
+167,Theory and Law,156|109,METH
+168,Scientific Consensus,160|159,METH
+169,Replication Crisis,159|168,METH
+170,Scientific Models,156|149,METH
+171,Qualitative Methods,140|134,METH
+172,Quantitative Methods,140|33|134,METH
+173,Observer Effect,52|171,METH
+174,Ethical Constraints,134|207,METH
+175,Cultural Variables,134|50|218,METH
+176,Surveys and Sampling,172|51,METH
+177,Correlation and Causation,172|33,METH
+178,Controlled Experiments,172|156,METH
+179,Case Studies,171,METH
+180,Interpretation in Research,175|174|171,METH
+181,Primary Sources,5|135,METH
+182,Secondary Sources,181,METH
+183,Historical Narrative,135|9,METH
+184,Historical Revisionism,183|9,METH
+185,Memory and Testimony,32|135,METH
+186,Oral Traditions,185|138,METH
+187,Historical Empathy,183|220,METH
+188,Anachronism,183|9,METH
+189,Historiography,183|44,METH
+190,Archive and Record,181|29,METH
+191,Aesthetic Knowledge,136|220,METH
+192,Artistic Interpretation,191|175,METH
+193,Artistic Intent,191,METH
+194,Audience Reception,191|9,METH
+195,Creativity,191,METH
+196,Art and Emotion,191|220,METH
+197,Art and Culture,191|218,METH
+198,Censorship in Art,191|253,METH
+199,Art as Knowledge,191|1,METH
+200,Performative Knowledge,15|191,METH
+201,Moral Reasoning,126|137,ETHC
+202,Deontological Ethics,201,ETHC
+203,Consequentialism,201,ETHC
+204,Virtue Ethics,201|76,ETHC
+205,Moral Relativism,201|8|218,ETHC
+206,Moral Universalism,201|7,ETHC
+207,Ethical Dilemmas,201|202|203,ETHC
+208,Consent in Research,174|201,ETHC
+209,Representation,13|258,ETHC
+210,Intellectual Property,28|201,ETHC
+211,Ethics of AI,242|201,ETHC
+212,Bioethics,201|133,ETHC
+213,Ethical Implications,201|28,ETHC
+214,Faith and Reason,2|126|139,ETHC
+215,Authority in Knowledge,13|42,ETHC
+216,Knowledge and the Knower,12|144,THEM
+217,Identity and Knowledge,216|94,THEM
+218,Culture and Knowledge,216|13,THEM
+219,Personal Epistemology,216|143,THEM
+220,Emotion and Knowledge,216|144,THEM
+221,Intuition,144|220,THEM
+222,Sense Perception,144|31,THEM
+223,Imagination in Knowing,144,THEM
+224,Memory as Knowledge Source,144,THEM
+225,Metacognition,216|270,THEM
+226,Knowledge and Language,1,THEM
+227,Language as Tool,226,THEM
+228,Language as Constraint,226|238,THEM
+229,Meaning,226,THEM
+230,Ambiguity,229,THEM
+231,Translation,229|106,THEM
+232,Sapir-Whorf Hypothesis,226|233,THEM
+233,Linguistic Relativity,226|218,THEM
+234,Metaphor,229|111,THEM
+235,Rhetoric,226|106,THEM
+236,Loaded Language,229|111,THEM
+237,Definitions,229|112,THEM
+238,Limits of Language,226|230,THEM
+239,Knowledge and Technology,1,THEM
+240,Tools in Knowledge,239,THEM
+241,Algorithms,239,THEM
+242,Artificial Intelligence,241,THEM
+243,Machine Learning,242|33,THEM
+244,Algorithmic Bias,241|10,THEM
+245,Simulations,239|149,THEM
+246,Digital Knowledge Systems,239|13,THEM
+247,Big Data,239|33,THEM
+248,Data Visualization,247|125,THEM
+249,Digital Literacy,239|94,THEM
+250,Epistemology of Internet,239|99,THEM
+251,Knowledge and Politics,1,THEM
+252,Power and Knowledge,251|215,THEM
+253,Censorship,251|254,THEM
+254,Intellectual Freedom,251,THEM
+255,Knowledge and Justice,251|258,THEM
+256,Politics of Expertise,252|160,THEM
+257,Trust in Institutions,252|42,THEM
+258,Epistemic Injustice,252|10,THEM
+259,Marginalized Knowledge,258|141,THEM
+260,Gatekeeping,252|29,THEM
+261,Information Overload,99|125,THEM
+262,Attention Economy,261|101,THEM
+263,Knowledge Questions,11|143,ASMT
+264,Open-Ended Questions,263,ASMT
+265,Debatable Questions,263|124,ASMT
+266,Prescribed Titles,263,ASMT
+267,TOK Essay,263|106|266,ASMT
+268,TOK Exhibition,263|269,ASMT
+269,Real-World Objects,263|125,ASMT
+270,Reflective Thinking,63,ASMT
+271,Socratic Dialogue,63|264,ASMT
+272,Inquiry-Based Learning,63|263,ASMT
+273,Knowledge Framework,143|131,ASMT
+274,Hermeneutics,175|226,ASMT
+275,Capstone TOK Portfolio,267|268|273,ASMT

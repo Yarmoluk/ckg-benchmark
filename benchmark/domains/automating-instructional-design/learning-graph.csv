@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Instructional Design,,FOUND
+2,Learning Objective,1,FOUND
+3,MicroSim,2|4,FOUND
+4,Interactive Simulation,5,FOUND
+5,Educational Technology,,FOUND
+6,AI-Assisted Design,5,FOUND
+7,Bloom's Taxonomy,2,BLOOM
+8,Cognitive Complexity,7,BLOOM
+9,Remember Level,7,BLOOM
+10,Understand Level,7|9,BLOOM
+11,Apply Level,7|10,BLOOM
+12,Analyze Level,7|11,BLOOM
+13,Evaluate Level,7|12,BLOOM
+14,Create Level,7|13,BLOOM
+15,Action Verbs,7,BLOOM
+16,Measurable Outcomes,2|15,BLOOM
+17,Learning Outcome,2|16,BLOOM
+18,Objective Decomposition,2|19,BLOOM
+19,Atomic Concepts,2,BLOOM
+20,Compound Objectives,2|19,BLOOM
+21,Prerequisite Knowledge,2|24,FOUND
+22,Assumed Knowledge,21,FOUND
+23,Simulation Readiness,3|18,FOUND
+24,Concept Dependencies,19,FOUND
+25,Learning Pathway,24|21,FOUND
+26,Visualization Paradigm,3,VISUA
+27,p5.js Animation,26|41,LIBRA
+28,Network Graph,26|45,VISUA
+29,vis-network Library,28,LIBRA
+30,Timeline Visualization,26|49,VISUA
+31,vis-timeline Library,30,LIBRA
+32,Chart Visualization,26|51,VISUA
+33,Chart.js Library,32,LIBRA
+34,Plotly Library,32,LIBRA
+35,Map Visualization,26|54,VISUA
+36,Leaflet Library,35,LIBRA
+37,Diagram Visualization,26|55,VISUA
+38,Mermaid Library,37,LIBRA
+39,Venn Diagram,26|57,VISUA
+40,Set Visualization,39,VISUA
+41,Motion Simulation,4,VISUA
+42,Physics Simulation,41,VISUA
+43,Dynamic Systems,42,VISUA
+44,Cause-Effect Display,41,VISUA
+45,Relationship Graph,4,VISUA
+46,Hierarchy Display,45,VISUA
+47,Dependency Mapping,45|24,VISUA
+48,Influence Diagram,45,VISUA
+49,Sequence Display,4,VISUA
+50,Process Timeline,49,VISUA
+51,Trend Chart,4,VISUA
+52,Distribution Chart,51,VISUA
+53,Correlation Display,51,VISUA
+54,Spatial Visualization,4,VISUA
+55,Flowchart,4,VISUA
+56,State Machine Diagram,55,VISUA
+57,Classification Display,4,VISUA
+58,Paradigm Selection,26|59,VISUA
+59,Concept Characteristics,19,VISUA
+60,Visual Affordances,26,VISUA
+61,Specification Document,3,SPECI
+62,Visual Description,61,SPECI
+63,Interaction Behavior,61|4,SPECI
+64,Behavior Constraints,63,SPECI
+65,Success Criteria,61|16,SPECI
+66,Edge Case Definition,61|64,SPECI
+67,Specification Ambiguity,61,SPECI
+68,Intent Preservation,2|67,SPECI
+69,AI Interpretation,6|68,SPECI
+70,Prompt Engineering,6,ITERA
+71,Refinement Prompt,70|137,ITERA
+72,Generation Workflow,6|134,ITERA
+73,Output Interpretation,72,ITERA
+74,Issue Identification,73,ITERA
+75,Regeneration Decision,74|77,ITERA
+76,Manual Adjustment,74,ITERA
+77,Version Control,72,ITERA
+78,Iteration Management,77,ITERA
+79,Cognitive Development,80|81,AUDIE
+80,Piaget Stages,,AUDIE
+81,Vygotsky Theory,,AUDIE
+82,Early Childhood Design,79|89,AUDIE
+83,Elementary Design,79|91,AUDIE
+84,Middle School Design,79,AUDIE
+85,High School Design,79,AUDIE
+86,Undergraduate Design,79,AUDIE
+87,Graduate Design,79,AUDIE
+88,Corporate Training Design,79,AUDIE
+89,Touch Target Size,4,AUDIE
+90,Simple Cause-Effect,44,AUDIE
+91,Guided Exploration,4,AUDIE
+92,Scaffolded Complexity,91|110,AUDIE
+93,Reading Support,83,AUDIE
+94,Abstract Concepts,84,AUDIE
+95,Multiple Variables,94,AUDIE
+96,Hypothesis Testing,95,AUDIE
+97,Real-World Application,85,AUDIE
+98,Data Interpretation,97,AUDIE
+99,Theoretical Foundations,86,AUDIE
+100,Mathematical Relations,99,AUDIE
+101,Research Applications,87,AUDIE
+102,Parameter Space,101,AUDIE
+103,Job-Relevant Scenarios,88,AUDIE
+104,Time-Efficient Design,103,AUDIE
+105,Cognitive Load Theory,106|107|108,COGNI
+106,Intrinsic Load,120,COGNI
+107,Extraneous Load,120,COGNI
+108,Germane Load,120|122,COGNI
+109,Split Attention Effect,105,COGNI
+110,Progressive Disclosure,105|116,COGNI
+111,Color Accessibility,112,ACCES
+112,Contrast Design,,ACCES
+113,Animation Speed,41|114,COGNI
+114,Learner Control,4,COGNI
+115,Visual Simplicity,107,COGNI
+116,Information Density,105,COGNI
+117,Cognitive Load Meter,105,COGNI
+118,Design Tradeoffs,105|115,COGNI
+119,Mental Effort,105,COGNI
+120,Working Memory,,COGNI
+121,Long-Term Memory,120,COGNI
+122,Schema Formation,121,COGNI
+123,Misconception,130,COGNI
+124,Common Misconceptions,123,COGNI
+125,Misconception Correction,124|131,COGNI
+126,Misconception Reinforcement,124,COGNI
+127,Productive Failure,125,COGNI
+128,Prediction Prompt,123|132,COGNI
+129,Conceptual Boundary,123,COGNI
+130,Mental Model,122,COGNI
+131,Conceptual Change,130,COGNI
+132,Intuition Testing,130,COGNI
+133,Model Comparison,130|131,COGNI
+134,Claude Code Skills,6,LIBRA
+135,MicroSim Generator,134|61,LIBRA
+136,Template Library,135,LIBRA
+137,Iterative Refinement,135,ITERA
+138,Conversation Prompting,70|137,ITERA
+139,Code Generation,134,LIBRA
+140,Output Validation,139,EVALU
+141,Technical Evaluation,140,EVALU
+142,Pedagogical Evaluation,141,EVALU
+143,UX Evaluation,141,EVALU
+144,Functionality Testing,141,EVALU
+145,Responsiveness Testing,141,EVALU
+146,Bug Identification,144,EVALU
+147,Objective Alignment,2|142,EVALU
+148,Cognitive Level Match,8|142,EVALU
+149,Effectiveness Measure,142,EVALU
+150,Intuitiveness,4,EVALU
+151,Engagement Balance,143,EVALU
+152,Evaluation Rubric,141|142|143,EVALU
+153,Rubric Development,152,EVALU
+154,Automated Evaluation,152,EVALU
+155,Human Evaluation,152,EVALU
+156,Documentation Standard,152,EVALU
+157,Reusability,156,EVALU
+158,Think-Aloud Protocol,160,EVALU
+159,A/B Testing,160,EVALU
+160,Learner Feedback,3,EVALU
+161,Age-Based Feedback,160|79,EVALU
+162,Ability-Based Feedback,160,EVALU
+163,Observation Technique,158,EVALU
+164,Test Interpretation,158|159,EVALU
+165,Change Prioritization,164,ITERA
+166,Ethical Research,158,EVALU
+167,Design-Test-Refine Cycle,160|141,ITERA
+168,Critical Changes,165,ITERA
+169,Nice-to-Have Changes,165,ITERA
+170,Fundamental Redesign,165,ITERA
+171,Incremental Improvement,165,ITERA
+172,Scope Creep Prevention,165,ITERA
+173,Completion Criteria,167,ITERA
+174,Change Log,78,ITERA
+175,Design Rationale,174,ITERA
+176,Universal Design,,ACCES
+177,UDL Principles,176,ACCES
+178,Screen Reader Support,176,ACCES
+179,Keyboard Navigation,176,ACCES
+180,Color Blindness Design,176|111,ACCES
+181,Reduced Motion,176|113,ACCES
+182,Multilingual Support,176,ACCES
+183,Vocabulary Level,176,ACCES
+184,Cultural Sensitivity,176,ACCES
+185,Prior Knowledge Support,176|22,ACCES
+186,Differentiation Strategy,176|92,ACCES
+187,Accessibility Audit,176|152,ACCES
+188,Constraint Simulation,187,ACCES
+189,LMS Integration,3,DEPLO
+190,Intelligent Textbook,3,DEPLO
+191,Learning Analytics,189,DEPLO
+192,Interaction Tracking,3,DEPLO
+193,Maintenance Planning,189,DEPLO
+194,Library Organization,136|157,DEPLO
+195,Educator Collaboration,194,DEPLO
+196,Content Sharing,194,DEPLO
+197,Portfolio Project,167|160|152,CAPST
+198,Reflection Journal,167,CAPST
+199,Peer Feedback,160,CAPST
+200,Self-Evaluation,152,CAPST

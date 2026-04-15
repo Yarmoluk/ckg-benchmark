@@ -1,0 +1,451 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Genetic Inference,,FOUND
+2,Probability in Genetics,1,PROB
+3,Conditional Probability,2,PROB
+4,Bayesian Reasoning,3,PROB
+5,Prior Probability,4,PROB
+6,Posterior Probability,4|5,PROB
+7,Likelihood Ratio,4|6,PROB
+8,Pedigree Analysis,1|2,PED
+9,Autosomal Dominant Pedigree,8,PED
+10,Autosomal Recessive Pedigree,8,PED
+11,X-Linked Inheritance,8,PED
+12,X-Linked Recessive Pedigree,11,PED
+13,X-Linked Dominant Pedigree,11,PED
+14,Carrier Probability,4|10,PED
+15,Penetrance,8|1,PED
+16,Incomplete Penetrance,15,PED
+17,Expressivity,15,PED
+18,Variable Expressivity,17,PED
+19,Phenocopy,15|17,PED
+20,Genetic Heterogeneity,1,PED
+21,Locus Heterogeneity,20,PED
+22,Allelic Heterogeneity,20,PED
+23,Epistasis,1,PED
+24,Duplicate Epistasis,23,PED
+25,Complementary Epistasis,23,PED
+26,Suppressor Epistasis,23,PED
+27,Epistatic Pathway Analysis,23|26,PED
+28,Complementation Test,1|23,PED
+29,Complementation Group,28,PED
+30,Cis-Trans Test,28,PED
+31,Allelism,28|29,PED
+32,Functional Allelism,31,PED
+33,Chi-Square Test,2,PROB
+34,Goodness of Fit Test,33,PROB
+35,Test Cross,1,PED
+36,Reciprocal Cross,35,PED
+37,Null Hypothesis in Genetics,33,PROB
+38,P-Value Interpretation,37,PROB
+39,Modified Mendelian Ratios,23|33,PED
+40,Lethal Alleles,1,PED
+41,Pleiotropy,1,PED
+42,Genetic Background Effects,23|41,PED
+43,Age of Onset,15|16,PED
+44,Anticipation,43,PED
+45,Genomic Imprinting,66,PED
+46,Parent of Origin Effects,45,PED
+47,Uniparental Disomy,45|106,PED
+48,Mosaicism,1,PED
+49,Somatic Mosaicism,48,PED
+50,Germline Mosaicism,48,PED
+51,Genome Organization,,FOUND
+52,Chromosome Structure,51,GSTR
+53,Euchromatin,52|59,GSTR
+54,Heterochromatin,52|59,GSTR
+55,Constitutive Heterochromatin,54,GSTR
+56,Facultative Heterochromatin,54,GSTR
+57,Centromere Structure,52,GSTR
+58,Telomere Structure,52,GSTR
+59,Chromatin,52,GSTR
+60,Nucleosome,59,GSTR
+61,Histone Proteins,60,GSTR
+62,Histone Modifications,61,GSTR
+63,Histone Acetylation,62,GSTR
+64,Histone Methylation,62,GSTR
+65,Chromatin Remodeling,62|59,GSTR
+66,Epigenetics,62|68,GSTR
+67,DNA Methylation,66,GSTR
+68,CpG Islands,51,GSTR
+69,Epigenetic Inheritance,66|67,GSTR
+70,X-Inactivation,56|66,GSTR
+71,Dosage Compensation,70,GSTR
+72,Barr Body,70,GSTR
+73,Genetic Variation,51,GVAR
+74,Single Nucleotide Polymorphism,73,GVAR
+75,Insertion Deletion Variant,73,GVAR
+76,Copy Number Variation,73|77,GVAR
+77,Structural Variation,73,GVAR
+78,Chromosomal Inversion,77|52,GVAR
+79,Chromosomal Translocation,77|52,GVAR
+80,Chromosomal Deletion,77|52,GVAR
+81,Chromosomal Duplication,77|52,GVAR
+82,Tandem Repeat,73,GVAR
+83,Short Tandem Repeat,82,GVAR
+84,Microsatellite,83,GVAR
+85,Minisatellite,82,GVAR
+86,Variable Number Tandem Repeat,85,GVAR
+87,Haplotype,74,GVAR
+88,Haplotype Block,87|89,GVAR
+89,Linkage Disequilibrium,87|111,GVAR
+90,Tag SNP,88|89,GVAR
+91,HapMap Project,87|90,GVAR
+92,Transposable Elements,51|73,GVAR
+93,DNA Transposon,92,GVAR
+94,Retrotransposon,92,GVAR
+95,LINE Element,94,GVAR
+96,SINE Element,94,GVAR
+97,Alu Element,96,GVAR
+98,Transposon Mutagenesis,92|268,GVAR
+99,Gene Duplication,77|51,GVAR
+100,Paralog,99,GVAR
+101,Ortholog,99|134,GVAR
+102,Gene Family,99|100,GVAR
+103,Pseudogene,99,GVAR
+104,Segmental Duplication,99|77,GVAR
+105,Polyploidy,51|106,GVAR
+106,Aneuploidy,52,GVAR
+107,Trisomy,106,GVAR
+108,Monosomy,106,GVAR
+109,Nondisjunction,106,GVAR
+110,Chromosomal Rearrangement,77|78|79,GVAR
+111,Linkage,,FOUND
+112,Genetic Linkage,111|52,MAP
+113,Recombination,111,MAP
+114,Crossing Over,113|52,MAP
+115,Recombination Frequency,113|114,MAP
+116,Genetic Map,115,MAP
+117,Map Distance,116,MAP
+118,Centimorgan,117,MAP
+119,Two-Point Cross,115|35,MAP
+120,Three-Point Cross,119,MAP
+121,Interference,120,MAP
+122,Coefficient of Coincidence,121,MAP
+123,Gene Order Determination,120,MAP
+124,Genetic Markers,73|111,MAP
+125,Molecular Markers,124,MAP
+126,Restriction Fragment Length,125,MAP
+127,Microsatellite Markers,84|125,MAP
+128,SNP Markers,74|125,MAP
+129,Physical Map,116|125,MAP
+130,Cytogenetic Map,52|129,MAP
+131,Radiation Hybrid Mapping,129,MAP
+132,Somatic Cell Hybridization,131,MAP
+133,Synteny,129|134,MAP
+134,Comparative Genomics,306|129,MAP
+135,Gene Discovery Strategies,124|116,MAP
+136,Positional Cloning,135|129,MAP
+137,Candidate Gene Approach,135,MAP
+138,Linkage Analysis,112|124,MAP
+139,LOD Score,138,MAP
+140,LOD Score Threshold,139,MAP
+141,Parametric Linkage,138,MAP
+142,Nonparametric Linkage,138,MAP
+143,Recombination Hotspots,113|114,MAP
+144,Sex Differences in Mapping,116|143,MAP
+145,Mitotic Recombination,113,MAP
+146,Gene Conversion,113|145,MAP
+147,Tetrad Analysis,113,MAP
+148,Ordered Tetrad,147,MAP
+149,Unordered Tetrad,147,MAP
+150,Centromere Mapping,148|57,MAP
+151,Half-Tetrad Analysis,147,MAP
+152,Deletion Mapping,80|116,MAP
+153,Complementation Mapping,28|116,MAP
+154,Fine Structure Mapping,116|155,MAP
+155,Intragenic Recombination,113,MAP
+156,Quantitative Genetics,,FOUND
+157,Quantitative Trait,156,QUANT
+158,Continuous Variation,157,QUANT
+159,Polygenic Inheritance,157|158,QUANT
+160,Multifactorial Trait,159,QUANT
+161,Threshold Trait,160,QUANT
+162,Heritability,156|169,QUANT
+163,Broad Sense Heritability,162,QUANT
+164,Narrow Sense Heritability,162|165,QUANT
+165,Additive Genetic Variance,169,QUANT
+166,Dominance Variance,169,QUANT
+167,Epistatic Variance,169|23,QUANT
+168,Environmental Variance,169,QUANT
+169,Phenotypic Variance,156|157,QUANT
+170,Twin Studies,162,QUANT
+171,Monozygotic Twins,170,QUANT
+172,Dizygotic Twins,170,QUANT
+173,Concordance Rate,170|171|172,QUANT
+174,Heritability Estimation,162|170,QUANT
+175,Quantitative Trait Locus,156|124,QUANT
+176,QTL Mapping,175|116,QUANT
+177,Interval Mapping,176,QUANT
+178,Marker Assisted Selection,176|175,QUANT
+179,GWAS,74|175|189,QUANT
+180,Manhattan Plot,179,QUANT
+181,Significance Threshold,179|182,QUANT
+182,Multiple Testing Correction,179,QUANT
+183,Bonferroni Correction,182,QUANT
+184,False Discovery Rate,182,QUANT
+185,Effect Size,179,QUANT
+186,Odds Ratio,185,QUANT
+187,Polygenic Risk Score,179|185,QUANT
+188,Missing Heritability,162|179,QUANT
+189,Population Genetics,,FOUND
+190,Allele Frequency,189,POP
+191,Genotype Frequency,190,POP
+192,Hardy-Weinberg Equilibrium,190|191,POP
+193,Hardy-Weinberg Assumptions,192,POP
+194,Chi-Square HWE Test,192|33,POP
+195,Natural Selection,189,POP
+196,Fitness,195,POP
+197,Selection Coefficient,196,POP
+198,Directional Selection,195,POP
+199,Stabilizing Selection,195,POP
+200,Disruptive Selection,195,POP
+201,Balancing Selection,195,POP
+202,Heterozygote Advantage,201,POP
+203,Genetic Drift,189,POP
+204,Bottleneck Effect,203,POP
+205,Founder Effect,203,POP
+206,Gene Flow,189,POP
+207,Migration,206,POP
+208,Mutation Rate,189|73,POP
+209,Population Structure,189|210,POP
+210,Fixation Index,189|190,POP
+211,Gene Expression,,FOUND
+212,Transcription Regulation,211,REG
+213,Promoter,212,REG
+214,TATA Box,213,REG
+215,Transcription Factor,212,REG
+216,General Transcription Factor,215,REG
+217,Specific Transcription Factor,215,REG
+218,Activator,217,REG
+219,Repressor,217,REG
+220,Enhancer,212|217,REG
+221,Silencer,212|219,REG
+222,Insulator,220|221,REG
+223,Cis-Regulatory Element,220|213,REG
+224,Trans-Acting Factor,215,REG
+225,Transcriptional Logic,220|226,REG
+226,Combinatorial Control,215|220,REG
+227,Gene Regulatory Network,211|215,REG
+228,Network Motif,227,REG
+229,Feedback Loop,228,REG
+230,Feed-Forward Loop,228,REG
+231,Operon Model,212,REG
+232,Lac Operon,231,REG
+233,Trp Operon,231,REG
+234,Positive Regulation,218|231,REG
+235,Negative Regulation,219|231,REG
+236,Post-Transcriptional Reg,211,REG
+237,RNA Splicing,236,REG
+238,Alternative Splicing,237,REG
+239,Exon Skipping,238,REG
+240,RNA Editing,236,REG
+241,mRNA Stability,236,REG
+242,RNA Interference,236|243,MAP
+243,MicroRNA,246,REG
+244,Small Interfering RNA,242,REG
+245,Long Noncoding RNA,246,REG
+246,Noncoding RNA,211,REG
+247,Riboswitch,246,REG
+248,Translational Regulation,211,REG
+249,Protein Degradation,211,REG
+250,Ubiquitin Pathway,249,REG
+251,Chromatin State,59|62,REG
+252,Open Chromatin,251|63,GSTR
+253,Closed Chromatin,251|64,GSTR
+254,Bivalent Chromatin,251,GSTR
+255,Poised Enhancer,220|254,GSTR
+256,Super Enhancer,220,GSTR
+257,Topologically Assoc Domain,251|258,GSTR
+258,Chromatin Looping,251,GSTR
+259,Cell Identity,260|227,REG
+260,Cell Fate Determination,211|227,REG
+261,Master Regulator Gene,260|215,REG
+262,Pioneer Factor,261|251,REG
+263,Stem Cell Gene Expression,259|211,FOUND
+264,Differentiation,260,REG
+265,Cellular Reprogramming,264|66,REG
+266,Forward Genetics,,FOUND
+267,Reverse Genetics,266,EXP
+268,Mutagenesis Screen,266,EXP
+269,Chemical Mutagenesis,268,EXP
+270,EMS Mutagenesis,269,EXP
+271,Insertional Mutagenesis,268|92,EXP
+272,Saturation Mutagenesis,268,EXP
+273,Enhancer Trap,271|220,EXP
+274,Suppressor Screen,268,EXP
+275,Modifier Screen,268|23,EXP
+276,Genetic Mosaic Analysis,268|48,EXP
+277,Clonal Analysis,276,EXP
+278,Model Organism,,FOUND
+279,Drosophila Genetics,278,EXP
+280,Yeast Genetics,278,EXP
+281,Mouse Genetics,278,EXP
+282,C. Elegans Genetics,278,EXP
+283,Zebrafish Genetics,278,EXP
+284,Arabidopsis Genetics,278,EXP
+285,Gene Knockout,267,EXP
+286,Conditional Knockout,285,EXP
+287,Knockdown,267,EXP
+288,RNA Interference Screen,242|287,MAP
+289,CRISPR-Cas9,267,EXP
+290,Guide RNA Design,289,EXP
+291,Gene Editing,289,EXP
+292,Homology Directed Repair,291,EXP
+293,NHEJ Repair,291,EXP
+294,Base Editing,289,EXP
+295,Prime Editing,289,EXP
+296,Gene Drive,289|195,EXP
+297,Transgenic Organism,291,EXP
+298,Reporter Gene,297,EXP
+299,GFP Reporter,298,EXP
+300,Cre-Lox System,286|297,EXP
+301,GAL4-UAS System,279|297,EXP
+302,Functional Genomics,306|267,FOUND
+303,Phenotype Scoring,268|278,EXP
+304,Genetic Interaction,23|278,EXP
+305,Synthetic Lethality,304,EXP
+306,Genomics,,FOUND
+307,Genome Sequencing,306,BIOINFO
+308,Sanger Sequencing,307,BIOINFO
+309,Next-Gen Sequencing,307,BIOINFO
+310,Illumina Sequencing,309,BIOINFO
+311,Long-Read Sequencing,309,BIOINFO
+312,Whole Genome Sequencing,309,BIOINFO
+313,Whole Exome Sequencing,309,BIOINFO
+314,Targeted Sequencing,309,BIOINFO
+315,Sequence Alignment,306,BIOINFO
+316,BLAST Algorithm,315,BIOINFO
+317,Pairwise Alignment,315,BIOINFO
+318,Multiple Sequence Alignment,317,BIOINFO
+319,Genome Annotation,306|315,BIOINFO
+320,Gene Prediction,319,BIOINFO
+321,Variant Calling,309|315,BIOINFO
+322,VCF File Format,321,BIOINFO
+323,FASTA File Format,306,BIOINFO
+324,FASTQ File Format,309,BIOINFO
+325,BAM File Format,309|315,BIOINFO
+326,BED File Format,319,BIOINFO
+327,Variant Annotation,321|319,BIOINFO
+328,Variant Classification,327,BIOINFO
+329,Benign Variant,328,BIOINFO
+330,Pathogenic Variant,328,BIOINFO
+331,Variant of Uncertain Sig,328,BIOINFO
+332,Genomic Databases,306,BIOINFO
+333,NCBI Database,332,BIOINFO
+334,Ensembl Database,332,BIOINFO
+335,UCSC Genome Browser,332,BIOINFO
+336,ClinVar Database,332|328,BIOINFO
+337,dbSNP Database,332|74,BIOINFO
+338,Reproducible Workflows,306,BIOINFO
+339,Pipeline Automation,338,BIOINFO
+340,Version Control in Genomics,338,FOUND
+341,RNA-Seq Analysis,309|211,BIOINFO
+342,Differential Expression,341,BIOINFO
+343,Gene Ontology,319|345,BIOINFO
+344,Pathway Enrichment,342|343,BIOINFO
+345,Functional Annotation,319,BIOINFO
+346,Human Genetics,,FOUND
+347,Mendelian Disease,346|8,CLIN
+348,Complex Disease,346|159|179,CLIN
+349,Genetic Counseling,346|350,CLIN
+350,Risk Assessment,4|346,CLIN
+351,Carrier Screening,349|14,CLIN
+352,Newborn Screening,349,CLIN
+353,Prenatal Genetic Testing,349,CLIN
+354,Preimplantation Diagnosis,353,CLIN
+355,Family History Assessment,8|349,CLIN
+356,Pedigree Construction,8|355,PED
+357,Genetic Testing Types,346,CLIN
+358,Diagnostic Testing,357,CLIN
+359,Predictive Testing,357,CLIN
+360,Presymptomatic Testing,359,CLIN
+361,Pharmacogenomics,346|211,FOUND
+362,Drug Metabolism Variation,361,CLIN
+363,CYP450 Polymorphisms,362|74,CLIN
+364,Dosage Optimization,361|362,CLIN
+365,Adverse Drug Reaction,362,CLIN
+366,Companion Diagnostics,361|368,CLIN
+367,Precision Medicine,346|361,CLIN
+368,Targeted Therapy,367,CLIN
+369,Biomarker Discovery,367|179,CLIN
+370,Cancer Genetics,346,CLIN
+371,Oncogene,370,CLIN
+372,Tumor Suppressor Gene,370,CLIN
+373,Two-Hit Hypothesis,372,CLIN
+374,Somatic Mutation in Cancer,370|49,CLIN
+375,Driver Mutation,374,CLIN
+376,Passenger Mutation,374,CLIN
+377,Tumor Mutational Burden,374|375,CLIN
+378,Microsatellite Instability,84|374,CLIN
+379,Lynch Syndrome,378|383,CLIN
+380,BRCA Genes,372|383,CLIN
+381,Liquid Biopsy,370,CLIN
+382,Circulating Tumor DNA,381,CLIN
+383,Hereditary Cancer Syndrome,370|372,CLIN
+384,Chromosomal Instability,370|110,CLIN
+385,Cancer Predisposition,383|370,CLIN
+386,Genetic Risk Factor,179|346,CLIN
+387,Polygenic Disease Risk,187|348,CLIN
+388,Gene Therapy,291|346,CLIN
+389,Antisense Therapy,388|246,CLIN
+390,Gene Replacement Therapy,388,CLIN
+391,Genetic Ethics,,FOUND
+392,Informed Consent,391,ETHICS
+393,Genetic Privacy,391,ETHICS
+394,Genetic Discrimination,393,ETHICS
+395,GINA Legislation,394,ETHICS
+396,Data Ownership,393,ETHICS
+397,Biobank Ethics,391|396,ETHICS
+398,Return of Results,392|349,ETHICS
+399,Incidental Findings,398,ETHICS
+400,Duty to Warn,398|394,ETHICS
+401,Equity in Genomic Medicine,391,ETHICS
+402,Health Disparities,401,ETHICS
+403,Diversity in Genomics,401,FOUND
+404,Reference Genome Bias,403|306,ETHICS
+405,Ancestry and Identity,189|391,ETHICS
+406,Gene Editing Ethics,291|391,ETHICS
+407,Germline Editing Debate,406,ETHICS
+408,Somatic Gene Editing,406,EXP
+409,Enhancement vs Therapy,406,ETHICS
+410,Eugenics History,391,ETHICS
+411,DTC Genetic Testing,346|391,ETHICS
+412,DTC Testing Regulation,411,ETHICS
+413,Genetic Literacy,391,ETHICS
+414,Public Engagement,413,ETHICS
+415,Science Communication,413,ETHICS
+416,CRISPR Advancements,289,FRONT
+417,CRISPR Therapeutics,416|388,FRONT
+418,In Vivo Gene Editing,416,FRONT
+419,Epigenome Editing,416|66,FRONT
+420,Single-Cell Genomics,306,FOUND
+421,Single-Cell RNA Sequencing,420|341,FRONT
+422,Spatial Transcriptomics,421,FRONT
+423,Cell Atlas Projects,420|421,FRONT
+424,AI in Genomics,306,FOUND
+425,Machine Learning Variants,424|321,FRONT
+426,Deep Learning in Genomics,424,FOUND
+427,Large Language Models Bio,426,FRONT
+428,Protein Structure AI,426,FRONT
+429,Long-Read Genomics,311,FOUND
+430,Pangenome,306|73,FRONT
+431,Pangenome Reference,430,FRONT
+432,Structural Variant Calling,321|77,FRONT
+433,Telomere-to-Telomere,58|311,FRONT
+434,Metagenomics,306,FOUND
+435,Microbiome Genetics,434,FRONT
+436,Gene Regulation Atlas,227|420,FRONT
+437,4D Nucleome,257|420,FRONT
+438,Synthetic Genomics,306|291,FOUND
+439,Xenotransplantation,291|391,FRONT
+440,Emerging Research Methods,306,FRONT
+441,Experimental Design,266|1,EXP
+442,Hypothesis Testing,441|37,EXP
+443,Data Interpretation,442|33,BIOINFO
+444,Research Ethics,391|441,ETHICS
+445,Scientific Communication,443|415,ETHICS
+446,Computational Workflow,338|339,BIOINFO
+447,Variant Interpretation,328|350,CLIN
+448,Genotype-Phenotype Models,1|211|156,CLIN
+449,Systems Genetics,227|175|189,CLIN
+450,Capstone Genomic Project,446|447|448,FRONT

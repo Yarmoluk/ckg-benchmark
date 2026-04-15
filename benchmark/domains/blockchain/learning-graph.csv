@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Trust,,FOUND
+2,Digital Trust,1,FOUND
+3,Network Fundamentals,,FOUND
+4,Internet Architecture,3,FOUND
+5,Client-Server Model,4,FOUND
+6,Peer-to-Peer Networks,4,FOUND
+7,Encryption,1|3,CRYPT
+8,Symmetric Encryption,7,CRYPT
+9,Asymmetric Encryption,7,CRYPT
+10,Public Key,9,CRYPT
+11,Private Key,9,CRYPT
+12,Key Pair Generation,10|11,CRYPT
+13,Digital Signature,12,CRYPT
+14,Hash Function,,CRYPT
+15,Cryptographic Hash,14,CRYPT
+16,SHA-256,15,CRYPT
+17,Hash Chain,15|19,CRYPT
+18,Merkle Tree,15|17,CRYPT
+19,Data Integrity,14|1,CRYPT
+20,Tamper Evidence,17|19,CRYPT
+21,Non-Repudiation,13|19,CRYPT
+22,Authentication,2|7,PKI
+23,Authorization,22,PKI
+24,Identity Verification,22|13,PKI
+25,Certificate Authority,10|24,PKI
+26,Public Key Infrastructure,25|12,PKI
+27,X.509 Certificate,26,PKI
+28,Certificate Chain,27|25,PKI
+29,Root Certificate,28,PKI
+30,Certificate Revocation,27,PKI
+31,CA Vulnerabilities,25|26,PKI
+32,CA Compromise Scenarios,31,PKI
+33,Trust Anchor,29|1,PKI
+34,Centralized Trust,1|5,PKI
+35,Decentralized Trust,1|6,DLT
+36,Distributed System,6|3,DLT
+37,Distributed Ledger,36|19,DLT
+38,Ledger Replication,37|36,DLT
+39,Immutability,17|37,DLT
+40,Append-Only Data,39,DLT
+41,Blockchain Definition,37|17|39,DLT
+42,Block Structure,41,DLT
+43,Block Header,42|15,DLT
+44,Block Body,42|46,DLT
+45,Genesis Block,42,DLT
+46,Transaction,41,DLT
+47,Transaction Validation,46|13,DLT
+48,Transaction Throughput,46|70,DLT
+49,Mempool,46|50,DLT
+50,Node,41|6,DLT
+51,Full Node,50,DLT
+52,Light Node,50|51,DLT
+53,Mining,59|50,CONS
+54,Miner,53,CONS
+55,Mining Reward,53|83,CONS
+56,Difficulty Adjustment,53|57,CONS
+57,Nonce,15,CONS
+58,Consensus Mechanism,36|41,CONS
+59,Proof of Work,58|15,CONS
+60,Proof of Stake,58|83,CONS
+61,Delegated Proof of Stake,60,CONS
+62,Byzantine Fault Tolerance,36|58,CONS
+63,Byzantine Generals Problem,36,CONS
+64,Practical BFT,62|63,CONS
+65,Finality,58|46,CONS
+66,Fork,41|58,CONS
+67,Hard Fork,66|100,CONS
+68,Soft Fork,66,CONS
+69,Longest Chain Rule,59|66,CONS
+70,Network Latency,3|36,SCALE
+71,Scalability,41|48|70,SCALE
+72,Scalability Trilemma,71|35|137,SCALE
+73,Throughput vs Latency,48|70,SCALE
+74,On-Chain vs Off-Chain,41|71,SCALE
+75,Layer 1,41|71,SCALE
+76,Layer 2 Solutions,75|74,SCALE
+77,State Channel,76,SCALE
+78,Sidechain,76,SCALE
+79,Smart Contract,41|46,ECOSS
+80,Smart Contract Risks,79,ECOSS
+81,Oracle Problem,79,ECOSS
+82,Gas and Fees,46|79,ECOSS
+83,Token,41,ECOSS
+84,Fungible Token,83,ECOSS
+85,Non-Fungible Token,83,ECOSS
+86,Tokenization,83|84,ECOSS
+87,Wallet,10|11|41,ECOSS
+88,Cold Storage,87,ECOSS
+89,Hot Wallet,87,ECOSS
+90,Permissioned Blockchain,41|23,ECOSS
+91,Permissionless Blockchain,41|35,ECOSS
+92,Public Blockchain,91,ECOSS
+93,Private Blockchain,90,ECOSS
+94,Consortium Blockchain,90|93,ECOSS
+95,Hyperledger,90|93,ECOSS
+96,Ethereum Overview,41|79|60,ECOSS
+97,Bitcoin Overview,41|59,ECOSS
+98,Blockchain Generations,96|97,ECOSS
+99,Decentralized Application,79|92,ECOSS
+100,Governance,41|133,ECOSS
+101,On-Chain Governance,100|79,ECOSS
+102,Off-Chain Governance,100,ECOSS
+103,Interoperability,41|36,ECOSS
+104,Cross-Chain Bridge,103,ECOSS
+105,Computational Cost,59|53,COST
+106,Energy Consumption,105,COST
+107,Network Cost Analysis,105|70|108,COST
+108,Transaction Cost,46|82,COST
+109,Total Cost of Ownership,107|114|115|116,COST
+110,Cost Projection Model,109,COST
+111,Cost Simulation,110,COST
+112,Cost-Benefit Analysis,109|134,COST
+113,Break-Even Analysis,112,COST
+114,Operating Expense,105|108,COST
+115,Capital Expense,116,COST
+116,Infrastructure Cost,50|3,COST
+117,Cloud vs On-Premise,116,COST
+118,Vendor Lock-In,117,COST
+119,Architecture,,ATAM
+120,Architecture Tradeoff,119|122,ATAM
+121,ATAM Overview,120|133,ATAM
+122,Quality Attribute,119|134,ATAM
+123,Quality Attribute Scenario,122|132,ATAM
+124,Utility Tree,122|134,ATAM
+125,Utility Tree Construction,124|123,ATAM
+126,Sensitivity Point,121|123,ATAM
+127,Tradeoff Point,121|126,ATAM
+128,Risk Theme,129|130,ATAM
+129,Architecture Risk,121|119,ATAM
+130,Risk Identification,129|132,ATAM
+131,Risk Mitigation,130|128,ATAM
+132,Scenario Generation,121|133,ATAM
+133,Stakeholder Analysis,119|134,ATAM
+134,Business Requirement,,ATAM
+135,Functional Requirement,134,ATAM
+136,Non-Functional Requirement,134|122,ATAM
+137,Security Attribute,122|7,ATAM
+138,Performance Attribute,122|71,ATAM
+139,Availability Attribute,122|141,ATAM
+140,Modifiability,122,ATAM
+141,Reliability,122,ATAM
+142,Maintainability,122|140,ATAM
+143,Cognitive Bias,,BIAS
+144,Confirmation Bias,143,BIAS
+145,Sunk Cost Fallacy,143,BIAS
+146,Bandwagon Effect,143,BIAS
+147,Appeal to Novelty,143,BIAS
+148,Anchoring Bias,143,BIAS
+149,Status Quo Bias,143,BIAS
+150,Dunning-Kruger Effect,143,BIAS
+151,Halo Effect,143,BIAS
+152,Survivorship Bias,143,BIAS
+153,Availability Heuristic,143,BIAS
+154,Groupthink,143|146,BIAS
+155,Bias Checklist,143|144|145|146|147|148|149,BIAS
+156,Debiasing Techniques,155|157,BIAS
+157,Critical Thinking,143,BIAS
+158,Evidence-Based Evaluation,157|156,BIAS
+159,Hype Cycle,143|147,BIAS
+160,Technology Readiness Level,159|191,DECIDE
+161,Supply Chain Use Case,41|166,CASE
+162,Healthcare Use Case,41|166,CASE
+163,Financial Services Use Case,41|166,CASE
+164,E-Commerce Use Case,41|166,CASE
+165,Retail Use Case,41|166,CASE
+166,Case Study Analysis,41|158,CASE
+167,Successful Adoption Factors,166,CASE
+168,Failed Project Analysis,166|169,CASE
+169,Blockchain Limitations,41|71|80,CASE
+170,When Not to Use Blockchain,169|172,CASE
+171,Decision Flowchart,170|197,DECIDE
+172,Alternative Technologies,41|173|174,CASE
+173,Centralized Database,5|34,CASE
+174,Traditional PKI vs DLT,26|37,CASE
+175,Hybrid Architecture,172|174|120,DECIDE
+176,Zero-Knowledge Proof,15|182,EMRG
+177,Verifiable Credential,176|13,EMRG
+178,Decentralized Identifier,177|35,EMRG
+179,Self-Sovereign Identity,178|24,EMRG
+180,Post-Blockchain Tech,176|177|178,EMRG
+181,Emerging Trust Tech,180|160,EMRG
+182,Privacy,1|7,EMRG
+183,Data Sovereignty,182|184,EMRG
+184,Regulatory Compliance,41|182,EMRG
+185,GDPR and Blockchain,184|39|186,EMRG
+186,Right to Be Forgotten,39|182,EMRG
+187,Consortium Governance,94|100,ECOSS
+188,Organizational Challenges,187|189,DECIDE
+189,Stakeholder Buy-In,133|190,DECIDE
+190,Change Management,143|133,DECIDE
+191,Technology Evaluation,158|159|112,DECIDE
+192,Vendor Assessment,191|118,DECIDE
+193,Proof of Concept,191,DECIDE
+194,Pilot Program,193,DECIDE
+195,Implementation Roadmap,194|197,DECIDE
+196,Architecture Report,121|125|131|198,DECIDE
+197,Decision Framework,158|121|155,DECIDE
+198,Recommendation Writing,197|158,DECIDE
+199,Presentation to Management,196|198,DECIDE
+200,Capstone Project,196|199|111|175,DECIDE

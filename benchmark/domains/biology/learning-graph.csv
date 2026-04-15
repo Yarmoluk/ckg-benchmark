@@ -1,0 +1,381 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Scientific Method,,FOUND
+2,Hypothesis Testing,1,FOUND
+3,Controlled Experiments,1|2,FOUND
+4,Independent and Dependent Variables,1|2|3,FOUND
+5,Atomic Structure,,CHEM
+6,Elements of Life,5,CHEM
+7,Chemical Bonds,5|6,CHEM
+8,Ionic Bonds,7,CHEM
+9,Covalent Bonds,7,CHEM
+10,Hydrogen Bonds,7|9,CHEM
+11,Van der Waals Forces,7,CHEM
+12,Water Polarity,9|10,CHEM
+13,Cohesion and Adhesion,12,CHEM
+14,Surface Tension,12|13,CHEM
+15,Specific Heat Capacity,12,CHEM
+16,Water as Universal Solvent,12,CHEM
+17,Hydrophilic and Hydrophobic,12,CHEM
+18,Acid-Base Chemistry,12|16,CHEM
+19,pH Scale,18,CHEM
+20,Buffers,18|19,CHEM
+21,Organic Chemistry Basics,5|7|9,CHEM
+22,Functional Groups,21|9,CHEM
+23,Polymers and Monomers,21|22,CHEM
+24,Condensation Reactions,21|22|23,CHEM
+25,Hydrolysis Reactions,21|22|23,CHEM
+26,Carbohydrates,22|23|24|25,MACRO
+27,Monosaccharides,26,MACRO
+28,Disaccharides,26|27|24,MACRO
+29,Polysaccharides,26|27|28,MACRO
+30,Glycosidic Bonds,27|24,MACRO
+31,Lipids,22|23|24|25,MACRO
+32,Fatty Acids,31|22,MACRO
+33,Saturated and Unsaturated Fats,31|32|9,MACRO
+34,Triglycerides,31|32|24,MACRO
+35,Phospholipids,31|32|22,MACRO
+36,Sterols and Cholesterol,31,MACRO
+37,Proteins,22|23|24|25,MACRO
+38,Amino Acids,37|22,MACRO
+39,Peptide Bonds,38|24,MACRO
+40,Primary Protein Structure,37|38|39,MACRO
+41,Secondary Protein Structure,40|10,MACRO
+42,Tertiary Protein Structure,41|22,MACRO
+43,Quaternary Protein Structure,42,MACRO
+44,Protein Denaturation,42|43|18,MACRO
+45,Nucleic Acids,22|23|24|25,MACRO
+46,Nucleotides,45|22|27,MACRO
+47,DNA Structure,45|46|10,MACRO
+48,RNA Structure,45|46|10,MACRO
+49,Cell Theory,,CELL
+50,Prokaryotic Cells,49,CELL
+51,Eukaryotic Cells,49,CELL
+52,Cell Size and Surface Area Ratio,49|51,CELL
+53,Plasma Membrane,35|17|51,CELL
+54,Fluid Mosaic Model,53|37|36,CELL
+55,Phospholipid Bilayer,35|53,CELL
+56,Membrane Proteins,37|53,CELL
+57,Cholesterol in Membranes,36|53,CELL
+58,Selective Permeability,53|54|55|56,CELL
+59,Passive Transport,58,CELL
+60,Diffusion,59,CELL
+61,Osmosis,59|60,CELL
+62,Water Potential,61|12,CELL
+63,Turgor Pressure,62|61,CELL
+64,Facilitated Diffusion,59|60|56,CELL
+65,Active Transport,59|64,CELL
+66,Sodium-Potassium Pump,65|38,CELL
+67,Endocytosis,65|53,CELL
+68,Exocytosis,65|53,CELL
+69,Phagocytosis,67,CELL
+70,Pinocytosis,67,CELL
+71,Nucleus,51,CELL
+72,Nuclear Envelope,71|53,CELL
+73,Nucleolus,71,CELL
+74,Endoplasmic Reticulum,51|71,CELL
+75,Rough ER,74|37,CELL
+76,Smooth ER,74,CELL
+77,Golgi Apparatus,51|75,CELL
+78,Lysosomes,77|51,CELL
+79,Vacuoles,51,CELL
+80,Mitochondria,51,CELL
+81,Chloroplasts,51,CELL
+82,Peroxisomes,51,CELL
+83,Cytoskeleton,51,CELL
+84,Microfilaments,83|38,CELL
+85,Microtubules,83,CELL
+86,Intermediate Filaments,83,CELL
+87,Cilia and Flagella,85|83,CELL
+88,Cell Wall,50,CELL
+89,Plasmodesmata,88|51,CELL
+90,Extracellular Matrix,37|51,CELL
+91,Cell Junctions,53|51,CELL
+92,Thermodynamics,,ENRG
+93,First Law of Thermodynamics,92,ENRG
+94,Second Law of Thermodynamics,92,ENRG
+95,Entropy,94,ENRG
+96,Free Energy (Gibbs),92|93|94|95,ENRG
+97,Exergonic Reactions,96,ENRG
+98,Endergonic Reactions,96,ENRG
+99,ATP Structure,46|45,ENRG
+100,ATP Hydrolysis,99|96|97,ENRG
+101,Coupled Reactions,100|97|98,ENRG
+102,Redox Reactions,7|9|5,ENRG
+103,Enzymes,37|42,ENRG
+104,Active Site,103|42,ENRG
+105,Enzyme-Substrate Complex,103|104,ENRG
+106,Activation Energy,96|105,ENRG
+107,Transition State,106|105,ENRG
+108,Induced Fit Model,104|105,ENRG
+109,Enzyme Cofactors and Coenzymes,103|38,ENRG
+110,Competitive Inhibition,103|104|105,ENRG
+111,Noncompetitive Inhibition,103|104|112,ENRG
+112,Allosteric Regulation,103|104|108,ENRG
+113,Feedback Inhibition,112,ENRG
+114,Temperature and Enzyme Activity,103|92,ENRG
+115,pH and Enzyme Activity,103|19,ENRG
+116,Photosynthesis Overview,81|92,ENRG
+117,Chlorophyll and Pigments,116|37,ENRG
+118,Absorption Spectrum,117,ENRG
+119,Photosystems I and II,117|118,ENRG
+120,Light-Dependent Reactions,119|102,ENRG
+121,Photolysis of Water,120|12,ENRG
+122,Electron Transport Chain (Chloroplast),120|102|99,ENRG
+123,ATP Synthase,122|99|100,ENRG
+124,Proton Gradient,123|94|95,ENRG
+125,Calvin Cycle,120|123,ENRG
+126,Carbon Fixation,125,ENRG
+127,RuBisCO,126|103|37,ENRG
+128,G3P and Sugar Production,126|127|125,ENRG
+129,C3 Plants,125|128,ENRG
+132,Photorespiration,127|129,ENRG
+130,C4 Plants,129|132,ENRG
+131,CAM Plants,129|132,ENRG
+133,Cellular Respiration Overview,80|92,ENRG
+134,Glycolysis,133|27|99|102,ENRG
+135,Substrate-Level Phosphorylation,134|99,ENRG
+136,Pyruvate Oxidation,134|102,ENRG
+137,Acetyl-CoA,136,ENRG
+138,Krebs Cycle,137|102|99,ENRG
+139,Electron Transport Chain (Mitochond.),138|102|109,ENRG
+140,Oxidative Phosphorylation,139|99|123,ENRG
+141,Chemiosmosis,140|124|123,ENRG
+142,NADH and FADH2,102|138|134,ENRG
+143,ATP Yield of Respiration,134|138|140|99,ENRG
+144,Fermentation,134|133,ENRG
+145,Lactic Acid Fermentation,144,ENRG
+146,Alcoholic Fermentation,144,ENRG
+147,Cell Signaling Overview,51|53,COMM
+148,Signal Transduction,147,COMM
+149,Ligand-Receptor Binding,147|56|37,COMM
+150,Cell Surface Receptors,53|149,COMM
+151,G Protein-Coupled Receptors,150,COMM
+152,Receptor Tyrosine Kinases,150,COMM
+153,Intracellular Receptors,149|71,COMM
+154,Second Messengers,148|151,COMM
+155,cAMP Signaling,154,COMM
+156,Phosphorylation Cascades,152|154|103,COMM
+157,Signal Amplification,156|148,COMM
+158,Negative Feedback Loops,148|157,COMM
+159,Positive Feedback Loops,158,COMM
+160,Apoptosis,148,COMM
+161,Cell Cycle Overview,51|83|85,COMM
+162,G1 Phase,161,COMM
+163,S Phase,161,COMM
+164,G2 Phase,161|163,COMM
+165,Mitosis,161|83|85,COMM
+166,Prophase,165,COMM
+167,Metaphase,166|85,COMM
+168,Anaphase,167|84,COMM
+169,Telophase,168,COMM
+170,Cytokinesis,165|169|84,COMM
+171,Cell Cycle Checkpoints,161|162|163|164,COMM
+172,Cyclins and CDKs,171|103,COMM
+173,Proto-Oncogenes,172,COMM
+174,Tumor Suppressor Genes,172|173,COMM
+175,Cancer Biology,173|174|171,COMM
+176,Contact Inhibition,147|175,COMM
+177,Meiosis Overview,165|184,GENET
+178,Meiosis I,177,GENET
+179,Meiosis II,178,GENET
+180,Synapsis and Tetrad Formation,178,GENET
+181,Crossing Over,180,GENET
+182,Chiasmata,181,GENET
+183,Genetic Recombination,181|182,GENET
+184,Haploid and Diploid Cells,51|161,GENET
+185,Gametes,177|184,GENET
+186,Fertilization,185,GENET
+187,Chromosomal Theory of Inheritance,184|51,GENET
+188,Mendel's Law of Segregation,187,GENET
+189,Mendel's Law of Indep. Assortment,187|188,GENET
+190,Dominant and Recessive Alleles,188,GENET
+191,Genotype and Phenotype,190,GENET
+192,Homozygous and Heterozygous,190|191,GENET
+193,Monohybrid Crosses,188|190|192,GENET
+194,Dihybrid Crosses,189|193,GENET
+195,Punnett Squares,193|194,GENET
+196,Test Crosses,193|195,GENET
+197,Incomplete Dominance,193|190,GENET
+198,Codominance,193|190,GENET
+199,Multiple Alleles,190|193,GENET
+200,Sex Determination,184|187,GENET
+201,Sex-Linked Traits,200|192,GENET
+202,X-Linked Inheritance,201|195,GENET
+203,Polygenic Inheritance,193|191,GENET
+204,Epistasis,189|193|191,GENET
+205,Pleiotropy,191|193,GENET
+206,Genetic Linkage,183|189,GENET
+207,Recombination Frequency,183|206,GENET
+208,Chromosomal Abnormalities,184,GENET
+209,Nondisjunction,177|178|179|184,GENET
+210,Aneuploidy,209|208,GENET
+211,Pedigree Analysis,193|195|196|201,GENET
+212,Chi-Square Statistical Test,193|195|1|3,FOUND
+213,Standard Deviation,1|3|4,FOUND
+214,Data Interpretation,1|3|4|213,FOUND
+215,Graph Construction and Analysis,4|213|214,FOUND
+216,DNA Double Helix,47|10|9,MOLBIO
+217,Base Pairing Rules,216|46|47,MOLBIO
+218,DNA Replication,216|217,MOLBIO
+219,DNA Polymerase,218|103,MOLBIO
+220,Semiconservative Replication,218|219,MOLBIO
+221,Leading and Lagging Strands,218|219|220,MOLBIO
+222,Okazaki Fragments,221,MOLBIO
+223,DNA Proofreading and Repair,219|218,MOLBIO
+224,Telomeres,216|218,MOLBIO
+225,Transcription Overview,216|217|48,MOLBIO
+226,RNA Polymerase,225|103,MOLBIO
+227,Promoter Regions,216|225|226,MOLBIO
+228,Transcription Termination,225|227,MOLBIO
+229,mRNA Processing,225|48,MOLBIO
+230,5-Prime Cap and Poly-A Tail,229,MOLBIO
+231,RNA Splicing,229,MOLBIO
+232,Introns and Exons,229,MOLBIO
+233,Alternative Splicing,231|232,MOLBIO
+234,Translation Overview,48|235|236|239,MOLBIO
+235,Ribosomes,73|51,MOLBIO
+236,Codons and Anticodons,217|46|48,MOLBIO
+237,tRNA Structure,48|46|236,MOLBIO
+238,Aminoacyl-tRNA Synthetases,237|103,MOLBIO
+239,Start and Stop Codons,236,MOLBIO
+240,Genetic Code,236|239,MOLBIO
+241,Polysomes,234|235,MOLBIO
+242,Point Mutations,218|217,MOLBIO
+243,Frameshift Mutations,242|221,MOLBIO
+244,Silent Mutations,242|240,MOLBIO
+245,Missense Mutations,242|240,MOLBIO
+246,Nonsense Mutations,242|240|239,MOLBIO
+247,Mutagens and DNA Damage,242|243|223,MOLBIO
+248,Gene Regulation (Prokaryotes),225|50,BIOTECH
+249,Operons,248,BIOTECH
+250,Lac Operon,249|248,BIOTECH
+251,Trp Operon,249|248|113,BIOTECH
+252,Gene Regulation (Eukaryotes),225|51,BIOTECH
+253,Transcription Factors,252|226|37,BIOTECH
+254,Enhancers and Silencers,252|253|216,BIOTECH
+255,Epigenetic Regulation,252,BIOTECH
+256,DNA Methylation,255,BIOTECH
+257,Histone Modification,255,BIOTECH
+258,Chromatin Remodeling,255|257|71,BIOTECH
+259,MicroRNAs,48|229|234,BIOTECH
+260,Biotechnology Overview,216|218,BIOTECH
+261,Restriction Enzymes,260|103|217,BIOTECH
+262,Gel Electrophoresis,261|218,BIOTECH
+263,PCR,218|219|260,BIOTECH
+264,DNA Cloning,261|263,BIOTECH
+265,Recombinant DNA Technology,261|264,BIOTECH
+266,CRISPR-Cas9,217|218|265|260,BIOTECH
+267,Gene Therapy Concepts,266|245|265,BIOTECH
+268,DNA Sequencing,263|262|260,BIOTECH
+269,Genomics Overview,268|260,BIOTECH
+270,Bioinformatics Basics,269|268,BIOTECH
+271,History of Evolutionary Thought,,EVOL
+272,Darwin's Observations,271,EVOL
+273,Natural Selection,272|274|275,EVOL
+274,Variation in Populations,191|192|183,EVOL
+275,Heritability,274|187|188,EVOL
+276,Relative Fitness,273|191,EVOL
+277,Artificial Selection,273|276,EVOL
+278,Fossil Record Evidence,271,EVOL
+279,Relative and Absolute Dating,278,EVOL
+280,Comparative Anatomy,271|51,EVOL
+281,Homologous Structures,280,EVOL
+282,Analogous Structures,280,EVOL
+283,Vestigial Structures,281|273,EVOL
+284,Comparative Embryology,280|271,EVOL
+285,Molecular Evidence for Evolution,269|216|271,EVOL
+286,Biogeography,271|272,EVOL
+287,Population Genetics,273|274,EVOL
+288,Allele Frequency,287,EVOL
+289,Hardy-Weinberg Equilibrium,288|287,EVOL
+290,Hardy-Weinberg Assumptions,289,EVOL
+291,Genetic Drift,289|290|274,EVOL
+292,Founder Effect,291,EVOL
+293,Bottleneck Effect,291,EVOL
+294,Gene Flow,287|289,EVOL
+295,Mutation and Evolution,242|287|273,EVOL
+296,Sexual Selection,273|276|191,EVOL
+297,Stabilizing Selection,273|276|288,EVOL
+298,Directional Selection,273|276|288,EVOL
+299,Disruptive Selection,273|276|288,EVOL
+301,Biological Species Concept,273|274,EVOL
+300,Speciation Overview,273|289|301,EVOL
+302,Reproductive Isolation,300|301,EVOL
+303,Prezygotic Barriers,302,EVOL
+304,Postzygotic Barriers,302,EVOL
+305,Allopatric Speciation,302|303|304|294,EVOL
+306,Sympatric Speciation,302|303|304,EVOL
+307,Adaptive Radiation,305|306|300,EVOL
+308,Convergent Evolution,282|300|307,EVOL
+309,Coevolution,273|276,EVOL
+310,Phylogenetics,300|311,EVOL
+311,Cladistics,300,EVOL
+312,Cladograms,311|310,EVOL
+313,Shared Derived Characters,311|280,EVOL
+314,Molecular Clocks,285|310|312,EVOL
+315,Macroevolution,300|307|312,EVOL
+316,Mass Extinctions,315|278,EVOL
+317,Endosymbiotic Theory,50|80|81|285,EVOL
+318,Origin of Eukaryotes,317|51,EVOL
+319,Three Domains of Life,318|50|51|310,EVOL
+320,Ecology Overview,,POPECO
+321,Levels of Ecological Organization,320,POPECO
+322,Abiotic and Biotic Factors,321,POPECO
+323,Population Ecology,321|322,POPECO
+324,Population Density,323,POPECO
+325,Dispersion Patterns,323|324,POPECO
+326,Exponential Population Growth,323|324,POPECO
+327,Logistic Population Growth,326|328,POPECO
+328,Carrying Capacity,326,POPECO
+329,Limiting Factors,328|322,POPECO
+330,Density-Dependent Regulation,329|327,POPECO
+331,Density-Independent Factors,329,POPECO
+332,Survivorship Curves,323|324|214,POPECO
+333,Life History Strategies,332|276,POPECO
+334,r-Selection and K-Selection,333|328,POPECO
+335,Community Ecology,321|323,POPECO
+336,Interspecific Interactions,335|322,POPECO
+337,Predation,336,POPECO
+338,Herbivory,336,POPECO
+339,Competition,336,POPECO
+340,Competitive Exclusion Principle,339,POPECO
+341,Resource Partitioning,340,POPECO
+342,Ecological Niches,341|339|321,POPECO
+343,Mutualism,336|309,POPECO
+344,Commensalism,336,POPECO
+345,Parasitism,336,POPECO
+346,Keystone Species,336|337|339,POPECO
+347,Trophic Cascades,346|353|354,POPECO
+348,Ecological Succession,335,POPECO
+349,Primary Succession,348,POPECO
+350,Secondary Succession,348,POPECO
+351,Climax Community,349|350,POPECO
+352,Ecosystem Ecology,321|335,ECOSYS
+353,Trophic Levels,352,ECOSYS
+354,Food Chains and Food Webs,353|337|338,ECOSYS
+355,Energy Flow in Ecosystems,354|133,ECOSYS
+356,Ten Percent Energy Rule,355|353,ECOSYS
+357,Primary Productivity,352|116|133,ECOSYS
+358,Net Primary Productivity,357,ECOSYS
+359,Biogeochemical Cycles,352|321,ECOSYS
+360,Carbon Cycle,359|116|133,ECOSYS
+361,Nitrogen Cycle,359,ECOSYS
+362,Phosphorus Cycle,359,ECOSYS
+363,Water Cycle,359|12,ECOSYS
+364,Nitrogen Fixation,361|50|103,ECOSYS
+365,Biomes Overview,321|322,ECOSYS
+366,Terrestrial Biomes,365|322,ECOSYS
+367,Aquatic Biomes,365|322,ECOSYS
+368,Biodiversity,321|335,ECOSYS
+369,Species Richness and Evenness,368,ECOSYS
+370,Habitat Fragmentation,368|323|335,ECOSYS
+371,Invasive Species,335|339|368,ECOSYS
+372,Climate Change and Ecology,359|360|368|379,ECOSYS
+373,Conservation Biology,368|370|371|372|289,ECOSYS
+374,Island Biogeography,323|335|307,POPECO
+375,Ecological Footprint,355|373|372,ECOSYS
+376,Systems Thinking,1,FOUND
+377,Critical Thinking,1|2,FOUND
+378,Detecting Misinformation,377|1,FOUND
+379,Climate Change,359|360,ECOSYS
+380,Global Warming,379|360,ECOSYS

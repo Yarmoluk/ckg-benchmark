@@ -1,0 +1,481 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Bioinformatics,,FOUND
+2,Computational Biology,1,FOUND
+3,Central Dogma,1,FOUND
+4,DNA Structure,3,FOUND
+5,RNA Structure,3,FOUND
+6,Protein Structure,3,FOUND
+7,Amino Acids,6,FOUND
+8,Nucleotides,4|5,FOUND
+9,Codons,8|18,FOUND
+10,Gene,4,FOUND
+11,Genome,10,FOUND
+12,Transcription,4|5,FOUND
+13,Translation,5|6|9,FOUND
+14,Gene Expression,12|13,FOUND
+15,Sequence Data,4|5|6,FOUND
+16,Molecular Biology,3,FOUND
+17,Cell Biology Basics,1,FOUND
+18,Genetic Code,3,FOUND
+19,Open Reading Frame,10|18,FOUND
+20,Complementary Base Pairing,4|8,FOUND
+21,Chromosomes,4|11,FOUND
+22,Mutations,4|10,FOUND
+23,Single Nucleotide Polymorphism,22,FOUND
+24,Insertion and Deletion,22,FOUND
+25,Structural Variant,22|21,FOUND
+26,Copy Number Variation,25,FOUND
+27,Epigenetics,14,FOUND
+28,DNA Methylation,27|4,FOUND
+29,Histone Modification,27|21,FOUND
+30,Central Dogma Exceptions,3|12|13,FOUND
+31,Biological Databases,15,DBAS
+32,NCBI,31,DBAS
+33,GenBank Database,32,DBAS
+34,UniProt,31|6,DBAS
+35,Swiss-Prot,34,DBAS
+36,TrEMBL,34,DBAS
+37,Protein Data Bank,31|6,DBAS
+38,Ensembl,31|11,DBAS
+39,KEGG Database,31,DBAS
+40,Reactome Database,31,DBAS
+41,BioGRID Database,31,DBAS
+42,STRING Database,31,DBAS
+43,IntAct Database,31,DBAS
+44,COSMIC Database,31|22,DBAS
+45,Gene Ontology Database,31|10,DBAS
+46,Disease Ontology Database,31,DBAS
+47,Human Phenotype Ontology DB,31,DBAS
+48,BioCyc Database,31,DBAS
+49,OMIM Database,31|22,DBAS
+50,Hetionet Database,31,DBAS
+51,Database Cross-References,31,DBAS
+52,Programmatic Database Access,31,DBAS
+53,REST APIs for Biology,52,DBAS
+54,Batch Data Download,52,DBAS
+55,Data Provenance,31,DBAS
+56,FASTA Format,15,DFMT
+57,FASTQ Format,56,DFMT
+58,GenBank Format,33|56,DFMT
+59,GFF3 Format,56|10,DFMT
+60,OWL Format,56,DFMT
+61,PDB File Format,37|56,DFMT
+62,VCF Format,56|22,DFMT
+63,SAM and BAM Format,56,DFMT
+64,BED Format,56,DFMT
+65,SBML Format,56,DFMT
+66,BioPAX Format,56,DFMT
+67,CSV for Bioinformatics,56,DFMT
+68,JSON for Bioinformatics,56,DFMT
+69,Data Format Conversion,56,DFMT
+70,Data Quality Control,56|57,DFMT
+71,Graph Theory,,GRTH
+72,Nodes and Edges,71,GRTH
+73,Directed Graphs,72,GRTH
+74,Undirected Graphs,72,GRTH
+75,Weighted Graphs,72,GRTH
+76,Bipartite Graphs,72,GRTH
+77,Labeled Property Graph,72,GRTH
+78,Multigraph,72,GRTH
+79,Hypergraph,72,GRTH
+80,Subgraph,72,GRTH
+81,Graph Properties,72,GRTH
+82,Degree Distribution,81,GRTH
+83,In-Degree,73|82,GRTH
+84,Out-Degree,73|82,GRTH
+85,Clustering Coefficient,81,GRTH
+86,Centrality Measures,81,GRTH
+87,Degree Centrality,86|82,GRTH
+88,Betweenness Centrality,86|97,GRTH
+89,Closeness Centrality,86|97,GRTH
+90,Eigenvector Centrality,86,GRTH
+91,PageRank,73|90,GRTH
+92,Connected Components,81,GRTH
+93,Strongly Connected Comp,73|92,GRTH
+94,Graph Traversal,72,GRTH
+95,Breadth-First Search,94,GRTH
+96,Depth-First Search,94,GRTH
+97,Shortest Path Algorithms,94,GRTH
+98,Dijkstra Algorithm,97|75,GRTH
+99,Graph Density,81,GRTH
+100,Graph Diameter,97,GRTH
+101,Scale-Free Networks,82|103,GRTH
+102,Small-World Networks,85|100,GRTH
+103,Power-Law Distribution,82,GRTH
+104,Random Graph Models,81,GRTH
+105,Erdos-Renyi Model,104,GRTH
+106,Barabasi-Albert Model,104|101,GRTH
+107,Network Motifs,80|73,GRTH
+108,Graph Isomorphism,72,GRTH
+109,Adjacency Matrix,72,GRTH
+110,Edge List Representation,72,GRTH
+111,Graph Database,77,GRDB
+112,Relational Database,,GRDB
+113,Graph vs Relational Model,111|112,GRDB
+114,Neo4j,111,GRDB
+115,Memgraph,111,GRDB
+116,Cypher Query Language,114,GRDB
+117,GQL Query Language,111,GRDB
+118,MATCH Clause,116,GRDB
+119,WHERE Clause,116,GRDB
+120,RETURN Clause,116,GRDB
+121,CREATE Clause,116,GRDB
+122,MERGE Clause,116,GRDB
+123,Graph Pattern Matching,116|118,GRDB
+124,Variable-Length Paths,123,GRDB
+125,Path Queries,123|97,GRDB
+126,Aggregation in Cypher,120,GRDB
+127,Graph Schema Design,111|77,GRDB
+128,Node Labels,127,GRDB
+129,Relationship Types,127,GRDB
+130,Property Keys,127,GRDB
+131,Index and Constraints,127,GRDB
+132,RDF Triple Model,71,GRDB
+133,Subject-Predicate-Object,132,GRDB
+134,SPARQL Query Language,132,GRDB
+135,LPG vs RDF Comparison,77|132,GRDB
+136,Graph Data Loading,111|56,GRDB
+137,CSV Import to Graph DB,136|67,GRDB
+138,ETL for Graph Databases,136,GRDB
+139,Graph Query Optimization,116|140,GRDB
+140,Query Profiling,116,GRDB
+141,Distributed Graph Databases,111|143,GRDB
+142,Graph Partitioning,141,GRDB
+143,Graph Scalability,111,GRDB
+144,Graph Transactions,111,GRDB
+145,Graph Access Control,111,GRDB
+146,Sequence Alignment,15,SEQA
+147,Pairwise Alignment,146,SEQA
+148,Global Alignment,147,SEQA
+149,Local Alignment,147,SEQA
+150,Smith-Waterman Algorithm,149|152,SEQA
+151,Needleman-Wunsch Algorithm,148|152,SEQA
+152,Dynamic Programming,,SEQA
+153,Scoring Matrices,146,SEQA
+154,BLOSUM Matrix,153,SEQA
+155,PAM Matrix,153,SEQA
+156,Substitution Model,153,SEQA
+157,Gap Penalties,146,SEQA
+158,Affine Gap Penalty,157,SEQA
+159,BLAST,149|153,SEQA
+160,BLAST E-Value,159,SEQA
+161,BLAST Heuristics,159,SEQA
+162,PSI-BLAST,159|175,SEQA
+163,Sequence Homology,146,SEQA
+164,Orthologs,163,SEQA
+165,Paralogs,163,SEQA
+166,Sequence Identity,146,SEQA
+167,Sequence Similarity,146|153,SEQA
+168,Sequence Similarity Network,167|72,SEQA
+169,Graph Model for Similarity,168|127,GRDB
+170,Multiple Sequence Alignment,146,SEQA
+171,Clustal,170,SEQA
+172,MUSCLE Aligner,170,SEQA
+173,Progressive Alignment,170,SEQA
+174,Consensus Sequence,170,SEQA
+175,Sequence Profile,170,SEQA
+176,Hidden Markov Model,,SEQA
+177,Profile HMM,176|175,SEQA
+178,Sequence Motif,174,SEQA
+179,Regular Expressions,,SEQA
+180,Motif Discovery,178|179,SEQA
+181,Phylogenetic Tree,170|73,PHYL
+182,Phylogenetics,181,PHYL
+183,Molecular Phylogenetics,182|163,PHYL
+184,Distance Matrix,167,PHYL
+185,Neighbor-Joining Method,184,PHYL
+186,UPGMA Method,184,PHYL
+187,Maximum Parsimony,181,PHYL
+188,Maximum Likelihood Method,181|156,PHYL
+189,Bayesian Inference,181,PHYL
+190,Markov Chain Monte Carlo,189,PHYL
+191,Bootstrap Analysis,181,PHYL
+192,Branch Support Values,191,PHYL
+193,Molecular Clock,194,PHYL
+194,Substitution Rate,156,PHYL
+195,Trees as DAGs,181|73,PHYL
+196,Phylogenetic Networks,181|72,PHYL
+197,Reticulate Evolution,196,PHYL
+198,Horizontal Gene Transfer,197,PHYL
+199,Recombination,197,PHYL
+200,Incomplete Lineage Sorting,212,PHYL
+201,Graph Model for Evolution,196|127,GRDB
+202,Cladogram,181,PHYL
+203,Phylogram,181,PHYL
+204,Monophyletic Group,181,PHYL
+205,Paraphyletic Group,204,PHYL
+206,Outgroup,181,PHYL
+207,Rooted vs Unrooted Trees,181,PHYL
+208,Tree Topology Comparison,181,PHYL
+209,Robinson-Foulds Distance,208,PHYL
+210,Ancestral Reconstruction,181|189,PHYL
+211,Divergence Time Estimation,193|188,PHYL
+212,Gene Tree vs Species Tree,181|10,PHYL
+213,Coalescent Theory,212,PHYL
+214,Phylogenomics,182|11,PHYL
+215,Comparative Genomics,214|11,PHYL
+216,Primary Structure,7,STRU
+217,Secondary Structure,216,STRU
+218,Alpha Helix,217,STRU
+219,Beta Sheet,217,STRU
+220,Tertiary Structure,217,STRU
+221,Quaternary Structure,220,STRU
+222,Protein Folding,220,STRU
+223,Protein Folding Problem,222,STRU
+224,Homology Modeling,163|220,STRU
+225,Threading,220,STRU
+226,Ab Initio Prediction,220,STRU
+227,AlphaFold,222|177,STRU
+228,AlphaFold Database,227,STRU
+229,Protein Contact Map,220,STRU
+230,Contact Map as Graph,229|72,STRU
+231,Residue Interaction Network,230,STRU
+232,Graph Model for Contacts,231|127,GRDB
+233,Structural Alignment,220,STRU
+234,RMSD,233,STRU
+235,Protein Domain,220,STRU
+236,Domain Classification,235,STRU
+237,SCOP Database,236,STRU
+238,Pfam Database,236|177,STRU
+239,Protein Surface Analysis,220,STRU
+240,Binding Site Prediction,239,STRU
+241,Molecular Docking,240|242,STRU
+242,Ligand-Protein Interaction,6,STRU
+243,Drug-Likeness,242,STRU
+244,ADMET Properties,243,STRU
+245,Protein-Ligand Graph,242|72,STRU
+246,Molecular Fingerprints,242,STRU
+247,Chemical Similarity,246,STRU
+248,Structure-Activity Relation,247,STRU
+249,Protein Function Inference,235|163,STRU
+250,Structural Genomics,220|11,STRU
+251,Protein Interaction Network,101|72,PPIS
+252,Interactome,251,PPIS
+253,Yeast Two-Hybrid,251,PPIS
+254,Co-Immunoprecipitation,251,PPIS
+255,Affinity Purification MS,251,PPIS
+256,Cross-Linking Mass Spec,251,PPIS
+257,PPI Confidence Scoring,251,PPIS
+258,Binary vs Complex PPIs,251,PPIS
+259,Network Hubs,251|87,PPIS
+260,Network Bottlenecks,251|88,PPIS
+261,Network Modules,251|92,PPIS
+262,Graph Model for PPIs,251|127,GRDB
+263,Hub-and-Spoke Topology,259,PPIS
+264,Date Hubs vs Party Hubs,259,PPIS
+265,Essential Proteins,259|260,PPIS
+266,Protein Complex Detection,261,PPIS
+267,Clique Detection,261,PPIS
+268,Dense Subgraph Mining,261|80,PPIS
+269,Network Rewiring,251,PPIS
+270,Dynamic PPI Networks,251|269,PPIS
+271,Tissue-Specific PPIs,251|14,PPIS
+272,Host-Pathogen PPIs,251,PPIS
+273,Viral Interactome,272,PPIS
+274,PPI Prediction Methods,251|176,PPIS
+275,Interaction Domain Pairs,235|251,PPIS
+276,Co-Evolution Analysis,251|167,PPIS
+277,Network Alignment,251|108,PPIS
+278,Network Comparison,251|277,PPIS
+279,Graphlet Analysis,251|107,PPIS
+280,Network Centrality in PPIs,251|86,PPIS
+281,Genome Assembly,11|15,GENO
+282,De Bruijn Graph,281|72,GENO
+283,K-mer,282,GENO
+284,K-mer Spectrum,283,GENO
+285,Contig,281,GENO
+286,Scaffold,285,GENO
+287,N50 Metric,281,GENO
+288,Assembly Quality Metrics,287,GENO
+289,Reference Genome,281,GENO
+290,Reference Bias,289,GENO
+291,Pangenome,289,GENO
+292,Pangenome Graph,291|72,GENO
+293,Variation Graph,292,GENO
+294,VG Toolkit,293,GENO
+295,Graph Model for Variants,293|127,GRDB
+296,Read Mapping to Graphs,293|63,GENO
+297,Genome Annotation,289|10,GENO
+298,Gene Prediction,297,GENO
+299,Next-Gen Sequencing,15,GENO
+300,Short Reads,299,GENO
+301,Long Reads,299,GENO
+302,Sequencing Depth,299,GENO
+303,Coverage,302,GENO
+304,Variant Calling,289|62,GENO
+305,SNP Calling,304|23,GENO
+306,Structural Variant Calling,304|25,GENO
+307,Genotyping,304,GENO
+308,Haplotype,307,GENO
+309,Phasing,308,GENO
+310,Population Reference Graph,292|307,GENO
+311,Transcriptome,14|5,TRNS
+312,RNA-Seq Pipeline,311|299,TRNS
+313,Read Quality Trimming,312|70,TRNS
+314,Read Alignment,312|289,TRNS
+315,Transcript Quantification,314,TRNS
+316,Differential Expression,315,TRNS
+317,Fold Change,316,TRNS
+318,Statistical Testing for DE,316,TRNS
+319,False Discovery Rate,318,TRNS
+320,Transcription Factor,14|4,TRNS
+321,Promoter Region,320,TRNS
+322,Enhancer Region,320,TRNS
+323,Cis-Regulatory Element,321|322,TRNS
+324,Operon,321,TRNS
+325,Gene Regulatory Network,320|73,TRNS
+326,Co-Expression Network,316|74,TRNS
+327,WGCNA,326,TRNS
+328,ARACNE,325|330,TRNS
+329,GENIE3,325,TRNS
+330,Mutual Information,,TRNS
+331,Network Inference Methods,325|326,TRNS
+332,Boolean Network Model,325,TRNS
+333,Bayesian Network Model,325|189,TRNS
+334,Graph Model for Regulation,325|127,GRDB
+335,Single-Cell RNA-Seq,312,TRNS
+336,Cell Type Clustering,335,TRNS
+337,Trajectory Analysis,336,TRNS
+338,Spatial Transcriptomics,335,TRNS
+339,Alternative Splicing,5|12,TRNS
+340,Non-Coding RNA,5|12,TRNS
+341,Metabolic Network,76|73,PATH
+342,Metabolite,341,PATH
+343,Enzyme,341|6,PATH
+344,Enzyme Kinetics,343,PATH
+345,Metabolic Pathway,341,PATH
+346,Bipartite Metabolic Graph,341|76,PATH
+347,KEGG Pathways,39|345,PATH
+348,Reactome Pathways,40|345,PATH
+349,BioCyc Pathways,48|345,PATH
+350,Flux Balance Analysis,341|352,PATH
+351,Constraint-Based Modeling,350,PATH
+352,Stoichiometric Matrix,341|109,PATH
+353,Objective Function,350,PATH
+354,Metabolic Flux,350,PATH
+355,Graph Model for Metabolism,346|127,GRDB
+356,Genome-Scale Model,341|11,PATH
+357,Essential Reaction,356|350,PATH
+358,Minimal Growth Medium,357,PATH
+359,Metabolic Engineering,356,PATH
+360,Synthetic Biology,359,PATH
+361,Pathway Enrichment,345|402,PATH
+362,Metabolomics,342,PATH
+363,Mass Spec for Metabolomics,362,PATH
+364,Metabolic Network Compare,341|278,PATH
+365,Metabolic Graph Alignment,364|277,PATH
+366,Cell Signaling Cascade,73|17,PATH
+367,Signal Transduction,366,PATH
+368,Receptor,367,PATH
+369,Kinase Cascade,367,PATH
+370,Second Messenger,367,PATH
+371,Directed Signaling Graph,366|73,PATH
+372,Feedback Loop,371|107,PATH
+373,Feed-Forward Loop,371|107,PATH
+374,Network Medicine,251|375,PATH
+375,Disease Module,251|261,PATH
+376,Network Proximity,374|97,PATH
+377,Guilt by Association,374,PATH
+378,Drug Target,374|242,PATH
+379,Drug Target Validation,378,PATH
+380,Drug Repurposing,378|416,PATH
+381,Drug-Target-Disease Graph,378|73,PATH
+382,Graph Model for Repurposing,381|127,GRDB
+383,Pharmacogenomics,380|14,PATH
+384,Cancer Driver Genes,22|44,PATH
+385,Tumor Suppressor Gene,384|10,PATH
+386,Oncogene,384|10,PATH
+387,Cancer Network Analysis,384|251,PATH
+388,Precision Medicine,383|374,PATH
+389,Biomarker Discovery,388|316,PATH
+390,Clinical Network Analysis,374,PATH
+391,Side Effect Prediction,380,PATH
+392,Drug-Drug Interaction Graph,380|73,PATH
+393,Adverse Event Network,391|72,PATH
+394,Comorbidity Network,374|72,PATH
+395,Disease Gene Prioritization,374|377,PATH
+396,Knowledge Graph,72|408,KNOW
+397,Biomedical Knowledge Graph,396|31,KNOW
+398,Gene Ontology,45|405,KNOW
+399,GO Molecular Function,398,KNOW
+400,GO Biological Process,398,KNOW
+401,GO Cellular Component,398,KNOW
+402,GO Term Enrichment,398,KNOW
+403,Disease Ontology,46|405,KNOW
+404,Human Phenotype Ontology,47|405,KNOW
+405,Ontology Structure,73,KNOW
+406,Ontology Reasoning,405,KNOW
+407,Semantic Similarity,405,KNOW
+408,Heterogeneous Data,31,KNOW
+409,Data Integration,408,KNOW
+410,Schema Mapping,409,KNOW
+411,Entity Resolution,409,KNOW
+412,Graph Embeddings,396,KNOW
+413,Node2Vec,412|94,KNOW
+414,TransE,412,KNOW
+415,Knowledge Graph Embedding,412|396,KNOW
+416,Link Prediction,412,KNOW
+417,Triple Classification,415,KNOW
+418,Relation Extraction,420,KNOW
+419,Named Entity Recognition,420,KNOW
+420,Text Mining for Biology,31,KNOW
+421,Graph Neural Networks,412|72,KNOW
+422,Message Passing,421,KNOW
+423,GNN for Molecules,421|242,KNOW
+424,Graph Model for Knowledge,397|127,GRDB
+425,Hetionet,397|50,KNOW
+426,Multi-Omics Integration,409|431,KNOW
+427,Genomics Layer,426|11,KNOW
+428,Transcriptomics Layer,426|311,KNOW
+429,Proteomics Layer,426|251,KNOW
+430,Metabolomics Layer,426|362,KNOW
+431,Unified Omics Graph,409|72,KNOW
+432,Graph Model for Multi-Omics,431|127,GRDB
+433,Community Detection,92,GRTH
+434,Louvain Algorithm,433,GRTH
+435,Leiden Algorithm,433,GRTH
+436,Modularity Score,433,GRTH
+437,Graph Clustering,433,GRTH
+438,Spectral Clustering,437|109,GRTH
+439,Graph Visualization,72,GRTH
+440,Vis-Network Library,439,GRTH
+441,Cytoscape Tool,439,GRTH
+442,Force-Directed Layout,439,GRTH
+443,Hierarchical Layout,439,GRTH
+444,Network Layout Algorithms,439,GRTH
+445,Patient Similarity Network,426|74,KNOW
+446,Clinical Data Graph,445,KNOW
+447,Survival Analysis,446,KNOW
+448,Patient Stratification,445|433,KNOW
+449,Network-Based Biomarkers,448|389,KNOW
+450,Python for Bioinformatics,,TOOL
+451,Biopython,450|31,TOOL
+452,NetworkX,450|72,TOOL
+453,Pandas for Bioinformatics,450,TOOL
+454,Scikit-Learn,450,TOOL
+455,Jupyter Notebooks,450,TOOL
+456,Matplotlib,450,TOOL
+457,Seaborn,456,TOOL
+458,Neo4j Python Driver,450|114,TOOL
+459,Cytoscape API,441|450,TOOL
+460,Data Wrangling,453,TOOL
+461,Reproducible Analysis,455|462,TOOL
+462,Version Control for Science,,TOOL
+463,Workflow Managers,461,TOOL
+464,Conda Environments,450,TOOL
+465,Capstone Project Design,466,TOOL
+466,Graph Data Model Design,127,TOOL
+467,Antibiotic Resistance Graph,397|198,TOOL
+468,Resistance Gene Network,467,TOOL
+469,Mobile Genetic Elements,198|467,TOOL
+470,Rare Disease Knowledge Graph,397|404,TOOL
+471,Phenotype-Gene Mapping,470,TOOL
+472,Metabolic Model Comparison,356|364,TOOL
+473,Cross-Species Graph Align,472|365,TOOL
+474,Protein Function Predict,412|249,TOOL
+475,GO Annotation Prediction,474|398,TOOL
+476,Multi-Omics Stratification,448|426,TOOL
+477,Patient Subgroup Discovery,476|433,TOOL
+478,Graph-Based Discovery,416|396,TOOL
+479,Bench to Bedside Pipeline,388|478,TOOL
+480,Future of Graph Bioinform,478,TOOL

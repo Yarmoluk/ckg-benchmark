@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,American Sign Language,,GEN
+2,Deaf Community,,GEN
+3,Deaf Culture,2,GEN
+4,Visual Communication,1,GEN
+5,Manual Communication,1,GEN
+6,Handshape,4|5,GEN
+7,Palm Orientation,4|5,GEN
+8,Movement,4|5,GEN
+9,Location,4|5,GEN
+10,Facial Expression,4,GEN
+11,Fingerspelling,6|7|8|9,GEN
+12,ASL Alphabet,11,GEN
+13,Letter A Through E,12,GEN
+14,Letter F Through J,12,GEN
+15,Letter K Through O,12,GEN
+16,Letter P Through T,12,GEN
+17,Letter U Through Z,12,GEN
+18,Double Letters,12,GEN
+19,Fingerspelling Speed,11,GEN
+20,Clarity in Fingerspelling,11|19,GEN
+21,Number 1,6,GEN
+22,Number 2,6,GEN
+23,Number 3,6,GEN
+24,Number 4,6,GEN
+25,Number 5,6,GEN
+26,Numbers 6-10,21|22|23|24|25,GEN
+27,Counting to 20,26,GEN
+28,Counting to 100,27,GEN
+29,Age Signs,26,GEN
+30,Time Expressions,26,GEN
+31,Hello,6|8,GEN
+32,Goodbye,6|8,GEN
+33,Good Morning,31|30,GEN
+34,Please,6|8,GEN
+35,Thank You,6|8,GEN
+36,You're Welcome,35,GEN
+37,Excuse Me,6|8,GEN
+38,Sorry,6|8|10,GEN
+39,Yes,6,GEN
+40,No,6,GEN
+41,Maybe,39|40,GEN
+42,I Don't Know,39|40,GEN
+43,Help,6|8,GEN
+44,Finished,6|8,GEN
+45,Name,6|8|11,GEN
+46,What,6,GEN
+47,Who,6,GEN
+48,Where,6,GEN
+49,When,6,GEN
+50,Why,6,GEN
+51,I,6|9,GEN
+52,You,6|9,GEN
+53,He/She,6|9,GEN
+54,We,51|52,GEN
+55,They,51|52,GEN
+56,This,6|9,GEN
+57,That,6|9,GEN
+58,Here,6|9,GEN
+59,There,6|9,GEN
+60,Signing Space,9|51|52,GEN
+61,Directionality,60,GEN
+62,Indexing,60|51|52,GEN
+63,Topicalization,60,GEN
+64,Negation,40|60,GEN
+65,Question Formation,46|47|48|49|50|60,GEN
+66,Happy,10,GEN
+67,Sad,10,GEN
+68,Angry,10,GEN
+69,Excited,10,GEN
+70,Nervous,10,GEN
+71,Scared,10,GEN
+72,Worried,10,GEN
+73,Calm,10,GEN
+74,Surprised,10,GEN
+75,Confused,10,GEN
+76,Tired,10,GEN
+77,Proud,10,GEN
+78,Embarrassed,10,GEN
+79,Shy,10,GEN
+80,Brave,10,GEN
+81,Love,10|6,GEN
+82,Like,10|6,GEN
+83,Dislike,10|6,GEN
+84,Feeling Words,66|67|68,GEN
+85,Emotion Intensity,10|84,GEN
+86,Family,6,GEN
+87,Mother,86,GEN
+88,Father,86,GEN
+89,Sister,86,GEN
+90,Brother,86,GEN
+91,Grandmother,86|87|88,GEN
+92,Grandfather,86|87|88,GEN
+93,Aunt,86,GEN
+94,Uncle,86,GEN
+95,Baby,86,GEN
+96,Friend,6,GEN
+97,Teacher,6,GEN
+98,Student,6,GEN
+99,Boy,6,GEN
+100,Girl,6,GEN
+101,Food,6,GEN
+102,Eat,6|8,GEN
+103,Drink,6|8,GEN
+104,Hungry,10|101,GEN
+105,Thirsty,10|101,GEN
+106,Breakfast,101|30,GEN
+107,Lunch,101|30,GEN
+108,Dinner,101|30,GEN
+109,Apple,101,GEN
+110,Banana,101,GEN
+111,Pizza,101,GEN
+112,Sandwich,101,GEN
+113,Milk,101,GEN
+114,Water,101,GEN
+115,Cookie,101,GEN
+116,Ice Cream,101,GEN
+117,Favorite,82,GEN
+118,Like (Preference),82,GEN
+119,Don't Like,83,GEN
+120,Delicious,101|10,GEN
+121,Animal,6,GEN
+122,Dog,121,GEN
+123,Cat,121,GEN
+124,Bird,121,GEN
+125,Fish,121,GEN
+126,Horse,121,GEN
+127,Bear,121,GEN
+128,Butterfly,121,GEN
+129,Tree,6,GEN
+130,Flower,6,GEN
+131,Sun,6,GEN
+132,Rain,6,GEN
+133,Color,6,GEN
+134,Nature,129|130|131|132,GEN
+135,Environment,134,GEN
+136,Red,133,GEN
+137,Blue,133,GEN
+138,Yellow,133,GEN
+139,Green,133,GEN
+140,Big,6|10,GEN
+141,Small,6|10,GEN
+142,Hot,6|10,GEN
+143,Cold,6|10,GEN
+144,Fast,6|8,GEN
+145,Slow,6|8,GEN
+146,New,6,GEN
+147,Old,6,GEN
+148,Good,6|10,GEN
+149,Bad,6|10,GEN
+150,Beautiful,6|10,GEN
+151,Play,6|8,GEN
+152,Run,6|8,GEN
+153,Jump,6|8,GEN
+154,Walk,6|8,GEN
+155,Sit,6|8,GEN
+156,Stand,6|8,GEN
+157,Sleep,6|8,GEN
+158,Read,6|8,GEN
+159,Write,6|8,GEN
+160,Draw,6|8,GEN
+161,Watch,6|8,GEN
+162,Learn,6|8,GEN
+163,Teach,6|8|162,GEN
+164,Practice,162,GEN
+165,Perform,6|8|10,GEN
+166,Classifier,60|61,GEN
+167,Role Shift,60|10|51|52|53,GEN
+168,Time Marker,30|60,GEN
+169,Subject-Verb-Object,51|52|60,GEN
+170,Depicting Verb,8|166,GEN
+171,Spatial Reference,60|61,GEN
+172,Agreement Verb,51|52|61,GEN
+173,Rhetorical Question,65|10,GEN
+174,Conditional Statement,60|65,GEN
+175,Listing,60|26,GEN
+176,Non-Manual Signal,10,GEN
+177,Eyebrow Raise,176,GEN
+178,Eyebrow Furrow,176,GEN
+179,Head Nod,176,GEN
+180,Head Shake,176,GEN
+181,Eye Gaze,176,GEN
+182,Mouth Morpheme,176,GEN
+183,Body Lean,176,GEN
+184,Question Face,176|65,GEN
+185,Statement Face,176,GEN
+186,Deaf Identity,2|3,GEN
+187,Deaf Pride,186,GEN
+188,Gallaudet University,3|186,GEN
+189,Sign Language Interpreter,1|3,GEN
+190,Deaf School,3|186,GEN
+191,Visual Alert System,4|186,GEN
+192,Captioning,4|186,GEN
+193,ASL Recognition,1|3,GEN
+194,Deaf Art,3|186,GEN
+195,Regional Sign Variation,1|3,GEN
+196,Eye Contact,4|10,GEN
+197,Getting Attention,196,GEN
+198,Signing Clearly,20|60,GEN
+199,Storytelling,60|10|165,GEN
+200,Self-Expression,10|60|165,GEN

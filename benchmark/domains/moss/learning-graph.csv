@@ -1,0 +1,401 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Moss Definition,,FOUND
+2,Bryophytes,1,FOUND
+3,Liverworts,2,FOUND
+4,Hornworts,2,FOUND
+5,Non-Vascular Plants,1,FOUND
+6,Vascular Plants,,FOUND
+7,Plant Evolution,,FOUND
+8,Land Plant Origins,7,FOUND
+9,Moss Diversity,1|2,FOUND
+10,Moss Classification,9|2,FOUND
+11,Moss vs Ferns,1|6,FOUND
+12,Moss vs Grass,1|6,FOUND
+13,Moss vs Succulents,1|6,FOUND
+14,Moss vs Algae,1|8,FOUND
+15,Vascular System,6,FOUND
+16,Non-Vascular Transport,5|15,FOUND
+17,Growth Rate Comparison,1|6,FOUND
+18,Environmental Resilience,1|7,FOUND
+19,Gametophyte,2|32,FOUND
+20,Sporophyte,2|32,FOUND
+21,Alternation of Generations,19|20,FOUND
+22,Rhizoids,5|19,FOUND
+23,Moss Leaves,19|36,FOUND
+24,Moss Stems,19|36,FOUND
+25,Spore Capsule,20|28,FOUND
+26,Seta,20|25,FOUND
+27,Calyptra,20|25,FOUND
+28,Spores,2,FOUND
+29,Spore Dispersal,28|25,FOUND
+30,Spores vs Seeds,28|6,FOUND
+31,Water in Fertilization,19|34,FOUND
+32,Moss Life Cycle,1|2,FOUND
+33,Protonema,28|32,FOUND
+34,Moss Sexual Reproduction,19|20,FOUND
+35,Asexual Reproduction,1|32,FOUND
+36,Moss Cell Structure,1|384,FOUND
+37,Chloroplasts in Moss,36|38,FOUND
+38,Photosynthesis in Moss,36|374,FOUND
+39,Sheet Moss,1|58,TYPES
+40,Cushion Moss,1|58,TYPES
+41,Haircap Moss,1|56,TYPES
+42,Rock Cap Moss,1|58,TYPES
+43,Sphagnum Moss,1|44,TYPES
+44,Peat Moss,1|2,TYPES
+45,Fern Moss,1|57,TYPES
+46,Mood Moss,1|56,TYPES
+47,Reindeer Moss,1|10,TYPES
+48,Java Moss,1|53,TYPES
+49,Star Moss,1|56,TYPES
+50,Broom Moss,1|56,TYPES
+51,Plume Moss,1|57,TYPES
+52,Forest Moss,1|55,TYPES
+53,Aquatic Moss,1|55,TYPES
+54,Urban Moss,1|55|97,TYPES
+55,Moss Habitat Types,1|66,TYPES
+56,Acrocarpous Moss,1|58,TYPES
+57,Pleurocarpous Moss,1|58,TYPES
+58,Moss Growth Forms,1|9,TYPES
+59,Moss Identification,10|63|64|65,TYPES
+60,Moss Field Guides,59|62,TYPES
+61,Dichotomous Key Basics,59|386,TYPES
+62,Moss Photography,59|350,TYPES
+63,Hand Lens Use,1|346,TYPES
+64,Moss Color Variation,1|36,TYPES
+65,Moss Texture,1|58,TYPES
+66,Moss Ecology,1|67,ECOL
+67,Ecosystem Services,,ECOL
+68,Water Retention,1|77|78,WATER
+69,Soil Formation,1|372,ECOL
+70,Primary Succession,66,ECOL
+71,Microhabitats,66,ECOL
+72,Moss in Forests,52|66,ECOL
+73,Moss in Tundra,66|84,ECOL
+74,Moss in Wetlands,66|108,ECOL
+75,Moss in Deserts,66|84,ECOL
+76,Moss Biodiversity,9|66|364,ECOL
+77,Capillary Action,16|375,WATER
+78,Water Absorption Mechanics,16|77,WATER
+79,Fog Harvesting,78,WATER
+80,Rainfall Interception,68|82,WATER
+81,Evapotranspiration,68|82,WATER
+82,Hydrological Cycle,375,WATER
+83,Moss Water Storage,68|110,WATER
+84,Desiccation Tolerance,18|68,WATER
+85,Rehydration Ability,84,WATER
+86,Carbon Sequestration,38|87,WATER
+87,Carbon Cycle,,WATER
+88,Moss as Carbon Sink,86|87,WATER
+89,Climate Change Effects,87,WATER
+90,Moss Climate Indicators,89|94,WATER
+91,Temperature Sensitivity,89|18,WATER
+92,Pollution Sensitivity,66,WATER
+93,Air Quality Monitoring,92|98,WATER
+94,Bioindicator Species,66|92,ECOL
+95,Heavy Metal Absorption,92|78,WATER
+96,Moss and Acid Rain,92|373,WATER
+97,Urban Ecology,66|379,ECOL
+98,Ecological Monitoring,66|305,ECOL
+99,Moss Microbiome,66,ECOL
+100,Moss-Associated Bacteria,99,ECOL
+101,Moss-Associated Fungi,99,ECOL
+102,Nitrogen Fixation,100|376,ECOL
+103,Symbiotic Systems,66,ECOL
+104,Decomposition Role,66|376,ECOL
+105,Nutrient Cycling,376|104,ECOL
+106,Moss Food Webs,66|377,ECOL
+107,Invertebrate Habitats,66|71,ECOL
+108,Peat Bogs,44|109,ECOL
+109,Peatland Ecology,44|66,ECOL
+110,Sphagnum Water Holding,43|68,ECOL
+111,Wetland Conservation,74|362,ECOL
+112,Moss Garden Benefits,1|113|116,GARD
+113,Low Maintenance Gardens,1|67,GARD
+114,No Mowing Required,112|140,GARD
+115,Shade Tolerance,1|118,GARD
+116,Moss Aesthetic Qualities,1|64|65,GARD
+117,Site Assessment,118|119|120|122,GARD
+118,Light Conditions,374,GARD
+119,Moisture Levels,375,GARD
+120,Soil Acidity,372|373,GARD
+121,Soil pH Testing,120|306,GARD
+122,Climate Zones,,GARD
+123,Hardiness Zones,122,GARD
+124,Species Selection,117|59,GARD
+125,Moss Garden Site Prep,117|127,GARD
+126,Removing Existing Grass,125,GARD
+127,Soil Compaction,372,GARD
+128,Transplanting Moss,124|125|236,GARD
+129,Encouraging Growth,128|130,GARD
+130,Watering Techniques,119|269,GARD
+131,Japanese Moss Gardens,224|112,GARD
+132,Woodland Garden Style,112|138,GARD
+133,Minimalist Zen Layouts,226|112,GARD
+134,Moss Pathways,112|135,GARD
+135,Moss and Stone Design,112|116,GARD
+136,Moss Ground Cover,112|124,GARD
+137,Companion Plants,124|138,GARD
+138,Shade Garden Design,112|115|118,GARD
+139,Rain Garden Integration,112|196,GARD
+140,Moss Lawn Alternative,112|141,GARD
+141,Turf Grass Comparison,112|6,GARD
+142,Cost Comparison,140|399,GARD
+143,Water Use Comparison,140|367,GARD
+144,Chemical Input Reduction,140|361,GARD
+145,Carbon Footprint Analysis,140|86|400,GARD
+146,Maintenance Calendar,129|382,GARD
+147,Seasonal Moss Care,129|148|149,GARD
+148,Winter Dormancy,1|84,GARD
+149,Spring Recovery,148|85,GARD
+150,Mossarium Definition,1|112,INDOOR
+151,Open Mossariums,150|160,INDOOR
+152,Closed Mossariums,150|160,INDOOR
+153,Mossarium Materials,150|154,INDOOR
+154,Glass Container Selection,150,INDOOR
+155,Substrate Layers,150|257,INDOOR
+156,Drainage Layer,155,INDOOR
+157,Activated Charcoal Layer,155,INDOOR
+158,Mossarium Soil Mix,155|372,INDOOR
+159,Mossarium Assembly,153|155|156|157|158,INDOOR
+160,Humidity Balance,150|266,INDOOR
+161,Condensation Management,152|160,INDOOR
+162,Mossarium Lighting,150|263,INDOOR
+163,LED Grow Lights,162|265,INDOOR
+164,Natural Light Needs,162|118,INDOOR
+165,Mossarium Maintenance,159|166,INDOOR
+166,Misting Techniques,130,INDOOR
+167,Pruning Moss,159,INDOOR
+168,Mold Prevention,254,INDOOR
+169,Pest Management,253,INDOOR
+170,Moss Tabletop Designs,150|172,INDOOR
+171,Glass Installations,150|154,INDOOR
+172,Miniature Landscapes,150|357,INDOOR
+173,Living Moss Walls,178|176,INDOOR
+174,Preserved Moss,1,INDOOR
+175,Living vs Preserved Moss,174|173,INDOOR
+176,Moss Wall Irrigation,178|262,INDOOR
+177,Structural Requirements,173|190,INDOOR
+178,Vertical Garden Systems,150|210,INDOOR
+179,Biophilic Design,183|200,INDOOR
+180,Stress Reduction Benefits,179|182,INDOOR
+181,Indoor Air Quality,179,INDOOR
+182,Psychological Benefits,179|183,INDOOR
+183,Nature Connection Indoors,150,INDOOR
+184,Office Moss Installations,179|201,INDOOR
+185,Green Roofs,210,ARCH
+186,Green Roof Types,185,ARCH
+187,Extensive Green Roofs,186,ARCH
+188,Intensive Green Roofs,186,ARCH
+189,Moss Roof Benefits,1|194|196,ARCH
+190,Roof Structural Load,185|213,ARCH
+191,Roof Waterproofing,185|213,ARCH
+192,Passive Cooling,195,ARCH
+193,Moisture Buffering,68|213,ARCH
+194,Sound Absorption,213,ARCH
+195,Thermal Insulation,213,ARCH
+196,Stormwater Management,68|82|210,ARCH
+197,Runoff Reduction,196|209,ARCH
+198,Heat Island Effect,97|366,ARCH
+199,Heat Island Mitigation,198|185|200,ARCH
+200,Urban Green Spaces,97|210,ARCH
+201,Moss in Commercial Buildings,179|203,ARCH
+202,Office Branding Nature,201|179,ARCH
+203,Maintenance Economics,399,ARCH
+204,Sustainable Architecture,185|211|363,ARCH
+205,LEED Certification,204,ARCH
+206,Living Building Challenge,204,ARCH
+207,Climate-Resilient Cities,199|196|204,ARCH
+208,Urban Biodiversity,200|364,ARCH
+209,Permeable Surfaces,196|210,ARCH
+210,Green Infrastructure,67|97,ARCH
+211,Sustainable Homes,193|194|363,ARCH
+212,Energy Efficiency,192|195,ARCH
+213,Building Envelope,,ARCH
+214,Moss Art Overview,1|116,ART
+215,Framed Moss Art,214|174,ART
+216,Moss Paintings,214|221,ART
+217,Moss Graffiti,214|240,ART
+218,Living Sculptures,214|219,ART
+219,Sculpture Armatures,214|220,ART
+220,Moss Substrates for Art,214|257,ART
+221,Moss Color in Design,64|214,ART
+222,Texture in Moss Art,65|214,ART
+223,Moss Photography Art,62|214,ART
+224,Japanese Garden Design,225|226,ART
+225,Wabi-Sabi Philosophy,228,ART
+226,Zen Garden Principles,225,ART
+227,Moss in Ikebana,224|1,ART
+228,Historical Moss Uses,1|7,ART
+229,Celtic Moss Traditions,228,ART
+230,Moss in Literature,228,ART
+231,Moss in Folklore,228,ART
+232,Contemplative Gardens,224|234,ART
+233,Sacred Groves,228|232,ART
+234,Healing Gardens,179|283,ART
+235,Sensory Garden Design,234|285,ART
+236,Ethical Harvesting,1|237|362,PRACT
+237,Wild Harvesting Concerns,1|362,PRACT
+238,Harvesting Permits,237|368,PRACT
+239,Sustainable Collection,236|249,PRACT
+240,Moss Propagation,1|35,PRACT
+241,Fragmentation Method,240,PRACT
+242,Moss Slurry Method,240,PRACT
+243,Slurry Myths,242|359,PRACT
+244,Division Method,240,PRACT
+245,Spore Propagation,240|28,PRACT
+246,Growth Medium Prep,240|257,PRACT
+247,Moss Nursery Setup,240|246|248,PRACT
+248,Commercial Suppliers,240|249,PRACT
+249,Sustainability Certs,363,PRACT
+250,Browning Moss Causes,1|251|252,PRACT
+251,Drying Issues,1|84,PRACT
+252,Overwatering Myths,1|359,PRACT
+253,Moss Pest Control,1,PRACT
+254,Mold Management,1,PRACT
+255,Algae Competition,1|14|394,PRACT
+256,Weed Removal,1|394,PRACT
+257,Substrate Selection,372,PRACT
+258,Perlite Use,257,PRACT
+259,Peat-Free Substrates,257|363,PRACT
+260,Mist Systems,130,PRACT
+261,Spray Bottle Technique,130,PRACT
+262,Automated Misting,260,PRACT
+263,Lighting Options,118|374,PRACT
+264,Natural vs Artificial Light,263,PRACT
+265,Light Spectrum Needs,263|374,PRACT
+266,Humidity Control,119|268,PRACT
+267,Temperature Management,122|268,PRACT
+268,Air Circulation,,PRACT
+269,Water Quality,375,PRACT
+270,Rainwater Collection,269|367,PRACT
+271,Distilled Water Use,269,PRACT
+272,Moss in K-12 Education,1|276,EDUC
+273,Hands-On Moss Labs,272|348,EDUC
+274,Outdoor Exploration,272,EDUC
+275,Simple Experiments,272|307,EDUC
+276,Moss STEM Integration,1|292,EDUC
+277,Biology Lesson Plans,272|276,EDUC
+278,Systems Thinking Labs,272|292,EDUC
+279,Microscope Activities,272|349,EDUC
+280,Moss Journaling,272|347,EDUC
+281,Nature Walk Curriculum,272|274,EDUC
+282,Moss in Senior Living,1,EDUC
+283,Therapeutic Gardens,112|286,EDUC
+284,Low-Maintenance Greenery,112|113,EDUC
+285,Sensory Engagement,283,EDUC
+286,Horticultural Therapy,112,EDUC
+287,Memory Care Gardens,282|286,EDUC
+288,Accessibility Design,282|357,EDUC
+289,Intergenerational Projects,272|282|355,EDUC
+290,Community Moss Gardens,112|289|355,EDUC
+291,Citizen Science,311,EDUC
+292,Systems Thinking,296|297,ADV
+293,Distributed Systems,292|16,ADV
+294,Resilience Patterns,292|18,ADV
+295,Low-Resource Optimization,292|16,ADV
+296,Feedback Loops,,ADV
+297,Emergent Properties,,ADV
+298,Biomimicry,292,ADV
+299,Water Capture Strategies,78|79,ADV
+300,Surface Optimization,298,ADV
+301,Passive Design Lessons,298|192,ADV
+302,Bio-Inspired Materials,298|333,ADV
+303,Growth Rate Measurement,305|17,ADV
+304,Moisture Sensors,305|119,ADV
+305,Data Collection Methods,307,ADV
+306,Experimental Design,307|308,ADV
+307,Scientific Method Review,,ADV
+308,Hypothesis Testing,307,ADV
+309,Data Visualization,305,ADV
+310,Statistical Analysis,305|308,ADV
+311,Citizen Science Projects,305|312,ADV
+312,iNaturalist Platform,305|350,ADV
+313,Moss Surveys,311|314,ADV
+314,Species Mapping,311|59,ADV
+315,AI Moss Identification,316|59,ADV
+316,Image Recognition,317,ADV
+317,Machine Learning Basics,,ADV
+318,Garden Recommendation AI,315|124|317,ADV
+319,Adaptive Learning Systems,317|318,ADV
+320,MicroSim Development,321|323,ADV
+321,Simulation Modeling,310,ADV
+322,Parameter Tuning,320|321,ADV
+323,Interactive Visualization,309,ADV
+324,Moss in Space Habitats,325|327,FUTURE
+325,Closed-Loop Ecosystems,292,FUTURE
+326,Life Support Systems,325,FUTURE
+327,Low-Resource Plants,5|295,FUTURE
+328,Mars Habitat Design,324|325,FUTURE
+329,Synthetic Biology,385,FUTURE
+330,Engineered Moss,329|340,FUTURE
+331,Gene Editing Overview,329|385,FUTURE
+332,Bioengineering Ethics,329|361,FUTURE
+333,Bio-Materials,340,FUTURE
+334,Moss-Based Insulation,333|195,FUTURE
+335,Carbon-Negative Materials,333|86,FUTURE
+336,Sustainable Packaging,333|337,FUTURE
+337,Biodegradable Materials,333,FUTURE
+338,Circular Economy,363,FUTURE
+339,Green Manufacturing,338|363,FUTURE
+340,Moss Biotechnology,1,FUTURE
+341,Phytoremediation,95|342,FUTURE
+342,Environmental Restoration,371,FUTURE
+343,Rewilding with Moss,342|369,FUTURE
+344,Ecosystem Engineering,342|292,FUTURE
+345,Future Urban Design,207|204,FUTURE
+346,Scientific Observation,,XCUT
+347,Field Notebook Skills,346,XCUT
+348,Lab Safety,,XCUT
+349,Microscopy Basics,346,XCUT
+350,Digital Documentation,346,XCUT
+351,Research Skills,352|354,XCUT
+352,Literature Review Basics,360,XCUT
+353,Presentation Skills,354,XCUT
+354,Technical Writing,,XCUT
+355,Collaborative Learning,,XCUT
+356,Project Management,357,XCUT
+357,Design Thinking,,XCUT
+358,Iterative Prototyping,357,XCUT
+359,Evidence-Based Practice,307|360,XCUT
+360,Critical Thinking,,XCUT
+361,Environmental Ethics,360,XCUT
+362,Conservation Principles,361,XCUT
+363,Sustainability Principles,361,XCUT
+364,Biodiversity Value,362|66,XCUT
+365,Ecosystem Health,66|364,XCUT
+366,Climate Literacy,87|89,XCUT
+367,Water Stewardship,375|361,XCUT
+368,Land Use Ethics,361,XCUT
+369,Native Species Priority,362|66,XCUT
+370,Invasive Species Aware,362|66,XCUT
+371,Habitat Restoration,362,XCUT
+372,Soil Science Basics,,XCUT
+373,pH and Chemistry Basics,,XCUT
+374,Light and Energy Basics,,XCUT
+375,Water Cycle Basics,,XCUT
+376,Nutrient Cycles,87|375,XCUT
+377,Food Web Concepts,376,XCUT
+378,Population Dynamics,379,XCUT
+379,Community Ecology,66,XCUT
+380,Landscape Ecology,379|381,XCUT
+381,Biogeography Basics,7,XCUT
+382,Phenology,66|122,XCUT
+383,Plant Anatomy Basics,6,XCUT
+384,Cell Biology Basics,,XCUT
+385,Genetics Basics,384,XCUT
+386,Taxonomy Basics,10,XCUT
+387,Evolutionary Biology,7|389,XCUT
+388,Adaptation,387,XCUT
+389,Natural Selection,,XCUT
+390,Convergent Evolution,387|388,XCUT
+391,Coevolution,387,XCUT
+392,Mutualism,103,XCUT
+393,Parasitism,66,XCUT
+394,Competition,379,XCUT
+395,Ecological Niche,379|394,XCUT
+396,Succession,66|70,XCUT
+397,Disturbance Ecology,396,XCUT
+398,Restoration Ecology,362,XCUT
+399,Cost-Benefit Analysis,360,XCUT
+400,Life Cycle Assessment,363|399,XCUT

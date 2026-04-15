@@ -1,0 +1,381 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Ecology,,FOUND
+2,Ecosystem,1,FOUND
+3,Biotic Factors,2,FOUND
+4,Abiotic Factors,2,FOUND
+5,Biodiversity,1|6,FOUND
+6,Species,1,FOUND
+7,Population,6,FOUND
+8,Community,6|7,FOUND
+9,Habitat,2|4,FOUND
+10,Niche,6|9,FOUND
+11,Biosphere,2,FOUND
+12,Biome,2|9,FOUND
+13,Energy,,FOUND
+14,Matter,,FOUND
+15,Nutrients,14,FOUND
+16,Photosynthesis,13|14,FOUND
+17,Cellular Respiration,13|16,FOUND
+18,Organic Molecules,14,FOUND
+19,Inorganic Molecules,14,FOUND
+20,Water Properties,14,FOUND
+21,Terrestrial Biomes,12,ECOS
+22,Tropical Rainforest,21,ECOS
+23,Temperate Forest,21,ECOS
+24,Desert Biome,21,ECOS
+25,Tundra Biome,21,ECOS
+26,Grassland Biome,21,ECOS
+27,Chaparral Biome,21,ECOS
+28,Taiga Biome,21,ECOS
+29,Aquatic Biomes,12|20,ECOS
+30,Freshwater Ecosystems,29,ECOS
+31,Rivers and Streams,30,ECOS
+32,Lakes and Ponds,30,ECOS
+33,Wetlands,30,ECOS
+34,Estuaries,30|38,ECOS
+35,Open Ocean,38,ECOS
+36,Coral Reefs,38,ECOS
+37,Deep Ocean,38,ECOS
+38,Marine Ecosystems,29,ECOS
+39,Producers,16|42,ECOS
+40,Consumers,17|42,ECOS
+41,Decomposers,17|42,ECOS
+42,Trophic Levels,13|2,ECOS
+43,Food Chains,39|40|41,ECOS
+44,Food Webs,43,ECOS
+45,Energy Pyramids,42|49,ECOS
+46,Primary Productivity,16|39,ENFL
+47,Gross Primary Productivity,46,ENFL
+48,Net Primary Productivity,47|17,ENFL
+49,Ten Percent Rule,42|50,ENFL
+50,Energy Transfer,13|42,ENFL
+51,Biomass,46,ENFL
+52,Autotrophs,16,ENFL
+53,Heterotrophs,17|40,ENFL
+54,Chemosynthesis,13|37,ENFL
+55,Thermodynamics in Ecology,13|50,ENFL
+56,Entropy in Ecosystems,55,ENFL
+57,Solar Energy Input,13,ENFL
+58,Energy Loss as Heat,55|17,ENFL
+59,Trophic Efficiency,49|50,ENFL
+60,Net Ecosystem Production,48|17,ENFL
+61,Biogeochemical Cycles,14|15|2,CYCL
+62,Carbon Cycle,61,CYCL
+63,Nitrogen Cycle,61,CYCL
+64,Phosphorus Cycle,61,CYCL
+65,Hydrologic Cycle,61|20,CYCL
+66,Nitrogen Fixation,63|15,CYCL
+67,Nitrification,63|66,CYCL
+68,Denitrification,63|67,CYCL
+69,Carbon Sequestration,62,CYCL
+70,Carbon Dioxide,14|62,CYCL
+71,Methane,14|62,CYCL
+72,Evaporation,65|20,CYCL
+73,Transpiration,65|16,CYCL
+74,Precipitation,65|72,CYCL
+75,Runoff,65|74,CYCL
+76,Groundwater,65|75,CYCL
+77,Aquifer,76,CYCL
+78,Nutrient Cycling,61|41,CYCL
+79,Decomposition,41|78,CYCL
+80,Phosphorus Runoff,64|75,CYCL
+81,Predation,40|82,INTR
+82,Competition,7|10,INTR
+83,Mutualism,86,INTR
+84,Commensalism,86,INTR
+85,Parasitism,86,INTR
+86,Symbiosis,3|6,INTR
+87,Herbivory,40|39,INTR
+88,Keystone Species,6|8|44,INTR
+89,Indicator Species,6|5,INTR
+90,Foundation Species,6|8,INTR
+91,Invasive Species,6|92,INTR
+92,Native Species,6|9,INTR
+93,Coevolution,81|86,INTR
+94,Mimicry,81|113,INTR
+95,Camouflage,81|113,INTR
+96,Competitive Exclusion,82|10,INTR
+97,Resource Partitioning,82|96,INTR
+98,Predator-Prey Dynamics,81|7,INTR
+99,Ecological Niche,10,INTR
+100,Interspecific Competition,82|6,INTR
+101,Genetic Diversity,5,BIOD
+102,Species Diversity,5|6,BIOD
+103,Ecosystem Diversity,5|2,BIOD
+104,Ecosystem Services,2|5,BIOD
+105,Provisioning Services,104,BIOD
+106,Regulating Services,104,BIOD
+107,Cultural Services,104,BIOD
+108,Supporting Services,104,BIOD
+109,Island Biogeography,110|5,BIOD
+110,Species-Area Relationship,5|9,BIOD
+111,Ecological Tolerance,6|4,BIOD
+112,Tolerance Range,111,BIOD
+113,Adaptations,6|114,BIOD
+114,Natural Selection,6|101,BIOD
+115,Natural Disruptions,2|4,BIOD
+116,Ecological Succession,115|8,BIOD
+117,Primary Succession,116,BIOD
+118,Secondary Succession,116,BIOD
+119,Pioneer Species,117,BIOD
+120,Climax Community,116|118,BIOD
+121,Population Size,7,POPU
+122,Population Density,121|9,POPU
+123,Population Distribution,121|9,POPU
+124,Generalist Species,10|111,POPU
+125,Specialist Species,10|111,POPU
+126,R-Selected Species,127|133,POPU
+127,K-Selected Species,132,POPU
+128,Survivorship Curves,129|130|131,POPU
+129,Type I Survivorship,7|140|141,POPU
+130,Type II Survivorship,7|140|141,POPU
+131,Type III Survivorship,7|140|141,POPU
+132,Carrying Capacity,7|137,POPU
+133,Exponential Growth,7|140,POPU
+134,Logistic Growth,133|132,POPU
+135,Overshoot,134|132,POPU
+136,Population Crash,135,POPU
+137,Limiting Factors,7|4,POPU
+138,Density-Dependent Factors,137|122,POPU
+139,Density-Independent Factors,137,POPU
+140,Birth Rate,7,POPU
+141,Death Rate,7,POPU
+142,Immigration,7|123,POPU
+143,Emigration,7|123,POPU
+144,Age Structure Diagrams,140|141|7,POPU
+145,Total Fertility Rate,140|7,POPU
+146,Rule of Seventy,133,POPU
+147,Demographic Transition,148|145,POPU
+148,Human Population Growth,7|133,POPU
+149,Population Momentum,144|147,POPU
+150,Zero Population Growth,140|141|132,POPU
+151,Plate Tectonics,,ERTH
+152,Convergent Boundaries,151,ERTH
+153,Divergent Boundaries,151,ERTH
+154,Transform Boundaries,151,ERTH
+155,Soil Formation,151|4,ERTH
+156,Soil Erosion,155,ERTH
+157,Soil Horizons,155,ERTH
+158,Soil Texture Triangle,159,ERTH
+159,Soil Composition,155,ERTH
+160,Earth's Atmosphere,4,ERTH
+161,Atmospheric Layers,160,ERTH
+162,Troposphere,161,ERTH
+163,Stratosphere,161,ERTH
+164,Global Wind Patterns,160|165,ERTH
+165,Coriolis Effect,168,ERTH
+166,Convection Cells,160|13,ERTH
+167,Watersheds,75|76,ERTH
+168,Solar Radiation,13|57,ERTH
+169,Seasons,168,ERTH
+170,Climate Patterns,164|168|169,ERTH
+171,Rain Shadow Effect,164|74,ERTH
+172,El Nino,174,ERTH
+173,La Nina,174,ERTH
+174,ENSO Cycle,170|290,ERTH
+175,Albedo,168,ERTH
+176,Tragedy of the Commons,201|7,LAND
+177,Clearcutting,178,LAND
+178,Deforestation,208|21,LAND
+179,Green Revolution,180,LAND
+180,Agricultural Impacts,201|155,LAND
+181,Monoculture,180,LAND
+182,Polyculture,202,LAND
+183,Salinization,186|159,LAND
+184,Waterlogging,186,LAND
+185,Aquifer Depletion,77|186,LAND
+186,Irrigation Methods,180|77,LAND
+187,Pest Control Methods,188,LAND
+188,Pesticides,180|87,LAND
+189,Biological Pest Control,187|81,LAND
+190,Integrated Pest Management,187|189|202,LAND
+191,Meat Production,40|180,LAND
+192,CAFOs,191,LAND
+193,Overfishing,210|35,LAND
+194,Bycatch,193,LAND
+195,Surface Mining,212,LAND
+196,Subsurface Mining,212,LAND
+197,Urbanization,7|148,LAND
+198,Impervious Surfaces,197|75,LAND
+199,Urban Heat Island,197|168,LAND
+200,Ecological Footprint,201|213,LAND
+201,Sustainability,1|13,LAND
+202,Sustainable Agriculture,201|180,LAND
+203,Crop Rotation,202,LAND
+204,No-Till Farming,202|156,LAND
+205,Aquaculture,201|193,LAND
+206,Sustainable Forestry,201|177,LAND
+207,Urban Runoff Reduction,198|75,LAND
+208,Conservation,201|5,LAND
+209,Preservation,201|5,LAND
+210,Maximum Sustainable Yield,201|7,LAND
+211,Renewable Resources,13|201,LAND
+212,Nonrenewable Resources,13|201,LAND
+213,Global Energy Consumption,13|211|212,LAND
+214,Fossil Fuels,212,LAND
+215,Coal,214,LAND
+216,Oil,214,LAND
+217,Natural Gas,214,LAND
+218,Nuclear Power,13|212,LAND
+219,Nuclear Fission,218,LAND
+220,Nuclear Fusion,218,LAND
+221,Radioactive Half-Life,218,LAND
+222,Nuclear Waste,218|221,LAND
+223,Biomass Energy,211|51,LAND
+224,Solar Energy,211|168,LAND
+225,Active Solar Energy,224,LAND
+226,Passive Solar Energy,224,LAND
+227,Photovoltaic Cells,224,LAND
+228,Hydroelectric Power,211|65,LAND
+229,Geothermal Energy,211,LAND
+230,Hydrogen Fuel Cells,211,LAND
+231,Wind Energy,211|164,LAND
+232,Energy Conservation,235,LAND
+233,Cogeneration,232,LAND
+234,Energy Return on Investment,213|211|212,LAND
+235,Energy Efficiency,13|201,LAND
+236,Air Pollution,160,POLL
+237,Primary Pollutants,236,POLL
+238,Secondary Pollutants,237,POLL
+239,Criteria Air Pollutants,236|254,POLL
+240,Carbon Monoxide,239,POLL
+241,Sulfur Dioxide,239,POLL
+242,Nitrogen Oxides,239,POLL
+243,Ground-Level Ozone,238|242|246,POLL
+244,Particulate Matter,239,POLL
+245,Lead Pollution,239,POLL
+246,Volatile Organic Compounds,237,POLL
+247,Photochemical Smog,243|246,POLL
+248,Thermal Inversion,162|236,POLL
+249,Indoor Air Pollutants,236,POLL
+250,Radon,249,POLL
+251,Asbestos,249,POLL
+252,Acid Rain,241|242|74,POLL
+253,Noise Pollution,236,POLL
+254,Clean Air Act,236,POLL
+255,Catalytic Converters,237|254,POLL
+256,Point Source Pollution,236,POLL
+257,Nonpoint Source Pollution,236|75,POLL
+258,Endocrine Disruptors,266,POLL
+259,Wetland Destruction,33|197,ECOS
+260,Eutrophication,80|15,POLL
+261,Algal Blooms,260,POLL
+262,Dead Zones,261|263,POLL
+263,Dissolved Oxygen,20|30,POLL
+264,Biological Oxygen Demand,263|79,POLL
+265,Thermal Pollution,20|236,POLL
+266,Persistent Organic Pollutants,188|236,POLL
+267,Bioaccumulation,42|188,POLL
+268,Biomagnification,267,POLL
+269,Solid Waste Disposal,197|201,POLL
+270,Landfills,269,POLL
+271,Incineration,269,POLL
+272,Recycling,273,POLL
+273,Waste Reduction,201,POLL
+274,Sewage Treatment,279,POLL
+275,LD50,276,POLL
+276,Dose-Response Curves,236,POLL
+277,Threshold Effects,276,POLL
+278,Pathogens,85|141,POLL
+279,Clean Water Act,256|257,POLL
+280,CERCLA Superfund,279|266,POLL
+281,Ozone Layer,163,POLL
+282,Stratospheric Ozone Depletion,281|283,POLL
+283,Chlorofluorocarbons,236,GLOB
+284,Montreal Protocol,282,GLOB
+285,Greenhouse Effect,70|168,GLOB
+286,Greenhouse Gases,285|70|71,GLOB
+287,Global Climate Change,286,GLOB
+288,Climate Change Evidence,287|170,GLOB
+289,Climate Models,287|358,GLOB
+290,Ocean Warming,287|35,ECOS
+291,Ocean Acidification,70|287,ECOS
+292,Sea Level Rise,290|175,GLOB
+293,Coral Bleaching,290|36,GLOB
+294,Ice-Albedo Feedback,175|315,ERTH
+295,Permafrost Methane Release,71|287|315,GLOB
+296,Tipping Points,287|339,GLOB
+297,Endangered Species,5|298,GLOB
+298,Habitat Loss,197|178,GLOB
+299,HIPPO Framework,297|91|148|300,GLOB
+300,Overexploitation,193|210,GLOB
+301,Endangered Species Act,297,GLOB
+302,CITES,297|300,GLOB
+303,Kyoto Protocol,287,GLOB
+304,Paris Agreement,287|303,GLOB
+305,Carbon Tax,287|306,GLOB
+306,Cap and Trade,287,GLOB
+307,Biodiversity Hotspots,5|298,GLOB
+308,Habitat Fragmentation,298|109,GLOB
+309,Wildlife Corridors,308,GLOB
+310,Species Extinction,298|300,GLOB
+311,Systems Thinking,312,SYST
+312,System,,SYST
+313,Stocks and Flows,312,SYST
+314,Feedback Loops,312,SYST
+315,Reinforcing Feedback,314,SYST
+316,Balancing Feedback,314,SYST
+317,Causal Loop Diagrams,314|315|316,SYST
+318,Stock and Flow Diagrams,313,SYST
+319,Leverage Points,314|311,SYST
+320,Emergence,328,SYST
+321,Resilience,312|316,SYST
+322,Regime Shifts,321|339,SYST
+323,Scale and Hierarchy,312,SYST
+324,Mental Models,311,SYST
+325,Unintended Consequences,314|335,SYST
+326,Time Delays,314|313,SYST
+327,Nonlinear Change,296|328,SYST
+328,Complex Systems,312|314,SYST
+329,Dynamic Equilibrium,316|313,SYST
+330,Positive Feedback,315,SYST
+331,Negative Feedback,316,SYST
+332,System Boundaries,312,SYST
+333,Interconnectedness,312|314,SYST
+334,Trade-Offs,311,SYST
+335,Cascading Effects,314|44,SYST
+336,Adaptive Management,311|321,SYST
+337,Precautionary Principle,376|311,SYST
+338,Ecosystem Resilience,321|2,SYST
+339,Threshold,312,SYST
+340,Tipping Point Dynamics,296|322,SYST
+341,Scientific Method,342,CRIT
+342,Hypothesis,,CRIT
+343,Theory,342|346,CRIT
+344,Scientific Law,343,CRIT
+345,Peer Review,341,CRIT
+346,Replication,341,CRIT
+347,Scientific Consensus,345|346,CRIT
+348,Logical Fallacies,341,CRIT
+349,False Dichotomy,348,CRIT
+350,Appeal to Nature,348,CRIT
+351,Cherry-Picking Data,348|358,CRIT
+352,Anecdotal Evidence,348,CRIT
+353,Correlation vs Causation,348|358,CRIT
+354,Source Evaluation,341|356,CRIT
+355,Conflicts of Interest,354,CRIT
+356,Primary Research,345|341,CRIT
+357,Media Coverage of Science,356,CRIT
+358,Statistical Literacy,341,CRIT
+359,Sample Size,358,CRIT
+360,Confidence Intervals,358,CRIT
+361,Margin of Error,358,CRIT
+362,Media Literacy,357|354,CRIT
+363,Headline Distortion,362,CRIT
+364,Algorithm Amplification,362,CRIT
+365,Constructive Skepticism,347|348|354,CRIT
+366,Environmental Misinformation,365|362|354,CRIT
+367,Climate Change Denial,366|287,GLOB
+368,Greenwashing,366|201,CRIT
+369,Fact-Checking Methods,354|366,CRIT
+370,Data Visualization Misuse,351|358,CRIT
+371,Pseudoscience,341|365,CRIT
+372,Conspiracy Thinking,365|371,CRIT
+373,Confirmation Bias,324|365,CRIT
+374,Science Communication,347|375,CRIT
+375,Evidence-Based Arguments,341|358|354,CRIT
+376,Risk Assessment,358|275,CRIT
+377,Cost-Benefit Analysis,376|334,CRIT
+378,Environmental Justice,197|366,CRIT
+379,Citizen Science,341|7,CRIT
+380,Environmental Ethics,1|201,CRIT

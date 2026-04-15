@@ -1,0 +1,301 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Statistics,,FOUND
+2,Data,1,FOUND
+3,Variable,2,FOUND
+4,Observation,2,FOUND
+5,Dataset,2|4,FOUND
+6,Categorical Variable,3,FOUND
+7,Quantitative Variable,3,FOUND
+8,Discrete Variable,7,FOUND
+9,Continuous Variable,7,FOUND
+10,Population,1,FOUND
+11,Sample,10,FOUND
+12,Parameter,10,FOUND
+13,Statistic,11,FOUND
+14,Distribution,2|3,FOUND
+15,Frequency Table,14,EDA1
+16,Relative Frequency,15,EDA1
+17,Cumulative Frequency,16,EDA1
+18,Bar Graph,6|14,EDA1
+19,Pie Chart,6|16,EDA1
+20,Dotplot,7|14,EDA1
+21,Stemplot,7|14,EDA1
+22,Histogram,7|14,EDA1
+23,Choosing Bin Width,22,EDA1
+24,Shape of Distribution,14,EDA1
+25,Symmetric Distribution,24,EDA1
+26,Skewed Left,24,EDA1
+27,Skewed Right,24,EDA1
+28,Unimodal Distribution,24,EDA1
+29,Bimodal Distribution,24,EDA1
+30,Uniform Distribution,24,EDA1
+31,Outlier,14|24,EDA1
+32,Identifying Outliers,31|41,EDA1
+33,Center of Distribution,14,EDA1
+34,Spread of Distribution,14,EDA1
+35,Mean,7|33,EDA1
+36,Median,7|33,EDA1
+37,Mode,33,EDA1
+38,Resistant Measure,35|36|31,EDA1
+39,Comparing Mean and Median,35|36|24,EDA1
+40,Range,34,EDA1
+41,Interquartile Range,34|42,EDA1
+42,Quartiles,36|50,EDA1
+43,Five-Number Summary,36|42|40,EDA1
+44,Boxplot,43,EDA1
+45,Modified Boxplot,44|32,EDA1
+46,Comparing Distributions,44|22|35|47,EDA1
+47,Standard Deviation,34|35,EDA1
+48,Variance,47,EDA1
+49,Calculating Variance,48,EDA1
+50,Percentile,16|36,EDA1
+51,Z-Score,35|47,EDA1
+52,Calculating Z-Scores,51,EDA1
+53,Interpreting Z-Scores,52,EDA1
+54,Standardization,51,EDA1
+55,Comparing with Z-Scores,53|54,EDA1
+56,Normal Distribution,25|35|47,EDA1
+57,Parameters of Normal,56,FOUND
+58,Empirical Rule,56|47,EDA1
+59,68-95-99.7 Rule,58,EDA1
+60,Standard Normal Curve,56|54,EDA1
+61,Normal Table,60,EDA1
+62,Finding Normal Probs,61,EDA1
+63,Inverse Normal Calcs,62,EDA1
+64,Normal Probability Plot,56|65,EDA1
+65,Assessing Normality,56|22|24,EDA1
+66,Density Curve,14,EDA1
+67,Area Under Curve,66,EDA1
+68,Technology for Normal,62|63,EDA1
+69,Two-Way Table,6,EDA2
+70,Marginal Distribution,69,EDA1
+71,Conditional Distribution,69|70,EDA1
+72,Calculating Conditionals,71,EDA2
+73,Association,69|71,EDA2
+74,Simpson's Paradox,73|106,EDA2
+75,Scatterplot,7|77|78,REG
+76,Describing Scatterplots,75|79|82|85,REG
+77,Explanatory Variable,3,FOUND
+78,Response Variable,3,FOUND
+79,Direction of Association,73|75,EDA2
+80,Positive Association,79,EDA2
+81,Negative Association,79,EDA2
+82,Form of Association,75,EDA2
+83,Linear Form,82,REG
+84,Nonlinear Form,82,REG
+85,Strength of Association,73|75,EDA2
+86,Correlation Coefficient,83|85,REG
+87,Calculating Correlation,86|51,REG
+88,Properties of Correlation,86,REG
+89,Correlation Limitations,88|31,REG
+90,Least Squares Regression,83|86,REG
+91,Regression Line,90,REG
+92,Regression Equation,91,REG
+93,Slope Interpretation,92|77|78,REG
+94,Y-Intercept Interpretation,92,REG
+95,Making Predictions,92,REG
+96,Extrapolation Dangers,95,REG
+97,Residual,91|95,REG
+98,Calculating Residuals,97,REG
+99,Residual Plot,98,REG
+100,Interpreting Residuals,99|83,REG
+101,Coefficient of Determination,86|97,REG
+102,R-Squared Interpretation,101,REG
+103,Influential Point,91|97,REG
+104,Leverage,103,REG
+105,Outliers in Regression,103|31,REG
+106,Lurking Variable,73,FOUND
+107,Causation,73,REG
+108,Correlation vs Causation,86|107|106,REG
+109,Observational Study,11|107,FOUND
+110,Experiment,107,STUDY
+111,Comparing Studies,109|110,STUDY
+112,Experimental Units,110,STUDY
+113,Subjects,112,STUDY
+114,Treatment,110,STUDY
+115,Factor,114,STUDY
+116,Levels of a Factor,115,STUDY
+117,Placebo,114,STUDY
+118,Placebo Effect,117,STUDY
+119,Control Group,110|117,STUDY
+120,Comparison in Experiments,119|114,STUDY
+121,Blinding,118|132,STUDY
+122,Single-Blind Experiment,121,STUDY
+123,Double-Blind Experiment,121|122,STUDY
+124,Random Assignment,110,STUDY
+125,Why Randomize,130|132,STUDY
+126,Randomized Block Design,124|137,STUDY
+127,Matched Pairs Design,124|126,STUDY
+128,Completely Randomized Design,124,STUDY
+129,Replication,110,STUDY
+130,Confounding Variable,110|106,FOUND
+131,Identifying Confounding,130,STUDY
+132,Bias,11|109,STUDY
+133,Sources of Bias,132,STUDY
+134,Census,10,STUDY
+135,Simple Random Sample,11,FOUND
+136,Random Number Generator,148,STUDY
+137,Stratified Random Sample,135,FOUND
+138,When to Stratify,137,STUDY
+139,Cluster Sample,135,FOUND
+140,Systematic Sample,135,FOUND
+141,Convenience Sample,132|11,FOUND
+142,Voluntary Response Sample,132|11,FOUND
+143,Undercoverage,132|10,STUDY
+144,Nonresponse Bias,132,STUDY
+145,Response Bias,132,STUDY
+146,Wording of Questions,145,STUDY
+147,Designing Surveys,135|143|144|145,STUDY
+148,Random Phenomenon,,PROB
+149,Probability,1,PROB
+150,Probability Rules,149,PROB
+151,Sample Space,148|152,FOUND
+152,Event,148,PROB
+153,Complement of Event,152|150,PROB
+154,Mutually Exclusive Events,152,PROB
+155,Disjoint Events,154,PROB
+156,Independent Events,152,PROB
+157,Dependent Events,156,PROB
+158,Addition Rule,154|150,PROB
+159,General Addition Rule,158|167,PROB
+160,Multiplication Rule,156|150,PROB
+161,General Multiplication Rule,160,PROB
+162,Conditional Probability,149|157,EDA2
+163,Calculating Conditionals,162|69,EDA2
+164,Bayes Intuition,162|161,PROB
+165,Tree Diagram,161,PROB
+166,Using Tree Diagrams,165|162,PROB
+167,Venn Diagram,152|153,PROB
+168,Using Venn Diagrams,167|158,PROB
+169,Simulation,148|149,PROB
+170,Designing Simulations,169,PROB
+171,Random Digit Table,169|136,PROB
+172,Law of Large Numbers,149|169,PROB
+173,Random Variable,148|3,FOUND
+174,Discrete Random Variable,173|8,FOUND
+175,Probability Distribution,173|150,EDA1
+176,Valid Distribution,175,EDA1
+177,Expected Value,175|35,RAND
+178,Calculating Expected Value,177,RAND
+179,Variance of Random Variable,175|48,FOUND
+180,Standard Deviation of RV,179,EDA1
+181,Linear Transformation,177|179,RAND
+182,Combining Random Variables,173,FOUND
+183,Sum of Random Variables,182|177|179,FOUND
+184,Difference of RVs,183,RAND
+185,Binomial Setting,156|174,RAND
+186,Binomial Conditions,185,RAND
+187,Binomial Distribution,185|175,EDA1
+188,Binomial Probability,187,PROB
+189,Binomial Formula,188,RAND
+190,Binomial Mean,187|177,EDA1
+191,Binomial Standard Dev,187|180,RAND
+192,Geometric Setting,156|174,RAND
+193,Geometric Distribution,192|175,EDA1
+194,Geometric Probability,193,PROB
+195,Geometric Mean,193|177,EDA1
+196,Sampling Variability,11|13,SAMP
+197,Sampling Distribution,196|175,SAMP
+198,Unbiased Estimator,197|12,STUDY
+199,Biased Estimator,198,STUDY
+200,Sample Proportion,11|6|13,FOUND
+201,Sampling Dist of Proportion,200|197,SAMP
+202,Mean of Sample Proportion,201|198,FOUND
+203,SD of Sample Proportion,201|180,FOUND
+204,Conditions for Proportion SD,203,SAMP
+205,Sample Mean,11|35|13,FOUND
+206,Sampling Dist of Mean,205|197,SAMP
+207,Mean of Sample Mean,206|198,FOUND
+208,SD of Sample Mean,206|180,FOUND
+209,Central Limit Theorem,206|56,SAMP
+210,CLT Conditions,209,SAMP
+211,Normal Approximation,209|201|62,EDA1
+212,Statistical Inference,13|12|197,FOUND
+213,Point Estimate,212|13,CIPR
+214,Interval Estimate,212,CIPR
+215,Confidence Interval,214|216,CIPR
+216,Margin of Error,197|221,CIPR
+217,Confidence Level,215,CIPR
+218,Interpreting Confidence,217,CIPR
+219,Critical Value,60|217,CIPR
+220,Z Critical Values,219|61,CIPR
+221,Standard Error,203|208,CIPR
+222,CI for One Proportion,215|200|220|221,CIPR
+223,Conditions for CI Proportion,222|204,CIPR
+224,Interpreting CI,222|218,CIPR
+225,CI Width Factors,216,STUDY
+226,Sample Size for CI,225,FOUND
+227,CI for Difference in Props,222|184,CIPR
+228,Pooled Proportion,227,CIPR
+229,Hypothesis Test,212,HTPR
+230,Null Hypothesis,229|12,HTPR
+231,Alternative Hypothesis,229,HTPR
+232,Writing Hypotheses,230|231,HTPR
+233,One-Sided Test,231,HTPR
+234,Two-Sided Test,231,HTPR
+235,Test Statistic,229|51,FOUND
+236,P-Value,235|62,HTPR
+237,Calculating P-Values,236,HTPR
+238,Interpreting P-Values,236,HTPR
+239,Significance Level,229,HTPR
+240,Choosing Alpha,239|244,HTPR
+241,Statistical Significance,236|239,FOUND
+242,Making Conclusions,241|238,HTPR
+243,Type I Error,230|241,HTPR
+244,Type II Error,230|231,HTPR
+245,Error Tradeoffs,243|244,HTPR
+246,Power of a Test,244,HTPR
+247,Factors Affecting Power,246|226,STUDY
+248,Test for One Proportion,229|200|235,CIPR
+249,Conditions for Z-Test,248|204,HTPR
+250,Test for Two Proportions,248|227,CIPR
+251,T-Distribution,56|253,EDA1
+252,T vs Z Distribution,251|60,EDA1
+253,Degrees of Freedom,11,TMEA
+254,T Critical Values,251|219,CIPR
+255,One-Sample T-Interval,215|205|254|221,FOUND
+256,Conditions for T-Procedures,255|65,TMEA
+257,One-Sample T-Test,229|205|251,FOUND
+258,Two-Sample T-Interval,255|184,FOUND
+259,Two-Sample T-Test,257|258,FOUND
+260,Pooled vs Unpooled,259,TMEA
+261,Paired T-Test,257|262,TMEA
+262,Paired Data,127|205,FOUND
+263,When to Pair,262|261,TMEA
+264,Robustness,256|31,TMEA
+265,Chi-Square Distribution,253,EDA1
+266,Chi-Square Statistic,265,FOUND
+267,Goodness-of-Fit Test,266|229,CHISQ
+268,GOF Hypotheses,267|232,CHISQ
+269,Expected Counts,175,CHISQ
+270,Observed Counts,15,CHISQ
+271,Calculating Chi-Square,266|269|270,CHISQ
+272,Conditions for Chi-Square,267|269,CHISQ
+273,GOF Conclusion,267|242,CHISQ
+274,Test for Homogeneity,266|69,HTPR
+275,Homogeneity Setup,274|232,CHISQ
+276,Test for Independence,266|73,HTPR
+277,Independence Setup,276|232,CHISQ
+278,Chi-Square Conclusion,274|276|242,CHISQ
+279,Inference for Slope,212|91,REGF
+280,Regression Model,91|173,REG
+281,Slope Parameter,280|12,FOUND
+282,T-Interval for Slope,279|254|284,REGF
+283,T-Test for Slope,279|257|281,REGF
+284,Standard Error of Slope,221|97,REG
+285,Conditions for Regression,279|286|287|288|289,REG
+286,Linearity Condition,99|100,REGF
+287,Independence Condition,109|124,CHISQ
+288,Normality of Residuals,97|65,EDA1
+289,Equal Variance Condition,99|48,EDA1
+290,Regression Conclusion,283|242,REG
+291,Practical Significance,241|293,HTPR
+292,Stat vs Practical Sig,291,COMM
+293,Effect Size,47|101,COMM
+294,Sample Size Impact,226|247|293,FOUND
+295,Study Limitations,109|132,COMM
+296,Generalizability,11|10|295,COMM
+297,Statistical Report Writing,242,FOUND
+298,Communicating Results,224|242|278|290,COMM
+299,Four-Step Process,232|242|298,COMM
+300,AP Exam Strategies,299|297,COMM

@@ -1,0 +1,242 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Classical Computing,,FOUND
+2,What Is a Qubit,1,FOUND
+3,Superposition Explained,2,FOUND
+4,Entanglement Explained,2,FOUND
+5,Quantum Measurement Problem,3|4,FOUND
+6,Theoretical Promise of QC,3|4,FOUND
+7,What QC Could Supposedly Do,6,FOUND
+8,What QC Cannot Do,7,FOUND
+9,QC vs Classical Computing,1|7|8,FOUND
+10,Decoherence Problem,5,BARR
+11,Qubits Are Extremely Fragile,10,BARR
+12,Error Rate Problem,11,BARR
+13,Error Correction Overhead,12,BARR
+14,1000 Physical per 1 Logical,13,BARR
+15,Million Qubit Requirement,14,BARR
+16,Engineering vs Physics Barrier,10|12,BARR
+17,No Platform Has Solved It,16,BARR
+18,Cryogenic Cooling Requirement,11,BARR
+19,Near Absolute Zero Temps,18,BARR
+20,Cryogenic Cost and Scale,19,BARR
+21,Wiring and Control Problem,18,BARR
+22,Energy Consumption Problem,20|21,BARR
+23,Infrastructure Cost,20|22,BARR
+24,Hardware Scaling Wall,15|23,BARR
+25,Connectivity Limitations,11,BARR
+26,Superconducting Approach,18|25,HARD
+27,Trapped Ion Approach,11|25,HARD
+28,Photonic Approach,11,HARD
+29,Topological Approach,11,HARD
+30,Neutral Atom Approach,11,HARD
+31,Platform Comparison,26|27|28|29|30,HARD
+32,Each Platform Has Fatal Flaws,31|16,HARD
+33,Shor's Factoring Algorithm,6,ALGO
+34,Grover's Search Algorithm,6,ALGO
+35,Quantum Supremacy Defined,7,ALGO
+36,Quantum Advantage Defined,35,ALGO
+37,Contrived Benchmarks,35|36,ALGO
+38,No Real-World Advantage Yet,36|37,ALGO
+39,Narrow Problem Applicability,8|33|34,ALGO
+40,Classical Computers Keep Up,9|38,ALGO
+41,Feynman's 1981 Idea,6,HIST
+42,Shor's Algorithm 1994,33,HIST
+43,First Lab Demos 1998-2001,42,HIST
+44,"D-Wave ""Commercial"" QC 2007",43,HIST
+45,D-Wave Sale to Lockheed 2011,44,HIST
+46,Google Buys D-Wave 2013,45,HIST
+47,IBM Cloud Access 2016,43,HIST
+48,Google Sycamore Claim 2019,35|47,HIST
+49,IBM 127-Qubit Chip 2021,47,HIST
+50,IBM 1121-Qubit Chip 2023,49,HIST
+51,Zero Commercial ROI by 2025,48|50,HIST
+52,Timeline Pattern Analysis,41|42|43|44|48|50|51,HIST
+53,3-5 Years Away Pattern,52,HIST
+54,40 Years of Promises,52|53,HIST
+55,Catalog of Broken Promises,54,HYPE
+56,D-Wave Exaggerated Claims,44|45|55,HYPE
+57,Google Supremacy Overhype,48|55,HYPE
+58,IBM Roadmap Revisions,49|50|55,HYPE
+59,Startup Pitch Exaggeration,55,HYPE
+60,Consultant Hype Reports,55,HYPE
+61,McKinsey $450B Projection,60,HYPE
+62,Media Amplification Effect,55,HYPE
+63,Moving Goalposts Pattern,53|55,HYPE
+64,Unfalsifiable Timelines,53|63,HYPE
+65,Redefining Success,63|64,HYPE
+66,Fusion Energy Parallel,54,HYPE
+67,Flying Cars Parallel,54,HYPE
+68,Public Key Encryption Basics,1,CRYP
+69,Could QC Break Encryption?,33|68,CRYP
+70,Massive Qubits Needed,15|69,CRYP
+71,Post-Quantum Crypto Exists,68,CRYP
+72,NIST Already Has Standards,71,CRYP
+73,Harvest Now Decrypt Later,69,CRYP
+74,Window Is Already Closing,70|72,CRYP
+75,Crypto Threat Is Overstated,70|74,CRYP
+76,Return on Investment,,ECON
+77,Net Present Value,76,ECON
+78,Risk-Adjusted Returns,76|77,ECON
+79,Expected Value Framework,78,ECON
+80,Probability of Success,79,ECON
+81,Opportunity Cost,76,ECON
+82,Sunk Cost Trap,76,ECON
+83,Total $100B+ Invested,76,ECON
+84,Zero Revenue Generated,83,ECON
+85,VC Funding Frenzy,83,ECON
+86,Corporate R&D Burn Rate,83,ECON
+87,Government Funding Pressure,83,ECON
+88,Revenue Model Problem,84,ECON
+89,Who Pays for QC?,88,ECON
+90,Customer Demand Evidence,89,ECON
+91,No Paying Customers,90,ECON
+92,Classical Alternatives Cheaper,9|91,ECON
+93,Cost Per Computation,23|92,ECON
+94,Total Cost of Ownership,93,ECON
+95,IonQ IPO and Stock Decline,85,ECON
+96,SPAC Risks in QC,85,ECON
+97,Rigetti Financial Struggles,85,ECON
+98,D-Wave Revenue Reality,56|84,ECON
+99,Market Valuation vs Revenue,95|96|97|98,ECON
+100,Comparable Company Analysis,99,ECON
+101,Exit Strategy Problem,99|91,ECON
+102,Acqui-Hire as Only Exit,101,ECON
+103,Venture Capital Loss Rates,85|99,ECON
+104,When to Cut Losses,82|103,ECON
+105,Technology Readiness Levels,,TECH
+106,TRL Scale Explained,105,TECH
+107,QC Stuck at TRL 2-3,106|38,TECH
+108,Technology Adoption Curves,105,TECH
+109,Crossing the Chasm,108,TECH
+110,Gartner Hype Cycle,108,TECH
+111,Peak of Inflated Expectations,110,TECH
+112,Trough of Disillusionment,111,TECH
+113,Technology Forecasting,108,TECH
+114,Base Rate of Tech Failure,113,TECH
+115,Prediction Track Records,113|114,TECH
+116,Science vs Engineering Gap,16|105,TECH
+117,Dot-Com Bubble Parallel,118,TECH
+118,Technology Bubble Dynamics,110|114,TECH
+119,General Purpose Technology,,GPT
+120,GPT Characteristics,119,GPT
+121,Must Be Broadly Applicable,120,GPT
+122,Must Improve Over Time,120,GPT
+123,Must Enable New Innovations,120,GPT
+124,Steam Engine as GPT,121|122|123,GPT
+125,Electricity as GPT,121|122|123,GPT
+126,Transistor as GPT,121|122|123,GPT
+127,Internet as GPT,121|122|123,GPT
+128,AI/ML as Emerging GPT,121|122|123,GPT
+129,QC Fails Every GPT Test,121|122|123|39,GPT
+130,QC Is Narrowly Applicable,129,GPT
+131,QC Cannot Replace Classical,9|130,GPT
+132,Cognitive Bias Overview,,BIAS
+133,Sunk Cost Fallacy,132,BIAS
+134,Confirmation Bias,132,BIAS
+135,Anchoring Bias,132,BIAS
+136,Bandwagon Effect,132,BIAS
+137,Dunning-Kruger in QC,132,BIAS
+138,Optimism Bias,132,BIAS
+139,Authority Bias,132,BIAS
+140,FOMO in QC Investment,132,BIAS
+141,Survivorship Bias,132,BIAS
+142,Narrative Fallacy,132,BIAS
+143,Groupthink,132,BIAS
+144,Motivated Reasoning,132,BIAS
+145,Information Asymmetry,132,BIAS
+146,Bias in Tech Forecasting,132|113,BIAS
+147,How Biases Compound,133|134|135|136|138|140,BIAS
+148,Systems Thinking,,SYST
+149,Causal Loop Diagrams,148,SYST
+150,Reinforcing Feedback Loop,149,SYST
+151,Balancing Feedback Loop,149,SYST
+152,Hype Reinforcement Loop,150|62|87,SYST
+153,Sunk Cost Escalation Loop,150|82|133,SYST
+154,Career Incentive Loop,150|175,SYST
+155,Geopolitical Arms Race Loop,150|87,SYST
+156,Missing Balancing Loop,151|152,SYST
+157,Leverage Points,149|156,SYST
+158,Self-Sustaining Hype Cycle,152|153|154|155,SYST
+159,Breaking the Hype Loop,157|158,SYST
+160,Gil Kalai's Math Arguments,13,SKEP
+161,Dyakonov's Physics Arguments,16,SKEP
+162,Controlling 2^1000 Parameters,161,SKEP
+163,Levin's Complexity Doubts,39,SKEP
+164,Laughlin on Coherence Limits,10,SKEP
+165,Goldreich's CS Perspective,39,SKEP
+166,Skeptics Have No Funding Bias,145,SKEP
+167,Proponents Have Funding Bias,145,SKEP
+168,Why Skeptics Are Ignored,166|167|139,SKEP
+169,Ethics of QC Education,171|172,ETHI
+170,PhD Career Risk in QC,172,ETHI
+171,QC Job Market Reality,91|84,ETHI
+172,Almost All Jobs Are R&D,171,ETHI
+173,What If the Field Contracts?,172|104,ETHI
+174,Transferable Skills Debate,170,ETHI
+175,Professor Grant Conflicts,87|144,ETHI
+176,String Theory Career Warning,170,ETHI
+177,Cold Fusion Career Warning,170,ETHI
+178,Student Advising Ethics,169|170,ETHI
+179,Informed Consent for Careers,178,ETHI
+180,Ethical Investment Duty,76|145,ETHI
+181,Fiduciary Responsibility,76|80,ETHI
+182,FOMO Drives Bad QC Decisions,140|180,ETHI
+183,Quantum Sensing,,ALT
+184,Atomic Clocks,183,ALT
+185,Quantum Magnetometers,183,ALT
+186,Quantum Gravimeters,183,ALT
+187,Sensors Already Make Money,184|185|186,ALT
+188,Sensing Needs Few Qubits,183|15,ALT
+189,Quantum Key Distribution,68|183,ALT
+190,Risk-Adjusted QS Returns,78|187|188,ALT
+191,Classical AI Hardware,1,ALT
+192,Alternative Tech Investments,190|191,ALT
+193,Portfolio Diversification,78|192,ALT
+194,Successful Physics Bets,,PARA
+195,Transistor Investment Payoff,194,PARA
+196,Laser Investment Payoff,194,PARA
+197,Fiber Optics Payoff,194,PARA
+198,GPS Atomic Clock Payoff,194|184,PARA
+199,MRI Investment Payoff,194,PARA
+200,Failed Physics Bets,194,PARA
+201,Cold Fusion Losses,200,PARA
+202,Theranos Lessons,200|145,PARA
+203,Concorde Economics Failure,200|81,PARA
+204,Charismatic Founder Risk,202|145,PARA
+205,When Scientists Mislead,145|204,PARA
+206,The 10 Required Breakthroughs,24|32|38,BREAK
+207,Error Rates Must Drop 100x,12|206,BREAK
+208,Need 1000x More Qubits,15|206,BREAK
+209,Coherence Must Improve 100x,10|206,BREAK
+210,Connectivity Must Improve,25|206,BREAK
+211,Cryogenics Must Scale,20|206,BREAK
+212,New Algorithms Needed,39|206,BREAK
+213,Cost Must Drop Dramatically,23|206,BREAK
+214,All Must Happen Together,207|208|209|210|211|212|213,BREAK
+215,Joint Probability Problem,80|214,BREAK
+216,Independent vs Coupled Risks,215,BREAK
+217,Each Breakthrough Is Uncertain,80|216,BREAK
+218,Critical Thinking Skills,,CRIT
+219,Hype Detection Checklist,218|63|64,CRIT
+220,Red Flags in Tech Claims,218|65,CRIT
+221,How to Read a Press Release,220|62,CRIT
+222,Science Journalism Problems,62|221,CRIT
+223,Base Rate Reasoning,114|218,CRIT
+224,Extraordinary Claims Rule,218|223,CRIT
+225,Technology Due Diligence,107|218,CRIT
+226,Risk Assessment Framework,79|218,CRIT
+227,Bayesian Reasoning Basics,80|218,CRIT
+228,Applying Skepticism Broadly,219|220|223|224,CRIT
+229,Fusion Hype Comparison,66|228,CRIT
+230,AGI Hype Comparison,228,CRIT
+231,Autonomous Vehicle Comparison,228,CRIT
+232,Writing an Executive Brief,75|131|217|226,APPLY
+233,Conducting Red Team Analysis,206|217|220,APPLY
+234,Building a Claims Tracker,55|219,APPLY
+235,Evaluating a Pitch Deck,147|220|226,APPLY
+236,Writing a Critical Review,222|224|226,APPLY
+237,Portfolio Allocation Analysis,193|217,APPLY
+238,National QC Strategy Critique,87|190|217|237,APPLY
+239,Board-Level QC Questions,104|181|235,APPLY
+240,Skeptical Inquiry Method,147|159|228,APPLY
+241,Making Better Tech Bets,192|217|240,APPLY

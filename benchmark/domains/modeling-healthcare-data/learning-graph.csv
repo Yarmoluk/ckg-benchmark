@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Graph Theory Basics,,FOUND
+2,Node,1,FOUND
+3,Edge,1|2,FOUND
+4,Graph Database,1|2|3,FOUND
+5,Labeled Property Graph,4,FOUND
+6,Node Property,2|5,FOUND
+7,Edge Property,3|5,FOUND
+8,Directed Graph,1|2|3,FOUND
+9,Directed Acyclic Graph,8,FOUND
+10,Graph Traversal,1|2|3,FOUND
+11,Graph Path,10,FOUND
+12,Graph Query,4|10,FOUND
+13,Relational Database,,FOUND
+14,Database Schema,13,FOUND
+15,Data Model,13|14,FOUND
+16,Healthcare System,,HCARE
+17,Healthcare Cost,16,HCARE
+18,Per-Person Healthcare Cost,17,HCARE
+19,Fee-For-Service Model,16|17,HCARE
+20,Value-Based Care,16|19,HCARE
+21,Healthcare Payer,16,HCARE
+22,Healthcare Provider,16,HCARE
+23,Healthcare Patient,16,HCARE
+24,Electronic Health Record,23,HCARE
+25,Medical Coding System,16,HCARE
+26,ICD Code,25,HCARE
+27,CPT Code,25,HCARE
+28,HCPCS Code,25,HCARE
+29,Drug Code,25,HCARE
+30,Medical Terminology,16,HCARE
+31,Clinical Workflow,22|23,HCARE
+32,Patient Demographics,23,HCARE
+33,Medical Encounter,22|23,HCARE
+34,Healthcare Interoperability,24,HCARE
+35,Healthcare Data Exchange,24|34,HCARE
+36,Cypher Query Language,12,GTECH
+37,GQL Standard,12,GTECH
+38,GSQL,12,GTECH
+39,Graph Pattern Matching,12|36,GTECH
+40,Graph Query Optimization,12|39,GTECH
+41,Graph Index,4|40,GTECH
+42,Query Performance,40|41,GTECH
+43,Path Query,11|36,GTECH
+44,Subgraph Query,12|36,GTECH
+45,Aggregate Query,12|36,GTECH
+46,Patient Record,23|24,PAT
+47,Patient ID,23|46,PAT
+48,Patient History,46,PAT
+49,Disease,30,PAT
+50,Medical Condition,30|49,PAT
+51,Symptom,30,PAT
+52,Diagnosis,30|49|51,PAT
+53,Treatment Plan,52,PAT
+54,Prescription,29|53,PAT
+55,Medication,29,PAT
+56,Dosage,54|55,PAT
+57,Drug Interaction,55,PAT
+58,Adverse Event,54|55,PAT
+59,Allergy,46|55,PAT
+60,Immunization,46,PAT
+61,Lab Test,46,PAT
+62,Lab Result,61,PAT
+63,Vital Sign,46,PAT
+64,Care Plan,53,PAT
+65,Treatment Timeline,53|64,PAT
+66,Patient Journey,46|65,PAT
+67,Chronic Disease Management,49|64,PAT
+68,Preventive Care,23|64,PAT
+69,Patient Outcome,64,PAT
+70,Quality of Life Metric,69,PAT
+71,Primary Care Provider,22,PROV
+72,Specialist Provider,22|71,PROV
+73,Hospital,22,PROV
+74,Clinic,22,PROV
+75,Outpatient Facility,74,PROV
+76,Inpatient Care,73,PROV
+77,Emergency Department,73,PROV
+78,Provider Network,22,PROV
+79,Provider Schedule,22,PROV
+80,Appointment,79,PROV
+81,Referral,71|72,PROV
+82,Provider Credential,22,PROV
+83,Medical License,82,PROV
+84,Board Certification,82,PROV
+85,Provider Rating,22,PROV
+86,Provider Capacity,79,PROV
+87,Provider Specialization,72,PROV
+88,Hospital Department,73,PROV
+89,Care Team,22,PROV
+90,Multidisciplinary Team,89,PROV
+91,Provider Performance,22|85,PROV
+92,Clinical Guideline,53,PROV
+93,Best Practice,92,PROV
+94,Evidence-Based Medicine,92|93,PROV
+95,Clinical Protocol,92,PROV
+96,Insurance Claim,21|33,PAYER
+97,Claim Processing,96,PAYER
+98,Claim Adjudication,97,PAYER
+99,Claim Denial,98,PAYER
+100,Claim Dispute,99,PAYER
+101,Insurance Policy,21,PAYER
+102,Coverage,101,PAYER
+103,Benefit Plan,101,PAYER
+104,Copayment,102,PAYER
+105,Deductible,102,PAYER
+106,Out-Of-Pocket Maximum,102|104|105,PAYER
+107,Premium,101,PAYER
+108,Formulary,109,PAYER
+109,Formulary Rule,29|55,PAYER
+110,Pharmacy Benefit Manager,21|108,PAYER
+111,Prior Authorization,97|102,PAYER
+112,Utilization Review,97,PAYER
+113,Medical Necessity,112,PAYER
+114,Allowed Amount,98,PAYER
+115,Reimbursement,98|114,PAYER
+116,Healthcare Cost Analysis,17|96,FIN
+117,Revenue Cycle,96|115,FIN
+118,Billing Code,26|27|28,FIN
+119,Charge Master,118,FIN
+120,Cost Of Care,116,FIN
+121,Revenue,117,FIN
+122,Profitability,120|121,FIN
+123,Operating Margin,122,FIN
+124,Payer Mix,21|122,FIN
+125,Contract Negotiation,21|22,FIN
+126,Provider Compensation,115|125,FIN
+127,Capitation,20|126,FIN
+128,Risk Adjustment,116|127,FIN
+129,Quality Metric,69|91,FIN
+130,Value-Based Payment,20|127|129,FIN
+131,Healthcare Fraud,96,FRAUD
+132,Fraud Detection,131,FRAUD
+133,Waste In Healthcare,116,FRAUD
+134,Abuse Detection,131|133,FRAUD
+135,Upcoding,96|118,FRAUD
+136,Unbundling,96|118,FRAUD
+137,Phantom Billing,96,FRAUD
+138,Duplicate Claim,96,FRAUD
+139,Kickback Scheme,81|131,FRAUD
+140,Referral Network Analysis,81|132,FRAUD
+141,Community Detection,78|140,FRAUD
+142,Anomaly Detection,132,FRAUD
+143,Behavioral Health Fraud,131|132,FRAUD
+144,DME Fraud,131|132,FRAUD
+145,Provider Network Fraud,78|131|140,FRAUD
+146,Graph Algorithm,1|4,ANAL
+147,Shortest Path Algorithm,11|146,ANAL
+148,Centrality Measure,146,ANAL
+149,Pagerank Algorithm,148,ANAL
+150,Betweenness Centrality,148,ANAL
+151,Degree Centrality,148,ANAL
+152,Clustering Coefficient,146,ANAL
+153,Connected Components,146,ANAL
+154,Cycle Detection,9|146,ANAL
+155,Graph Pattern Recognition,39|146,ANAL
+156,Similarity Measure,146,ANAL
+157,Link Prediction,146,ANAL
+158,Graph Embedding,146,ANAL
+159,Node Embedding,6|158,ANAL
+160,Graph Neural Network,158|159,ANAL
+161,Artificial Intelligence,,AI
+162,Machine Learning,161,AI
+163,Large Language Model,161|162,AI
+164,Vector Store,163,AI
+165,Vector Embedding,158|164,AI
+166,Semantic Search,164|165,AI
+167,RAG Architecture,163|164,AI
+168,Knowledge Graph,4|5,AI
+169,Graph And LLM Integration,163|168,AI
+170,Clinical Decision Support,52|92|162,AI
+171,Clinical Discovery,162|170,AI
+172,Recommendation System,162,AI
+173,Predictive Analytics,162,AI
+174,Risk Stratification,173,AI
+175,Population Health Analytics,173|174,AI
+176,HIPAA,16,SEC
+177,Protected Health Information,24|176,SEC
+178,Data Privacy,176|177,SEC
+179,Data Security,177|178,SEC
+180,Access Control,179,SEC
+181,Role-Based Access Control,180,SEC
+182,Authentication,180,SEC
+183,Authorization,180|182,SEC
+184,Audit Trail,179|183,SEC
+185,De-Identification,177|178,SEC
+186,Metadata Management,15,GOV
+187,Data Lineage,186,GOV
+188,Data Provenance,187,GOV
+189,Data Quality,15,GOV
+190,Data Traceability,187,GOV
+191,Data Governance Framework,186|189,GOV
+192,Master Data Management,186|191,GOV
+193,Data Stewardship,191,GOV
+194,Explainability,170|187,GOV
+195,Transparency,184|194,GOV
+196,Capstone Project,4|5|168|170,CAP
+197,Project Presentation,196,CAP
+198,Graph Career Path,196,CAP
+199,Healthcare Analytics Platform,4|162|168|170,CAP
+200,Real-World Implementation,196|199,CAP

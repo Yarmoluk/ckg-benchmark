@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Organizational Analytics,,FOUND
+2,Human Resources Data,,FOUND
+3,HRIS,2,FOUND
+4,Relational Databases,,FOUND
+5,Relational Database Limits,4,FOUND
+6,Graph Databases,,FOUND
+7,Graph vs Relational,4|6,FOUND
+8,Graph Data Model,6,GMOD
+9,Nodes,8,GMOD
+10,Edges,8|9,GMOD
+11,Node Properties,9,GMOD
+12,Edge Properties,10,GMOD
+13,Directed Graphs,9|10,GMOD
+14,Undirected Graphs,9|10,GMOD
+15,Directed Acyclic Graphs,13,GMOD
+16,Weighted Edges,12,GMOD
+17,Graph Schema Design,8|11|12,GMOD
+18,Property Graph Model,8|11|12,GMOD
+19,Graph Query Language,6|8,GMOD
+20,Cypher Query Language,19,GMOD
+21,Graph Traversals,13|19,GALG
+22,Graph Database Performance,6|19,GPERF
+23,Indexing in Graphs,22,GPERF
+24,Graph Scalability,22|23,GPERF
+25,Employee Event Streams,1|2,EVENT
+26,Event Logs,25,EVENT
+27,Universal Timestamps,26,EVENT
+28,Event Normalization,26|27,EVENT
+29,Event Enrichment,28,EVENT
+30,Email Event Streams,25|26,EVENT
+31,Chat Event Streams,25|26,EVENT
+32,Device Activity Logs,25|26,EVENT
+33,Desktop Activity,32,EVENT
+34,Mobile Device Events,32,EVENT
+35,Software Application Logs,32,EVENT
+36,Calendar Events,25|27,EVENT
+37,Meeting Patterns,36,EVENT
+38,Login and Logout Events,32|27,EVENT
+39,Business Process Mining,25|26,EVENT
+40,Process Discovery,39,EVENT
+41,Process Conformance,39|40,EVENT
+42,Staging Areas,26|27,DPIPE
+43,ETL for Graph Data,42|8,DPIPE
+44,Data Ingestion Pipelines,43,DPIPE
+45,Batch Loading,44,DPIPE
+46,Stream Processing,44,DPIPE
+47,Real-time Data Ingestion,46,DPIPE
+48,Latency Management,47,DPIPE
+49,Data Quality Checks,44,DPIPE
+50,Deduplication,49,DPIPE
+51,Modeling Employees,2|8|11,OMOD
+52,Employee Attributes,51,OMOD
+53,Employee Identifier,51|52,OMOD
+54,Modeling Organizations,1|8,OMOD
+55,Organization Attributes,54,OMOD
+56,Organizational Hierarchy,54|13,OMOD
+57,Department Structure,56,OMOD
+58,Reporting Lines,56|13,OMOD
+59,Modeling Communication,10|30|31,OMOD
+60,Communication Channels,59,OMOD
+61,Communication Frequency,59|16,OMOD
+62,Communication Volume,59|61,OMOD
+63,Modeling Positions,51|54,OMOD
+64,Roles and Titles,63,OMOD
+65,Modeling Projects,54|10,OMOD
+66,Task Assignments,65|51,OMOD
+67,Onboarding Data Model,51|27,OMOD
+68,License Tracking,35|51,OMOD
+69,Activity Types,25|26,OMOD
+70,Ethics of Privacy,1|2,ETHIC
+71,Data Consent,70,ETHIC
+72,Employee Data Rights,70|71,ETHIC
+73,Anonymization,70,ETHIC
+74,Pseudonymization,73,ETHIC
+75,Privacy by Design,70|73,ETHIC
+76,Ethical Frameworks,70,ETHIC
+77,Bias in Analytics,76|130,ETHIC
+78,Transparency in Analytics,76,ETHIC
+79,Security,70,SECUR
+80,Role-based Access Control,79,SECUR
+81,Data Encryption,79,SECUR
+82,Audit Trails,79|80,SECUR
+83,Record Retention,79|70,SECUR
+84,Data Minimization,70|83,SECUR
+85,Graph Algorithms,6|21,GALG
+86,Degree Centrality,85|9|10,GALG
+87,Indegree,86|13,GALG
+88,Outdegree,86|13,GALG
+89,Betweenness Centrality,85|94,GALG
+90,Closeness Centrality,85|94,GALG
+91,Eigenvector Centrality,85|86,GALG
+92,PageRank,91,GALG
+93,Pathfinding Algorithms,85|21,GALG
+94,Shortest Path,93,GALG
+95,Dijkstra Algorithm,94|16,GALG
+96,Breadth-first Search,21|93,GALG
+97,Depth-first Search,21|93,GALG
+98,Clustering Coefficient,85|9|10,GALG
+99,Community Detection,85|98,GALG
+100,Louvain Algorithm,99,GALG
+101,Label Propagation,99,GALG
+102,Modularity,99,GALG
+103,Labeling Communities,99|100,GALG
+104,Similarity Algorithms,85,GALG
+105,Jaccard Similarity,104,GALG
+106,Cosine Similarity,104,GALG
+107,Node Similarity,104|9,GALG
+108,Similar People,107|51,GALG
+109,Similar Roles,107|64,GALG
+110,Similar Events,107|25,GALG
+111,Graph Metrics,85|86,GALG
+112,Network Density,111|9|10,GALG
+113,Average Path Length,111|94,GALG
+114,Connected Components,111|96,GALG
+115,Subgraph Analysis,111|114,GALG
+116,Motif Detection,115,GALG
+117,Natural Language Processing,,NLPML
+118,Tokenization,117,NLPML
+119,Named Entity Recognition,117|118,NLPML
+120,Text Classification,117|118,NLPML
+121,Sentiment Analysis,117|120,NLPML
+122,Sentiment Scoring,121,NLPML
+123,Emotion Detection,121,NLPML
+124,Topic Modeling,117|118,NLPML
+125,Word Embeddings,117,NLPML
+126,Large Language Models,117|125,NLPML
+127,Summarization,126,NLPML
+128,Summarizing Events,127|25,NLPML
+129,Communication Tone Analysis,121|59,NLPML
+130,Machine Learning,,NLPML
+131,Supervised Learning,130,NLPML
+132,Unsupervised Learning,130,NLPML
+133,Feature Engineering,130,NLPML
+134,Training and Evaluation,130|131,NLPML
+135,Graph Machine Learning,130|85,NLPML
+136,Graph Neural Networks,135,NLPML
+137,Node Embeddings,135|9,NLPML
+138,Link Prediction,135|10,NLPML
+139,Graph Classification,135|99,NLPML
+140,Influence Detection,86|89|59,INSGT
+141,Informal Leaders,140,INSGT
+142,Decision Shapers,140|141,INSGT
+143,Bridge Builders,140|89,INSGT
+144,Boundary Spanners,143|99,INSGT
+145,Information Flow Analysis,93|59|61,INSGT
+146,Communication Bottlenecks,145|89,INSGT
+147,Efficiency Metrics,145|111,INSGT
+148,Silo Detection,99|59,INSGT
+149,Cross-team Interaction,148|59,INSGT
+150,Fragmentation Analysis,148|114,INSGT
+151,Vulnerability Analysis,86|89|114,INSGT
+152,Single Points of Failure,151,INSGT
+153,Knowledge Concentration,151|140,INSGT
+154,Succession Planning,151|152|153,INSGT
+155,Flight Risk Detection,61|121|131,INSGT
+156,Disengagement Signals,155|61,INSGT
+157,Turnover Contagion,155|140,INSGT
+158,Retention Analytics,155|156|157,INSGT
+159,Recognition Events,25|128,APPHR
+160,Hidden Achievements,159|140,APPHR
+161,Alignment Analysis,66|162,APPHR
+162,Strategy Alignment,54|65,APPHR
+163,Ideation Tracking,124|59,APPHR
+164,Idea Flow Networks,163|145,APPHR
+165,Innovation Metrics,164|147,APPHR
+166,Mentoring Matching,108|168,APPHR
+167,Mentor-mentee Pairing,166,APPHR
+168,Skill Gap Analysis,52|64|109,APPHR
+169,Training Gap Detection,168|134,APPHR
+170,Placement Optimization,108|168,APPHR
+171,Optimal Task Assignment,170|66,APPHR
+172,Backlog Task Assignment,171,APPHR
+173,Career Path Analysis,64|93|52,APPHR
+174,Career Guidance,173,APPHR
+175,Onboarding Effectiveness,67|61|27,APPHR
+176,Integration Monitoring,175|149,APPHR
+177,Merger Integration,176|150,APPHR
+178,Reorganization Impact,56|145|150,APPHR
+179,Inclusion Analytics,86|59|180,APPHR
+180,Network Centrality Equity,86|51,APPHR
+181,Reporting,111|85,RPTDASH
+182,Operational Reports,181,RPTDASH
+183,Executive Dashboards,181|184,RPTDASH
+184,Dashboard Design,181,RPTDASH
+185,Data Visualization,184,RPTDASH
+186,Real-time Discovery,47|181,RPTDASH
+187,Pattern Detection,186|116,RPTDASH
+188,Anomaly Detection,187|132,RPTDASH
+189,Trend Analysis,187|181,RPTDASH
+190,Alerting Systems,186|188,RPTDASH
+191,Graph Library Design,85|19,CAPST
+192,Reusable Graph Queries,191|20,CAPST
+193,API Integration,191|44,CAPST
+194,Detecting AI Events,126|25,CAPST
+195,AI-generated Content,194|126,CAPST
+196,Building a Graph Library,191|192,CAPST
+197,End-to-end Pipeline,44|85|181,CAPST
+198,Organizational Health Score,111|121|147,CAPST
+199,Benchmarking,198,CAPST
+200,Continuous Improvement,199|197,CAPST

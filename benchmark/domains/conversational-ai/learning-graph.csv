@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Artificial Intelligence,,FOUND
+2,AI Timeline,1,FOUND
+3,AI Doubling Rate,1|2,FOUND
+4,Moore's Law,1|3,FOUND
+5,Natural Language Processing,1,FOUND
+6,Text Processing,5,FOUND
+7,String Matching,6,FOUND
+8,Regular Expressions,7,FOUND
+9,Grep Command,7|8,FOUND
+10,Keyword Search,6|11,SEARCH
+11,Search Index,6,SEARCH
+12,Inverted Index,11,SEARCH
+13,Reverse Index,12,SEARCH
+14,Full-Text Search,10|12,SEARCH
+15,Boolean Search,10,SEARCH
+16,Search Query,10,SEARCH
+17,Query Parser,16,SEARCH
+18,Synonym Expansion,10,SEARCH
+19,Thesaurus,18,SEARCH
+20,Ontology,5|129,SEARCH
+21,Taxonomy,20,SEARCH
+22,Controlled Vocabulary,21,SEARCH
+23,Metadata,6,SEARCH
+24,Metadata Tagging,23,SEARCH
+25,Dublin Core,23|24,SEARCH
+26,Semantic Search,10|52,SEARCH
+27,Vector Similarity,53,SEARCH
+28,Cosine Similarity,27,SEARCH
+29,Euclidean Distance,27,SEARCH
+30,Search Ranking,10,SEARCH
+31,Page Rank Algorithm,30,SEARCH
+32,TF-IDF,33|34,SEARCH
+33,Term Frequency,10,SEARCH
+34,Document Frequency,10,SEARCH
+35,Search Precision,10,METRIC
+36,Search Recall,10,METRIC
+37,F-Measure,35|36,METRIC
+38,F1 Score,37,METRIC
+39,Confusion Matrix,35|36,METRIC
+40,True Positive,39,METRIC
+41,False Positive,39,METRIC
+42,Search Performance,10,SEARCH
+43,Query Optimization,16|42,SEARCH
+44,Index Performance,11|42,SEARCH
+45,Large Language Model,1|5,LLM
+46,Transformer Architecture,45,LLM
+47,Attention Mechanism,46,LLM
+48,Token,5,LLM
+49,Tokenization,48,LLM
+50,Subword Tokenization,49,LLM
+51,Byte Pair Encoding,50,LLM
+52,Word Embedding,48|54,EMBED
+53,Embedding Vector,52,EMBED
+54,Vector Space Model,,EMBED
+55,Vector Dimension,53|54,EMBED
+56,Embedding Model,52,EMBED
+57,Word2Vec,56,EMBED
+58,GloVe,56,EMBED
+59,FastText,56,EMBED
+60,Sentence Embedding,52,EMBED
+61,Contextual Embedding,60,EMBED
+62,Vector Database,53,EMBED
+63,Vector Store,62,EMBED
+64,Vector Index,63,EMBED
+65,Approximate Nearest Neighbor,64,EMBED
+66,FAISS,63|65,EMBED
+67,Pinecone,63,EMBED
+68,Weaviate,63,EMBED
+69,Chatbot,1|5,CHAT
+70,Conversational Agent,69,CHAT
+71,Dialog System,70,CHAT
+72,Intent Recognition,5|69,CHAT
+73,Intent Modeling,72,CHAT
+74,Intent Classification,73,CHAT
+75,Entity Extraction,5|6,CHAT
+76,Named Entity Recognition,75,CHAT
+77,Entity Type,76,CHAT
+78,Entity Linking,76,CHAT
+79,FAQ,69,CHAT
+80,FAQ Analysis,79,CHAT
+81,Question-Answer Pair,79,CHAT
+82,User Query,69,CHAT
+83,User Intent,72|82,CHAT
+84,Chatbot Response,69,CHAT
+85,Response Generation,84,CHAT
+86,Response Quality,84,CHAT
+87,Response Latency,84|42,CHAT
+88,User Feedback,84,CHAT
+89,Feedback Button,88,CHAT
+90,Thumbs Up/Down,89,CHAT
+91,Feedback Loop,88,CHAT
+92,AI Flywheel,91|93,CHAT
+93,Continuous Improvement,91,CHAT
+94,User Interface,,CHAT
+95,Chat Interface,94,CHAT
+96,Message Bubble,95,CHAT
+97,Chat History,95,CHAT
+98,Conversation Context,97,CHAT
+99,Session Management,98,CHAT
+100,Chatbot Framework,69,CHAT
+101,Rasa,100,CHAT
+102,Dialogflow,100,CHAT
+103,Botpress,100,CHAT
+104,LangChain,100|45,CHAT
+105,LlamaIndex,100|45,CHAT
+106,JavaScript Library,,CHAT
+107,Node.js,106,CHAT
+108,React Chatbot,106|107,CHAT
+109,Chat Widget,95|106,CHAT
+110,External Knowledge,,RAG
+111,Public Knowledge Base,110,RAG
+112,Internal Knowledge,110,RAG
+113,Private Documents,112,RAG
+114,Document Corpus,110,RAG
+115,RAG Pattern,45|63|114,RAG
+116,Retrieval Augmented Generation,115,RAG
+117,Retrieval Step,115,RAG
+118,Augmentation Step,117,RAG
+119,Generation Step,118,RAG
+120,Context Window,45,RAG
+121,Prompt Engineering,45,RAG
+122,System Prompt,121,RAG
+123,User Prompt,121,RAG
+124,RAG Limitations,115,RAG
+125,Context Length Limit,120,RAG
+126,Hallucination,45,RAG
+127,Factual Accuracy,86|126,RAG
+128,GraphRAG Pattern,115|129,GRAPH
+129,Knowledge Graph,,GRAPH
+130,Graph Database,129,GRAPH
+131,Node,129,GRAPH
+132,Edge,129,GRAPH
+133,Triple,131|132,GRAPH
+134,Subject-Predicate-Object,133,GRAPH
+135,RDF,133,GRAPH
+136,Graph Query,129,GRAPH
+137,OpenCypher,136,GRAPH
+138,Cypher Query Language,136,GRAPH
+139,Neo4j,130,GRAPH
+140,Corporate Nervous System,129|142,GRAPH
+141,Organizational Knowledge,140,GRAPH
+142,Knowledge Management,110,GRAPH
+143,NLP Pipeline,5,NLP
+144,Text Preprocessing,6|143,NLP
+145,Text Normalization,144,NLP
+146,Stemming,144,NLP
+147,Lemmatization,144,NLP
+148,Part-of-Speech Tagging,143,NLP
+149,Dependency Parsing,143,NLP
+150,Coreference Resolution,143,NLP
+151,Database Query,,QUERY
+152,SQL Query,151,QUERY
+153,Query Parameter,151,QUERY
+154,Parameter Extraction,153,QUERY
+155,Query Template,152|153,QUERY
+156,Parameterized Query,155,QUERY
+157,Query Execution,151,QUERY
+158,Query Description,151,QUERY
+159,Natural Language to SQL,5|152,QUERY
+160,Question to Query Mapping,159|82,QUERY
+161,Slot Filling,154,QUERY
+162,User Context,82,CHAT
+163,User Profile,162,CHAT
+164,User Preferences,163,CHAT
+165,User History,163,CHAT
+166,Personalization,163|164,CHAT
+167,Security,69,SEC
+168,Authentication,167,SEC
+169,Authorization,167,SEC
+170,User Permission,169,SEC
+171,Role-Based Access Control,170,SEC
+172,RBAC,171,SEC
+173,Access Policy,170,SEC
+174,Data Privacy,167,SEC
+175,PII,174,SEC
+176,Personally Identifiable Info,175,SEC
+177,GDPR,174,SEC
+178,Data Retention,174,SEC
+179,Log Storage,178,SEC
+180,Chat Log,97|179,SEC
+181,Logging System,179,SEC
+182,Log Analysis,180|181,SEC
+183,Query Frequency,182,EVAL
+184,Frequency Analysis,183,EVAL
+185,Pareto Analysis,184,EVAL
+186,80/20 Rule,185,EVAL
+187,Chatbot Metrics,69,EVAL
+188,KPI,187,EVAL
+189,Key Performance Indicator,188,EVAL
+190,Chatbot Dashboard,187,EVAL
+191,Acceptance Rate,88|187,EVAL
+192,User Satisfaction,88|187,EVAL
+193,Response Accuracy,86|187,EVAL
+194,Chatbot Evaluation,187,EVAL
+195,A/B Testing,194,EVAL
+196,Performance Tuning,42|187,EVAL
+197,Optimization,196,EVAL
+198,Team Project,69,TOOL
+199,Capstone Project,69|115|128,TOOL
+200,Chatbot Career,69,TOOL

@@ -1,0 +1,251 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Artificial Intelligence,,GEN
+2,Exponential Growth,,GEN
+3,Knowledge Organizations,,GEN
+4,Large Language Models,1,GEN
+5,Generative AI,1|4,GEN
+6,Strategic Implications,2|3,GEN
+7,AI Benchmarks,1|4,GEN
+8,Knowledge Management,3,GEN
+9,Content Generation,4|5,GEN
+10,AI Timelines,1|2,GEN
+11,Dartmouth Conference,1,GEN
+12,AI History,1|11,GEN
+13,Machine Learning,1,GEN
+14,Deep Learning,1|13,GEN
+15,Neural Networks,13|14,GEN
+16,Natural Language Processing,1|4|13,GEN
+17,Expert Systems,1|12,GEN
+18,AI Revolution,1|2|10|12,GEN
+19,Prompt Engineering,4|5,GEN
+20,AI Capability Trajectories,1|2|7|10,GEN
+21,ELIZA,12|16,GEN
+22,Transformer Architecture,14|15|16,GEN
+23,GPT Models,4|14|22,GEN
+24,BERT,4|14|22,GEN
+25,Llama Models,4|14|22,GEN
+26,Claude Models,4|14|22,GEN
+27,DeepSeek Models,4|14|22,GEN
+28,AlphaGo,12|14,GEN
+29,Deep Blue,12,GEN
+30,Watson,12|16,GEN
+31,GANs,14|15,GEN
+32,Diffusion Models,14|15|31,GEN
+33,Text Generation,4|5|16,GEN
+34,Image Generation,5|31|32,GEN
+35,Text-to-Image Models,5|33|34,GEN
+36,DALL-E,34|35,GEN
+37,Midjourney,34|35,GEN
+38,Stable Diffusion,32|34|35,GEN
+39,Democratization of AI,1|2,GEN
+40,AI Accessibility,1|39,GEN
+41,Open Source AI,4|25|39,GEN
+42,Proprietary AI,4|23|24|26,GEN
+43,AI Cost Trends,2|39|40,GEN
+44,Local AI Models,4|41,GEN
+45,Cloud-Based AI,4|42,GEN
+46,AI Adoption Curve,2|39|40,GEN
+47,Disruption Theory,2|6,GEN
+48,Public Knowledge,3|8,GEN
+49,Private Knowledge,3|8,GEN
+50,Knowledge Integration,8|48|49,GEN
+51,Knowledge Scope,8|50,GEN
+52,Personal Knowledge,49|51,GEN
+53,Organizational Knowledge,3|8|49|51,GEN
+54,Departmental Knowledge,49|51|53,GEN
+55,Project Knowledge,49|51|53,GEN
+56,Knowledge Protection,49|51,GEN
+57,Privacy Regulations,56,GEN
+58,FERPA,56|57,GEN
+59,Hyperpersonalized Learning,4|5|40,GEN
+60,Curriculum Development,59,GEN
+61,AI-Assisted Teaching,4|5|59|60,GEN
+62,Assessment Challenges,59|60|61,GEN
+63,Academic Integrity,62,GEN
+64,Research Integrity,63,GEN
+65,Content Authenticity,9|33,GEN
+66,Future Skills Development,18|60,GEN
+67,AI Literacy,1|40|66,GEN
+68,Knowledge Worker Productivity,5|9|50,GEN
+69,Business Process Analysis,6|68,GEN
+70,Customer Engagement Transformation,5|9|69,GEN
+71,Product Development Acceleration,5|9|69,GEN
+72,Competitive Advantage,6|47|69|70|71,GEN
+73,Strategic Response Planning,6|72,GEN
+74,Impact Assessment,6|18|73,GEN
+75,LLM Limitations,4|7|93,GEN
+76,World Models,1|4|75,GEN
+77,Hallucination (AI),4|75,GEN
+78,Factual Reliability,4|77,GEN
+79,Ethical Considerations,1|77|78,GEN
+80,Responsible AI,1|79,GEN
+81,AI Governance,79|80,GEN
+82,AI Center of Excellence,81,GEN
+83,Organizational Structure,3|82,GEN
+84,Centralized Control Models,81|83,GEN
+85,Decentralized Control Models,81|83,GEN
+86,Implementation Roadmapping,73|82,GEN
+87,Change Management,73|86,GEN
+88,Reasoning Capabilities,4|75|76,GEN
+89,One-Shot Learning,4|88,GEN
+90,Few-Shot Learning,4|88|89,GEN
+91,Zero-Shot Learning,4|88|89,GEN
+92,Chain-of-Thought Reasoning,4|88,GEN
+93,Context Window,4,GEN
+94,Tokens,4|93,GEN
+95,Token Limits,93|94,GEN
+96,AI Agents,1|4|5,GEN
+97,Multi-Agent Systems,96,GEN
+98,Autonomous Systems,96|97,GEN
+99,AI Benchmarking,7,GEN
+100,ImageNet,7|34|99,GEN
+101,MMLU Benchmark,7|16|99,GEN
+102,HumanEval Benchmark,7|99,GEN
+103,Question Answering,4|16,GEN
+104,Response Accuracy,7|103,GEN
+105,Response Speed,4|93|94,GEN
+106,Model Size,4|15,GEN
+107,Parameter Count,4|15|106,GEN
+108,Training Data Volume,4|13|15,GEN
+109,Fine-Tuning,4|13|14,GEN
+110,Prompt Templates,19,GEN
+111,System Prompts,19|110,GEN
+112,AI Safety,1|79|80,GEN
+113,Bias Detection,79|112,GEN
+114,Model Alignment,79|112|113,GEN
+115,AI Ethics Framework,79|80|112,GEN
+116,Fairness Metrics,113|115,GEN
+117,AI Transparency,112|115,GEN
+118,Explainable AI,117,GEN
+119,Educational Technology,3|59,GEN
+120,AI Personalization,5|59|119,GEN
+121,Adaptive Learning,59|119|120,GEN
+122,Content Recommendation,9|120,GEN
+123,Knowledge Graphs,8|50,GEN
+124,Educational AI Applications,5|59|119,GEN
+125,AI-Generated Lesson Plans,9|60|61|119,GEN
+126,AI-Generated Assessments,9|62|119,GEN
+127,MicroSims,119|124,GEN
+128,Artificial General Intelligence,1|18|20,GEN
+129,AGI Timeline Predictions,10|128,GEN
+130,AGI Capabilities,128,GEN
+131,Human-Level AI,128|130,GEN
+132,Superhuman AI,128|130|131,GEN
+133,Narrow AI,1|128,GEN
+134,Task-Specific AI,133,GEN
+135,Domain-Specific Knowledge,4|49|51,GEN
+136,Code Generation,5|9,GEN
+137,Automated Programming,136,GEN
+138,Coding Assistants,5|136|137,GEN
+139,Vibe Coding,5|136|138,GEN
+140,Code Explanation,136|138,GEN
+141,Prototype Development,137|138,GEN
+142,Business Intelligence,3|68|69,GEN
+143,Data Analysis Automation,5|142,GEN
+144,Report Generation,5|9|142|143,GEN
+145,Content Summarization,5|9|33,GEN
+146,Information Extraction,5|145,GEN
+147,Digital Transformation,6|18|39|69,GEN
+148,Academic Publishing,64,GEN
+149,Plagiarism Detection,63|65|145,GEN
+150,Citation Analysis,148|149,GEN
+151,Content Moderation,65|112,GEN
+152,AI-Enhanced Research,5|64|146,GEN
+153,Scientific Discovery,152,GEN
+154,Copyright Implications,65|151,GEN
+155,Intellectual Property,65|154,GEN
+156,Content Ownership,65|155,GEN
+157,AI-Generated Content Rights,5|9|155|156,GEN
+158,Educational Rights,57|58,GEN
+159,Student Data Protection,57|58|158,GEN
+160,Teacher Augmentation,59|61|119,GEN
+161,Administrative Automation,5|69,GEN
+162,Resource Allocation,161,GEN
+163,Decision Support Systems,5|142|161,GEN
+164,AI Forecasting,10|20,GEN
+165,Market Analysis,142|143|164,GEN
+166,Competitive Intelligence,142|165,GEN
+167,Strategic Planning,6|47|73|164|166,GEN
+168,Organizational Learning,3|8|50,GEN
+169,Knowledge Transfer,8|50|168,GEN
+170,Knowledge Retention,8|168|169,GEN
+171,Knowledge Creation,5|8|9|169,GEN
+172,Knowledge Application,8|168|171,GEN
+173,Institutional Memory,8|53|169|170,GEN
+174,Language Understanding,4|16,GEN
+175,Visual Recognition,5|34,GEN
+176,Multimodal AI,4|5|174|175,GEN
+177,Speech Recognition,16|174,GEN
+178,Text-to-Speech,16|33|174,GEN
+179,Speech-to-Text,16|177,GEN
+180,Signal Processing,177|179,GEN
+181,Semantic Understanding,16|174,GEN
+182,Contextual Relevance,93|174|181,GEN
+183,Content Customization,9|59|120,GEN
+184,User Experience Design,119|120|183,GEN
+185,AI Interface Design,184,GEN
+186,Human-AI Collaboration,1|4|5|96,GEN
+187,Augmented Intelligence,1|186,GEN
+188,AI Assistants,5|96|186,GEN
+189,Digital Workforce,96|186|188,GEN
+190,Job Transformation,18|186|189,GEN
+191,Skill Obsolescence,18|66|190,GEN
+192,Reskilling Strategies,66|190|191,GEN
+193,Workforce Development,66|190|192,GEN
+194,AI Literacy Programs,67|193,GEN
+195,Technology Adoption,39|40|46,GEN
+196,Resistance to Change,46|87|195,GEN
+197,Cultural Transformation,87|196,GEN
+198,Innovation Management,72|167|197,GEN
+199,Risk Assessment,6|74|79,GEN
+200,Opportunity Identification,6|72|74,GEN
+201,Scenario Planning,164|167|199|200,GEN
+202,Future of Work,18|190|193,GEN
+203,Knowledge Economy,3|18|202,GEN
+204,Information Asymmetry,8|48|49,GEN
+205,Cognitive Enhancement,59|187,GEN
+206,Learning Acceleration,59|119|121|205,GEN
+207,Educational Outcomes,59|62|119|206,GEN
+208,Performance Metrics,7|62|207,GEN
+209,Success Indicators,74|208,GEN
+210,Return on Investment,6|74|209,GEN
+211,Total Cost of Ownership,43|74|210,GEN
+212,Implementation Strategy,73|86|87,GEN
+213,Technology Integration,87|195|212,GEN
+214,Pilot Programs,212|213,GEN
+215,Scaled Deployment,212|213|214,GEN
+216,Continuous Improvement,87|215,GEN
+217,Feedback Loops,87|216,GEN
+218,Iterative Development,87|216|217,GEN
+219,Agile Methodology,87|218,GEN
+220,Project Management,87|219,GEN
+221,Resource Planning,162|220,GEN
+222,Stakeholder Engagement,87|220,GEN
+223,Executive Sponsorship,74|220|222,GEN
+224,Cross-Functional Teams,87|220|222,GEN
+225,Technical Infrastructure,213,GEN
+226,Data Architecture,225,GEN
+227,System Integration,213|225,GEN
+228,API Management,225|227,GEN
+229,User Training,67|87|213,GEN
+230,Support Systems,213|229,GEN
+231,Documentation Standards,213|230,GEN
+232,Version Control,213|231,GEN
+233,Testing Protocols,213|232,GEN
+234,Quality Assurance,233,GEN
+235,Regulatory Compliance,57|81|112,GEN
+236,Industry Standards,81|235,GEN
+237,Best Practices,87|236,GEN
+238,Case Studies,6|74|207,GEN
+239,Benchmarking Studies,7|99|238,GEN
+240,Trend Analysis,20|164,GEN
+241,Predictive Modeling,164|240,GEN
+242,Scenario Analysis,199|201|241,GEN
+243,Cost-Benefit Analysis,74|199|200|210|211,GEN
+244,Value Proposition,6|72|200|210,GEN
+245,Competitive Positioning,72|166|244,GEN
+246,Market Differentiation,72|245,GEN
+247,Sustainable Advantage,72|244|245|246,GEN
+248,Innovation Strategy,72|167|198|247,GEN
+249,Technology Roadmap,164|201|212|248,GEN
+250,Future Readiness,20|73|164|201|248|249,GEN

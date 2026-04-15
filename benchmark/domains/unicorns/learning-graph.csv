@@ -1,0 +1,141 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Mythical Beast,,FOUND
+2,Unicorn,1,FOUND
+3,Dragon,1,FOUND
+4,Phoenix,1,FOUND
+5,Griffin,1,FOUND
+6,Centaur,1,FOUND
+7,Mermaid,1,FOUND
+8,Minotaur,1,FOUND
+9,Pegasus,1,FOUND
+10,Kraken,1,FOUND
+11,Siren,1,FOUND
+12,Cyclops,1,FOUND
+13,Satire,,FOUND
+14,Allegory,13,FOUND
+15,Fable,13,FOUND
+16,Ancient Unicorn Mythology,2,UHIST
+17,Medieval Unicorn Lore,16,UHIST
+18,Unicorn Symbolism,16|17,UHIST
+19,Unicorn in Art History,18,UHIST
+20,Modern Unicorn Culture,18|19,UHIST
+21,Unicorn Startup Metaphor,2|23,UHIST
+22,Billion Dollar Valuation,21|23,UHIST
+23,Venture Capital,,UHIST
+24,Series B Funding,23,UHIST
+25,Magical Thinking,,UHIST
+26,Unicorn-Industrial Complex,21|22|24|25,UHIST
+27,Mythical Product-Market Fit,21|26,UHIST
+28,Unicorn Literacy,20|26,UHIST
+29,Taxonomy,,CLASS
+30,Beast Classification System,1|29,CLASS
+31,Creature Characteristics,1|30,CLASS
+32,Mythical vs Real Creatures,31,CLASS
+33,Beast Allegory Mapping,14|30,CLASS
+34,Allegorical Interpretation,14|33,CLASS
+35,Symbolic Representation,14|18,CLASS
+36,Narrative Archetype,15|34,CLASS
+37,Character as Metaphor,34|36,CLASS
+38,Bestiary Tradition,17|30,CLASS
+39,Artificial Intelligence,,AIFUN
+40,Machine Learning,39,AIFUN
+41,Generative AI,40,AIFUN
+42,Large Language Model,41,AIFUN
+43,AI Hallucination,42,AIFUN
+44,Neural Network,40,AIFUN
+45,Natural Language Processing,40,AIFUN
+46,AI Training Data,40,AIFUN
+47,Algorithm,39,AIFUN
+48,Automation,39|47,AIFUN
+49,Chatbot,42|45,AIFUN
+50,AI Demo vs Product,39|60,AIFUN
+51,AI Capabilities,39|40,AIFUN
+52,AI Limitations,51,AIFUN
+53,Hype Cycle,,HYPE
+54,Peak of Inflated Expect,53,HYPE
+55,Trough of Disillusionment,54,HYPE
+56,Slope of Enlightenment,55,HYPE
+57,Plateau of Productivity,56,HYPE
+58,AI Hype Culture,39|53,HYPE
+59,Tech Press Release,58,HYPE
+60,Vaporware,58|59,HYPE
+61,Breakthrough Announcement,59|60,HYPE
+62,AI Washing,58|61,HYPE
+63,Moving the Goalposts,52|58,HYPE
+64,AGI Timeline Claims,41|63,HYPE
+65,AI Demo Magic,41|50,HYPE
+66,Investor Pitch Deck,23|58,HYPE
+67,Startup Mythology,21|66,HYPE
+68,Disruption Narrative,58|67,HYPE
+69,AI in Education,39|70,EDAI
+70,Adaptive Learning,40,EDAI
+71,AI Tutoring System,42|70,EDAI
+72,Worksheet Obsolescence,69|48,EDAI
+73,Digital Literacy,,EDAI
+74,AI Literacy,39|73,EDAI
+75,Institutional Resistance,69|25,EDAI
+76,Committee Paralysis,75,EDAI
+77,Ban vs Embrace Debate,69|75,EDAI
+78,Ostrich Response,75|80,EDAI
+79,Education Technology Gap,69|73,EDAI
+80,Deer in Headlights Effect,25|69,EDAI
+81,Change Management,75|80,EDAI
+82,Future of Assessment,69|71,EDAI
+83,AI-Generated Textbook,41|69,EDAI
+84,Intelligent Textbook,83|136,EDAI
+85,Job Displacement,48|39,JOBS
+86,Automation Anxiety,85|25,JOBS
+87,Workforce Disruption,85|68,JOBS
+88,Skill Obsolescence,85|87,JOBS
+89,Reskilling,88,JOBS
+90,Upskilling,88|89,JOBS
+91,Human-AI Collaboration,39|85,JOBS
+92,Centaur Workforce,6|91,JOBS
+93,Augmentation vs Replacement,91|92,JOBS
+94,Middle Manager Dilemma,85|76,JOBS
+95,Performance Review Paradox,92|93,JOBS
+96,LinkedIn Skill Inflation,88|89,JOBS
+97,Coding Bootcamp Myth,89|90,JOBS
+98,Technology Fantasy,25|60,TFANT
+99,Quantum Computing,98,TFANT
+100,Quantum Supremacy,99,TFANT
+101,Five Years Away Syndrome,98|100,TFANT
+102,Blockchain,98,TFANT
+103,Distributed Ledger,102,TFANT
+104,Bitcoin,102,TFANT
+105,Cryptocurrency,104,TFANT
+106,Ethical Bitcoin Paradox,104|105,TFANT
+107,Carbon-Neutral Magic,106|108,TFANT
+108,Energy Consumption Paradox,102|104,TFANT
+109,Self-Driving Car,98|39,TFANT
+110,Metaverse,98|39,TFANT
+111,Fusion Power,98,TFANT
+112,Vaporware Taxonomy,29|60|98,TFANT
+113,Perpetual Beta,60|98,TFANT
+114,Satirical Writing,13|14,STORY
+115,Deadpan Delivery,114,STORY
+116,Irony,13,STORY
+117,Parody,13|116,STORY
+118,Dark Humor,13|116,STORY
+119,Biting Satire,114|118,STORY
+120,Graphic Novel,,STORY
+121,Visual Storytelling,120,STORY
+122,Storyboarding,121,STORY
+123,Character Development,120|37,STORY
+124,Narrative Arc,120|36,STORY
+125,World Building,120|124,STORY
+126,Meta-Fiction,114|125,STORY
+127,Critical Thinking,,CRIT
+128,Media Literacy,73|127,CRIT
+129,Fact vs Fiction,127|128,CRIT
+130,Source Evaluation,128|129,CRIT
+131,Claim Verification,130,CRIT
+132,Logical Fallacy,127,CRIT
+133,Confirmation Bias,127|132,CRIT
+134,Appeal to Novelty,132|58,CRIT
+135,Real or Fake Exercise,129|131,CRIT
+136,Interactive Simulation,,CRIT
+137,Population Dynamics Model,136|2,CRIT
+138,Timeline Visualization,136|16,CRIT
+139,Hype Cycle Visualization,136|53,CRIT
+140,Venn Diagram Analysis,136|51|52,CRIT

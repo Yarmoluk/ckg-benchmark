@@ -1,0 +1,266 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Digital Device,,FOUND
+2,Internet,,FOUND
+3,Web Browser,1|2,FOUND
+4,Website,2|3,FOUND
+5,Online Activity,1|2,FOUND
+6,Online Community,2|5,FOUND
+7,Digital World,2|6,FOUND
+8,Trusted Adult,,FOUND
+9,School Device,1,FOUND
+10,Family Device,1,FOUND
+11,Digital Citizenship,6|7,FOUND
+12,Digital Citizen,11,FOUND
+13,Digital Rights,12,FOUND
+14,Digital Responsibilities,12,FOUND
+15,Digital Opportunities,12,FOUND
+16,Pause Think Act,12,FOUND
+17,Safe Online Behavior,14|16,FOUND
+18,Legal Online Behavior,14,FOUND
+19,Ethical Online Behavior,14,FOUND
+20,ISTE Standards,11,FOUND
+21,Digital Etiquette,6|14,FOUND
+22,Digital Threshold,12|5,FOUND
+23,Screen Time,5|9,BAL
+24,Media Balance,23,BAL
+25,Heart Activity,24,BAL
+26,Brain Activity,24,BAL
+27,Body Activity,24,BAL
+28,Activity Sorting,25|26|27,BAL
+29,Tired Eyes,23,BAL
+30,Grumpy Mood,23,BAL
+31,Skipped Meal,23,BAL
+32,Skipped Play,23,BAL
+33,Media Imbalance,29|30|31|32,BAL
+34,Screen Break,33,BAL
+35,Outdoor Time,27|34,BAL
+36,Sleep Habits,33,BAL
+37,Healthy Habits,35|36,BAL
+38,Mindful Use,24|16,BAL
+39,Digital Habit Tracker,28|34,BAL
+40,Daily Tech Log,39,BAL
+41,Offline Activity,27|34,BAL
+42,Family Media Plan,10|41,BAL
+43,Tech Free Zone,41|42,BAL
+44,Wellbeing Check,33|37,BAL
+45,Personal Information,5,PRIV
+46,Private Information,45,PRIV
+47,Full Name,46,PRIV
+48,Home Address,46,PRIV
+49,School Name,46,PRIV
+50,Birthday,46,PRIV
+51,Phone Number,46,PRIV
+52,Favorite Color,45,PRIV
+53,Hobby Information,45,PRIV
+54,Identifying Information,47|48|49|50|51,PRIV
+55,Password,4,PRIV
+56,Strong Password,55,PRIV
+57,Passphrase,56,PRIV
+58,Password Sharing,55|14,PRIV
+59,Sign Out Habit,55|17,PRIV
+60,Account Security,56|59,PRIV
+61,Two Factor Authentication,60,PRIV
+62,Data Tracking,5|46,PRIV
+63,Cookies,4|62,PRIV
+64,Targeted Ad,62|63,PRIV
+65,Clickbait,4|64,PRIV
+66,Online Scam,65|18,PRIV
+67,Phishing Basics,66|55,PRIV
+68,Sign Up Form,4|46|45,PRIV
+69,App Permission,5|62,PRIV
+70,Digital Footprint,5|22,FOOT
+71,Permanent Post,70,FOOT
+72,Searchable Post,70|4,FOOT
+73,Copyable Content,70,FOOT
+74,Shareable Content,70,FOOT
+75,Digital Trail,70|71,FOOT
+76,Online Reputation,75,FOOT
+77,Digital Identity,75|46,FOOT
+78,Avatar,77,FOOT
+79,Username Choice,77,FOOT
+80,Profile Picture,77|46,FOOT
+81,Public Post,71|74,FOOT
+82,Private Post,81|46,FOOT
+83,Post History,71|75,FOOT
+84,Future Audience,71|76,FOOT
+85,Positive Footprint,76|84,FOOT
+86,Intellectual Property,19|73,FOOT
+87,Giving Credit,86|19,FOOT
+88,Citing Source,87,FOOT
+89,Copyright Basics,86,FOOT
+90,Creative Work,89,FOOT
+91,Footprint Audit,75|85,FOOT
+92,Online Friend,6|5,REL
+93,In Person Friend,92,REL
+94,Online Only Friend,92|93,REL
+95,Stranger Online,6|94,REL
+96,Tone In Text,5,REL
+97,Emoji Meaning,96,REL
+98,Text Misunderstanding,96|97,REL
+99,Group Chat,92,REL
+100,Direct Message,92|82,REL
+101,Video Chat,92|5,REL
+102,Voice Chat,92|5,REL
+103,Safe Talk Rule,8|95,REL
+104,Warning Sign,95|103,REL
+105,Stop Conversation,103|104,REL
+106,Tell Adult,8|105,REL
+107,Block Feature,95,REL
+108,Report Feature,107|14,REL
+109,Mute Feature,107,REL
+110,Polite Reply,96|21,REL
+111,Respectful Tone,110|21,REL
+112,Boundary Setting,103|111,REL
+113,Friend Request,92|95,REL
+114,Online Conflict,92|98,CYB
+115,Cyberbullying,114|17,CYB
+116,Digital Drama,114,CYB
+117,Hate Speech,18|115,CYB
+118,Mean Comment,116,CYB
+119,Online Target,115,CYB
+120,Bystander,115,CYB
+121,Upstander,120,CYB
+122,Bully Role,115|119,CYB
+123,Emotional Impact,115,CYB
+124,Hurt Feelings,123,CYB
+125,Anger Online,123|114,CYB
+126,Empathy Online,124|111,CYB
+127,Kind Reply,110|126,CYB
+128,Reporting Bullying,115|108,CYB
+129,Saving Evidence,71|128,CYB
+130,Adult Help,8|128,CYB
+131,Conflict Vs Bullying,114|115,CYB
+132,Repeated Harm,115|131,CYB
+133,Power Imbalance,115|131,CYB
+134,Group Pile On,116|118,CYB
+135,Standing Up Safely,121|130,CYB
+136,Information Source,4|45,MIS
+137,News Story,4|136,MIS
+138,News Literacy,137|136,MIS
+139,Fact,137,MIS
+140,Opinion,137,MIS
+141,Misinformation,138|139,MIS
+142,Disinformation,141,MIS
+143,Rumor,141,MIS
+144,Hoax,142,MIS
+145,Viral Post,74|141,MIS
+146,Shocking Headline,65|137,MIS
+147,Emotional Hook,65|123,MIS
+148,Urgency Cue,65,MIS
+149,Curiosity Gap,65,MIS
+150,Fact Check,138|141,MIS
+151,Fact Check Steps,150,MIS
+152,Trusted Source,136|150,MIS
+153,Source Comparison,152|150,MIS
+154,Date Check,137|150,MIS
+155,Author Check,137|150,MIS
+156,Edited Image,142|145,MIS
+157,Slow Down Habit,16|147|148,MIS
+158,Critical Thinking,16|150,CRIT
+159,Curious Mind,158,CRIT
+160,Asking Questions,158|159,CRIT
+161,Who Said It,160|155,CRIT
+162,How They Know,160|155,CRIT
+163,What Evidence,160,CRIT
+164,What Is Missing,160,CRIT
+165,Evidence,163|139,CRIT
+166,Claim,137|139,CRIT
+167,Reason,165|166,CRIT
+168,Logical Reason,167,CRIT
+169,Jumping To Conclusion,158|166,CRIT
+170,Confirming Sources,153|161,CRIT
+171,Comparing Versions,153,CRIT
+172,Spotting Bias,158|140|155,CRIT
+173,Checking Feelings,158|147,CRIT
+174,Pause Before Share,16|157|158,CRIT
+175,Asking For Help,8|158,CRIT
+176,Healthy Doubt,158|169,CRIT
+177,Open Mindedness,158|176,CRIT
+178,Changing Mind,158|176|177,CRIT
+179,Reflective Thinking,158|177,CRIT
+180,Digital Citizenship Toolkit,11|158,CAP
+181,Personal Pledge,12|14,CAP
+182,Habit Tracker Project,39|44,CAP
+183,Upstander Script,121|135,CAP
+184,Fact Check Card,150|151,CAP
+185,Critical Thinker Toolkit,158|160,CAP
+186,Antibullying Poster,115|121,CAP
+187,Mini Lesson,184|185,CAP
+188,Public Service Message,65|187,CAP
+189,Family Tech Plan,42|181,CAP
+190,Buddy Class Sharing,187|188,CAP
+191,Classroom Pledge,181|11,CAP
+192,Footprint Plan,85|91,CAP
+193,Password Plan,56|60,CAP
+194,Safe Talk Plan,103|106,CAP
+195,Media Balance Plan,24|44,CAP
+196,Screen Time Goal,23|195,CAP
+197,Reflection Journal,179|181,CAP
+198,Knowledge Sharing,190|187,CAP
+199,Continuous Improvement,179|197,CAP
+200,Lifelong Learner,179|199,CAP
+201,App,1|5,FOUND
+202,Account,5|201,FOUND
+203,Login,202|55,FOUND
+204,Search Engine,2|3,FOUND
+205,URL,4,FOUND
+206,Address Bar,3|205,FOUND
+207,Wifi,2,FOUND
+208,Public Wifi,207,FOUND
+209,Tablet,1,FOUND
+210,Laptop,1,FOUND
+211,Smartphone,1,FOUND
+212,Notification,201|211,BAL
+213,FOMO,212|123,BAL
+214,Eye Strain,23|29,BAL
+215,Active Vs Passive Use,25|26|27,BAL
+216,App Time Limit,201|34,BAL
+217,Blue Light,23|36,BAL
+218,Posture,23|27,BAL
+219,Doomscrolling,23|33,BAL
+220,HTTPS,4|205,PRIV
+221,Padlock Icon,220,PRIV
+222,Location Sharing,46|201,PRIV
+223,GPS,211|222,PRIV
+224,Screen Lock,60|211,PRIV
+225,Biometric Login,224,PRIV
+226,Incognito Mode,3|62,PRIV
+227,Email Privacy,46|55,PRIV
+228,Screenshot,71|73,FOOT
+229,Photo Tagging,80|74,FOOT
+230,Geotag,222|229,FOOT
+231,Plagiarism,87|88,FOOT
+232,Creative Commons,89|90,FOOT
+233,Personal Brand,76|85,FOOT
+234,College Audience,84|85,FOOT
+235,Netiquette,21|111,REL
+236,All Caps,96|110,REL
+237,Read Receipt,100,REL
+238,Ghosting,100|123,REL
+239,Stranger Danger,95|103,REL
+240,Trolling,116|118,CYB
+241,Exclusion,99|115,CYB
+242,Impersonation,77|115,CYB
+243,De-escalation,16|125,CYB
+244,Repair Harm,126|243,CYB
+245,Apology Online,96|244,CYB
+246,Satire,137|140,MIS
+247,Parody,246,MIS
+248,Out Of Context,137|141,MIS
+249,Lateral Reading,150|153,MIS
+250,Headline Vs Article,137|146,MIS
+251,Algorithm Amplification,145|62,MIS
+252,Recommendation Feed,251|64,MIS
+253,Confirmation Bias,158|176,CRIT
+254,Cause Vs Correlation,165|167,CRIT
+255,Counter Argument,166|167,CRIT
+256,Premise,166|167,CRIT
+257,Conclusion,256|167,CRIT
+258,Inference,165|257,CRIT
+259,Generalization,258|169,CRIT
+260,Stereotype,259|172,CRIT
+261,Anecdote Vs Evidence,165|259,CRIT
+262,Peer Teaching,187|190,CAP
+263,Self Assessment,179|197,CAP
+264,Goal Setting,196|263,CAP
+265,Habit Formation,39|264,CAP
