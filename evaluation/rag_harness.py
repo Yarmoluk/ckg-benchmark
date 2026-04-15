@@ -4,15 +4,19 @@ RAG Harness — Retrieval-Augmented Generation baseline.
 For each benchmark query, this harness:
 1. Loads domain chapter .md files from corpus/
 2. Chunks into 512-token windows with 50-token overlap
-3. Embeds with OpenAI text-embedding-3-small and indexes with FAISS
+3. Embeds with a local sentence-transformers model and indexes with FAISS
 4. Retrieves top-5 chunks per query
 5. Sends chunks + query to Claude Sonnet 4.6 for answer generation
 6. Records F1, tokens, and RDS (same metrics as CKG harness)
+
+No OpenAI API key required. Embeddings run entirely locally using
+sentence-transformers (all-MiniLM-L6-v2 by default — fast, ~80MB download).
 
 Usage:
     python evaluation/rag_harness.py --domain calculus
     python evaluation/rag_harness.py --all
     python evaluation/rag_harness.py --all --dry-run
+    python evaluation/rag_harness.py --domain calculus --embed-model all-mpnet-base-v2
 """
 
 import json
@@ -23,18 +27,17 @@ import argparse
 import pickle
 from collections import defaultdict
 from pathlib import Path
-from typing import Optional
 
 import numpy as np
 import tiktoken
 import faiss
 import anthropic
-import openai
+from sentence_transformers import SentenceTransformer
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
 CLAUDE_MODEL    = "claude-sonnet-4-6"
-EMBED_MODEL     = "text-embedding-3-small"
+EMBED_MODEL     = "all-MiniLM-L6-v2"   # local, ~80MB, 384-dim, fast
 CHUNK_TOKENS    = 512
 OVERLAP_TOKENS  = 50
 TOP_K           = 5
@@ -46,7 +49,7 @@ INDEX_DIR   = Path("results/rag_indexes")   # cached FAISS indexes
 
 PRICE_INPUT  = 3.0  / 1_000_000   # Claude Sonnet 4.6: $3 per 1M input
 PRICE_OUTPUT = 15.0 / 1_000_000   # $15 per 1M output
-PRICE_EMBED  = 0.02 / 1_000_000   # text-embedding-3-small: $0.02 per 1M tokens
+PRICE_EMBED  = 0.0                 # local embedding: free
 
 SYSTEM_PROMPT = """You are a knowledgeable tutor. Answer the question using ONLY the
 provided context passages. Be concise and precise. List concepts as comma-separated
@@ -163,21 +166,27 @@ def chunk_documents(docs: list[dict]) -> list[dict]:
 
 # ── Embeddings + FAISS ────────────────────────────────────────────────────────
 
-def embed_texts(texts: list[str], oai_client: openai.OpenAI) -> np.ndarray:
-    """Embed a list of texts in batches. Returns (n, 1536) float32 array."""
-    BATCH = 100
-    all_vecs = []
-    for i in range(0, len(texts), BATCH):
-        batch = texts[i:i+BATCH]
-        resp = oai_client.embeddings.create(model=EMBED_MODEL, input=batch)
-        vecs = [item.embedding for item in resp.data]
-        all_vecs.extend(vecs)
-    return np.array(all_vecs, dtype=np.float32)
+_embed_model = None
+
+def get_embed_model(model_name: str = EMBED_MODEL) -> SentenceTransformer:
+    """Load (and cache) the local sentence-transformer model."""
+    global _embed_model
+    if _embed_model is None or _embed_model.model_card_data.model_name != model_name:
+        print(f"    loading embedding model: {model_name}...")
+        _embed_model = SentenceTransformer(model_name)
+    return _embed_model
 
 
-def build_or_load_index(domain: str, oai_client) -> tuple:
+def embed_texts(texts: list[str], model: SentenceTransformer) -> np.ndarray:
+    """Embed texts locally. Returns (n, dim) float32 array."""
+    vecs = model.encode(texts, batch_size=64, show_progress_bar=False,
+                        convert_to_numpy=True, normalize_embeddings=True)
+    return vecs.astype(np.float32)
+
+
+def build_or_load_index(domain: str, embed_model, dry_run: bool = False) -> tuple:
     """Build FAISS index for a domain, or load cached version.
-    Returns (index, chunks). index is None in dry-run mode (no oai_client)."""
+    Returns (index, chunks). index is None in dry-run mode."""
     docs   = load_corpus_docs(domain)
     if not docs:
         return None, []
@@ -186,8 +195,7 @@ def build_or_load_index(domain: str, oai_client) -> tuple:
     if not chunks:
         return None, []
 
-    # Dry-run: skip embedding, return chunks only
-    if oai_client is None:
+    if dry_run:
         print(f"    dry-run: {len(chunks)} chunks from {len(docs)} docs (no index)")
         return None, chunks
 
@@ -203,11 +211,8 @@ def build_or_load_index(domain: str, oai_client) -> tuple:
 
     print(f"    embedding {len(chunks)} chunks from {len(docs)} docs...")
     texts  = [c["text"] for c in chunks]
-    vecs   = embed_texts(texts, oai_client)
-
-    # L2-normalize for cosine similarity via inner product
-    norms = np.linalg.norm(vecs, axis=1, keepdims=True)
-    vecs  = vecs / (norms + 1e-9)
+    vecs   = embed_texts(texts, embed_model)
+    # vecs are already L2-normalized (normalize_embeddings=True above)
 
     dim   = vecs.shape[1]
     index = faiss.IndexFlatIP(dim)   # inner product = cosine after normalization
@@ -220,16 +225,13 @@ def build_or_load_index(domain: str, oai_client) -> tuple:
     return index, chunks
 
 
-def retrieve_chunks(query: str, index, chunks: list[dict], oai_client) -> list[dict]:
-    """Return top-K chunks for a query. Falls back to first-K if no index."""
-    if index is None or oai_client is None:
-        # Dry-run: return first TOP_K chunks
+def retrieve_chunks(query: str, index, chunks: list[dict],
+                    embed_model, dry_run: bool = False) -> list[dict]:
+    """Return top-K chunks for a query. Falls back to first-K in dry-run."""
+    if dry_run or index is None:
         return [{**c, "score": 0.0} for c in chunks[:TOP_K]]
 
-    q_vec = embed_texts([query], oai_client)
-    norm  = np.linalg.norm(q_vec)
-    q_vec = q_vec / (norm + 1e-9)
-
+    q_vec = embed_texts([query], embed_model)
     scores, indices = index.search(q_vec, TOP_K)
     results = []
     for score, idx in zip(scores[0], indices[0]):
@@ -255,8 +257,8 @@ def token_f1(predicted: str, ground_truth: list[str]) -> dict:
 
 # ── Main harness ──────────────────────────────────────────────────────────────
 
-def run_domain(domain: str, ant_client: anthropic.Anthropic,
-               oai_client: openai.OpenAI, dry_run: bool = False) -> list[dict]:
+def run_domain(domain: str, ant_client, embed_model,
+               dry_run: bool = False) -> list[dict]:
 
     queries_file = QUERIES_DIR / f"queries_{domain}.jsonl"
     if not queries_file.exists():
@@ -264,7 +266,7 @@ def run_domain(domain: str, ant_client: anthropic.Anthropic,
         return []
 
     # Build or load FAISS index
-    index, chunks = build_or_load_index(domain, oai_client)
+    index, chunks = build_or_load_index(domain, embed_model, dry_run=dry_run)
     if not chunks:
         print(f"  ✗ no corpus content for {domain}")
         return []
@@ -281,7 +283,7 @@ def run_domain(domain: str, ant_client: anthropic.Anthropic,
         query_text = q["query"]
 
         # Retrieve top-K chunks
-        top_chunks = retrieve_chunks(query_text, index, chunks, oai_client)
+        top_chunks = retrieve_chunks(query_text, index, chunks, embed_model, dry_run=dry_run)
         context    = "\n\n---\n\n".join(
             f"[Source: {c['source']}]\n{c['text']}" for c in top_chunks
         )
@@ -394,25 +396,23 @@ def summarize(results: list[dict]) -> dict:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--domain",   help="Single domain to run")
-    parser.add_argument("--all",      action="store_true", help="Run all domains with corpus")
-    parser.add_argument("--dry-run",  action="store_true", help="Skip Claude calls, test retrieval only")
-    parser.add_argument("--reindex",  action="store_true", help="Rebuild FAISS indexes from scratch")
-    parser.add_argument("--limit",    type=int, default=0, help="Limit queries per domain (0=all)")
+    parser.add_argument("--domain",      help="Single domain to run")
+    parser.add_argument("--all",         action="store_true", help="Run all domains with corpus")
+    parser.add_argument("--dry-run",     action="store_true", help="Skip Claude calls, test retrieval only")
+    parser.add_argument("--reindex",     action="store_true", help="Rebuild FAISS indexes from scratch")
+    parser.add_argument("--limit",       type=int, default=0, help="Limit queries per domain (0=all)")
+    parser.add_argument("--embed-model", default=EMBED_MODEL,
+                        help=f"sentence-transformers model (default: {EMBED_MODEL})")
     args = parser.parse_args()
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
     anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
-    openai_key    = os.environ.get("OPENAI_API_KEY")
-
     if not anthropic_key and not args.dry_run:
         raise SystemExit("Set ANTHROPIC_API_KEY or use --dry-run")
-    if not openai_key and not args.dry_run:
-        raise SystemExit("Set OPENAI_API_KEY (required for embeddings)")
 
-    ant_client = anthropic.Anthropic(api_key=anthropic_key) if not args.dry_run else None
-    oai_client = openai.OpenAI(api_key=openai_key) if openai_key else None
+    ant_client  = anthropic.Anthropic(api_key=anthropic_key) if not args.dry_run else None
+    embed_model = get_embed_model(args.embed_model) if not args.dry_run else None
 
     if args.reindex:
         for p in INDEX_DIR.glob("*.faiss"):
@@ -437,7 +437,7 @@ def main():
 
     print(f"\nRAG Harness — {'DRY RUN' if args.dry_run else 'LIVE'}")
     print(f"Model: {CLAUDE_MODEL}")
-    print(f"Embed: {EMBED_MODEL} (top-{TOP_K} chunks, {CHUNK_TOKENS}-token windows)")
+    print(f"Embed: {args.embed_model} (local, top-{TOP_K} chunks, {CHUNK_TOKENS}-token windows)")
     print(f"Domains: {len(domains)}\n")
 
     all_results     = []
@@ -451,7 +451,7 @@ def main():
             continue
 
         print(f"── {domain}")
-        results = run_domain(domain, ant_client, oai_client, dry_run=args.dry_run)
+        results = run_domain(domain, ant_client, embed_model, dry_run=args.dry_run)
 
         if args.limit:
             results = results[:args.limit]
