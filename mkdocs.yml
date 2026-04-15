@@ -1,5 +1,5 @@
 site_name: CKG Benchmark
-site_description: 'Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 25 educational domains.'
+site_description: 'Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 46 educational domains.'
 site_author: 'Daniel Yarmoluk and Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://yarmoluk.github.io/ckg-benchmark'
@@ -33,6 +33,9 @@ nav:
     - Overview: metrics/index.md
     - Metrics Specification: metrics/metrics-spec.md
     - Tokenomics: metrics/tokenomics.md
+
+  - MicroSims:
+    - Architecture Comparison: sims/architecture-comparison/index.md
 
   - Getting Started: getting-started.md
   - License: license.md
