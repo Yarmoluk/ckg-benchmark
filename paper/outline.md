@@ -3,7 +3,7 @@
 ## Title
 
 **"Benchmarking Knowledge Retrieval Architectures Across 25 Domains:
-RAG, GraphRAG, and Compressed Knowledge Graphs on the
+RAG, GraphRAG, and Compact Knowledge Graphs on the
 McCreary Intelligent Textbook Corpus"**
 
 **ArXiv categories:** cs.IR (primary), cs.AI (secondary)
@@ -15,7 +15,7 @@ McCreary Intelligent Textbook Corpus"**
 Retrieval-augmented generation (RAG) and graph-based retrieval (GraphRAG)
 are the dominant paradigms for grounding LLM responses in structured knowledge.
 Both optimize for retrieval recall while treating token cost as a secondary
-concern. We introduce Compressed Knowledge Graphs (CKG) — pre-structured DAG
+concern. We introduce Compact Knowledge Graphs (CKG) — pre-structured DAG
 representations with explicit concept taxonomy and pipe-delimited dependency
 encoding — and present the first large-scale benchmark comparing all three
 architectures across 25 domains.
@@ -158,7 +158,7 @@ Note:        Does NOT use learning-graph.csv — dynamic extraction only
 Generation:  Claude Sonnet 4.6, temperature=0
 ```
 
-### 4.3 CKG (Compressed Knowledge Graph)
+### 4.3 CKG (Compact Knowledge Graph)
 ```
 Source:      learning-graph.csv (ConceptID | ConceptLabel | Dependencies | TaxonomyID)
 Lookup:      Exact label match → concept node retrieval

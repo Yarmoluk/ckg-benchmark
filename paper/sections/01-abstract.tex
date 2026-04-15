@@ -2,7 +2,7 @@
 Retrieval-augmented generation (RAG) and graph-based retrieval (GraphRAG)
 are the dominant paradigms for grounding LLM responses in structured knowledge.
 Both optimize for retrieval recall while treating token cost as a secondary
-concern. We introduce Compressed Knowledge Graphs (CKG)---pre-structured DAG
+concern. We introduce Compact Knowledge Graphs (CKG)---pre-structured DAG
 representations with explicit concept taxonomy and pipe-delimited dependency
 encoding---and present the first large-scale benchmark comparing all three
 architectures across 46 domains.
@@ -16,10 +16,13 @@ Reasoning Density Score (RDS $=$ F1 / tokens), Context Utilization Rate,
 Hop-Depth F1 Degradation, Cost Per Correct Answer, and Relationship Precision.
 
 % TODO: Fill in experimental results when available
-CKG achieves macro-average F1 of X.XX vs X.XX (RAG) and X.XX (GraphRAG),
-at Xx fewer tokens, with largest gains on multi-hop dependency queries (T3)
-where RAG F1 degrades by XX\% per additional hop while CKG remains flat.
+CKG achieves macro-average F1 of X.XX vs X.XX (RAG) and X.XX (GraphRAG) on
+\emph{structural queries} (T2 prerequisites, T3 multi-hop paths, T4 category
+aggregates), at Xx fewer tokens, with CKG F1 remaining flat across hop depth
+while RAG degrades by XX\% per additional hop.
 RDS ratio: CKG vs RAG $=$ Xx, CKG vs GraphRAG $=$ Xx.
+T1 entity lookup (explanatory queries) intentionally tests a RAG-favorable
+regime where CKG lacks prose content, confirming benchmark validity.
 
 Benchmark, dataset, and evaluation harness are released at
 \url{https://huggingface.co/datasets/graphify-md/ckg-benchmark}

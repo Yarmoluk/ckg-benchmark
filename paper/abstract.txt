@@ -1,7 +1,7 @@
 Retrieval-augmented generation (RAG) and graph-based retrieval (GraphRAG)
 are the dominant paradigms for grounding LLM responses in structured knowledge.
 Both optimize for retrieval recall while treating token cost as a secondary
-concern. We introduce Compressed Knowledge Graphs (CKG) -- pre-structured DAG
+concern. We introduce Compact Knowledge Graphs (CKG) -- pre-structured DAG
 representations with explicit concept taxonomy and pipe-delimited dependency
 encoding -- and present the first large-scale benchmark comparing all three
 architectures across 46 domains.

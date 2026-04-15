@@ -1,20 +1,22 @@
 \section{Conclusion}\label{sec:conclusion}
 
 We presented the CKG Benchmark, the first large-scale comparison of RAG,
-GraphRAG, and Compressed Knowledge Graphs across 25 educational domains.
+GraphRAG, and Compact Knowledge Graphs across 46 educational domains.
 Our key findings are:
 
 \begin{enumerate}
   \item \textbf{RDS and Hop-Depth F1} are practical additions to IR evaluation
     that jointly measure quality and efficiency---metrics missing from existing
     benchmarks like BEIR and RAGAS.
-  \item \textbf{CKG outperforms RAG and GraphRAG} on structured domain retrieval,
-    particularly on multi-hop dependency queries where explicit edges prevent
-    the transitive inference failures inherent in embedding-based approaches.
+  \item \textbf{CKG outperforms RAG and GraphRAG} on \emph{structural knowledge
+    retrieval}---prerequisites (T2), multi-hop paths (T3), and category
+    aggregates (T4)---where explicit edges prevent transitive inference failures.
+    CKG does not claim superiority on explanatory (T1) queries, which require
+    prose content absent from the DAG.
   \item \textbf{Pre-structured knowledge beats dynamically extracted graphs}
     when the domain is stable and expert-curated taxonomies are available.
   \item \textbf{The McCreary Corpus} is a reproducible, citable multi-domain
-    benchmark with standardized schema across 25 domains.
+    benchmark with standardized schema across 46 domains.
 \end{enumerate}
 
 % TODO: Add specific numbers from experimental results

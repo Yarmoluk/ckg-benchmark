@@ -40,8 +40,9 @@ CKG uses a pre-structured DAG directly.}
 \midrule
 RAG & Unstructured text chunks & Embedding similarity & Embed all chunks \\
 GraphRAG & Dynamically extracted graph & Graph + community search & Full entity extraction \\
-CKG & Pre-structured DAG + taxonomy & Direct concept/edge lookup & Zero (CSV-native) \\
+CKG & Pre-structured DAG + taxonomy & Direct concept/edge lookup & Zero (CSV-native)$^{*}$ \\
 \bottomrule
+\multicolumn{4}{l}{\small $^{*}$Build cost assumes pre-existing expert DAG. Expert curation cost is not measured; see Section~\ref{sec:disc-limitations}.}
 \end{tabular}
 \end{table}
 
@@ -58,6 +59,11 @@ results presented in Section~\ref{sec:results}:
   \item CKG Hallucination Rate $=$ 0 (by construction).
   \item The ``Structure Premium'' hypothesis: RDS advantage correlates with DAG richness ($r > 0.7$).
 \end{enumerate}
+
+\noindent We explicitly do \textbf{not} claim CKG outperforms RAG on T1 (entity lookup /
+explanatory) queries, which require prose content absent from the DAG structure.
+T1 results serve as a negative control validating that the benchmark is not
+constructed to favor CKG across all query types.
 
 \subsection{Contributions}\label{sec:contributions}
 

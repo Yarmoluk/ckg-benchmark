@@ -53,6 +53,19 @@ the source of the efficiency gain, not domain selection bias.
 \subsection{Limitations}\label{sec:disc-limitations}
 
 \begin{itemize}
+  \item \textbf{Structural query scope:} Ground truth for T2, T3, and T4 queries
+    is derived directly from DAG edges. CKG retrieves this ground truth by
+    construction; RAG and GraphRAG must infer it from text. The comparison
+    therefore demonstrates that \emph{explicit structure outperforms inferred
+    structure on structural tasks}---not that CKG is a general-purpose
+    retrieval system. CKG is not designed to compete with RAG on explanatory
+    queries.
+  \item \textbf{T1 as boundary test:} CKG scores F1 $\approx$ 0.09 on T1
+    entity lookup queries because the DAG contains no explanatory prose. For
+    open-ended definitional knowledge retrieval, RAG remains the appropriate
+    architecture. The low T1 score confirms the benchmark is not rigged: a
+    system that only reads DAG edges appropriately fails at questions the DAG
+    cannot answer.
   \item The McCreary corpus is educational---results may not generalize to
     legal, financial, or medical domains.
   \item CKG requires upfront expert curation investment; this cost is not

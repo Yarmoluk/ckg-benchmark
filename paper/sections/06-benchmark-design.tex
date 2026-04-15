@@ -21,6 +21,15 @@ T4 & Category aggregate & ``List all FOUND concepts'' & Filter by TaxonomyID \\
 T5 & Cross-concept & ``How does Domain and Range relate to Inverse Function?'' & Shared neighbors \\
 \bottomrule
 \end{tabular}
+
+\vspace{4pt}
+\noindent\small\textbf{Note on T1 (entity lookup):} T1 queries ask for a concept explanation
+(``What is X?''). CKG contains no explanatory prose---it can return only the
+concept's TaxonomyID and dependencies in response. T1 is therefore a
+\emph{RAG-favorable} query type deliberately included to test the boundary of
+CKG's capability and to confirm that the benchmark is not constructed to favor
+CKG universally. T2--T4 queries have structural ground truth derived from DAG
+edges; T1 does not.
 \end{table}
 
 \subsection{Query Generation}\label{sec:query-gen}

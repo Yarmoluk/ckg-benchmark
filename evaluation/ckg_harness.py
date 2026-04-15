@@ -151,7 +151,12 @@ def retrieve(concepts: dict, query: dict) -> tuple[str, list[int]]:
     qtype = query.get("query_type") or query.get("type", "")
 
     if qtype == "T1_entity":
-        c = find_concept_by_label(concepts, query["ground_truth"][0])
+        # Use concept_id if present (most reliable), else label from ground_truth
+        cid = query.get("concept_id")
+        if cid and cid in concepts:
+            c = concepts[cid]
+        else:
+            c = find_concept_by_label(concepts, query["ground_truth"][0])
         if not c:
             return "No matching concept found.", []
         # Include concept + direct deps + direct dependents
@@ -161,11 +166,14 @@ def retrieve(concepts: dict, query: dict) -> tuple[str, list[int]]:
         return subgraph_to_context(concepts, relevant), relevant
 
     elif qtype == "T2_dependency":
-        c = find_concept_by_label(concepts, query.get("ground_truth", [""])[0])
-        # Try matching from query text
-        if not c:
+        # Use concept_id directly — ground_truth[0] is a prerequisite label, NOT the target
+        cid = query.get("concept_id")
+        if cid and cid in concepts:
+            c = concepts[cid]
+        else:
+            # Fall back to query text extraction
             q_text = query["query"]  # "What are the prerequisites for X?"
-            label = q_text.replace("What are the prerequisites for ", "").rstrip("?")
+            label = q_text.replace("What are the prerequisites for ", "").rstrip("?").strip()
             c = find_concept_by_label(concepts, label)
         if not c:
             return "No matching concept found.", []

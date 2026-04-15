@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is the **CKG Benchmark** repository -- a reproducible benchmark comparing three LLM knowledge retrieval architectures (RAG, GraphRAG, Compressed Knowledge Graphs) across 22 educational domains. The benchmark uses the McCreary Intelligent Textbook Corpus as its data source.
+This is the **CKG Benchmark** repository -- a reproducible benchmark comparing three LLM knowledge retrieval architectures (RAG, GraphRAG, Compact Knowledge Graphs) across 46 educational domains. The benchmark uses the McCreary Intelligent Textbook Corpus as its data source.
 
 **Authors:** Daniel Yarmoluk (Graphify.md) and Dan McCreary
 **Target:** ArXiv paper (cs.IR primary, cs.AI secondary) + HuggingFace dataset

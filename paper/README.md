@@ -3,7 +3,7 @@
 LaTeX source for the ArXiv paper:
 
 > **"Benchmarking Knowledge Retrieval Architectures Across 25 Domains:
-> RAG, GraphRAG, and Compressed Knowledge Graphs on the
+> RAG, GraphRAG, and Compact Knowledge Graphs on the
 > McCreary Intelligent Textbook Corpus"**
 
 ## Structure
