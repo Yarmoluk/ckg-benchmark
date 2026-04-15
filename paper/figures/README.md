@@ -9,17 +9,18 @@
 - **Labels:** Use `\label{fig:shortname}` and reference with `\ref{fig:shortname}`
 - **Width:** `\includegraphics[width=0.95\textwidth]{figures/filename.png}`
 
-## All 7 Figures
+## All 8 Figures
 
 | # | Label | Section | Description | File | Status |
 |---|-------|---------|-------------|------|--------|
 | 1 | `fig:architecture` | Introduction | Three-architecture pipeline diagram | *placeholder in .tex* | Needs drawing |
-| 2 | `fig:f1-token-budget` | Results | F1 vs token budget curves (3 systems) | *pending* | Needs data |
-| 3 | `fig:rds-by-domain` | Results | RDS scatter plot (22 domains x 3 systems) | *pending* | Needs data |
-| 4 | `fig:hop-degradation` | Results | Hop-depth F1 degradation curves | *pending* | Needs data |
-| 5 | `fig:corpus-heatmap` | Corpus | Per-domain statistics heatmap | `corpus-heatmap.png` | Done |
-| 6 | `fig:token-composition` | Results | Token composition stacked bars | `token-composition.png` | Done |
-| 7 | `fig:structure-premium` | Discussion | RDS ratio vs DAG richness correlation | *pending* | Needs data |
+| 2 | `fig:learning-graph` | Corpus | Sample learning graph (calculus, 380 concepts) | `calculus-learning-graph.png` | Done |
+| 3 | `fig:f1-token-budget` | Results | F1 vs token budget curves (3 systems) | *pending* | Needs data |
+| 4 | `fig:rds-by-domain` | Results | RDS scatter plot (22 domains x 3 systems) | *pending* | Needs data |
+| 5 | `fig:hop-degradation` | Results | Hop-depth F1 degradation curves | *pending* | Needs data |
+| 6 | `fig:corpus-heatmap` | Corpus | Per-domain statistics heatmap | `corpus-heatmap.png` | Done |
+| 7 | `fig:token-composition` | Results | Token composition stacked bars | `token-composition.png` | Done |
+| 8 | `fig:structure-premium` | Discussion | RDS ratio vs DAG richness correlation | *pending* | Needs data |
 
 ## Planned Tables
 

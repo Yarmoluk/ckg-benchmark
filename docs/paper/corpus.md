@@ -22,6 +22,14 @@ The corpus spans three categories:
 | Taxonomy categories | 10--17 per domain |
 | Raw content | MkDocs Markdown (~3,000--8,000 words per textbook) |
 
+## Example: Calculus Learning Graph
+
+The figure below shows the interactive learning graph viewer for the calculus domain, illustrating the DAG structure with color-coded taxonomy categories and prerequisite edges.
+
+![Calculus Learning Graph](../img/calculus-learning-graph.png)
+
+*Figure 2: Interactive learning graph viewer for the calculus domain (380 concepts, 539 edges). Each node is a concept, color-coded by taxonomy category. Directed edges represent prerequisite dependencies. The left panel shows category filters and corpus statistics. All 25 domains use this same DAG structure.*
+
 ## Corpus Schema
 
 All 25 domains share an identical CSV schema:
