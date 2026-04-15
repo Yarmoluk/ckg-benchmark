@@ -1,0 +1,638 @@
+{
+  "n_queries": 7588,
+  "macro_f1": 0.4504,
+  "macro_rds": 0.0018865,
+  "mean_tokens": 274.2,
+  "total_cost_usd": 13.5314,
+  "f1_by_type": {
+    "T1_entity": 0.1887,
+    "T2_dependency": 0.6029,
+    "T3_path": 0.6135,
+    "T4_aggregate": 0.9514,
+    "T5_cross_concept": 0.3256
+  },
+  "f1_by_hop": {
+    "0": 0.3409,
+    "1": 0.4814,
+    "2": 0.6191,
+    "3": 0.6445,
+    "4": 0.6118,
+    "5": 0.5933
+  },
+  "by_domain": {
+    "Dementia": {
+      "n_queries": 175,
+      "macro_f1": 0.4601,
+      "macro_rds": 0.00202297,
+      "mean_tokens": 240.1,
+      "total_cost_usd": 0.2668,
+      "f1_by_type": {
+        "T1_entity": 0.2231,
+        "T2_dependency": 0.4915,
+        "T3_path": 0.7285,
+        "T4_aggregate": 0.9619,
+        "T5_cross_concept": 0.3957
+      }
+    },
+    "algebra-1": {
+      "n_queries": 175,
+      "macro_f1": 0.438,
+      "macro_rds": 0.00196758,
+      "mean_tokens": 244.7,
+      "total_cost_usd": 0.2776,
+      "f1_by_type": {
+        "T1_entity": 0.1808,
+        "T2_dependency": 0.5287,
+        "T3_path": 0.6594,
+        "T4_aggregate": 0.9505,
+        "T5_cross_concept": 0.3497
+      }
+    },
+    "asl-book": {
+      "n_queries": 164,
+      "macro_f1": 0.3778,
+      "macro_rds": 0.00182494,
+      "mean_tokens": 239.7,
+      "total_cost_usd": 0.2419,
+      "f1_by_type": {
+        "T1_entity": 0.1789,
+        "T2_dependency": 0.5079,
+        "T3_path": 0.6085,
+        "T4_aggregate": 0.9025,
+        "T5_cross_concept": 0.3026
+      }
+    },
+    "automating-instructional-design": {
+      "n_queries": 175,
+      "macro_f1": 0.465,
+      "macro_rds": 0.00202826,
+      "mean_tokens": 248.1,
+      "total_cost_usd": 0.2774,
+      "f1_by_type": {
+        "T1_entity": 0.2257,
+        "T2_dependency": 0.5259,
+        "T3_path": 0.706,
+        "T4_aggregate": 0.9559,
+        "T5_cross_concept": 0.386
+      }
+    },
+    "bioinformatics": {
+      "n_queries": 177,
+      "macro_f1": 0.4655,
+      "macro_rds": 0.00180064,
+      "mean_tokens": 304.8,
+      "total_cost_usd": 0.3454,
+      "f1_by_type": {
+        "T1_entity": 0.1783,
+        "T2_dependency": 0.5647,
+        "T3_path": 0.6841,
+        "T4_aggregate": 0.9803,
+        "T5_cross_concept": 0.3795
+      }
+    },
+    "biology": {
+      "n_queries": 175,
+      "macro_f1": 0.4964,
+      "macro_rds": 0.00172274,
+      "mean_tokens": 362.3,
+      "total_cost_usd": 0.3964,
+      "f1_by_type": {
+        "T1_entity": 0.1538,
+        "T2_dependency": 0.7289,
+        "T3_path": 0.7337,
+        "T4_aggregate": 0.9649,
+        "T5_cross_concept": 0.3372
+      }
+    },
+    "blockchain": {
+      "n_queries": 176,
+      "macro_f1": 0.4666,
+      "macro_rds": 0.00189313,
+      "mean_tokens": 286.0,
+      "total_cost_usd": 0.3349,
+      "f1_by_type": {
+        "T1_entity": 0.1878,
+        "T2_dependency": 0.7137,
+        "T3_path": 0.5454,
+        "T4_aggregate": 0.9643,
+        "T5_cross_concept": 0.2863
+      }
+    },
+    "calculus": {
+      "n_queries": 180,
+      "macro_f1": 0.4413,
+      "macro_rds": 0.00169754,
+      "mean_tokens": 299.3,
+      "total_cost_usd": 0.3643,
+      "f1_by_type": {
+        "T1_entity": 0.1916,
+        "T2_dependency": 0.5476,
+        "T3_path": 0.5228,
+        "T4_aggregate": 0.9427,
+        "T5_cross_concept": 0.3521
+      }
+    },
+    "chemistry": {
+      "n_queries": 177,
+      "macro_f1": 0.4769,
+      "macro_rds": 0.00177781,
+      "mean_tokens": 338.4,
+      "total_cost_usd": 0.3791,
+      "f1_by_type": {
+        "T1_entity": 0.1851,
+        "T2_dependency": 0.6473,
+        "T3_path": 0.6593,
+        "T4_aggregate": 0.9758,
+        "T5_cross_concept": 0.3328
+      }
+    },
+    "circuits": {
+      "n_queries": 175,
+      "macro_f1": 0.4689,
+      "macro_rds": 0.00176574,
+      "mean_tokens": 312.4,
+      "total_cost_usd": 0.3594,
+      "f1_by_type": {
+        "T1_entity": 0.1694,
+        "T2_dependency": 0.707,
+        "T3_path": 0.624,
+        "T4_aggregate": 0.9733,
+        "T5_cross_concept": 0.2886
+      }
+    },
+    "computer-science": {
+      "n_queries": 178,
+      "macro_f1": 0.4373,
+      "macro_rds": 0.00181073,
+      "mean_tokens": 276.7,
+      "total_cost_usd": 0.3228,
+      "f1_by_type": {
+        "T1_entity": 0.1895,
+        "T2_dependency": 0.5782,
+        "T3_path": 0.5351,
+        "T4_aggregate": 0.9691,
+        "T5_cross_concept": 0.3038
+      }
+    },
+    "conversational-ai": {
+      "n_queries": 176,
+      "macro_f1": 0.4248,
+      "macro_rds": 0.00193201,
+      "mean_tokens": 232.2,
+      "total_cost_usd": 0.2676,
+      "f1_by_type": {
+        "T1_entity": 0.2133,
+        "T2_dependency": 0.4454,
+        "T3_path": 0.6621,
+        "T4_aggregate": 0.955,
+        "T5_cross_concept": 0.3385
+      }
+    },
+    "data-science-course": {
+      "n_queries": 178,
+      "macro_f1": 0.4127,
+      "macro_rds": 0.00172662,
+      "mean_tokens": 263.2,
+      "total_cost_usd": 0.3083,
+      "f1_by_type": {
+        "T1_entity": 0.159,
+        "T2_dependency": 0.4917,
+        "T3_path": 0.5953,
+        "T4_aggregate": 0.9438,
+        "T5_cross_concept": 0.3127
+      }
+    },
+    "digital-citizenship": {
+      "n_queries": 172,
+      "macro_f1": 0.4576,
+      "macro_rds": 0.00199051,
+      "mean_tokens": 267.3,
+      "total_cost_usd": 0.2942,
+      "f1_by_type": {
+        "T1_entity": 0.1797,
+        "T2_dependency": 0.6749,
+        "T3_path": 0.584,
+        "T4_aggregate": 0.9775,
+        "T5_cross_concept": 0.3309
+      }
+    },
+    "digital-electronics": {
+      "n_queries": 174,
+      "macro_f1": 0.4623,
+      "macro_rds": 0.00183214,
+      "mean_tokens": 300.5,
+      "total_cost_usd": 0.347,
+      "f1_by_type": {
+        "T1_entity": 0.175,
+        "T2_dependency": 0.6928,
+        "T3_path": 0.5655,
+        "T4_aggregate": 0.9748,
+        "T5_cross_concept": 0.3208
+      }
+    },
+    "ecology": {
+      "n_queries": 176,
+      "macro_f1": 0.4559,
+      "macro_rds": 0.00188205,
+      "mean_tokens": 288.4,
+      "total_cost_usd": 0.3281,
+      "f1_by_type": {
+        "T1_entity": 0.1606,
+        "T2_dependency": 0.6332,
+        "T3_path": 0.6512,
+        "T4_aggregate": 0.9736,
+        "T5_cross_concept": 0.3055
+      }
+    },
+    "economics-course": {
+      "n_queries": 176,
+      "macro_f1": 0.4166,
+      "macro_rds": 0.00177203,
+      "mean_tokens": 276.0,
+      "total_cost_usd": 0.3342,
+      "f1_by_type": {
+        "T1_entity": 0.1641,
+        "T2_dependency": 0.6487,
+        "T3_path": 0.425,
+        "T4_aggregate": 0.9598,
+        "T5_cross_concept": 0.2522
+      }
+    },
+    "ethics-course": {
+      "n_queries": 176,
+      "macro_f1": 0.435,
+      "macro_rds": 0.00171049,
+      "mean_tokens": 297.3,
+      "total_cost_usd": 0.3589,
+      "f1_by_type": {
+        "T1_entity": 0.1636,
+        "T2_dependency": 0.6173,
+        "T3_path": 0.5818,
+        "T4_aggregate": 0.9689,
+        "T5_cross_concept": 0.273
+      }
+    },
+    "fft-benchmarking": {
+      "n_queries": 175,
+      "macro_f1": 0.4879,
+      "macro_rds": 0.0020297,
+      "mean_tokens": 270.2,
+      "total_cost_usd": 0.3027,
+      "f1_by_type": {
+        "T1_entity": 0.1987,
+        "T2_dependency": 0.7192,
+        "T3_path": 0.6222,
+        "T4_aggregate": 0.9616,
+        "T5_cross_concept": 0.3262
+      }
+    },
+    "functions": {
+      "n_queries": 176,
+      "macro_f1": 0.4643,
+      "macro_rds": 0.00190962,
+      "mean_tokens": 280.9,
+      "total_cost_usd": 0.3296,
+      "f1_by_type": {
+        "T1_entity": 0.1654,
+        "T2_dependency": 0.6808,
+        "T3_path": 0.6551,
+        "T4_aggregate": 0.8942,
+        "T5_cross_concept": 0.3001
+      }
+    },
+    "genetics": {
+      "n_queries": 177,
+      "macro_f1": 0.4654,
+      "macro_rds": 0.00185306,
+      "mean_tokens": 304.9,
+      "total_cost_usd": 0.352,
+      "f1_by_type": {
+        "T1_entity": 0.1791,
+        "T2_dependency": 0.5997,
+        "T3_path": 0.6209,
+        "T4_aggregate": 0.9796,
+        "T5_cross_concept": 0.3736
+      }
+    },
+    "geometry-course": {
+      "n_queries": 175,
+      "macro_f1": 0.4339,
+      "macro_rds": 0.00191706,
+      "mean_tokens": 254.2,
+      "total_cost_usd": 0.2936,
+      "f1_by_type": {
+        "T1_entity": 0.19,
+        "T2_dependency": 0.621,
+        "T3_path": 0.5535,
+        "T4_aggregate": 0.9476,
+        "T5_cross_concept": 0.2677
+      }
+    },
+    "infographics": {
+      "n_queries": 177,
+      "macro_f1": 0.5019,
+      "macro_rds": 0.00214884,
+      "mean_tokens": 267.7,
+      "total_cost_usd": 0.2914,
+      "f1_by_type": {
+        "T1_entity": 0.2323,
+        "T2_dependency": 0.6225,
+        "T3_path": 0.7039,
+        "T4_aggregate": 0.9537,
+        "T5_cross_concept": 0.3984
+      }
+    },
+    "intro-to-graph": {
+      "n_queries": 175,
+      "macro_f1": 0.4513,
+      "macro_rds": 0.00189411,
+      "mean_tokens": 260.4,
+      "total_cost_usd": 0.2924,
+      "f1_by_type": {
+        "T1_entity": 0.222,
+        "T2_dependency": 0.554,
+        "T3_path": 0.6621,
+        "T4_aggregate": 0.9476,
+        "T5_cross_concept": 0.3226
+      }
+    },
+    "intro-to-physics-course": {
+      "n_queries": 175,
+      "macro_f1": 0.4464,
+      "macro_rds": 0.00200016,
+      "mean_tokens": 244.2,
+      "total_cost_usd": 0.2788,
+      "f1_by_type": {
+        "T1_entity": 0.2013,
+        "T2_dependency": 0.5848,
+        "T3_path": 0.6484,
+        "T4_aggregate": 0.9445,
+        "T5_cross_concept": 0.2968
+      }
+    },
+    "it-management-graph": {
+      "n_queries": 177,
+      "macro_f1": 0.4186,
+      "macro_rds": 0.00195491,
+      "mean_tokens": 230.1,
+      "total_cost_usd": 0.2654,
+      "f1_by_type": {
+        "T1_entity": 0.2373,
+        "T2_dependency": 0.4458,
+        "T3_path": 0.5947,
+        "T4_aggregate": 0.9412,
+        "T5_cross_concept": 0.3129
+      }
+    },
+    "learning-linux": {
+      "n_queries": 179,
+      "macro_f1": 0.4628,
+      "macro_rds": 0.002016,
+      "mean_tokens": 264.7,
+      "total_cost_usd": 0.2988,
+      "f1_by_type": {
+        "T1_entity": 0.222,
+        "T2_dependency": 0.5022,
+        "T3_path": 0.7144,
+        "T4_aggregate": 0.977,
+        "T5_cross_concept": 0.346
+      }
+    },
+    "linear-algebra": {
+      "n_queries": 178,
+      "macro_f1": 0.4496,
+      "macro_rds": 0.00178254,
+      "mean_tokens": 287.6,
+      "total_cost_usd": 0.3392,
+      "f1_by_type": {
+        "T1_entity": 0.1782,
+        "T2_dependency": 0.6322,
+        "T3_path": 0.5149,
+        "T4_aggregate": 0.967,
+        "T5_cross_concept": 0.3193
+      }
+    },
+    "machine-learning-textbook": {
+      "n_queries": 177,
+      "macro_f1": 0.4379,
+      "macro_rds": 0.00198598,
+      "mean_tokens": 246.0,
+      "total_cost_usd": 0.2884,
+      "f1_by_type": {
+        "T1_entity": 0.1614,
+        "T2_dependency": 0.5465,
+        "T3_path": 0.6979,
+        "T4_aggregate": 0.9307,
+        "T5_cross_concept": 0.3061
+      }
+    },
+    "microsims": {
+      "n_queries": 177,
+      "macro_f1": 0.4834,
+      "macro_rds": 0.00209587,
+      "mean_tokens": 258.1,
+      "total_cost_usd": 0.2873,
+      "f1_by_type": {
+        "T1_entity": 0.2035,
+        "T2_dependency": 0.6526,
+        "T3_path": 0.6061,
+        "T4_aggregate": 0.9243,
+        "T5_cross_concept": 0.3861
+      }
+    },
+    "modeling-healthcare-data": {
+      "n_queries": 176,
+      "macro_f1": 0.4373,
+      "macro_rds": 0.0019165,
+      "mean_tokens": 247.7,
+      "total_cost_usd": 0.2865,
+      "f1_by_type": {
+        "T1_entity": 0.2059,
+        "T2_dependency": 0.5666,
+        "T3_path": 0.5587,
+        "T4_aggregate": 0.9538,
+        "T5_cross_concept": 0.315
+      }
+    },
+    "moss": {
+      "n_queries": 176,
+      "macro_f1": 0.5011,
+      "macro_rds": 0.00200986,
+      "mean_tokens": 300.2,
+      "total_cost_usd": 0.3346,
+      "f1_by_type": {
+        "T1_entity": 0.2002,
+        "T2_dependency": 0.6971,
+        "T3_path": 0.6642,
+        "T4_aggregate": 0.985,
+        "T5_cross_concept": 0.3663
+      }
+    },
+    "organizational-analytics": {
+      "n_queries": 177,
+      "macro_f1": 0.4672,
+      "macro_rds": 0.00190518,
+      "mean_tokens": 271.1,
+      "total_cost_usd": 0.3063,
+      "f1_by_type": {
+        "T1_entity": 0.1967,
+        "T2_dependency": 0.6067,
+        "T3_path": 0.6806,
+        "T4_aggregate": 0.9262,
+        "T5_cross_concept": 0.3301
+      }
+    },
+    "personal-finance": {
+      "n_queries": 175,
+      "macro_f1": 0.4457,
+      "macro_rds": 0.00196361,
+      "mean_tokens": 248.3,
+      "total_cost_usd": 0.288,
+      "f1_by_type": {
+        "T1_entity": 0.2012,
+        "T2_dependency": 0.5572,
+        "T3_path": 0.6098,
+        "T4_aggregate": 0.9524,
+        "T5_cross_concept": 0.3526
+      }
+    },
+    "pre-calc": {
+      "n_queries": 175,
+      "macro_f1": 0.4727,
+      "macro_rds": 0.00182821,
+      "mean_tokens": 310.2,
+      "total_cost_usd": 0.3529,
+      "f1_by_type": {
+        "T1_entity": 0.1778,
+        "T2_dependency": 0.6995,
+        "T3_path": 0.6225,
+        "T4_aggregate": 0.9357,
+        "T5_cross_concept": 0.3176
+      }
+    },
+    "prompt-class": {
+      "n_queries": 180,
+      "macro_f1": 0.4934,
+      "macro_rds": 0.00183532,
+      "mean_tokens": 308.0,
+      "total_cost_usd": 0.3554,
+      "f1_by_type": {
+        "T1_entity": 0.1935,
+        "T2_dependency": 0.7148,
+        "T3_path": 0.6065,
+        "T4_aggregate": 0.9525,
+        "T5_cross_concept": 0.3169
+      }
+    },
+    "quantum-computing": {
+      "n_queries": 48,
+      "macro_f1": 0.3745,
+      "macro_rds": 0.00135944,
+      "mean_tokens": 308.6,
+      "total_cost_usd": 0.1021,
+      "f1_by_type": {
+        "T1_entity": 0.1762,
+        "T5_cross_concept": 0.4266
+      }
+    },
+    "reading-for-kindergarten": {
+      "n_queries": 173,
+      "macro_f1": 0.4624,
+      "macro_rds": 0.00203158,
+      "mean_tokens": 243.0,
+      "total_cost_usd": 0.2659,
+      "f1_by_type": {
+        "T1_entity": 0.269,
+        "T2_dependency": 0.5628,
+        "T3_path": 0.6022,
+        "T4_aggregate": 0.9406,
+        "T5_cross_concept": 0.3495
+      }
+    },
+    "signal-processing": {
+      "n_queries": 174,
+      "macro_f1": 0.4115,
+      "macro_rds": 0.00180113,
+      "mean_tokens": 248.4,
+      "total_cost_usd": 0.2857,
+      "f1_by_type": {
+        "T1_entity": 0.1978,
+        "T2_dependency": 0.4489,
+        "T3_path": 0.6339,
+        "T4_aggregate": 0.9554,
+        "T5_cross_concept": 0.3196
+      }
+    },
+    "statistics-course": {
+      "n_queries": 176,
+      "macro_f1": 0.4434,
+      "macro_rds": 0.00182995,
+      "mean_tokens": 289.7,
+      "total_cost_usd": 0.3428,
+      "f1_by_type": {
+        "T1_entity": 0.178,
+        "T2_dependency": 0.6545,
+        "T3_path": 0.4588,
+        "T4_aggregate": 0.9357,
+        "T5_cross_concept": 0.316
+      }
+    },
+    "systems-thinking": {
+      "n_queries": 173,
+      "macro_f1": 0.3575,
+      "macro_rds": 0.0016213,
+      "mean_tokens": 231.1,
+      "total_cost_usd": 0.2704,
+      "f1_by_type": {
+        "T1_entity": 0.1527,
+        "T2_dependency": 0.388,
+        "T3_path": 0.6174,
+        "T4_aggregate": 0.816,
+        "T5_cross_concept": 0.2953
+      }
+    },
+    "theory-of-knowledge": {
+      "n_queries": 174,
+      "macro_f1": 0.4182,
+      "macro_rds": 0.00174042,
+      "mean_tokens": 283.5,
+      "total_cost_usd": 0.3351,
+      "f1_by_type": {
+        "T1_entity": 0.1547,
+        "T2_dependency": 0.69,
+        "T3_path": 0.4208,
+        "T4_aggregate": 0.9665,
+        "T5_cross_concept": 0.2256
+      }
+    },
+    "tracking-ai-course": {
+      "n_queries": 163,
+      "macro_f1": 0.4522,
+      "macro_rds": 0.00190418,
+      "mean_tokens": 314.3,
+      "total_cost_usd": 0.3238,
+      "f1_by_type": {
+        "T1_entity": 0.1229,
+        "T2_dependency": 0.7751,
+        "T3_path": 0.707,
+        "T4_aggregate": 0.6747,
+        "T5_cross_concept": 0.2785
+      }
+    },
+    "us-geography": {
+      "n_queries": 175,
+      "macro_f1": 0.456,
+      "macro_rds": 0.00213282,
+      "mean_tokens": 237.9,
+      "total_cost_usd": 0.2583,
+      "f1_by_type": {
+        "T1_entity": 0.1952,
+        "T2_dependency": 0.6587,
+        "T3_path": 0.5315,
+        "T4_aggregate": 0.9293,
+        "T5_cross_concept": 0.3139
+      }
+    }
+  },
+  "scorer_version": "v2_markdown_stripped"
+}

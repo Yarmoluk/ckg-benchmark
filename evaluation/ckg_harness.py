@@ -130,6 +130,36 @@ def get_shared_neighbors(concepts: dict, a: Concept, b: Concept) -> list[Concept
     shared_ids = a_deps & b_deps
     return [concepts[i] for i in shared_ids if i in concepts]
 
+def bfs_shortest_path(concepts: dict, start_id: int, end_id: int) -> list[int]:
+    """BFS shortest path from start to end following dependency edges (both directions).
+    Returns list of concept IDs on the path, or [start_id, end_id] if no path found."""
+    if start_id == end_id:
+        return [start_id]
+
+    # Build reverse index: concept -> concepts that depend on it
+    rev = defaultdict(set)
+    for cid, c in concepts.items():
+        for dep in c.dependencies:
+            rev[dep].add(cid)
+
+    # BFS over combined forward (dependencies) + reverse edges
+    queue = deque([(start_id, [start_id])])
+    visited = {start_id}
+    while queue:
+        node, path = queue.popleft()
+        neighbors = set(concepts[node].dependencies) | rev[node] if node in concepts else set()
+        for nb in neighbors:
+            if nb in visited or nb not in concepts:
+                continue
+            new_path = path + [nb]
+            if nb == end_id:
+                return new_path
+            visited.add(nb)
+            queue.append((nb, new_path))
+
+    # No path found — return both endpoints
+    return [start_id, end_id]
+
 # ── Subgraph serializer → context string ──────────────────────────────────────
 
 def subgraph_to_context(concepts: dict, relevant_ids: list[int]) -> str:
@@ -214,9 +244,11 @@ def retrieve(concepts: dict, query: dict) -> tuple[str, list[int]]:
         cid_b = query.get("concept_id_b")
         if cid_a in concepts and cid_b in concepts:
             a, b = concepts[cid_a], concepts[cid_b]
+            # BFS path between A and B captures the connecting chain
+            path_ids = bfs_shortest_path(concepts, cid_a, cid_b)
             shared = get_shared_neighbors(concepts, a, b)
             relevant = list(dict.fromkeys(
-                [a.id, b.id] + [c.id for c in shared] + a.dependencies[:3] + b.dependencies[:3]
+                path_ids + [c.id for c in shared] + a.dependencies[:3] + b.dependencies[:3]
             ))
         else:
             relevant = []
@@ -259,7 +291,7 @@ def token_f1(predicted: str, ground_truth: list[str]) -> dict:
 
 # ── Main harness ──────────────────────────────────────────────────────────────
 
-def run_domain(domain: str, client: anthropic.Anthropic, dry_run: bool = False) -> list[dict]:
+def run_domain(domain: str, client: anthropic.Anthropic, dry_run: bool = False, query_type_filter: str = None) -> list[dict]:
     queries_file = QUERIES_DIR / f"queries_{domain}.jsonl"
     csv_file     = DOMAINS_DIR / domain / "learning-graph.csv"
 
@@ -275,6 +307,9 @@ def run_domain(domain: str, client: anthropic.Anthropic, dry_run: bool = False) 
     with open(queries_file) as f:
         for line in f:
             queries.append(json.loads(line))
+
+    if query_type_filter:
+        queries = [q for q in queries if (q.get("query_type") or q.get("type","")) == query_type_filter]
 
     print(f"  {domain}: {len(queries)} queries, {len(concepts)} concepts")
 
@@ -392,6 +427,7 @@ def main():
     parser.add_argument("--all", action="store_true", help="Run all domains")
     parser.add_argument("--dry-run", action="store_true", help="Skip API calls, test retrieval only")
     parser.add_argument("--limit", type=int, default=0, help="Limit queries per domain (0=all)")
+    parser.add_argument("--type", help="Only run queries of this type (e.g. T5_cross_concept)")
     args = parser.parse_args()
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -422,15 +458,29 @@ def main():
 
     for domain in domains:
         print(f"── {domain}")
-        results = run_domain(domain, client, dry_run=args.dry_run)
+        results = run_domain(domain, client, dry_run=args.dry_run, query_type_filter=args.type)
 
         if args.limit and not args.dry_run:
             results = results[:args.limit]
 
         if results:
             out_path = RESULTS_DIR / f"ckg_{domain}.jsonl"
+            if args.type and out_path.exists():
+                # Merge: replace records of this type, keep all others
+                existing = []
+                with open(out_path) as f:
+                    for line in f:
+                        if line.strip():
+                            try:
+                                existing.append(json.loads(line))
+                            except json.JSONDecodeError:
+                                pass
+                keep = [r for r in existing if (r.get("query_type") or r.get("type","")) != args.type]
+                merged = keep + results
+            else:
+                merged = results
             with open(out_path, "w") as f:
-                for r in results:
+                for r in merged:
                     f.write(json.dumps(r) + "\n")
 
             summary = summarize(results)

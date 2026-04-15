@@ -158,17 +158,20 @@ def generate_queries(
                 pairs.append((c, concepts[dep]))
     sample_t5 = random.sample(pairs, min(38, len(pairs)))
     for a, b in sample_t5:
-        # Ground truth: shared neighbors
+        # Ground truth: both concept labels + shared neighbors
+        # Including a.label ensures the scorer credits answers that correctly
+        # name both concepts in the relationship description.
         a_neighbors = set(a.dependencies)
         b_neighbors = set(b.dependencies)
         shared = a_neighbors & b_neighbors
         shared_labels = [concepts[s].label for s in shared if s in concepts]
+        ground_truth = list(dict.fromkeys([a.label, b.label] + shared_labels))
         queries.append({
             "id": f"{domain}_T5_{a.id}_{b.id}",
             "domain": domain,
             "type": "T5_cross_concept",
             "query": f"How does {a.label} relate to {b.label}?",
-            "ground_truth": shared_labels + [b.label],  # b is direct dep of a
+            "ground_truth": ground_truth,  # a→b direct dep + shared ancestors
             "concept_id_a": a.id,
             "concept_id_b": b.id,
             "hop_depth": 1

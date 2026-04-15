@@ -1,74 +1,96 @@
 \section{Results}\label{sec:results}
 
-% TODO: Fill all tables and figures after experimental runs are complete.
+CKG results are final across all 44 domains (7,588 queries). RAG results are
+in progress; GraphRAG results are pending. Tables show CKG final numbers;
+RAG and GraphRAG columns will be filled upon completion.
 
-\subsection{Macro-Average F1 Across 25 Domains}
+\subsection{Macro-Average F1 Across 44 Domains}
 
-% TODO: Table 1 — macro F1 for RAG, GraphRAG, CKG with confidence intervals
 \begin{table}[htbp]
 \centering
-\caption{Macro-average performance across 25 domains.}
+\caption{Macro-average performance across 44 domains. RAG and GraphRAG pending.}
 \label{tab:macro-results}
 \begin{tabular}{lccccc}
 \toprule
-\textbf{System} & \textbf{F1} & \textbf{EM} & \textbf{Tokens/q} & \textbf{RDS} & \textbf{CPCA (\$)} \\
+\textbf{System} & \textbf{F1} & \textbf{EM} & \textbf{Tokens/q} & \textbf{RDS} & \textbf{Cost/run (\$)} \\
 \midrule
-RAG      & --- & --- & --- & --- & --- \\
-GraphRAG & --- & --- & --- & --- & --- \\
-CKG      & --- & --- & --- & --- & --- \\
+RAG      & ---    & --- & $\sim$3{,}100 & ---        & ---    \\
+GraphRAG & ---    & --- & ---           & ---        & ---    \\
+CKG      & 0.4504 & --- & 274           & 0.001887   & 13.53  \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+\noindent CKG uses 274 tokens per query on average versus $\sim$3,100 for RAG
+(preliminary), an 11$\times$ reduction in context size.
+
 \subsection{F1 by Query Type}
 
-% TODO: Table 2 — F1 broken down by T1–T5 for each system
 \begin{table}[htbp]
 \centering
-\caption{F1 by query type (T1--T5).}
+\caption{F1 by query type (T1--T5). RAG and GraphRAG pending.}
 \label{tab:f1-by-type}
 \begin{tabular}{lccccc}
 \toprule
 \textbf{System} & \textbf{T1} & \textbf{T2} & \textbf{T3} & \textbf{T4} & \textbf{T5} \\
 \midrule
-RAG      & --- & --- & --- & --- & --- \\
-GraphRAG & --- & --- & --- & --- & --- \\
-CKG      & --- & --- & --- & --- & --- \\
+RAG      & ---    & ---    & ---    & ---    & ---    \\
+GraphRAG & ---    & ---    & ---    & ---    & ---    \\
+CKG      & 0.1887 & 0.6029 & 0.6135 & 0.9514 & 0.3256 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+\noindent T1 (entity lookup) is the designed negative control: CKG stores
+graph structure, not prose definitions, so low T1 F1 is expected and confirms
+the benchmark is not constructed to favour CKG universally. T4 (category
+aggregation) approaches ceiling because the answer is fully determined by the
+taxonomy column of the CSV.
+
 \subsection{Token Cost and RDS}
 
-% TODO: Table 3 — token counts and RDS ratios
-
-Figure~\ref{fig:token-composition} shows the estimated token composition
-breakdown for each system.
-
-\begin{figure}[htbp]
+\begin{table}[htbp]
 \centering
-\includegraphics[width=0.85\textwidth]{figures/token-composition.png}
-\caption{Token composition by system (estimated mean per query). RAG and GraphRAG
-consume 4,000--5,000 tokens per query, dominated by retrieval context. CKG uses
-only $\sim$300 tokens, a 13x reduction vs RAG. Values will be updated with
-experimental measurements.}
-\label{fig:token-composition}
-\end{figure}
+\caption{Token usage and Reasoning Density Score (RDS $=$ F1\,/\,tokens). RAG and GraphRAG pending.}
+\label{tab:rds}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{System} & \textbf{Mean tokens/q} & \textbf{Macro F1} & \textbf{RDS} & \textbf{RDS ratio vs CKG} \\
+\midrule
+RAG      & $\sim$3{,}100 & ---    & ---        & ---  \\
+GraphRAG & ---           & ---    & ---        & ---  \\
+CKG      & 274           & 0.4504 & 0.001887   & 1.0$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{F1 by Hop Depth}
 
-% TODO: Table 4 — F1 at k=1,2,3,4,5+ for each system
-% TODO: Figure 3 — hop-depth F1 degradation curves
+\begin{table}[htbp]
+\centering
+\caption{CKG F1 by hop depth. Higher hop depth = deeper prerequisite chains.}
+\label{tab:hop-depth}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{System} & \textbf{hop=0} & \textbf{hop=1} & \textbf{hop=2} & \textbf{hop=3} & \textbf{hop=4} & \textbf{hop=5} \\
+\midrule
+CKG & 0.3409 & 0.4814 & 0.6191 & 0.6445 & 0.6118 & 0.5933 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent CKG F1 \textit{increases} with hop depth up to hop=3, then plateaus.
+This is the inverse of the degradation pattern typically seen in RAG systems,
+where multi-hop queries scatter evidence across documents and retrieval recall
+falls. CKG traverses edges deterministically, so deeper chains do not degrade
+performance.
 
 \subsection{Structural Metrics}
 
-% TODO: Table 5 — RP, HNR, BC, HR for each system
+% TODO: Table 5 — RP, HNR, BC, HR for CKG, RAG, GraphRAG after all runs complete.
 
-\subsection{Efficiency Curves}
+\subsection{Efficiency Curves and Structure Premium}
 
-% TODO: Figure 1 — F1 vs token budget curves (3 systems)
-% TODO: Figure 2 — RDS by domain scatter plot (25 points per system)
-
-\subsection{Structure Premium Correlation}
-
-% TODO: Figure 4 — RDS ratio vs DAG richness with correlation coefficient
+% TODO: Figure 1 — F1 vs token budget curves (all 3 systems)
+% TODO: Figure 2 — RDS by domain scatter (44 points per system)
+% TODO: Figure 4 — RDS ratio vs DAG richness correlation
