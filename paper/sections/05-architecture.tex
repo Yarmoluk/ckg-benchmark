@@ -1,0 +1,69 @@
+\section{Architecture Specifications}\label{sec:architecture}
+
+All three systems use Claude Sonnet 4.6 at temperature$=$0 for generation,
+ensuring fair comparison. The systems differ only in how knowledge is stored
+and retrieved.
+
+\subsection{RAG Baseline}\label{sec:arch-rag}
+
+\begin{table}[htbp]
+\centering
+\caption{RAG baseline configuration.}
+\label{tab:rag-config}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Source & MkDocs \texttt{.md} chapters per textbook \\
+Chunking & 512 tokens, 50-token overlap \\
+Embeddings & \texttt{text-embedding-3-small} (OpenAI) \\
+Index & FAISS flat L2 \\
+Retrieval & Top-5 chunks \\
+Generation & Claude Sonnet 4.6, temperature$=$0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{GraphRAG}\label{sec:arch-graphrag}
+
+\begin{table}[htbp]
+\centering
+\caption{GraphRAG configuration.}
+\label{tab:graphrag-config}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Source & Same MkDocs \texttt{.md} chapters \\
+System & Microsoft GraphRAG v1.x, default configuration \\
+Search & Local mode for T1/T2/T5, global mode for T4 \\
+Note & Does \textbf{not} use \texttt{learning-graph.csv} \\
+Generation & Claude Sonnet 4.6, temperature$=$0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{CKG (Compressed Knowledge Graph)}\label{sec:arch-ckg}
+
+\begin{table}[htbp]
+\centering
+\caption{CKG architecture configuration.}
+\label{tab:ckg-config}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Source & \texttt{learning-graph.csv} \\
+Lookup & Exact label match $\rightarrow$ concept node retrieval \\
+Traversal & BFS for T2 (1-hop), DFS for T3 (full path), filter for T4 \\
+Subgraph & Matched concept + direct neighbors + edges \\
+Generation & Claude Sonnet 4.6, temperature$=$0 \\
+Note & Zero build cost---CSV-native \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Key distinction.}
+GraphRAG re-derives structure from text that was originally generated
+\textit{from} the learning graph CSV. CKG uses the graph directly. The
+efficiency gap is structural, not incidental.

@@ -1,0 +1,47 @@
+\section{Related Work}\label{sec:related-work}
+
+\subsection{Retrieval-Augmented Generation}\label{sec:rw-rag}
+
+Lewis et al.~\cite{lewis2020rag} introduced RAG as a method for grounding
+language model outputs in retrieved passages. Dense Passage Retrieval
+(DPR)~\cite{karpukhin2020dpr} established embedding-based retrieval as the
+dominant paradigm. The BEIR benchmark~\cite{thakur2021beir} provided
+heterogeneous evaluation across IR tasks, and RAGAS~\cite{es2023ragas}
+introduced evaluation metrics for RAG pipelines including faithfulness and
+relevance.
+
+% TODO: Add 2-3 more recent RAG papers (2024-2025)
+
+\subsection{Graph-Based Retrieval}\label{sec:rw-graphrag}
+
+Edge et al.~\cite{edge2024graphrag} introduced GraphRAG, using LLM-extracted
+entity graphs with community detection for multi-hop reasoning. LightRAG~\cite{guo2024lightrag}
+and HippoRAG proposed lighter-weight graph-based alternatives. The key distinction
+for this benchmark: these systems perform \textit{dynamic extraction} from text,
+while CKG uses \textit{pre-structured domain knowledge}.
+
+% TODO: Add HippoRAG citation when published
+
+\subsection{Knowledge Graphs for LLMs}\label{sec:rw-kg}
+
+Pan et al.~\cite{pan2024unifying} provide a comprehensive roadmap for unifying
+LLMs and knowledge graphs. The KGQA literature demonstrates structured query
+answering over knowledge graphs such as Wikidata and UMLS. CKG differs from
+these approaches by using lightweight DAG representations rather than full
+ontologies, trading expressiveness for efficiency.
+
+% TODO: Add 2-3 KGQA citations
+
+\subsection{Evaluation Gaps in IR}\label{sec:rw-eval}
+
+Standard IR metrics (F1, MRR, NDCG) do not account for token cost. RAGAS
+measures faithfulness and relevance but not efficiency. This paper introduces
+Reasoning Density Score (RDS) and validates it on a multi-domain corpus---the
+first metric to jointly optimize quality and token consumption.
+
+\subsection{Educational Knowledge Graphs}\label{sec:rw-edu}
+
+McCreary~\cite{mccreary2024textbooks} introduced the Intelligent Textbooks
+methodology, using learning graph DAGs as structured domain knowledge with a
+standardized CSV schema: \texttt{ConceptID | ConceptLabel | Dependencies | TaxonomyID}.
+This work is the first to formalize this corpus as a citable benchmark dataset.

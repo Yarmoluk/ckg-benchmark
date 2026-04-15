@@ -1,0 +1,99 @@
+\section{Metrics}\label{sec:metrics}
+
+We evaluate 16 metrics organized into six categories. Novel metrics introduced
+in this paper are marked with~$\star$.
+
+\subsection{Standard IR Metrics}\label{sec:metrics-standard}
+
+\paragraph{Token-Level F1 (SQuAD-style).}
+Used for T1, T2, and T4 queries. Precision, recall, and F1 are computed over
+token sets:
+\begin{equation}
+  \text{F1} = \frac{2 \cdot P \cdot R}{P + R}, \quad
+  P = \frac{|pred \cap truth|}{|pred|}, \quad
+  R = \frac{|pred \cap truth|}{|truth|}
+\end{equation}
+
+\paragraph{Edge-Overlap F1.}
+Used for T3 (path) and T5 (cross-concept) queries:
+\begin{equation}
+  \text{Edge\_F1} = \frac{2 \cdot |E_{pred} \cap E_{truth}|}{|E_{pred}| + |E_{truth}|}
+\end{equation}
+
+\paragraph{Exact Match (EM).}
+Binary---the full answer must match ground truth exactly. Reported alongside F1
+as a secondary metric.
+
+\subsection{Reasoning Density Score$^\star$ (RDS)}\label{sec:metrics-rds}
+
+The core compound metric introduced in this paper:
+\begin{equation}\label{eq:rds}
+  \text{RDS}(s, q) = \frac{\text{F1}(s, q)}{\text{tokens\_consumed}(s, q)}
+\end{equation}
+
+Macro-averaged across all queries:
+$\text{RDS}_{\text{macro}}(s) = \text{mean}(\text{RDS}$ over all queries$)$.
+The \textbf{RDS ratio} compares two systems:
+$\text{RDS}_{\text{ratio}}(A, B) = \text{RDS}_{\text{macro}}(A) / \text{RDS}_{\text{macro}}(B)$.
+Higher values indicate more reasoning quality per token spent.
+
+\subsection{Hop-Depth F1 Degradation$^\star$}\label{sec:metrics-hop}
+
+Measures how F1 degrades as reasoning chain length increases:
+\begin{equation}
+  \text{F1@hop}(s, k) = \text{mean}(\text{F1} \mid \text{hop\_depth} = k)
+\end{equation}
+
+Reported for $k = 1, 2, 3, 4, 5{+}$. Expected finding: RAG degrades steeply at
+$k \geq 2$; CKG remains flat due to explicit edge traversal.
+
+\subsection{Tokenomics Metrics}\label{sec:metrics-token}
+
+\paragraph{Context Utilization Rate$^\star$ (CUR).}
+Fraction of retrieved tokens relevant to the answer:
+$\text{CUR} = \text{relevant\_tokens} / \text{total\_retrieved\_tokens}$.
+
+\paragraph{Cost Per Correct Answer$^\star$ (CPCA).}
+Real-world cost using Claude Sonnet 4.6 pricing (\$3/M input, \$15/M output):
+$\text{CPCA} = \text{cost\_per\_query} / \text{F1}$.
+
+\paragraph{Precision at Token Budget (P@T).}
+Mean F1 over queries where tokens\_consumed $\leq$ budget $T$.
+Reported for $T = 500, 1000, 2000, 5000, 10000$.
+
+\paragraph{Token Budget Breakeven.}
+Minimum budget where RAG/GraphRAG F1 $\geq$ CKG F1:
+$\text{breakeven} = \min T$ such that $\text{F1}_{\text{RAG}}(T) \geq \text{F1}_{\text{CKG}}(500)$.
+
+\paragraph{Index Build Cost.}
+One-time cost: tokens consumed during indexing + wall-clock time + storage.
+CKG: zero (CSV already exists).
+
+\paragraph{Update Cost$^\star$.}
+Cost to incorporate one new concept: CKG edits one CSV row with zero
+re-indexing; RAG re-embeds affected chunks; GraphRAG requires full
+re-extraction.
+
+\subsection{Structural Fidelity Metrics}\label{sec:metrics-structural}
+
+\paragraph{Relationship Precision$^\star$ (RP).}
+Of edges returned, what fraction are real DAG edges:
+$\text{RP} = |E_{pred} \cap E_{truth}| / |E_{pred}|$.
+
+\paragraph{Hub Node Recall$^\star$ (HNR).}
+Recall on high-indegree concepts (top 20\% by indegree).
+
+\paragraph{Boundary Completeness$^\star$ (BC).}
+For T4 queries, fraction of the taxonomy category returned:
+$\text{BC} = |retrieved \cap members| / |members|$.
+CKG achieves BC $\approx$ 1.0 by construction.
+
+\subsection{Robustness Metrics}\label{sec:metrics-robustness}
+
+\paragraph{Paraphrase Stability (PS).}
+F1 variance across 5 paraphrased versions of each query.
+CKG should be stable (exact concept match); RAG is embedding-sensitive.
+
+\paragraph{Hallucination Rate (HR).}
+Fraction of queries returning $\geq$1 concept not in the corpus.
+CKG: HR $=$ 0 by construction. GraphRAG's dynamic extraction can hallucinate.

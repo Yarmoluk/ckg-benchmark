@@ -1,0 +1,59 @@
+\section{Benchmark Design}\label{sec:benchmark}
+
+\subsection{Query Taxonomy}\label{sec:query-taxonomy}
+
+We define five query types (T1--T5), each targeting a different aspect of
+knowledge retrieval capability. Table~\ref{tab:query-types} summarizes the
+taxonomy.
+
+\begin{table}[htbp]
+\centering
+\caption{Query type taxonomy with examples and ground truth sources.}
+\label{tab:query-types}
+\begin{tabular}{lp{3.5cm}p{4.5cm}l}
+\toprule
+\textbf{Type} & \textbf{Description} & \textbf{Example} & \textbf{Ground Truth} \\
+\midrule
+T1 & Entity lookup & ``What is Composite Function?'' & ConceptLabel + TaxonomyID \\
+T2 & Direct dependency & ``What are prerequisites for Composite Function?'' & Dependencies column \\
+T3 & Multi-hop path & ``What is the chain from Function to Taylor Series?'' & BFS path in DAG \\
+T4 & Category aggregate & ``List all FOUND concepts'' & Filter by TaxonomyID \\
+T5 & Cross-concept & ``How does Domain and Range relate to Inverse Function?'' & Shared neighbors \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Query Generation}\label{sec:query-gen}
+
+Queries are auto-generated from each domain's CSV using
+\texttt{generate\_queries.py} with a fixed random seed of 42.
+
+Per domain: $\sim$175 queries (50 T1 + 50 T2 + 25 T3 + 12 T4 + 38 T5).
+Total: $\sim$4,375 queries across 25 domains.
+
+\begin{itemize}
+  \item \textbf{T1}: Random sample of 50 concepts; query is ``What is \{label\}?''
+  \item \textbf{T2}: Random sample of 50 concepts with $\geq$1 dependency
+  \item \textbf{T3}: Random pairs of foundational/terminal concepts with path length 2--5
+  \item \textbf{T4}: One query per taxonomy category
+  \item \textbf{T5}: Random sample of 38 directly connected concept pairs
+\end{itemize}
+
+\subsection{Human Validation}\label{sec:validation}
+
+A 5\% sample ($\sim$220 queries) is reviewed by two annotators. Cohen's $\kappa$
+is reported for inter-annotator agreement. DAG validation failures are handled
+and documented per domain.
+
+% TODO: Complete human validation and report kappa
+
+\subsection{Reproducibility Protocol}\label{sec:reproducibility}
+
+\begin{itemize}
+  \item All systems use Claude Sonnet 4.6 at temperature$=$0.
+  \item Token counts via Anthropic \texttt{count\_tokens()} API.
+  \item 3 runs per query, variance reported.
+  \item Fixed random seed: 42.
+  \item Benchmark version locked: v1.0.0.
+  \item One-command reproduction: \texttt{python evaluation/harness.py --reproduce-table-1}
+\end{itemize}

@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+
+% Core packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+
+% Layout
+\usepackage[margin=1in]{geometry}
+
+% Math
+\usepackage{amsmath,amssymb}
+
+% Tables and figures
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+
+% Code listings
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  tabsize=2,
+  captionpos=b
+}
+
+% Algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Links
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+% Colors for tables
+\usepackage[table]{xcolor}
+
+% Compact lists
+\usepackage{enumitem}
+
+% ============================================================
+% Title
+% ============================================================
+
+\title{Benchmarking Knowledge Retrieval Architectures Across 25 Domains:\\
+RAG, GraphRAG, and Compressed Knowledge Graphs on the\\
+McCreary Intelligent Textbook Corpus}
+
+\author{
+  Daniel Yarmoluk\thanks{Graphify.md --- \url{https://graphify.md}} \and
+  Dan McCreary\thanks{Intelligent Textbooks --- \url{https://github.com/dmccreary}}
+}
+
+\date{}
+
+% ============================================================
+% Document
+% ============================================================
+
+\begin{document}
+
+\maketitle
+
+\input{sections/01-abstract}
+\input{sections/02-introduction}
+\input{sections/03-related-work}
+\input{sections/04-corpus}
+\input{sections/05-architecture}
+\input{sections/06-benchmark-design}
+\input{sections/07-metrics}
+\input{sections/08-results}
+\input{sections/09-discussion}
+\input{sections/10-conclusion}
+
+\bibliographystyle{ieeetr}
+\bibliography{sections/references}
+
+\end{document}

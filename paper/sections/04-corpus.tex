@@ -1,0 +1,60 @@
+\section{The McCreary Intelligent Textbook Corpus}\label{sec:corpus}
+
+This section formally defines the corpus for the first time in literature.
+
+\subsection{Corpus Description}\label{sec:corpus-desc}
+
+The McCreary Intelligent Textbook Corpus comprises 25 open-source educational
+textbooks hosted on GitHub (\url{https://github.com/dmccreary}). Each textbook
+contains a standardized learning graph encoded as a CSV file representing a
+directed acyclic graph (DAG) of concepts and their prerequisite dependencies.
+
+The corpus spans three categories:
+\begin{itemize}
+  \item \textbf{STEM} (11 domains): calculus, biology, genetics, bioinformatics,
+    statistics, quantum computing, circuits, geometry, ecology, moss, functions.
+  \item \textbf{Professional} (7 domains): economics, organizational analytics,
+    healthcare data modeling, database selection, conversational AI,
+    automating instructional design, blockchain.
+  \item \textbf{Foundational} (7 domains): systems thinking, theory of knowledge,
+    digital citizenship, prompt engineering, AI tracking, US geography, ASL.
+\end{itemize}
+
+Key statistics:
+\begin{itemize}
+  \item Concepts per domain: 200--380 (mean: $\sim$240)
+  \item Total concepts: $\sim$6,000
+  \item Total edges: $\sim$8,500
+  \item Taxonomy categories: 10--17 per domain
+  \item Raw content: MkDocs Markdown chapters ($\sim$3,000--8,000 words per textbook)
+\end{itemize}
+
+\subsection{Corpus Schema}\label{sec:corpus-schema}
+
+All 25 domains share an identical CSV schema:
+
+\begin{lstlisting}[caption={Learning graph CSV schema (calculus example).}]
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Function,,FOUND
+2,Domain and Range,1,FOUND
+3,Function Notation,1,FOUND
+4,Composite Function,1|3,FOUND
+\end{lstlisting}
+
+Dependencies are pipe-delimited integer references to prerequisite
+\texttt{ConceptID} values. \texttt{TaxonomyID} assigns each concept to a
+domain-specific category (e.g., \texttt{FOUND} for foundational,
+\texttt{CORE} for core, \texttt{ADV} for advanced).
+
+\subsection{Quality Properties}\label{sec:corpus-quality}
+
+All 25 DAGs are validated for the following structural properties:
+
+\begin{enumerate}
+  \item Single connected component (no isolated subgraphs).
+  \item No self-references (no concept lists itself as a dependency).
+  \item Foundational concepts (zero prerequisites) $\geq$ 2 per domain.
+  \item Maximum dependency chain length reported per domain.
+\end{enumerate}
+
+% TODO: Add table of per-domain statistics (concept count, edge count, max depth, taxonomy count)
