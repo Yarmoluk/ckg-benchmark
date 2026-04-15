@@ -12,8 +12,23 @@ the structure is already known?
 
 \subsection{The Three Paradigms}\label{sec:paradigms}
 
-Table~\ref{tab:paradigms} summarizes the three retrieval architectures compared
-in this benchmark.
+Figure~\ref{fig:architecture} illustrates the three retrieval pipelines.
+Table~\ref{tab:paradigms} summarizes their key differences.
+
+\begin{figure}[htbp]
+\centering
+% TODO: Replace with actual architecture diagram (draw.io or similar)
+\fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}
+\textbf{Figure placeholder: Three-Architecture Pipeline Diagram}\\[6pt]
+RAG: Text $\rightarrow$ Chunks $\rightarrow$ Embeddings $\rightarrow$ Top-k $\rightarrow$ LLM\\
+GraphRAG: Text $\rightarrow$ Entity Extraction $\rightarrow$ Graph $\rightarrow$ Community Search $\rightarrow$ LLM\\
+CKG: CSV $\rightarrow$ DAG Lookup $\rightarrow$ Subgraph $\rightarrow$ LLM
+\vspace{3cm}}}
+\caption{Three retrieval architectures compared. RAG chunks text and retrieves
+by embedding similarity. GraphRAG dynamically extracts a graph from text.
+CKG uses a pre-structured DAG directly.}
+\label{fig:architecture}
+\end{figure}
 
 \begin{table}[htbp]
 \centering

@@ -42,6 +42,19 @@ CKG      & --- & --- & --- & --- & --- \\
 
 % TODO: Table 3 — token counts and RDS ratios
 
+Figure~\ref{fig:token-composition} shows the estimated token composition
+breakdown for each system.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/token-composition.png}
+\caption{Token composition by system (estimated mean per query). RAG and GraphRAG
+consume 4,000--5,000 tokens per query, dominated by retrieval context. CKG uses
+only $\sim$300 tokens, a 13x reduction vs RAG. Values will be updated with
+experimental measurements.}
+\label{fig:token-composition}
+\end{figure}
+
 \subsection{F1 by Hop Depth}
 
 % TODO: Table 4 — F1 at k=1,2,3,4,5+ for each system

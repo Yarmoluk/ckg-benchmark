@@ -6,6 +6,12 @@ LLM retrieval quality is typically measured by F1 alone, yet token cost is a fir
 
 ## The Three Paradigms
 
+The figure below illustrates the three retrieval pipelines compared in this benchmark.
+
+![Three Architecture Pipeline](../img/architecture-placeholder.png){ .off }
+
+*Figure 1: Architecture diagram --- to be created. Shows RAG (text -> chunks -> embeddings -> top-k -> LLM), GraphRAG (text -> entity extraction -> graph -> community search -> LLM), and CKG (CSV -> DAG lookup -> subgraph -> LLM).*
+
 | System | Knowledge Representation | Retrieval Method | Build Cost |
 |--------|--------------------------|------------------|------------|
 | **RAG** | Unstructured text chunks | Embedding similarity | Embed all chunks |

@@ -37,6 +37,14 @@ ConceptID,ConceptLabel,Dependencies,TaxonomyID
 - **Dependencies** are pipe-delimited integer references to prerequisite ConceptID values
 - **TaxonomyID** assigns each concept to a domain-specific category (e.g., `FOUND` for foundational, `CORE` for core, `ADV` for advanced)
 
+## Corpus Statistics
+
+The heatmap below shows per-domain statistics across all 22 extracted domains, organized by category (STEM, Professional, Foundational). Total: 6,206 concepts and 10,342 dependency edges.
+
+![Corpus Heatmap](../img/corpus-heatmap.png)
+
+*Figure 5: Per-domain statistics. Color intensity reflects relative magnitude within each column. Domains are sorted by concept count within each category.*
+
 ## Quality Properties
 
 All 25 DAGs are validated for:

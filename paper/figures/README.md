@@ -9,14 +9,17 @@
 - **Labels:** Use `\label{fig:shortname}` and reference with `\ref{fig:shortname}`
 - **Width:** `\includegraphics[width=0.95\textwidth]{figures/filename.png}`
 
-## Planned Figures
+## All 7 Figures
 
-| # | Label | Section | Description | Status |
-|---|-------|---------|-------------|--------|
-| 1 | `fig:f1-token-budget` | Results | F1 vs token budget curves (3 systems) | Pending |
-| 2 | `fig:rds-by-domain` | Results | RDS scatter plot (25 domains x 3 systems) | Pending |
-| 3 | `fig:hop-degradation` | Results | Hop-depth F1 degradation curves | Pending |
-| 4 | `fig:structure-premium` | Results | RDS ratio vs DAG richness correlation | Pending |
+| # | Label | Section | Description | File | Status |
+|---|-------|---------|-------------|------|--------|
+| 1 | `fig:architecture` | Introduction | Three-architecture pipeline diagram | *placeholder in .tex* | Needs drawing |
+| 2 | `fig:f1-token-budget` | Results | F1 vs token budget curves (3 systems) | *pending* | Needs data |
+| 3 | `fig:rds-by-domain` | Results | RDS scatter plot (22 domains x 3 systems) | *pending* | Needs data |
+| 4 | `fig:hop-degradation` | Results | Hop-depth F1 degradation curves | *pending* | Needs data |
+| 5 | `fig:corpus-heatmap` | Corpus | Per-domain statistics heatmap | `corpus-heatmap.png` | Done |
+| 6 | `fig:token-composition` | Results | Token composition stacked bars | `token-composition.png` | Done |
+| 7 | `fig:structure-premium` | Discussion | RDS ratio vs DAG richness correlation | *pending* | Needs data |
 
 ## Planned Tables
 
@@ -32,11 +35,21 @@ Tables are defined inline in section files (not separate figures):
 | 6 | `tab:graphrag-config` | Architecture | GraphRAG configuration |
 | 7 | `tab:ckg-config` | Architecture | CKG configuration |
 
-## Creating Figures
-
-Use Python/matplotlib for data-driven charts. Place generation scripts alongside
-the output PNG:
+## Generation Scripts
 
 ```bash
-python figures/create_hop_degradation.py  # generates fig:hop-degradation
+# Figure 5: Corpus heatmap (uses real CSV data)
+python paper/figures/create_corpus_heatmap.py
+
+# Figure 6: Token composition (estimated, update after experiments)
+python paper/figures/create_token_composition.py
 ```
+
+## Figure 1: Architecture Diagram
+
+This should be created manually in draw.io or similar. It shows three parallel
+pipelines side by side:
+
+- **RAG:** MkDocs chapters -> chunking -> embeddings -> FAISS top-5 -> Claude
+- **GraphRAG:** MkDocs chapters -> entity extraction -> graph communities -> Claude
+- **CKG:** learning-graph.csv -> concept lookup -> BFS/DFS subgraph -> Claude
