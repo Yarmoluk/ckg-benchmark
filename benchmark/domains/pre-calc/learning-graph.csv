@@ -1,0 +1,308 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Real Number System,,FOUND
+2,Number Line,1,FOUND
+3,Order of Operations,1,FOUND
+4,Variables and Expressions,1|3,FOUND
+5,Coordinate Plane,2,FOUND
+6,Ordered Pairs,5,FOUND
+7,Input and Output,4,FOUND
+8,Function Definition,7,FUNC
+9,Function Notation,8,FUNC
+10,Domain,8,FUNC
+11,Range,8,FUNC
+12,Independent Variable,7,FOUND
+13,Dependent Variable,7|12,FOUND
+14,Interval Notation,2,FOUND
+15,Set-Builder Notation,4,FOUND
+16,Vertical Line Test,8|5,FUNC
+17,Function Evaluation,9,FUNC
+18,Piecewise Functions,8|10|14,FUNC
+19,Domain Restrictions,10,FUNC
+20,Graphing Functions,5|9,FUNC
+21,Intercepts,20,FUNC
+22,X-Intercept,21,FUNC
+23,Y-Intercept,21,FUNC
+24,Increasing Functions,20|27,FUNC
+25,Decreasing Functions,20|27,FUNC
+26,Constant Functions,8,FUNC
+27,Function Behavior,20,FUNC
+28,Positive and Negative Regions,20|22,FUNC
+29,Bounded Functions,11|20,FUNC
+30,Even Functions,20|32,FUNC
+31,Odd Functions,20|32,FUNC
+32,Symmetry,20,FUNC
+33,Change in Tandem,7|12|13,RATE
+34,Average Rate of Change,33|9,RATE
+35,Slope,34,RATE
+36,Slope Formula,35|6,RATE
+37,Rate of Change Units,34,RATE
+38,Secant Line,36|20,RATE
+39,Linear Rate of Change,35,RATE
+40,Nonlinear Rate of Change,34|39,RATE
+41,Concavity from Rates,40,RATE
+42,Increasing Rate of Change,40|24,RATE
+43,Decreasing Rate of Change,40|25,RATE
+44,Linear Function Definition,8|35,LNQD
+45,Slope-Intercept Form,44|23,LNQD
+46,Point-Slope Form,44|36,LNQD
+47,Standard Form of a Line,44,LNQD
+48,Parallel Lines,35|44,LNQD
+49,Perpendicular Lines,35|44,LNQD
+50,Linear Regression,44|6,LNQD
+51,Residuals,50,LNQD
+52,Correlation,50,LNQD
+53,Quadratic Function Definition,8|66,LNQD
+54,Standard Form of Quadratic,53,LNQD
+55,Vertex Form,53|60,LNQD
+56,Factored Form,53,LNQD
+57,Vertex,55,LNQD
+58,Axis of Symmetry,57|32,LNQD
+59,Parabola,53|20,LNQD
+60,Completing the Square,54,LNQD
+61,Quadratic Formula,54|60,LNQD
+62,Discriminant,61,LNQD
+63,Complex Numbers,1,LNQD
+64,Imaginary Unit,63,LNQD
+65,Complex Zeros,62|64,LNQD
+66,Polynomial Definition,4,POLY
+67,Degree of a Polynomial,66,POLY
+68,Leading Coefficient,66,POLY
+69,Monomial,66,POLY
+70,Binomial,66,POLY
+71,Trinomial,66,POLY
+72,Polynomial Addition,66,POLY
+73,Polynomial Multiplication,66|72,POLY
+74,Factoring Polynomials,66|73,POLY
+75,Factor Theorem,74|79,POLY
+76,Remainder Theorem,75|77,POLY
+77,Synthetic Division,66,POLY
+78,Long Division of Polynomials,66,POLY
+79,Zeros of Polynomials,66|22,POLY
+80,Multiplicity of Zeros,79,POLY
+81,Real Zeros,79,POLY
+82,Complex Conjugate Zeros,79|65,POLY
+83,Fundamental Theorem of Algebra,67|79|63,POLY
+84,Polynomial End Behavior,67|68,POLY
+85,Leading Term Test,84,POLY
+86,Turning Points,87,POLY
+87,Polynomial Graphs,79|80|84|20,POLY
+88,Local Maximum,86,POLY
+89,Local Minimum,86,POLY
+90,Global Maximum,88,POLY
+91,Global Minimum,89,POLY
+92,Intermediate Value Theorem,87|10,POLY
+93,Rational Function Definition,66|8,RATL
+94,Rational Expressions,93,RATL
+95,Simplifying Rational Expr,94|74,RATL
+96,Vertical Asymptotes,93|19,RATL
+97,Horizontal Asymptotes,93|84,RATL
+98,Slant Asymptotes,97|78,RATL
+99,Holes in Graphs,95|96,RATL
+100,Rational Function Zeros,93|79,RATL
+101,Rational Function Domain,93|19,RATL
+102,End Behavior of Rationals,97|98,RATL
+103,Rational Function Graphs,96|97|99|100|20,RATL
+104,Rational Inequalities,103|28,RATL
+105,Parent Functions,20|44|53|93,TMOD
+106,Vertical Translation,105,TMOD
+107,Horizontal Translation,105,TMOD
+108,Vertical Stretch,105,TMOD
+109,Vertical Compression,108,TMOD
+110,Horizontal Stretch,105,TMOD
+111,Horizontal Compression,110,TMOD
+112,Reflection Over X-Axis,105,TMOD
+113,Reflection Over Y-Axis,105,TMOD
+114,Combined Transformations,106|107|108|110|112|113,TMOD
+115,Transformation Order,114,TMOD
+116,Writing Transformed Eqns,114|9,TMOD
+117,Function Model Selection,105|34,TMOD
+118,Data Analysis for Models,117|6,TMOD
+119,Regression Models,50|118,TMOD
+120,Model Assumptions,117,TMOD
+121,Model Validation,119|51,TMOD
+122,Extrapolation,119,TMOD
+123,Interpolation,119,TMOD
+124,Residual Analysis,51|121,TMOD
+125,Goodness of Fit,124|52,TMOD
+126,Competing Models,125,TMOD
+127,Sequence Definition,8,SEQX
+128,Arithmetic Sequence,127|35,SEQX
+129,Common Difference,128,SEQX
+130,Arithmetic Sequence Formula,128|129,SEQX
+131,Geometric Sequence,127,SEQX
+132,Common Ratio,131,SEQX
+133,Geometric Sequence Formula,131|132,SEQX
+134,Recursive Formulas,127,SEQX
+135,Explicit Formulas,127|130|133,SEQX
+136,Sequence Convergence,131|11,SEQX
+137,Sequence Divergence,131|136,SEQX
+138,Exponential Function Def,8|131,SEQX
+139,Base of Exponential,138,SEQX
+140,Growth Factor,138|132,SEQX
+141,Decay Factor,138|132,SEQX
+142,Exponential Growth,138|140,SEQX
+143,Exponential Decay,138|141,SEQX
+144,Natural Base e,138,SEQX
+145,Continuous Growth,144|142,SEQX
+146,Compound Interest,142|145,SEQX
+147,Exponential Equations,138|3,SEQX
+148,Exponential Graphs,138|20,SEQX
+149,Exponential Transformations,148|114,SEQX
+150,Exponential Modeling,142|143|118,SEQX
+151,Half-Life,143,SEQX
+152,Doubling Time,142,SEQX
+153,Percent Rate of Change,140|141,SEQX
+154,Logarithm Definition,138,LOGR
+155,Common Logarithm,154,LOGR
+156,Natural Logarithm,154|144,LOGR
+157,Logarithmic Form,154,LOGR
+158,Exponential-Log Conversion,154|147,LOGR
+159,Properties of Logarithms,154,LOGR
+160,Product Rule for Logs,159,LOGR
+161,Quotient Rule for Logs,159,LOGR
+162,Power Rule for Logs,159,LOGR
+163,Change of Base Formula,159|155|156,LOGR
+164,Logarithmic Equations,158|159,LOGR
+165,Logarithmic Graphs,154|20,LOGR
+166,Logarithmic Transformations,165|114,LOGR
+167,Logarithmic Modeling,165|150,LOGR
+168,Logarithmic Scale,154|2,LOGR
+169,Semi-Log Plot,168|148,LOGR
+170,Linearizing Exp Data,169|50,LOGR
+171,Log-Log Plots,169,LOGR
+172,Exponential Regression,170|119,LOGR
+173,Power Regression,171|119,LOGR
+174,Composition of Functions,8|9|17,FUNC
+175,Domain of Compositions,174|10|19,FUNC
+176,Decomposing Functions,174,FUNC
+177,Inverse Function Definition,8|174,FUNC
+178,One-to-One Functions,177,FUNC
+179,Horizontal Line Test,178|16,FUNC
+180,Finding Inverses Algebraically,177|9,FUNC
+181,Inverse Function Graphs,177|20|113,FUNC
+182,Restricting Domains,178|10,FUNC
+183,Angle Definition,,TRIG
+184,Degree Measure,183,TRIG
+185,Radian Measure,183|144,TRIG
+186,Degree-Radian Conversion,184|185,TRIG
+187,Arc Length,185,TRIG
+188,Sector Area,185|187,TRIG
+189,Standard Position,183|5,TRIG
+190,Terminal Side,189,TRIG
+191,Reference Angle,190|184,TRIG
+192,Coterminal Angles,190|184,TRIG
+193,Unit Circle Definition,5|185,TRIG
+194,Unit Circle Coordinates,193|6,TRIG
+195,Special Angles,194|191,TRIG
+196,Quadrantal Angles,194,TRIG
+197,Signs by Quadrant,194,TRIG
+198,Sine Function,193|194,TRIG
+199,Cosine Function,193|194,TRIG
+200,Tangent Function,198|199,TRIG
+201,Reciprocal Trig Functions,198|199|200,TRIG
+202,Secant Function,201|199,TRIG
+203,Cosecant Function,201|198,TRIG
+204,Cotangent Function,201|200,TRIG
+205,Trig Function Evaluation,198|199|200|195,TRIG
+206,Exact Trig Values,205|195,TRIG
+207,Right Triangle Trig,183|198|199|200,TRIG
+208,SOH-CAH-TOA,207,TRIG
+209,Sine Graph,198|20,TRIG
+210,Cosine Graph,199|20,TRIG
+211,Amplitude,209|210,TRIG
+212,Period,209|210|185,TRIG
+213,Midline,209|210,TRIG
+214,Frequency,212,TRIG
+215,Phase Shift,209|210|107,TRIG
+216,Vertical Shift of Trig,209|210|106,TRIG
+217,Sinusoidal Functions,211|212|213|215|216,TRIG
+218,Tangent Graph,200|20,TRIG
+219,Period of Tangent,218|212,TRIG
+220,Asymptotes of Tangent,218|96,TRIG
+221,Secant Graph,202|20,TRIG
+222,Cosecant Graph,203|20,TRIG
+223,Cotangent Graph,204|20,TRIG
+224,Graphing Trig Transformations,217|114,TRIG
+225,Sinusoidal Modeling,217|118,TRIG
+226,Periodic Data Analysis,225,TRIG
+227,Tidal Models,225,TRIG
+228,Temperature Models,225,TRIG
+229,Daylight Hour Models,225,TRIG
+230,Sinusoidal Regression,225|119,TRIG
+231,Period from Data,226|212,TRIG
+232,Amplitude from Data,226|211,TRIG
+233,Pythagorean Identity,198|199,TRIG
+234,Reciprocal Identities,201,TRIG
+235,Quotient Identities,200|198|199,TRIG
+236,Cofunction Identities,198|199|191,TRIG
+237,Even-Odd Identities,198|199|30|31,TRIG
+238,Sum and Difference Formulas,233|198|199,TRIG
+239,Double Angle Formulas,238,TRIG
+240,Verifying Identities,233|234|235|236,TRIG
+241,Simplifying Trig Expr,240,TRIG
+242,Arcsine,198|177|182,TRIG
+243,Arccosine,199|177|182,TRIG
+244,Arctangent,200|177|182,TRIG
+245,Inverse Trig Domains,242|243|244|10,TRIG
+246,Inverse Trig Ranges,242|243|244|11,TRIG
+247,Inverse Trig Graphs,242|243|244|181,TRIG
+248,Composing Trig Inverses,242|243|244|174,TRIG
+249,Solving Trig Equations,205|242|243|244,TRIG
+250,General Solutions,249|192,TRIG
+251,Solutions in an Interval,249|14,TRIG
+252,Trig Inequalities,249|28,TRIG
+253,Multiple Angle Equations,249|239,TRIG
+254,Polar Coordinate System,5|185,POLR
+255,Polar Point Plotting,254,POLR
+256,Rectangular to Polar,254|198|199,POLR
+257,Polar to Rectangular,254|198|199,POLR
+258,Multiple Polar Represent,254|192,POLR
+259,Polar Function Definition,254|8,POLR
+260,Polar Graphs,259|255,POLR
+261,Circles in Polar Form,260,POLR
+262,Cardioids,260,POLR
+263,Limaçons,260,POLR
+264,Rose Curves,260,POLR
+265,Petal Count of Roses,264,POLR
+266,Symmetry of Polar Graphs,260|32,POLR
+267,Polar Rate of Change,260|34,POLR
+268,Polar Graph Intersections,260,POLR
+269,Parametric Equations,5|8,POLR
+270,Parameter,269,POLR
+271,Parametric Graphs,269|20,POLR
+272,Eliminating the Parameter,269|9,POLR
+273,Parametric Motion,271|270,POLR
+274,Position Functions,273,POLR
+275,Velocity from Parametrics,273|34,POLR
+276,Direction of Motion,275,POLR
+277,Parametric Modeling,273|118,POLR
+278,Projectile Motion Model,277|53,POLR
+279,Vector Definition,,VECM
+280,Vector Notation,279,VECM
+281,Magnitude of a Vector,279|1,VECM
+282,Direction of a Vector,279|183,VECM
+283,Component Form,279|5,VECM
+284,Unit Vectors,281|283,VECM
+285,Vector Addition,283,VECM
+286,Vector Subtraction,283|285,VECM
+287,Scalar Multiplication,279|283,VECM
+288,Dot Product,283|285,VECM
+289,Vector Applications,285|286|287,VECM
+290,Matrix Definition,,VECM
+291,Matrix Dimensions,290,VECM
+292,Matrix Addition,290|291,VECM
+293,Matrix Subtraction,290|292,VECM
+294,Scalar Mult of Matrices,290,VECM
+295,Matrix Multiplication,290|291,VECM
+296,Identity Matrix,290|295,VECM
+297,Determinant,290|295,VECM
+298,Inverse of a Matrix,296|297,VECM
+299,Linear Transformations,295|283,VECM
+300,Rotation Matrix,299|185,VECM
+301,Reflection Matrix,299,VECM
+302,Matrix Applications,295|298|299,VECM
+303,Calculator Strategies,17|147|164|249,VECM
+304,Free Response Strategy,303,VECM
+305,Multiple Choice Strategy,303,VECM
+306,Time Management on Exams,303,VECM
+307,Showing Work on Free Resp,304,VECM

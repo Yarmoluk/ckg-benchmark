@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Data Modeling,2,FOUND
+2,World Models,,FOUND
+3,Knowledge Representation,,FOUND
+4,RDBMS,1|14,FOUND
+5,OLAP,4,FOUND
+6,OLTP,4,FOUND
+7,NoSQL Databases,4|1,FOUND
+8,Key-Value Stores,7,FOUND
+9,Document Databases,7,FOUND
+10,Wide-Column Stores,7,FOUND
+11,Graph Databases,7|18,FOUND
+12,CAP Theorem,7,FOUND
+13,Tradeoff Analysis,12,FOUND
+14,Schema Design,,FOUND
+15,Hash Maps,,FOUND
+16,Trees,,FOUND
+17,Arrays,,FOUND
+18,Data Structures,15|16|17,FOUND
+19,Relational Model,4,FOUND
+20,Normalization,19,FOUND
+21,Labeled Property Graph,11|22|23|24|25,GRAPH
+22,Nodes,11,GRAPH
+23,Edges,11|22,GRAPH
+24,Properties,22|23,GRAPH
+25,Labels,22,GRAPH
+26,Schema-Optional Modeling,14|21,GRAPH
+27,Schema-Enforced Modeling,14|21,GRAPH
+28,Index-Free Adjacency,23|29,GRAPH
+29,Traversal,23|22,GRAPH
+30,Graph Query,21|29,GRAPH
+31,Pattern Matching,30,GRAPH
+32,Multi-Hop Queries,29|30,GRAPH
+33,Aggregation,30,GRAPH
+34,Path Patterns,29|31,GRAPH
+35,Constant-Time Neighbor Access,28,GRAPH
+36,First-Class Relationships,23|21,GRAPH
+37,Edge Direction,23,GRAPH
+38,Graph Data Model,21,GRAPH
+39,Graph Schema,38|14,GRAPH
+40,Metadata Representation,24,GRAPH
+41,Open World Model,26,FOUND
+42,Closed World Model,27,FOUND
+43,Graph Validation,39,GRAPH
+44,Document Validation,9,GRAPH
+45,Rule Systems,43,GRAPH
+46,OpenCypher,30|21,QUERY
+47,GSQL,30|21,QUERY
+48,Statistical Query Tuning,64|65,QUERY
+49,GQL,30|21,QUERY
+50,Cypher Syntax,46,QUERY
+51,Match Clause,50,QUERY
+52,Where Clause,50,QUERY
+53,Return Clause,50,QUERY
+54,Create Statement,50,QUERY
+55,Merge Statement,50|54,QUERY
+56,Delete Statement,50,QUERY
+57,Set Clause,50,QUERY
+58,Graph Patterns,31|50,QUERY
+59,Variable Length Paths,34|51,QUERY
+60,Shortest Path,59,QUERY
+61,All Paths,34|51,QUERY
+62,Map-Reduce Pattern,47,QUERY
+63,Accumulators,47|62,QUERY
+64,Query Optimization,30,QUERY
+65,Query Performance,64,QUERY
+66,Query Latency,65,QUERY
+67,Query Throughput,65,QUERY
+68,Declarative Queries,46|49,QUERY
+69,Imperative Queries,47,QUERY
+70,Query Plans,64,QUERY
+71,Hop Count,32|29,PERF
+72,Degree of Node,22|23,GRAPH
+73,Indegree,72|37,PERF
+74,Outdegree,72|37,PERF
+75,Edge-to-Node Ratio,22|23,GRAPH
+76,Graph Indexes,39,PERF
+77,Vector Indexes,76,PERF
+78,Full-Text Search,76,PERF
+79,Composite Indexes,76,PERF
+80,Graph Metrics,72|71,PERF
+81,Performance Benchmarking,65,PERF
+82,Synthetic Benchmarks,81,PERF
+83,Single-Node Benchmarks,81,GRAPH
+84,Multi-Node Benchmarks,81|191,GRAPH
+85,LDBC SNB Benchmark,82,PERF
+86,Graph 500,82,PERF
+87,Query Cost Analysis,65|70,PERF
+88,Join Operations,4|19,PERF
+89,Traversal Cost,29|87,GRAPH
+90,Scalability,81|191,PERF
+91,Breadth-First Search,29,ALGO
+92,Depth-First Search,29,ALGO
+93,A-Star Algorithm,94,ALGO
+94,Pathfinding,60|91,ALGO
+95,Traveling Salesman Problem,94,ALGO
+96,PageRank,98,ALGO
+97,Community Detection,108,ALGO
+98,Centrality Measures,72,ALGO
+99,Betweenness Centrality,98,ALGO
+100,Closeness Centrality,98,ALGO
+101,Graph Embeddings,102,ALGO
+102,Graph Neural Networks,21|110,ALGO
+103,Link Prediction,102,ALGO
+104,Node Classification,102,GRAPH
+105,Graph Clustering,97|102,ALGO
+106,Shortest Path Algorithms,60|94,QUERY
+107,Minimum Spanning Tree,16|23,FOUND
+108,Connected Components,29|91,ALGO
+109,Strongly Connected Components,108|37,ALGO
+110,Weakly Connected Components,108|37,ALGO
+111,Social Networks,21,SOCIAL
+112,Friend Graphs,111|23,SOCIAL
+113,Influence Graphs,111|37,SOCIAL
+114,Follower Networks,111|37,SOCIAL
+115,Activity Streams,111|24,SOCIAL
+116,User Profiles,111|22|24,SOCIAL
+117,Relationship Types,23|25,SOCIAL
+118,Sentiment Analysis,119,SOCIAL
+119,Natural Language Processing,3,SOCIAL
+120,Fake Account Detection,111|97,SOCIAL
+121,Human Resources Modeling,111|38,SOCIAL
+122,Org Chart Models,121|16,SOCIAL
+123,Skill Management,121|22|24,SOCIAL
+124,Task Assignment,122|23,SOCIAL
+125,Backlog Management,124,SOCIAL
+126,Concept Dependency Graphs,21|37|3,KNOW
+127,Curriculum Graphs,126,KNOW
+128,Ontologies,3,KNOW
+129,SKOS,128,KNOW
+130,Preferred Labels,129|25,GRAPH
+131,Alternate Labels,129|25,GRAPH
+132,Acronym Lists,130|131,KNOW
+133,Glossaries,130|131,KNOW
+134,Controlled Vocabularies,129,KNOW
+135,Taxonomies,134|16,KNOW
+136,Enterprise Knowledge,128|3,GRAPH
+137,Department Knowledge,136,GRAPH
+138,Project Knowledge,136,GRAPH
+139,Personal Knowledge Graphs,21|3,GRAPH
+140,Note-Taking Systems,139,KNOW
+141,Knowledge Capture,3|136,GRAPH
+142,Tacit Knowledge,141,GRAPH
+143,Codifiable Knowledge,141,GRAPH
+144,Knowledge Management,136|141,GRAPH
+145,Action Item Extraction,119|138,KNOW
+146,Subgraphs,21|22|23,PATTERN
+147,Supernodes,22|72,GRAPH
+148,Anti-Patterns,38|39,PATTERN
+149,Hyperedges,23|33,GRAPH
+150,Multi-Edges,23|117,GRAPH
+151,Time-Based Modeling,24|38,PATTERN
+152,Time Trees,151|16,FOUND
+153,IoT Event Modeling,151|24,PATTERN
+154,Decision Trees,16|45,FOUND
+155,Bitemporal Models,151,PATTERN
+156,Graph Quality Metrics,80|43,PATTERN
+157,Model Validation,43|39,PATTERN
+158,Schema Evolution,39,PATTERN
+159,Data Migration,158|163,PATTERN
+160,ETL Pipelines,163,PATTERN
+161,CSV Import,160,PATTERN
+162,JSON Import,160,PATTERN
+163,Data Loading,21,PATTERN
+164,Bulk Loading,163,PATTERN
+165,Incremental Loading,163|164,PATTERN
+166,Web Storefront Models,38|21,SUPPLY
+167,Product Catalogs,166|22|24,SUPPLY
+168,Recommendation Engines,96|103|167,SUPPLY
+169,Bill of Materials,16|21,SUPPLY
+170,Complex Parts,169,SUPPLY
+171,Supply Chain Modeling,21|38|169,SUPPLY
+172,Financial Transactions,21|23|24,FIN
+173,Fraud Detection,172|97|113,FIN
+174,Anti-Money Laundering,173,FIN
+175,Know Your Customer,172|174,FIN
+176,Account Networks,172|111,FIN
+177,Healthcare Graphs,21|38,HEALTH
+178,Provider-Patient Graphs,177|23,HEALTH
+179,Electronic Health Records,177|9,HEALTH
+180,Clinical Pathways,178|34,HEALTH
+181,IT Asset Management,21|38,SUPPLY
+182,Dependency Graphs,21|37|126,SUPPLY
+183,Network Topology,181|23,SUPPLY
+184,Configuration Management,181|24,SUPPLY
+185,Impact Analysis,182|94,SUPPLY
+186,Root Cause Analysis,91|185,SUPPLY
+187,Regulatory Compliance,45|157,SUPPLY
+188,Data Lineage,182|37,SUPPLY
+189,Master Data Management,4|38,SUPPLY
+190,Reference Data Models,38|39,SUPPLY
+191,Distributed Graph Databases,11,ADV
+192,Graph Partitioning,191,ADV
+193,Sharding Strategies,192,ADV
+194,Replication,191,ADV
+195,Consistency Models,191|12,ADV
+196,Graph Visualization,21|30,ADV
+197,Interactive Queries,30|196,ADV
+198,Real-Time Analytics,65|191,ADV
+199,Batch Processing,160|198,ADV
+200,Capstone Project Design,21|38|46|47|163|168,ADV

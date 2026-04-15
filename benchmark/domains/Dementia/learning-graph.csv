@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Dementia,10|18,DTYPE
+2,Cognitive Health,10,FOUND
+3,Normal Aging,10|116,FOUND
+4,Brain,,FOUND
+5,Neurons,4,NEURO
+6,Neurotransmitters,5,NEURO
+7,Cerebral Cortex,4,FOUND
+8,Hippocampus,4,FOUND
+9,Memory,4,FOUND
+10,Cognition,,FOUND
+11,Neuroplasticity,5|6,NEURO
+12,Frontal Lobe,7,FOUND
+13,Temporal Lobe,7,FOUND
+14,Parietal Lobe,7,FOUND
+15,Occipital Lobe,7,FOUND
+16,Gray Matter,7,NEURO
+17,White Matter,7,NEURO
+18,Neurodegeneration,5,NEURO
+19,Cognitive Reserve,11|2,FOUND
+20,Brain Health,2|4,FOUND
+21,Executive Function,10|12,FOUND
+22,Attention,10,FOUND
+23,Learning,9|10,FOUND
+24,Perception,10,FOUND
+25,Language,10|13,FOUND
+26,Problem Solving,21,FOUND
+27,Decision Making,21,FOUND
+28,Information Processing,10|22,FOUND
+29,Synapses,5|6,NEURO
+30,Neural Networks,29,NEURO
+31,Alzheimer's Disease,1|36|37,DTYPE
+32,Vascular Dementia,1|41,DTYPE
+33,Lewy Body Dementia,1|40,DTYPE
+34,Frontotemporal Dementia,1|12,DTYPE
+35,Mixed Dementia,31|32,DTYPE
+36,Amyloid Plaques,39,NEURO
+37,Neurofibrillary Tangles,38,NEURO
+38,Tau Protein,5,NEURO
+39,Beta-Amyloid,5,NEURO
+40,Alpha-Synuclein,5,NEURO
+41,Cerebrovascular Disease,4,DTYPE
+42,Mini-Strokes,41,DTYPE
+43,Pick's Disease,34,DTYPE
+44,Corticobasal Degeneration,18,DTYPE
+45,Progressive Supranuclear Palsy,18,DTYPE
+46,Wernicke-Korsakoff Syndrome,1,DTYPE
+47,Creutzfeldt-Jakob Disease,1,DTYPE
+48,Huntington's Disease,1,DTYPE
+49,Parkinson's Disease Dementia,1,DTYPE
+50,Normal Pressure Hydrocephalus,4,DTYPE
+51,Memory Loss,9|1,SYMPT
+52,Confusion,1,SYMPT
+53,Disorientation,1|22,SYMPT
+54,Language Difficulties,25|1,SYMPT
+55,Judgment Impairment,27|1,SYMPT
+56,Visual-Spatial Problems,24|1,SYMPT
+57,Apraxia,1,SYMPT
+58,Agnosia,24|1,SYMPT
+59,Aphasia,25|1,SYMPT
+60,Personality Changes,1,SYMPT
+61,Behavioral Changes,1,SYMPT
+62,Mood Changes,1,SYMPT
+63,Early-Stage Dementia,1,SYMPT
+64,Moderate-Stage Dementia,63,SYMPT
+65,Late-Stage Dementia,64,SYMPT
+66,Mild Cognitive Impairment,10|51,SYMPT
+67,Sundowning,1|75,SYMPT
+68,Wandering,1|53,SYMPT
+69,Agitation,61,SYMPT
+70,Aggression,61,SYMPT
+71,Hallucinations,24|1,SYMPT
+72,Delusions,1,SYMPT
+73,Repetitive Behaviors,61,SYMPT
+74,Sleep Disturbances,1,SYMPT
+75,Catastrophic Reactions,61,SYMPT
+76,Cognitive Assessment,10|1,DIAG
+77,Mini-Mental State Exam,76,DIAG
+78,Montreal Cognitive Assessment,76,DIAG
+79,Clock Drawing Test,76,DIAG
+80,Brain Imaging,4,DIAG
+81,MRI Scan,80,DIAG
+82,CT Scan,80,DIAG
+83,PET Scan,80,DIAG
+84,SPECT Scan,80,DIAG
+85,Blood Tests,1,DIAG
+86,Neurological Examination,1,DIAG
+87,Medical History,1,DIAG
+88,Differential Diagnosis,87|76,DIAG
+89,Delirium,52,DIAG
+90,Depression,62,DIAG
+91,Dementia Screening,76,DIAG
+92,Biomarkers,85,DIAG
+93,Cerebrospinal Fluid Analysis,85,DIAG
+94,Genetic Testing,85,DIAG
+95,Functional Assessment,131,DIAG
+96,Cholinesterase Inhibitors,6|31,TREAT
+97,Memantine,6|31,TREAT
+98,Donepezil,96,TREAT
+99,Rivastigmine,96,TREAT
+100,Galantamine,96,TREAT
+101,Symptom Management,1|51,TREAT
+102,Cognitive Stimulation Therapy,10|101,TREAT
+103,Occupational Therapy,101,TREAT
+104,Physical Therapy,101,TREAT
+105,Speech Therapy,25|101,TREAT
+106,Music Therapy,101,TREAT
+107,Art Therapy,101,TREAT
+108,Reminiscence Therapy,9|101,TREAT
+109,Validation Therapy,101|157,TREAT
+110,Reality Orientation,101,TREAT
+111,Sensory Stimulation,24|101,TREAT
+112,Pet Therapy,101,TREAT
+113,Aromatherapy,101,TREAT
+114,Massage Therapy,101,TREAT
+115,Clinical Trials,1,TREAT
+116,Age-Related Risk,,PREV
+117,Genetic Factors,1,PREV
+118,APOE Gene,117,PREV
+119,Family History,117,PREV
+120,Cardiovascular Health,4,PREV
+121,Hypertension,120,PREV
+122,Diabetes,120,PREV
+123,Obesity,120,PREV
+124,High Cholesterol,120,PREV
+125,Physical Exercise,120,PREV
+126,Mental Stimulation,10|19,PREV
+127,Social Engagement,2,PREV
+128,Mediterranean Diet,141,PREV
+129,Brain-Healthy Lifestyle,20|125|126|127,PREV
+130,Smoking Cessation,120,PREV
+131,Activities of Daily Living,1,CARE
+132,Personal Hygiene,131,CARE
+133,Bathing Assistance,132,CARE
+134,Dressing Assistance,131,CARE
+135,Feeding Strategies,131,CARE
+136,Toileting Support,131,CARE
+137,Mobility Assistance,131,CARE
+138,Transfer Techniques,137,CARE
+139,Sleep Hygiene,74,CARE
+140,Daily Routines,131,CARE
+141,Meal Planning,131,CARE
+142,Nutrition Management,141,CARE
+143,Hydration Management,131,CARE
+144,Dental Care,132,CARE
+145,Grooming,132,CARE
+146,Incontinence Management,136,CARE
+147,Skin Care,132,CARE
+148,Positioning,137,CARE
+149,Comfort Measures,131,CARE
+150,Dignity Preservation,131,CARE
+151,Verbal Communication,25,COMM
+152,Non-Verbal Communication,160,COMM
+153,Active Listening,151,COMM
+154,Simple Language,151,COMM
+155,Visual Cues,152,COMM
+156,Patience,151,COMM
+157,Validation Techniques,153,COMM
+158,Redirection,157,COMM
+159,Communication Boards,151|155,COMM
+160,Body Language,,COMM
+161,Fall Prevention,137,SAFE
+162,Home Safety Assessment,131,SAFE
+163,Grab Bars,161,SAFE
+164,Non-Slip Flooring,161,SAFE
+165,Adequate Lighting,162,SAFE
+166,Door Locks,68|162,SAFE
+167,Stove Safety,162,SAFE
+168,Medication Management,96,SAFE
+169,Emergency Preparedness,162,SAFE
+170,Medical Alert Systems,169,SAFE
+171,Power of Attorney,1,LEGAL
+172,Healthcare Proxy,171,LEGAL
+173,Living Will,1,LEGAL
+174,Advance Directives,173|172,LEGAL
+175,Guardianship,171,LEGAL
+176,Conservatorship,171,LEGAL
+177,Estate Planning,171,LEGAL
+178,Medicaid Planning,179,LEGAL
+179,Medicare Coverage,1,LEGAL
+180,Long-Term Care Insurance,191,LEGAL
+181,Primary Care Physician,1,SUPP
+182,Neurologist,181,SUPP
+183,Geriatrician,181,SUPP
+184,Care Coordination,181|182|183,SUPP
+185,Healthcare Team,184,SUPP
+186,Grief,1,SUPP
+187,Anticipatory Grief,186,SUPP
+188,Caregiver Burden,131,SUPP
+189,Stress Management,188,SUPP
+190,Support Groups,188|189,SUPP
+191,Home Care Services,131,SUPP
+192,Adult Day Care,131|191,SUPP
+193,Assisted Living,131,SUPP
+194,Memory Care Units,193|1,SUPP
+195,Nursing Homes,193,SUPP
+196,Alzheimer's Association,1,SUPP
+197,Area Agency on Aging,191,SUPP
+198,GPS Tracking Devices,68,SUPP
+199,Medication Reminders,168,SUPP
+200,Telehealth,181,SUPP

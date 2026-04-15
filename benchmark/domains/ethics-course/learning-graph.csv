@@ -1,0 +1,251 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Ethics,,FOUND
+2,Data-Driven Ethics,1|6|9,FOUND
+3,Traditional Moral Philosophy,1,FOUND
+4,Ethical Reasoning,1|7,FOUND
+5,Evidence-Based Ethics,2|6,FOUND
+6,Scientific Method,,FOUND
+7,Critical Thinking,,FOUND
+8,Analytical Writing,7,FOUND
+9,Data Literacy,,FOUND
+10,Statistical Thinking,9,FOUND
+11,Quantitative Analysis,10,FOUND
+12,Qualitative Analysis,7|9,FOUND
+13,Research Methods,6|11|12,FOUND
+14,Primary Sources,13,FOUND
+15,Secondary Sources,13,FOUND
+16,Academic Sources,14|15,FOUND
+17,Government Data Sources,14|15,FOUND
+18,NGO Data Sources,14|15,FOUND
+19,Data Credibility,16|17|18,FOUND
+20,Source Triangulation,19,FOUND
+21,Objectivity,7,FOUND
+22,Subjectivity,7|21,FOUND
+23,Bias Recognition,21|22,FOUND
+24,Cognitive Biases,23,FOUND
+25,Confirmation Bias,24,FOUND
+26,Harm Definition,1|2,HARM
+27,Harm Quantification,26|11,HARM
+28,Mortality Rate,27|10,HARM
+29,Morbidity Rate,27|10,HARM
+30,DALYs,28|29|32|33,HARM
+31,QALYs,30,HARM
+32,Years of Life Lost,28,HARM
+33,Years Lived with Disability,29|34,HARM
+34,Disability Weights,29,HARM
+35,Social Cost Accounting,27|36,HARM
+36,Economic Externalities,27,HARM
+37,Negative Externalities,36,HARM
+38,Positive Externalities,36,HARM
+39,Life-Cycle Analysis,27|40,HARM
+40,Cradle-to-Grave Analysis,27,HARM
+41,Environmental Impact,27|39,HARM
+42,Carbon Footprint,41,HARM
+43,Water Footprint,41,HARM
+44,Health Impact Assessment,27|30,HARM
+45,Social Impact Assessment,27|35,HARM
+46,Cost-Benefit Analysis,11|27,HARM
+47,Risk Assessment,10|27,HARM
+48,Harm Per Revenue,27|50,HARM
+49,Per Capita Impact,27|50,HARM
+50,Normalized Metrics,11|27,HARM
+51,Industry Comparisons,48|49,HARM
+52,Harm Scorecards,27|50|53,HARM
+53,Multi-Dimensional Harm,27|41|44|45,HARM
+54,Cumulative Impact,53,HARM
+55,Intergenerational Harm,54,HARM
+56,Ethical Data Collection,13|57,DATA
+57,Informed Consent,1|21,DATA
+58,Data Privacy,57,DATA
+59,Anonymization,58,DATA
+60,Data Aggregation,59|11,DATA
+61,Sampling Methods,13|10,DATA
+62,Random Sampling,61,DATA
+63,Stratified Sampling,61,DATA
+64,Selection Bias,23|61,DATA
+65,Reporting Bias,23|67,DATA
+66,Publication Bias,23|69,DATA
+67,Industry Self-Reporting,17|23,DATA
+68,Independent Verification,20|69,DATA
+69,Peer Review,16,DATA
+70,Meta-Analysis,71|11,DATA
+71,Systematic Review,13|16,DATA
+72,Data Quality Assessment,19|74,DATA
+73,Missing Data,11,DATA
+74,Data Cleaning,11|73,DATA
+75,Outlier Detection,10|11,DATA
+76,Cross-Validation,13|74,DATA
+77,Reproducibility,6|76,DATA
+78,Transparency,21|77,DATA
+79,Open Data,78|17,DATA
+80,Data Documentation,74|78,DATA
+81,Systems Thinking,7|82,SYSF
+82,Complex Systems,,SYSF
+83,System Boundaries,81|84,SYSF
+84,System Components,81,SYSF
+85,Interconnections,84,SYSF
+86,Emergence,82|85,SYSF
+87,Nonlinear Dynamics,82|88,SYSF
+88,Feedback Loops,85,SYSF
+89,Positive Feedback,88,SYSF
+90,Negative Feedback,88,SYSF
+91,Reinforcing Loops,89,SYSF
+92,Balancing Loops,90,SYSF
+93,Delays in Systems,88|94,SYSF
+94,Stocks and Flows,81,SYSF
+95,Stock Variables,94,SYSF
+96,Flow Variables,94,SYSF
+97,Accumulation,95|96,SYSF
+98,Depletion,95|96,SYSF
+99,Dynamic Equilibrium,92|97|98,SYSF
+100,Tipping Points,87|99,SYSF
+101,Thresholds,100,SYSF
+102,Resilience,99|101,SYSF
+103,System Collapse,100|102,SYSF
+104,Causal Loop Diagrams,88|91|92,SYSF
+105,System Dynamics Models,94|104,SYSF
+106,Mental Models,81|24,SYSF
+107,System Archetypes,104|105,ARCH
+108,Tragedy of the Commons,107|139,ARCH
+109,Shifting the Burden,107,ARCH
+110,Success to the Successful,107|91,ARCH
+111,Fixes That Fail,107|124,ARCH
+112,Limits to Growth,107|98,ARCH
+113,Escalation,107|91,ARCH
+114,Eroding Goals,107|92,ARCH
+115,Growth and Underinvest,107|93,ARCH
+116,Root Cause Analysis,81|117,ARCH
+117,Five Whys Technique,7|81,ARCH
+118,Iceberg Model,81|119,ARCH
+119,Events Level,81,ARCH
+120,Patterns Level,119,ARCH
+121,Structures Level,120,ARCH
+122,Mental Models Level,106|121,ARCH
+123,Unintended Consequences,81|124,ARCH
+124,Side Effects,81,ARCH
+125,Rebound Effects,124,ARCH
+126,Problem Shifting,123,ARCH
+127,Time Shifting,126,ARCH
+128,Geographic Shifting,126,ARCH
+129,Stakeholder Analysis,81|130,MRKT
+130,Power Dynamics,81,MRKT
+131,Vested Interests,130,MRKT
+132,Regulatory Capture,131|133,MRKT
+133,Information Asymmetry,130,MRKT
+134,Principal-Agent Problem,133,MRKT
+135,Moral Hazard,134,MRKT
+136,Adverse Selection,133,MRKT
+137,Market Failures,36|138,MRKT
+138,Public Goods,36,MRKT
+139,Common Pool Resources,138,MRKT
+140,Free Rider Problem,138|141,MRKT
+141,Collective Action,81,MRKT
+142,Social Dilemmas,141|143,MRKT
+143,Prisoner's Dilemma,141,MRKT
+144,Nash Equilibrium,143,MRKT
+145,Pareto Efficiency,46|144,MRKT
+146,Tobacco Industry,51|52,CASE
+147,Tobacco Mortality,30|146,CASE
+148,Secondhand Smoke,147,CASE
+149,Fossil Fuel Industry,51|52,CASE
+150,Air Pollution Deaths,30|149,CASE
+151,Climate Change Impact,41|149,CASE
+152,Ultra-Processed Foods,51|52,CASE
+153,Diet-Related Deaths,30|152,CASE
+154,Food Addiction,152|168,CASE
+155,Fast Fashion Industry,51|52,CASE
+156,Textile Waste,41|155,CASE
+157,Labor Exploitation,155|45,CASE
+158,Cybercrime Industry,51|52,CASE
+159,Identity Theft,158,CASE
+160,Financial Fraud,158,CASE
+161,Industrial Agriculture,51|52,CASE
+162,Pesticide Exposure,44|161,CASE
+163,Soil Degradation,41|161,CASE
+164,Pharmaceutical Industry,51|52,CASE
+165,Opioid Crisis,164|168,CASE
+166,Drug Pricing,164|133,CASE
+167,Gambling Industry,51|52,CASE
+168,Addiction Mechanisms,24,CASE
+169,Social Media Harms,51|168,CASE
+170,Attention Economy,24|81,CASE
+171,Leverage Points,81|172,LEVR
+172,Donella Meadows,81,LEVR
+173,System Intervention,171|105,LEVR
+174,Low Leverage Points,171,LEVR
+175,High Leverage Points,171,LEVR
+176,Constants and Parameters,94|174,LEVR
+177,Buffer Sizes,95|174,LEVR
+178,Stock-Flow Structures,94|173,LEVR
+179,Delay Lengths,93|173,LEVR
+180,Negative Feedback Strength,90|173,LEVR
+181,Positive Feedback Gains,89|173,LEVR
+182,Information Flows,88|175,LEVR
+183,System Rules,175,LEVR
+184,Self-Organization,86|175,LEVR
+185,System Goals,106|175,LEVR
+186,Paradigm Shifts,106|175,LEVR
+187,Transcending Paradigms,186,LEVR
+188,Intervention Hierarchy,171|174|175,LEVR
+189,Intervention Timing,93|188,LEVR
+190,Intervention Sequencing,188|189,LEVR
+191,Advocacy Strategies,5|188,ADVOC
+192,Policy Design,191,ADVOC
+193,Regulatory Approaches,192,ADVOC
+194,Market-Based Solutions,192|137,ADVOC
+195,Carbon Pricing,42|196,ADVOC
+196,Pigouvian Taxes,37|194,ADVOC
+197,Subsidies,194|38,ADVOC
+198,Incentive Design,194|199,ADVOC
+199,Behavioral Economics,24,BEHAV
+200,Nudge Theory,199|201,BEHAV
+201,Choice Architecture,199,BEHAV
+202,Default Options,201,BEHAV
+203,Social Norms,199,BEHAV
+204,Framing Effects,199,BEHAV
+205,Loss Aversion,199,BEHAV
+206,Present Bias,199,BEHAV
+207,Cognitive Load,24|199,BEHAV
+208,Decision Fatigue,207,BEHAV
+209,Movement Building,191|210,ADVOC
+210,Coalition Formation,191,ADVOC
+211,Stakeholder Engagement,129|210,ADVOC
+212,Public Awareness Campaigns,209|213,ADVOC
+213,Media Strategy,191,ADVOC
+214,Grassroots Organizing,209,ADVOC
+215,Corporate Engagement,211|231,ADVOC
+216,Data Visualization,9|11,COMM
+217,Graphical Storytelling,216,COMM
+218,Infographics,217,COMM
+219,Network Visualizations,104|216,COMM
+220,Impact Mapping,53|219,COMM
+221,Audience Analysis,7,COMM
+222,Message Framing,204|221,COMM
+223,Persuasive Communication,222,COMM
+224,Evidence Presentation,216|223,COMM
+225,Reform Proposals,188|191,CAP
+226,Implementation Strategy,225,CAP
+227,Success Metrics,11|226,CAP
+228,Monitoring and Evaluation,227,CAP
+229,Adaptive Management,228,CAP
+230,Capstone Project,225|226|228,CAP
+231,Corporate Responsibility,1|45,CORP
+232,ESG Metrics,231|50,CORP
+233,Sustainability Reporting,232|78,CORP
+234,Greenwashing,233|23,CORP
+235,Ethics Washing,234,CORP
+236,Stakeholder Capitalism,231,CORP
+237,Shareholder Primacy,231,CORP
+238,Triple Bottom Line,231|53,CORP
+239,B Corp Certification,238,CORP
+240,Social Enterprise,239,CORP
+241,Impact Investing,240,CORP
+242,Divestment Strategies,241,CORP
+243,Supply Chain Ethics,231|39,CORP
+244,Due Diligence,243,CORP
+245,Whistleblowing,78|231,CORP
+246,Corporate Accountability,231|193,CORP
+247,Legal Liability,246,CORP
+248,Regulatory Enforcement,193|247,CORP
+249,International Standards,248,CORP
+250,Future of Ethics,2|187,CORP

@@ -1,0 +1,551 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Operating System,,HIST
+2,UNIX History,1,HIST
+3,Bell Labs,2,HIST
+4,Ken Thompson,3,HIST
+5,Dennis Ritchie,3,HIST
+6,C Programming Language,5,HIST
+7,UNIX Philosophy,2,HIST
+8,Small Modular Tools,7,HIST
+9,Portability,6|7,HIST
+10,Open Source,7,HIST
+11,GNU Project,10,HIST
+12,Richard Stallman,11,HIST
+13,Linux Kernel,10|11,HIST
+14,Linus Torvalds,13,HIST
+15,Linux Distributions,13,HIST
+16,Debian,15,HIST
+17,Ubuntu,16,HIST
+18,BSD Unix,2,HIST
+19,UNIX System V,2,HIST
+20,POSIX Standards,7|9,HIST
+21,Shell,1|7,SHELL
+22,Bash Shell,21,SHELL
+23,Zsh Shell,21,SHELL
+24,Terminal Emulator,21,SHELL
+25,Command Line Interface,24,SHELL
+26,Shell Prompt,25,SHELL
+27,Command Syntax,25,SHELL
+28,Command Arguments,27,SHELL
+29,Command Options,27,SHELL
+30,Command Flags,29,SHELL
+31,Tab Completion,25,SHELL
+32,Command History,25,SHELL
+33,History Command,32,SHELL
+34,Arrow Key Navigation,25,SHELL
+35,Ctrl Key Shortcuts,25,SHELL
+36,Clear Command,25,SHELL
+37,Exit Command,25,SHELL
+38,Man Pages,27,SHELL
+39,Help Command,27,SHELL
+40,Whatis Command,38,SHELL
+41,Apropos Command,38,SHELL
+42,Echo Command,27,SHELL
+43,Printf Command,42,SHELL
+44,Date Command,27,SHELL
+45,Cal Command,27,SHELL
+46,Uptime Command,27,SHELL
+47,Whoami Command,27,SHELL
+48,Hostname Command,27,SHELL
+49,Uname Command,27,SHELL
+50,Version Information,49,SHELL
+51,File System,1,FSYS
+52,Root Directory,51,FSYS
+53,Home Directory,51|52,FSYS
+54,Current Directory,51,FSYS
+55,Parent Directory,54,FSYS
+56,Absolute Path,52,FSYS
+57,Relative Path,54|55,FSYS
+58,Pwd Command,54,FSYS
+59,Cd Command,54|56|57,FSYS
+60,Ls Command,51,FSYS
+61,Ls Options,29|60,FSYS
+62,Hidden Files,60,FSYS
+63,Dot Files,62,FSYS
+64,Directory Structure,51|52,FSYS
+65,Bin Directory,64,FSYS
+66,Etc Directory,64,FSYS
+67,Var Directory,64,FSYS
+68,Tmp Directory,64,FSYS
+69,Usr Directory,64,FSYS
+70,Opt Directory,64,FSYS
+71,Dev Directory,64,FSYS
+72,Proc Directory,64,FSYS
+73,Home Subdirectories,53,FSYS
+74,Desktop Directory,73,FSYS
+75,Documents Directory,73,FSYS
+76,Downloads Directory,73,FSYS
+77,Tree Command,60|64,FSYS
+78,File Command,51,FSYS
+79,Stat Command,51,FSYS
+80,Pathnames,56|57,FSYS
+81,Touch Command,51,FSYS
+82,Mkdir Command,51,FSYS
+83,Rmdir Command,82,FSYS
+84,Cp Command,51|80,FSYS
+85,Mv Command,51|80,FSYS
+86,Rm Command,51,FSYS
+87,Rm Recursive,86,FSYS
+88,Cat Command,51,FSYS
+89,Head Command,88,FSYS
+90,Tail Command,88,FSYS
+91,Less Command,88,FSYS
+92,More Command,88,FSYS
+93,Wc Command,88,FSYS
+94,Sort Command,88,FSYS
+95,Uniq Command,94,FSYS
+96,Cut Command,88,FSYS
+97,Paste Command,88,FSYS
+98,Diff Command,88,FSYS
+99,Symbolic Links,51|80,FSYS
+100,Hard Links,51,FSYS
+101,Ln Command,99|100,FSYS
+102,File Globbing,60,FSYS
+103,Wildcards,102,FSYS
+104,Asterisk Wildcard,103,FSYS
+105,Question Mark Wildcard,103,FSYS
+106,Bracket Expressions,103,FSYS
+107,Brace Expansion,103,FSYS
+108,Tilde Expansion,53|103,FSYS
+109,File Attributes,51,FSYS
+110,File Timestamps,109,FSYS
+111,File Permissions,51,PERM
+112,Read Permission,111,PERM
+113,Write Permission,111,PERM
+114,Execute Permission,111,PERM
+115,Owner Permissions,111|112|113|114,PERM
+116,Group Permissions,111|112|113|114,PERM
+117,Other Permissions,111|112|113|114,PERM
+118,Permission Notation,115|116|117,PERM
+119,Numeric Permissions,118,PERM
+120,Chmod Command,118|119,PERM
+121,Chown Command,111,PERM
+122,Chgrp Command,111,PERM
+123,User Accounts,1,PERM
+124,Root User,123,PERM
+125,Sudo Command,124,PERM
+126,Su Command,124,PERM
+127,User Groups,123,PERM
+128,Primary Group,127,PERM
+129,Secondary Groups,127,PERM
+130,Umask Command,119,PERM
+131,Default Permissions,130,PERM
+132,Setuid Bit,114|124,PERM
+133,Setgid Bit,114|127,PERM
+134,Sticky Bit,114,PERM
+135,Special Permissions,132|133|134,PERM
+136,Grep Command,88,TEXT
+137,Grep Options,29|136,TEXT
+138,Regular Expressions,136,TEXT
+139,Basic Regex,138,TEXT
+140,Extended Regex,139,TEXT
+141,Regex Metacharacters,138,TEXT
+142,Regex Anchors,141,TEXT
+143,Regex Character Classes,141,TEXT
+144,Regex Quantifiers,141,TEXT
+145,Sed Command,138|88,TEXT
+146,Sed Substitution,145,TEXT
+147,Awk Command,88,TEXT
+148,Awk Fields,147,TEXT
+149,Awk Patterns,147|138,TEXT
+150,Text Streams,88,TEXT
+151,Standard Input,150,TEXT
+152,Standard Output,150,TEXT
+153,Standard Error,150,TEXT
+154,Redirection,151|152|153,TEXT
+155,Output Redirection,154,TEXT
+156,Input Redirection,154,TEXT
+157,Append Redirection,155,TEXT
+158,Error Redirection,153|154,TEXT
+159,Pipe Operator,8|152|151,TEXT
+160,Pipeline Commands,159,TEXT
+161,Xargs Command,160,TEXT
+162,Tee Command,152|160,TEXT
+163,Tr Command,88,TEXT
+164,Rev Command,88,TEXT
+165,Fold Command,88,TEXT
+166,Text Editors,88,EDIT
+167,Nano Editor,166,EDIT
+168,Nano Commands,167,EDIT
+169,Nano Shortcuts,167,EDIT
+170,Vi Editor,166,EDIT
+171,Vim Editor,170,EDIT
+172,Vim Modes,171,EDIT
+173,Vim Insert Mode,172,EDIT
+174,Vim Command Mode,172,EDIT
+175,Vim Visual Mode,172,EDIT
+176,Vim Navigation,171,EDIT
+177,Vim Save and Quit,171,EDIT
+178,Vim Search Replace,171|138,EDIT
+179,Vimrc Configuration,171|63,EDIT
+180,Editor Selection,166,EDIT
+181,Shell Configuration,21|63,CONF
+182,Bashrc File,22|181,CONF
+183,Bash Profile,22|181,CONF
+184,Zshrc File,23|181,CONF
+185,Profile File,181,CONF
+186,Environment Variables,21,CONF
+187,PATH Variable,186|65,CONF
+188,HOME Variable,186|53,CONF
+189,USER Variable,186,CONF
+190,SHELL Variable,186|21,CONF
+191,Export Command,186,CONF
+192,Source Command,181,CONF
+193,Alias Command,21,CONF
+194,Creating Aliases,193,CONF
+195,Removing Aliases,193,CONF
+196,Shell Functions,21,CONF
+197,Shell Startup Order,181|182|183,CONF
+198,Login Shell,21,CONF
+199,Interactive Shell,21,CONF
+200,Non-Interactive Shell,21,CONF
+201,Processes,1,PROC
+202,Process ID,201,PROC
+203,Parent Process,201|202,PROC
+204,Child Process,203,PROC
+205,Foreground Process,201,PROC
+206,Background Process,201,PROC
+207,Ps Command,201,PROC
+208,Ps Options,29|207,PROC
+209,Top Command,201|337|338,PROC
+210,Htop Command,209,PROC
+211,Kill Command,201|202,PROC
+212,Kill Signals,211,PROC
+213,Killall Command,211,PROC
+214,Pkill Command,211,PROC
+215,Jobs Command,205|206,PROC
+216,Fg Command,206|215,PROC
+217,Bg Command,205|215,PROC
+218,Nohup Command,206,PROC
+219,Ampersand Operator,206,PROC
+220,Process Priority,201,PROC
+221,Nice Command,220,PROC
+222,Renice Command,220,PROC
+223,Pgrep Command,201,PROC
+224,Process States,201,PROC
+225,Zombie Processes,203|224,PROC
+226,Package Manager,15,PKG
+227,Software Packages,226,PKG
+228,Package Repositories,226,PKG
+229,APT Package Manager,16|226,PKG
+230,Apt Update,229,PKG
+231,Apt Upgrade,230,PKG
+232,Apt Install,229,PKG
+233,Apt Remove,229,PKG
+234,Apt Search,229,PKG
+235,Apt Show,229,PKG
+236,Dpkg Command,229,PKG
+237,Snap Packages,226,PKG
+238,Flatpak,226,PKG
+239,Homebrew,226,PKG
+240,Brew Install,239,PKG
+241,Brew Update,239,PKG
+242,Package Dependencies,227,PKG
+243,Repository Sources,228,PKG
+244,PPA Repositories,228|17,PKG
+245,Software Updates,230|231,PKG
+246,Network Basics,1,NET
+247,IP Address,246,NET
+248,MAC Address,246,NET
+249,DNS,246|247,NET
+250,Hostname Resolution,249,NET
+251,Network Interfaces,246,NET
+252,Ifconfig Command,251,NET
+253,Ip Command,251,NET
+254,Ping Command,247,NET
+255,Traceroute Command,247,NET
+256,Netstat Command,246|268,NET
+257,Ss Command,256,NET
+258,Curl Command,246,NET
+259,Wget Command,246,NET
+260,SSH Protocol,246,NET
+261,SSH Command,260,NET
+262,SSH Keys,260|470,NET
+263,SSH Config,261,NET
+264,SCP Command,261|84,NET
+265,Rsync Command,264,NET
+266,Firewall Basics,246,NET
+267,UFW Firewall,266,NET
+268,Network Ports,246,NET
+269,WiFi Configuration,246,NET
+270,Network Troubleshooting,254|255|256,NET
+271,File Compression,51,STOR
+272,Gzip Command,271,STOR
+273,Gunzip Command,272,STOR
+274,Bzip2 Command,271,STOR
+275,Xz Command,271,STOR
+276,Tar Command,271,STOR
+277,Tar Create,276,STOR
+278,Tar Extract,276,STOR
+279,Tar Options,29|276,STOR
+280,Zip Command,271,STOR
+281,Unzip Command,280,STOR
+282,Archive Formats,271,STOR
+283,Compression Ratios,271,STOR
+284,7zip Command,271,STOR
+285,File Archiving,276|280,STOR
+286,Find Command,51|80,STOR
+287,Find by Name,286,STOR
+288,Find by Type,286,STOR
+289,Find by Size,286,STOR
+290,Find by Time,286|110,STOR
+291,Find with Exec,286,STOR
+292,Locate Command,51,STOR
+293,Updatedb Command,292,STOR
+294,Which Command,187,STOR
+295,Whereis Command,51,STOR
+296,Type Command,21,STOR
+297,File Search Patterns,286|103,STOR
+298,Recursive Search,286,STOR
+299,Search Optimization,286|292,STOR
+300,Index Databases,292|293,STOR
+301,Cron Daemon,201,PROC
+302,Crontab Command,301,PROC
+303,Cron Syntax,302,PROC
+304,Cron Schedule Fields,303,PROC
+305,Cron Examples,303|304,PROC
+306,At Command,301,PROC
+307,Batch Command,306,PROC
+308,Systemd Timers,301|491,PROC
+309,Anacron,301,PROC
+310,Shell Scripts,21|196,PROC
+311,Script Shebang,310,PROC
+312,Script Permissions,114|310,PROC
+313,Script Variables,186|310,PROC
+314,Script Arguments,28|310,PROC
+315,Script Exit Codes,310,PROC
+316,Storage Devices,1,STOR
+317,Block Devices,316,STOR
+318,Character Devices,316,STOR
+319,Device Files,71|316,STOR
+320,Mount Command,316|51,STOR
+321,Umount Command,320,STOR
+322,Fstab File,320|66,STOR
+323,Disk Partitions,316,STOR
+324,Fdisk Command,323,STOR
+325,Lsblk Command,316,STOR
+326,Df Command,316|51,STOR
+327,Du Command,51,STOR
+328,USB Drives,316,STOR
+329,Flash Drives,328,STOR
+330,Swap Space,316,STOR
+331,Swap File,330,STOR
+332,Swap Partition,330|323,STOR
+333,File System Types,51,STOR
+334,Ext4 File System,333,STOR
+335,NTFS Support,333,STOR
+336,System Monitoring,201,STOR
+337,CPU Usage,336,STOR
+338,Memory Usage,336,STOR
+339,Disk Usage,326|327,STOR
+340,Free Command,338,STOR
+341,Vmstat Command,336,STOR
+342,Iostat Command,336,STOR
+343,Sar Command,336,STOR
+344,Performance Tuning,336,STOR
+345,CPU Benchmarks,337|344,STOR
+346,Disk Benchmarks,339|344,STOR
+347,GPU Performance,344,STOR
+348,System Load,336,STOR
+349,Load Average,348,STOR
+350,Bottleneck Analysis,344|345|346,STOR
+351,Raspberry Pi,15,RPI
+352,Raspberry Pi Models,351,RPI
+353,Raspberry Pi Zero,352,RPI
+354,Raspberry Pi 4,352,RPI
+355,Raspberry Pi 5,352,RPI
+356,Raspberry Pi 500,355,RPI
+357,Raspberry Pi OS,351|15,RPI
+358,Pi Imager,357,RPI
+359,SD Card Setup,358,RPI
+360,Pi First Boot,359,RPI
+361,Raspi-Config,360,RPI
+362,Pi Desktop,360,RPI
+363,Pi Terminal,24|360,RPI
+364,Pi GPIO Header,351,RPI
+365,GPIO Pins,364,RPI
+366,GPIO Voltage,365,RPI
+367,GPIO Ground Pins,365,RPI
+368,GPIO Power Pins,365,RPI
+369,GPIO Data Pins,365,RPI
+370,Pi Camera Module,351,RPI
+371,Pi USB Ports,351|328,RPI
+372,Pi HDMI Ports,351|497,RPI
+373,Pi Ethernet Port,351|246,RPI
+374,Pi WiFi,351|269,RPI
+375,Pi Bluetooth,351,RPI
+376,GPIO Programming,365,RPI
+377,GPIO Input,376,RPI
+378,GPIO Output,376,RPI
+379,Digital Signals,376,RPI
+380,PWM Signals,376,RPI
+381,LED Control,378|380,RPI
+382,LED Strip,381,RPI
+383,NeoPixel LEDs,382,RPI
+384,Button Input,377,RPI
+385,Sensor Reading,377,RPI
+386,Temperature Sensor,385,RPI
+387,Motion Sensor,385,RPI
+388,Light Sensor,385,RPI
+389,Motor Control,378|380,RPI
+390,DC Motors,389,RPI
+391,Servo Motors,389,RPI
+392,Stepper Motors,389,RPI
+393,Motor Drivers,389,RPI
+394,External Power,368|389,RPI
+395,Current Monitoring,394,RPI
+396,Internet of Things,246|351,RPI
+397,IoT Sensors,385|396,RPI
+398,IoT Protocols,396,RPI
+399,MQTT Protocol,398,RPI
+400,Home Automation,396,RPI
+401,Smart Home Hub,400,RPI
+402,Home Monitoring,400,RPI
+403,Temperature Logging,386|402,RPI
+404,Security Cameras,370|402,RPI
+405,Motion Detection,387|402,RPI
+406,Remote Access,261|400,RPI
+407,Web Dashboard,400,RPI
+408,Data Logging,402,RPI
+409,Time Series Data,408,RPI
+410,Alerts and Notifications,402,RPI
+411,Home Assistant,400,RPI
+412,Node-RED,400,RPI
+413,IFTTT Integration,400,RPI
+414,Voice Control,400,RPI
+415,Automation Scripts,310|400,RPI
+416,Cloud Computing,246,CLOUD
+417,Virtual Machines,1|416,CLOUD
+418,Cloud Providers,416,CLOUD
+419,AWS Basics,418,CLOUD
+420,Cloud Linux Instances,417|419,CLOUD
+421,SSH to Cloud,261|420,CLOUD
+422,Docker,416,CLOUD
+423,Docker Images,422,CLOUD
+424,Docker Containers,422|423,CLOUD
+425,Docker Commands,422,CLOUD
+426,Docker Run,424|425,CLOUD
+427,Docker Build,423|425,CLOUD
+428,Dockerfile,427,CLOUD
+429,Docker Compose,424,CLOUD
+430,Container Networking,424|246,CLOUD
+431,Container Volumes,424|316,CLOUD
+432,Terraform Basics,416,CLOUD
+433,Infrastructure as Code,432,CLOUD
+434,Terraform Providers,432,CLOUD
+435,Terraform Resources,432,CLOUD
+436,Cloud Deployment,420|432,CLOUD
+437,Container Registry,423,CLOUD
+438,Microservices,424,CLOUD
+439,Cloud Security,416|466,CLOUD
+440,Cost Management,416,CLOUD
+441,Version Control,10,DEV
+442,Git Basics,441,DEV
+443,Git Init,442,DEV
+444,Git Clone,442,DEV
+445,Git Add,442,DEV
+446,Git Commit,445,DEV
+447,Git Push,446,DEV
+448,Git Pull,442,DEV
+449,Git Branch,442,DEV
+450,Git Merge,449,DEV
+451,GitHub,441,DEV
+452,GitHub Repositories,451,DEV
+453,GitHub SSH Keys,262|451,DEV
+454,Python on Linux,15,DEV
+455,Python3 Command,454,DEV
+456,Pip Package Manager,454,DEV
+457,Virtual Environments,454,DEV
+458,Venv Module,457,DEV
+459,Conda Environment,457,DEV
+460,VSCode on Linux,166,DEV
+461,Thonny IDE,454,DEV
+462,Code Editors,166,DEV
+463,Debugging Tools,201,DEV
+464,GDB Debugger,463,DEV
+465,Print Debugging,463,DEV
+466,Linux Security,1,NET
+467,User Authentication,123|466,NET
+468,Password Security,467,NET
+469,SSH Security,260|466,NET
+470,Key-Based Auth,262|469,NET
+471,Firewall Rules,267,NET
+472,Port Security,268|466,NET
+473,File Encryption,466,NET
+474,GPG Encryption,473,NET
+475,Secure File Transfer,264|466,NET
+476,Security Updates,245|466,NET
+477,Vulnerability Scanning,466,NET
+478,Log Files,67|466,NET
+479,Audit Logs,478,NET
+480,Security Best Practices,466,NET
+481,System Administration,1,ADMIN
+482,User Management,123|481,ADMIN
+483,Useradd Command,482,ADMIN
+484,Usermod Command,482,ADMIN
+485,Userdel Command,482,ADMIN
+486,Group Management,127|481,ADMIN
+487,Password Management,468,ADMIN
+488,Passwd Command,487,ADMIN
+489,Shutdown Command,481,ADMIN
+490,Reboot Command,489,ADMIN
+491,System Services,481,ADMIN
+492,Systemctl Command,491,ADMIN
+493,Service Status,492,ADMIN
+494,Service Start Stop,492,ADMIN
+495,Boot Process,481,ADMIN
+496,Display Configuration,1,ADMIN
+497,HDMI Output,496,ADMIN
+498,Multiple Displays,496,ADMIN
+499,Display Resolution,496,ADMIN
+500,Screen Command,24,ADMIN
+501,Tmux Multiplexer,500,ADMIN
+502,Audio Configuration,1,ADMIN
+503,ALSA Audio,502,ADMIN
+504,PulseAudio,502,ADMIN
+505,Volume Control,502,ADMIN
+506,Audio Output,502,ADMIN
+507,Bluetooth Audio,375|502,ADMIN
+508,USB Audio,502,ADMIN
+509,Sound Testing,502,ADMIN
+510,Audio Troubleshooting,502,ADMIN
+511,Terminal Customization,24|181,ADMIN
+512,Custom Prompts,26|511,ADMIN
+513,PS1 Variable,186|512,ADMIN
+514,Terminal Colors,511,ADMIN
+515,ANSI Color Codes,514,ADMIN
+516,Neofetch,511,ADMIN
+517,Cowsay,27,ADMIN
+518,Figlet,27,ADMIN
+519,Sl Command,27,ADMIN
+520,Linux Easter Eggs,27,ADMIN
+521,Final Projects,310,CAP
+522,Web Server Setup,521,CAP
+523,Nginx Server,522,CAP
+524,Apache Server,522,CAP
+525,Game Server,521,CAP
+526,Minecraft Server,525,CAP
+527,Media Server,521,CAP
+528,Plex Server,527,CAP
+529,Jellyfin Server,527,CAP
+530,Pi-Hole Ad Blocker,249|521,CAP
+531,DNS Server,249|521,CAP
+532,VPN Server,521,CAP
+533,WireGuard VPN,532,CAP
+534,Retro Gaming,521,CAP
+535,RetroPie,351|534,CAP
+536,Network Storage,521,CAP
+537,NAS Server,536,CAP
+538,Backup Server,521|265,CAP
+539,Monitoring Dashboard,336|521,CAP
+540,Portfolio Project,521,CAP
+541,Linux Careers,15,CAP
+542,System Administrator,481|541,CAP
+543,DevOps Engineer,422|432|541,CAP
+544,Network Administrator,246|541,CAP
+545,Cloud Engineer,416|541,CAP
+546,Linux Certifications,541,CAP
+547,Linux in Space,541,CAP
+548,Linux in Cars,541,CAP
+549,C vs Rust,6,CAP
+550,Future of Linux,13,CAP

@@ -1,0 +1,301 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Scalar,,FOUND
+2,Vector,1,FOUND
+3,Vector Notation,2,FOUND
+4,2D Vector,2|3,FOUND
+5,3D Vector,2|3|4,FOUND
+6,N-Dimensional Vector,2|5,FOUND
+7,Vector Addition,2|3,FOUND
+8,Scalar Multiplication,1|2,FOUND
+9,Vector Subtraction,7,FOUND
+10,Dot Product,2|8,FOUND
+11,Cross Product,5|10,FOUND
+12,Vector Magnitude,2|10,FOUND
+13,Unit Vector,12,FOUND
+14,Vector Normalization,12|13,FOUND
+15,Euclidean Distance,12,FOUND
+16,L1 Norm,2|12,FOUND
+17,L2 Norm,12|15,FOUND
+18,L-Infinity Norm,2|12,FOUND
+19,Linear Combination,7|8,FOUND
+20,Span,19,FOUND
+21,Linear Independence,19|20,FOUND
+22,Linear Dependence,21,FOUND
+23,Basis Vector,20|21,FOUND
+24,Standard Basis,23,FOUND
+25,Coordinate System,23|24,FOUND
+26,Vector Space,19|21|23,FOUND
+27,Dimension of Space,23|26,FOUND
+28,Matrix,2,MATOP
+29,Matrix Notation,28,MATOP
+30,Matrix Dimensions,28|29,MATOP
+31,Row Vector,2|28,MATOP
+32,Column Vector,2|28,MATOP
+33,Matrix Entry,28|29,MATOP
+34,Matrix Addition,28|33,MATOP
+35,Matrix Scalar Multiply,1|28,MATOP
+36,Matrix-Vector Product,28|32|35,MATOP
+37,Matrix Multiplication,36,MATOP
+38,Matrix Transpose,28|31|32,MATOP
+39,Symmetric Matrix,38,MATOP
+40,Identity Matrix,28|37,MATOP
+41,Diagonal Matrix,28|33,MATOP
+42,Triangular Matrix,28|41,MATOP
+43,Upper Triangular,42,MATOP
+44,Lower Triangular,42,MATOP
+45,Orthogonal Matrix,38|40,MATOP
+46,Matrix Inverse,37|40,MATOP
+47,Invertible Matrix,46,MATOP
+48,Sparse Matrix,28|33,MATOP
+49,Dense Matrix,28|48,MATOP
+50,Block Matrix,28|30,MATOP
+51,Linear Equation,1|2,LINSYS
+52,System of Equations,51,LINSYS
+53,Matrix Equation Form,36|52,LINSYS
+54,Augmented Matrix,28|52,LINSYS
+55,Gaussian Elimination,52|54,LINSYS
+56,Row Operations,54|55,LINSYS
+57,Row Swap,56,LINSYS
+58,Row Scaling,56,LINSYS
+59,Row Addition,56,LINSYS
+60,Row Echelon Form,55|56,LINSYS
+61,Reduced Row Echelon Form,60,LINSYS
+62,Pivot Position,60,LINSYS
+63,Pivot Column,62,LINSYS
+64,Free Variable,61|63,LINSYS
+65,Basic Variable,61|64,LINSYS
+66,Solution Set,52|61,LINSYS
+67,Unique Solution,66,LINSYS
+68,Infinite Solutions,64|66,LINSYS
+69,No Solution,66,LINSYS
+70,Homogeneous System,52|53,LINSYS
+71,Trivial Solution,70,LINSYS
+72,Numerical Stability,55|60,LINSYS
+73,Back Substitution,60|43,LINSYS
+74,Function,,TRANS
+75,Linear Transformation,26|74,TRANS
+76,Transformation Matrix,37|75,TRANS
+77,Domain,74,TRANS
+78,Codomain,74|77,TRANS
+79,Image,75|78,TRANS
+80,Rotation Matrix,76|45,TRANS
+81,2D Rotation,4|80,TRANS
+82,3D Rotation,5|80,TRANS
+83,Scaling Matrix,76|41,TRANS
+84,Uniform Scaling,83,TRANS
+85,Non-Uniform Scaling,83,TRANS
+86,Shear Matrix,76,TRANS
+87,Reflection Matrix,76|45,TRANS
+88,Projection,75|10,TRANS
+89,Orthogonal Projection,88|45,TRANS
+90,Composition of Transforms,75|37,TRANS
+91,Kernel,75,TRANS
+92,Null Space,91|70,TRANS
+93,Range,75|79,TRANS
+94,Column Space,32|93,TRANS
+95,Rank,94,TRANS
+96,Nullity,92,TRANS
+97,Rank-Nullity Theorem,95|96,TRANS
+98,Invertible Transform,75|47,TRANS
+99,Change of Basis,23|76,TRANS
+100,Basis Transition Matrix,99,TRANS
+101,Determinant,28|37,DETERM
+102,2x2 Determinant,101,DETERM
+103,3x3 Determinant,101|102,DETERM
+104,Cofactor Expansion,103,DETERM
+105,Minor,103|104,DETERM
+106,Cofactor,105,DETERM
+107,Determinant Properties,101,DETERM
+108,Multiplicative Property,101|107,DETERM
+109,Transpose Determinant,38|107,DETERM
+110,Singular Matrix,47|101,DETERM
+111,Volume Scaling Factor,101|103,DETERM
+112,Signed Area,102|111,DETERM
+113,Cramers Rule,101|52,DETERM
+114,Eigenvalue,76|101,EIGEN
+115,Eigenvector,114,EIGEN
+116,Eigen Equation,114|115,EIGEN
+117,Characteristic Polynomial,114|116,EIGEN
+118,Characteristic Equation,117,EIGEN
+119,Eigenspace,115|92,EIGEN
+120,Algebraic Multiplicity,117|118,EIGEN
+121,Geometric Multiplicity,119|120,EIGEN
+122,Diagonalization,41|115|119,EIGEN
+123,Diagonal Form,122,EIGEN
+124,Similar Matrices,99|122,EIGEN
+125,Complex Eigenvalue,114,EIGEN
+126,Spectral Theorem,39|122,EIGEN
+127,Symmetric Eigenvalues,39|126,EIGEN
+128,Power Iteration,115|37,EIGEN
+129,Dominant Eigenvalue,128,EIGEN
+130,Eigendecomposition,122|123,EIGEN
+131,Matrix Factorization,37|46,DECOMP
+132,LU Decomposition,43|44|131,DECOMP
+133,Partial Pivoting,57|132,DECOMP
+134,QR Decomposition,45|131,DECOMP
+135,Gram-Schmidt QR,134|161,DECOMP
+136,Householder QR,134|87,DECOMP
+137,Cholesky Decomposition,44|131|138,DECOMP
+138,Positive Definite Matrix,39|114,DECOMP
+139,SVD,131|134,DECOMP
+140,Singular Value,139,DECOMP
+141,Left Singular Vector,139|140,DECOMP
+142,Right Singular Vector,139|140,DECOMP
+143,Full SVD,139|141|142,DECOMP
+144,Compact SVD,143,DECOMP
+145,Truncated SVD,144,DECOMP
+146,Low-Rank Approximation,95|145,DECOMP
+147,Matrix Rank,95,DECOMP
+148,Numerical Rank,147|72,DECOMP
+149,Condition Number,46|148,DECOMP
+150,Abstract Vector Space,26,INPROD
+151,Subspace,150,INPROD
+152,Vector Space Axioms,150,INPROD
+153,Inner Product,10|150,INPROD
+154,Inner Product Space,153,INPROD
+155,Norm from Inner Product,153|12,INPROD
+156,Cauchy-Schwarz Inequality,153|155,INPROD
+157,Orthogonality,10|153,INPROD
+158,Orthogonal Vectors,157,INPROD
+159,Orthonormal Set,13|158,INPROD
+160,Orthonormal Basis,23|159,INPROD
+161,Gram-Schmidt Process,160,INPROD
+162,Projection onto Subspace,89|151,INPROD
+163,Least Squares Problem,162,INPROD
+164,Normal Equations,38|163,INPROD
+165,Row Space,31|94,INPROD
+166,Left Null Space,38|92,INPROD
+167,Four Subspaces,92|94|165|166,INPROD
+168,Pseudoinverse,46|139|163,INPROD
+169,Feature Vector,6|171,MLBASE
+170,Feature Matrix,28|169,MLBASE
+171,Data Matrix,28,MLBASE
+172,Covariance Matrix,39|171,MLBASE
+173,Correlation Matrix,172,MLBASE
+174,Standardization,171|173,MLBASE
+175,PCA,122|172,MLBASE
+176,Principal Component,175,MLBASE
+177,Variance Explained,175|176,MLBASE
+178,Scree Plot,177,MLBASE
+179,Dimensionality Reduction,145|175,MLBASE
+180,Linear Regression,163|171,MLBASE
+181,Design Matrix,170|180,MLBASE
+182,Ridge Regression,180|184,MLBASE
+183,Lasso Regression,180|184,MLBASE
+184,Regularization,180,MLBASE
+185,Gradient Vector,6,MLBASE
+186,Gradient Descent,185,MLBASE
+187,Batch Gradient Descent,186|37,MLBASE
+188,Learning Rate,186,MLBASE
+189,Perceptron,10|190,NEURAL
+190,Neuron Model,185|191,NEURAL
+191,Activation Function,74,NEURAL
+192,ReLU,191,NEURAL
+193,Sigmoid,191,NEURAL
+194,Tanh,191,NEURAL
+195,Softmax,191|194,NEURAL
+196,Weight Matrix,28|190,NEURAL
+197,Bias Vector,2|190,NEURAL
+198,Forward Propagation,37|196|197,NEURAL
+199,Backpropagation,186|198,NEURAL
+200,Chain Rule Matrices,37|199,NEURAL
+201,Loss Function,74|198,NEURAL
+202,Cross-Entropy Loss,195|201,NEURAL
+203,Neural Network Layer,196|197|198,NEURAL
+204,Hidden Layer,203,NEURAL
+205,Deep Network,204,NEURAL
+206,Convolutional Layer,203|252,NEURAL
+207,Convolution Kernel,206,NEURAL
+208,Stride,206|207,NEURAL
+209,Padding,206|208,NEURAL
+210,Pooling Layer,206,NEURAL
+211,Batch Normalization,174|203,NEURAL
+212,Layer Normalization,211,NEURAL
+213,Tensor,6|28,NEURAL
+214,Tensor Operations,37|213,NEURAL
+215,Embedding,6,GENAI
+216,Embedding Space,26|215,GENAI
+217,Word Embedding,215,GENAI
+218,Semantic Similarity,10|216,GENAI
+219,Cosine Similarity,13|218,GENAI
+220,Attention Mechanism,10|196,GENAI
+221,Self-Attention,220,GENAI
+222,Cross-Attention,220|221,GENAI
+223,Query Matrix,220|196,GENAI
+224,Key Matrix,220|196,GENAI
+225,Value Matrix,220|196,GENAI
+226,Attention Score,10|223|224,GENAI
+227,Attention Weights,195|226,GENAI
+228,Multi-Head Attention,221|227,GENAI
+229,Transformer Architecture,228|230,GENAI
+230,Position Encoding,2|215,GENAI
+231,LoRA,146|229,GENAI
+232,Latent Space,26|179,GENAI
+233,Interpolation,232,GENAI
+234,Hessian Matrix,28|185,OPTIM
+235,Convexity,234,OPTIM
+236,Convex Function,235,OPTIM
+237,Newtons Method,186|234,OPTIM
+238,Quasi-Newton Method,237,OPTIM
+239,BFGS Algorithm,238,OPTIM
+240,SGD,186|187,OPTIM
+241,Mini-Batch SGD,240,OPTIM
+242,Momentum,186|240,OPTIM
+243,Adam Optimizer,242|244,OPTIM
+244,RMSprop,186|240,OPTIM
+245,Lagrange Multiplier,185,OPTIM
+246,Constrained Optimization,186|245,OPTIM
+247,KKT Conditions,245|246,OPTIM
+248,Image Matrix,28,IMGPROC
+249,Grayscale Image,248,IMGPROC
+250,RGB Image,213|249,IMGPROC
+251,Image Tensor,213|250,IMGPROC
+252,Image Convolution,37|248,IMGPROC
+253,Image Filter,252,IMGPROC
+254,Blur Filter,253,IMGPROC
+255,Sharpen Filter,253,IMGPROC
+256,Edge Detection,253,IMGPROC
+257,Sobel Operator,252|256,IMGPROC
+258,Fourier Transform,28|37,IMGPROC
+259,Frequency Domain,258,IMGPROC
+260,Image Compression,145|248,IMGPROC
+261,Color Space Transform,76|250,IMGPROC
+262,Feature Detection,256,IMGPROC
+263,Homography,76|269,IMGPROC
+264,3D Coordinate System,5|25,GEOM3D
+265,Euler Angles,82|264,GEOM3D
+266,Gimbal Lock,265,GEOM3D
+267,Quaternion,5|80,GEOM3D
+268,Quaternion Rotation,267,GEOM3D
+269,Homogeneous Coordinates,6|264,GEOM3D
+270,Rigid Body Transform,80|269,GEOM3D
+271,SE3 Transform,270,GEOM3D
+272,Camera Matrix,28|275,GEOM3D
+273,Intrinsic Parameters,272,GEOM3D
+274,Extrinsic Parameters,270|272,GEOM3D
+275,Projection Matrix,88|269,GEOM3D
+276,Perspective Projection,275,GEOM3D
+277,Stereo Vision,272|276,GEOM3D
+278,Triangulation,5|277,GEOM3D
+279,Epipolar Geometry,277|278,GEOM3D
+280,Point Cloud,5|264,GEOM3D
+281,LIDAR Point Cloud,280,AUTON
+282,Camera Calibration,272|273|274,AUTON
+283,Sensor Fusion,284,AUTON
+284,Kalman Filter,285|286,AUTON
+285,State Vector,2,AUTON
+286,Measurement Vector,2|285,AUTON
+287,Prediction Step,284,AUTON
+288,Update Step,284|287,AUTON
+289,Kalman Gain,288,AUTON
+290,Extended Kalman Filter,284|237,AUTON
+291,State Estimation,284,AUTON
+292,SLAM,291|293|294,AUTON
+293,Localization,291,AUTON
+294,Mapping,280|293,AUTON
+295,Object Detection,206,AUTON
+296,Object Tracking,284|295,AUTON
+297,Bounding Box,248|295,AUTON
+298,Path Planning,292,AUTON
+299,Motion Planning,298,AUTON
+300,Trajectory Optimization,186|299,AUTON

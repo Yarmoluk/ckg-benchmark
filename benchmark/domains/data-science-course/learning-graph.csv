@@ -1,0 +1,301 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Data Science,,FOUND
+2,Python Programming,,FOUND
+3,Jupyter Notebooks,2,PYENV
+4,Data,1,FOUND
+5,Variables,2,FOUND
+6,Data Types,4|5,FOUND
+7,Numerical Data,6,FOUND
+8,Categorical Data,6,FOUND
+9,Ordinal Data,8,FOUND
+10,Nominal Data,8,FOUND
+11,Measurement Scales,7|8|9|10,FOUND
+12,Independent Variable,5|4,FOUND
+13,Dependent Variable,5|4,FOUND
+14,Dataset,4,FOUND
+15,Observation,14,FOUND
+16,Feature,14|12,FOUND
+17,Target Variable,13|14,FOUND
+18,Data Science Workflow,1|4,FOUND
+19,Problem Definition,18,FOUND
+20,Data Collection,18|19,FOUND
+21,Python Installation,2,PYENV
+22,Package Management,21,PYENV
+23,Pip,22,PYENV
+24,Conda Environment,22,PYENV
+25,Virtual Environment,22,PYENV
+26,IDE Setup,21,PYENV
+27,VS Code,26,PYENV
+28,Notebook Cells,3,PYENV
+29,Code Cell,28,PYENV
+30,Markdown Cell,28,PYENV
+31,Cell Execution,29,PYENV
+32,Kernel,3|31,PYENV
+33,Import Statement,2,PYENV
+34,Python Libraries,33|22,PYENV
+35,Documentation,2,BEST
+36,Lists,5,DSTRC
+37,Dictionaries,5,DSTRC
+38,Tuples,5,DSTRC
+39,Arrays,36,DSTRC
+40,Pandas Library,34|39,DSTRC
+41,DataFrame,40,DSTRC
+42,Series,40,DSTRC
+43,Index,41,DSTRC
+44,Column,41,DSTRC
+45,Row,41,DSTRC
+46,Data Loading,40|14,DSTRC
+47,CSV Files,46,DSTRC
+48,Read CSV,47|40,DSTRC
+49,Data Inspection,41,DSTRC
+50,Head Method,49,DSTRC
+51,Tail Method,49,DSTRC
+52,Shape Attribute,49,DSTRC
+53,Info Method,49,DSTRC
+54,Describe Method,49,DSTRC
+55,Data Selection,41|43|44,DSTRC
+56,Missing Values,41|4,CLEAN
+57,NaN,56,CLEAN
+58,Null Detection,57,CLEAN
+59,Dropna Method,58,CLEAN
+60,Fillna Method,58,CLEAN
+61,Imputation,60|101,CLEAN
+62,Data Type Conversion,6|41,CLEAN
+63,Duplicate Detection,41,CLEAN
+64,Duplicate Removal,63,CLEAN
+65,Outliers,41|101,CLEAN
+66,Outlier Detection,65|84,CLEAN
+67,Data Validation,41|56,CLEAN
+68,String Cleaning,41,CLEAN
+69,Column Renaming,41,CLEAN
+70,Data Filtering,55,CLEAN
+71,Boolean Indexing,70|36,CLEAN
+72,Query Method,70,CLEAN
+73,Data Transformation,41,CLEAN
+74,Feature Scaling,73|101,CLEAN
+75,Normalization,74,CLEAN
+76,Data Visualization,4|1,VIZ
+77,Matplotlib Library,34|76,VIZ
+78,Figure,77,VIZ
+79,Axes,78,VIZ
+80,Plot Function,79,VIZ
+81,Line Plot,80,VIZ
+82,Scatter Plot,80,VIZ
+83,Bar Chart,80,VIZ
+84,Histogram,80|113,VIZ
+85,Box Plot,80|108,VIZ
+86,Pie Chart,80,VIZ
+87,Subplot,78,VIZ
+88,Figure Size,78,VIZ
+89,Title,79,VIZ
+90,Axis Labels,79,VIZ
+91,Legend,79,VIZ
+92,Color,79,VIZ
+93,Markers,82,VIZ
+94,Line Styles,81,VIZ
+95,Grid,79,VIZ
+96,Annotations,79,VIZ
+97,Save Figure,78,VIZ
+98,Plot Customization,89|90|91|92,VIZ
+99,Seaborn Library,77|100,VIZ
+100,Statistical Plots,76|101,VIZ
+101,Descriptive Statistics,4|11,STATS
+102,Mean,101,STATS
+103,Median,101,STATS
+104,Mode,101,STATS
+105,Range,101,STATS
+106,Variance,102,STATS
+107,Standard Deviation,106,STATS
+108,Quartiles,103,STATS
+109,Percentiles,108,STATS
+110,Interquartile Range,108,STATS
+111,Skewness,102|103,STATS
+112,Kurtosis,111,STATS
+113,Distribution,101,STATS
+114,Normal Distribution,113|102|107,STATS
+115,Probability,113,STATS
+116,Random Variables,115|5,STATS
+117,Expected Value,116|102,STATS
+118,Sample,14|115,STATS
+119,Population,118,STATS
+120,Sampling,118|119,STATS
+121,Central Limit Theorem,114|120,STATS
+122,Confidence Interval,121|107,STATS
+123,Hypothesis Testing,122|115,STATS
+124,P-Value,123,STATS
+125,Statistical Significance,124,STATS
+126,Correlation,12|13|101,STATS
+127,Covariance,126|106,STATS
+128,Pearson Correlation,126,STATS
+129,Spearman Correlation,126|9,STATS
+130,Correlation Matrix,128|41,STATS
+131,Regression Analysis,126|12|13,REGR
+132,Linear Regression,131,REGR
+133,Simple Linear Regression,132,REGR
+134,Regression Line,133|81,REGR
+135,Slope,134,REGR
+136,Intercept,134,REGR
+137,Least Squares Method,138|139,REGR
+138,Residuals,133|143,REGR
+139,Sum of Squared Errors,138,REGR
+140,Ordinary Least Squares,137,REGR
+141,Regression Coefficients,135|136,REGR
+142,Coefficient Interpretation,141,REGR
+143,Prediction,133,REGR
+144,Fitted Values,143,REGR
+145,Regression Equation,141,REGR
+146,Line of Best Fit,137|134,REGR
+147,Assumptions of Regression,132,REGR
+148,Linearity Assumption,147,REGR
+149,Homoscedasticity,147|138,REGR
+150,Independence Assumption,147,REGR
+151,Normality of Residuals,147|138|114,REGR
+152,Scikit-learn Library,34|132,REGR
+153,LinearRegression Class,152,REGR
+154,Fit Method,153,REGR
+155,Predict Method,153|143,REGR
+156,Model Performance,143|132,EVAL
+157,Training Data,14|156,EVAL
+158,Testing Data,14|156,EVAL
+159,Train Test Split,157|158|152,EVAL
+160,Validation Data,157|158,EVAL
+161,R-Squared,156|139,EVAL
+162,Adjusted R-Squared,161|181,EVAL
+163,Mean Squared Error,156|139,EVAL
+164,Root Mean Squared Error,163,EVAL
+165,Mean Absolute Error,156|138,EVAL
+166,Residual Analysis,138|167,EVAL
+167,Residual Plot,138|82,EVAL
+168,Overfitting,156|173,EVAL
+169,Underfitting,156|173,EVAL
+170,Bias,168|169,EVAL
+171,Variance,168|106,EVAL
+172,Bias-Variance Tradeoff,170|171,EVAL
+173,Model Complexity,132|156,EVAL
+174,Cross-Validation,159|168,EVAL
+175,K-Fold Cross-Validation,174,EVAL
+176,Leave One Out CV,174,EVAL
+177,Holdout Method,159,EVAL
+178,Model Selection,174|172,EVAL
+179,Hyperparameters,178,EVAL
+180,Model Comparison,178|161,EVAL
+181,Multiple Linear Regression,132|182,ADVR
+182,Multiple Predictors,12|16,ADVR
+183,Multicollinearity,181|126,ADVR
+184,Variance Inflation Factor,183,ADVR
+185,Feature Selection,181|16,ADVR
+186,Forward Selection,185,ADVR
+187,Backward Elimination,185,ADVR
+188,Stepwise Selection,186|187,ADVR
+189,Categorical Variables,8|181,ADVR
+190,Dummy Variables,189,ADVR
+191,One-Hot Encoding,190,ADVR
+192,Interaction Terms,181|194,ADVR
+193,Polynomial Features,181,ADVR
+194,Feature Engineering,16|73,ADVR
+195,Feature Importance,185|141,ADVR
+196,NumPy Library,34|39,NUMPY
+197,NumPy Array,196,NUMPY
+198,Array Creation,197,NUMPY
+199,Array Shape,197,NUMPY
+200,Array Indexing,197,NUMPY
+201,Array Slicing,200,NUMPY
+202,Broadcasting,197|204,NUMPY
+203,Vectorized Operations,197,NUMPY
+204,Element-wise Operations,203,NUMPY
+205,Matrix Operations,197,NUMPY
+206,Dot Product,205,NUMPY
+207,Matrix Multiplication,205,NUMPY
+208,Transpose,205,NUMPY
+209,Linear Algebra,205,NUMPY
+210,Computational Efficiency,203|196,NUMPY
+211,Non-linear Regression,132,ADVR
+212,Polynomial Regression,211|193,ADVR
+213,Degree of Polynomial,212,ADVR
+214,Curve Fitting,211,ADVR
+215,Transformation,73|211,ADVR
+216,Log Transformation,215,ADVR
+217,Feature Transformation,215|194,ADVR
+218,Model Flexibility,173|211,ADVR
+219,Regularization,168|181,ADVR
+220,Ridge Regression,219,ADVR
+221,Lasso Regression,219,ADVR
+222,Elastic Net,220|221,ADVR
+223,Regularization Parameter,219,ADVR
+224,Lambda Parameter,223,ADVR
+225,Shrinkage,219|141,ADVR
+226,Machine Learning,1|132,ML
+227,Supervised Learning,226|17,ML
+228,Unsupervised Learning,226,ML
+229,Classification,227,ML
+230,Clustering,228,ML
+231,Training Process,227|233,ML
+232,Learning Algorithm,226,ML
+233,Model Training,232|157,ML
+234,Generalization,233|158,ML
+235,Training Error,233|163,ML
+236,Test Error,234|163,ML
+237,Prediction Error,236,ML
+238,Loss Function,239|163,ML
+239,Cost Function,137,ML
+240,Optimization,239,ML
+241,Gradient Descent,240,ML
+242,Learning Rate,241,ML
+243,Convergence,241,ML
+244,Local Minimum,240,ML
+245,Global Minimum,244,ML
+246,Neural Networks,226,NN
+247,Artificial Neuron,246,NN
+248,Perceptron,247,NN
+249,Activation Function,247,NN
+250,Sigmoid Function,249,NN
+251,ReLU Function,249,NN
+252,Input Layer,246|16,NN
+253,Hidden Layer,246,NN
+254,Output Layer,246|17,NN
+255,Weights,247|141,NN
+256,Biases,247|136,NN
+257,Forward Propagation,252|253|254,NN
+258,Backpropagation,257|241,NN
+259,Deep Learning,246|253,NN
+260,Network Architecture,246,NN
+261,Epochs,231|279,NN
+262,Batch Size,231,NN
+263,Mini-batch,262,NN
+264,Stochastic Gradient,241|263,NN
+265,Vanishing Gradient,258|250,NN
+266,PyTorch Library,34|246,TORCH
+267,Tensors,266|197,TORCH
+268,Tensor Operations,267,TORCH
+269,Autograd,266,TORCH
+270,Automatic Differentiation,241|269,TORCH
+271,Computational Graph,269,TORCH
+272,Neural Network Module,266,TORCH
+273,Sequential Model,272,TORCH
+274,Linear Layer,273,TORCH
+275,Loss Functions PyTorch,266|238,TORCH
+276,Optimizer,266|240,TORCH
+277,SGD Optimizer,276|241,TORCH
+278,Adam Optimizer,276,TORCH
+279,Training Loop,273|275|276,TORCH
+280,Model Evaluation PyTorch,279|156,TORCH
+281,GPU Computing,266|210,TORCH
+282,CUDA,281,TORCH
+283,Model Saving,279,TORCH
+284,Model Loading,283,TORCH
+285,Transfer Learning,259|284,TORCH
+286,Explainable AI,226,BEST
+287,Model Interpretability,142|286,BEST
+288,Feature Importance Analysis,195|287,BEST
+289,SHAP Values,288,BEST
+290,Model Documentation,35|287,BEST
+291,Reproducibility,290,BEST
+292,Random Seed,116|291,BEST
+293,Version Control,291,BEST
+294,Git,293,BEST
+295,Data Ethics,1|286,BEST
+296,Capstone Project,18,PROJ
+297,End-to-End Pipeline,18|296,PROJ
+298,Model Deployment,279|297,PROJ
+299,Results Communication,76|290,PROJ
+300,Data-Driven Decisions,299|1,PROJ

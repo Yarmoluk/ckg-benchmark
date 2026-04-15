@@ -1,0 +1,209 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Relation,,FOUND
+2,Function,1,FOUND
+3,Domain,2,FOUND
+4,Range,2,FOUND
+5,Input Variable,2,FOUND
+6,Output Variable,2,FOUND
+7,Function Notation,2|5|6,FOUND
+8,Dependent Variable,6,FOUND
+9,Independent Variable,5,FOUND
+10,Mapping Diagram,2|3|4,FOUND
+11,Vertical Line Test,2|18,FOUND
+12,Ordered Pair,,FOUND
+13,Coordinate Plane,12|14|15,FOUND
+14,X-Axis,,FOUND
+15,Y-Axis,,FOUND
+16,Origin,14|15,FOUND
+17,Cartesian Coordinates,13|16,FOUND
+18,Graph of a Function,2|13,GRAPH
+19,Table of Values,2|5|6,FOUND
+20,Function Representations,18|19|7,FOUND
+21,Interval Notation,3|4,FOUND
+22,Set Builder Notation,3|4,FOUND
+23,Real Number Line,177,ALG
+24,Continuous Function,2|3,FOUND
+25,Discrete Function,2|3,FOUND
+26,Linear Function,2|27|28,LIN
+27,Slope,13,LIN
+28,Y-Intercept,15|18,GRAPH
+29,X-Intercept,14|18,GRAPH
+30,Gradient-Intercept Form,26|27|28,LIN
+31,General Form of a Line,26,LIN
+32,Point-Gradient Form,26|27|17,LIN
+33,Gradient Calculation,27|17|12,LIN
+34,Positive Gradient,27,LIN
+35,Negative Gradient,27,LIN
+36,Zero Gradient,27|60,LIN
+37,Undefined Gradient,27,LIN
+38,Parallel Lines,27|30,LIN
+39,Perpendicular Lines,27|38,LIN
+40,Linear Equation Solving,26|174|185,LIN
+41,Simultaneous Equations,40|182|183,LIN
+42,Intersection of Lines,41|18,LIN
+43,Real-World Linear Models,26|44|197,LIN
+44,Rate of Change,27,LIN
+45,Direct Proportion,26|44,LIN
+46,Graphing Technology,18,GRAPH
+47,Window Settings,46,GRAPH
+48,Sketching vs Drawing,18|46,GRAPH
+49,Key Graph Features,18|50|54|56,GRAPH
+50,Turning Points,18|58|59,GRAPH
+51,Maximum Point,50,GRAPH
+52,Minimum Point,50,GRAPH
+53,Axis of Symmetry,63|67,QUAD
+54,Roots of a Function,2|29,GRAPH
+55,Zeros of a Function,54,GRAPH
+56,Function Intercepts,28|29,GRAPH
+57,Intersection of Curves,46|18,GRAPH
+58,Increasing Function,18|27,GRAPH
+59,Decreasing Function,18|27,GRAPH
+60,Constant Function,2,FOUND
+61,Identity Function,2|7,FOUND
+62,Quadratic Function,2|170|171,QUAD
+63,Parabola,62|18,QUAD
+64,Standard Form Quadratic,62|170|28,QUAD
+65,Factored Form Quadratic,62|54|70,QUAD
+66,Vertex Form Quadratic,62|67|68,QUAD
+67,Vertex of a Parabola,63|51|52,QUAD
+68,Completing the Square,64|185|190,QUAD
+69,Quadratic Formula,64|71,QUAD
+70,Factoring Quadratics,62|188|189|190,QUAD
+71,Discriminant,64,QUAD
+72,Two Real Roots,71|75,QUAD
+73,Equal Real Roots,71|75,QUAD
+74,No Real Roots,71|75,QUAD
+75,Nature of Roots,71,QUAD
+76,Quadratic Inequalities,62|175|77,QUAD
+77,Sign Diagram,54|175,QUAD
+78,Solving Quadratic Equations,69|70|68,QUAD
+79,Quadratic Applications,78|197,QUAD
+80,Projectile Motion Model,79|66,QUAD
+81,Revenue Optimization,79|51,QUAD
+82,Inverse Function,2|86,INVC
+83,Inverse Function Notation,82|7,INVC
+84,Finding an Inverse,82|185,INVC
+85,Reflection Over Y Equals X,82|18,INVC
+86,One-to-One Function,2|87,INVC
+87,Horizontal Line Test,18|11,INVC
+88,Self-Inverse Function,82|94,INVC
+89,Composite Function,2|7,INVC
+90,Function Composition Rule,89,INVC
+91,Order of Composition,89|90,INVC
+92,Domain of Composite,89|3,INVC
+93,Decomposing Functions,89|90,INVC
+94,Reciprocal Function,2,RAT
+95,Hyperbola,94|18,RAT
+96,Vertical Asymptote,18|3,RAT
+97,Horizontal Asymptote,18|130,RAT
+98,Asymptotic Behavior,96|97,RAT
+99,Rational Function,94|125,RAT
+100,Rational Form Ax Plus B,99|96|97,RAT
+101,Oblique Asymptote,99|134,RAT
+102,Graphing Rational Functions,99|98|46,RAT
+103,Holes in Rational Graphs,99|188,RAT
+104,Domain Restrictions,3,RAT
+105,Exponential Function,2|106,EXP
+106,Base of an Exponential,,EXP
+107,Exponential Growth,105|44,EXP
+108,Exponential Decay,105|44,EXP
+109,Natural Exponential,105|110,EXP
+110,Euler's Number,106,EXP
+111,Exponential Equations,105|185,EXP
+112,Compound Interest Model,107|197,EXP
+113,Population Growth Model,107|197,EXP
+114,Half-Life Model,108|197,EXP
+115,Logarithmic Function,105|121,LOG
+116,Common Logarithm,115,LOG
+117,Natural Logarithm,115|110,LOG
+118,Logarithm Laws,115,LOG
+119,Change of Base Rule,118|116|117,LOG
+120,Solving Log Equations,118|111,LOG
+121,Log-Exponential Inverse,105|82,LOG
+122,Logarithmic Scale,115,LOG
+123,Graphing Exponentials,105|18|46,EXP
+124,Graphing Logarithms,115|18|46,LOG
+125,Polynomial Function,62|126|127,POLY
+126,Degree of a Polynomial,170,POLY
+127,Leading Coefficient,170|126,POLY
+128,Cubic Function,125,POLY
+129,Quartic Function,125,POLY
+130,End Behavior,125|127,POLY
+131,Turning Points Count,125|126|50,POLY
+132,Factor Theorem,125|54,POLY
+133,Remainder Theorem,132|134,POLY
+134,Polynomial Division,125|185,POLY
+135,Synthetic Division,134,POLY
+136,Root Finding,132|135,POLY
+137,Sum of Roots Formula,125|136,POLY
+138,Product of Roots Formula,125|136,POLY
+139,Multiplicity of Roots,136|54,POLY
+140,Graphing Polynomials,125|130|131|46,POLY
+141,Even Function,2|18|143,CLASS
+142,Odd Function,2|18|143,CLASS
+143,Symmetry Testing,18|7,CLASS
+144,Periodic Function,2|3,CLASS
+145,Modulus Function,2,CLASS
+146,Graph of Modulus,145|18,CLASS
+147,Absolute Value Equations,145|174,CLASS
+148,Y Equals Mod F of X,145|18|146,CLASS
+149,Y Equals F of Mod X,145|18|146,CLASS
+150,Y Equals F of X Squared,18|2,CLASS
+151,Domain Restriction Inverse,82|3|86,INVC
+152,Translation,18,TRANS
+153,Horizontal Translation,152,TRANS
+154,Vertical Translation,152,TRANS
+155,Reflection in X-Axis,18|15,TRANS
+156,Reflection in Y-Axis,18|14,TRANS
+157,Vertical Stretch,18|159,TRANS
+158,Horizontal Stretch,18|159,TRANS
+159,Scale Factor,,TRANS
+160,Composite Transformation,152|155|156|157|158,TRANS
+161,Transformation Notation,7|152,TRANS
+162,Effect on Coordinates,17|152,TRANS
+163,Transformation of Points,162|17,TRANS
+164,Graph Transformation Order,160,TRANS
+165,Piecewise Function,2|3,CLASS
+166,Step Function,165,CLASS
+167,Signum Function,165,CLASS
+168,Greatest Integer Function,165,CLASS
+169,Parameter,171|172,ALG
+170,Coefficient,,ALG
+171,Variable,,ALG
+172,Constant,,ALG
+173,Expression,170|171|172,ALG
+174,Equation,173,ALG
+175,Inequality,174,ALG
+176,Solution Set,174|175,ALG
+177,Number Systems,,ALG
+178,Integers,177|23,ALG
+179,Rational Numbers,178,ALG
+180,Irrational Numbers,179,ALG
+181,Real Numbers,179|180|3,ALG
+182,Substitution Method,174|171,ALG
+183,Elimination Method,174,ALG
+184,Graphical Solution Method,18|46,GRAPH
+185,Algebraic Manipulation,173|186|187,ALG
+186,Expanding Brackets,173,ALG
+187,Collecting Like Terms,173,ALG
+188,Common Factor,173,ALG
+189,Difference of Squares,188,ALG
+190,Perfect Square Trinomial,188,ALG
+191,Sum and Difference Cubes,188,ALG
+192,Function Behavior Analysis,58|59|193,CLASS
+193,Concavity,50|18,GRAPH
+194,Inflection Point,193,GRAPH
+195,Continuity,24|3,FOUND
+196,Boundedness,3|4,FOUND
+197,Function Modeling,2|20,MODEL
+198,Regression Model,197|46,MODEL
+199,Curve Fitting,198,MODEL
+200,Extrapolation,199|197,MODEL
+201,Interpolation,199|197,MODEL
+202,Mathematical Modeling Cycle,197,MODEL
+203,Units and Dimensions,197,MODEL
+204,Significant Figures,,MODEL
+205,Exact vs Approximate,204|197,MODEL
+206,GDC Usage,46,GRAPH
+207,Technology in Mathematics,46,GRAPH
+208,Analytic vs Graphic Method,46|185,GRAPH

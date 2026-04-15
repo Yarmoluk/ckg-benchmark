@@ -1,0 +1,351 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Infographic,,FOUND
+2,Interactive Infographic,1,FOUND
+3,Static Infographic,1,FOUND
+4,Animated Infographic,1,FOUND
+5,Intelligent Textbook,2,FOUND
+6,MicroSim,2|5,FOUND
+7,MicroSim Architecture,6,FOUND
+8,Iframe Element,141,FOUND
+9,Width-Responsive Design,8|142,FOUND
+10,Central Content Area,9|5,FOUND
+11,Drawing Canvas,146,FOUND
+12,Infobox,2|14,FOUND
+13,Infobox Positioning,12|236,FOUND
+14,Region,1,FOUND
+15,Named Region,14|16,FOUND
+16,Region Label,14,FOUND
+17,Hover Event,20|250,FOUND
+18,Click Event,20|250,FOUND
+19,Selection Event,17|18,FOUND
+20,Event Handler,140,FOUND
+21,Infographic Taxonomy,1|201,TAXON
+22,Educational Infographic,21,TAXON
+23,Analytical Infographic,21,TAXON
+24,Persuasive Infographic,21,TAXON
+25,Promotional Infographic,21,TAXON
+26,Linear Format,21,TAXON
+27,Hierarchical Format,21,TAXON
+28,Comparative Format,21,TAXON
+29,Circular Format,21,TAXON
+30,Radial Format,29,TAXON
+31,Minimalist Infographic,33,TAXON
+32,Detailed Infographic,33,TAXON
+33,Visual Complexity,21,TAXON
+34,Audience Targeting,21,TAXON
+35,Content Domain,21,TAXON
+36,List Diagram,65,SLIDE
+37,Block List,36,SLIDE
+38,Bullet List,36,SLIDE
+39,Picture List,36,SLIDE
+40,Grid List,36,SLIDE
+41,Process Diagram,65|26,SLIDE
+42,Process Arrows,41,SLIDE
+43,Chevron Process,41,SLIDE
+44,Timeline Diagram,41,SLIDE
+45,Gear Process,41,SLIDE
+46,Step Up Process,41,SLIDE
+47,Cycle Diagram,65|29,SLIDE
+48,Basic Cycle,47,SLIDE
+49,Radial Cycle,47|30,SLIDE
+50,Gear Cycle,47,SLIDE
+51,Nested Cycle,47|48,SLIDE
+52,Continuous Cycle,47,SLIDE
+53,Hierarchy Diagram,65|27,SLIDE
+54,Organization Chart,53,SLIDE
+55,Table Hierarchy,53,SLIDE
+56,Labeled Hierarchy,53,SLIDE
+57,Relationship Diagram,65,SLIDE
+58,Venn Diagram,57,SLIDE
+59,Target Diagram,57,SLIDE
+60,Radial Diagram,57|30,SLIDE
+61,Matrix Diagram,57|28,SLIDE
+62,Pyramid Diagram,65|27,SLIDE
+63,Funnel Diagram,62,SLIDE
+64,Picture Diagram,65,SLIDE
+65,SmartArt Categories,21,SLIDE
+66,Dan Roam Framework,80,FRAME
+67,Portrait Drawing,66|73,FRAME
+68,Chart Drawing,66|73,FRAME
+69,Map Drawing,66|73,FRAME
+70,Timeline Drawing,66|73,FRAME
+71,Flowchart Drawing,66|73,FRAME
+72,Multi-Variable Plot,66|73,FRAME
+73,Six W's Framework,66,FRAME
+74,SQVID Framework,66,FRAME
+75,Simple vs Elaborate,74,FRAME
+76,Qualitative vs Quantitative,74,FRAME
+77,Vision vs Execution,74,FRAME
+78,Individual vs Comparison,74,FRAME
+79,Delta vs Status Quo,74,FRAME
+80,Visual Problem Solving,1|201,FRAME
+81,Systems Thinking,1,CAUSE
+82,Causal Loop Diagram,81|83,CAUSE
+83,Circular Causality,81,CAUSE
+84,Variable,82,CAUSE
+85,Causal Link,84,CAUSE
+86,Polarity Indicator,85,CAUSE
+87,Positive Polarity,86,CAUSE
+88,Negative Polarity,86,CAUSE
+89,Reinforcing Loop,92|87,CAUSE
+90,Balancing Loop,92|88,CAUSE
+91,Loop Identifier,89|90,CAUSE
+92,Feedback Loop,83|85,CAUSE
+93,Vicious Cycle,89,CAUSE
+94,Virtuous Cycle,89,CAUSE
+95,Leverage Point,89|90,CAUSE
+96,Unintended Consequence,95,CAUSE
+97,CLD Best Practices,82|91|95,CAUSE
+98,Overlayment Pattern,2|99,OVRLY
+99,Overlay JSON File,143,OVRLY
+100,Overlay Diagram Driver,99|140,OVRLY
+101,Type 1 Rectangular,98|103,OVRLY
+102,Non-Overlapping Regions,101,OVRLY
+103,Rectangular Region,14|236,OVRLY
+104,Region Extent Highlight,101|206,OVRLY
+105,Type 2 Complex Polygon,98|106,OVRLY
+106,Polygon Region,14|236,OVRLY
+107,Multi-Edge Overlay,105,OVRLY
+108,Polygon Edge Point,106,OVRLY
+109,Type 3 Callout to Edge,98|110,OVRLY
+110,Callout Point,14|236,OVRLY
+111,Edge-Aligned Label,109,OVRLY
+112,Numbered Indicator,109,OVRLY
+113,Show Numbers Toggle,112,OVRLY
+114,Type 4 Floating Label,98|115,OVRLY
+115,Floating Label,110,OVRLY
+116,Draggable Positioning,114|249,OVRLY
+117,Edit Mode,98|116,OVRLY
+118,p5.js Library,140|262,JSLIB
+119,p5.js Setup Function,118,JSLIB
+120,p5.js Draw Function,118|251,JSLIB
+121,createCanvas,119|146,JSLIB
+122,p5.js Event Handling,118|20,JSLIB
+123,D3.js Library,140|262,JSLIB
+124,Data-Driven Documents,123,JSLIB
+125,D3 Selection,123|148,JSLIB
+126,D3 Data Binding,125,JSLIB
+127,Chart.js Library,140|262,JSLIB
+128,Chart Type Selection,127|139,JSLIB
+129,Bar Chart,127,JSLIB
+130,Line Chart,127,JSLIB
+131,Pie Chart,127,JSLIB
+132,vis-network Library,140|262,JSLIB
+133,Network Graph,132,JSLIB
+134,Node,133,JSLIB
+135,Edge,133|134,JSLIB
+136,Leaflet Library,140|262,JSLIB
+137,Geographic Infographic,136,JSLIB
+138,Map Tile Layer,137,JSLIB
+139,Library Selection,118|123|127|132|136,JSLIB
+140,JavaScript Fundamentals,,WEBFD
+141,HTML Structure,,WEBFD
+142,CSS Styling,141,WEBFD
+143,JSON Format,140,WEBFD
+144,JSON Schema,143,WEBFD
+145,CSV Format,143,WEBFD
+146,Canvas Element,141,WEBFD
+147,SVG Element,141,WEBFD
+148,DOM Manipulation,141|140,WEBFD
+149,MicroSim Directory,7,MSIM
+150,main.html File,149|141,MSIM
+151,index.md File,149|277,MSIM
+152,Dublin Core Metadata,,MSIM
+153,metadata.json File,149|152|143,MSIM
+154,YAML Frontmatter,151,MSIM
+155,Title Metadata,154,MSIM
+156,Description Metadata,154,MSIM
+157,Quality Score,164,MSIM
+158,Social Preview Image,159|267,MSIM
+159,Open Graph Tags,154,MSIM
+160,Display Iframe,8|150,MSIM
+161,Copy-Paste Iframe,160|293,MSIM
+162,Fullscreen Link Button,160,MSIM
+163,p5.js Editor Link,118|151,MSIM
+164,MicroSim Quality Rubric,149|165,MSIM
+165,Standardization Checklist,149|150|151|153,MSIM
+166,Aliceblue Drawing Region,11|142,MSIM
+167,White Control Region,142,MSIM
+168,Silver Border,142,MSIM
+169,postMessage API,140|296,MSIM
+170,Iframe Height Reporting,169|8,MSIM
+171,Text-to-Image LLM,176,GENAI
+172,Base Image Generation,171,GENAI
+173,AI Overlay Generation,172|99|176,GENAI
+174,AI Code Generation,176|140,GENAI
+175,AI-Assisted Workflow,172|173|174,GENAI
+176,Prompt Engineering,,GENAI
+177,AI Quality Review,175,GENAI
+178,Editorial Control,177,GENAI
+179,Concept to MicroSim,175|6|221,GENAI
+180,No-Code Tool,2,GENAI
+181,Low-Code Tool,180|140,GENAI
+182,xAPI Protocol,183,TRACK
+183,Experience API,184,TRACK
+184,Event Logging,17|18|19,TRACK
+185,Interaction Tracking,184|182,TRACK
+186,Student Engagement Data,185,TRACK
+187,Learning Analytics,186|308,TRACK
+188,Lesson Plan Section,151|221,TRACK
+189,References Section,151,TRACK
+190,MkDocs Material Theme,278,TRACK
+191,GitHub Pages Deployment,288|190,TRACK
+192,gh-deploy Command,191,MSIM
+193,Quality Assurance,164|200,MSIM
+194,Shared Library,100|140,MSIM
+195,Template MicroSim,149|150|194,MSIM
+196,Infographic Portfolio,193|6,MSIM
+197,Width-Responsive Testing,9|297,MSIM
+198,Color Consistency,204|142,MSIM
+199,Font Size Scaling,9|142,MSIM
+200,Reusable Overlay Schema,99|144,MSIM
+201,Data Visualization,1,ADVIZ
+202,Information Design,201|208,ADVIZ
+203,Visual Encoding,201,ADVIZ
+204,Color Palette,142|203,ADVIZ
+205,Tooltip,17|12,ADVIZ
+206,Hover Highlight,17|204,ADVIZ
+207,Click Feedback,18,ADVIZ
+208,Visual Hierarchy,203,ADVIZ
+209,Gestalt Principles,202,ADVIZ
+210,Proximity Principle,209,ADVIZ
+211,Contrast Principle,209,ADVIZ
+212,Alignment Principle,209,ADVIZ
+213,Repetition Principle,209,ADVIZ
+214,Cognitive Load Theory,,LEARN
+215,Dual Coding Theory,214,LEARN
+216,Multimedia Learning,215,LEARN
+217,Mayer's Principles,216,LEARN
+218,Signaling Principle,217,LEARN
+219,Segmenting Principle,217,LEARN
+220,Spatial Contiguity,217,LEARN
+221,Learning Objective,,LEARN
+222,Bloom's Taxonomy,221,LEARN
+223,Remember Level,222,LEARN
+224,Understand Level,222|223,LEARN
+225,Apply Level,222|224,LEARN
+226,Analyze Level,222|225,LEARN
+227,Evaluate Level,222|226,LEARN
+228,Create Level,222|227,LEARN
+229,Formative Assessment,222,LEARN
+230,Scaffolding,214|221,LEARN
+231,Knowledge Graph,233,LEARN
+232,Learning Path,231|234,LEARN
+233,Concept Dependency,221,LEARN
+234,Prerequisite Knowledge,233,LEARN
+235,Coordinate System,,WEBFD
+236,Pixel Coordinates,235,WEBFD
+237,Relative Coordinates,235|9,WEBFD
+238,Bounding Box,236|103,WEBFD
+239,Hit Detection,238,WEBFD
+240,Point-in-Polygon Test,236|106,WEBFD
+241,Convex Polygon,106,WEBFD
+242,Concave Polygon,106|241,WEBFD
+243,Bezier Curve,235,WEBFD
+244,Aspect Ratio,9,WEBFD
+245,Viewport,9|141,WEBFD
+246,Breakpoint,245|302,WEBFD
+247,Media Query,142|246,WEBFD
+248,Touch Event,20|250,WEBFD
+249,Mouse Event,20|250,WEBFD
+250,Pointer Device,,WEBFD
+251,Animation Loop,140|252,WEBFD
+252,Frame Rate,140,WEBFD
+253,State Management,140|254,WEBFD
+254,Global Variable,140,WEBFD
+255,Callback Function,140,WEBFD
+256,Arrow Function,255,WEBFD
+257,Template Literal,140,WEBFD
+258,Destructuring,140,WEBFD
+259,Spread Operator,258,WEBFD
+260,Array Methods,140,WEBFD
+261,Object Literal,140,WEBFD
+262,CDN Script Loading,141,WEBFD
+263,Module Import,140,WEBFD
+264,Version Pinning,262,WEBFD
+265,Cross-Origin Resource,294|295,WEBFD
+266,Content Security Policy,265,WEBFD
+267,Image Compression,268|141,ADVIZ
+268,PNG Format,,ADVIZ
+269,WebP Format,268,ADVIZ
+270,Alt Text,141,ADVIZ
+271,Semantic HTML,141,ADVIZ
+272,ARIA Attribute,271,ADVIZ
+273,Keyboard Navigation,272,ADVIZ
+274,Tab Order,273,ADVIZ
+275,Screen Reader Support,272|270,ADVIZ
+276,High Contrast Mode,204|142,ADVIZ
+277,Markdown Format,,DEPLY
+278,MkDocs Build Process,277|279,DEPLY
+279,mkdocs.yml Configuration,277,DEPLY
+280,Navigation Structure,279,DEPLY
+281,Site Search,190,DEPLY
+282,Social Cards Plugin,190|158,DEPLY
+283,Custom CSS Override,142|190,DEPLY
+284,Admonition Block,277,DEPLY
+285,Code Block,277,DEPLY
+286,Mermaid Diagram,277|190,DEPLY
+287,Git Version Control,,DEPLY
+288,GitHub Repository,287,DEPLY
+289,Pull Request,288,DEPLY
+290,GitHub Actions,288,DEPLY
+291,Continuous Deployment,290|191,DEPLY
+292,Branch Strategy,287,DEPLY
+293,Embed Code,8|141,WEBFD
+294,Sandbox Attribute,8,WEBFD
+295,Same-Origin Policy,8|140,WEBFD
+296,Cross-Origin Messaging,295,WEBFD
+297,Local Development Server,278,WEBFD
+298,Browser Developer Tools,140|141,WEBFD
+299,Console Logging,298,WEBFD
+300,Network Tab Debugging,298,WEBFD
+301,Performance Profiling,298,WEBFD
+302,Responsive Breakpoints,9|142,WEBFD
+303,Mobile-First Design,302,WEBFD
+304,Desktop Layout,302,WEBFD
+305,Tablet Layout,302,WEBFD
+306,Instructor Dashboard,187,TRACK
+307,Click Heatmap,185|18,TRACK
+308,Engagement Metrics,186,TRACK
+309,Session Duration,308,TRACK
+310,Completion Rate,308,TRACK
+311,A/B Testing,308|313,TRACK
+312,User Feedback Loop,313,TRACK
+313,Iterative Design,315,TRACK
+314,Usability Testing,313|197,TRACK
+315,Design Pattern,140,WEBFD
+316,Observer Pattern,315|20,WEBFD
+317,Factory Pattern,315,WEBFD
+318,Configuration Object,261|315,WEBFD
+319,Default Parameters,140,WEBFD
+320,Error Handling,140,WEBFD
+321,Graceful Degradation,320|322,WEBFD
+322,Progressive Enhancement,140|141,WEBFD
+323,Feature Detection,322,WEBFD
+324,Polyfill,323,WEBFD
+325,Stacked Bar Chart,129,JSLIB
+326,Scatter Plot,127,JSLIB
+327,Histogram,127,JSLIB
+328,Area Chart,130,JSLIB
+329,Donut Chart,131,JSLIB
+330,Treemap Diagram,123,JSLIB
+331,Sankey Diagram,123,JSLIB
+332,Chord Diagram,123,JSLIB
+333,Word Cloud,123,JSLIB
+334,Gauge Chart,127,JSLIB
+335,Sparkline,127,JSLIB
+336,Dashboard Layout,201|127,JSLIB
+337,Before-After Diagram,28,ADVIZ
+338,Side-by-Side Comparison,28,ADVIZ
+339,Decision Tree Diagram,27|71,ADVIZ
+340,Mind Map,27,ADVIZ
+341,Journey Map,26|69,ADVIZ
+342,Roadmap Diagram,26|44,ADVIZ
+343,Annotated Screenshot,2|110,ADVIZ
+344,Layered Infographic,32|2,ADVIZ
+345,Scrollytelling,4|2,ADVIZ
+346,Step Reveal,345,ADVIZ
+347,Zoom and Pan,2|249,ADVIZ
+348,Drill Down,18|2,ADVIZ
+349,Breadcrumb Navigation,348,ADVIZ
+350,Legend Design,204|203,ADVIZ

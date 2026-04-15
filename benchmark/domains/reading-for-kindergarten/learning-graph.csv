@@ -1,0 +1,196 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Spoken Language,,FOUND
+2,Listening Skills,1,FOUND
+3,Sounds in Environment,2,FOUND
+4,Speech Sounds,1|3,FOUND
+5,Words,1|4,FOUND
+6,Phoneme,4|5,FOUND
+7,Print Awareness,5,FOUND
+8,Book Handling,7,FOUND
+9,Reading Direction,7|8,FOUND
+10,One-to-One Correspondence,5|9,FOUND
+11,Word Boundaries,5|10,FOUND
+12,Sentence,5|11,FOUND
+13,Alphabet,7,FOUND
+14,Letter,13,FOUND
+15,Letter Name,14,FOUND
+16,Uppercase A,15,LETR
+17,Uppercase B,15,LETR
+18,Uppercase C,15,LETR
+19,Uppercase D,15,LETR
+20,Uppercase E,15,LETR
+21,Uppercase F,15,LETR
+22,Uppercase G,15,LETR
+23,Uppercase H,15,LETR
+24,Uppercase I,15,LETR
+25,Uppercase J,15,LETR
+26,Uppercase K,15,LETR
+27,Uppercase L,15,LETR
+28,Uppercase M,15,LETR
+29,Uppercase N,15,LETR
+30,Uppercase O,15,LETR
+31,Uppercase P,15,LETR
+32,Uppercase Q,15,LETR
+33,Uppercase R,15,LETR
+34,Uppercase S,15,LETR
+35,Uppercase T,15,LETR
+36,Uppercase U,15,LETR
+37,Uppercase V,15,LETR
+38,Uppercase W,15,LETR
+39,Uppercase X,15,LETR
+40,Uppercase Y,15,LETR
+41,Uppercase Z,15,LETR
+42,Lowercase a,16,LETR
+43,Lowercase b,17,LETR
+44,Lowercase c,18,LETR
+45,Lowercase d,19,LETR
+46,Lowercase e,20,LETR
+47,Lowercase f,21,LETR
+48,Lowercase g,22,LETR
+49,Lowercase h,23,LETR
+50,Lowercase i,24,LETR
+51,Lowercase j,25,LETR
+52,Lowercase k,26,LETR
+53,Lowercase l,27,LETR
+54,Lowercase m,28,LETR
+55,Lowercase n,29,LETR
+56,Lowercase o,30,LETR
+57,Lowercase p,31,LETR
+58,Lowercase q,32,LETR
+59,Lowercase r,33,LETR
+60,Lowercase s,34,LETR
+61,Lowercase t,35,LETR
+62,Lowercase u,36,LETR
+63,Lowercase v,37,LETR
+64,Lowercase w,38,LETR
+65,Lowercase x,39,LETR
+66,Lowercase y,40,LETR
+67,Lowercase z,41,LETR
+68,Phonemic Awareness,6,PHON
+69,Initial Sound,68,PHON
+70,Final Sound,68|69,PHON
+71,Medial Sound,68|70,PHON
+72,Sound Isolation,69|70|71,PHON
+73,Sound Segmentation,72,PHON
+74,Sound Counting,73,PHON
+75,Rhyming Words,5|68,PHON
+76,Rhyme Recognition,75,PHON
+77,Syllable,5|74,PHON
+78,Syllable Clapping,77,PHON
+79,Word Families,75|76,PHON
+80,Onset and Rime,79,PHON
+81,Consonant,14,CONS
+82,Consonant Sound,6|81,CONS
+83,Sound of B,82|43,CONS
+84,Sound of C,82|44,CONS
+85,Sound of D,82|45,CONS
+86,Sound of F,82|47,CONS
+87,Sound of G,82|48,CONS
+88,Sound of H,82|49,CONS
+89,Sound of J,82|51,CONS
+90,Sound of K,82|52,CONS
+91,Sound of L,82|53,CONS
+92,Sound of M,82|54,CONS
+93,Sound of N,82|55,CONS
+94,Sound of P,82|57,CONS
+95,Sound of Q,82|58,CONS
+96,Sound of R,82|59,CONS
+97,Sound of S,82|60,CONS
+98,Sound of T,82|61,CONS
+99,Sound of V,82|63,CONS
+100,Sound of W,82|64,CONS
+101,Sound of X,82|65,CONS
+102,Sound of Y,82|66,CONS
+103,Sound of Z,82|67,CONS
+104,Vowel,14,VOWL
+105,Vowel Letter,104,VOWL
+106,Short Vowel Sound,6|105,VOWL
+107,Short A Sound,106|42,VOWL
+108,Short E Sound,106|46,VOWL
+109,Short I Sound,106|50,VOWL
+110,Short O Sound,106|56,VOWL
+111,Short U Sound,106|62,VOWL
+112,Long Vowel Sound,106,VOWL
+113,Long A Sound,112|42,VOWL
+114,Long E Sound,112|46,VOWL
+115,Long I Sound,112|50,VOWL
+116,Long O Sound,112|56,VOWL
+117,Long U Sound,112|62,VOWL
+118,Letter-Sound Link,82|106,LINK
+119,Sound-Symbol Match,118,LINK
+120,Consonant-Sound Match,82|119,LINK
+121,Vowel-Sound Match,106|119,LINK
+122,Letter Formation,14,LINK
+123,Letter Tracing,122,LINK
+124,Letter Writing,123,LINK
+125,Kinesthetic Learning,124,LINK
+126,Sound Blending,73|118,BLND
+127,Oral Blending,126,BLND
+128,Continuous Blending,127,BLND
+129,VC Word Pattern,105|82,BLND
+130,CVC Word Pattern,129,BLND
+131,Blending VC Words,128|129|121,BLND
+132,Blending CVC Words,130|131|120,BLND
+133,Word Building,132,BLND
+134,Sound Stretching,127,BLND
+135,Connected Sounds,134,BLND
+136,Smooth Blending,135,BLND
+137,Word Reading,132|136,BLND
+138,Decoding,137,BLND
+139,Sounding Out,138,BLND
+140,Reading Accuracy,139,BLND
+141,Sight Word,137,SGHT
+142,High-Frequency Word,141,SGHT
+143,Sight Word: the,142,SGHT
+144,Sight Word: a,142,SGHT
+145,Sight Word: is,142,SGHT
+146,Sight Word: it,142,SGHT
+147,Sight Word: in,142,SGHT
+148,Sight Word: to,142,SGHT
+149,Sight Word: and,142,SGHT
+150,Sight Word: I,142,SGHT
+151,Sight Word: can,142,SGHT
+152,Sight Word: we,142,SGHT
+153,Sight Word: see,142,SGHT
+154,Sight Word: my,142,SGHT
+155,Sight Word: like,142,SGHT
+156,Sight Word: go,142,SGHT
+157,Sight Word: he,142,SGHT
+158,Sight Word: she,142,SGHT
+159,Sight Word: you,142,SGHT
+160,Sight Word: are,142,SGHT
+161,Repetition,,ASMT
+162,Practice,161,ASMT
+163,Mastery,162,ASMT
+164,Assessment,163,ASMT
+165,Self-Correction,140|164,ASMT
+166,Error Detection,165,ASMT
+167,Fluency,140|163,ASMT
+168,Automaticity,167,ASMT
+169,Word Recognition Speed,168,ASMT
+170,Accuracy Check,164|166,ASMT
+171,Progress Monitoring,170,ASMT
+172,Formative Assessment,171,ASMT
+173,Learning Games,162,ASMT
+174,Multisensory Learning,125|173,ASMT
+175,Gesture-Based Learning,174,ASMT
+176,Word Creation,133,APPL
+177,Nonsense Words,176,APPL
+178,Real vs Nonsense Words,177,APPL
+179,Word Discrimination,178,APPL
+180,Sound Manipulation,73|176,APPL
+181,Initial Sound Change,180|69,APPL
+182,Final Sound Change,180|70,APPL
+183,Vowel Substitution,180|121,APPL
+184,Word Family Building,79|133,APPL
+185,Pattern Recognition,184,APPL
+186,Independent Reading,140|167,CAPS
+187,Simple Text Reading,186,CAPS
+188,Word Bank,141|176,CAPS
+189,Personal Word List,188,CAPS
+190,Reading Confidence,186|163,CAPS
+191,Reading Motivation,190,CAPS
+192,Story Awareness,187,CAPS
+193,Reading for Meaning,192,CAPS
+194,Print to Speech,138,CAPS
+195,Emergent Reader,186|190|191,CAPS

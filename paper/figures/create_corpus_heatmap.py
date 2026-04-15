@@ -1,6 +1,6 @@
 """
 Generate Figure 5: Corpus Statistics Heatmap
-Shows per-domain statistics across all 22 domains.
+Shows per-domain statistics across all 46 domains.
 """
 import csv
 import os
@@ -11,31 +11,58 @@ import matplotlib.colors as mcolors
 DOMAINS_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'benchmark', 'domains')
 
 CATEGORY_MAP = {
-    'calculus': 'STEM', 'biology': 'STEM', 'genetics': 'STEM',
+    # STEM
+    'algebra-1': 'STEM', 'calculus': 'STEM', 'pre-calc': 'STEM',
+    'linear-algebra': 'STEM', 'functions': 'STEM', 'geometry-course': 'STEM',
+    'biology': 'STEM', 'genetics': 'STEM', 'chemistry': 'STEM',
     'bioinformatics': 'STEM', 'statistics-course': 'STEM',
     'quantum-computing': 'STEM', 'circuits': 'STEM',
-    'geometry-course': 'STEM', 'ecology': 'STEM', 'moss': 'STEM',
+    'digital-electronics': 'STEM', 'ecology': 'STEM', 'moss': 'STEM',
+    'intro-to-physics-course': 'STEM', 'signal-processing': 'STEM',
+    'fft-benchmarking': 'STEM', 'computer-science': 'STEM',
+    # Professional
     'economics-course': 'Professional', 'organizational-analytics': 'Professional',
     'modeling-healthcare-data': 'Professional', 'conversational-ai': 'Professional',
     'automating-instructional-design': 'Professional', 'blockchain': 'Professional',
-    'claude-skills': 'Professional',
+    'claude-skills': 'Professional', 'data-science-course': 'Professional',
+    'Dementia': 'Professional', 'infographics': 'Professional',
+    'intro-to-graph': 'Professional', 'it-management-graph': 'Professional',
+    'learning-linux': 'Professional', 'machine-learning-textbook': 'Professional',
+    'microsims': 'Professional',
+    # Foundational
     'systems-thinking': 'Foundational', 'theory-of-knowledge': 'Foundational',
     'digital-citizenship': 'Foundational', 'prompt-class': 'Foundational',
     'tracking-ai-course': 'Foundational', 'us-geography': 'Foundational',
-    'asl-book': 'Foundational',
+    'asl-book': 'Foundational', 'ethics-course': 'Foundational',
+    'personal-finance': 'Foundational', 'reading-for-kindergarten': 'Foundational',
 }
 
 DISPLAY_NAMES = {
-    'asl-book': 'ASL', 'automating-instructional-design': 'Auto. Instr. Design',
+    'algebra-1': 'Algebra 1', 'asl-book': 'ASL',
+    'automating-instructional-design': 'Auto. Instr. Design',
     'bioinformatics': 'Bioinformatics', 'biology': 'Biology',
     'blockchain': 'Blockchain', 'calculus': 'Calculus',
-    'circuits': 'Circuits', 'claude-skills': 'Claude Skills',
+    'chemistry': 'Chemistry', 'circuits': 'Circuits',
+    'claude-skills': 'Claude Skills', 'computer-science': 'Computer Science',
     'conversational-ai': 'Conversational AI',
-    'digital-citizenship': 'Digital Citizenship', 'ecology': 'Ecology',
-    'economics-course': 'Economics', 'genetics': 'Genetics',
-    'geometry-course': 'Geometry', 'modeling-healthcare-data': 'Healthcare Data',
-    'moss': 'Moss', 'organizational-analytics': 'Org. Analytics',
+    'data-science-course': 'Data Science', 'Dementia': 'Dementia',
+    'digital-citizenship': 'Digital Citizenship',
+    'digital-electronics': 'Digital Electronics',
+    'ecology': 'Ecology', 'economics-course': 'Economics',
+    'ethics-course': 'Ethics', 'fft-benchmarking': 'FFT Benchmarking',
+    'functions': 'Functions', 'genetics': 'Genetics',
+    'geometry-course': 'Geometry', 'infographics': 'Infographics',
+    'intro-to-graph': 'Intro to Graphs',
+    'intro-to-physics-course': 'Intro to Physics',
+    'it-management-graph': 'IT Management',
+    'learning-linux': 'Learning Linux', 'linear-algebra': 'Linear Algebra',
+    'machine-learning-textbook': 'Machine Learning',
+    'microsims': 'MicroSims',
+    'modeling-healthcare-data': 'Healthcare Data', 'moss': 'Moss',
+    'organizational-analytics': 'Org. Analytics',
+    'personal-finance': 'Personal Finance', 'pre-calc': 'Pre-Calculus',
     'prompt-class': 'Prompt Engineering', 'quantum-computing': 'Quantum Computing',
+    'reading-for-kindergarten': 'Reading (K)', 'signal-processing': 'Signal Processing',
     'statistics-course': 'Statistics', 'systems-thinking': 'Systems Thinking',
     'theory-of-knowledge': 'Theory of Knowledge',
     'tracking-ai-course': 'Tracking AI', 'us-geography': 'US Geography',
@@ -115,7 +142,7 @@ def main():
     matrix_norm = (matrix - matrix.min(axis=0)) / (matrix.max(axis=0) - matrix.min(axis=0) + 1e-9)
 
     # Create figure
-    fig, ax = plt.subplots(figsize=(10, 12))
+    fig, ax = plt.subplots(figsize=(10, 20))
 
     im = ax.imshow(matrix_norm, cmap='YlOrRd', aspect='auto')
 

@@ -1,0 +1,207 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Economics,,FOUND
+2,Scarcity,1,FOUND
+3,Opportunity Cost,1|2,FOUND
+4,Trade-offs,2|3,FOUND
+5,Marginal Analysis,3|4,FOUND
+6,Incentives,1|3,FOUND
+7,Rational Decision Making,3|5|6,FOUND
+8,Economic Models,1|7,FOUND
+9,Positive Economics,1|8,FOUND
+10,Normative Economics,1|8|9,FOUND
+11,Microeconomics,1|8,FOUND
+12,Macroeconomics,1|8,FOUND
+13,Market Economy,1|6,FOUND
+14,Command Economy,1,FOUND
+15,Mixed Economy,13|14,FOUND
+16,Factors of Production,1,FOUND
+17,Production Possibilities,2|16,FOUND
+18,Efficiency,3|17,FOUND
+19,Demand,1|11,MICRO
+20,Law of Demand,19,MICRO
+21,Demand Curve,19|20,MICRO
+22,Change in Demand,19|21,MICRO
+23,Determinants of Demand,19|22,MICRO
+24,Normal Goods,19|23,MICRO
+25,Inferior Goods,19|23|24,MICRO
+26,Substitute Goods,19|23,MICRO
+27,Complementary Goods,19|23|26,MICRO
+28,Supply,1|11|16,MICRO
+29,Law of Supply,28,MICRO
+30,Supply Curve,28|29,MICRO
+31,Change in Supply,28|30,MICRO
+32,Determinants of Supply,28|31,MICRO
+33,Market Equilibrium,21|30,MICRO
+34,Equilibrium Price,33,MICRO
+35,Surplus,33|34,MICRO
+36,Shortage,33|34|35,MICRO
+37,Price Mechanism,6|33|34,MICRO
+38,Price Ceiling,34|36,MICRO
+39,Price Floor,34|35,MICRO
+40,Elasticity,20|21|29|30,MICRO
+41,Price Elasticity of Demand,40,MICRO
+42,Elastic Demand,41,MICRO
+43,Inelastic Demand,41|42,MICRO
+44,Consumer Surplus,21|34,MICRO
+45,Producer Surplus,30|34,MICRO
+46,Utility,7|19,MICRO
+47,Marginal Utility,5|46,MICRO
+48,Diminishing Marginal Utility,47,MICRO
+49,Consumer Choice,7|46|48,MICRO
+50,Budget Constraint,3|49,MICRO
+51,Production Function,16|28,MICRO
+52,Marginal Product,5|51,MICRO
+53,Diminishing Returns,52,MICRO
+54,Marginal Revenue,5|28,MICRO
+55,Marginal Cost,5|51|54,MICRO
+56,Average Total Cost,55,MICRO
+57,Fixed Costs,51|56,MICRO
+58,Variable Costs,51|56|57,MICRO
+59,Economies of Scale,56|58,MICRO
+60,Profit Maximization,5|54|55,MICRO
+61,Market Structure,11|33,MKSTR
+62,Perfect Competition,61,MKSTR
+63,Price Taker,62,MKSTR
+64,Monopoly,61|62,MKSTR
+65,Natural Monopoly,59|64,MKSTR
+66,Price Maker,64,MKSTR
+67,Oligopoly,61|64,MKSTR
+68,Monopolistic Competition,61|62|64,MKSTR
+69,Product Differentiation,68,MKSTR
+70,Barriers to Entry,64|67,MKSTR
+71,Market Power,64|66|70,MKSTR
+72,Market Failure,18|61,PUBEC
+73,Externalities,72,PUBEC
+74,Negative Externality,73,PUBEC
+75,Positive Externality,73|74,PUBEC
+76,Public Goods,72,PUBEC
+77,Free Rider Problem,76,PUBEC
+78,Common Resources,72|76,PUBEC
+79,Tragedy of the Commons,78,PUBEC
+80,Deadweight Loss,44|45|72,PUBEC
+81,Government Intervention,72|80,PUBEC
+82,Taxes,81,PUBEC
+83,Subsidies,81|82,PUBEC
+84,Pigouvian Tax,74|82,PUBEC
+85,Regulation,81,PUBEC
+86,Antitrust Policy,71|85,PUBEC
+87,Property Rights,1|78,PUBEC
+88,Market Efficiency,18|33|44|45,PUBEC
+89,Equity,1|10,PUBEC
+90,Efficiency vs Equity,88|89,PUBEC
+91,Tax Incidence,40|82,PUBEC
+92,Welfare Economics,44|45|88|89,PUBEC
+93,Gross Domestic Product,12,MACRO
+94,GDP Calculation,93,MACRO
+95,Nominal GDP,93|94,MACRO
+96,Real GDP,95,MACRO
+97,Per Capita GDP,96,MACRO
+98,Economic Growth,96|97,MACRO
+99,Standard of Living,97|98,MACRO
+100,Unemployment,12|102,MACRO
+101,Unemployment Rate,100,MACRO
+102,Labor Force,16,MACRO
+103,Frictional Unemployment,100,MACRO
+104,Structural Unemployment,100|103,MACRO
+105,Cyclical Unemployment,100|111,MACRO
+106,Inflation,12,MACRO
+107,Consumer Price Index,106,MACRO
+108,Inflation Rate,106|107,MACRO
+109,Deflation,106|108,MACRO
+110,Purchasing Power,106|108,MACRO
+111,Business Cycle,12|98,MACRO
+112,Recession,111,MACRO
+113,Money,1,MONEY
+114,Functions of Money,113,MONEY
+115,Medium of Exchange,114,MONEY
+116,Store of Value,114|115,MONEY
+117,Fiat Money,113|114,MONEY
+118,Money Supply,113|117,MONEY
+119,Banks,113|118,MONEY
+120,Fractional Reserve Banking,119,MONEY
+121,Federal Reserve,119|122,MONEY
+122,Central Bank,119,MONEY
+123,Interest Rates,118|119,MONEY
+124,Open Market Operations,121|123,MONEY
+125,Quantitative Easing,121|124,MONEY
+126,Fiscal Policy,12|81,POLICY
+127,Government Spending,126,POLICY
+128,Taxation,82|126,POLICY
+129,Budget Deficit,127|128,POLICY
+130,National Debt,129,POLICY
+131,Expansionary Fiscal Policy,126|127,POLICY
+132,Contractionary Fiscal Policy,126|128,POLICY
+133,Monetary Policy,12|121|123,POLICY
+134,Expansionary Monetary Policy,133,POLICY
+135,Contractionary Monetary Policy,133|134,POLICY
+136,Aggregate Demand,12|19|93,POLICY
+137,Aggregate Supply,12|28|93,POLICY
+138,Multiplier Effect,127|136,POLICY
+139,Crowding Out,129|138,POLICY
+140,Stagflation,106|112,POLICY
+141,Phillips Curve,100|106,POLICY
+142,Policy Trade-offs,126|133|141,POLICY
+143,International Trade,1|13,INTL
+144,Exports,143,INTL
+145,Imports,143|144,INTL
+146,Trade Balance,144|145,INTL
+147,Absolute Advantage,17|143,INTL
+148,Comparative Advantage,3|147,INTL
+149,Specialization,148,INTL
+150,Tariffs,81|145,INTL
+151,Free Trade,143|150,INTL
+152,Protectionism,150|151,INTL
+153,Exchange Rates,113|143,INTL
+154,Currency Appreciation,153,INTL
+155,Globalization,143|149|151,INTL
+156,Personal Budget,3|4,PFIN
+157,Income,16|102,PFIN
+158,Saving,156|157,PFIN
+159,Compound Interest,123|158,PFIN
+160,Time Value of Money,159,PFIN
+161,Present Value,160,PFIN
+162,Rule of 72,159,PFIN
+163,Credit,119|123,PFIN
+164,Credit Score,163,PFIN
+165,Debt,163,PFIN
+166,Loans,119|163|165,PFIN
+167,Mortgages,166,PFIN
+168,Financial Literacy,156|163,PFIN
+169,Emergency Fund,158|168,PFIN
+170,Financial Goals,156|168,PFIN
+171,Human Capital,16|102,PFIN
+172,Career Economics,3|157|171,PFIN
+173,Investment,158|178,INVEST
+174,Stocks,173,INVEST
+175,Bonds,173|174,INVEST
+176,Mutual Funds,174|175|177,INVEST
+177,Diversification,173|178,INVEST
+178,Risk,3,INVEST
+179,Return,173|178,INVEST
+180,Risk-Return Trade-off,178|179,INVEST
+181,Stock Market,174,INVEST
+182,Retirement Savings,159|170|173,INVEST
+183,Digital Economy,1|13,DIGITAL
+184,Network Effects,183,DIGITAL
+185,Platform Economics,183|184,DIGITAL
+186,Two-Sided Markets,185,DIGITAL
+187,Winner-Take-All Markets,184|186,DIGITAL
+188,Information Goods,183,DIGITAL
+189,Marginal Cost of Digital,55|188,DIGITAL
+190,Attention Economy,183|188,DIGITAL
+191,Sharing Economy,183|185,DIGITAL
+192,Gig Economy,102|191,DIGITAL
+193,E-commerce,143|183,DIGITAL
+194,Cryptocurrency,113|195,DIGITAL
+195,Blockchain,183,DIGITAL
+196,Economic Misinformation,8|198,THINK
+197,Correlation vs Causation,8|198,THINK
+198,Data Interpretation,8,THINK
+199,Cost-Benefit Analysis,3|5|92,THINK
+200,Systems Thinking,8|73,THINK
+201,Working in Teams,,CAPSTONE
+202,Selecting a Project,1|201,CAPSTONE
+203,Dividing the Work,201|202,CAPSTONE
+204,Integrating the Findings,198|203,CAPSTONE
+205,Presenting Findings,204,CAPSTONE
+206,Using AI,8|198|205,CAPSTONE

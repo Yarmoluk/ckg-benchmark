@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Machine Learning,,FOUND
+2,Supervised Learning,1,FOUND
+3,Unsupervised Learning,1,FOUND
+4,Classification,2,FOUND
+5,Regression,2,FOUND
+6,Training Data,1,FOUND
+7,Test Data,6,FOUND
+8,Validation Data,6,FOUND
+9,Feature,1,FOUND
+10,Label,2,FOUND
+11,Instance,9,FOUND
+12,Feature Vector,9|11,FOUND
+13,Model,1,FOUND
+14,Algorithm,1,FOUND
+15,Hyperparameter,13|14,FOUND
+16,K-Nearest Neighbors,2|14,KNN
+17,Distance Metric,9,KNN
+18,Euclidean Distance,17,KNN
+19,Manhattan Distance,17,KNN
+20,K Selection,15|16,KNN
+21,Decision Boundary,4,KNN
+22,Voronoi Diagram,16|21,KNN
+23,Curse of Dimensionality,9|17,KNN
+24,KNN for Classification,16|4,KNN
+25,KNN for Regression,16|5,KNN
+26,Lazy Learning,16,KNN
+27,Decision Tree,2|14,TREE
+28,Tree Node,27,TREE
+29,Leaf Node,27|28,TREE
+30,Splitting Criterion,27,TREE
+31,Entropy,30,TREE
+32,Information Gain,31,TREE
+33,Gini Impurity,30,TREE
+34,Pruning,27|35,TREE
+35,Overfitting,13|6,TREE
+36,Underfitting,13|6,TREE
+37,Tree Depth,27|28,TREE
+38,Categorical Features,9,FOUND
+39,Continuous Features,9,FOUND
+40,Feature Space Partitioning,27|9,FOUND
+41,Logistic Regression,2|14|4,MISC
+42,Sigmoid Function,41,LOGREG
+43,Log-Loss,98|41,LOGREG
+44,Binary Classification,4,LOGREG
+45,Multiclass Classification,4,LOGREG
+46,Maximum Likelihood,41,LOGREG
+47,One-vs-All,45|41,LOGREG
+48,One-vs-One,45|41,LOGREG
+49,Softmax Function,45,LOGREG
+50,Regularization,35,REG
+51,L1 Regularization,50,REG
+52,L2 Regularization,50,REG
+53,Ridge Regression,52|5,REG
+54,Lasso Regression,51|5,REG
+55,Support Vector Machine,2|14|4,SVM
+56,Hyperplane,55,SVM
+57,Margin,55|56,SVM
+58,Support Vectors,55|57,SVM
+59,Margin Maximization,57,SVM
+60,Hard Margin SVM,55|57,SVM
+61,Soft Margin SVM,55|57,SVM
+62,Slack Variables,61,SVM
+63,Kernel Trick,55,SVM
+64,Linear Kernel,63,SVM
+65,Polynomial Kernel,63,SVM
+66,Radial Basis Function,63,SVM
+67,Gaussian Kernel,63|66,SVM
+68,Dual Formulation,55,SVM
+69,Primal Formulation,55,SVM
+70,K-Means Clustering,3|14,CLUST
+71,Centroid,70,CLUST
+72,Cluster Assignment,70|71,CLUST
+73,Cluster Update,70|71,CLUST
+74,K-Means Initialization,70,CLUST
+75,Random Initialization,74,CLUST
+76,K-Means++ Initialization,74,CLUST
+77,Elbow Method,70|15,CLUST
+78,Silhouette Score,70,CLUST
+79,Within-Cluster Variance,70|71,CLUST
+80,Convergence Criteria,70,CLUST
+81,Inertia,70|79,CLUST
+82,Neural Network,2|14,NN
+83,Artificial Neuron,82,NN
+84,Perceptron,83,NN
+85,Activation Function,83,NN
+86,ReLU,85,NN
+87,Tanh,85,NN
+88,Sigmoid Activation,85,LOGREG
+89,Leaky ReLU,85|86,NN
+90,Weights,83,NN
+91,Bias,83,NN
+92,Forward Propagation,82|83,NN
+93,Backpropagation,82|92,NN
+94,Gradient Descent,93,NN
+95,Stochastic Gradient Descent,94,NN
+96,Mini-Batch Gradient Descent,94,NN
+97,Learning Rate,94|15,NN
+98,Loss Function,13,NN
+99,Mean Squared Error,98|5,NN
+100,Cross-Entropy Loss,98|4,TREE
+101,Epoch,6|82,NN
+102,Batch Size,6|82,NN
+103,Vanishing Gradient,93|94,NN
+104,Exploding Gradient,93|94,NN
+105,Weight Initialization,82|90,NN
+106,Xavier Initialization,105,NN
+107,He Initialization,105,NN
+108,Fully Connected Layer,82,NN
+109,Hidden Layer,82|108,NN
+110,Output Layer,82|108,NN
+111,Input Layer,82|108,NN
+112,Network Architecture,82,NN
+113,Deep Learning,82,NN
+114,Multilayer Perceptron,82|109,NN
+115,Universal Approximation,82,NN
+116,Convolutional Neural Network,113|14,CNN
+117,Convolution Operation,116,CNN
+118,Filter,117,CNN
+119,Kernel Size,118|15,SVM
+120,Stride,117,CNN
+121,Padding,117,CNN
+122,Valid Padding,121,CNN
+123,Same Padding,121,CNN
+124,Feature Map,117|118,FOUND
+125,Receptive Field,116|117,CNN
+126,Pooling Layer,116,NN
+127,Max Pooling,126,CNN
+128,Average Pooling,126,CNN
+129,Spatial Hierarchies,116|124,CNN
+130,Translation Invariance,116|117,CNN
+131,Local Connectivity,116|117,CNN
+132,Weight Sharing,116|90,CNN
+133,CNN Architecture,116,CNN
+134,LeNet,133,CNN
+135,AlexNet,133,CNN
+136,VGG,133,CNN
+137,ResNet,133,CNN
+138,Inception,133,CNN
+139,Transfer Learning,113|14,TL
+140,Pre-Trained Model,139,FOUND
+141,Fine-Tuning,139|140,TL
+142,Feature Extraction,139|140,FOUND
+143,Domain Adaptation,139,TL
+144,ImageNet,116|140,TL
+145,Model Zoo,140,FOUND
+146,Freezing Layers,141,NN
+147,Learning Rate Scheduling,97|139,NN
+148,Bias-Variance Tradeoff,35|36,NN
+149,Training Error,6|13,EVAL
+150,Validation Error,8|13,FOUND
+151,Test Error,7|13,EVAL
+152,Generalization,148|149|150,EVAL
+153,Cross-Validation,8|13,FOUND
+154,K-Fold Cross-Validation,153,FOUND
+155,Stratified Sampling,153,EVAL
+156,Holdout Method,6|7|8,EVAL
+157,Confusion Matrix,4,EVAL
+158,True Positive,157,EVAL
+159,False Positive,157,EVAL
+160,True Negative,157,EVAL
+161,False Negative,157,EVAL
+162,Accuracy,157,EVAL
+163,Precision,158|159,EVAL
+164,Recall,158|161,EVAL
+165,F1 Score,163|164,EVAL
+166,ROC Curve,4,EVAL
+167,AUC,166,EVAL
+168,Sensitivity,164,EVAL
+169,Specificity,160|159,EVAL
+170,Data Preprocessing,6,EVAL
+171,Normalization,170,PREP
+172,Standardization,170,PREP
+173,Min-Max Scaling,171,PREP
+174,Z-Score Normalization,172,PREP
+175,One-Hot Encoding,170|38,PREP
+176,Label Encoding,170|10,FOUND
+177,Feature Engineering,9|170,FOUND
+178,Feature Selection,177,FOUND
+179,Dimensionality Reduction,9|23,PREP
+180,Data Augmentation,170|116,PREP
+181,Computational Complexity,14,OPT
+182,Time Complexity,181,OPT
+183,Space Complexity,181,OPT
+184,Scalability,181,OPT
+185,Batch Processing,6|102,NN
+186,Online Learning,1|6,OPT
+187,Optimizer,94,OPT
+188,Adam Optimizer,187,OPT
+189,RMSprop,187,OPT
+190,Momentum,94|187,OPT
+191,Nesterov Momentum,190,OPT
+192,Gradient Clipping,104,OPT
+193,Dropout,50|82,OPT
+194,Early Stopping,50|150,OPT
+195,Model Evaluation,13|7,FOUND
+196,Model Selection,13|195,FOUND
+197,Hyperparameter Tuning,15|196,FOUND
+198,Grid Search,197,OPT
+199,Random Search,197,OPT
+200,Bayesian Optimization,197,OPT

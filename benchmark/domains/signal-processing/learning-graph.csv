@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Real Numbers,,MATH
+2,Complex Numbers,1,MATH
+3,Imaginary Unit,1,MATH
+4,Euler's Formula,2|3,MATH
+5,Phasors,2|4,MATH
+6,Vectors,1,MATH
+7,Matrices,6,MATH
+8,Linear Algebra,6|7,MATH
+9,Differential Calculus,1,MATH
+10,Integral Calculus,1,MATH
+11,Differential Equations,9,MATH
+12,Partial Derivatives,9,MATH
+13,Probability Theory,1,MATH
+14,Random Variables,13,MATH
+15,Statistical Distributions,14,MATH
+16,Mean and Expected Value,14,MATH
+17,Variance,16,MATH
+18,Standard Deviation,17,MATH
+19,Trigonometry,1,MATH
+20,Exponential Functions,1,MATH
+21,Logarithmic Functions,1,MATH
+22,Series and Sequences,1,MATH
+23,Eigenvalues and Eigenvectors,8,MATH
+24,Inner Product,6,MATH
+25,Norms and Metrics,6,MATH
+26,Signals,1,SIG
+27,Systems,26,SIG
+28,Continuous-Time Signals,26,SIG
+29,Discrete-Time Signals,26,SIG
+30,Analog Signals,28,SIG
+31,Digital Signals,29,SIG
+32,Periodic Signals,26,SIG
+33,Aperiodic Signals,26,SIG
+34,Even Signals,26,SIG
+35,Odd Signals,26,SIG
+36,Energy Signals,26,SIG
+37,Power Signals,26,SIG
+38,Unit Step Function,1,SIG
+39,Unit Impulse Function,1,SIG
+40,Sinusoidal Signals,19|26,SIG
+41,Exponential Signals,20|26,SIG
+42,Signal Operations,26,SIG
+43,Time Shifting,42,SIG
+44,Time Scaling,42,SIG
+45,Signal Amplitude,26,SIG
+46,Signal Frequency,26,SIG
+47,Signal Phase,26|19,SIG
+48,Signal Duration,26,SIG
+49,Signal Energy,26|10,SIG
+50,Signal Power,26,SIG
+51,Linear Systems,27,SYS
+52,Nonlinear Systems,27,SYS
+53,Time-Invariant Systems,27,SYS
+54,Time-Varying Systems,27,SYS
+55,Causality,27,SYS
+56,Non-Causal Systems,27,SYS
+57,Stability,27,SYS
+58,Unstable Systems,27,SYS
+59,Memory Systems,27,SYS
+60,Memoryless Systems,27,SYS
+61,Invertible Systems,27,SYS
+62,System Response,27,SYS
+63,Impulse Response,39|62,SYS
+64,Step Response,38|62,SYS
+65,Frequency Response,62|46,SYS
+66,Transfer Function,65,SYS
+67,System Identification,27|62,SYS
+68,Feedback Systems,27,SYS
+69,Feedforward Systems,27,SYS
+70,System Interconnections,27,SYS
+71,Convolution,10|26|27,CONV
+72,Discrete Convolution,71|29,CONV
+73,Circular Convolution,71,CONV
+74,Convolution Theorem,71,CONV
+75,Correlation,26,CONV
+76,Autocorrelation,75,CONV
+77,Cross-Correlation,75,CONV
+78,Correlation Coefficient,75|17,CONV
+79,Matched Filter,77,CONV
+80,Wiener Filter,76,CONV
+81,Sampling,28|29,SAMP
+82,Sampling Rate,81,SAMP
+83,Sampling Theorem,81|82,SAMP
+84,Nyquist Rate,83,SAMP
+85,Nyquist Frequency,84,SAMP
+86,Aliasing,81|85,SAMP
+87,Anti-Aliasing Filter,86,SAMP
+88,Oversampling,82,SAMP
+89,Undersampling,82,SAMP
+90,Quantization,26,SAMP
+91,Quantization Error,90,SAMP
+92,Quantization Noise,90,SAMP
+93,Uniform Quantization,90,SAMP
+94,Non-Uniform Quantization,90,SAMP
+95,Signal Reconstruction,81|90,SAMP
+96,Fourier Series,10|19|32,FOUR
+97,Fourier Coefficients,96,FOUR
+98,Fourier Transform,10|96,FOUR
+99,Inverse Fourier Transform,98,FOUR
+100,Discrete Fourier Transform,98|29,FOUR
+101,Inverse DFT,100,FOUR
+102,Fast Fourier Transform,100,FOUR
+103,FFT Algorithms,102,FOUR
+104,Radix-2 FFT,103,FOUR
+105,Cooley-Tukey Algorithm,104,FOUR
+106,Frequency Domain,98,FOUR
+107,Time Domain,26,FOUR
+108,Spectrum,98,FOUR
+109,Magnitude Spectrum,108,FOUR
+110,Phase Spectrum,108,FOUR
+111,Power Spectrum,108|50,FOUR
+112,Spectral Analysis,108,FOUR
+113,Spectral Leakage,100,FOUR
+114,Window Functions,113,FOUR
+115,Windowing Techniques,114,FOUR
+116,Laplace Transform,10|20|28,XFRM
+117,Z-Transform,100|29,XFRM
+118,Inverse Z-Transform,117,XFRM
+119,Region of Convergence,117,XFRM
+120,Poles,117,XFRM
+121,Zeros,117,XFRM
+122,Pole-Zero Plot,120|121,XFRM
+123,Pole-Zero Analysis,122,XFRM
+124,S-Plane,116,XFRM
+125,Z-Plane,117,XFRM
+126,Discrete Cosine Transform,100,XFRM
+127,Wavelet Transform,98,XFRM
+128,Discrete Wavelet Transform,127|29,XFRM
+129,Continuous Wavelet Transform,127|28,XFRM
+130,Short-Time Fourier Transform,98|114,XFRM
+131,Filters,27|106,FILT
+132,Low-Pass Filters,131,FILT
+133,High-Pass Filters,131,FILT
+134,Band-Pass Filters,131,FILT
+135,Band-Stop Filters,131,FILT
+136,Notch Filters,135,FILT
+137,Comb Filters,131,FILT
+138,All-Pass Filters,131,FILT
+139,FIR Filters,131|72,FILT
+140,IIR Filters,131|68,FILT
+141,Filter Order,131,FILT
+142,Filter Coefficients,131,FILT
+143,Filter Stability,131|57,FILT
+144,Filter Design Methods,131,FILT
+145,Butterworth Filter,132|144,FILT
+146,Chebyshev Filter,132|144,FILT
+147,Elliptic Filter,132|144,FILT
+148,Bessel Filter,132|144,FILT
+149,Window Method,139|114,FILT
+150,Frequency Sampling Method,139|100,FILT
+151,Bilinear Transform,116|117,FILT
+152,Impulse Invariance,140|63,FILT
+153,Filter Banks,131,FILT
+154,Multirate Filters,131,FILT
+155,Polyphase Filters,154,FILT
+156,Adaptive Filters,131,ADAP
+157,Adaptive Algorithms,156,ADAP
+158,Least Mean Squares,157,ADAP
+159,Normalized LMS,158,ADAP
+160,Recursive Least Squares,157,ADAP
+161,Kalman Filter,160|14,ADAP
+162,Adaptive Noise Cancellation,156,ADAP
+163,Echo Cancellation,156,ADAP
+164,Adaptive Equalization,156,ADAP
+165,System Identification,67|156,ADAP
+166,Random Processes,14|26,RAND
+167,Stochastic Signals,166,RAND
+168,White Noise,166,RAND
+169,Colored Noise,168,RAND
+170,Gaussian Noise,168|15,RAND
+171,Signal-to-Noise Ratio,26|168,RAND
+172,Noise Reduction,168|131,RAND
+173,Statistical Signal Processing,166,RAND
+174,Power Spectral Density,111|166,RAND
+175,Wiener-Khinchin Theorem,76|174,RAND
+176,Multirate Signal Processing,82|29,ADVN
+177,Decimation,176,ADVN
+178,Interpolation,176,ADVN
+179,Upsampling,82,ADVN
+180,Downsampling,82,ADVN
+181,Signal Compression,26|90,ADVN
+182,Lossy Compression,181,ADVN
+183,Lossless Compression,181,ADVN
+184,Transform Coding,181|98,ADVN
+185,Huffman Coding,183,ADVN
+186,Time-Frequency Analysis,98|107,ADVN
+187,Spectrogram,130|186,ADVN
+188,Wigner-Ville Distribution,186,ADVN
+189,Ambiguity Function,186,ADVN
+190,Compressed Sensing,112|8,ADVN
+191,Digital Signal Processors,31,APPL
+192,FPGA Implementation,31|191,APPL
+193,Real-Time Processing,27,APPL
+194,Audio Signal Processing,26|131,APPL
+195,Image Processing,26|131,APPL
+196,Video Processing,195,APPL
+197,Machine Learning in DSP,26|131,APPL
+198,Convolutional Neural Networks,71|8,APPL
+199,Deep Learning for Signals,198,APPL
+200,AI-Driven Signal Analysis,197|199,APPL

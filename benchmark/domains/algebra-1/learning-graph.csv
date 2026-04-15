@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Number,,FOUND
+2,Variable,,FOUND
+3,Constant,,FOUND
+4,Coefficient,2,FOUND
+5,Term,2|3|4,FOUND
+6,Expression,5,FOUND
+7,Equation,6,FOUND
+8,Inequality,6,FOUND
+9,Order of Operations,1,PROP
+10,Commutative Property,1,PROP
+11,Associative Property,1,PROP
+12,Distributive Property,1|5,PROP
+13,Identity Property,1,PROP
+14,Inverse Property,1,PROP
+15,Integers,1,NUMS
+16,Rational Numbers,15,NUMS
+17,Real Numbers,16,NUMS
+18,Absolute Value,1,NUMS
+19,Number Line,1|15,NUMS
+20,Coordinate System,19,NUMS
+21,Exponent,1,EXP
+22,Base,21,EXP
+23,Power,21|22,EXP
+24,Integer Exponents,21|15,EXP
+25,Rational Exponents,24|16,EXP
+26,Negative Exponents,24,EXP
+27,Zero Exponent,21,EXP
+28,Product Rule for Exponents,23,EXP
+29,Quotient Rule for Exponents,23,EXP
+30,Power Rule for Exponents,23,EXP
+31,Scientific Notation,24|28,EXP
+32,Square Root,23,EXP
+33,Cube Root,23,EXP
+34,Radical Expression,32|33,EXP
+35,Simplifying Radicals,34,EXP
+36,Evaluating Expressions,6|9,FOUND
+37,Substitution,2|36,FOUND
+38,Like Terms,5,POLY
+39,Combining Like Terms,38,POLY
+40,Simplifying Expressions,36|39,POLY
+41,Expanding Expressions,12|6,POLY
+42,Monomial,5|21,POLY
+43,Binomial,42,POLY
+44,Trinomial,43,POLY
+45,Polynomial,44,POLY
+46,Degree of Polynomial,45|21,POLY
+47,Leading Coefficient,45|4,POLY
+48,Standard Form of Polynomial,45|46,POLY
+49,Adding Polynomials,45|39,POLY
+50,Subtracting Polynomials,45|39,POLY
+51,Multiplying Polynomials,45|12,POLY
+52,FOIL Method,43|51,POLY
+53,Special Products,51,POLY
+54,Difference of Squares,53,POLY
+55,Perfect Square Trinomial,53,POLY
+56,Factoring,45,FACT
+57,Greatest Common Factor,45,FACT
+58,Factoring by GCF,56|57,FACT
+59,Factoring Trinomials,56|44,FACT
+60,Factoring Difference of Squares,56|54,FACT
+61,Factoring Perfect Squares,56|55,FACT
+62,Factoring by Grouping,56|45,FACT
+63,Prime Factorization,1,FACT
+64,Prime Polynomial,56,FACT
+65,Zero Product Property,56|7,FACT
+66,Solving by Factoring,65|7,FACT
+67,Factoring Completely,58|59|60,FACT
+68,Sum of Cubes,56,FACT
+69,Difference of Cubes,56,FACT
+70,Factoring Quadratic Form,59,FACT
+71,Solving Equations,7,LIN
+72,One-Step Equations,71|14,LIN
+73,Two-Step Equations,72,LIN
+74,Multi-Step Equations,73|12,LIN
+75,Variables on Both Sides,74,LIN
+76,Equations with Fractions,74|16,LIN
+77,Equations with Decimals,74|16,LIN
+78,Literal Equations,71|2,LIN
+79,Solving for a Variable,78,LIN
+80,Formula Manipulation,79,LIN
+81,Linear Equation in One Variable,71|2,LIN
+82,Solution Set,71,LIN
+83,Identity Equation,81,LIN
+84,Contradiction,81,LIN
+85,Conditional Equation,81,LIN
+86,Checking Solutions,71|37,LIN
+87,Applications of Linear Equations,81,DATA
+88,Consecutive Integers,87|15,DATA
+89,Perimeter Problems,87,DATA
+90,Distance Rate Time Problems,87,DATA
+91,Inequality,8,LIN
+92,Linear Inequality,91|81,LIN
+93,Inequality Symbols,91,LIN
+94,Graphing Inequalities,92|19,GRAPH
+95,Solving Linear Inequalities,92|71,LIN
+96,Compound Inequalities,95,LIN
+97,And Inequalities,96,LIN
+98,Or Inequalities,96,LIN
+99,Absolute Value Equations,71|18,LIN
+100,Absolute Value Inequalities,99|91,LIN
+101,Relation,2,FUNC
+102,Function,101,FUNC
+103,Domain,102,FUNC
+104,Range,102,FUNC
+105,Input,102,FUNC
+106,Output,102,FUNC
+107,Function Notation,102,FUNC
+108,Evaluating Functions,107|36,FUNC
+109,Independent Variable,102|2,FUNC
+110,Dependent Variable,102|2,FUNC
+111,Vertical Line Test,102,FUNC
+112,Discrete Function,102,FUNC
+113,Continuous Function,102,FUNC
+114,Piecewise Function,102,FUNC
+115,Step Function,114,FUNC
+116,Absolute Value Function,102|18,FUNC
+117,Parent Function,102,FUNC
+118,Function Transformation,117,FUNC
+119,Translation,118,FUNC
+120,Reflection,118,FUNC
+121,Coordinate Plane,20,GRAPH
+122,Ordered Pair,121,GRAPH
+123,X-Coordinate,122,GRAPH
+124,Y-Coordinate,122,GRAPH
+125,Origin,121,GRAPH
+126,Quadrants,121,GRAPH
+127,Plotting Points,122|121,GRAPH
+128,Linear Function,102|81,GRAPH
+129,Graph of a Line,128|127,GRAPH
+130,X-Intercept,129,GRAPH
+131,Y-Intercept,129,GRAPH
+132,Slope,129,GRAPH
+133,Rise,132,GRAPH
+134,Run,132,GRAPH
+135,Rate of Change,132,GRAPH
+136,Slope Formula,132|122,GRAPH
+137,Positive Slope,132,GRAPH
+138,Negative Slope,132,GRAPH
+139,Zero Slope,132,GRAPH
+140,Undefined Slope,132,GRAPH
+141,Slope-Intercept Form,128|132|131,GRAPH
+142,Point-Slope Form,128|132|122,GRAPH
+143,Standard Form,128,GRAPH
+144,Horizontal Line,129|139,GRAPH
+145,Vertical Line,129|140,GRAPH
+146,System of Equations,7,SYS
+147,Solution of a System,146,SYS
+148,Consistent System,146,SYS
+149,Inconsistent System,146,SYS
+150,Independent System,148,SYS
+151,Dependent System,148,SYS
+152,Graphing Method,146|129,SYS
+153,Substitution Method,146|37,SYS
+154,Elimination Method,146|39,SYS
+155,Linear Combination,154,SYS
+156,System of Inequalities,146|91,SYS
+157,Graphing Systems,156|152,SYS
+158,Solution Region,157,SYS
+159,Boundary Line,157,SYS
+160,Applications of Systems,146|87,DATA
+161,Quadratic Function,102|45,QUAD
+162,Parabola,161|129,QUAD
+163,Vertex,162,QUAD
+164,Axis of Symmetry,162,QUAD
+165,Maximum Value,163,QUAD
+166,Minimum Value,163,QUAD
+167,Standard Form of Quadratic,161|48,QUAD
+168,Vertex Form,161|163,QUAD
+169,Graphing Quadratics,162|127,QUAD
+170,Quadratic Equation,7|45,QUAD
+171,Solving Quadratics by Graphing,170|169,QUAD
+172,Solving by Square Roots,170|32,QUAD
+173,Completing the Square,170|55,QUAD
+174,Quadratic Formula,170|173,QUAD
+175,Discriminant,174,QUAD
+176,Nature of Roots,175,QUAD
+177,Complex Numbers,176,QUAD
+178,Imaginary Unit,177,QUAD
+179,Applications of Quadratics,170|87,DATA
+180,Projectile Motion,179,DATA
+181,Exponential Function,102|21,QUAD
+182,Exponential Growth,181,QUAD
+183,Exponential Decay,181,QUAD
+184,Growth Factor,182,QUAD
+185,Decay Factor,183,QUAD
+186,Initial Value,181,QUAD
+187,Compound Interest,182,DATA
+188,Exponential Models,181,QUAD
+189,Comparing Linear and Exponential,128|181,QUAD
+190,Graphing Exponentials,181|127,QUAD
+191,Data Set,1,DATA
+192,Scatterplot,121|191,DATA
+193,Correlation,192,DATA
+194,Positive Correlation,193,DATA
+195,Negative Correlation,193,DATA
+196,No Correlation,193,DATA
+197,Line of Best Fit,192|129,DATA
+198,Linear Regression,197,DATA
+199,Arithmetic Sequence,1,DATA
+200,Geometric Sequence,199|21,DATA

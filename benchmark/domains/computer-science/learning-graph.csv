@@ -1,0 +1,401 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Computer Science,,FOUND
+2,Computational Thinking,1,FOUND
+3,Algorithms,2,FOUND
+4,Abstraction,2,FOUND
+5,Decomposition,2,FOUND
+6,Pattern Recognition,2,FOUND
+7,Stepwise Refinement,5,FOUND
+8,Problem Solving,2,FOUND
+9,Binary Number System,1,FOUND
+10,Bits and Bytes,9,FOUND
+11,Character Encoding,10,FOUND
+12,ASCII and Unicode,11,FOUND
+13,Computer Hardware,1,FOUND
+14,CPU and Memory,13,FOUND
+15,Input and Output Devices,13,FOUND
+16,Operating Systems,14|15,FOUND
+17,Programming Languages,1,FOUND
+18,Compiled vs Interpreted,17,FOUND
+19,Python Language,17|18,FOUND
+20,Python Interpreter,19,FOUND
+21,Python REPL,20,PYBASIC
+22,Python Scripts,20,PYBASIC
+23,Comments in Code,22,PYBASIC
+24,Variables,19,PYBASIC
+25,Variable Assignment,24,PYBASIC
+26,Variable Naming Rules,25,PYBASIC
+27,Data Types,19,PYBASIC
+28,Integer Type,27,PYBASIC
+29,Float Type,27,PYBASIC
+30,Boolean Type,27,PYBASIC
+31,String Type,27,PYBASIC
+32,Type Function,27,PYBASIC
+33,Type Conversion,27|28|29,PYBASIC
+34,Implicit Type Conversion,33,PYBASIC
+35,Explicit Type Casting,33,PYBASIC
+36,Arithmetic Operators,28|29,PYBASIC
+37,Integer Division,36,PYBASIC
+38,Modulo Operator,36,PYBASIC
+39,Operator Precedence,36,PYBASIC
+40,String Concatenation,31,PYBASIC
+41,String Repetition,31,PYBASIC
+42,F-String Formatting,31|25,PYBASIC
+43,Print Function,19,PYBASIC
+44,Input Function,43|31,PYBASIC
+45,Multiple Assignment,25,PYBASIC
+46,Constants Convention,26,PYBASIC
+47,Augmented Assignment,25|36,PYBASIC
+48,Expressions,36|25,PYBASIC
+49,Statements,48,PYBASIC
+50,Code Readability,23|26,PYBASIC
+51,Boolean Expressions,30|48,BOOL
+52,Comparison Operators,51,BOOL
+53,Equal and Not Equal,52,BOOL
+54,Greater and Less Than,52,BOOL
+55,Logical Operators,51,BOOL
+56,And Operator,55,BOOL
+57,Or Operator,55,BOOL
+58,Not Operator,55,BOOL
+59,Short-Circuit Evaluation,56|57,BOOL
+60,Truthiness and Falsiness,30|51,BOOL
+61,Boolean Conversion,60|35,BOOL
+62,Chained Comparisons,52,BOOL
+63,Order of Operations,39|55,BOOL
+64,De Morgan's Laws,56|57|58,BOOL
+65,Truth Tables,55|30,BOOL
+66,Control Flow,49,CTRL
+67,Sequential Execution,66,CTRL
+68,Conditional Statements,66|51,CTRL
+69,If Statement,68,CTRL
+70,If-Else Statement,69,CTRL
+71,Elif Statement,70,CTRL
+72,Nested Conditionals,71,CTRL
+73,Ternary Expression,70,CTRL
+74,Match Statement,68,CTRL
+75,Loops,66,CTRL
+76,For Loop,75,CTRL
+77,While Loop,75|51,CTRL
+78,Range Function,76,CTRL
+79,Loop Variable,76,CTRL
+80,Loop Body,75|49,CTRL
+81,Infinite Loops,77,CTRL
+82,Break Statement,75,CTRL
+83,Continue Statement,75,CTRL
+84,Nested Loops,76|77,CTRL
+85,Loop Patterns,75|3,CTRL
+86,Accumulator Pattern,85|47,CTRL
+87,Counter Pattern,85|47,CTRL
+88,Sentinel Value Pattern,77|82,CTRL
+89,Flag Variable Pattern,85|30,CTRL
+90,Loop Else Clause,76|77|82,CTRL
+91,String Basics,31,STR
+92,String Indexing,91,STR
+93,Negative Indexing,92,STR
+94,String Slicing,92,STR
+95,Slice Notation,94,STR
+96,String Immutability,91,STR
+97,String Length,91,STR
+98,String Methods,91,STR
+99,Upper and Lower Methods,98,STR
+100,Strip Method,98,STR
+101,Split Method,98,STR
+102,Join Method,101,STR
+103,Find and Replace Methods,98,STR
+104,Startswith and Endswith,98,STR
+105,String Iteration,91|76,STR
+106,String Comparison,91|52,STR
+107,Escape Characters,91,STR
+108,Raw Strings,107,STR
+109,Multiline Strings,91,STR
+110,String Formatting,91,STR
+111,Format Method,110,STR
+112,String Validation Methods,98,STR
+113,In Operator for Strings,91|51,STR
+114,Character Methods,98,STR
+115,String Reversal,94|95,STR
+116,Functions,4|7,FUNC
+117,Function Definition,116,FUNC
+118,Function Call,117,FUNC
+119,Parameters,117,FUNC
+120,Arguments,118|119,FUNC
+121,Return Statement,117,FUNC
+122,Return Values,121,FUNC
+123,None Type,27|122,FUNC
+124,Default Parameters,119,FUNC
+125,Keyword Arguments,120,FUNC
+126,Positional Arguments,120,FUNC
+127,Multiple Return Values,122|186,FUNC
+128,Variable Scope,25|117,FUNC
+129,Local Variables,128,FUNC
+130,Global Variables,128,FUNC
+131,Global Keyword,130,FUNC
+132,Docstrings,117|109,FUNC
+133,Function Documentation,132,FUNC
+134,Helper Functions,116|5,FUNC
+135,Main Function Pattern,116|22,FUNC
+136,Name Equals Main,135|367,FUNC
+137,Lambda Functions,116|48,FUNC
+138,Higher-Order Functions,116|137,FUNC
+139,Map Function,138|76,FUNC
+140,Filter Function,138|51,FUNC
+141,Reduce Function,138,FUNC
+142,Function Composition,138,FUNC
+143,Recursion,116|75,REC
+144,Base Case,143,REC
+145,Recursive Case,143|144,REC
+146,Recursive Call Stack,143|14,REC
+147,Stack Overflow,146,REC
+148,Recursion vs Iteration,143|76,REC
+149,Recursive Patterns,143|85,REC
+150,Memoization,143|224,REC
+151,Lists,27,DATA
+152,List Creation,151,DATA
+153,List Indexing,151|92,DATA
+154,List Slicing,153|94,DATA
+155,List Mutability,151|96,DATA
+156,List Methods,151,DATA
+157,Append Method,156,DATA
+158,Insert Method,156,DATA
+159,Remove Method,156,DATA
+160,Pop Method,156,DATA
+161,Sort Method,156,DATA
+162,Reverse Method,156,DATA
+163,List Comprehension,151|76|48,DATA
+164,Nested Lists,151,DATA
+165,List of Lists,164,DATA
+166,List Traversal,151|76,DATA
+167,For Loop with Lists,166|76,DATA
+168,Enumerate Function,167,DATA
+169,List Unpacking,151|45,DATA
+170,Zip Function,151|186,DATA
+171,List Copying,155,DATA
+172,Shallow Copy,171,DATA
+173,Deep Copy,171|164,DATA
+174,List Concatenation,151|40,DATA
+175,List Repetition,151|41,DATA
+176,In Operator for Lists,151|113,DATA
+177,Index Method,156,DATA
+178,Count Method,156,DATA
+179,Min Max Sum Functions,151,DATA
+180,Len Function for Lists,151|97,DATA
+181,Sorted Function,151|161,DATA
+182,List as Stack,151|160,DATA
+183,List as Queue,151|160|158,DATA
+184,List Aliasing,155|25,DATA
+185,Identity vs Equality,184|53,DATA
+186,Tuples,27,DATA
+187,Tuple Creation,186,DATA
+188,Tuple Immutability,186|96,DATA
+189,Tuple Packing,186,DATA
+190,Tuple Unpacking,189|45,DATA
+191,Named Tuples,186|394,DATA
+192,Tuple Methods,186,DATA
+193,Tuples as Keys,186|206|188,DATA
+194,Tuples vs Lists,186|151|155|188,DATA
+195,Sets,27,DATA
+196,Set Creation,195,DATA
+197,Set Operations,195,DATA
+198,Set Union,197,DATA
+199,Set Intersection,197,DATA
+200,Set Difference,197,DATA
+201,Set Symmetric Difference,197,DATA
+202,Set Methods,195,DATA
+203,Membership Testing,195|176,DATA
+204,Frozenset,195|188,DATA
+205,Removing Duplicates,195|151,DATA
+206,Dictionaries,27,DATA
+207,Dictionary Creation,206,DATA
+208,Key-Value Pairs,206,DATA
+209,Dictionary Access,206|208,DATA
+210,Dictionary Methods,206,DATA
+211,Get Method,210,DATA
+212,Keys Method,210,DATA
+213,Values Method,210,DATA
+214,Items Method,210,DATA
+215,Dictionary Iteration,206|76|214,DATA
+216,Dictionary Comprehension,206|163,DATA
+217,Nested Dictionaries,206|164,DATA
+218,Default Values,211|124,DATA
+219,Update Method,210,DATA
+220,Pop Method for Dicts,210,DATA
+221,Dictionary Merging,219,DATA
+222,Counting with Dicts,206|87,DATA
+223,Grouping with Dicts,206|151,DATA
+224,Dictionary as Cache,206|116,DATA
+225,Hashable Keys,206|188,DATA
+226,Dict vs List Lookup,206|151|341,DATA
+227,JSON and Dictionaries,206|288,DATA
+228,OrderedDict,394,DATA
+229,DefaultDict,394|218,DATA
+230,Counter Class,394|222,DATA
+231,Object-Oriented Programming,4|116,OOP
+232,Classes,231,OOP
+233,Objects,232,OOP
+234,Class Definition,232,OOP
+235,Class Instantiation,234,OOP
+236,Instance Attributes,235|25,OOP
+237,Class Attributes,234|25,OOP
+238,The Self Parameter,234,OOP
+239,Init Method,234|119,OOP
+240,Constructor,239,OOP
+241,Methods,234|116,OOP
+242,Instance Methods,241|238,OOP
+243,Str Method,241|270,OOP
+244,Repr Method,241|270,OOP
+245,Encapsulation,231|4,OOP
+246,Private Attributes,236|245,OOP
+247,Getter Methods,246,OOP
+248,Setter Methods,246,OOP
+249,Property Decorator,247|248|384,OOP
+250,Class Methods,241|237,OOP
+251,Static Methods,241,OOP
+252,Composition,231|233,OOP
+253,Has-A Relationship,252,OOP
+254,Inheritance,231|232,OOP
+255,Is-A Relationship,254,OOP
+256,Parent Class,254,OOP
+257,Child Class,254|256,OOP
+258,Super Function,257,OOP
+259,Method Overriding,257|241,OOP
+260,Polymorphism,254|259,OOP
+261,Duck Typing,260,OOP
+262,Abstract Classes,254|260,OOP
+263,Multiple Inheritance,254,OOP
+264,Method Resolution Order,263,OOP
+265,Operator Overloading,241|270,OOP
+266,Eq and Lt Methods,265|53,OOP
+267,Add and Mul Methods,265|36,OOP
+268,Iterable Protocol,270|76,OOP
+269,Iterator Protocol,268,OOP
+270,Dunder Methods,241,OOP
+271,Object Identity,233|185,OOP
+272,Object Comparison,233|266,OOP
+273,Class Hierarchies,254|257,OOP
+274,UML Class Diagrams,232|254|252,OOP
+275,Design Patterns Intro,231|252|254,OOP
+276,File Input Output,19|15,FILEIO
+277,Opening Files,276,FILEIO
+278,File Modes,277,FILEIO
+279,Read Method,277,FILEIO
+280,Readline Method,279,FILEIO
+281,Readlines Method,279|151,FILEIO
+282,Write Method,277,FILEIO
+283,Writelines Method,282|151,FILEIO
+284,With Statement,277|285,FILEIO
+285,Context Managers,276,FILEIO
+286,File Paths,276|31,FILEIO
+287,CSV Files,276|101|151,FILEIO
+288,JSON Files,276|206,FILEIO
+289,File Exceptions,276|291,FILEIO
+290,Text vs Binary Files,276|10,FILEIO
+291,Errors and Exceptions,19,ERR
+292,Syntax Errors,291,ERR
+293,Runtime Errors,291,ERR
+294,Logic Errors,291,ERR
+295,Exception Types,291,ERR
+296,TypeError,295|27,ERR
+297,ValueError,295|33,ERR
+298,IndexError,295|92,ERR
+299,KeyError,295|209,ERR
+300,Try-Except Block,291,ERR
+301,Multiple Except Blocks,300|295,ERR
+302,Finally Block,300,ERR
+303,Raising Exceptions,291,ERR
+304,Custom Exceptions,303|232,ERR
+305,Assertions,291|51,ERR
+306,Testing,8|116,TEST
+307,Manual Testing,306,TEST
+308,Unit Testing,306,TEST
+309,Test Cases,308,TEST
+310,Assert Statements,305|308,TEST
+311,Unittest Module,308|367,TEST
+312,Test Functions,308|116,TEST
+313,Edge Cases,309,TEST
+314,Boundary Testing,313,TEST
+315,Test-Driven Development,308,TEST
+316,Debugging,291,TEST
+317,Print Debugging,316|43,TEST
+318,Debugger Tools,316,TEST
+319,Breakpoints,318,TEST
+320,Step Through Code,318,TEST
+321,Code Tracing,66|316,TEST
+322,Rubber Duck Debugging,316,TEST
+323,Defensive Programming,316|300,TEST
+324,Input Validation,44|300|68,TEST
+325,Code Review,306|50,TEST
+326,Algorithm Design,3|8,ALGO
+327,Pseudocode,326,ALGO
+328,Flowcharts,326,ALGO
+329,Linear Search,326|166,ALGO
+330,Binary Search,329|181|143,ALGO
+331,Search Comparison,329|330|341,ALGO
+332,Selection Sort,326|166|52,ALGO
+333,Insertion Sort,326|166|52,ALGO
+334,Merge Sort,326|5|151,ALGO
+335,Merge Sort Recursion,334|143,ALGO
+336,Sorting Comparison,332|333|334|341,ALGO
+337,Stable vs Unstable Sort,332|333|334,ALGO
+338,Algorithm Correctness,326,ALGO
+339,Loop Invariants,338|75,ALGO
+340,Big-O Notation,326,ALGO
+341,Time Complexity,340,ALGO
+342,Space Complexity,340,ALGO
+343,Constant Time O(1),341,ALGO
+344,Linear Time O(n),341,ALGO
+345,Quadratic Time O(n^2),341|84,ALGO
+346,Logarithmic Time O(log n),341|330,ALGO
+347,Linearithmic Time,341|334,ALGO
+348,Best Average Worst Case,341,ALGO
+349,Empirical Analysis,341|306,ALGO
+350,Counting Operations,341,ALGO
+351,Brute Force Approach,326,ALGO
+352,Divide and Conquer,326|5|143,ALGO
+353,Greedy Algorithms,326,ALGO
+354,Algorithm Tradeoffs,341|342,ALGO
+355,Efficiency vs Readability,354|50,ALGO
+356,Two Pointer Technique,326|151,ALGO
+357,Sliding Window Pattern,326|151,ALGO
+358,Frequency Counter Pattern,326|206,ALGO
+359,Recursion in Algorithms,143|326,ALGO
+360,Algorithm Visualization,326|328,ALGO
+361,Software Development,1|8,SENG
+362,Program Planning,361|5,SENG
+363,Requirements Analysis,362,SENG
+364,Modular Design,4|116|5,SENG
+365,Code Organization,364,SENG
+366,Import Statements,367,SENG
+367,Python Modules,19|365,SENG
+368,Python Packages,367,SENG
+369,Pip Package Manager,368,SENG
+370,Virtual Environments,369,SENG
+371,Version Control Intro,361,SENG
+372,Git Basics,371,SENG
+373,Code Style,50,SENG
+374,PEP 8 Guidelines,373|19,SENG
+375,Linting Tools,374,SENG
+376,Refactoring,365|50,SENG
+377,DRY Principle,364,SENG
+378,KISS Principle,364,SENG
+379,Code Comments,23|50,SENG
+380,Documentation,132|379,SENG
+381,Generators,269|122,ADVPY
+382,Yield Statement,381,ADVPY
+383,Generator Expressions,381|163,ADVPY
+384,Decorators,138|128,ADVPY
+385,Closures,128|138,ADVPY
+386,Args and Kwargs,120|206,ADVPY
+387,Unpacking Operators,386|190,ADVPY
+388,Walrus Operator,25|77,ADVPY
+389,Type Hints,27|119,ADVPY
+390,Type Annotations,389,ADVPY
+391,Dataclasses,232|384,ADVPY
+392,Enum Type,232,ADVPY
+393,Regular Expressions,31|6,ADVPY
+394,Collections Module,367|206|151,ADVPY
+395,Itertools Module,367|269,ADVPY
+396,Functools Module,367|138,ADVPY
+397,List vs Generator Memory,151|381|342,ADVPY
+398,Comprehension Patterns,163|216,ADVPY
+399,Context Manager Protocol,285|270,ADVPY
+400,Python Best Practices,374|50|377|378,ADVPY

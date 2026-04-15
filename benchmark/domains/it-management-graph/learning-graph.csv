@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Configuration Item,,ITIL
+2,Configuration Management,1,ITIL
+3,Configuration Management Database,2,ITIL
+4,CMDB,3,ITIL
+5,Information Technology Infrastructure Library,,ITIL
+6,ITIL,5,ITIL
+7,ITIL Version 1,6,ITIL
+8,Service Support,6,ITIL
+9,Service Delivery,6,ITIL
+10,Change Management,2|8,ITIL
+11,Incident Management,8,OPS
+12,Problem Management,8|11,OPS
+13,Release Management,8|10,ITIL
+14,Configuration Baseline,2,ITIL
+15,Configuration Audit,2|14,ITIL
+16,Military-Spec Configuration,2,ITIL
+17,Asset Management,1,ASSET
+18,IT Asset,17,ASSET
+19,Hardware Asset,18,ASSET
+20,Software Asset,18,ASSET
+21,Relational Database,,RDBMS
+22,RDBMS,21,RDBMS
+23,Structured Query Language,22,RDBMS
+24,SQL,23,RDBMS
+25,Database Schema,22,RDBMS
+26,Table,25,RDBMS
+27,Column,26,RDBMS
+28,Row,26,RDBMS
+29,Primary Key,26,RDBMS
+30,Foreign Key,26|29,RDBMS
+31,Join Operation,26|30,RDBMS
+32,Inner Join,31,RDBMS
+33,Outer Join,31,RDBMS
+34,Transitive Dependency,30,RDBMS
+35,Multi-Hop Query,31|34,RDBMS
+36,Query Performance,23,QPERF
+37,Database Index,26|36,RDBMS
+38,Query Optimization,36|37,QPERF
+39,Schema Rigidity,25,RDBMS
+40,Schema Evolution,25|39,RDBMS
+41,Graph Database,21,GRAPH
+42,Graph Theory,,GRAPH
+43,Node,42,GRAPH
+44,Edge,42|43,GRAPH
+45,Vertex,43,GRAPH
+46,Relationship,44,GRAPH
+47,Property Graph,41|43|44,GRAPH
+48,Node Property,43|47,GRAPH
+49,Edge Property,44|47,GRAPH
+50,Graph Traversal,43|44,GOPS
+51,Depth-First Search,50,GOPS
+52,Breadth-First Search,50,GOPS
+53,Path Finding,50,GOPS
+54,Shortest Path,53,GOPS
+55,Graph Algorithm,50,GOPS
+56,Directed Graph,42|44,GRAPH
+57,Undirected Graph,42|44,GRAPH
+58,Directed Acyclic Graph,56,GRAPH
+59,DAG,58,GRAPH
+60,Cycle Detection,56,GOPS
+61,Native Graph Storage,41,GRAPH
+62,Graph Layer,41|22,GRAPH
+63,Neo4j,41,GRAPH
+64,Cypher Query Language,63,GRAPH
+65,Graph Query,41|50,GOPS
+66,Pattern Matching,65,GOPS
+67,Dependency Tracing,50|46,GOPS
+68,Upstream Dependency,67,GOPS
+69,Downstream Dependency,67,GOPS
+70,Blast Radius,67|69,GOPS
+71,Impact Analysis,67|70,GOPS
+72,Root Cause Analysis,67|68,GOPS
+73,Change Impact Assessment,71|10,GOPS
+74,Dependency Chain,67,GOPS
+75,Dependency Map,74,GOPS
+76,Circular Dependency,60|74,GOPS
+77,Service Dependency,74,BIZS
+78,Application Dependency,74,ASSET
+79,Infrastructure Dependency,74,ASSET
+80,Business Service,,BIZS
+81,Technical Service,80,BIZS
+82,Service Mapping,77|81,BIZS
+83,Business Service Mapping,82|80,BIZS
+84,Application Portfolio,20,ASSET
+85,Digital Estate,18|84,ASSET
+86,IT Portfolio,85,ASSET
+87,Technical Debt,85,TRANS
+88,Legacy System,87,TRANS
+89,System Integration,81,ASSET
+90,Data Quality,,DATA
+91,Data Governance,90,DATA
+92,Data Management,90,DATA
+93,DMBOK,92,DATA
+94,Data Quality Dimension,90,DATA
+95,Accuracy,94,DATA
+96,Completeness,94,DATA
+97,Consistency,94,DATA
+98,Timeliness,94,DATA
+99,Validity,94,DATA
+100,Fitness for Purpose,90,DATA
+101,Data Steward,91,DATA
+102,Data Owner,91,DATA
+103,Data Custodian,91,DATA
+104,Metadata,92,DATA
+105,Data Lineage,92|104,DATA
+106,Data Catalog,104,DATA
+107,Master Data Management,92,DATA
+108,Reference Data,107,DATA
+109,Real-Time Query,23|65,QPERF
+110,Query Latency,36|109,QPERF
+111,Response Time,110,QPERF
+112,Performance Metric,36,QPERF
+113,Scalability,112,QPERF
+114,Horizontal Scaling,113,QPERF
+115,Vertical Scaling,113,QPERF
+116,Graph Complexity,42|55,QPERF
+117,Graph Density,116,QPERF
+118,Node Degree,43,QPERF
+119,In-Degree,118|56,QPERF
+120,Out-Degree,118|56,QPERF
+121,Graph Metric,116,QPERF
+122,Observability,,OBSRV
+123,Monitoring,122,OBSRV
+124,Telemetry,123,OBSRV
+125,OpenTelemetry,124,OBSRV
+126,eBPF,124,OBSRV
+127,Extended Berkeley Packet Filter,126,OBSRV
+128,Automated Discovery,123,OBSRV
+129,Auto-Discovery,128,OBSRV
+130,Network Topology,79,ASSET
+131,Service Topology,77|82,BIZS
+132,Dynamic Topology,130|131,OBSRV
+133,Configuration Drift,2|14,OBSRV
+134,Drift Detection,133,OBSRV
+135,Compliance,,COMP
+136,Regulatory Compliance,135,COMP
+137,HIPAA,136,COMP
+138,Health Insurance Portability,137,COMP
+139,GDPR,136,COMP
+140,General Data Protection Regulation,139,COMP
+141,DORA,136,COMP
+142,Digital Operational Resilience Act,141,COMP
+143,Audit Trail,2|135,COMP
+144,Compliance Reporting,136|143,COMP
+145,Risk Management,135,COMP
+146,Risk Assessment,145,COMP
+147,Vendor Management,,TRANS
+148,ServiceNow,3,TRANS
+149,Dynatrace,123,TRANS
+150,Atlassian,147,TRANS
+151,Vendor Evaluation,147,TRANS
+152,Technology Selection,151,TRANS
+153,Build vs Buy,152,TRANS
+154,Total Cost of Ownership,147,TRANS
+155,TCO,154,TRANS
+156,Return on Investment,154,TRANS
+157,ROI,156,TRANS
+158,Business Case,157,TRANS
+159,Digital Transformation,85|158,TRANS
+160,IT Modernization,159,TRANS
+161,Legacy Migration,88|160,TRANS
+162,Migration Strategy,161,TRANS
+163,Data Migration,162|92,TRANS
+164,System Cutover,162,TRANS
+165,Artificial Intelligence,,AI
+166,Machine Learning,165,AI
+167,AI-Assisted Curation,166|92,AI
+168,Graph RAG,166|41,AI
+169,Retrieval Augmented Generation,168,AI
+170,Knowledge Graph,41|104,AI
+171,Semantic Model,170,AI
+172,Ontology,171,AI
+173,Taxonomy,172,AI
+174,Classification System,173,VALID
+175,Exception Reporting,90|144,VALID
+176,Anomaly Detection,166|90,AI
+177,Data Validation,90,VALID
+178,Validation Rule,177,VALID
+179,Business Rule,178,VALID
+180,Policy Enforcement,179|91,DATA
+181,Access Control,91,COMP
+182,Role-Based Access Control,181,COMP
+183,RBAC,182,COMP
+184,Security Model,181,COMP
+185,Incident Response,11|123,OPS
+186,Mean Time to Detect,185,OPS
+187,MTTD,186,OPS
+188,Mean Time to Resolve,185,OPS
+189,MTTR,188,OPS
+190,Service Level Agreement,80,BIZS
+191,SLA,190,BIZS
+192,Key Performance Indicator,112,OPS
+193,KPI,192,OPS
+194,Operational Excellence,112|91,OPS
+195,Continuous Improvement,194,OPS
+196,Best Practice,194,OPS
+197,Industry Standard,196,OPS
+198,Framework Adoption,6|93,OPS
+199,Process Maturity,198,OPS
+200,Capability Model,199,OPS

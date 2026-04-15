@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Money Management Principles,,FOUND
+2,Financial Goal Setting,,FOUND
+3,SMART Goals Framework,2,FOUND
+4,Economic Literacy,,FOUND
+5,Financial Decision Making,1|4,FOUND
+6,Opportunity Cost,4|5,FOUND
+7,Trade-offs,6,FOUND
+8,Time Value of Money,4,FOUND
+9,Net Worth Calculation,11,FOUND
+10,Net Worth Tracking,9,FOUND
+11,Assets and Liabilities,,FOUND
+12,Personal Balance Sheet,9|11,FOUND
+13,Income Statement,11,FOUND
+14,Cash Flow Management,13,FOUND
+15,Financial Independence,1|2|14,FOUND
+16,Wealth Building Strategies,8|15,FOUND
+17,Financial Planning Process,2|3|5,FOUND
+18,Commercial Banks,,BANK
+19,Credit Unions,,BANK
+20,Online Banking Services,18|19,BANK
+21,Checking Accounts,18|19,BANK
+22,Savings Accounts,18|19,BANK
+23,High-Yield Savings Accounts,22,BANK
+24,Account Fees,21,BANK
+25,Account Features Comparison,21|22,BANK
+26,Mobile Banking Apps,20|21,BANK
+27,ATM Usage,21,BANK
+28,Debit Cards,21,BANK
+29,Account Reconciliation,21|14,BANK
+30,Electronic Payments,21,BANK
+31,ACH Transfers,30,BANK
+32,Wire Transfers,30,BANK
+33,Peer-to-Peer Payment Apps,30,BANK
+34,Banking Security,20|26,BANK
+35,FDIC Insurance,18|19,BANK
+36,Personal Budgeting,1|14,BUDG
+37,50/30/20 Rule,36,BUDG
+38,Zero-Based Budgeting,36,BUDG
+39,Envelope Method,36,BUDG
+40,Income Tracking,13,BUDG
+41,Expense Categorization,36,BUDG
+42,Fixed Expenses,41,BUDG
+43,Variable Expenses,41,BUDG
+44,Needs vs Wants Analysis,5|41,BUDG
+45,Emergency Fund,2|22|36,BUDG
+46,Three-Month Emergency Fund,45,BUDG
+47,Six-Month Emergency Fund,46,BUDG
+48,Automatic Savings,22|36,BUDG
+49,Pay Yourself First,36|48,BUDG
+50,Financial Records Organization,29,BUDG
+51,Budget Tracking Tools,36,BUDG
+52,Spending Patterns Analysis,41|51,BUDG
+53,Budget Adjustment Strategies,36|52,BUDG
+54,Credit Score,,CRED
+55,FICO Score,54,CRED
+56,VantageScore,54,CRED
+57,Credit Report,54,CRED
+58,Credit Bureaus,57,CRED
+59,Building Credit History,54,CRED
+60,Credit Utilization Ratio,55|65,CRED
+61,Payment History,55,CRED
+62,Length of Credit History,55|59,CRED
+63,Credit Mix,55,CRED
+64,New Credit Inquiries,55,CRED
+65,Credit Cards,18|19,CRED
+66,Credit Card APR,65,CRED
+67,Credit Card Rewards,65,CRED
+68,Responsible Credit Card Use,65|66,CRED
+69,Minimum Payments,65|66,CRED
+70,Consumer Debt,11,CRED
+71,Secured Debt,70,CRED
+72,Unsecured Debt,70,CRED
+73,Good Debt vs Bad Debt,70|6,CRED
+74,Interest Rate Calculation,66,CRED
+75,Debt Avalanche Method,70|74,CRED
+76,Debt Snowball Method,70,CRED
+77,Predatory Lending,70|74,CRED
+78,Payday Loans,77,CRED
+79,Certificates of Deposit,22|8,INV
+80,Investment Fundamentals,11|22,INV
+81,Risk and Return,80,INV
+82,Risk Tolerance,81,INV
+83,Investment Time Horizon,2|81,INV
+84,Stock Market,80,INV
+85,Individual Stocks,84,INV
+86,Market Indices,84,INV
+87,Bonds,80,INV
+88,Fixed Income Securities,87,INV
+89,Treasury Bonds,87,INV
+90,Corporate Bonds,87,INV
+91,Municipal Bonds,87,INV
+92,Mutual Funds,84|87,INV
+93,Exchange-Traded Funds,84|92,INV
+94,Index Funds,86|93,INV
+95,Active vs Passive Investing,92|94,INV
+96,Expense Ratios,92|93,INV
+97,Compound Interest,8,INV
+98,Rule of 72,97,INV
+99,Dollar-Cost Averaging,85|92,INV
+100,Asset Allocation,82|83,INV
+101,Diversification,81|100,INV
+102,Portfolio Rebalancing,100|101,INV
+103,Market Volatility,81|84,INV
+104,Bull Market,84,INV
+105,Bear Market,84,INV
+106,Investment Account Types,80,INV
+107,Taxable Investment Accounts,106,INV
+108,Capital Gains,85|107,INV
+109,Gross Income,13,TAX
+110,Net Income,109,TAX
+111,Paycheck Withholding,109,TAX
+112,W-4 Form,111,TAX
+113,W-2 Form,109|111,TAX
+114,Federal Income Tax,109,TAX
+115,State Income Tax,109,TAX
+116,FICA Taxes,109,TAX
+117,Tax Filing,114,TAX
+118,Form 1040,117,TAX
+119,Standard Deduction,117,TAX
+120,Itemized Deductions,117,TAX
+121,Tax Credits,117,TAX
+122,Tax Deductions,117,TAX
+123,Marginal Tax Rate,114,TAX
+124,Effective Tax Rate,114|123,TAX
+125,Tax Brackets,114|123,TAX
+126,Tax Planning,117|121|122,TAX
+127,Tax-Advantaged Accounts,106|126,TAX
+128,Insurance Principles,,INS
+129,Insurance Premium,128,INS
+130,Insurance Deductible,128,INS
+131,Co-payment,128,INS
+132,Out-of-Pocket Maximum,128,INS
+133,Health Insurance,128,INS
+134,HMO Plans,133,INS
+135,PPO Plans,133,INS
+136,HDHP Plans,133,INS
+137,Health Savings Account,136,INS
+138,Auto Insurance,128,INS
+139,Liability Coverage,138,INS
+140,Collision Coverage,138,INS
+141,Comprehensive Coverage,138,INS
+142,Renter's Insurance,128,INS
+143,Homeowner's Insurance,128,INS
+144,Term Life Insurance,128,INS
+145,Whole Life Insurance,128,INS
+146,Disability Insurance,128,INS
+147,Umbrella Policy,139,INS
+148,Insurance Claims Process,128|129,INS
+149,Risk Management Strategy,128|82,INS
+150,Auto Loans,70|74,LOAN
+151,Loan Interest Rates,74,LOAN
+152,Loan Term Length,150,LOAN
+153,New vs Used Vehicles,150,LOAN
+154,Vehicle Depreciation,153,LOAN
+155,Total Cost of Ownership,150|154,LOAN
+156,Renting vs Buying,6|36,LOAN
+157,Mortgage,70|74,LOAN
+158,Fixed-Rate Mortgage,157,LOAN
+159,Adjustable-Rate Mortgage,157,LOAN
+160,FHA Loans,157,LOAN
+161,Conventional Loans,157,LOAN
+162,Down Payment,157,LOAN
+163,Closing Costs,157,LOAN
+164,Comparison Shopping,25,LOAN
+165,Negotiation Skills,5|164,LOAN
+166,Identity Theft,,SEC
+167,Identity Theft Prevention,166,SEC
+168,Credit Monitoring,54|57|167,SEC
+169,Password Security,34,SEC
+170,Two-Factor Authentication,34|169,SEC
+171,Phishing Scams,166,SEC
+172,Ponzi Schemes,80,SEC
+173,Pyramid Schemes,80,SEC
+174,Consumer Rights,1,SEC
+175,CFPB Protection,174,SEC
+176,Dispute Resolution,65|174,SEC
+177,Credit Freeze,167|168,SEC
+178,College Cost Estimation,2,EDU
+179,Net Price Calculator,178,EDU
+180,Scholarships,178,EDU
+181,Grants,178,EDU
+182,FAFSA,178,EDU
+183,Federal Student Loans,70|182,EDU
+184,Private Student Loans,70|182,EDU
+185,College ROI,6|178,EDU
+186,Alternative Education Paths,185,EDU
+187,Career Exploration,2,CAR
+188,Income Potential Research,187,CAR
+189,Employee Benefits,109,CAR
+190,Total Compensation Package,109|189,CAR
+191,Side Hustles,109|187,CAR
+192,Salary Negotiation,165|188,CAR
+193,Professional Development,187,CAR
+194,401(k) Plan,106|127,RET
+195,Traditional IRA,106|127,RET
+196,Roth IRA,106|127,RET
+197,Employer Matching,194,RET
+198,Social Security Benefits,114,RET
+199,Retirement Savings Target,2|97|194,RET
+200,Estate Planning Basics,11|15,RET

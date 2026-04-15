@@ -1,0 +1,201 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Scientific Method,,FOUND
+2,Measurement,1,FOUND
+3,SI Units,2,FOUND
+4,Unit Conversion,3,FOUND
+5,Significant Figures,2,FOUND
+6,Dimensional Analysis,3|4,FOUND
+7,Error Analysis,2|5,FOUND
+8,Precision vs Accuracy,2|7,FOUND
+9,Scalars,2,FOUND
+10,Vectors,9,FOUND
+11,Vector Addition,10,FOUND
+12,Vector Subtraction,10,FOUND
+13,Vector Components,10|18,FOUND
+14,Dot Product,10,FOUND
+15,Cross Product,10,FOUND
+16,Graphical Analysis,2,FOUND
+17,Scientific Notation,2,FOUND
+18,Trigonometry for Physics,,FOUND
+19,Proportional Reasoning,,FOUND
+20,Displacement,10,KINEM
+21,Distance,9,KINEM
+22,Speed,21|3,KINEM
+23,Velocity,20|22,KINEM
+24,Acceleration,23,KINEM
+25,Linear Motion,20|23,KINEM
+26,Uniform Motion,23,KINEM
+27,Uniformly Accelerated Motion,24|26,KINEM
+28,Position-Time Graphs,16|20,KINEM
+29,Velocity-Time Graphs,16|23,KINEM
+30,Acceleration-Time Graphs,16|24,KINEM
+31,Kinematic Equations,6|27,KINEM
+32,Free Fall,27|24,KINEM
+33,Projectile Motion,13|27,KINEM
+34,Horizontal Projection,33,KINEM
+35,Angled Projection,33|18,KINEM
+36,Relative Velocity,11|23,KINEM
+37,Force,10,DYNAM
+38,Net Force,11|37,DYNAM
+39,Newton's First Law,37|40,DYNAM
+40,Inertia,,DYNAM
+41,Newton's Second Law,38|24,DYNAM
+42,Newton's Third Law,37,DYNAM
+43,Action-Reaction Pairs,42,DYNAM
+44,Equilibrium,38,DYNAM
+45,Static Equilibrium,44,DYNAM
+46,Dynamic Equilibrium,44|26,DYNAM
+47,Friction,37,DYNAM
+48,Static Friction,47|45,DYNAM
+49,Kinetic Friction,47,DYNAM
+50,Coefficient of Friction,47,DYNAM
+51,Weight,37,DYNAM
+52,Mass vs Weight,51,DYNAM
+53,Normal Force,37,DYNAM
+54,Tension,37,DYNAM
+55,Inclined Plane,41|53|18,DYNAM
+56,Atwood Machine,41|54,DYNAM
+57,Pulley Systems,41|54,DYNAM
+58,Centripetal Force,37,DYNAM
+59,Centripetal Acceleration,24|58,DYNAM
+60,Banked Curves,55|59,DYNAM
+61,Work,37|20,ENRGY
+62,Work by Constant Force,61,ENRGY
+63,Work by Variable Force,61,ENRGY
+64,Work-Energy Theorem,61|65,ENRGY
+65,Kinetic Energy,23|52,ENRGY
+66,Potential Energy,,ENRGY
+67,Gravitational Potential Energy,66|51,ENRGY
+68,Elastic Potential Energy,66,ENRGY
+69,Conservative Forces,37|66,ENRGY
+70,Non-conservative Forces,37,ENRGY
+71,Conservation of Energy,64|66,ENRGY
+72,Mechanical Energy,65|66,ENRGY
+73,Energy Diagrams,16|72,ENRGY
+74,Power,61|3,ENRGY
+75,Efficiency,74|19,ENRGY
+76,Simple Machines,61,ENRGY
+77,Mechanical Advantage,76|75,ENRGY
+78,Lever,95|76,ENRGY
+79,Pulley as Machine,76,ENRGY
+80,Inclined Plane as Machine,55|76,ENRGY
+81,Linear Momentum,23|52,MOMNT
+82,Impulse,37|3,MOMNT
+83,Impulse-Momentum Theorem,82|81,MOMNT
+84,Conservation of Momentum,81,MOMNT
+85,Elastic Collisions,84|71,MOMNT
+86,Inelastic Collisions,84,MOMNT
+87,Perfectly Inelastic Collisions,86,MOMNT
+88,2D Collisions,84|13,MOMNT
+89,Center of Mass,52,MOMNT
+90,Rocket Propulsion,84|43,MOMNT
+91,Angular Displacement,10,ROTAT
+92,Angular Velocity,91,ROTAT
+93,Angular Acceleration,92,ROTAT
+94,Rotational Kinematics,92|93,ROTAT
+95,Torque,37|91,ROTAT
+96,Rotational Inertia,52|95,ROTAT
+97,Rotational Kinetic Energy,92|65,ROTAT
+98,Angular Momentum,92|81,ROTAT
+99,Conservation of Angular Momentum,98,ROTAT
+100,Rolling Motion,94|25,ROTAT
+101,Simple Harmonic Motion,24,OSCIL
+102,Restoring Force,37|101,OSCIL
+103,Amplitude,101,OSCIL
+104,Period,101,OSCIL
+105,Frequency,104,OSCIL
+106,Angular Frequency,105|92,OSCIL
+107,Hooke's Law,37|102,OSCIL
+108,Spring Constant,107,OSCIL
+109,Pendulum,101,OSCIL
+110,Simple Pendulum,109|95,OSCIL
+111,Physical Pendulum,110|96,OSCIL
+112,Damped Harmonic Motion,101|70,OSCIL
+113,Forced Oscillations,101|37,OSCIL
+114,Resonance,105|113,OSCIL
+115,Mechanical Waves,,WAVES
+116,Transverse Waves,115,WAVES
+117,Longitudinal Waves,115,WAVES
+118,Wave Properties,115,WAVES
+119,Wavelength,118,WAVES
+120,Wave Frequency,118|105,WAVES
+121,Wave Period,118|104,WAVES
+122,Wave Speed,119|120,WAVES
+123,Wave Interference,115,WAVES
+124,Constructive Interference,123,WAVES
+125,Destructive Interference,123,WAVES
+126,Superposition Principle,123,WAVES
+127,Standing Waves,126|129,WAVES
+128,Nodes and Antinodes,127,WAVES
+129,Wave Reflection,115,WAVES
+130,Wave Refraction,115,WAVES
+131,Wave Diffraction,115,WAVES
+132,Doppler Effect,122|36,WAVES
+133,Shock Waves,132|122,WAVES
+134,Sound Waves,117,SOUND
+135,Speed of Sound,122|134,SOUND
+136,Sound Intensity,134|74,SOUND
+137,Decibel Scale,136|17,SOUND
+138,Pitch,120|134,SOUND
+139,Loudness,136,SOUND
+140,Ultrasound,134|120,SOUND
+141,Infrasound,134|120,SOUND
+142,Beats,123|134,SOUND
+143,Harmonics,127|134,SOUND
+144,Acoustic Resonance,114|134,SOUND
+145,Light Waves,115,LIGHT
+146,Electromagnetic Spectrum,145,LIGHT
+147,Visible Spectrum,146,LIGHT
+148,Speed of Light,122|145,LIGHT
+149,Luminous Intensity,145,LIGHT
+150,Reflection,129|145,OPTIC
+151,Law of Reflection,150,OPTIC
+152,Plane Mirrors,151,OPTIC
+153,Spherical Mirrors,151,OPTIC
+154,Concave Mirrors,153,OPTIC
+155,Convex Mirrors,153,OPTIC
+156,Mirror Equation,6|153,OPTIC
+157,Magnification,156,OPTIC
+158,Refraction,130|145,OPTIC
+159,Snell's Law,158|160,OPTIC
+160,Index of Refraction,158|148,OPTIC
+161,Total Internal Reflection,158|159,OPTIC
+162,Critical Angle,161|18,OPTIC
+163,Lenses,158,OPTIC
+164,Convex Lenses,163,OPTIC
+165,Concave Lenses,163,OPTIC
+166,Lens Equation,6|163,OPTIC
+167,Thin Lens Formula,166,OPTIC
+168,Ray Diagrams,16|163,OPTIC
+169,Focal Length,163,OPTIC
+170,Real Images,163,OPTIC
+171,Virtual Images,163,OPTIC
+172,Dispersion,158|147,OPTIC
+173,Prism,172,OPTIC
+174,Color Addition,147,LIGHT
+175,Color Subtraction,147,LIGHT
+176,Optical Diffraction,131|145,OPTIC
+177,Young's Double Slit,176|123,OPTIC
+178,Single Slit Diffraction,176,OPTIC
+179,Diffraction Grating,176,OPTIC
+180,Polarization,145,OPTIC
+181,Electric Charge,,ELECT
+182,Positive Charge,181,ELECT
+183,Negative Charge,181,ELECT
+184,Conservation of Charge,181,ELECT
+185,Conductors,181,ELECT
+186,Insulators,181,ELECT
+187,Semiconductors,185|186,ELECT
+188,Superconductors,185,ELECT
+189,Charging by Friction,181,ELECT
+190,Charging by Contact,181,ELECT
+191,Charging by Induction,181,ELECT
+192,Grounding,181|185,ELECT
+193,Coulomb's Law,181|37,ELECT
+194,Electric Force,193,ELECT
+195,Electric Field,194,ELECT
+196,Electric Field Lines,195,ELECT
+197,Field Strength,195,ELECT
+198,Electric Potential Energy,66|181,ELECT
+199,Electric Potential,198,ELECT
+200,Voltage,199,ELECT
