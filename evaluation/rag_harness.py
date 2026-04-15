@@ -55,8 +55,20 @@ values when asked to enumerate. Do not add information not present in the contex
 STOPWORDS = {
     "what","is","the","a","an","of","for","are","in","and","or","to","with",
     "how","does","related","which","these","those","all","list","describe",
-    "explain","between","concept","concepts"
+    "explain","between","concept","concepts","based","on","knowledge","graph",
+    "subgraph","prerequisites","prerequisite","following"
 }
+
+def normalize_text(text: str) -> str:
+    """Strip markdown formatting and punctuation before tokenizing."""
+    import re
+    text = re.sub(r'\*+', ' ', text)
+    text = re.sub(r'_+', ' ', text)
+    text = re.sub(r'`+', ' ', text)
+    text = re.sub(r'#+\s*', ' ', text)
+    text = re.sub(r'[^\w\s]', ' ', text)
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
 
 # ── Tokenizer ─────────────────────────────────────────────────────────────────
 
@@ -229,8 +241,8 @@ def retrieve_chunks(query: str, index, chunks: list[dict], oai_client) -> list[d
 # ── F1 scoring ────────────────────────────────────────────────────────────────
 
 def token_f1(predicted: str, ground_truth: list[str]) -> dict:
-    pred_tokens  = set(predicted.lower().split()) - STOPWORDS
-    truth_tokens = set(" ".join(ground_truth).lower().split()) - STOPWORDS
+    pred_tokens  = set(normalize_text(predicted).lower().split()) - STOPWORDS
+    truth_tokens = set(normalize_text(" ".join(ground_truth)).lower().split()) - STOPWORDS
     if not pred_tokens and not truth_tokens:
         return {"f1": 1.0, "precision": 1.0, "recall": 1.0}
     if not pred_tokens or not truth_tokens:

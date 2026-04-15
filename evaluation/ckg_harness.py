@@ -226,20 +226,34 @@ def retrieve(concepts: dict, query: dict) -> tuple[str, list[int]]:
 
 # ── F1 scoring ────────────────────────────────────────────────────────────────
 
+STOPWORDS = {
+    "what","is","the","a","an","of","for","are","in","and","or","to","with",
+    "how","does","related","which","these","those","all","list","describe",
+    "explain","between","concept","concepts","based","on","knowledge","graph",
+    "subgraph","prerequisites","prerequisite","following"
+}
+
+def normalize_text(text: str) -> str:
+    """Strip markdown formatting and punctuation before tokenizing."""
+    import re
+    text = re.sub(r'\*+', ' ', text)        # remove ** bold markers
+    text = re.sub(r'_+', ' ', text)          # remove _ italic markers
+    text = re.sub(r'`+', ' ', text)          # remove backticks
+    text = re.sub(r'#+\s*', ' ', text)       # remove markdown headers
+    text = re.sub(r'[^\w\s]', ' ', text)     # remove remaining punctuation
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
 def token_f1(predicted: str, ground_truth: list[str]) -> dict:
-    pred_tokens = set(predicted.lower().split())
-    truth_tokens = set(" ".join(ground_truth).lower().split())
-    # Remove stopwords that inflate scores
-    stopwords = {"what","is","the","a","an","of","for","are","in","and","or","to","with","how","does","related"}
-    pred_tokens -= stopwords
-    truth_tokens -= stopwords
+    pred_tokens  = set(normalize_text(predicted).lower().split()) - STOPWORDS
+    truth_tokens = set(normalize_text(" ".join(ground_truth)).lower().split()) - STOPWORDS
     if not pred_tokens and not truth_tokens:
         return {"f1": 1.0, "precision": 1.0, "recall": 1.0}
     if not pred_tokens or not truth_tokens:
         return {"f1": 0.0, "precision": 0.0, "recall": 0.0}
     tp = len(pred_tokens & truth_tokens)
-    p = tp / len(pred_tokens)
-    r = tp / len(truth_tokens)
+    p  = tp / len(pred_tokens)
+    r  = tp / len(truth_tokens)
     f1 = 2 * p * r / (p + r) if (p + r) > 0 else 0.0
     return {"f1": round(f1, 4), "precision": round(p, 4), "recall": round(r, 4)}
 
