@@ -19,6 +19,7 @@ import time
 import argparse
 import os
 from collections import defaultdict, deque
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Optional
@@ -428,6 +429,8 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Skip API calls, test retrieval only")
     parser.add_argument("--limit", type=int, default=0, help="Limit queries per domain (0=all)")
     parser.add_argument("--type", help="Only run queries of this type (e.g. T5_cross_concept)")
+    parser.add_argument("--parallel", action="store_true", help="Run domains in parallel (fast)")
+    parser.add_argument("--workers", type=int, default=16, help="Max parallel workers (default: 16)")
     args = parser.parse_args()
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -456,17 +459,14 @@ def main():
     all_results = []
     domain_summaries = {}
 
-    for domain in domains:
+    def process_domain(domain):
         print(f"── {domain}")
         results = run_domain(domain, client, dry_run=args.dry_run, query_type_filter=args.type)
-
         if args.limit and not args.dry_run:
             results = results[:args.limit]
-
         if results:
             out_path = RESULTS_DIR / f"ckg_{domain}.jsonl"
             if args.type and out_path.exists():
-                # Merge: replace records of this type, keep all others
                 existing = []
                 with open(out_path) as f:
                     for line in f:
@@ -482,14 +482,27 @@ def main():
             with open(out_path, "w") as f:
                 for r in merged:
                     f.write(json.dumps(r) + "\n")
-
             summary = summarize(results)
-            domain_summaries[domain] = summary
-            all_results.extend(results)
-
             if not args.dry_run:
-                print(f"   F1={summary['macro_f1']}  tokens={summary['mean_tokens']:.0f}  "
-                      f"RDS={summary['macro_rds']:.6f}  cost=${summary['total_cost_usd']:.3f}")
+                print(f"   {domain}: F1={summary['macro_f1']}  tokens={summary['mean_tokens']:.0f}  "
+                      f"cost=${summary['total_cost_usd']:.3f}")
+            return domain, results, summary
+        return domain, [], {}
+
+    if args.parallel and len(domains) > 1:
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            futures = {pool.submit(process_domain, d): d for d in domains}
+            for future in as_completed(futures):
+                domain, results, summary = future.result()
+                if results:
+                    domain_summaries[domain] = summary
+                    all_results.extend(results)
+    else:
+        for domain in domains:
+            domain, results, summary = process_domain(domain)
+            if results:
+                domain_summaries[domain] = summary
+                all_results.extend(results)
 
     # Write aggregate summary
     if all_results:

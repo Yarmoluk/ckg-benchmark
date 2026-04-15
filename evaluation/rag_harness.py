@@ -26,6 +26,7 @@ import time
 import argparse
 import pickle
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import numpy as np
@@ -403,6 +404,8 @@ def main():
     parser.add_argument("--limit",       type=int, default=0, help="Limit queries per domain (0=all)")
     parser.add_argument("--embed-model", default=EMBED_MODEL,
                         help=f"sentence-transformers model (default: {EMBED_MODEL})")
+    parser.add_argument("--parallel",    action="store_true", help="Run domains in parallel (fast)")
+    parser.add_argument("--workers",     type=int, default=16, help="Max parallel workers (default: 16)")
     args = parser.parse_args()
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -443,31 +446,40 @@ def main():
     all_results     = []
     domain_summaries = {}
 
-    for domain in domains:
-        # Skip already-completed domains (unless re-running)
+    def process_domain(domain):
         out_path = RESULTS_DIR / f"rag_{domain}.jsonl"
         if out_path.exists() and not args.dry_run:
             print(f"SKIP {domain} (done)")
-            continue
-
+            return domain, [], {}
         print(f"── {domain}")
         results = run_domain(domain, ant_client, embed_model, dry_run=args.dry_run)
-
         if args.limit:
             results = results[:args.limit]
-
         if results:
             with open(out_path, "w") as f:
                 for r in results:
                     f.write(json.dumps(r) + "\n")
-
             summary = summarize(results)
-            domain_summaries[domain] = summary
-            all_results.extend(results)
-
             if not args.dry_run:
-                print(f"   F1={summary['macro_f1']}  tokens={summary['mean_tokens']:.0f}  "
-                      f"RDS={summary['macro_rds']:.6f}  cost=${summary['total_cost_usd']:.3f}")
+                print(f"   {domain}: F1={summary['macro_f1']}  tokens={summary['mean_tokens']:.0f}  "
+                      f"cost=${summary['total_cost_usd']:.3f}")
+            return domain, results, summary
+        return domain, [], {}
+
+    if args.parallel and len(domains) > 1:
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            futures = {pool.submit(process_domain, d): d for d in domains}
+            for future in as_completed(futures):
+                domain, results, summary = future.result()
+                if results:
+                    domain_summaries[domain] = summary
+                    all_results.extend(results)
+    else:
+        for domain in domains:
+            domain, results, summary = process_domain(domain)
+            if results:
+                domain_summaries[domain] = summary
+                all_results.extend(results)
 
     if all_results:
         global_summary = summarize(all_results)
