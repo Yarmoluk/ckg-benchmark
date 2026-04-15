@@ -53,7 +53,7 @@ results presented in Section~\ref{sec:results}:
 \begin{enumerate}
   \item CKG achieves higher F1 on T2 (dependency) and T3 (multi-hop path) queries.
   \item CKG F1 does not degrade with hop depth; RAG F1 degrades significantly.
-  \item CKG RDS ratio $\geq$ 10x vs RAG across all 25 domains.
+  \item CKG RDS ratio $\geq$ 10x vs RAG across all 46 domains.
   \item GraphRAG hallucinates edges not present in ground truth DAG (HR $>$ 0).
   \item CKG Hallucination Rate $=$ 0 (by construction).
   \item The ``Structure Premium'' hypothesis: RDS advantage correlates with DAG richness ($r > 0.7$).
@@ -67,6 +67,6 @@ This paper makes the following contributions:
   \item The CKG architecture specification (format, DAG constraints, taxonomy schema).
   \item Five novel evaluation metrics (RDS, CUR, Hop-F1, CPCA, RP).
   \item The McCreary Corpus as a formal benchmark dataset (first paper to do so).
-  \item An open benchmark: 25 domains $\times$ $\sim$175 queries $\times$ 3 systems ($\sim$13,000 evaluated pairs).
+  \item An open benchmark: 46 domains $\times$ $\sim$175 queries $\times$ 3 systems ($\sim$23,000 evaluated pairs).
   \item A HuggingFace dataset with one-command reproduction harness.
 \end{enumerate}

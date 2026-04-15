@@ -4,12 +4,13 @@ Both optimize for retrieval recall while treating token cost as a secondary
 concern. We introduce Compressed Knowledge Graphs (CKG) -- pre-structured DAG
 representations with explicit concept taxonomy and pipe-delimited dependency
 encoding -- and present the first large-scale benchmark comparing all three
-architectures across 25 domains.
+architectures across 46 domains.
 
-We evaluate on the McCreary Intelligent Textbook Corpus: 25 open-source
-educational domains (calculus, genetics, bioinformatics, economics, quantum
-computing, and more), each with a standardized learning graph CSV totaling
-approximately 6,000 concepts and 8,500 dependency edges. We introduce five
+We evaluate on the McCreary Intelligent Textbook Corpus: 46 open-source
+educational domains (calculus, chemistry, computer science, genetics,
+bioinformatics, economics, machine learning, and more), each with a
+standardized learning graph CSV totaling 12,260 concepts and 19,405
+dependency edges. We introduce five
 novel metrics: Reasoning Density Score (RDS = F1 / tokens), Context
 Utilization Rate, Hop-Depth F1 Degradation, Cost Per Correct Answer, and
 Relationship Precision.

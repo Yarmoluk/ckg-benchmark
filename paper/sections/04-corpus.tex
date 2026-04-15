@@ -22,10 +22,10 @@ The corpus spans three categories:
 
 Key statistics:
 \begin{itemize}
-  \item Concepts per domain: 200--380 (mean: $\sim$240)
-  \item Total concepts: $\sim$6,000
-  \item Total edges: $\sim$8,500
-  \item Taxonomy categories: 10--17 per domain
+  \item Concepts per domain: 140--550 (mean: $\sim$267)
+  \item Total concepts: 12,260
+  \item Total edges: 19,405
+  \item Taxonomy categories: 1--19 per domain
   \item Raw content: MkDocs Markdown chapters ($\sim$3,000--8,000 words per textbook)
 \end{itemize}
 
@@ -39,14 +39,14 @@ taxonomy categories and prerequisite edges.
 \caption{Interactive learning graph viewer for the calculus domain (380 concepts,
 539 edges). Each node is a concept, color-coded by taxonomy category. Directed
 edges represent prerequisite dependencies. The left panel shows category filters
-and corpus statistics. All 25 domains in the McCreary corpus use this same
+and corpus statistics. All 46 domains in the McCreary corpus use this same
 DAG structure.}
 \label{fig:learning-graph}
 \end{figure}
 
 \subsection{Corpus Schema}\label{sec:corpus-schema}
 
-All 25 domains share an identical CSV schema:
+All 46 domains share an identical CSV schema:
 
 \begin{lstlisting}[caption={Learning graph CSV schema (calculus example).}]
 ConceptID,ConceptLabel,Dependencies,TaxonomyID
@@ -81,6 +81,6 @@ extracted domains, organized by category.
 \caption{Per-domain statistics for the McCreary Intelligent Textbook Corpus.
 Domains are grouped by category (STEM, Professional, Foundational) and sorted
 by concept count. Color intensity reflects relative magnitude within each column.
-Total: 6,206 concepts and 10,342 dependency edges across 22 domains.}
+Total: 12,260 concepts and 19,405 dependency edges across 46 domains.}
 \label{fig:corpus-heatmap}
 \end{figure}
