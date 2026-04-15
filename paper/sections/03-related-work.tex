@@ -3,45 +3,107 @@
 \subsection{Retrieval-Augmented Generation}\label{sec:rw-rag}
 
 Lewis et al.~\cite{lewis2020rag} introduced RAG as a method for grounding
-language model outputs in retrieved passages. Dense Passage Retrieval
-(DPR)~\cite{karpukhin2020dpr} established embedding-based retrieval as the
-dominant paradigm. The BEIR benchmark~\cite{thakur2021beir} provided
-heterogeneous evaluation across IR tasks, and RAGAS~\cite{es2023ragas}
-introduced evaluation metrics for RAG pipelines including faithfulness and
-relevance.
+language model outputs in retrieved passages, establishing the retrieve-then-read
+paradigm. Concurrent work on REALM~\cite{guu2020realm} demonstrated that
+retrieval augmentation could be integrated into pre-training. Dense Passage
+Retrieval (DPR)~\cite{karpukhin2020dpr} established embedding-based retrieval
+as the dominant approach, and Fusion-in-Decoder~\cite{izacard2021leveraging}
+showed that conditioning generation on multiple retrieved passages improves
+multi-hop performance.
 
-% TODO: Add 2-3 more recent RAG papers (2024-2025)
+More recent work has explored self-reflective
+retrieval~\cite{asai2023selfrag}, which trains models to decide when to
+retrieve and to critique retrieved content. Gao et al.~\cite{gao2024ragsurvey}
+survey the current landscape, cataloguing trade-offs between retrieval
+granularity, index size, and generation quality.
+
+A consistent theme across RAG work is that token budget is treated as an
+engineering constraint rather than an evaluation axis. The BEIR
+benchmark~\cite{thakur2021beir} evaluates zero-shot retrieval across 18
+heterogeneous IR tasks, and RAGAS~\cite{es2023ragas} measures faithfulness and
+relevance of RAG pipelines---but neither measures per-query token consumption.
+This gap motivates our Reasoning Density Score (Section~\ref{sec:metrics}).
+
+\subsection{Multi-Hop Question Answering}\label{sec:rw-multihop}
+
+The SQuAD benchmark~\cite{rajpurkar2016squad} established token-level F1 as
+the standard for extractive QA, which we adopt for its well-understood
+properties. HotpotQA~\cite{yang2018hotpotqa} introduced multi-hop reasoning
+as a distinct challenge: answering a question requires traversing multiple
+supporting facts. MuSiQue~\cite{trivedi2022musique} further isolated
+compositional multi-hop reasoning from shortcut exploitation.
+
+These benchmarks evaluate whether a system can \textit{find} multi-hop
+answers in unstructured text. Our T3 query type tests the related but
+distinct problem of \textit{traversing} a structured dependency graph---a
+task where the ground truth is the explicit path, not an extracted span.
+RAG must infer graph paths from prose; CKG traverses them directly.
 
 \subsection{Graph-Based Retrieval}\label{sec:rw-graphrag}
 
-Edge et al.~\cite{edge2024graphrag} introduced GraphRAG, using LLM-extracted
-entity graphs with community detection for multi-hop reasoning. LightRAG~\cite{guo2024lightrag}
-and HippoRAG proposed lighter-weight graph-based alternatives. The key distinction
-for this benchmark: these systems perform \textit{dynamic extraction} from text,
-while CKG uses \textit{pre-structured domain knowledge}.
+Edge et al.~\cite{edge2024graphrag} introduced GraphRAG, which applies
+community detection over LLM-extracted entity graphs to answer both local
+(entity-level) and global (corpus-level) queries. LightRAG~\cite{guo2024lightrag}
+reduces GraphRAG's computational footprint with a dual-level retrieval
+strategy. HippoRAG~\cite{gutierrez2024hipporag} draws on hippocampal memory
+models to build associative knowledge networks from text.
 
-% TODO: Add HippoRAG citation when published
+Graph retrieval applied specifically to structured domain representations is
+explored in G-Retriever~\cite{he2024gretriever}, which encodes text-attributed
+graphs for QA, and Think-on-Graph~\cite{sun2024thinkongraph}, which performs
+beam search over knowledge graphs to reason step-by-step. Peng et
+al.~\cite{peng2024graphrag2} survey the rapidly growing Graph-RAG literature.
+
+A key distinction for this benchmark: GraphRAG, LightRAG, and HippoRAG all
+perform \textit{dynamic extraction}---they derive graph structure from
+unstructured text at index time. CKG uses \textit{pre-structured domain
+knowledge} in which the graph was authored by a domain expert. When expert
+structure is available, the dynamic extraction step is wasted computation;
+our benchmark quantifies this waste.
 
 \subsection{Knowledge Graphs for LLMs}\label{sec:rw-kg}
 
-Pan et al.~\cite{pan2024unifying} provide a comprehensive roadmap for unifying
-LLMs and knowledge graphs. The KGQA literature demonstrates structured query
-answering over knowledge graphs such as Wikidata and UMLS. CKG differs from
-these approaches by using lightweight DAG representations rather than full
-ontologies, trading expressiveness for efficiency.
+Pan et al.~\cite{pan2024unifying} provide a comprehensive roadmap for
+unifying LLMs and knowledge graphs, identifying four paradigms: KG-enhanced
+LLMs, LLM-augmented KGs, synergized systems, and KG-only inference.
+Structured KG embeddings such as TransE~\cite{bordes2013transe} established
+the representation-learning approach to relational data, while KGQA
+work~\cite{saxena2020kgqa} demonstrated that KG embeddings can support
+complex multi-hop question answering.
 
-% TODO: Add 2-3 KGQA citations
+More recent approaches~\cite{luo2024rag} use LLMs to reason over KG
+triples interactively, traversing the graph via prompted chain-of-thought.
+Zhu et al.~\cite{zhu2023large} survey how LLMs are being used as IR systems.
+CKG differs from these approaches in representation: rather than full
+ontologies or relational triples, it uses lightweight 4-column DAGs trading
+expressiveness for construction simplicity and token efficiency.
 
 \subsection{Evaluation Gaps in IR}\label{sec:rw-eval}
 
-Standard IR metrics (F1, MRR, NDCG) do not account for token cost. RAGAS
-measures faithfulness and relevance but not efficiency. This paper introduces
-Reasoning Density Score (RDS) and validates it on a multi-domain corpus---the
-first metric to jointly optimize quality and token consumption.
+Standard IR metrics (F1, MRR, NDCG) do not account for token cost.
+RAGAS~\cite{es2023ragas} measures faithfulness and relevance but not
+efficiency. Token cost has begun receiving attention as LLM inference
+scales: retrieval systems that return large, redundant contexts inflate
+cost without improving accuracy. This paper introduces Reasoning Density
+Score (RDS $=$ F1 / tokens) and validates it on a 44-domain corpus---the
+first metric to jointly optimize quality and token consumption at
+multi-domain scale.
 
 \subsection{Educational Knowledge Graphs}\label{sec:rw-edu}
 
 McCreary~\cite{mccreary2024textbooks} introduced the Intelligent Textbooks
-methodology, using learning graph DAGs as structured domain knowledge with a
-standardized CSV schema: \texttt{ConceptID | ConceptLabel | Dependencies | TaxonomyID}.
-This work is the first to formalize this corpus as a citable benchmark dataset.
+methodology, encoding domain knowledge as learning graph DAGs with a
+standardized CSV schema (ConceptID $|$ ConceptLabel $|$ Dependencies
+$|$ TaxonomyID). This work is the first to formalize this corpus as a
+citable multi-domain benchmark.
+
+Automated prerequisite learning from educational data~\cite{liu2016mooc,
+shen2018kdd} has sought to derive concept dependency graphs from MOOCs and
+course catalogs---the inverse of CKG's assumption. Where those works
+\textit{infer} structure from data, CKG \textit{uses} expert-authored
+structure directly, trading automation for precision.
+
+Adaptive hypermedia systems~\cite{brusilovsky2001adaptive} have long used
+structured concept maps to personalize educational content delivery. Our
+benchmark provides the first token-efficiency evaluation of such structures
+in the context of LLM-based tutoring systems.

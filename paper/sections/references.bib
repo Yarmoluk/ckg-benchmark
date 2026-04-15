@@ -1,3 +1,5 @@
+% ── RAG Foundations ─────────────────────────────────────────────────────────
+
 @article{lewis2020rag,
   title={Retrieval-Augmented Generation for Knowledge-Intensive {NLP} Tasks},
   author={Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and K{\"u}ttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rockt{\"a}schel, Tim and Riedel, Sebastian and Kiela, Douwe},
@@ -15,6 +17,39 @@
   year={2020}
 }
 
+@inproceedings{guu2020realm,
+  title={{REALM}: Retrieval-Augmented Language Model Pre-Training},
+  author={Guu, Kelvin and Lee, Kenton and Tung, Zora and Pasupat, Panupong and Chang, Mingwei},
+  booktitle={International Conference on Machine Learning},
+  pages={3929--3938},
+  year={2020},
+  organization={PMLR}
+}
+
+@inproceedings{izacard2021leveraging,
+  title={Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering},
+  author={Izacard, Gautier and Grave, Edouard},
+  booktitle={Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics},
+  pages={874--880},
+  year={2021}
+}
+
+@article{asai2023selfrag,
+  title={Self-{RAG}: Learning to Retrieve, Generate, and Critique through Self-Reflection},
+  author={Asai, Akari and Wu, Zeqiu and Wang, Yizhong and Sil, Avirup and Hajishirzi, Hannaneh},
+  journal={arXiv preprint arXiv:2310.11511},
+  year={2023}
+}
+
+@article{gao2024ragsurvey,
+  title={Retrieval-Augmented Generation for Large Language Models: A Survey},
+  author={Gao, Yunfan and Xiong, Yun and Gao, Xinyu and Jia, Kangxiang and Pan, Jinliu and Bi, Yuxi and Dai, Yi and Sun, Jiawei and Wang, Meng and Wang, Haofen},
+  journal={arXiv preprint arXiv:2312.10997},
+  year={2024}
+}
+
+% ── Evaluation Benchmarks ────────────────────────────────────────────────────
+
 @inproceedings{thakur2021beir,
   title={{BEIR}: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models},
   author={Thakur, Nandan and Reimers, Nils and R{\"u}ckl{\'e}, Andreas and Srivastava, Abhishek and Gurevych, Iryna},
@@ -28,6 +63,33 @@
   journal={arXiv preprint arXiv:2309.15217},
   year={2023}
 }
+
+@inproceedings{rajpurkar2016squad,
+  title={{SQuAD}: 100,000+ Questions for Machine Comprehension of Text},
+  author={Rajpurkar, Pranav and Zhang, Jian and Lopyrev, Konstantin and Liang, Percy},
+  booktitle={Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing},
+  pages={2383--2392},
+  year={2016}
+}
+
+@inproceedings{yang2018hotpotqa,
+  title={{HotpotQA}: A Dataset for Diverse, Explainable Multi-hop Question Answering},
+  author={Yang, Zhilin and Qi, Peng and Zhang, Saizheng and Bengio, Yoshua and Cohen, William and Salakhutdinov, Ruslan and Manning, Christopher D},
+  booktitle={Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing},
+  pages={2369--2380},
+  year={2018}
+}
+
+@article{trivedi2022musique,
+  title={{MuSiQue}: Multihop Questions via Single-hop Question Composition},
+  author={Trivedi, Harsh and Balasubramanian, Niranjan and Khot, Tushar and Sabharwal, Ashish},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={10},
+  pages={539--554},
+  year={2022}
+}
+
+% ── Graph-Based Retrieval ─────────────────────────────────────────────────────
 
 @article{edge2024graphrag,
   title={From Local to Global: A Graph {RAG} Approach to Query-Focused Summarization},
@@ -43,6 +105,29 @@
   year={2024}
 }
 
+@article{gutierrez2024hipporag,
+  title={{HippoRAG}: Neurobiologically Inspired Long-Term Memory for Large Language Models},
+  author={Gutierrez, Bernal Jim{\'e}nez and Shu, Yiheng and Gu, Yu and Kamigaito, Hidetaka and Su, Yu},
+  journal={arXiv preprint arXiv:2405.14831},
+  year={2024}
+}
+
+@article{he2024gretriever,
+  title={G-Retriever: Retrieval-Augmented Generation for Textual Graph Understanding and Question Answering},
+  author={He, Xiaoxin and Tian, Yijun and Sun, Yifei and Chawla, Nitesh V and Laurent, Thomas and LeCun, Yann and Bresson, Xavier and Hooi, Bryan},
+  journal={arXiv preprint arXiv:2402.07630},
+  year={2024}
+}
+
+@article{sun2024thinkongraph,
+  title={Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph},
+  author={Sun, Jiashuo and Xu, Chengjin and Tang, Luminous and Wang, Saizhuo and Lin, Chen and Gong, Yeyun and Shum, Heung-Yeung and Guo, Jian},
+  journal={arXiv preprint arXiv:2307.07697},
+  year={2024}
+}
+
+% ── Knowledge Graphs for LLMs ────────────────────────────────────────────────
+
 @article{pan2024unifying,
   title={Unifying Large Language Models and Knowledge Graphs: A Roadmap},
   author={Pan, Shirui and Luo, Linhao and Wang, Yufei and Chen, Chen and Wang, Jiapu and Wu, Xindong},
@@ -53,10 +138,76 @@
   year={2024}
 }
 
+@inproceedings{bordes2013transe,
+  title={Translating Embeddings for Modeling Multi-relational Data},
+  author={Bordes, Antoine and Usunier, Nicolas and Garcia-Duran, Alberto and Weston, Jason and Yakhnenko, Oksana},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={26},
+  year={2013}
+}
+
+@inproceedings{saxena2020kgqa,
+  title={Improving Multi-hop Question Answering over Knowledge Graphs using Knowledge Base Embeddings},
+  author={Saxena, Apoorv and Tripathi, Aditya and Talukdar, Partha},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  pages={4498--4507},
+  year={2020}
+}
+
+@article{luo2024rag,
+  title={Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning},
+  author={Luo, Linhao and Li, Yuan-Fang and Haffari, Gholamreza and Pan, Shirui},
+  journal={arXiv preprint arXiv:2310.01061},
+  year={2024}
+}
+
+% ── Educational Knowledge Graphs ─────────────────────────────────────────────
+
 @misc{mccreary2024textbooks,
   title={Intelligent Textbooks: Learning Graph-Driven Educational Content},
   author={McCreary, Dan},
   year={2024},
   howpublished={\url{https://github.com/dmccreary}},
-  note={Open-source intelligent textbook corpus, 25+ domains}
+  note={Open-source intelligent textbook corpus, 46 domains, 12,260 concepts}
+}
+
+@article{brusilovsky2001adaptive,
+  title={Adaptive Hypermedia},
+  author={Brusilovsky, Peter},
+  journal={User Modeling and User-Adapted Interaction},
+  volume={11},
+  number={1-2},
+  pages={87--110},
+  year={2001}
+}
+
+@inproceedings{shen2018kdd,
+  title={Mining Prerequisite Relationships Among Learning Concepts from Online Educational Data},
+  author={Shen, Penghe and Mu, Jian and Luo, Binbin and Xu, Changsheng and Lian, Defu and Pan, Shirui},
+  booktitle={Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages={793--801},
+  year={2018}
+}
+
+@article{liu2016mooc,
+  title={Learning a Concept Prerequisite Graph from Educational Data},
+  author={Liu, Hanxiao and Ma, Yuming and Yang, Yiming and Carbonell, Jaime},
+  journal={arXiv preprint arXiv:1604.05757},
+  year={2016}
+}
+
+% ── Structured vs Unstructured Retrieval ─────────────────────────────────────
+
+@article{peng2024graphrag2,
+  title={Graph Retrieval-Augmented Generation: A Survey},
+  author={Peng, Boci and Zhu, Yun and Liu, Yongchao and Bo, Xiaohe and Shi, Haizhou and Hong, Chuntao and Li, Yan and Qi, Siliang},
+  journal={arXiv preprint arXiv:2408.08921},
+  year={2024}
+}
+
+@article{zhu2023large,
+  title={Large Language Models for Information Retrieval: A Survey},
+  author={Zhu, Yutao and Yuan, Huaying and Wang, Shuting and Liu, Jiongnan and Liu, Wenhan and Deng, Chenlong and Chen, Haonan and Dou, Zhicheng and Wen, Ji-Rong},
+  journal={arXiv preprint arXiv:2308.07107},
+  year={2023}
 }

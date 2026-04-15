@@ -4,29 +4,36 @@ This section formally defines the corpus for the first time in literature.
 
 \subsection{Corpus Description}\label{sec:corpus-desc}
 
-The McCreary Intelligent Textbook Corpus comprises 25 open-source educational
+The McCreary Intelligent Textbook Corpus comprises 45 open-source educational
 textbooks hosted on GitHub (\url{https://github.com/dmccreary}). Each textbook
 contains a standardized learning graph encoded as a CSV file representing a
 directed acyclic graph (DAG) of concepts and their prerequisite dependencies.
+44 domains have generated benchmark queries; one domain was excluded during
+query generation due to schema incompatibility.
 
-The corpus spans three categories:
+The corpus spans three subject categories:
 \begin{itemize}
-  \item \textbf{STEM} (11 domains): calculus, biology, genetics, bioinformatics,
-    statistics, quantum computing, circuits, geometry, ecology, moss, functions.
-  \item \textbf{Professional} (7 domains): economics, organizational analytics,
-    healthcare data modeling, database selection, conversational AI,
-    automating instructional design, blockchain.
-  \item \textbf{Foundational} (7 domains): systems thinking, theory of knowledge,
-    digital citizenship, prompt engineering, AI tracking, US geography, ASL.
+  \item \textbf{STEM} (20 domains): algebra, calculus, pre-calculus, functions,
+    linear algebra, geometry, biology, genetics, bioinformatics, chemistry,
+    ecology, moss, physics, circuits, digital electronics, signal processing,
+    FFT, statistics, quantum computing, computer science.
+  \item \textbf{Professional} (14 domains): economics, data science, machine
+    learning, blockchain, conversational AI, automating instructional design,
+    healthcare data modeling, organizational analytics, intro to graphs,
+    IT management, learning Linux, MicroSims, infographics, personal finance.
+  \item \textbf{Foundational} (10 domains): systems thinking, theory of knowledge,
+    digital citizenship, ethics, prompt engineering, AI tracking, US geography,
+    ASL, reading (kindergarten), dementia.
 \end{itemize}
 
 Key statistics:
 \begin{itemize}
-  \item Concepts per domain: 140--550 (mean: $\sim$267)
-  \item Total concepts: 12,260
-  \item Total edges: 19,405
-  \item Taxonomy categories: 1--19 per domain
-  \item Raw content: MkDocs Markdown chapters ($\sim$3,000--8,000 words per textbook)
+  \item Concepts per domain: 25--550 (mean: $\sim$272)
+  \item Total concepts: 12,261 across 45 domains
+  \item Total dependency edges: 19,626
+  \item Taxonomy categories: 1--19 per domain (mean: $\sim$4)
+  \item Benchmark queries: 7,728 across 44 domains ($\sim$175 per domain)
+  \item Raw textbook content: MkDocs Markdown chapters available for 22 domains
 \end{itemize}
 
 Figure~\ref{fig:learning-graph} shows the interactive learning graph viewer
@@ -63,7 +70,7 @@ domain-specific category (e.g., \texttt{FOUND} for foundational,
 
 \subsection{Quality Properties}\label{sec:corpus-quality}
 
-All 25 DAGs are validated for the following structural properties:
+All 45 DAGs are validated for the following structural properties:
 
 \begin{enumerate}
   \item Single connected component (no isolated subgraphs).
@@ -72,8 +79,8 @@ All 25 DAGs are validated for the following structural properties:
   \item Maximum dependency chain length reported per domain.
 \end{enumerate}
 
-Figure~\ref{fig:corpus-heatmap} shows per-domain statistics across all 22
-extracted domains, organized by category.
+Figure~\ref{fig:corpus-heatmap} shows per-domain statistics across all 44
+benchmark domains, organized by category.
 
 \begin{figure}[htbp]
 \centering

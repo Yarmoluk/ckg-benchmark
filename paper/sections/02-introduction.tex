@@ -8,7 +8,21 @@ knowledge has latent structure that RAG discards through chunking, and GraphRAG
 re-derives structure from text at significant computational expense. But what if
 the structure is already known?
 
-% TODO: Expand motivation with concrete cost examples from production deployments
+Consider a deployed AI tutoring system serving 10,000 student sessions per day,
+each requiring 5--10 knowledge retrieval queries. At RAG's typical 3,000--5,000
+input tokens per query, daily token consumption exceeds 150M--500M tokens.
+At Claude Sonnet 4.6 pricing (\$3 per 1M input tokens), this yields daily
+inference costs of \$450--\$1,500 for retrieval alone. A system that achieves
+equivalent accuracy at 250--400 tokens per query reduces that cost by a factor
+of 10--15$\times$---the difference between a viable product and an unsustainable one.
+
+This cost gap is not merely a tuning opportunity; it reflects a structural
+difference in how knowledge is represented. RAG stores knowledge as prose and
+retrieves it by embedding similarity, recovering structure only indirectly.
+GraphRAG re-derives structure from text via LLM entity extraction---at
+significant additional cost. Compact Knowledge Graphs (CKG) use structure that
+was authored directly, requiring no derivation step and enabling exact retrieval
+in tens of tokens instead of thousands.
 
 \subsection{The Three Paradigms}\label{sec:paradigms}
 
