@@ -1,0 +1,93 @@
+site_name: CKG Benchmark
+site_description: 'Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 25 educational domains.'
+site_author: 'Daniel Yarmoluk and Dan McCreary'
+repo_name: 'GitHub Repo'
+site_url: 'https://yarmoluk.github.io/ckg-benchmark'
+repo_url: 'https://github.com/Yarmoluk/ckg-benchmark'
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - About: about.md
+
+  - Paper:
+    - Abstract: paper/abstract.md
+    - Introduction: paper/introduction.md
+    - Related Work: paper/related-work.md
+    - The Corpus: paper/corpus.md
+    - Architecture: paper/architecture.md
+    - Benchmark Design: paper/benchmark-design.md
+    - Metrics: paper/metrics.md
+    - Results: paper/results.md
+    - Discussion: paper/discussion.md
+    - Conclusion: paper/conclusion.md
+    - References: paper/references.md
+
+  - Benchmark:
+    - Overview: benchmark/index.md
+    - Corpus Index: benchmark/corpus-index.md
+    - Query Types: benchmark/query-types.md
+    - Domains: benchmark/domains.md
+
+  - Metrics:
+    - Overview: metrics/index.md
+    - Metrics Specification: metrics/metrics-spec.md
+    - Tokenomics: metrics/tokenomics.md
+
+  - Getting Started: getting-started.md
+  - License: license.md
+  - Contact: contact.md
+
+theme:
+  name: material
+  favicon: img/favicon.ico
+  include_sidebar: true
+  features:
+    - content.code.copy
+    - navigation.expand
+    - navigation.path
+    - navigation.prune
+    - navigation.indexes
+    - toc.follow
+    - navigation.top
+    - navigation.footer
+    - content.action.edit
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - md_in_html
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - meta
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Copyright &copy; 2026 Daniel Yarmoluk and Dan McCreary. Code licensed under MIT. Data licensed under CC BY 4.0.
