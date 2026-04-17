@@ -1,0 +1,172 @@
+\section{The Economics of Learning Graph Generation}\label{sec:lg-economics}
+
+A central limitation of any structure-first retrieval architecture is the
+up-front cost of constructing the underlying knowledge structure. Section
+\ref{sec:disc-limitations} notes that the benchmark's zero-build-cost
+assumption for CKG is not strictly accurate: the learning graph itself must
+be authored. Historically, this has been the decisive objection to structured
+approaches---expert curation is slow, expensive, and does not scale.
+
+This section addresses that objection directly. We first provide a formal
+definition of a learning graph, then present a cost model for generating one
+via an agentic workflow, and finally extrapolate the trajectory of generation
+cost over the next 18--24 months.
+
+\subsection{Formal Definition of a Learning Graph}\label{sec:lg-def}
+
+\begin{definition}[Learning Graph]\label{def:learning-graph}
+A \emph{learning graph} is a 4-tuple $G = (C, E, T, \tau)$ where:
+\begin{itemize}
+  \item $C = \{c_1, c_2, \ldots, c_n\}$ is a finite, non-empty set of
+    \emph{concepts}, each a named unit of domain knowledge with a unique
+    identifier and a human-readable label.
+  \item $E \subseteq C \times C$ is a set of directed \emph{prerequisite
+    edges}. An edge $(c_i, c_j) \in E$ asserts that concept $c_i$ must be
+    understood before concept $c_j$ can be meaningfully taught or applied.
+  \item $T = \{t_1, t_2, \ldots, t_k\}$ is a finite set of \emph{taxonomy
+    categories} that partition the concept space into coarse groupings
+    (e.g., \texttt{FOUND}, \texttt{CORE}, \texttt{ADV}).
+  \item $\tau : C \rightarrow T$ is a total function assigning each concept
+    to exactly one taxonomy category.
+\end{itemize}
+The pair $(C, E)$ must form a \emph{directed acyclic graph} (DAG): there
+exists no sequence $c_{i_1}, c_{i_2}, \ldots, c_{i_m}, c_{i_1}$ such that
+every consecutive pair is an edge in $E$. Acyclicity ensures a valid
+teaching order exists (topological sort over $E$).
+\end{definition}
+
+The concrete serialization used throughout this paper and in the McCreary
+Intelligent Textbook Corpus encodes $G$ as a four-column CSV:
+\texttt{ConceptID}, \texttt{ConceptLabel}, \texttt{Dependencies},
+\texttt{TaxonomyID}. The \texttt{Dependencies} column is a pipe-delimited
+list of prerequisite \texttt{ConceptID} values, directly representing the
+in-edges of each concept in $E$. This serialization is deliberately minimal:
+a 200-concept learning graph typically fits in 6--12 KB of plain text.
+
+Three properties follow directly from Definition~\ref{def:learning-graph}
+and are load-bearing for the CKG architecture:
+\begin{enumerate}
+  \item \textbf{Finite, enumerable context.} Because $C$ is finite and the
+    CSV serialization is compact, the entire graph fits in an LLM prompt
+    for any realistic domain ($|C| \leq 1{,}000$).
+  \item \textbf{Deterministic traversal.} Prerequisite chains are computed
+    by BFS or DFS over $E$ with no inference required. Query answers for
+    structural questions (T2, T3, T4) are functions, not predictions.
+  \item \textbf{Closed vocabulary.} The set of valid concept labels is
+    exactly $\{\mathrm{label}(c) : c \in C\}$. A retrieval system that
+    returns only concepts in $C$ cannot hallucinate entities by construction.
+\end{enumerate}
+
+\subsection{Agentic Learning Graph Generation}\label{sec:lg-gen}
+
+The McCreary corpus graphs used in this benchmark were produced with an
+agentic workflow (the \texttt{/learning-graph-generator} skill running
+under Claude Code) that decomposes generation into three stages:
+\begin{enumerate}
+  \item \textbf{Concept elicitation.} Given a course description, the
+    agent proposes a concept set $C$ of a target size (default $n=200$),
+    drawing on the model's domain knowledge and any supplied source
+    materials.
+  \item \textbf{Dependency assignment.} For each concept $c_j \in C$, the
+    agent selects the subset of previously-enumerated concepts on which
+    $c_j$ depends, populating $E$ incrementally.
+  \item \textbf{Taxonomy assignment and validation.} The agent assigns
+    $\tau(c)$ for each $c \in C$, then runs automated validation: cycle
+    detection, orphan detection, dependency count distribution, and a
+    quality score. Graphs scoring below threshold trigger a correction
+    cycle.
+\end{enumerate}
+
+A subject-matter expert (SME) reviews the final graph for domain fidelity
+and edits edges or labels as needed. In practice, SME review for a
+200-concept graph takes 2--4 hours; the agentic generation itself
+completes in minutes.
+
+\subsection{Cost Model}\label{sec:lg-cost}
+
+Per-concept generation cost is dominated by two components: output tokens
+required to serialize each concept's row ($\sim$200 tokens on average) and
+input tokens accumulated as the growing graph must be re-read to avoid
+duplicates and cycles ($\sim$500 tokens per concept on average, under a
+quadratic-ish accumulation that we approximate as linear for $n \leq 500$).
+Fixed overhead covers skill loading, course-description ingestion,
+taxonomy-scheme authoring, and the validation pass.
+
+We model generation cost as an affine function of concept count:
+\begin{equation}\label{eq:lg-cost}
+  \mathrm{Cost}(n) \approx \alpha + \beta \cdot n
+\end{equation}
+where $\alpha$ is the fixed-overhead cost and $\beta$ is the marginal
+per-concept cost. Table~\ref{tab:lg-cost} instantiates
+Equation~\ref{eq:lg-cost} for two current-generation Claude models,
+calibrated to observed generation sessions on the McCreary corpus.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Estimated learning graph generation cost as a function of concept
+count, under two current-generation models. Excludes SME review time.
+Assumes one validation pass; a correction cycle adds approximately 40\%.}
+\label{tab:lg-cost}
+\begin{tabular}{lcccc}
+\toprule
+Model & $\alpha$ (USD) & $\beta$ (USD/concept) & $n=200$ & $n=500$ \\
+\midrule
+Claude Opus 4.6     & \$1.50 & \$0.025 & \$6.50  & \$14.00 \\
+Claude Sonnet 4.6   & \$0.30 & \$0.005 & \$1.30  & \$2.80  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Even at Opus-tier pricing, a 200-concept domain graph costs less than ten
+dollars of compute to generate. At Sonnet-tier pricing it costs roughly
+the price of a cup of coffee. These figures are four to five orders of
+magnitude below the cost of traditional expert curation (a team of domain
+experts working for weeks or months) that has historically blocked
+structure-first retrieval from commercial deployment.
+
+\subsection{Projected Trajectory}\label{sec:lg-projection}
+
+Two compounding trends point toward sharply lower generation cost over
+the next 18--24 months:
+
+\begin{enumerate}
+  \item \textbf{Declining model pricing at constant capability.} Across
+    the preceding two years, intelligence-per-dollar at the Anthropic
+    frontier has approximately halved every 9--12 months, as smaller
+    models match the capability of their predecessors. Applied to
+    Equation~\ref{eq:lg-cost}, both $\alpha$ and $\beta$ scale
+    proportionally with per-token pricing.
+  \item \textbf{Skill-level efficiency gains.} The current generation
+    workflow holds the full emerging graph in context, producing a
+    super-linear accumulation term in $\beta$. Decomposing generation
+    into cache-efficient passes (concepts first, dependencies batched,
+    taxonomy last) collapses the accumulation and has been observed to
+    reduce token consumption 2--3$\times$ at any given model tier.
+\end{enumerate}
+
+Combining these trends, we project a plausible 2027 cost model of
+$\alpha \approx \$0.10$ and $\beta \approx \$0.002$, yielding
+approximately \$0.50 for a 200-concept graph---roughly one dollar with
+a correction cycle. At that price point, domain graph generation is
+effectively free relative to any downstream inference workload.
+
+\subsection{Implications for the Build-Cost Objection}\label{sec:lg-implications}
+
+The traditional objection to structure-first retrieval---\emph{``curating a
+domain graph is prohibitively expensive''}---was empirically true for
+two decades. It is no longer true. When a 200-concept domain graph can be
+generated for dollars of compute and a handful of SME-review hours, the
+decision calculus inverts: the question is no longer whether a domain can
+afford a learning graph, but whether any high-query-volume domain can
+afford \emph{not} to have one, given that per-query retrieval costs fall
+by roughly an order of magnitude once the graph exists
+(Section~\ref{sec:disc-ckg-wins}).
+
+This shifts where the economic moat lies. Model compute is commoditizing;
+the durable value in applying CKG to new domains is the
+\emph{SME review loop}---ensuring the generated graph faithfully reflects
+the expert consensus of the field---and the \emph{schema design} work
+required to extend Definition~\ref{def:learning-graph} beyond
+prerequisite-structured domains to domains with richer relation types
+(Section~\ref{sec:disc-limitations}).

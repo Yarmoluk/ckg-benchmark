@@ -92,18 +92,103 @@ multi-domain scale.
 \subsection{Educational Knowledge Graphs}\label{sec:rw-edu}
 
 McCreary~\cite{mccreary2024textbooks} introduced the Intelligent Textbooks
-methodology, encoding domain knowledge as learning graph DAGs with a
-standardized CSV schema (ConceptID $|$ ConceptLabel $|$ Dependencies
-$|$ TaxonomyID). This work is the first to formalize this corpus as a
-citable multi-domain benchmark.
+methodology, which uses a task-specific data structure we call a
+\emph{learning graph} to drive chapter planning, concept sequencing, and
+content generation. This paper is the first to formalize this structure as
+a citable multi-domain benchmark. Because the learning graph serves a
+purpose distinct from that of a general-purpose knowledge graph, and
+because the distinction is load-bearing for interpreting our results, we
+define the term precisely here and contrast it with its namesake.
 
+\paragraph{Learning graph, defined.}
+A \emph{learning graph} (LG) is a small, domain-scoped DAG whose nodes are
+atomic teachable concepts and whose edges encode a recommended learning
+order (prerequisite relationships). A lightweight taxonomy assigns each
+concept to one of a small number of categories (typically 10--16, the
+practical upper bound at which a human viewer can reliably distinguish
+node colors in a graph visualization), used primarily to color nodes so
+that a subject-matter expert can recognize structural patterns at a
+glance. A complete formal
+definition is given in Section~\ref{sec:lg-def} as
+Definition~\ref{def:learning-graph}; for the purposes of related-work
+comparison it suffices to note four characteristics: (i) the node set
+represents a single bounded pedagogical domain (e.g., high-school geometry,
+introductory calculus), not an open-world entity inventory; (ii) edges
+encode one relation type---prerequisite---not an arbitrary schema of
+relations; (iii) the graph is deliberately small (200--550 concepts in the
+McCreary corpus) so that a single human expert can review and maintain it
+in its entirety; and (iv) taxonomy categories are a visualization aid,
+not a formal ontology.
+
+\paragraph{Contrast with general-purpose knowledge graphs.}
+Table~\ref{tab:lg-vs-kg} summarizes the differences between an LG and a
+general-purpose KG of the kind represented by DBpedia, Wikidata, YAGO, or
+enterprise ontologies. The structures share a graph-theoretic surface but
+diverge on nearly every design axis that matters for downstream use.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Learning Graph (LG) vs.\ general-purpose Knowledge Graph (KG).}
+\label{tab:lg-vs-kg}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{0.22\textwidth}p{0.34\textwidth}p{0.34\textwidth}}
+\toprule
+\textbf{Dimension} & \textbf{Learning Graph (LG)} & \textbf{General-purpose KG} \\
+\midrule
+Primary purpose & Accelerate textbook and course content generation;
+                  guide concept sequencing. &
+                  Answer open-world queries; power search, chatbots, and
+                  question answering. \\
+Scope           & Single bounded pedagogical domain. &
+                  Open-world or large enterprise domain. \\
+Typical size    & 200--550 concepts. &
+                  $10^5$ to $10^9$+ entities. \\
+Node semantics  & Atomic teachable concept. &
+                  Named entity, class, property, or literal. \\
+Edge semantics  & One relation: recommended learning order (prerequisite). &
+                  Many relation types: \texttt{is-a}, \texttt{part-of},
+                  \texttt{located-in}, \texttt{born-in}, and dozens more. \\
+Schema / ontology & Lightweight taxonomy of 10--16 categories, primarily
+                    for visualization. &
+                    Formal ontology (RDFS, OWL, SHACL) with class hierarchy,
+                    datatype constraints, and inference rules. \\
+Structural constraint & Must be acyclic (valid teaching order must exist). &
+                        Cycles are permitted and common. \\
+Quality criterion & Pedagogical fidelity: an expert teacher agrees the
+                    ordering is sensible. &
+                    Factual accuracy: assertions match ground truth about
+                    the world. \\
+Maintenance model & One SME reviews the entire graph. &
+                    Many editors, automated extraction pipelines, versioned
+                    releases. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Design intent vs.\ benchmark use.}
+The McCreary learning graphs were not originally designed as retrieval
+structures. They were designed to accelerate textbook content generation:
+the DAG dictates chapter order, the taxonomy drives visual navigation,
+and the concept labels seed prompts for automated chapter drafting. That
+the same structure also serves as a highly token-efficient retrieval
+substrate---the finding this paper quantifies---is a secondary consequence
+of three properties the original design happened to enforce: a closed
+concept vocabulary, deterministic edge traversal, and a corpus-wide
+uniform schema. We consider this repurposing itself to be a finding: a
+structure built for \emph{content production} turns out to be
+competitive as a structure for \emph{structured retrieval}, at four
+orders of magnitude lower token cost than dynamically extracted
+graph-RAG baselines. The benchmark in this paper evaluates a use case
+for which the underlying data structure was not originally intended.
+
+\paragraph{Related educational-graph work.}
 Automated prerequisite learning from educational data~\cite{liu2016mooc,
-shen2018kdd} has sought to derive concept dependency graphs from MOOCs and
-course catalogs---the inverse of CKG's assumption. Where those works
-\textit{infer} structure from data, CKG \textit{uses} expert-authored
-structure directly, trading automation for precision.
-
+shen2018kdd} has sought to derive concept dependency graphs from MOOCs
+and course catalogs---the inverse of CKG's assumption. Where those works
+\emph{infer} prerequisite structure from data, CKG \emph{uses}
+expert-authored structure directly, trading automation for precision.
 Adaptive hypermedia systems~\cite{brusilovsky2001adaptive} have long used
-structured concept maps to personalize educational content delivery. Our
-benchmark provides the first token-efficiency evaluation of such structures
-in the context of LLM-based tutoring systems.
+structured concept maps to personalize educational content delivery.
+Our benchmark provides the first token-efficiency evaluation of such
+structures in the context of LLM-based retrieval.

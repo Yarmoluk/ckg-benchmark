@@ -138,58 +138,69 @@ def main():
 
     matrix = np.array([[data[d][m] for m in metrics] for d in domains])
 
-    # Normalize each column to 0-1 for heatmap
-    matrix_norm = (matrix - matrix.min(axis=0)) / (matrix.max(axis=0) - matrix.min(axis=0) + 1e-9)
+    # Normalize each column to 0-1 using full-corpus min/max so colors are
+    # comparable across the three per-category figures we render below.
+    col_min = matrix.min(axis=0)
+    col_max = matrix.max(axis=0)
+    matrix_norm = (matrix - col_min) / (col_max - col_min + 1e-9)
 
-    # Create figure
-    fig, ax = plt.subplots(figsize=(10, 20))
-
-    im = ax.imshow(matrix_norm, cmap='YlOrRd', aspect='auto')
-
-    # Labels
-    display_labels = [DISPLAY_NAMES.get(d, d) for d in domains]
-    categories = [CATEGORY_MAP.get(d, '?') for d in domains]
-
-    ax.set_xticks(np.arange(len(metrics)))
-    ax.set_xticklabels(metric_labels, fontsize=10, ha='center')
-    ax.set_yticks(np.arange(len(domains)))
-    ax.set_yticklabels(display_labels, fontsize=9)
-
-    # Add actual values as text
-    for i in range(len(domains)):
-        for j in range(len(metrics)):
-            val = matrix[i, j]
-            text = f'{val:.1f}' if isinstance(val, float) and val != int(val) else f'{int(val)}'
-            color = 'white' if matrix_norm[i, j] > 0.6 else 'black'
-            ax.text(j, i, text, ha='center', va='center', fontsize=8, color=color)
-
-    # Category separators
+    # Split into one figure per category.
     cat_list = [CATEGORY_MAP.get(d, '?') for d in domains]
-    for i in range(1, len(cat_list)):
-        if cat_list[i] != cat_list[i-1]:
-            ax.axhline(y=i - 0.5, color='black', linewidth=2)
+    category_order = ['STEM', 'Professional', 'Foundational']
+    slug = {'STEM': 'stem', 'Professional': 'professional',
+            'Foundational': 'foundational'}
 
-    # Category labels on right
-    prev_cat = None
-    cat_starts = []
-    for i, cat in enumerate(cat_list):
-        if cat != prev_cat:
-            cat_starts.append((i, cat))
-            prev_cat = cat
+    for cat in category_order:
+        rows = [i for i, c in enumerate(cat_list) if c == cat]
+        if not rows:
+            continue
+        cat_domains = [domains[i] for i in rows]
+        cat_labels = [DISPLAY_NAMES.get(d, d) for d in cat_domains]
+        cat_matrix = matrix[rows]
+        cat_norm = matrix_norm[rows]
 
-    for idx, (start, cat) in enumerate(cat_starts):
-        end = cat_starts[idx+1][0] if idx+1 < len(cat_starts) else len(domains)
-        mid = (start + end - 1) / 2
-        ax.text(len(metrics) + 0.3, mid, cat, ha='left', va='center',
-                fontsize=10, fontweight='bold', style='italic')
+        # Height scales with row count; minimum floor for very small subsets.
+        fig_height = max(3.0, 0.35 * len(rows) + 1.8)
+        fig, ax = plt.subplots(figsize=(9, fig_height))
 
-    ax.set_title('McCreary Intelligent Textbook Corpus\nPer-Domain Statistics',
-                 fontsize=14, fontweight='bold', pad=15)
+        ax.imshow(cat_norm, cmap='YlOrRd', aspect='auto',
+                  vmin=0, vmax=1)
 
-    plt.tight_layout()
-    output_path = os.path.join(os.path.dirname(__file__), 'corpus-heatmap.png')
-    plt.savefig(output_path, dpi=300, bbox_inches='tight')
-    print(f'Saved: {output_path}')
+        # Column labels at the top so they can't be clipped by a page break.
+        ax.set_xticks(np.arange(len(metrics)))
+        ax.set_xticklabels(metric_labels, fontsize=11, ha='center')
+        ax.xaxis.set_ticks_position('top')
+        ax.xaxis.set_label_position('top')
+        ax.tick_params(axis='x', which='both', length=0, pad=6)
+
+        ax.set_yticks(np.arange(len(cat_domains)))
+        ax.set_yticklabels(cat_labels, fontsize=10)
+
+        # Value overlays
+        for i in range(len(cat_domains)):
+            for j in range(len(metrics)):
+                val = cat_matrix[i, j]
+                text = (f'{val:.2f}' if isinstance(val, float) and val != int(val)
+                        else f'{int(val)}')
+                color = 'white' if cat_norm[i, j] > 0.6 else 'black'
+                ax.text(j, i, text, ha='center', va='center',
+                        fontsize=9, color=color)
+
+        # Light cell borders to separate rows visually
+        ax.set_xticks(np.arange(-0.5, len(metrics), 1), minor=True)
+        ax.set_yticks(np.arange(-0.5, len(cat_domains), 1), minor=True)
+        ax.grid(which='minor', color='white', linewidth=1.2)
+        ax.tick_params(which='minor', length=0)
+
+        ax.set_title(f'McCreary Intelligent Textbook Corpus --- {cat} Domains',
+                     fontsize=13, fontweight='bold', pad=28)
+
+        plt.tight_layout()
+        output_path = os.path.join(os.path.dirname(__file__),
+                                   f'corpus-heatmap-{slug[cat]}.png')
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
+        plt.close(fig)
+        print(f'Saved: {output_path}')
 
     # Also print stats table
     print(f'\n{"Domain":<30} {"Concepts":>8} {"Edges":>6} {"Taxon":>5} {"Found":>5} {"E/C":>5}')
