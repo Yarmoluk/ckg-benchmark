@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.py$\")",
+      "Bash(python3 -c \"import json; f=open\\('/Users/dan/Documents/ws/ckg-benchmark/results/ckg/ckg_summary.json'\\); s=json.load\\(f\\); ckg_rds=s['macro_rds']; rag_f=open\\('/Users/dan/Documents/ws/ckg-benchmark/results/rag/rag_summary.json'\\); rag_s=json.load\\(rag_f\\); rag_rds=rag_s['macro_rds']; print\\(f'CKG RDS: {ckg_rds}'\\); print\\(f'RAG RDS: {rag_rds}'\\); print\\(f'Ratio: {ckg_rds/rag_rds:.1f}x'\\)\")"
+    ]
+  }
+}
