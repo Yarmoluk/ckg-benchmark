@@ -139,6 +139,7 @@ Rules:
 4. The `\paperversion` macro is the single source of truth. Do not
    hardcode version strings anywhere else in the paper.
 
+
 ## Important Notes
 
 - The `corpus/` directory (cloned repos) is gitignored -- only extracted CSVs are committed
