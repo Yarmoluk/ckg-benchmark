@@ -84,46 +84,89 @@ completes in minutes.
 
 \subsection{Cost Model}\label{sec:lg-cost}
 
-Per-concept generation cost is dominated by two components: output tokens
-required to serialize each concept's row ($\sim$200 tokens on average) and
-input tokens accumulated as the growing graph must be re-read to avoid
-duplicates and cycles ($\sim$500 tokens per concept on average, under a
-quadratic-ish accumulation that we approximate as linear for $n \leq 500$).
-Fixed overhead covers skill loading, course-description ingestion,
-taxonomy-scheme authoring, and the validation pass.
+\paragraph{Measurement methodology.}
+Rather than estimating generation cost from first principles, we measured
+it directly. Each invocation of the \texttt{/learning-graph-generator}
+skill is recorded by a Claude Code \texttt{PostToolUse} hook
+(\texttt{track-skill-end.sh}) that writes a \texttt{skill-usage.jsonl}
+event with the session identifier, project path, and wall-clock
+duration. The full session transcript---every assistant message with a
+complete \texttt{usage} object reporting \texttt{input\_tokens},
+\texttt{output\_tokens}, \texttt{cache\_read\_input\_tokens}, and
+\texttt{cache\_creation\_input\_tokens}---is retained by Claude Code at
+\texttt{\textasciitilde/.claude/projects/\{slug\}/\{session\}.jsonl}. We
+walk each transcript, sum token usage across all assistant messages from
+the \texttt{/learning-graph-generator} skill-start timestamp to the next
+skill-start event in the same session, and apply the per-model public
+pricing for Claude Opus 4.6
+(\$15/M input, \$75/M output, \$1.50/M cache read, \$18.75/M cache
+write). The numbers in Table~\ref{tab:lg-cost-measured} are
+\emph{measured}, not estimated. The measurement script and the raw CSV
+are included in the repository at
+\texttt{paper/figures/measure\_lg\_generation\_cost.py}.
 
+Of 21 recorded \texttt{/learning-graph-generator} invocations, 9 had
+surviving full session transcripts at measurement time; the remaining 12
+sessions ran before the transcript-retention policy in use and cannot be
+reconstructed precisely. All 9 measured sessions used Claude Opus 4.6 as
+the generating model.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Measured token consumption and cost for nine complete
+\texttt{/learning-graph-generator} sessions, sorted by concept count.
+Costs reflect Claude Opus 4.6 public API pricing at measurement
+time.\protect\footnotemark{} Cached column sums cache-read and
+cache-write tokens, which dominate total volume because the growing
+graph is re-attached to each assistant turn.}
+\label{tab:lg-cost-measured}
+\input{figures/lg_generation_cost_table}
+\end{table}
+\footnotetext{The sessions reported here were generated under a Claude
+Max subscription, a flat monthly fee with no per-token metering, so no
+incremental dollars were paid for these specific runs. The costs in the
+table are computed from the public pay-as-you-go API rates so that a
+reader evaluating whether to adopt this workflow sees the figure they
+would themselves be charged.}
+
+\paragraph{Fitted cost model.}
 We model generation cost as an affine function of concept count:
 \begin{equation}\label{eq:lg-cost}
   \mathrm{Cost}(n) \approx \alpha + \beta \cdot n
 \end{equation}
 where $\alpha$ is the fixed-overhead cost and $\beta$ is the marginal
-per-concept cost. Table~\ref{tab:lg-cost} instantiates
-Equation~\ref{eq:lg-cost} for two current-generation Claude models,
-calibrated to observed generation sessions on the McCreary corpus.
+per-concept cost. A least-squares fit to the nine measured sessions
+yields, for Claude Opus 4.6:
+\begin{equation}\label{eq:lg-fit-opus}
+  \mathrm{Cost}_{\mathrm{Opus\;4.6}}(n) \approx \$8.16 + \$0.019 \cdot n
+\end{equation}
+with $R^2 \approx 0.24$---the low coefficient of determination reflects
+substantial session-to-session variance driven by the number of
+validation and correction cycles a given run requires, which dominates
+any smooth dependence on concept count. The mean measured cost was
+\$13.94 across sessions averaging 311 concepts, with observed values
+ranging from \$9.21 to \$21.38. We therefore prefer to report
+Table~\ref{tab:lg-cost-measured} directly rather than relying on the
+fit; Equation~\ref{eq:lg-fit-opus} is provided for
+ballpark estimation only.
 
-\begin{table}[htbp]
-\centering
-\small
-\caption{Estimated learning graph generation cost as a function of concept
-count, under two current-generation models. Excludes SME review time.
-Assumes one validation pass; a correction cycle adds approximately 40\%.}
-\label{tab:lg-cost}
-\begin{tabular}{lcccc}
-\toprule
-Model & $\alpha$ (USD) & $\beta$ (USD/concept) & $n=200$ & $n=500$ \\
-\midrule
-Claude Opus 4.6     & \$1.50 & \$0.025 & \$6.50  & \$14.00 \\
-Claude Sonnet 4.6   & \$0.30 & \$0.005 & \$1.30  & \$2.80  \\
-\bottomrule
-\end{tabular}
-\end{table}
+For cheaper model tiers, direct measurement is not yet available because
+the McCreary corpus was generated on Opus. Applying the per-token price
+ratio between Opus and Sonnet 4.6 (roughly 5$\times$) to the measured
+Opus numbers yields a projected Sonnet cost of approximately \$3 for a
+200-concept graph; re-running \texttt{/learning-graph-generator} on
+Sonnet and measuring directly would tighten this estimate.
 
-Even at Opus-tier pricing, a 200-concept domain graph costs less than ten
-dollars of compute to generate. At Sonnet-tier pricing it costs roughly
-the price of a cup of coffee. These figures are four to five orders of
-magnitude below the cost of traditional expert curation (a team of domain
-experts working for weeks or months) that has historically blocked
-structure-first retrieval from commercial deployment.
+\paragraph{Interpretation.}
+Even at the highest current model tier, a domain learning graph costs
+between ten and twenty-five dollars of compute to generate---excluding
+the subsequent SME review loop, which remains the dominant human-time
+cost but is no longer the dominant economic bottleneck. These figures
+are four to five orders of magnitude below the cost of traditional
+expert curation (a team of domain experts working for weeks or months)
+that has historically blocked structure-first retrieval from commercial
+deployment.
 
 \subsection{Projected Trajectory}\label{sec:lg-projection}
 
@@ -145,11 +188,12 @@ the next 18--24 months:
     reduce token consumption 2--3$\times$ at any given model tier.
 \end{enumerate}
 
-Combining these trends, we project a plausible 2027 cost model of
-$\alpha \approx \$0.10$ and $\beta \approx \$0.002$, yielding
-approximately \$0.50 for a 200-concept graph---roughly one dollar with
-a correction cycle. At that price point, domain graph generation is
-effectively free relative to any downstream inference workload.
+Combining these trends with the measured Opus 4.6 baseline of roughly
+\$12 per 200-concept graph (Table~\ref{tab:lg-cost-measured}), we project
+a plausible 2027 cost of \$1--\$2 per 200-concept graph when a
+Haiku-class successor model is used with a cache-efficient rewrite of
+the generation workflow. At that price point, domain graph generation
+is effectively free relative to any downstream inference workload.
 
 \subsection{Implications for the Build-Cost Objection}\label{sec:lg-implications}
 
