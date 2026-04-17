@@ -99,6 +99,46 @@ GraphRAG dynamically extracts structure from text that was *originally generated
 - Finalize paper for ArXiv submission
 - Publish dataset to HuggingFace (`graphify-md/ckg-benchmark`)
 
+## Paper Versioning
+
+The paper version lives in exactly one place:
+
+```latex
+\newcommand{\paperversion}{MAJOR.MINOR.PATCH}
+```
+
+at the top of `paper/main.tex`. It renders on the title page via the
+`\date{}` line. Bump it whenever you make a substantive change; do **not**
+bump it for every edit.
+
+Use semantic-version discipline:
+
+- **PATCH** (`0.4.0` -> `0.4.1`) -- typo fixes, spelling corrections,
+  grammar tweaks, figure-caption polish, formatting adjustments,
+  citation-style fixes, broken-link repairs. Anything that does not
+  change the paper's claims, numbers, or structure. **Small copyedits
+  only ever touch the patch number.**
+- **MINOR** (`0.4.1` -> `0.5.0`) -- new section or subsection,
+  methodology changes, new figure or table, replacing an estimate with
+  measured data, refactoring an argument, adding or removing a
+  hypothesis. Anything a reviewer would notice beyond a diff of minor
+  wording.
+- **MAJOR** (`0.x.y` -> `1.0.0`) -- reserved for the frozen ArXiv
+  submission. After 1.0.0, further major bumps mark subsequent
+  substantive revisions (e.g., post-review v2).
+
+Rules:
+
+1. One bump per coherent change set. If a session fixes three typos, that
+   is one PATCH bump, not three.
+2. Never decrement. If a change has to be rolled back, bump forward to a
+   new version that reflects the rollback.
+3. When in doubt between PATCH and MINOR, ask: *"would a reader reviewing
+   the change set learn anything they did not already know from the
+   previous version?"* If yes, it is at least MINOR.
+4. The `\paperversion` macro is the single source of truth. Do not
+   hardcode version strings anywhere else in the paper.
+
 ## Important Notes
 
 - The `corpus/` directory (cloned repos) is gitignored -- only extracted CSVs are committed
