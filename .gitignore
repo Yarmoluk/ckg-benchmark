@@ -1,3 +1,4 @@
+.claude
 corpus/*/
 !corpus/.gitkeep
 __pycache__/
