@@ -31,16 +31,31 @@ Table~\ref{tab:paradigms} summarizes their key differences.
 
 \begin{figure}[htbp]
 \centering
-% TODO: Replace with actual architecture diagram (draw.io or similar)
-\fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}
-\textbf{Figure placeholder: Three-Architecture Pipeline Diagram}\\[6pt]
-RAG: Text $\rightarrow$ Chunks $\rightarrow$ Embeddings $\rightarrow$ Top-k $\rightarrow$ LLM\\
-GraphRAG: Text $\rightarrow$ Entity Extraction $\rightarrow$ Graph $\rightarrow$ Community Search $\rightarrow$ LLM\\
-CKG: CSV $\rightarrow$ DAG Lookup $\rightarrow$ Subgraph $\rightarrow$ LLM
-\vspace{3cm}}}
-\caption{Three retrieval architectures compared. RAG chunks text and retrieves
-by embedding similarity. GraphRAG dynamically extracts a graph from text.
-CKG uses a pre-structured DAG directly.}
+\begin{subfigure}{0.98\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/workflow-rag.png}
+  \caption{RAG: chunk text, embed, retrieve top-$k$ by vector similarity.}
+  \label{fig:arch-rag}
+\end{subfigure}\\[8pt]
+\begin{subfigure}{0.98\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/workflow-graphrag.png}
+  \caption{GraphRAG: extract an entity graph from text, cluster into
+  communities, route queries local vs.\ global.}
+  \label{fig:arch-graphrag}
+\end{subfigure}\\[8pt]
+\begin{subfigure}{0.98\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/workflow-ckg.png}
+  \caption{CKG: parse a pre-authored DAG directly, extract the relevant
+  subgraph per query.}
+  \label{fig:arch-ckg}
+\end{subfigure}
+\caption{Three retrieval architectures compared. RAG infers relevance
+from prose via vector similarity; GraphRAG infers structure from prose
+via LLM extraction; CKG reads structure directly from an authored DAG.
+The difference in retrieved context size (2,400 vs.\ 2,000--8,000 vs.\
+150--400 tokens) is the efficiency gap this paper quantifies.}
 \label{fig:architecture}
 \end{figure}
 
