@@ -37,7 +37,7 @@ from sentence_transformers import SentenceTransformer
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-CLAUDE_MODEL    = "claude-sonnet-4-6"
+CLAUDE_MODEL    = "claude-haiku-4-5-20251001"
 EMBED_MODEL     = "all-MiniLM-L6-v2"   # local, ~80MB, 384-dim, fast
 CHUNK_TOKENS    = 512
 OVERLAP_TOKENS  = 50
