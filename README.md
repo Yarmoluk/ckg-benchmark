@@ -1,11 +1,11 @@
 # CKG Benchmark
 
-**A reproducible benchmark comparing RAG, GraphRAG, and Compressed Knowledge Graphs across 22 educational domains.**
+**A reproducible benchmark comparing RAG, GraphRAG, and Compressed Knowledge Graphs across 44 educational domains.**
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Status: Pre-experiment](https://img.shields.io/badge/Status-Pre--experiment-yellow.svg)]()
-[![Domains: 22](https://img.shields.io/badge/Domains-22-green.svg)]()
+[![Domains: 44](https://img.shields.io/badge/Domains-44-green.svg)]()
 [![Queries: 3,854](https://img.shields.io/badge/Queries-3%2C854-green.svg)]()
 
 ## Overview
@@ -27,7 +27,7 @@ This benchmark evaluates three LLM knowledge retrieval architectures on structur
 
 ## The Corpus
 
-The benchmark is built on the **McCreary Intelligent Textbook Corpus** -- 22 open-source educational domains with identical schema:
+The benchmark is built on the **McCreary Intelligent Textbook Corpus** -- 44 open-source educational domains with identical schema:
 
 ```csv
 ConceptID,ConceptLabel,Dependencies,TaxonomyID
@@ -38,7 +38,7 @@ ConceptID,ConceptLabel,Dependencies,TaxonomyID
 
 **By the numbers:**
 
-- **22 domains** extracted (24 identified, 22 with valid CSVs)
+- **44 domains** with CKG results in `results/ckg/`
 - **6,351 concepts** total
 - **3,854 benchmark queries** across 5 query types
 - **3 categories:** STEM, Professional, Foundational
@@ -87,12 +87,12 @@ ckg-benchmark/
 │
 ├── benchmark/
 │   ├── corpus-index.md            # All domains with metadata
-│   ├── domains/                   # 22 domain directories
+│   ├── domains/                   # 44 domain directories
 │   │   ├── calculus/
 │   │   │   └── learning-graph.csv # 325 concepts
 │   │   ├── biology/
 │   │   └── ...
-│   └── queries/                   # 22 JSONL query files (3,854 total)
+│   └── queries/                   # 44 JSONL query files (3,854 total)
 │       ├── queries_calculus.jsonl
 │       └── ...
 │
@@ -170,7 +170,7 @@ bash extract_corpus.sh
 | Paper outline | Done |
 | Metrics specification (16 metrics) | Done |
 | Tokenomics framework | Done |
-| Corpus extraction (22 domains) | Done |
+| Corpus extraction (44 domains) | Done |
 | Query generation (3,854 queries) | Done |
 | Evaluation harness skeleton | Done |
 | Experimental runs | Not started |
