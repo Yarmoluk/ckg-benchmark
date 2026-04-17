@@ -31,31 +31,33 @@ Table~\ref{tab:paradigms} summarizes their key differences.
 
 \begin{figure}[htbp]
 \centering
-\begin{subfigure}{0.98\textwidth}
+\begin{subfigure}[t]{0.32\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/workflow-rag.png}
-  \caption{RAG: chunk text, embed, retrieve top-$k$ by vector similarity.}
+  \includegraphics[width=\textwidth,keepaspectratio]{figures/workflow-rag.png}
+  \caption{RAG.}
   \label{fig:arch-rag}
-\end{subfigure}\\[8pt]
-\begin{subfigure}{0.98\textwidth}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/workflow-graphrag.png}
-  \caption{GraphRAG: extract an entity graph from text, cluster into
-  communities, route queries local vs.\ global.}
+  \includegraphics[width=\textwidth,keepaspectratio]{figures/workflow-graphrag.png}
+  \caption{GraphRAG.}
   \label{fig:arch-graphrag}
-\end{subfigure}\\[8pt]
-\begin{subfigure}{0.98\textwidth}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}
   \centering
-  \includegraphics[width=\textwidth]{figures/workflow-ckg.png}
-  \caption{CKG: parse a pre-authored DAG directly, extract the relevant
-  subgraph per query.}
+  \includegraphics[width=\textwidth,keepaspectratio]{figures/workflow-ckg.png}
+  \caption{CKG.}
   \label{fig:arch-ckg}
 \end{subfigure}
-\caption{Three retrieval architectures compared. RAG infers relevance
-from prose via vector similarity; GraphRAG infers structure from prose
-via LLM extraction; CKG reads structure directly from an authored DAG.
-The difference in retrieved context size (2,400 vs.\ 2,000--8,000 vs.\
-150--400 tokens) is the efficiency gap this paper quantifies.}
+\caption{Three retrieval architectures compared, each shown as a
+build-time swimlane above a runtime swimlane (chronological,
+top-to-bottom). RAG chunks text and retrieves top-$k$ by vector
+similarity. GraphRAG extracts an entity graph from text, clusters it
+into communities, then routes queries local vs.\ global. CKG parses
+a pre-authored DAG directly and extracts the relevant subgraph per
+query. The difference in retrieved context size (2,400 vs.\
+2,000--8,000 vs.\ 150--400 tokens) is the efficiency gap this paper
+quantifies.}
 \label{fig:architecture}
 \end{figure}
 
