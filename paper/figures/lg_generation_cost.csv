@@ -1,0 +1,22 @@
+project,session,start,status,messages,models,concepts,in,out,cache_read,cache_write,total_tokens,cost_usd
+/Users/dan/Documents/ws/graph-data-modeling-course,1cb347b2-9efe-460d-aff5-265a38f4c4f4,2025-12-09 10:02:16,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/data-science-course,5278bb12-9e4f-48ba-9e1c-0109cfa6cc19,2025-12-12 14:13:13,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/automating-instructional-design,4277bfd9-b9c8-4509-b341-d31d8dde5f99,2025-12-17 21:33:09,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/linear-algebra,c25ec6a9-abc3-4889-843a-6c7cdd853a85,2026-01-17 13:05:03,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/search-microsims,f8f9a0aa-d143-46be-bd18-ec1327faae4d,2026-01-24 15:58:34,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/us-geography,c1be4584-5989-4fbe-a228-a15f132dfbe3,2026-01-27 22:25:59,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/circuits,1cda885b-bf91-4cfc-8efc-908468ae284d,2026-01-30 06:16:38,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/control-systems,0c6e0ad9-964a-46fb-babf-dee5a5ca4b79,2026-01-31 16:19:01,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/calculus,42e32180-663f-4bd7-a2d8-a17585d9aaf4,2026-02-03 04:24:26,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/statistics-course,a5983d8b-b32d-4ec5-af73-80392f6c317f,2026-02-06 17:35:59,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/statistics-course,e7e9a8e7-7e46-483f-adde-4778fbebbce8,2026-02-07 14:45:57,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/organizational-analytics,84dd08f1-b2a7-4a99-ac23-1e7d2ab1d221,2026-02-07 20:48:31,no_transcript,,,,,,,,,
+/Users/dan/Documents/ws/moss,b1ccf788-bc8f-49d9-8721-b7f65187ec55,2026-03-20 19:50:10,measured,89,claude-opus-4-6,400,105,24334,6239155,267888,6531482,16.2083
+/Users/dan/Documents/ws/blockchain,0544dc4b-f7e3-47ab-928e-824f146f346f,2026-03-22 08:38:23,measured,109,claude-opus-4-6,200,139,19201,5022492,196109,5237941,12.6529
+/Users/dan/Documents/ws/bioinformatics,e274086c-4513-416f-bbcb-eabb131e114d,2026-03-24 20:29:53,measured,120,claude-opus-4-6,480,152,28434,11337256,119227,11485069,21.3762
+/Users/dan/Documents/ws/unicorns,3802395a-fa10-417e-b355-558bef88be48,2026-03-27 07:22:29,measured,85,claude-opus-4-6,140,187,15085,5012409,98788,5126469,10.5051
+/Users/dan/Documents/ws/ecology,0f0fda0c-5607-4b67-a5c8-e64bac746085,2026-03-29 09:07:34,measured,92,claude-opus-4-6,380,107,26375,7414373,123447,7564302,15.4159
+/Users/dan/Documents/ws/genetics,7e9b1a73-a8d8-479e-8558-3828cb4271e7,2026-03-31 14:59:37,measured,61,claude-opus-4-6,450,74,20368,4331362,95265,4447069,9.812
+/Users/dan/Documents/ws/theory-of-knowledge,f6c0b0a3-9869-4eed-b09a-d120ef52928a,2026-04-02 07:26:41,measured,98,claude-opus-4-6,275,131,39089,8400154,249465,8688839,20.2113
+/Users/dan/Documents/ws/functions,f3b27df6-b13b-4a99-b712-9c9accdc118b,2026-04-03 16:31:25,measured,77,claude-opus-4-6,208,91,18215,3333321,151524,3503151,9.2085
+/Users/dan/Documents/ws/digital-citizenship,ac5947a2-e5a5-48f2-ba9a-f9e7edbbd8be,2026-04-11 08:23:37,measured,44,claude-opus-4-6,265,61,31686,3802067,104383,3938197,10.0376
