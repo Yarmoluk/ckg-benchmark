@@ -60,8 +60,35 @@ and are load-bearing for the CKG architecture:
 \subsection{Agentic Learning Graph Generation}\label{sec:lg-gen}
 
 The McCreary corpus graphs used in this benchmark were produced with an
-agentic workflow (the \texttt{/learning-graph-generator} skill running
-under Claude Code) that decomposes generation into three stages:
+agentic workflow: the \texttt{/learning-graph-generator} Claude Code
+Agent Skill, publicly available at
+\url{https://github.com/dmccreary/claude-skills/tree/main/skills/learning-graph-generator}.
+
+\paragraph{Input document.}
+The version of the skill used throughout this benchmark takes a
+\emph{formal course description} as its primary input---a structured
+document enumerating target audience, prerequisites, learning
+objectives, topics of coverage, and assessment goals. Other variants of
+the skill are in active use with different input documents (syllabi,
+lesson transcripts, standards documents, textbook tables of contents);
+those variants share the same three-stage pipeline below but differ in
+how stage one seeds the concept set $C$.
+
+\paragraph{Input quality scoring.}
+Because the quality of the generated learning graph depends heavily on
+the completeness of the course description, the skill begins by scoring
+the supplied description on a 100-point rubric and reporting the score
+back to the author before generation proceeds. Low-scoring descriptions
+trigger specific suggestions (e.g., missing Bloom's-taxonomy outcomes,
+absent prerequisite list, unstated target audience). The author can
+revise the description and re-score before paying the cost of a full
+generation run. This front-loaded validation is the cheapest quality
+lever in the pipeline: a marginal improvement to the input saves a full
+correction cycle later.
+
+\paragraph{Generation pipeline.}
+Given a description that has cleared the scoring rubric, the skill
+decomposes generation into three stages:
 \begin{enumerate}
   \item \textbf{Concept elicitation.} Given a course description, the
     agent proposes a concept set $C$ of a target size (default $n=200$),

@@ -10,7 +10,9 @@
       "Bash(python3)",
       "Bash(python3 paper/figures/measure_lg_generation_cost.py)",
       "Bash(awk '{print $5, $9}')",
-      "Bash(python3 src/measure_lg_generation_cost.py)"
+      "Bash(python3 src/measure_lg_generation_cost.py)",
+      "Bash(git pull *)",
+      "Bash(git stash *)"
     ]
   }
 }
