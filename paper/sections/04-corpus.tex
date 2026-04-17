@@ -79,15 +79,39 @@ All 45 DAGs are validated for the following structural properties:
   \item Maximum dependency chain length reported per domain.
 \end{enumerate}
 
-Figure~\ref{fig:corpus-heatmap} shows per-domain statistics across all 44
-benchmark domains, organized by category.
+Figures~\ref{fig:corpus-heatmap-stem}--\ref{fig:corpus-heatmap-foundational}
+show per-domain statistics across all 44 benchmark domains, split by
+category so that each heatmap fits on a single page with its column
+headers clearly visible. Color intensity is normalized using the
+full-corpus range for each column, so shades are directly comparable
+across the three figures. Totals: 12,260 concepts and 19,405 dependency
+edges.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/corpus-heatmap.png}
-\caption{Per-domain statistics for the McCreary Intelligent Textbook Corpus.
-Domains are grouped by category (STEM, Professional, Foundational) and sorted
-by concept count. Color intensity reflects relative magnitude within each column.
-Total: 12,260 concepts and 19,405 dependency edges across 46 domains.}
-\label{fig:corpus-heatmap}
+\includegraphics[width=0.85\textwidth]{figures/corpus-heatmap-stem.png}
+\caption{Per-domain statistics for the STEM subset of the McCreary
+Intelligent Textbook Corpus, sorted by concept count. Columns:
+\emph{Concepts}, \emph{Edges}, \emph{Taxonomy Categories},
+\emph{Foundation Concepts} (in-degree zero), and \emph{Edge/Concept
+Ratio}.}
+\label{fig:corpus-heatmap-stem}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/corpus-heatmap-professional.png}
+\caption{Per-domain statistics for the Professional subset of the
+corpus, sorted by concept count. Column definitions match
+Figure~\ref{fig:corpus-heatmap-stem}.}
+\label{fig:corpus-heatmap-professional}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/corpus-heatmap-foundational.png}
+\caption{Per-domain statistics for the Foundational subset of the
+corpus, sorted by concept count. Column definitions match
+Figure~\ref{fig:corpus-heatmap-stem}.}
+\label{fig:corpus-heatmap-foundational}
 \end{figure}
