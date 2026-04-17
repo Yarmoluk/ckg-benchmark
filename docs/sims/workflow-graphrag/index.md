@@ -1,0 +1,47 @@
+---
+title: GraphRAG Workflow
+description: Build-time and query-time pipeline for GraphRAG. Uses an LLM to extract an entity graph and community summaries from source text, then routes each query to local or global retrieval for roughly 2,000 to 8,000 tokens of context.
+image: /sims/workflow-graphrag/workflow-graphrag.png
+og:image: /sims/workflow-graphrag/workflow-graphrag.png
+---
+
+# GraphRAG Workflow
+
+GraphRAG extracts an entity graph from unstructured text using LLM prompting,
+clusters it into communities, and routes each query to local (entity-level) or
+global (corpus-level) retrieval.
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Helvetica, Arial, sans-serif','fontSize':'14px','primaryColor':'#E8EEF7','primaryBorderColor':'#00796B','primaryTextColor':'#004D40','lineColor':'#00796B','clusterBkg':'#F1F8E9','clusterBorder':'#AED581'}}}%%
+flowchart TB
+  classDef input fill:#E0F2F1,stroke:#00695C,stroke-width:1.5px,color:#004D40
+  classDef process fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20
+  classDef store fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#BF360C
+  classDef output fill:#E3F2FD,stroke:#1565C0,stroke-width:1.5px,color:#0D47A1
+
+  subgraph Index[Build&nbsp;time]
+    direction LR
+    Text["Domain text<br/>(Markdown chapters)"]:::input --> Extract["LLM entity &<br/>relation extraction"]:::process
+    Extract --> Graph[("Extracted<br/>entity graph")]:::store
+    Graph --> Community["Community<br/>detection"]:::process
+    Community --> Reports["Community<br/>summaries"]:::store
+  end
+
+  subgraph Query[Query&nbsp;time]
+    direction LR
+    Q(["User query"]):::input --> Route["Local vs. global<br/>route"]:::process
+    Route --> Ctx["≈ 2,000–8,000 tokens<br/>of retrieved context"]:::process
+    Ctx --> LLM["LLM<br/>(Claude)"]:::process
+    LLM --> Ans(["Answer"]):::output
+  end
+
+  Graph -.-> Route
+  Reports -.-> Route
+```
+
+**Typical retrieved context:** ~2,000–8,000 tokens. **Build cost:** LLM passes
+over the entire corpus to extract entities, relations, and community summaries.
+**Strength:** produces corpus-level answers that pure RAG cannot.
+**Weakness:** dynamic extraction reintroduces structure that was already
+implicit in the source — then asks the retrieval LLM to use it. Extracted
+edges can disagree with ground-truth structure (measurable hallucination rate).
