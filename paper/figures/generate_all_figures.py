@@ -52,36 +52,51 @@ OUT_DIR = Path("paper/figures")
 
 # ── Data ──────────────────────────────────────────────────────────────────────
 
-# Final CKG numbers (44 domains, 7,588 queries)
+# Final CKG numbers (44 domains, 7,758 queries) — v0.6.1
 CKG = {
-    "macro_f1":   0.4504,
-    "mean_tokens": 274,
-    "rds":         0.001887,
-    "cost":        13.53,
+    "macro_f1":   0.4709,
+    "mean_tokens": 269,
+    "rds":         0.00201,
+    "cost":        7.81,
     "f1_by_type": {
-        "T1 Entity":     0.189,
-        "T2 Prereq":     0.603,
-        "T3 Path":       0.614,
-        "T4 Aggregate":  0.951,
-        "T5 Cross":      0.326,
+        "T1 Entity":     0.207,
+        "T2 Prereq":     0.634,
+        "T3 Path":       0.660,
+        "T4 Aggregate":  0.964,
+        "T5 Cross":      0.323,
     },
-    "f1_by_hop": {0: 0.571, 1: 0.503, 2: 0.441, 3: 0.398, 4: 0.372},
+    "f1_by_hop": {0: 0.357, 1: 0.498, 2: 0.589, 3: 0.647, 4: 0.677, 5: 0.728},
 }
 
-# Final RAG numbers (40 domains, 6,844 queries)
+# Final RAG numbers (40 domains, 7,191 queries)
 RAG = {
-    "macro_f1":    0.1225,
-    "mean_tokens": 2982.8,
-    "rds":         4.107e-5,
-    "cost":        72.58,
+    "macro_f1":    0.1231,
+    "mean_tokens": 2982,
+    "rds":         4.82e-5,
+    "cost":        76.23,
     "f1_by_type": {
-        "T1 Entity":     0.0924,
-        "T2 Prereq":     0.0782,
-        "T3 Path":       0.2009,
-        "T4 Aggregate":  0.2915,
-        "T5 Cross":      0.1124,
+        "T1 Entity":     0.094,
+        "T2 Prereq":     0.078,
+        "T3 Path":       0.201,
+        "T4 Aggregate":  0.286,
+        "T5 Cross":      0.115,
     },
-    "f1_by_hop": {0: 0.201, 1: 0.152, 2: 0.118, 3: 0.087, 4: 0.063},
+    "f1_by_hop": {0: 0.132, 1: 0.095, 2: 0.183, 3: 0.205, 4: 0.207, 5: 0.205},
+}
+
+# Final GraphRAG numbers (15 domains, 2,683 queries)
+GR = {
+    "macro_f1":    0.1200,
+    "mean_tokens": 3450,
+    "rds":         4.52e-5,
+    "cost":        44.43,
+    "f1_by_type": {
+        "T1 Entity":     0.108,
+        "T2 Prereq":     0.073,
+        "T3 Path":       0.208,
+        "T4 Aggregate":  0.054,
+        "T5 Cross":      0.183,
+    },
 }
 
 # Per-domain RDS data (CKG) and proxy for DAG richness (avg edges/concept)
@@ -132,36 +147,34 @@ def fig_f1_by_type():
     labels   = list(CKG["f1_by_type"].keys())
     ckg_vals = [CKG["f1_by_type"][l] for l in labels]
     rag_vals = [RAG["f1_by_type"][l] for l in labels]
+    gr_vals  = [GR["f1_by_type"][l]  for l in labels]
 
     x     = np.arange(len(labels))
-    width = 0.35
+    width = 0.26
 
-    fig, ax = plt.subplots(figsize=(8.5, 5))
-    bars_rag = ax.bar(x - width/2, rag_vals, width, label="RAG",
+    fig, ax = plt.subplots(figsize=(9.5, 5))
+    bars_rag = ax.bar(x - width, rag_vals, width, label="RAG",
                       color=RAG_COLOR, alpha=0.88, zorder=3)
-    bars_ckg = ax.bar(x + width/2, ckg_vals, width, label="CKG",
+    bars_gr  = ax.bar(x,         gr_vals,  width, label="GraphRAG",
+                      color=GR_COLOR,  alpha=0.88, zorder=3)
+    bars_ckg = ax.bar(x + width, ckg_vals, width, label="CKG",
                       color=CKG_COLOR, alpha=0.88, zorder=3)
 
-    # Value labels
-    for bar in bars_rag:
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.012,
-                f"{bar.get_height():.2f}", ha="center", va="bottom",
-                fontsize=9, color=RAG_COLOR, fontweight="600")
-    for bar in bars_ckg:
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.012,
-                f"{bar.get_height():.2f}", ha="center", va="bottom",
-                fontsize=9, color=CKG_COLOR, fontweight="600")
+    for bars, color in [(bars_rag, RAG_COLOR), (bars_gr, GR_COLOR), (bars_ckg, CKG_COLOR)]:
+        for bar in bars:
+            ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.012,
+                    f"{bar.get_height():.2f}", ha="center", va="bottom",
+                    fontsize=8, color=color, fontweight="600")
 
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
     ax.set_ylabel("Token-level F1")
-    ax.set_ylim(0, 1.05)
-    ax.set_title("F1 by Query Type — CKG vs. RAG")
+    ax.set_ylim(0, 1.08)
+    ax.set_title("F1 by Query Type — CKG vs. RAG vs. GraphRAG (Track 1)")
     ax.legend(framealpha=0.9)
     ax.set_axisbelow(True)
 
-    # Annotate T1 as negative control
-    ax.annotate("negative\ncontrol", xy=(0, 0.19), xytext=(0.35, 0.38),
+    ax.annotate("negative\ncontrol", xy=(0 - width, 0.094), xytext=(0.4, 0.35),
                 fontsize=8, color=GRAY, style="italic",
                 arrowprops=dict(arrowstyle="->", color=GRAY, lw=0.8))
 
@@ -174,42 +187,41 @@ def fig_f1_by_type():
 # ── Figure 4: RDS + token efficiency ─────────────────────────────────────────
 
 def fig_rds_comparison():
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4.5))
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.5))
 
-    # Left: RDS comparison
+    # Left: RDS comparison (all 3 systems)
     ax = axes[0]
-    systems = ["RAG\n(40 domains)", "CKG\n(44 domains)"]
-    rds_vals = [RAG["rds"], CKG["rds"]]
-    colors   = [RAG_COLOR, CKG_COLOR]
+    systems  = ["RAG\n(40 dom.)", "GraphRAG\n(15 dom.)", "CKG\n(44 dom.)"]
+    rds_vals = [RAG["rds"], GR["rds"], CKG["rds"]]
+    colors   = [RAG_COLOR, GR_COLOR, CKG_COLOR]
     bars = ax.bar(systems, rds_vals, color=colors, alpha=0.88, width=0.45, zorder=3)
     ax.set_ylabel("RDS  (F1 / tokens consumed)")
     ax.set_title("Reasoning Density Score (RDS)")
     ax.set_axisbelow(True)
     for bar, v in zip(bars, rds_vals):
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() * 1.04,
-                f"{v:.2e}", ha="center", va="bottom", fontsize=10, fontweight="600")
-    # Ratio annotation
+                f"{v:.2e}", ha="center", va="bottom", fontsize=9, fontweight="600")
     ratio = CKG["rds"] / RAG["rds"]
-    ax.annotate(f"CKG is\n{ratio:.0f}× higher",
-                xy=(1, CKG["rds"]), xytext=(0.55, CKG["rds"] * 0.6),
-                fontsize=10, color=CKG_COLOR, fontweight="700",
+    ax.annotate(f"CKG is\n{ratio:.0f}× higher\nthan RAG",
+                xy=(2, CKG["rds"]), xytext=(1.3, CKG["rds"] * 0.65),
+                fontsize=9, color=CKG_COLOR, fontweight="700",
                 ha="center", va="center",
                 arrowprops=dict(arrowstyle="->", color=CKG_COLOR, lw=1.2))
 
     # Right: Token efficiency
     ax2 = axes[1]
-    tok_vals = [RAG["mean_tokens"], CKG["mean_tokens"]]
+    tok_vals = [RAG["mean_tokens"], GR["mean_tokens"], CKG["mean_tokens"]]
     bars2 = ax2.bar(systems, tok_vals, color=colors, alpha=0.88, width=0.45, zorder=3)
     ax2.set_ylabel("Mean tokens per query")
     ax2.set_title("Token Consumption per Query")
     ax2.set_axisbelow(True)
     for bar, v in zip(bars2, tok_vals):
         ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() * 1.02,
-                 f"{v:,.0f}", ha="center", va="bottom", fontsize=10, fontweight="600")
+                 f"{v:,.0f}", ha="center", va="bottom", fontsize=9, fontweight="600")
     tok_ratio = RAG["mean_tokens"] / CKG["mean_tokens"]
-    ax2.annotate(f"RAG uses\n{tok_ratio:.1f}× more tokens",
-                 xy=(0, RAG["mean_tokens"]), xytext=(0.45, RAG["mean_tokens"] * 0.65),
-                 fontsize=10, color=RAG_COLOR, fontweight="700",
+    ax2.annotate(f"RAG/GraphRAG use\n{tok_ratio:.0f}× more tokens",
+                 xy=(0, RAG["mean_tokens"]), xytext=(0.95, RAG["mean_tokens"] * 0.7),
+                 fontsize=9, color=RAG_COLOR, fontweight="700",
                  ha="center", va="center",
                  arrowprops=dict(arrowstyle="->", color=RAG_COLOR, lw=1.2))
 
