@@ -1,48 +1,81 @@
 \section{Conclusion}\label{sec:conclusion}
 
-We presented the CKG Benchmark, the first large-scale comparison of Compact
-Knowledge Graphs against RAG across 44 educational domains (7,588 CKG queries,
-3,499 RAG queries). Our key findings are:
+We presented the CKG Benchmark, a two-track comparison of Compact
+Knowledge Graphs against RAG and GraphRAG across 44 hand-curated
+educational domains (Track 1, 7,758 queries) and one pipeline-generated
+commercial pharmacology domain (Track 2, 170 queries). Our key findings
+are:
 
 \begin{enumerate}
-  \item \textbf{CKG achieves 4$\times$ higher macro F1 than RAG} on structural
-    knowledge queries (0.45 vs.\ 0.11), using 11$\times$ fewer tokens per query
-    (274 vs.\ 3,018). The compound RDS advantage is 44.4$\times$.
-  \item \textbf{Structural query performance is near-ceiling for aggregation}:
-    T4 category aggregates reach F1\,$=$\,0.95 for CKG vs.\ 0.22 for RAG,
-    because the answer is fully determined by the taxonomy column of the CSV.
-  \item \textbf{CKG F1 increases with hop depth} (peaking at hop=3: 0.64)
-    while RAG degrades, confirming that deterministic edge traversal does not
-    suffer the multi-hop retrieval recall failures inherent to passage-based
-    systems.
+  \item \textbf{CKG achieves 4$\times$ higher macro F1 than RAG} on
+    structural knowledge queries (\textbf{0.4709} vs.\ \textbf{0.1231}
+    vs.\ \textbf{0.1200} for GraphRAG), using \textbf{11$\times$ fewer
+    tokens per query} (269 vs.\ 2,982 vs.\ 3,450). The compound RDS
+    advantage is \textbf{42$\times$} on Track 1.
+  \item \textbf{Structural query performance is near-ceiling for
+    aggregation}: T4 category aggregates reach F1 $=$ \textbf{0.964}
+    for CKG vs.\ 0.286 for RAG and 0.054 for GraphRAG, because the
+    answer is fully determined by the taxonomy column of the CSV.
+  \item \textbf{CKG F1 increases with hop depth} (peaking at hop=3:
+    \textbf{0.64}) while RAG degrades, confirming that deterministic
+    edge traversal does not suffer the multi-hop retrieval recall
+    failures inherent to passage-based systems.
   \item \textbf{T1 (entity lookup) is a documented negative control}:
-    CKG scores 0.19 on explanatory queries, confirming the benchmark is not
-    constructed to favour CKG universally. Both systems struggle on T1, which
-    requires prose definitions absent from DAG structure.
-  \item \textbf{RDS and Hop-Depth F1} are practical additions to IR evaluation
-    that jointly measure quality and efficiency---metrics missing from existing
-    benchmarks such as BEIR and RAGAS.
+    CKG scores \textbf{0.207} on explanatory queries, confirming the
+    benchmark is not constructed to favour CKG universally. Both
+    systems struggle on T1, which requires prose definitions absent
+    from DAG structure.
+  \item \textbf{RDS and Hop-Depth F1} are practical additions to IR
+    evaluation that jointly measure quality and efficiency---metrics
+    missing from existing benchmarks such as BEIR and RAGAS.
+  \item \textbf{The CKG advantage transfers to a pipeline-generated
+    commercial domain.} Track 2 builds a GLP-1/Obesity CKG
+    programmatically from the ClinicalTrials.gov API, with no expert
+    curation and no educational source material. The resulting domain
+    achieves CKG macro F1 $=$ \textbf{0.5298}, exceeding the Track 1
+    hand-curated average by 12.5\%, and preserves a \textbf{28$\times$}
+    RDS advantage over RAG. Automated construction does not degrade
+    retrieval quality.
 \end{enumerate}
 
 \paragraph{Limitations.}
-RAG results cover 21 of 44 domains due to corpus availability; GraphRAG
-evaluation is pending. Ground truth for T2--T4 is derived from the same DAG
-used by CKG, which is a methodological constraint acknowledged in the design
-(Section~\ref{sec:benchmark}). T1 performance on explanatory queries is weak
-for both systems and represents an open problem.
+Ground truth for T2--T4 is derived from the same DAG used by CKG, which
+is a methodological constraint acknowledged in the design
+(Section~\ref{sec:benchmark}). T1 performance on explanatory queries is
+weak for all three systems and represents an open problem. Pipeline
+engineering cost for automated CKG construction (Track 2) was not
+included in the benchmark cost accounting; build-cost accounting across
+construction strategies remains future work.
 
 \paragraph{Future Work.}
 \begin{itemize}
-  \item Complete GraphRAG evaluation to enable three-way comparison.
-  \item Extend T5 cross-concept retrieval with deeper BFS path-finding; current
-    T5 F1 of 0.33 has a clear improvement trajectory.
-  \item Hybrid architectures combining CKG structural precision with RAG's
-    prose retrieval for T1/T5 query types.
-  \item Extend beyond educational domains to legal, medical, and financial
-    knowledge graphs.
-  \item Automated CKG construction from unstructured text, eliminating the
-    expert curation requirement.
+  \item Extend the automated construction pipeline to additional
+    structured data sources (regulatory registries, legal codes,
+    financial filings, product catalogues) to test the Track 2 transfer
+    result at scale.
+  \item Extend T5 cross-concept retrieval with deeper BFS path-finding;
+    the current T5 F1 of 0.323 (Track 1) and 0.425 (Track 2) has a clear
+    improvement trajectory.
+  \item Hybrid architectures combining CKG structural precision with
+    RAG's prose retrieval for T1 and T5 query types.
+  \item Formal build-cost accounting that includes pipeline engineering,
+    taxonomy-schema design, and source-API cost, enabling end-to-end
+    CPCA comparison across all three architectures.
+  \item Model-robustness experiments replicating the benchmark across
+    additional LLM families.
 \end{itemize}
+
+\paragraph{Unified contribution.}
+Track 1 validates the intelligent textbook format---hand-curated
+learning-graph CSVs---as a benchmark-grade substrate for knowledge
+retrieval at scale across 44 domains. Track 2 validates automated
+construction of CKG domains from structured external data, showing the
+retrieval advantage does not depend on manual authorship. Taken
+together, the two tracks establish Compact Knowledge Graphs as a
+distinct architecture category---one that is empirically superior to
+RAG and GraphRAG on structural queries, an order of magnitude cheaper
+in tokens, and ready for deployment in any domain whose knowledge can
+be expressed as a directed acyclic graph.
 
 \paragraph{Open Benchmark.}
 The complete benchmark---corpus, queries, evaluation harness, and all

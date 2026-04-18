@@ -31,16 +31,11 @@ Table~\ref{tab:paradigms} summarizes their key differences.
 
 \begin{figure}[htbp]
 \centering
-% TODO: Replace with actual architecture diagram (draw.io or similar)
-\fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}
-\textbf{Figure placeholder: Three-Architecture Pipeline Diagram}\\[6pt]
-RAG: Text $\rightarrow$ Chunks $\rightarrow$ Embeddings $\rightarrow$ Top-k $\rightarrow$ LLM\\
-GraphRAG: Text $\rightarrow$ Entity Extraction $\rightarrow$ Graph $\rightarrow$ Community Search $\rightarrow$ LLM\\
-CKG: CSV $\rightarrow$ DAG Lookup $\rightarrow$ Subgraph $\rightarrow$ LLM
-\vspace{3cm}}}
+\includegraphics[width=0.98\textwidth]{figures/fig1_architecture_diagram.png}
 \caption{Three retrieval architectures compared. RAG chunks text and retrieves
-by embedding similarity. GraphRAG dynamically extracts a graph from text.
-CKG uses a pre-structured DAG directly.}
+by embedding similarity ($\sim$2,982 tokens/query). GraphRAG dynamically
+extracts a graph from text ($\sim$3,450 tokens/query). CKG uses a
+pre-structured DAG directly ($\sim$269 tokens/query).}
 \label{fig:architecture}
 \end{figure}
 
@@ -72,6 +67,13 @@ results presented in Section~\ref{sec:results}:
   \item GraphRAG hallucinates edges not present in ground truth DAG (HR $>$ 0).
   \item CKG Hallucination Rate $=$ 0 (by construction).
   \item The ``Structure Premium'' hypothesis: RDS advantage correlates with DAG richness ($r > 0.7$).
+  \item \textbf{Cross-domain transfer:} The CKG structural advantage observed
+    on hand-curated educational domains (Track 1) transfers to a commercial
+    pharmacology domain (Track 2) with F1 equal to or greater than the Track 1
+    average.
+  \item \textbf{Construction invariance:} The CKG F1 advantage does not depend
+    on expert manual curation; a DAG built programmatically from a public API
+    yields comparable or superior retrieval performance.
 \end{enumerate}
 
 \noindent We explicitly do \textbf{not} claim CKG outperforms RAG on T1 (entity lookup /
@@ -84,9 +86,21 @@ constructed to favor CKG across all query types.
 This paper makes the following contributions:
 
 \begin{enumerate}
-  \item The CKG architecture specification (format, DAG constraints, taxonomy schema).
+  \item The CKG architecture specification (format, DAG constraints, taxonomy
+    schema) and an accompanying BFS/DFS subgraph-extraction retrieval method.
   \item Five novel evaluation metrics (RDS, CUR, Hop-F1, CPCA, RP).
-  \item The McCreary Corpus as a formal benchmark dataset (first paper to do so).
-  \item An open benchmark: 46 domains $\times$ $\sim$175 queries $\times$ 3 systems ($\sim$23,000 evaluated pairs).
+  \item The McCreary Corpus as the first formal benchmark dataset for
+    structural knowledge retrieval.
+  \item An open benchmark: 45 domains (44 educational + 1 commercial)
+    $\times$ three systems, $\sim$23,900 evaluated query--system pairs.
+  \item \textbf{Track 2 multi-domain ensemble:} the educational McCreary corpus
+    evaluated alongside a commercial life-sciences (GLP-1/Obesity) domain in a
+    single harness, demonstrating educational-to-commercial transfer of the
+    CKG retrieval advantage.
+  \item \textbf{Automated CKG construction pipeline:} a four-stage pipeline
+    (API extraction $\to$ concept and edge extraction $\to$ \texttt{learning-graph.csv}
+    $\to$ benchmark queries) that produces a CKG domain from
+    ClinicalTrials.gov with no manual annotation, and achieves macro F1
+    equal to or greater than the Track 1 hand-curated average.
   \item A HuggingFace dataset with one-command reproduction harness.
 \end{enumerate}

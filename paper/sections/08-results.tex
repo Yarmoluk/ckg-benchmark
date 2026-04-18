@@ -1,14 +1,14 @@
 \section{Results}\label{sec:results}
 
-CKG results are final across all 44 domains (7,588 queries). RAG results
-are final across 40 of 44 domains (6,844 queries); the remaining 4 domains
-(\texttt{asl-book}, \texttt{infographics}, \texttt{machine-learning-textbook},
-\texttt{pre-calc}) have \texttt{learning-graph.csv} files enabling CKG
-evaluation but their source MkDocs repositories contained no
-\texttt{docs/chapters/} content and cannot produce a RAG corpus.
-GraphRAG indexing is in progress on the 40 corpus-complete domains.
-All numbers below reflect measured experimental data. The CKG vs.\ RAG
-comparison is valid over the 40 overlapping domains.
+All Track 1 results are final. CKG: 44 domains, 7,758 queries.
+RAG: 40 corpus-complete domains, 7,191 queries. GraphRAG: 15 domains,
+2,683 queries (the subset where indexing completed within the evaluation
+budget; see Section~\ref{sec:corpus} for domain coverage notes).
+The 4 domains (\texttt{asl-book}, \texttt{infographics},
+\texttt{machine-learning-textbook}, \texttt{pre-calc}) that lack MkDocs
+chapter content are excluded from RAG and GraphRAG evaluations but
+included in CKG-only aggregates. Track 2 (GLP-1/Obesity, pipeline-generated)
+results are reported in Section~\ref{sec:track2}.
 
 \subsection{Macro-Average Performance}\label{sec:macro}
 
@@ -18,26 +18,26 @@ and total API cost for the completed runs.
 
 \begin{table}[htbp]
 \centering
-\caption{Macro-average performance. CKG: 44 domains, 7,588 queries.
-RAG: 40 domains, 6,844 queries. GraphRAG: indexing in progress.}
+\caption{Macro-average performance. CKG: 44 domains, 7,758 queries.
+RAG: 40 domains, 7,191 queries. GraphRAG: 15 domains, 2,683 queries.}
 \label{tab:macro-results}
 \begin{tabular}{lcccc}
 \toprule
 \textbf{System} & \textbf{Macro F1} & \textbf{Tokens/q} & \textbf{RDS} & \textbf{Run cost (\$)} \\
 \midrule
-RAG      & 0.1225 & 2{,}983 & 0.0000411  & 72.58 \\
-GraphRAG & ---    & ---     & ---        & ---   \\
-CKG      & \textbf{0.4504} & \textbf{274} & \textbf{0.001887} & 13.53 \\
+RAG      & 0.1231 & 2{,}982 & 0.0000482  & 76.23 \\
+GraphRAG & 0.1200 & 3{,}450 & 0.0000452  & 44.43 \\
+CKG      & \textbf{0.4709} & \textbf{269} & \textbf{0.00201} & \textbf{7.81} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-CKG achieves 3.7$\times$ higher macro F1 than RAG while consuming
-10.9$\times$ fewer tokens per query. The compound RDS advantage is
-\textbf{45.9$\times$}: CKG delivers more than 45 times the correct
-information per token spent. CKG's run cost (\$13.53 across all 44 domains)
-is 81\% lower than RAG's cost (\$72.58 over 40 domains), despite covering
-more domains with greater result completeness.
+CKG achieves \textbf{3.8$\times$} higher macro F1 than RAG and
+\textbf{3.9$\times$} higher than GraphRAG while consuming \textbf{11$\times$}
+fewer tokens per query than RAG and \textbf{13$\times$} fewer than GraphRAG.
+The compound RDS advantage is \textbf{42$\times$} over RAG and \textbf{44$\times$}
+over GraphRAG. CKG's run cost (\$7.81) is 90\% lower than RAG (\$76.23) and
+82\% lower than GraphRAG (\$44.43), across a larger domain set in each case.
 
 Figure~\ref{fig:rds-comparison} illustrates both the RDS gap and the token
 consumption differential. Figure~\ref{fig:f1-by-type} breaks down F1 by
@@ -68,15 +68,15 @@ and T2/T3 dependency/path queries (0.60 vs.\ 0.08--0.20).}
 
 \begin{table}[htbp]
 \centering
-\caption{Token-level F1 by query type. GraphRAG indexing in progress.}
+\caption{Token-level F1 by query type (Track 1).}
 \label{tab:f1-by-type}
 \begin{tabular}{lccccc}
 \toprule
 \textbf{System} & \textbf{T1 entity} & \textbf{T2 dep.} & \textbf{T3 path} & \textbf{T4 aggr.} & \textbf{T5 cross} \\
 \midrule
-RAG      & 0.0924 & 0.0782 & 0.2009 & 0.2915 & 0.1124 \\
-GraphRAG & ---    & ---    & ---    & ---    & ---    \\
-CKG      & \textbf{0.189} & \textbf{0.603} & \textbf{0.614} & \textbf{0.951} & \textbf{0.326} \\
+RAG      & 0.094 & 0.078 & 0.201 & 0.286 & 0.115 \\
+GraphRAG & 0.108 & 0.073 & 0.208 & 0.054 & 0.183 \\
+CKG      & \textbf{0.207} & \textbf{0.634} & \textbf{0.660} & \textbf{0.964} & \textbf{0.323} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -112,22 +112,26 @@ endpoint concept labels. Further gains are expected as T5 traversal is refined.
 \toprule
 \textbf{System} & \textbf{Mean total tokens} & \textbf{Mean retrieved tokens} & \textbf{Macro F1} & \textbf{RDS} & \textbf{RDS ratio} \\
 \midrule
-RAG      & 2{,}983 & 2{,}500 & 0.1225 & 0.0000411  & 0.022$\times$ \\
-GraphRAG & ---     & ---     & ---    & ---        & ---           \\
-CKG      & \textbf{274} & \textbf{44} & \textbf{0.4504} & \textbf{0.001887} & 1.0$\times$ \\
+RAG      & 2{,}982 & 2{,}392 & 0.1231 & 0.0000482  & 0.024$\times$ \\
+GraphRAG & 3{,}450 & ---     & 0.1200 & 0.0000452  & 0.022$\times$ \\
+CKG      & \textbf{269} & \textbf{44} & \textbf{0.4709} & \textbf{0.00201} & 1.0$\times$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-RAG's retrieved context ($\sim$2,500 tokens mean) is more than 55$\times$ larger than CKG's
-retrieved subgraph (44 tokens mean). Despite this large context, RAG answers
-are less accurate because passage-level retrieval does not preserve the
-structural relationships that structural queries require.
+RAG's retrieved context (2,392 tokens mean) is 54$\times$ larger than CKG's
+retrieved subgraph (44 tokens mean). GraphRAG's community-report retrieval
+produces no recoverable retrieved-token count under the local-search
+configuration used here. Despite large contexts, both RAG and GraphRAG
+answers are less accurate because passage-level and community-report
+retrieval do not preserve the structural relationships that structural
+queries require.
 
-The 45.9$\times$ RDS advantage directly answers a cost question for
+The 42$\times$ RDS advantage directly answers a cost question for
 practitioners: deploying CKG for structural knowledge queries instead of RAG
-reduces intelligence delivery cost by approximately 97.8\% while improving
-answer quality by 3.7$\times$.
+reduces intelligence delivery cost by approximately 97.6\% while improving
+answer quality by 3.8$\times$. Against GraphRAG the cost reduction is
+82\% with a 3.9$\times$ accuracy improvement.
 
 \begin{figure}[htbp]
 \centering
@@ -163,9 +167,11 @@ falls. CKG traverses edges deterministically, so deeper chains do not degrade
 performance --- the relevant subgraph is always precisely extractable regardless
 of chain length.
 
-RAG also shows improvement at deeper hops (0.09 at hop=1 to 0.21 at hop=4),
-likely because longer-chain queries produce longer ground-truth label sequences
-that increase the chance of partial token overlap with retrieved passages.
+RAG also shows modest improvement at deeper hops (0.09 at hop=1 to 0.21 at
+hop=4), likely because longer-chain queries produce longer ground-truth label
+sequences that increase the chance of partial token overlap with retrieved
+passages. GraphRAG hop-depth data was not collected under the current harness
+configuration.
 
 \subsection{Hop-Depth Degradation}\label{sec:hop-depth-fig}
 
