@@ -101,6 +101,10 @@ GraphRAG dynamically extracts structure from text that was *originally generated
 
 ## Paper Versioning
 
+We follow [Semantic Versioning](https://semver.org/) (`MAJOR.MINOR.PATCH`)
+for the paper's version number. See semver.org for the full specification;
+the rules below are how we apply it in this repository.
+
 The paper version lives in exactly one place:
 
 ```latex
