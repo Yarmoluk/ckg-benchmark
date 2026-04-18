@@ -28,12 +28,12 @@ import anthropic
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-MODEL = "claude-sonnet-4-6"
+MODEL = "claude-haiku-4-5-20251001"
 DOMAINS_DIR = Path("benchmark/domains")
 QUERIES_DIR = Path("benchmark/queries")
 RESULTS_DIR = Path("results/ckg")
-PRICE_INPUT  = 3.0  / 1_000_000   # $3 per 1M input tokens
-PRICE_OUTPUT = 15.0 / 1_000_000   # $15 per 1M output tokens
+PRICE_INPUT  = 0.80 / 1_000_000   # $0.80 per 1M input tokens (Haiku)
+PRICE_OUTPUT = 4.0  / 1_000_000   # $4.00 per 1M output tokens (Haiku)
 
 SYSTEM_PROMPT = """You are a knowledge graph query engine. You will be given a structured
 knowledge graph subgraph and a question. Answer the question using ONLY the information

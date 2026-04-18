@@ -1,29 +1,32 @@
 \begin{abstract}
 Retrieval-augmented generation (RAG) and graph-based retrieval (GraphRAG)
-are the dominant paradigms for grounding LLM responses in structured knowledge.
-Both optimize for retrieval recall while treating token cost as a secondary
-concern. We introduce Compact Knowledge Graphs (CKG)---pre-structured DAG
-representations with explicit concept taxonomy and pipe-delimited dependency
-encoding---and present the first large-scale benchmark comparing CKG against
-RAG across 44 domains, with GraphRAG evaluation pending.
+are the dominant paradigms for grounding LLM responses in structured
+knowledge. Both optimize for recall while treating token cost as a
+secondary concern. We introduce Compact Knowledge Graphs (CKG)---pre-structured
+DAG representations with explicit concept taxonomy and pipe-delimited
+dependency encoding---and present a two-track benchmark comparing CKG,
+RAG, and GraphRAG across educational and commercial domains.
 
-We evaluate on the McCreary Intelligent Textbook Corpus: 44 open-source
-educational domains spanning STEM, professional, and foundational subjects,
-each with a standardized learning graph CSV totalling 12,260 concepts and
-19,405 dependency edges (7,588 benchmark queries for CKG; 3,499 for RAG).
-We introduce five novel metrics: Reasoning Density Score (RDS $=$ F1\,/\,tokens),
-Context Utilization Rate, Hop-Depth F1 Degradation, Cost Per Correct Answer,
-and Relationship Precision.
+Track 1 evaluates the McCreary Intelligent Textbook Corpus: 44
+hand-curated educational domains spanning STEM, professional, and
+foundational subjects (7,758 queries). CKG achieves macro-average
+F1 of \textbf{0.4709} versus \textbf{0.1231} for RAG and \textbf{0.1200}
+for GraphRAG, at \textbf{11$\times$ fewer tokens per query} (269 vs.\
+2,982 vs.\ 3,450). CKG F1 increases with hop depth (peaking at hop=3:
+0.64) while RAG degrades. The compound Reasoning Density Score (RDS)
+advantage is \textbf{42$\times$}. T1 entity lookup (CKG 0.207, RAG 0.094)
+serves as a designed negative control.
 
-CKG achieves macro-average F1 of \textbf{0.45} versus \textbf{0.11} for RAG
-on \emph{structural queries} (T2 prerequisites: 0.60 vs.\ 0.07; T3 multi-hop
-paths: 0.61 vs.\ 0.20; T4 category aggregates: 0.95 vs.\ 0.22), using
-\textbf{11$\times$ fewer tokens per query} (274 vs.\ 3,018 mean).
-The compound Reasoning Density Score advantage is \textbf{44.4$\times$}.
-CKG F1 increases with hop depth (peaking at hop=3: 0.64) while RAG
-degrades on multi-hop queries. T1 entity lookup (0.19 CKG, 0.09 RAG)
-is the designed negative control, confirming the benchmark is not
-constructed to favour CKG on explanatory queries.
+Track 2 tests whether the architecture generalizes beyond hand-curated
+educational data. We build a complete GLP-1/Obesity pharmacology CKG
+programmatically from the ClinicalTrials.gov API with no expert
+annotation (170 queries). The pipeline-generated CKG reaches macro F1
+\textbf{0.5298}---exceeding the Track 1 hand-curated average by 12.5\%
+and preserving a \textbf{28$\times$} RDS advantage over RAG. Automated
+construction does not degrade retrieval quality; it matches or improves
+it. Together the two tracks establish CKG as a distinct architecture
+whose structural advantage is domain-agnostic and does not depend on
+manual curation.
 
 Benchmark, dataset, and evaluation harness are released at
 \url{https://huggingface.co/datasets/graphify-md/ckg-benchmark}
