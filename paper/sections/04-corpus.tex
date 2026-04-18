@@ -68,6 +68,43 @@ Dependencies are pipe-delimited integer references to prerequisite
 domain-specific category (e.g., \texttt{FOUND} for foundational,
 \texttt{CORE} for core, \texttt{ADV} for advanced).
 
+\subsection{Corpus Provenance}\label{sec:corpus-provenance}
+
+The three retrieval architectures compared in this paper
+(Figure~\ref{fig:architecture}) do not start from independent source
+material. Figure~\ref{fig:corpus-provenance} shows the upstream
+production pipeline that generates the corpus used by each pipeline
+in the McCreary benchmark.
+
+The course author writes a single-page course description (target
+audience, prerequisites, learning objectives). The
+\texttt{/learning-graph-generator} Claude Code skill proposes a
+learning graph from that description, a subject-matter expert reviews
+and corrects the graph over two to four hours, and the result is
+committed as \texttt{learning-graph.csv}. A separate skill,
+\texttt{/chapter-content-generator}, then consumes that CSV to produce
+the MkDocs textbook chapter corpus. RAG and GraphRAG index the
+markdown corpus; CKG reads the \texttt{learning-graph.csv} directly.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/corpus-provenance.png}
+\caption{Provenance of the inputs consumed by the three retrieval
+pipelines (Figure~\ref{fig:architecture}) in the McCreary benchmark
+corpus. Cylinders (orange) mark persistent artifacts; rectangles with
+grey outlines are agent skills; orange rectangles and hexagons are
+human-authored or human-reviewed steps. CKG consumes
+\texttt{learning-graph.csv} directly; RAG and GraphRAG consume the
+markdown chapter corpus, which was itself generated from
+\texttt{learning-graph.csv} by the
+\texttt{/chapter-content-generator} skill. The benchmark therefore
+compares \emph{direct access to the authored structure} against
+\emph{retrieval from prose that was generated from that same
+structure}. We return to the interpretive consequences of this
+provenance chain in Section~\ref{sec:disc-limitations}.}
+\label{fig:corpus-provenance}
+\end{figure}
+
 \subsection{Quality Properties}\label{sec:corpus-quality}
 
 All 45 DAGs are validated for the following structural properties:

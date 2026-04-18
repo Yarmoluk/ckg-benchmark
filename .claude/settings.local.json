@@ -10,7 +10,19 @@
       "Bash(python3)",
       "Bash(python3 paper/figures/measure_lg_generation_cost.py)",
       "Bash(awk '{print $5, $9}')",
-      "Bash(python3 src/measure_lg_generation_cost.py)"
+      "Bash(python3 src/measure_lg_generation_cost.py)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(mmdc --version)",
+      "Bash(npx -y @mermaid-js/mermaid-cli@11 -i docs/sims/workflow-rag/diagram.mmd -o paper/figures/workflow-rag.png -b white -w 2200 -s 2 -p docs/sims/mermaid-puppeteer-config.json)",
+      "Bash(npx -y @mermaid-js/mermaid-cli@11 -i docs/sims/workflow-graphrag/diagram.mmd -o paper/figures/workflow-graphrag.png -b white -w 2200 -s 2 -p docs/sims/mermaid-puppeteer-config.json)",
+      "Bash(npx -y @mermaid-js/mermaid-cli@11 -i docs/sims/workflow-ckg/diagram.mmd -o paper/figures/workflow-ckg.png -b white -w 2200 -s 2 -p docs/sims/mermaid-puppeteer-config.json)",
+      "Bash(npx -y @mermaid-js/mermaid-cli@11 -i docs/sims/corpus-provenance/diagram.mmd -o paper/figures/corpus-provenance.png -b white -w 2400 -s 2 -p docs/sims/mermaid-puppeteer-config.json)",
+      "Bash(npx -y @mermaid-js/mermaid-cli@11 -i docs/sims/workflow-ckg/diagram.mmd -o paper/figures/workflow-ckg.png -b white -w 2400 -s 2 -p docs/sims/mermaid-puppeteer-config.json)",
+      "WebSearch",
+      "Bash(kill 1181)",
+      "Bash(mv \"/Applications/Usage for Claude.app\" ~/.Trash/)",
+      "Read(//Applications/**)"
     ]
   }
 }
