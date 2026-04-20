@@ -13,12 +13,12 @@
 
 | Format | Link |
 |--------|------|
-| **Read in browser (full paper)** | [draft-for-dan.html](paper/draft-for-dan.html) — open raw, then File → Save and open locally |
+| **Read in browser (full paper)** | [paper.html](paper/paper.html) — rendered pre-print |
 | **Mobile-optimized** | [read-on-phone.html](paper/read-on-phone.html) |
 | **LaTeX source** | [paper/main.tex](paper/main.tex) — v0.6.2 |
 | **ArXiv** | Pre-print in preparation |
 
-> **Quickest way to read:** Download `paper/draft-for-dan.html` and open in any browser.
+> **Quickest way to read:** [htmlpreview.github.io/?https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/paper.html](https://htmlpreview.github.io/?https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/paper.html)
 
 ---
 
