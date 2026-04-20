@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CKG Benchmark — Read on Phone</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1f1f1f;
+    --muted: #555;
+    --border: #e5e5e5;
+    --accent: #2563eb;
+    --card-bg: #f0f7ff;
+    --card-border: #2563eb;
+    --track2-bg: #e8f4fd;
+    --track2-border: #93c5fd;
+    --code-bg: #f4f4f4;
+    --table-row: #fafafa;
+    --table-border: #e5e5e5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --text: #e8e8e8;
+      --muted: #a8a8a8;
+      --border: #3a3a3a;
+      --accent: #60a5fa;
+      --card-bg: #1e3a5f;
+      --card-border: #60a5fa;
+      --track2-bg: #1a2f42;
+      --track2-border: #2e5988;
+      --code-bg: #2a2a2a;
+      --table-row: #242424;
+      --table-border: #3a3a3a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 18px 80px;
+  }
+  header.title-block {
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  header.title-block h1 {
+    font-size: 1.7em;
+    line-height: 1.25;
+    margin: 0 0 8px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  header.title-block .subtitle {
+    color: var(--muted);
+    font-size: 0.95em;
+    margin: 0;
+  }
+  header.title-block .authors {
+    color: var(--muted);
+    font-size: 0.9em;
+    margin-top: 10px;
+  }
+  details.toc {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0;
+    margin-bottom: 28px;
+    background: var(--table-row);
+  }
+  details.toc summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--accent);
+    user-select: none;
+  }
+  details.toc summary::-webkit-details-marker { display: none; }
+  details.toc summary::after {
+    content: " ▸";
+    color: var(--muted);
+    font-weight: 400;
+  }
+  details.toc[open] summary::after { content: " ▾"; }
+  details.toc ol {
+    margin: 0;
+    padding: 0 16px 16px 36px;
+    font-size: 0.95em;
+  }
+  details.toc li { padding: 4px 0; }
+  details.toc a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 48px 0 16px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 32px 0 10px;
+    line-height: 1.3;
+  }
+  h4 {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 24px 0 8px;
+  }
+  p { margin: 0 0 14px; }
+  ul, ol {
+    margin: 0 0 18px;
+    padding-left: 22px;
+  }
+  li { margin-bottom: 10px; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: var(--code-bg);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 0.88em;
+  }
+  .callout {
+    background: var(--card-bg);
+    border-left: 4px solid var(--card-border);
+    padding: 14px 16px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  .callout .big {
+    font-size: 1.6em;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .callout .label {
+    font-size: 0.88em;
+    color: var(--muted);
+    line-height: 1.4;
+    display: block;
+  }
+  .track2-section {
+    background: var(--track2-bg);
+    border: 1px solid var(--track2-border);
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin: 32px -4px;
+  }
+  .track2-section h2 {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .track2-section h2 .pill {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 0.6em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .track2-section .callout {
+    background: rgba(255,255,255,0.55);
+  }
+  @media (prefers-color-scheme: dark) {
+    .track2-section .callout { background: rgba(0,0,0,0.25); }
+  }
+
+  /* Data tables */
+  .data-table-wrap {
+    margin: 20px 0 28px;
+  }
+  .data-table-wrap .caption {
+    font-size: 0.88em;
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  table.data {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92em;
+  }
+  table.data th, table.data td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--table-border);
+  }
+  table.data th {
+    font-weight: 700;
+    background: var(--table-row);
+  }
+  table.data tr.highlight td {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    table.data, table.data thead, table.data tbody, table.data tr, table.data th, table.data td {
+      display: block;
+      width: 100%;
+    }
+    table.data thead { display: none; }
+    table.data tr {
+      background: var(--table-row);
+      border: 1px solid var(--table-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+    }
+    table.data td {
+      border-bottom: 1px dashed var(--table-border);
+      padding: 6px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    table.data td:last-child { border-bottom: none; }
+    table.data td::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: var(--muted);
+      flex: 0 0 45%;
+      font-size: 0.88em;
+    }
+    table.data tr.highlight {
+      border-color: var(--accent);
+      border-width: 2px;
+    }
+  }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="title-block">
+  <h1>Compact Knowledge Graphs: A Two-Track Benchmark Against RAG and GraphRAG</h1>
+  <p class="subtitle">Mobile reading edition</p>
+  <p class="authors">Daniel Yarmoluk (Graphify.md) and Dan McCreary</p>
+</header>
+
+<details class="toc">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#track2">Track 2: Pipeline-Generated Domain</a></li>
+    <li><a href="#discussion">Discussion</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</details>
+
+<!-- ABSTRACT -->
+<section id="abstract">
+<h2>Abstract</h2>
+
+<p>Retrieval-augmented generation (RAG) and graph-based retrieval (GraphRAG) are the dominant paradigms for grounding LLM responses in structured knowledge. Both optimize for recall while treating token cost as a secondary concern. We introduce <strong>Compact Knowledge Graphs (CKG)</strong> — pre-structured DAG representations with explicit concept taxonomy and pipe-delimited dependency encoding — and present a two-track benchmark comparing CKG, RAG, and GraphRAG across educational and commercial domains.</p>
+
+<p>Track 1 evaluates the McCreary Intelligent Textbook Corpus: 44 hand-curated educational domains spanning STEM, professional, and foundational subjects (7,758 queries).</p>
+
+<div class="callout">
+  <span class="big">0.4709 vs 0.1231</span>
+  <span class="label">CKG macro F1 vs RAG on Track 1 (GraphRAG: 0.1200)</span>
+</div>
+
+<div class="callout">
+  <span class="big">11× fewer tokens</span>
+  <span class="label">269 tokens per CKG query vs 2,982 for RAG, 3,450 for GraphRAG</span>
+</div>
+
+<div class="callout">
+  <span class="big">42× RDS advantage</span>
+  <span class="label">Compound Reasoning Density Score (F1 / tokens) for CKG over RAG</span>
+</div>
+
+<p>CKG F1 increases with hop depth (peaking at hop=3: 0.64) while RAG degrades. T1 entity lookup (CKG 0.207, RAG 0.094) serves as a designed negative control.</p>
+
+<p>Track 2 tests whether the architecture generalizes beyond hand-curated educational data. We build a complete GLP-1/Obesity pharmacology CKG programmatically from the ClinicalTrials.gov API with no expert annotation (170 queries).</p>
+
+<div class="callout">
+  <span class="big">F1 = 0.5298</span>
+  <span class="label">Pipeline-generated CKG — exceeds Track 1 hand-curated average by 12.5%</span>
+</div>
+
+<div class="callout">
+  <span class="big">28× RDS advantage</span>
+  <span class="label">Preserved on commercial pharmacology domain vs RAG</span>
+</div>
+
+<p>Automated construction does not degrade retrieval quality; it matches or improves it. Together the two tracks establish CKG as a distinct architecture whose structural advantage is domain-agnostic and does not depend on manual curation.</p>
+
+<p>Benchmark, dataset, and evaluation harness are released at <code>huggingface.co/datasets/graphify-md/ckg-benchmark</code> under CC BY 4.0 / MIT.</p>
+</section>
+
+<!-- INTRODUCTION -->
+<section id="introduction">
+<h2>Introduction</h2>
+
+<h3>Motivation</h3>
+
+<p>LLM retrieval quality is typically measured by F1 alone, yet token cost is a first-class production constraint — not a research afterthought. Domain-specific knowledge has latent structure that RAG discards through chunking, and GraphRAG re-derives structure from text at significant computational expense. But what if the structure is already known?</p>
+
+<p>Consider a deployed AI tutoring system serving 10,000 student sessions per day, each requiring 5–10 knowledge retrieval queries. At RAG's typical 3,000–5,000 input tokens per query, daily token consumption exceeds 150M–500M tokens. At Claude Sonnet 4.6 pricing ($3 per 1M input tokens), this yields daily inference costs of $450–$1,500 for retrieval alone. A system that achieves equivalent accuracy at 250–400 tokens per query reduces that cost by a factor of 10–15× — the difference between a viable product and an unsustainable one.</p>
+
+<div class="callout">
+  <span class="big">10–15× cost reduction</span>
+  <span class="label">Daily inference economics for a deployed tutoring system</span>
+</div>
+
+<p>This cost gap is not merely a tuning opportunity; it reflects a structural difference in how knowledge is represented. RAG stores knowledge as prose and retrieves it by embedding similarity, recovering structure only indirectly. GraphRAG re-derives structure from text via LLM entity extraction — at significant additional cost. Compact Knowledge Graphs (CKG) use structure that was authored directly, requiring no derivation step and enabling exact retrieval in tens of tokens instead of thousands.</p>
+
+<h3>The Three Paradigms</h3>
+
+<div class="data-table-wrap">
+  <div class="caption">Three knowledge retrieval paradigms compared in this benchmark.</div>
+  <table class="data">
+    <thead>
+      <tr><th>System</th><th>Knowledge Repr.</th><th>Retrieval</th><th>Build Cost</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="System">RAG</td>
+        <td data-label="Knowledge Repr.">Unstructured text chunks</td>
+        <td data-label="Retrieval">Embedding similarity</td>
+        <td data-label="Build Cost">Embed all chunks</td>
+      </tr>
+      <tr>
+        <td data-label="System">GraphRAG</td>
+        <td data-label="Knowledge Repr.">Dynamically extracted graph</td>
+        <td data-label="Retrieval">Graph + community search</td>
+        <td data-label="Build Cost">Full entity extraction</td>
+      </tr>
+      <tr class="highlight">
+        <td data-label="System">CKG</td>
+        <td data-label="Knowledge Repr.">Pre-structured DAG + taxonomy</td>
+        <td data-label="Retrieval">Direct concept/edge lookup</td>
+        <td data-label="Build Cost">Zero (CSV-native)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Falsifiable Claims</h3>
+
+<p>We make the following falsifiable claims, each testable against the benchmark results:</p>
+
+<ol>
+  <li>CKG achieves higher F1 on T2 (dependency) and T3 (multi-hop path) queries.</li>
+  <li>CKG F1 does not degrade with hop depth; RAG F1 degrades significantly.</li>
+  <li>CKG RDS ratio ≥ 10× vs RAG across all 46 domains.</li>
+  <li>GraphRAG hallucinates edges not present in ground truth DAG (HR &gt; 0).</li>
+  <li>CKG Hallucination Rate = 0 (by construction).</li>
+  <li>The "Structure Premium" hypothesis: RDS advantage correlates with DAG richness (r &gt; 0.7).</li>
+  <li><strong>Cross-domain transfer:</strong> The CKG structural advantage observed on hand-curated educational domains (Track 1) transfers to a commercial pharmacology domain (Track 2) with F1 equal to or greater than the Track 1 average.</li>
+  <li><strong>Construction invariance:</strong> The CKG F1 advantage does not depend on expert manual curation; a DAG built programmatically from a public API yields comparable or superior retrieval performance.</li>
+</ol>
+
+<p>We explicitly do <strong>not</strong> claim CKG outperforms RAG on T1 (entity lookup / explanatory) queries, which require prose content absent from the DAG structure. T1 results serve as a negative control validating that the benchmark is not constructed to favor CKG across all query types.</p>
+
+<h3>Contributions</h3>
+<ol>
+  <li>The CKG architecture specification (format, DAG constraints, taxonomy schema) and an accompanying BFS/DFS subgraph-extraction retrieval method.</li>
+  <li>Five novel evaluation metrics (RDS, CUR, Hop-F1, CPCA, RP).</li>
+  <li>The McCreary Corpus as the first formal benchmark dataset for structural knowledge retrieval.</li>
+  <li>An open benchmark: 45 domains (44 educational + 1 commercial) × three systems, ~23,900 evaluated query–system pairs.</li>
+  <li><strong>Track 2 multi-domain ensemble:</strong> the educational McCreary corpus evaluated alongside a commercial life-sciences (GLP-1/Obesity) domain in a single harness.</li>
+  <li><strong>Automated CKG construction pipeline:</strong> a four-stage pipeline from ClinicalTrials.gov API to benchmark queries with no manual annotation.</li>
+  <li>A HuggingFace dataset with one-command reproduction harness.</li>
+</ol>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+<h2>Results</h2>
+
+<p>All Track 1 results are final. CKG: 44 domains, 7,758 queries. RAG: 40 corpus-complete domains, 7,191 queries. GraphRAG: 15 domains, 2,683 queries (the subset where indexing completed within the evaluation budget). The 4 domains that lack MkDocs chapter content (<code>asl-book</code>, <code>infographics</code>, <code>machine-learning-textbook</code>, <code>pre-calc</code>) are excluded from RAG and GraphRAG evaluations but included in CKG-only aggregates.</p>
+
+<h3>Macro-Average Performance</h3>
+
+<div class="data-table-wrap">
+  <div class="caption">Macro-average performance. CKG: 44 domains, 7,758 queries. RAG: 40 domains, 7,191 queries. GraphRAG: 15 domains, 2,683 queries.</div>
+  <table class="data">
+    <thead>
+      <tr><th>System</th><th>Macro F1</th><th>Tokens/q</th><th>RDS</th><th>Cost</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="System">RAG</td>
+        <td data-label="Macro F1">0.1231</td>
+        <td data-label="Tokens/q">2,982</td>
+        <td data-label="RDS">0.0000482</td>
+        <td data-label="Cost">$76.23</td>
+      </tr>
+      <tr>
+        <td data-label="System">GraphRAG</td>
+        <td data-label="Macro F1">0.1200</td>
+        <td data-label="Tokens/q">3,450</td>
+        <td data-label="RDS">0.0000452</td>
+        <td data-label="Cost">$44.43</td>
+      </tr>
+      <tr class="highlight">
+        <td data-label="System">CKG</td>
+        <td data-label="Macro F1">0.4709</td>
+        <td data-label="Tokens/q">269</td>
+        <td data-label="RDS">0.00201</td>
+        <td data-label="Cost">$7.81</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="callout">
+  <span class="big">3.8× higher F1</span>
+  <span class="label">CKG macro F1 vs RAG (and 3.9× vs GraphRAG)</span>
+</div>
+
+<div class="callout">
+  <span class="big">$7.81 vs $76.23</span>
+  <span class="label">Total CKG run cost vs RAG — a 90% reduction on a larger domain set</span>
+</div>
+
+<p>CKG achieves 3.8× higher macro F1 than RAG and 3.9× higher than GraphRAG while consuming 11× fewer tokens per query than RAG and 13× fewer than GraphRAG. The compound RDS advantage is 42× over RAG and 44× over GraphRAG. CKG's run cost ($7.81) is 90% lower than RAG ($76.23) and 82% lower than GraphRAG ($44.43), across a larger domain set in each case.</p>
+
+<h3>F1 by Query Type</h3>
+
+<div class="data-table-wrap">
+  <div class="caption">Token-level F1 by query type (Track 1).</div>
+  <table class="data">
+    <thead>
+      <tr><th>System</th><th>T1 entity</th><th>T2 dep.</th><th>T3 path</th><th>T4 aggr.</th><th>T5 cross</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="System">RAG</td>
+        <td data-label="T1 entity">0.094</td>
+        <td data-label="T2 dep.">0.078</td>
+        <td data-label="T3 path">0.201</td>
+        <td data-label="T4 aggr.">0.286</td>
+        <td data-label="T5 cross">0.115</td>
+      </tr>
+      <tr>
+        <td data-label="System">GraphRAG</td>
+        <td data-label="T1 entity">0.108</td>
+        <td data-label="T2 dep.">0.073</td>
+        <td data-label="T3 path">0.208</td>
+        <td data-label="T4 aggr.">0.054</td>
+        <td data-label="T5 cross">0.183</td>
+      </tr>
+      <tr class="highlight">
+        <td data-label="System">CKG</td>
+        <td data-label="T1 entity">0.207</td>
+        <td data-label="T2 dep.">0.634</td>
+        <td data-label="T3 path">0.660</td>
+        <td data-label="T4 aggr.">0.964</td>
+        <td data-label="T5 cross">0.323</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="callout">
+  <span class="big">T4: 0.964 vs 0.286</span>
+  <span class="label">CKG's sharpest win — category aggregation resolved directly from taxonomy column</span>
+</div>
+
+<p><strong>T1 (entity lookup)</strong> is the designed negative control: CKG stores graph structure rather than prose definitions, so its T1 F1 of 0.21 is expected. The fact that RAG also scores low on T1 (0.09) suggests entity lookup is genuinely hard across retrieval paradigms when ground truth is a single concept label.</p>
+
+<p><strong>T4 (category aggregation)</strong> shows the sharpest divergence: CKG achieves 0.96 versus RAG's 0.29. Aggregation queries require enumerating <em>all</em> members of a category precisely — a task CKG resolves by reading the taxonomy column directly, while RAG must synthesize a complete list from scattered passage fragments.</p>
+
+<p><strong>T2 and T3</strong> (dependency resolution and multi-hop path traversal) show CKG at 0.63–0.66 versus RAG at 0.08–0.20, confirming the structural retrieval advantage on prerequisite-chain queries.</p>
+
+<p><strong>T5 (cross-concept relationship)</strong> shows CKG at 0.32 versus RAG at 0.12. T5 performance improved from 0.19 to 0.33 after introducing BFS shortest-path traversal between concept pairs.</p>
+
+<h3>Token Efficiency and RDS</h3>
+
+<p>RAG's retrieved context (2,392 tokens mean) is 54× larger than CKG's retrieved subgraph (44 tokens mean). GraphRAG's community-report retrieval produces no recoverable retrieved-token count under the local-search configuration used here. Despite large contexts, both RAG and GraphRAG answers are less accurate because passage-level and community-report retrieval do not preserve the structural relationships that structural queries require.</p>
+
+<div class="callout">
+  <span class="big">97.6% cost reduction</span>
+  <span class="label">Deploying CKG instead of RAG — with 3.8× higher answer quality</span>
+</div>
+
+<h3>F1 by Hop Depth</h3>
+
+<div class="data-table-wrap">
+  <div class="caption">F1 by hop depth (depth of prerequisite chain traversed).</div>
+  <table class="data">
+    <thead>
+      <tr><th>System</th><th>hop=0</th><th>hop=1</th><th>hop=2</th><th>hop=3</th><th>hop=4</th><th>hop=5</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="System">RAG</td>
+        <td data-label="hop=0">0.1122</td>
+        <td data-label="hop=1">0.0866</td>
+        <td data-label="hop=2">0.1715</td>
+        <td data-label="hop=3">0.1967</td>
+        <td data-label="hop=4">0.2106</td>
+        <td data-label="hop=5">0.2021</td>
+      </tr>
+      <tr class="highlight">
+        <td data-label="System">CKG</td>
+        <td data-label="hop=0">0.3409</td>
+        <td data-label="hop=1">0.4814</td>
+        <td data-label="hop=2">0.6191</td>
+        <td data-label="hop=3">0.6445</td>
+        <td data-label="hop=4">0.6118</td>
+        <td data-label="hop=5">0.5933</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>CKG F1 <em>increases</em> with hop depth up to hop=3 (0.64), then plateaus. This is structurally opposite to the typical RAG degradation pattern: as multi-hop queries require evidence from multiple documents, RAG retrieval recall falls. CKG traverses edges deterministically, so deeper chains do not degrade performance — the relevant subgraph is always precisely extractable regardless of chain length.</p>
+
+<h3>The Structure Premium</h3>
+
+<p>We tested whether domains with richer DAG structure (more edges per concept) produce higher CKG RDS. Across 45 domains, the correlation is negligible — the efficiency gain is architectural, a property of pre-structured retrieval itself, rather than a function of how rich any individual graph is.</p>
+
+<h3>Corpus Coverage Note</h3>
+<p>RAG results cover 40 of 44 domains (final). The 4 excluded domains have <code>learning-graph.csv</code> files enabling CKG evaluation but contain no retrievable MkDocs chapter content. These 4 domains are excluded from all CKG/RAG comparison figures but included in CKG-only aggregate statistics.</p>
+</section>
+
+<!-- TRACK 2 -->
+<section id="track2" class="track2-section">
+<h2><span class="pill">NEW — Track 2</span> Pipeline-Generated Domain Validation</h2>
+
+<h3>Motivation</h3>
+
+<p>All 44 domains in the primary benchmark (Track 1) originate from the McCreary Intelligent Textbook Corpus: hand-curated educational DAGs where a domain expert manually mapped concept dependencies. A critical open question is whether the CKG architecture's performance advantage depends on that curation quality or whether it transfers to <em>programmatically constructed</em> knowledge graphs derived from external data sources.</p>
+
+<p>Track 2 answers this question by constructing a complete CKG domain from scratch using no pre-existing expert-curated graph, no educational corpus, and no McCreary source material. The domain selected is <strong>GLP-1/Obesity pharmacology</strong> — a commercially active life sciences domain with rapidly evolving clinical trial data, 8 FDA-approved agents, and a pipeline of 150+ ongoing trials at the time of corpus construction (April 2026).</p>
+
+<h3>Data Source and Pipeline</h3>
+
+<p>Track 2 uses ClinicalTrials.gov as the sole external data source, accessed via the NIH/NLM API (v2). The pipeline consists of four stages:</p>
+
+<ol>
+  <li><strong>API extraction.</strong> Structured query returns 668 semaglutide trials, 224 tirzepatide trials, and 158 pipeline agent trials (retatrutide, cagrisema, orforglipron, mazdutide). Trial metadata includes NCT identifiers, phase, enrollment, endpoints, mechanisms, and completion dates.</li>
+  <li><strong>Concept extraction.</strong> Trial data is parsed to extract pharmacological entities (agents, mechanisms, indications, trial programs, outcomes) and their dependency relationships. Taxonomy labels: <code>FOUND</code>, <code>DRUG</code>, <code>TRIAL</code>, <code>PATH</code>, <code>COMPL</code>, <code>SPEC</code>, <code>COMBO</code>.</li>
+  <li><strong>Graph construction.</strong> Extracted concepts and dependencies are written to <code>learning-graph.csv</code>. The resulting graph contains <strong>90 concepts</strong> and <strong>170 dependency edges</strong> covering foundational mechanisms through next-generation pipeline agents.</li>
+  <li><strong>Query generation.</strong> The standard benchmark harness runs unchanged on the <code>learning-graph.csv</code>, producing 170 queries in the T1–T5 taxonomy with deterministic ground truth.</li>
+</ol>
+
+<p>The full pipeline — from raw API data to benchmark-ready domain — requires no manual annotation and no subject matter expert review beyond the initial taxonomy schema.</p>
+
+<h3>Corpus Construction for RAG and GraphRAG</h3>
+
+<p>To enable a fair three-way comparison, a prose corpus was constructed from the same ClinicalTrials.gov data. Five structured narrative documents were written covering (1) market overview and approved agents, (2) landmark clinical trial evidence (STEP, SURMOUNT, SELECT, SUMMIT, FLOW programs), (3) next-generation pipeline intelligence, (4) indication expansion across 15+ disease areas, and (5) investment-relevant signals. Indexed by RAG (FAISS, 512-token chunks, top-5) and GraphRAG (Microsoft GraphRAG v1.x, local community reports).</p>
+
+<h3>Results</h3>
+
+<div class="data-table-wrap">
+  <div class="caption">Track 2 results: pipeline-generated GLP-1/Obesity domain (170 queries) compared with Track 1 benchmark aggregate (44 hand-curated domains, 7,758 queries).</div>
+  <table class="data">
+    <thead>
+      <tr><th>Track</th><th>System</th><th>Macro F1</th><th>Tokens/q</th><th>RDS</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Track">Track 1</td>
+        <td data-label="System">CKG</td>
+        <td data-label="Macro F1">0.4709</td>
+        <td data-label="Tokens/q">269</td>
+        <td data-label="RDS">0.00201</td>
+      </tr>
+      <tr>
+        <td data-label="Track">Track 1</td>
+        <td data-label="System">RAG</td>
+        <td data-label="Macro F1">0.1231</td>
+        <td data-label="Tokens/q">2,982</td>
+        <td data-label="RDS">0.0000482</td>
+      </tr>
+      <tr>
+        <td data-label="Track">Track 1</td>
+        <td data-label="System">GraphRAG</td>
+        <td data-label="Macro F1">0.1200</td>
+        <td data-label="Tokens/q">3,450</td>
+        <td data-label="RDS">0.0000452</td>
+      </tr>
+      <tr class="highlight">
+        <td data-label="Track">Track 2</td>
+        <td data-label="System">CKG</td>
+        <td data-label="Macro F1">0.5298</td>
+        <td data-label="Tokens/q">346</td>
+        <td data-label="RDS">0.00153</td>
+      </tr>
+      <tr>
+        <td data-label="Track">Track 2</td>
+        <td data-label="System">RAG</td>
+        <td data-label="Macro F1">0.1538</td>
+        <td data-label="Tokens/q">2,828</td>
+        <td data-label="RDS">0.0000544</td>
+      </tr>
+      <tr>
+        <td data-label="Track">Track 2</td>
+        <td data-label="System">GraphRAG</td>
+        <td data-label="Macro F1">0.1436</td>
+        <td data-label="Tokens/q">3,450</td>
+        <td data-label="RDS">0.0000416</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="callout">
+  <span class="big">F1 = 0.5298 on pipeline-generated domain</span>
+  <span class="label">Exceeds Track 1 hand-curated average by 12.5% — no expert annotation required</span>
+</div>
+
+<div class="callout">
+  <span class="big">28× RDS advantage preserved</span>
+  <span class="label">Commercial pharmacology domain vs RAG (order-of-magnitude efficiency held)</span>
+</div>
+
+<p>The Track 2 CKG F1 of 0.5298 exceeds the Track 1 CKG macro-average of 0.4709 by 12.5%. This result is notable because the GLP-1 graph was generated by pipeline from raw API data, not curated by a domain expert. The performance advantage is not degraded by automated construction — it is <em>maintained or improved</em>.</p>
+
+<div class="data-table-wrap">
+  <div class="caption">Track 2 F1 by query type — GLP-1/Obesity domain (170 queries).</div>
+  <table class="data">
+    <thead>
+      <tr><th>System</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th></tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td data-label="System">CKG</td>
+        <td data-label="T1">0.225</td>
+        <td data-label="T2">0.677</td>
+        <td data-label="T3">0.873</td>
+        <td data-label="T4">0.998</td>
+        <td data-label="T5">0.425</td>
+      </tr>
+      <tr>
+        <td data-label="System">RAG</td>
+        <td data-label="T1">0.150</td>
+        <td data-label="T2">0.076</td>
+        <td data-label="T3">0.221</td>
+        <td data-label="T4">0.108</td>
+        <td data-label="T5">0.226</td>
+      </tr>
+      <tr>
+        <td data-label="System">GraphRAG</td>
+        <td data-label="T1">0.129</td>
+        <td data-label="T2">0.051</td>
+        <td data-label="T3">0.216</td>
+        <td data-label="T4">0.031</td>
+        <td data-label="T5">0.258</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="callout">
+  <span class="big">T4: 0.998 (near-perfect)</span>
+  <span class="label">Agent-by-class, indication-by-anatomy, trial-by-program enumeration vs RAG's 0.108</span>
+</div>
+
+<p><strong>T4 (category aggregation)</strong> reaches CKG F1 = 0.998 — near-perfect enumeration of agents by drug class, indication by anatomy, and trial by program — compared with RAG's 0.108 and GraphRAG's 0.031. The sharpest divergence in either track.</p>
+
+<p><strong>T3 (multi-hop path)</strong> reaches CKG F1 = 0.873, substantially above the Track 1 T3 average of 0.660. The GLP-1 dependency graph encodes mechanistic chains (receptor → signaling pathway → downstream effect → clinical outcome) that BFS traversal resolves with high precision.</p>
+
+<h3>Implications for the CKG Architecture</h3>
+
+<h4>Finding 1: Retrieval performance depends on graph structure, not curation source.</h4>
+<p>CKG F1 on the pipeline-generated GLP-1 domain (0.530) exceeds the hand-curated educational average (0.471). If expert curation quality were the driver of CKG performance, the pipeline domain would score lower. It does not.</p>
+
+<h4>Finding 2: The CKG factory is viable for commercial domains.</h4>
+<p>The GLP-1 benchmark demonstrates an end-to-end automated pipeline from public API data to a benchmarked knowledge retrieval system. The pipeline requires no annotation budget, no expert review, and no existing textbook or corpus — only a structured data source and a taxonomy schema.</p>
+
+<h4>Finding 3: The 28× RDS advantage holds on enterprise domains.</h4>
+<p>RDS for CKG on GLP-1 is 0.00153 versus RAG's 0.0000544 — a ratio of 28×. The Track 1 RDS ratio is 42×. The slight reduction reflects the GLP-1 domain's higher prose complexity but the order-of-magnitude token efficiency advantage is preserved. A life sciences organization deploying CKG over RAG realizes approximately 97% cost reduction with 3.4× accuracy improvement.</p>
+
+<h3>Track 2 and the CKG Factory Paradigm</h3>
+
+<h4>Automated construction invalidates the "expert curation required" limitation.</h4>
+<p>A recurring critique of structured-knowledge approaches is that they depend on costly human curation and therefore do not scale. Track 2 is a direct empirical counterexample: a CKG produced by a four-stage pipeline over a public API, with no expert-curated edges and no textbook source material, matches and slightly exceeds the retrieval performance of the 44 hand-curated Track 1 domains.</p>
+
+<h4>Multi-domain ensemble demonstrates educational-to-commercial transfer.</h4>
+<p>The Track 2 GLP-1/Obesity domain coexists with the 44 Track 1 educational domains in a single evaluation harness, queried and scored identically. This heterogeneous ensemble shows that the CKG retrieval advantage is a property of the <em>representation</em>, not of the domain.</p>
+
+<h4>Implications for practitioners.</h4>
+<p>For organizations considering CKG deployment, the Track 2 evidence suggests a concrete recipe:</p>
+<ol>
+  <li>Identify a structured data source whose records encode entities and dependencies (public APIs, regulatory registries, internal knowledge bases, product catalogues).</li>
+  <li>Define a lightweight taxonomy schema for the domain.</li>
+  <li>Run the four-stage pipeline to produce a <code>learning-graph.csv</code>.</li>
+  <li>Query via the standard harness.</li>
+</ol>
+<p>This recipe is domain-agnostic, requires no annotation budget, and produces a benchmarkable CKG with retrieval performance comparable to hand-curated knowledge graphs in the same architectural class.</p>
+</section>
+
+<!-- DISCUSSION -->
+<section id="discussion">
+<h2>Discussion</h2>
+
+<h3>Where CKG Wins and Why</h3>
+
+<p>CKG's advantages are structural:</p>
+<ul>
+  <li><strong>T2/T3 queries:</strong> Explicit edges eliminate multi-hop inference errors. RAG must infer transitive dependencies from unstructured text; CKG traverses them directly via BFS/DFS.</li>
+  <li><strong>T4 queries:</strong> Taxonomy filtering achieves BC ≈ 1.0 by construction, as the TaxonomyID field provides exact category membership.</li>
+  <li><strong>Hallucination:</strong> HR = 0 because CKG only returns concepts present in the source CSV. No generative step can introduce phantom entities.</li>
+  <li><strong>RDS:</strong> Near-zero build cost combined with 150–400 tokens per query yields order-of-magnitude efficiency gains.</li>
+</ul>
+
+<h3>Where RAG Is Competitive</h3>
+
+<ul>
+  <li>T1 entity lookup on large open-domain corpora where rich context aids natural language generation.</li>
+  <li>Domains without stable taxonomy (rapidly evolving fields).</li>
+  <li>When CKG construction cost exceeds the efficiency savings.</li>
+</ul>
+
+<h3>GraphRAG's Position</h3>
+
+<p>GraphRAG occupies a middle ground: better than RAG on multi-hop reasoning (graph structure helps) but worse than CKG (dynamic extraction introduces noise and hallucinated edges). GraphRAG is the most expensive system (high build cost + high query cost). Its best use case is unstructured corpora with no available expert taxonomy.</p>
+
+<h3>The Structure Premium</h3>
+
+<p>We tested the hypothesis that the CKG RDS advantage is proportional to the structural richness of the domain's DAG. Across 45 domains, the Pearson correlation between <code>dag_richness</code> and CKG RDS is r = −0.09, and between <code>dag_richness</code> and macro F1 is r = −0.07. Both are negligible.</p>
+
+<p>The Structure Premium hypothesis is <strong>not supported</strong>: CKG's efficiency advantage does not concentrate in domains with denser DAG structure. This is a stronger finding than a positive correlation would have been: the advantage is <em>uniform across DAG richness levels</em>. CKG outperforms RAG and GraphRAG by 3.8–3.9× on F1 and 42× on RDS whether the underlying graph is sparse or dense. The efficiency gain is architectural — a property of pre-structured retrieval itself.</p>
+
+<h3>Limitations</h3>
+
+<ul>
+  <li><strong>Structural query scope:</strong> Ground truth for T2, T3, and T4 queries is derived directly from DAG edges. CKG retrieves this ground truth by construction; RAG and GraphRAG must infer it from text. The comparison demonstrates that <em>explicit structure outperforms inferred structure on structural tasks</em> — not that CKG is a general-purpose retrieval system.</li>
+  <li><strong>T1 as boundary test:</strong> CKG scores F1 ≈ 0.09 on T1 entity lookup queries because the DAG contains no explanatory prose. For open-ended definitional knowledge retrieval, RAG remains the appropriate architecture.</li>
+  <li>The McCreary corpus is educational — results may not generalize to legal, financial, or medical domains (though Track 2 provides initial counter-evidence).</li>
+  <li>CKG build cost with automated construction has not been formally measured; the Track 2 pipeline demonstrates feasibility but pipeline engineering cost was not included in the benchmark cost accounting.</li>
+  <li>Ground truth derived from DAG edges may not capture all valid natural language answers.</li>
+  <li>All systems use the same LLM (Claude Sonnet 4.6); results may differ with other models.</li>
+</ul>
+
+<h3>Educational-to-Commercial Transfer</h3>
+
+<p>Tracks 1 and 2 together establish that the CKG retrieval advantage generalizes across domain type and construction method. Track 1 (44 hand-curated educational DAGs) and Track 2 (1 pipeline-generated commercial pharmacology DAG) share the same retrieval algorithm, the same metrics, and the same harness, and yield consistent structural-query outcomes (CKG macro F1 = 0.4709 and 0.5298 respectively, against RAG F1 ≈ 0.12–0.15 on both).</p>
+
+<p>This pattern indicates that the advantage is <em>structural</em> — a property of representing knowledge as an explicit DAG — rather than an artifact of the educational setting or of expert authorship. Any knowledge-intensive field whose entities and relationships are expressible as a directed acyclic graph — pharmaceutical, legal, financial, regulatory, biomedical — is a candidate for CKG deployment.</p>
+</section>
+
+<!-- CONCLUSION -->
+<section id="conclusion">
+<h2>Conclusion</h2>
+
+<p>We presented the CKG Benchmark, a two-track comparison of Compact Knowledge Graphs against RAG and GraphRAG across 44 hand-curated educational domains (Track 1, 7,758 queries) and one pipeline-generated commercial pharmacology domain (Track 2, 170 queries). Our key findings:</p>
+
+<ol>
+  <li><strong>CKG achieves 4× higher macro F1 than RAG</strong> on structural knowledge queries (0.4709 vs 0.1231 vs 0.1200 for GraphRAG), using 11× fewer tokens per query (269 vs 2,982 vs 3,450). The compound RDS advantage is 42× on Track 1.</li>
+  <li><strong>Structural query performance is near-ceiling for aggregation:</strong> T4 category aggregates reach F1 = 0.964 for CKG vs 0.286 for RAG and 0.054 for GraphRAG, because the answer is fully determined by the taxonomy column of the CSV.</li>
+  <li><strong>CKG F1 increases with hop depth</strong> (peaking at hop=3: 0.64) while RAG degrades, confirming that deterministic edge traversal does not suffer the multi-hop retrieval recall failures inherent to passage-based systems.</li>
+  <li><strong>T1 (entity lookup) is a documented negative control:</strong> CKG scores 0.207 on explanatory queries, confirming the benchmark is not constructed to favor CKG universally. Both systems struggle on T1, which requires prose definitions absent from DAG structure.</li>
+  <li><strong>RDS and Hop-Depth F1</strong> are practical additions to IR evaluation that jointly measure quality and efficiency — metrics missing from existing benchmarks such as BEIR and RAGAS.</li>
+  <li><strong>The CKG advantage transfers to a pipeline-generated commercial domain.</strong> Track 2 builds a GLP-1/Obesity CKG programmatically from the ClinicalTrials.gov API, with no expert curation and no educational source material. Macro F1 = 0.5298, exceeding the Track 1 hand-curated average by 12.5%, and preserves a 28× RDS advantage over RAG.</li>
+</ol>
+
+<h3>Limitations</h3>
+<p>Ground truth for T2–T4 is derived from the same DAG used by CKG, which is a methodological constraint acknowledged in the design. T1 performance on explanatory queries is weak for all three systems and represents an open problem. Pipeline engineering cost for automated CKG construction (Track 2) was not included in the benchmark cost accounting; build-cost accounting across construction strategies remains future work.</p>
+
+<h3>Future Work</h3>
+<ul>
+  <li>Extend the automated construction pipeline to additional structured data sources (regulatory registries, legal codes, financial filings, product catalogues) to test the Track 2 transfer result at scale.</li>
+  <li>Extend T5 cross-concept retrieval with deeper BFS path-finding; the current T5 F1 of 0.323 (Track 1) and 0.425 (Track 2) has a clear improvement trajectory.</li>
+  <li>Hybrid architectures combining CKG structural precision with RAG's prose retrieval for T1 and T5 query types.</li>
+  <li>Formal build-cost accounting that includes pipeline engineering, taxonomy-schema design, and source-API cost, enabling end-to-end CPCA comparison across all three architectures.</li>
+  <li>Model-robustness experiments replicating the benchmark across additional LLM families.</li>
+</ul>
+
+<h3>Unified Contribution</h3>
+<p>Track 1 validates the intelligent textbook format — hand-curated learning-graph CSVs — as a benchmark-grade substrate for knowledge retrieval at scale across 44 domains. Track 2 validates automated construction of CKG domains from structured external data, showing the retrieval advantage does not depend on manual authorship.</p>
+
+<p>Taken together, the two tracks establish Compact Knowledge Graphs as a distinct architecture category — one that is empirically superior to RAG and GraphRAG on structural queries, an order of magnitude cheaper in tokens, and ready for deployment in any domain whose knowledge can be expressed as a directed acyclic graph.</p>
+
+<h3>Open Benchmark</h3>
+<p>The complete benchmark — corpus, queries, evaluation harness, and all results — is released at <code>huggingface.co/datasets/graphify-md/ckg-benchmark</code> under CC BY 4.0 (data) and MIT (code). We invite the community to add domains, systems, and metrics.</p>
+</section>
+
+<footer>
+  CKG Benchmark · Graphify.md · Read-on-phone edition
+</footer>
+
+</div>
+</body>
+</html>

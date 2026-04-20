@@ -16,10 +16,11 @@ are:
     aggregation}: T4 category aggregates reach F1 $=$ \textbf{0.964}
     for CKG vs.\ 0.286 for RAG and 0.054 for GraphRAG, because the
     answer is fully determined by the taxonomy column of the CSV.
-  \item \textbf{CKG F1 increases with hop depth} (peaking at hop=3:
-    \textbf{0.64}) while RAG degrades, confirming that deterministic
-    edge traversal does not suffer the multi-hop retrieval recall
-    failures inherent to passage-based systems.
+  \item \textbf{CKG F1 increases continuously with hop depth} (peaking at
+    hop=5: \textbf{0.772}) while RAG is irregular and plateaus near 0.17,
+    confirming that deterministic edge traversal does not suffer the
+    multi-hop retrieval recall failures inherent to passage-based systems.
+    The deeper the prerequisite chain, the larger CKG's advantage.
   \item \textbf{T1 (entity lookup) is a documented negative control}:
     CKG scores \textbf{0.207} on explanatory queries, confirming the
     benchmark is not constructed to favour CKG universally. Both

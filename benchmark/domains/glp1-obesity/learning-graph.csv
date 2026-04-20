@@ -1,0 +1,91 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Incretin hormones,,FOUND
+2,Glucagon-Like Peptide-1 (GLP-1),1,FOUND
+3,Glucose-dependent Insulinotropic Polypeptide (GIP),1,FOUND
+4,GLP-1 receptor,2,FOUND
+5,GIP receptor,3,FOUND
+6,Dipeptidyl peptidase-4 (DPP-4),2,FOUND
+7,Insulin secretion,2|4,FOUND
+8,Glucagon suppression,2|4,FOUND
+9,Gastric emptying delay,2|4,FOUND
+10,Hypothalamic satiety signaling,2|4,FOUND
+11,Beta cell function,7,FOUND
+12,Adipose tissue biology,,FOUND
+13,Energy homeostasis,10|12,FOUND
+14,Obesity pathophysiology,12|13,PATH
+15,Body Mass Index (BMI),14,PATH
+16,Visceral adiposity,14,PATH
+17,Metabolic syndrome,14|16,PATH
+18,Insulin resistance,14|17,PATH
+19,Type 2 diabetes mellitus (T2DM),18|11,PATH
+20,Dyslipidemia,17,PATH
+21,Hypertension,17,PATH
+22,Non-alcoholic fatty liver disease (NAFLD/MASH),16|18,PATH
+23,Chronic kidney disease (CKD),19|21,PATH
+24,Cardiovascular disease risk,17|19|20|21,PATH
+25,Sarcopenic obesity,14|15,PATH
+26,GLP-1 receptor agonist (GLP-1RA) drug class,4|2,DRUG
+27,Liraglutide (Victoza / Saxenda),26,DRUG
+28,Semaglutide (Ozempic / Wegovy),26,DRUG
+29,Dulaglutide (Trulicity),26,DRUG
+30,Exenatide (Byetta / Bydureon),26,DRUG
+31,Tirzepatide (Mounjaro / Zepbound),4|5|26,DRUG
+32,Oral semaglutide (Rybelsus),28,DRUG
+33,Dose escalation protocol,26,DRUG
+34,Subcutaneous injection formulation,26,DRUG
+35,Half-life and dosing interval,26,DRUG
+36,Once-weekly administration,28|29|31|35,DRUG
+37,Dual GIP/GLP-1 agonism,31|4|5,DRUG
+38,Triple agonism (GLP-1/GIP/glucagon),37,DRUG
+39,Small molecule GLP-1 receptor agonists,26,DRUG
+40,Weight loss efficacy endpoints,15|26,TRIAL
+41,HbA1c reduction endpoints,19|26,TRIAL
+42,SUSTAIN trial program (semaglutide T2DM),28|41,TRIAL
+43,STEP trial program (semaglutide obesity),28|40,TRIAL
+44,SURMOUNT trial program (tirzepatide obesity),31|40,TRIAL
+45,SELECT trial (semaglutide cardiovascular),28|24|40,TRIAL
+46,LEADER trial (liraglutide cardiovascular),27|24|41,TRIAL
+47,SCALE trial program (liraglutide obesity),27|40,TRIAL
+48,AWARD trial program (dulaglutide),29|41,TRIAL
+49,Cardiovascular outcome trial (CVOT) design,24|40|41,TRIAL
+50,Major adverse cardiovascular events (MACE),49,TRIAL
+51,Renal composite endpoints,23|49,TRIAL
+52,Body composition measurement,25|40,TRIAL
+53,Lean mass preservation endpoints,25|52,TRIAL
+54,Gastrointestinal adverse events,9|26,COMPL
+55,Nausea and vomiting management,54,COMPL
+56,Pancreatitis risk,26,COMPL
+57,Thyroid C-cell tumor risk,26,COMPL
+58,Gallbladder disease,26|9,COMPL
+59,Injection site reactions,34,COMPL
+60,Hypoglycemia risk,7|26,COMPL
+61,Weight regain after discontinuation,43|44|26,COMPL
+62,Muscle wasting with GLP-1 therapy,25|61,COMPL
+63,Polycystic ovary syndrome (PCOS),14|18,SPEC
+64,Pediatric/adolescent obesity,14|15,SPEC
+65,Psychiatric comorbidities and obesity,14,SPEC
+66,Post-bariatric surgery weight regain,14|40,SPEC
+67,Prader-Willi syndrome,64,SPEC
+68,Hypothalamic obesity,10|64,SPEC
+69,HIV-associated lipohypertrophy,16,SPEC
+70,Cystic fibrosis-related diabetes,19,SPEC
+71,Idiopathic intracranial hypertension,14,SPEC
+72,Kidney transplant candidacy,23,SPEC
+73,Atrial fibrillation,24,SPEC
+74,Heart failure,24,SPEC
+75,Obstructive sleep apnea,14|16,SPEC
+76,Major depressive disorder with obesity,65,SPEC
+77,Alcohol use disorder,65,SPEC
+78,Bariatric surgery (reference comparator),14|40,SPEC
+79,Bariatric surgery vs GLP-1RA comparison,78|43|44,SPEC
+80,Combination therapy strategies,26,COMBO
+81,GLP-1RA plus enobosarm (SARM),62|53|80,COMBO
+82,GLP-1RA plus behavioral lifestyle program,80|40,COMBO
+83,GLP-1RA plus exercise intervention,80|52|53,COMBO
+84,GLP-1RA plus metformin,80|26,COMBO
+85,GLP-1RA plus bariatric surgery,79|80,COMBO
+86,GLP-1RA discontinuation protocols,61|80,COMBO
+87,Real-world effectiveness vs trial efficacy,43|44|47,COMBO
+88,Cost-effectiveness of GLP-1RA therapy,26|40,COMBO
+89,Access and affordability barriers,88,COMBO
+90,Pipeline agents (next-generation obesogens),38|39,COMBO
