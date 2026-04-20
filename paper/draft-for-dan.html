@@ -350,7 +350,7 @@
   <p>Retrieval-augmented generation (RAG) and graph-based retrieval (GraphRAG) are the dominant paradigms for grounding LLM responses in structured knowledge. Both optimize for recall while treating token cost as a secondary concern. We introduce Compact Knowledge Graphs (CKG) — pre-structured DAG representations with explicit concept taxonomy and pipe-delimited dependency encoding — and present a two-track benchmark comparing CKG, RAG, and GraphRAG across educational and commercial domains.</p>
   <p>Track 1 evaluates the McCreary Intelligent Textbook Corpus: 44 hand-curated educational domains spanning STEM, professional, and foundational subjects (7,758 queries). CKG achieves macro-average F₁ of <strong>0.4709</strong> versus <strong>0.1231</strong> for RAG and <strong>0.1200</strong> for GraphRAG, at <strong>11× fewer tokens per query</strong> (269 vs. 2,982 vs. 3,450). CKG F₁ increases with hop depth (peaking at hop=3: 0.64) while RAG degrades. The compound Reasoning Density Score (RDS) advantage is <strong>42×</strong>. T1 entity lookup (CKG 0.207, RAG 0.094) serves as a designed negative control.</p>
   <p>Track 2 tests whether the architecture generalizes beyond hand-curated educational data. We build a complete GLP-1/Obesity pharmacology CKG programmatically from the ClinicalTrials.gov API with no expert annotation (170 queries). The pipeline-generated CKG reaches macro F₁ <strong>0.5298</strong> — exceeding the Track 1 hand-curated average by 12.5% and preserving a <strong>28×</strong> RDS advantage over RAG. Automated construction does not degrade retrieval quality; it matches or improves it. Together the two tracks establish CKG as a distinct architecture whose structural advantage is domain-agnostic and does not depend on manual curation.</p>
-  <p>Benchmark, dataset, and evaluation harness are released at <a href="https://huggingface.co/datasets/graphify-md/ckg-benchmark">huggingface.co/datasets/graphify-md/ckg-benchmark</a> under CC BY 4.0 / MIT.</p>
+  <p>Benchmark, dataset, and evaluation harness are released at <a href="https://github.com/Yarmoluk/ckg-benchmark">github.com/Yarmoluk/ckg-benchmark</a> under CC BY 4.0 / MIT.</p>
 </section>
 
 <!-- =========================================================== -->
@@ -1067,10 +1067,10 @@
 <p>Track 1 validates the intelligent textbook format — hand-curated learning-graph CSVs — as a benchmark-grade substrate for knowledge retrieval at scale across 44 domains. Track 2 validates automated construction of CKG domains from structured external data, showing the retrieval advantage does not depend on manual authorship. Taken together, the two tracks establish Compact Knowledge Graphs as a distinct architecture category — one that is empirically superior to RAG and GraphRAG on structural queries, an order of magnitude cheaper in tokens, and ready for deployment in any domain whose knowledge can be expressed as a directed acyclic graph.</p>
 
 <h4>Open Benchmark.</h4>
-<p>The complete benchmark — corpus, queries, evaluation harness, and all results — is released at <a href="https://huggingface.co/datasets/graphify-md/ckg-benchmark">huggingface.co/datasets/graphify-md/ckg-benchmark</a> under CC BY 4.0 (data) and MIT (code). We invite the community to add domains, systems, and metrics.</p>
+<p>The complete benchmark — corpus, queries, evaluation harness, and all results — is released at <a href="https://github.com/Yarmoluk/ckg-benchmark">github.com/Yarmoluk/ckg-benchmark</a> under CC BY 4.0 (data) and MIT (code). We invite the community to add domains, systems, and metrics.</p>
 
 <footer>
-  Version 0.5.0 | Working Draft | April 2026 | Benchmark dataset: <a href="https://huggingface.co/datasets/graphify-md/ckg-benchmark">huggingface.co/datasets/graphify-md/ckg-benchmark</a>
+  Version 0.5.0 | Working Draft | April 2026 | Benchmark dataset: <a href="https://github.com/Yarmoluk/ckg-benchmark">github.com/Yarmoluk/ckg-benchmark</a>
 </footer>
 
 </main>
