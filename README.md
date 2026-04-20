@@ -1,6 +1,6 @@
 # CKG Benchmark
 
-**Pre-structured knowledge graphs outperform RAG by 4× F1 at 11× lower token cost — across 45 domains.**
+**Pre-structured knowledge graphs outperform RAG by 4× F1 using 11× fewer tokens per query — across 45 domains.**
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
