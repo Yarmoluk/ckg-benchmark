@@ -22,7 +22,9 @@
       "WebSearch",
       "Bash(kill 1181)",
       "Bash(mv \"/Applications/Usage for Claude.app\" ~/.Trash/)",
-      "Read(//Applications/**)"
+      "Read(//Applications/**)",
+      "Bash(chmod +x /Users/danmccreary/Documents/ws/ckg-benchmark/paper/arxiv-submit.sh)",
+      "Bash(/Users/danmccreary/Documents/ws/ckg-benchmark/paper/arxiv-submit.sh)"
     ]
   }
 }
