@@ -154,24 +154,25 @@ Table~\ref{tab:hop-depth} shows F1 across prerequisite chain depth.
 \toprule
 \textbf{System} & \textbf{hop=0} & \textbf{hop=1} & \textbf{hop=2} & \textbf{hop=3} & \textbf{hop=4} & \textbf{hop=5} \\
 \midrule
-RAG & 0.1122 & 0.0866 & 0.1715 & 0.1967 & 0.2106 & 0.2021 \\
-CKG & 0.3409 & 0.4814 & \textbf{0.6191} & \textbf{0.6445} & 0.6118 & 0.5933 \\
+RAG & 0.073 & 0.066 & 0.226 & 0.138 & 0.166 & 0.170 \\
+CKG & 0.374 & 0.519 & 0.573 & 0.671 & 0.751 & \textbf{0.772} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-CKG F1 \textit{increases} with hop depth up to hop=3 (0.64), then plateaus.
-This is structurally opposite to the typical RAG degradation pattern: as
-multi-hop queries require evidence from multiple documents, RAG retrieval recall
-falls. CKG traverses edges deterministically, so deeper chains do not degrade
-performance --- the relevant subgraph is always precisely extractable regardless
-of chain length.
+CKG F1 \textit{increases continuously} with hop depth, from 0.374 at hop=0
+to \textbf{0.772 at hop=5}---the deepest chains produce the highest accuracy.
+This is structurally opposite to the typical RAG pattern: RAG retrieval recall
+falls as multi-hop queries require evidence from multiple documents. CKG
+traverses edges deterministically, so deeper chains do not degrade
+performance---the relevant subgraph is always precisely extractable regardless
+of chain length, and longer chains provide more exact-match token overlap with
+ground truth.
 
-RAG also shows modest improvement at deeper hops (0.09 at hop=1 to 0.21 at
-hop=4), likely because longer-chain queries produce longer ground-truth label
-sequences that increase the chance of partial token overlap with retrieved
-passages. GraphRAG hop-depth data was not collected under the current harness
-configuration.
+RAG shows irregular behavior across hop depths (0.073 at hop=0, peaking at
+0.226 at hop=2, then declining), consistent with retrieval recall variance
+rather than systematic improvement. GraphRAG hop-depth data was not collected
+under the current harness configuration.
 
 \subsection{Hop-Depth Degradation}\label{sec:hop-depth-fig}
 
