@@ -9,11 +9,13 @@
 [![Queries: 7,928](https://img.shields.io/badge/Queries-7%2C928-green.svg)]()
 [![Version: 0.6.2](https://img.shields.io/badge/Paper-v0.6.2-blue.svg)]()
 
+> **Deploy this architecture in your organization → [graphifymd.com](https://graphifymd.com)**
+
 ---
 
 ## Read the Paper
 
-> **[→ Open paper in browser (HTML)](https://htmlpreview.github.io/?https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/paper.html)**
+> **[→ Read the paper (graphifymd.com/paper.html)](https://graphifymd.com/paper.html)**
 >
 > **[→ Download PDF](https://github.com/Yarmoluk/ckg-benchmark/raw/main/paper/main.pdf)**
 
@@ -184,6 +186,26 @@ ckg-benchmark/
     ├── read-on-phone.html
     └── sections/         # 12 section files
 ```
+
+---
+
+## Commercial Applications
+
+The benchmark numbers translate directly to enterprise cost and accuracy:
+
+| What RAG costs you | What CKG delivers |
+|--------------------|-------------------|
+| 2,982 tokens/query average | 269 tokens/query — 11× reduction |
+| $76.23 to run 7,928 queries | $7.81 for the same workload |
+| F1 = 0.123 on structural queries | F1 = 0.471 — 4× more accurate answers |
+| Hallucinations on multi-hop chains | Zero hallucinations by construction |
+| F1 degrades past hop=2 | F1 improves to hop=5 (0.772) |
+
+**Any domain where knowledge has stable structure — clinical, regulatory, legal, financial, educational — is a candidate.** Track 2 proved this extends beyond hand-curated data: a GLP-1/Obesity pharmacology CKG built entirely from the ClinicalTrials.gov API in one session achieved F1 = 0.530, exceeding the hand-curated educational average.
+
+The architecture is patent-pending (App #64/040,804). Commercial deployment, pilot engagements, and enterprise licensing are available through **[Graphify.md](https://graphifymd.com)**.
+
+> Interested in deploying CKG in your organization? → [graphifymd.com](https://graphifymd.com)
 
 ---
 
