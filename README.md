@@ -9,6 +9,19 @@
 [![Queries: 7928](https://img.shields.io/badge/Queries-7%2C928-green.svg)]()
 [![Version: 0.6.2](https://img.shields.io/badge/Paper-v0.6.2-blue.svg)]()
 
+## Read the Paper
+
+| Format | Link |
+|--------|------|
+| **Read in browser (full paper)** | [draft-for-dan.html](paper/draft-for-dan.html) — open raw, then File → Save and open locally |
+| **Mobile-optimized** | [read-on-phone.html](paper/read-on-phone.html) |
+| **LaTeX source** | [paper/main.tex](paper/main.tex) — v0.6.2 |
+| **ArXiv** | Pre-print in preparation |
+
+> **Quickest way to read:** Download `paper/draft-for-dan.html` and open in any browser.
+
+---
+
 ## Results Summary
 
 | System | Macro F1 | Tokens/q | RDS | Run Cost | Domains |
