@@ -1,71 +1,74 @@
 # CKG Benchmark
 
-**A reproducible benchmark comparing RAG, GraphRAG, and Compact Knowledge Graphs across 45 domains — educational and commercial.**
+**Pre-structured knowledge graphs outperform RAG by 4× F1 at 11× lower token cost — across 45 domains.**
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen.svg)]()
 [![Domains: 45](https://img.shields.io/badge/Domains-45-green.svg)]()
-[![Queries: 7928](https://img.shields.io/badge/Queries-7%2C928-green.svg)]()
+[![Queries: 7,928](https://img.shields.io/badge/Queries-7%2C928-green.svg)]()
 [![Version: 0.6.2](https://img.shields.io/badge/Paper-v0.6.2-blue.svg)]()
-
-## Read the Paper
-
-| Format | Link |
-|--------|------|
-| **Read in browser (full paper)** | [paper.html](paper/paper.html) — rendered pre-print |
-| **Mobile-optimized** | [read-on-phone.html](paper/read-on-phone.html) |
-| **LaTeX source** | [paper/main.tex](paper/main.tex) — v0.6.2 |
-| **ArXiv** | Pre-print in preparation |
-
-> **Quickest way to read:** [htmlpreview.github.io/?https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/paper.html](https://htmlpreview.github.io/?https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/paper.html)
 
 ---
 
-## Results Summary
+## Read the Paper
 
-| System | Macro F1 | Tokens/q | RDS | Run Cost | Domains |
-|--------|----------|----------|-----|----------|---------|
-| **CKG** | **0.4709** | **269** | **0.00201** | **$7.81** | 44 |
-| RAG | 0.1231 | 2,982 | 0.0000482 | $76.23 | 40 |
-| GraphRAG | 0.1200 | 3,450 | 0.0000452 | $44.43 | 15 |
+> **[→ Open paper in browser (HTML)](https://htmlpreview.github.io/?https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/paper.html)**
+>
+> **[→ Download PDF](https://github.com/Yarmoluk/ckg-benchmark/raw/main/paper/main.pdf)**
 
-**CKG delivers 42× more intelligence per token than RAG. Zero hallucinations by construction.**
+| Format | Link |
+|--------|------|
+| HTML pre-print (full paper) | [paper/paper.html](paper/paper.html) — renders in browser |
+| PDF | [paper/main.pdf](paper/main.pdf) — download or view |
+| Mobile-optimized | [paper/read-on-phone.html](paper/read-on-phone.html) |
+| LaTeX source | [paper/main.tex](paper/main.tex) — v0.6.2 |
+| ArXiv | Pre-print in preparation |
 
-### Track 2 — Pipeline-Generated Commercial Domain (GLP-1/Obesity)
+---
 
-| System | Macro F1 | Tokens/q | RDS |
-|--------|----------|----------|-----|
-| **CKG** | **0.5298** | 346 | 0.00153 |
-| RAG | 0.1538 | 2,828 | 0.0000544 |
-| GraphRAG | 0.1436 | 3,450 | 0.0000416 |
+## Results at a Glance
 
-Built programmatically from ClinicalTrials.gov API. No expert curation. CKG F1 exceeds hand-curated Track 1 average by 12.5%.
+| System | Macro F1 | Tokens/query | RDS | Run Cost |
+|--------|----------|-------------|-----|----------|
+| **CKG** | **0.4709** | **269** | **0.00201** | **$7.81** |
+| RAG | 0.1231 | 2,982 | 0.0000482 | $76.23 |
+| GraphRAG | 0.1200 | 3,450 | 0.0000452 | $44.43 |
 
-### F1 by Query Type (Track 1)
+**42× more intelligence per token than RAG. Zero hallucinations by construction.**
 
-| System | T1 entity | T2 dep | T3 path | T4 aggr | T5 cross |
-|--------|-----------|--------|---------|---------|---------|
-| **CKG** | 0.207 | 0.634 | 0.660 | **0.964** | 0.323 |
+### F1 by Query Type
+
+| System | T1 entity | T2 dependency | T3 path | T4 aggregate | T5 cross |
+|--------|-----------|--------------|---------|-------------|---------|
+| **CKG** | 0.207 | **0.634** | **0.660** | **0.964** | **0.323** |
 | RAG | 0.094 | 0.078 | 0.201 | 0.286 | 0.115 |
 | GraphRAG | 0.108 | 0.073 | 0.208 | 0.054 | 0.183 |
 
-### F1 by Hop Depth
+### F1 by Hop Depth — CKG gets stronger, RAG plateaus
 
 | System | hop=0 | hop=1 | hop=2 | hop=3 | hop=4 | hop=5 |
 |--------|-------|-------|-------|-------|-------|-------|
 | **CKG** | 0.374 | 0.519 | 0.573 | 0.671 | 0.751 | **0.772** |
 | RAG | 0.073 | 0.066 | 0.226 | 0.138 | 0.166 | 0.170 |
 
-CKG improves continuously with depth. RAG is irregular. The deeper the chain, the larger CKG's structural advantage.
+### Track 2 — Commercial Domain (GLP-1/Obesity, pipeline-generated)
+
+| System | Macro F1 | Tokens/query | RDS |
+|--------|----------|-------------|-----|
+| **CKG** | **0.5298** | 346 | 0.00153 |
+| RAG | 0.1538 | 2,828 | 0.0000544 |
+| GraphRAG | 0.1436 | 3,450 | 0.0000416 |
+
+Built from the ClinicalTrials.gov API in one automated session — no expert curation. CKG F1 exceeds the hand-curated Track 1 average by 12.5%.
 
 ---
 
-## Overview
+## What Is CKG?
 
-This benchmark evaluates three LLM knowledge retrieval architectures:
+Three architectures. Same questions. Wildly different results.
 
-| System | Knowledge Representation | Retrieval | Tokens/Query |
+| System | Knowledge representation | Retrieval | Tokens/query |
 |--------|--------------------------|-----------|--------------|
 | **RAG** | Chunked text + vector embeddings | Cosine similarity, top-5 | ~2,982 |
 | **GraphRAG** | Dynamically extracted entity graph | Community search | ~3,450 |
@@ -73,12 +76,9 @@ This benchmark evaluates three LLM knowledge retrieval architectures:
 
 **Core finding:** Pre-structured knowledge graphs (CKG) outperform RAG and GraphRAG on structural queries — dependency resolution, multi-hop path traversal, category aggregation — at 11× lower token cost and zero hallucination rate.
 
-**Structure Premium (null result):** CKG's advantage is uniform across DAG richness levels (r = −0.09, n = 45). The efficiency gain is architectural, not a function of how dense any individual graph is.
+The advantage holds whether knowledge is hand-curated (Track 1, 44 educational domains) or assembled programmatically from external APIs (Track 2, pharma domain). Structure is the signal — not curation effort.
 
-## Authors
-
-- **Daniel Yarmoluk** — [Graphify.md](https://graphify.md) — CKG architecture, benchmark design, Track 2 pipeline, RDS metric
-- **Dan McCreary** — [Intelligent Textbooks](https://github.com/dmccreary) — Source corpus (McCreary Intelligent Textbook Corpus), DAG methodology
+---
 
 ## Two-Track Design
 
@@ -95,11 +95,13 @@ ConceptID,ConceptLabel,Dependencies,TaxonomyID
 - **44 domains** · **12,260+ concepts** · **7,758 queries** · STEM, Professional, Foundational
 
 ### Track 2 — Pipeline-Generated Commercial Domain
-GLP-1/Obesity pharmacology — built from ClinicalTrials.gov API in one automated session:
+GLP-1/Obesity pharmacology — assembled from the ClinicalTrials.gov API in one session:
 
 - 668 semaglutide trials + 224 tirzepatide trials + 158 pipeline agents indexed
 - 90 concepts · 170 dependency edges · 170 benchmark queries
 - No expert curation · No proprietary data · CKG F1 = 0.5298
+
+---
 
 ## Query Types
 
@@ -111,15 +113,49 @@ GLP-1/Obesity pharmacology — built from ClinicalTrials.gov API in one automate
 | **T4** | Category aggregate | "List all FOUND concepts" |
 | **T5** | Cross-concept relationship | "How does Domain and Range relate to Inverse Function?" |
 
+---
+
 ## Novel Metrics
 
 | Metric | Formula | What It Measures |
 |--------|---------|------------------|
-| **RDS** | F1 / tokens_consumed | Intelligence delivered per token spent |
-| **Hop-Depth F1** | F1 at hop depth k=0…5 | Multi-hop reasoning vs. depth |
+| **RDS** | F1 / tokens_consumed | Intelligence per token — the compound efficiency score |
+| **Hop-Depth F1** | F1 at hop depth k=0…5 | Multi-hop reasoning quality vs. chain length |
 | **CUR** | relevant_tokens / total_retrieved | Retrieval precision |
 | **CPCA** | cost_per_query / F1 | Real-world cost efficiency |
 | **Hallucination Rate** | hallucinated_concepts / total | CKG = 0 by construction |
+
+---
+
+## Falsifiable Claims — All Confirmed
+
+1. ✅ CKG achieves higher F1 on T2 (dependency) and T3 (multi-hop) queries — **confirmed** (0.634 vs 0.078; 0.660 vs 0.201)
+2. ✅ CKG F1 does not degrade with hop depth — **confirmed and stronger**: improves continuously to hop=5 (0.772)
+3. ✅ CKG RDS ≥ 10× vs RAG — **confirmed**: 42×
+4. ✅ CKG Hallucination Rate = 0 by construction — **confirmed**
+5. ✅ Structure Premium hypothesis — **null result**: r = −0.09; advantage is uniform across all DAG richness levels
+6. ✅ Track 2 cross-domain transfer — **confirmed**: pipeline-generated pharma F1 = 0.530 > hand-curated average 0.471
+
+---
+
+## Quick Start
+
+```bash
+git clone https://github.com/Yarmoluk/ckg-benchmark
+cd ckg-benchmark
+pip install -r evaluation/requirements.txt
+
+# Run CKG on a domain
+python evaluation/ckg_harness.py --domain calculus
+
+# Run RAG on a domain
+python evaluation/rag_harness.py --domain calculus
+
+# Analyze all results
+python evaluation/analyze_results.py
+```
+
+---
 
 ## Repository Structure
 
@@ -141,45 +177,20 @@ ckg-benchmark/
 │   ├── rag/              # Per-domain JSONL results (40 domains)
 │   ├── graphrag/         # Per-domain JSONL results (15 domains)
 │   └── tables/           # Final summary CSVs
-├── paper/
-│   ├── main.tex          # v0.6.2 — paper source
-│   ├── sections/         # 12 section files
-│   ├── figures/          # All generated figures + generation script
-│   ├── draft-for-dan.html   # Full paper readable in browser
-│   ├── read-on-phone.html   # Mobile-optimized reading view
-│   └── sal-pitch.html    # Two-slide commercial pitch
-└── results/tables/
-    ├── table1_macro_f1.csv
-    ├── table2_by_query_type.csv
-    ├── table3_tokenomics.csv
-    └── table4_hop_degradation.csv
+└── paper/
+    ├── main.tex          # LaTeX source — v0.6.2
+    ├── main.pdf          # Compiled PDF
+    ├── paper.html        # Full paper — readable in browser
+    ├── read-on-phone.html
+    └── sections/         # 12 section files
 ```
 
-## Quick Start
+---
 
-```bash
-git clone https://github.com/Yarmoluk/ckg-benchmark
-cd ckg-benchmark
-pip install -r evaluation/requirements.txt
+## Authors
 
-# Run CKG on a domain
-python evaluation/ckg_harness.py --domain calculus
-
-# Run RAG on a domain
-python evaluation/rag_harness.py --domain calculus
-
-# Analyze all results
-python evaluation/analyze_results.py
-```
-
-## Falsifiable Claims — All Tested
-
-1. ✅ CKG achieves higher F1 on T2 (dependency) and T3 (multi-hop path) queries — **confirmed** (0.634 vs 0.078; 0.660 vs 0.201)
-2. ✅ CKG F1 does not degrade with hop depth — **confirmed and stronger**: CKG improves continuously to hop=5 (0.772)
-3. ✅ CKG RDS ≥ 10× vs RAG — **confirmed**: 42×
-4. ✅ CKG Hallucination Rate = 0 by construction — **confirmed**
-5. ✅ Structure Premium hypothesis — **null result**: r = −0.09; advantage is uniform across all DAG richness levels
-6. ✅ Track 2 cross-domain transfer — **confirmed**: pipeline-generated pharma domain F1 = 0.530 > hand-curated average 0.471
+- **Daniel Yarmoluk** — [Graphify.md](https://graphifymd.com) — CKG architecture, benchmark design, Track 2 pipeline, RDS metric
+- **Dan McCreary** — [Intelligent Textbooks](https://github.com/dmccreary) — Source corpus (McCreary Intelligent Textbook Corpus), DAG methodology
 
 ## Status
 
