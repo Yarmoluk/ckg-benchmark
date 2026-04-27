@@ -8,6 +8,10 @@ site
 .cache
 ~$*
 
+# Commercial domain CKGs — not for public distribution
+benchmark/domains/glp1-obesity/
+benchmark/queries/queries_glp1-obesity.jsonl
+
 # LaTeX build artifacts
 paper/*.aux
 paper/*.bbl
