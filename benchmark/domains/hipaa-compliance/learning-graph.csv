@@ -1,0 +1,76 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,HIPAA,,FOUND
+2,Privacy Rule,1,RULE
+3,Security Rule,1,RULE
+4,Breach Notification Rule,1,RULE
+5,Enforcement Rule,1,RULE
+6,HITECH Act,1,LEGISLATION
+7,Protected Health Information,2,CONCEPT
+8,Electronic PHI,3|7,CONCEPT
+9,De-identified Health Information,7,CONCEPT
+10,Covered Entity,1,ENTITY_TYPE
+11,Healthcare Provider,10,ENTITY_TYPE
+12,Health Plan,10,ENTITY_TYPE
+13,Healthcare Clearinghouse,10,ENTITY_TYPE
+14,Business Associate,10,ENTITY_TYPE
+15,Business Associate Agreement,14,REQUIREMENT
+16,Subcontractor Business Associate,14,ENTITY_TYPE
+17,Minimum Necessary Standard,2|7,REQUIREMENT
+18,Notice of Privacy Practices,2,REQUIREMENT
+19,Patient Authorization,2,REQUIREMENT
+20,Treatment Payment Operations TPO,2,PERMITTED_USE
+21,Right to Access PHI,2,PATIENT_RIGHT
+22,Right to Amend PHI,2,PATIENT_RIGHT
+23,Right to Accounting of Disclosures,2,PATIENT_RIGHT
+24,Right to Restrict Disclosures,2,PATIENT_RIGHT
+25,Right to Confidential Communications,2,PATIENT_RIGHT
+26,Required Disclosures,2,PERMITTED_USE
+27,Public Health Reporting,26,PERMITTED_USE
+28,Law Enforcement Disclosure,26,PERMITTED_USE
+29,Administrative Safeguards,3,SECURITY_SAFEGUARD
+30,Physical Safeguards,3,SECURITY_SAFEGUARD
+31,Technical Safeguards,3,SECURITY_SAFEGUARD
+32,Risk Analysis,29,REQUIREMENT
+33,Risk Management Plan,29|32,REQUIREMENT
+34,Workforce Security Training,29,REQUIREMENT
+35,Sanction Policy,29|34,REQUIREMENT
+36,Access Control Policy,31,TECHNICAL_CONTROL
+37,Audit Controls,31,TECHNICAL_CONTROL
+38,Integrity Controls,31,TECHNICAL_CONTROL
+39,Transmission Security,31|8,TECHNICAL_CONTROL
+40,Encryption Standard,39,TECHNICAL_CONTROL
+41,Facility Access Controls,30,PHYSICAL_CONTROL
+42,Workstation Security Policy,30,PHYSICAL_CONTROL
+43,Device and Media Controls,30|8,PHYSICAL_CONTROL
+44,Breach,4|7,CONCEPT
+45,Unsecured PHI,44|8,CONCEPT
+46,Breach Risk Assessment,44|45,REQUIREMENT
+47,Breach Notification to Individual,4|44,REQUIREMENT
+48,Breach Notification to HHS,4|44,REQUIREMENT
+49,Breach Notification to Media,4|44,REQUIREMENT
+50,60-Day Notification Deadline,47|48,REQUIREMENT
+51,Civil Monetary Penalty Tier 1,5,PENALTY
+52,Civil Monetary Penalty Tier 2,5,PENALTY
+53,Civil Monetary Penalty Tier 3,5,PENALTY
+54,Civil Monetary Penalty Tier 4,5,PENALTY
+55,Criminal Penalty,5,PENALTY
+56,Willful Neglect Uncorrected,54|55,PENALTY_CATEGORY
+57,Corrective Action Plan,5|51,ENFORCEMENT
+58,Resolution Agreement,5|57,ENFORCEMENT
+59,Privacy Officer Role,10,ROLE
+60,Security Officer Role,10,ROLE
+61,HIPAA Audit Program,5,ENFORCEMENT
+62,Business Associate Liability,14|5|6,REQUIREMENT
+63,State Attorney General Enforcement,5,ENFORCEMENT
+64,Patient Complaint Process,2|5,PROCESS
+65,Safe Harbor De-identification Method,9,METHOD
+66,Expert Determination De-identification,9,METHOD
+67,Psychotherapy Notes Special Category,7|19,SPECIAL_CATEGORY
+68,HIV Status Special Protection,7|19,SPECIAL_CATEGORY
+69,Substance Use Disorder Records 42 CFR,7,SPECIAL_CATEGORY
+70,Information Blocking Rule,1|6,REGULATION
+71,Interoperability Requirements,70,REGULATION
+72,EHR Access Requirements,21|71,REGULATION
+73,FHIR API Standard,72,TECHNOLOGY
+74,Ransomware as Breach,44|45,CONCEPT
+75,Third-Party Vendor Risk,14|32,REQUIREMENT
