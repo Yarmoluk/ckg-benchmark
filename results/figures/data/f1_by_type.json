@@ -1,0 +1,23 @@
+{
+  "ckg": {
+    "T1_entity": 0.2065,
+    "T2_dependency": 0.6342,
+    "T3_path": 0.6598,
+    "T4_aggregate": 0.964,
+    "T5_cross_concept": 0.3234
+  },
+  "rag": {
+    "T1_entity": 0.0939,
+    "T2_dependency": 0.0781,
+    "T3_path": 0.2014,
+    "T4_aggregate": 0.2861,
+    "T5_cross_concept": 0.1153
+  },
+  "graphrag": {
+    "T1_entity": 0.1081,
+    "T2_dependency": 0.0725,
+    "T3_path": 0.2079,
+    "T4_aggregate": 0.0535,
+    "T5_cross_concept": 0.1826
+  }
+}

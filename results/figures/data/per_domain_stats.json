@@ -1,0 +1,650 @@
+{
+  "ckg": {
+    "circuits": {
+      "rds": 0.00205487,
+      "f1": 0.5131,
+      "tokens": 294.0,
+      "dag_richness": 295.5857
+    },
+    "Dementia": {
+      "rds": 0.00221738,
+      "f1": 0.4812,
+      "tokens": 231.7,
+      "dag_richness": 126.635
+    },
+    "pre-calc": {
+      "rds": 0.00182821,
+      "f1": 0.4727,
+      "tokens": 310.2,
+      "dag_richness": 221.9281
+    },
+    "it-management-graph": {
+      "rds": 0.00195491,
+      "f1": 0.4186,
+      "tokens": 230.1,
+      "dag_richness": 42.8099
+    },
+    "digital-citizenship": {
+      "rds": 0.00208254,
+      "f1": 0.4668,
+      "tokens": 259.5,
+      "dag_richness": 225.3928
+    },
+    "genetics": {
+      "rds": 0.00191792,
+      "f1": 0.4702,
+      "tokens": 297.6,
+      "dag_richness": 111.639
+    },
+    "glp1-obesity": {
+      "rds": 0.00166791,
+      "f1": 0.5308,
+      "tokens": 346.7,
+      "dag_richness": 164.7361
+    },
+    "data-science-course": {
+      "rds": 0.00213009,
+      "f1": 0.4771,
+      "tokens": 249.4,
+      "dag_richness": 215.3307
+    },
+    "prompt-class": {
+      "rds": 0.00183532,
+      "f1": 0.4934,
+      "tokens": 308.0,
+      "dag_richness": 506.0095
+    },
+    "machine-learning-textbook": {
+      "rds": 0.00198598,
+      "f1": 0.4379,
+      "tokens": 246.0,
+      "dag_richness": 316.3674
+    },
+    "systems-thinking": {
+      "rds": 0.0016213,
+      "f1": 0.3575,
+      "tokens": 231.1,
+      "dag_richness": 147.0025
+    },
+    "microsims": {
+      "rds": 0.00209587,
+      "f1": 0.4834,
+      "tokens": 258.1,
+      "dag_richness": 114.8816
+    },
+    "signal-processing": {
+      "rds": 0.00180113,
+      "f1": 0.4115,
+      "tokens": 248.4,
+      "dag_richness": 260.0152
+    },
+    "intro-to-physics-course": {
+      "rds": 0.00200016,
+      "f1": 0.4464,
+      "tokens": 244.2,
+      "dag_richness": 82.0455
+    },
+    "ecology": {
+      "rds": 0.00202305,
+      "f1": 0.4756,
+      "tokens": 278.1,
+      "dag_richness": 190.1759
+    },
+    "modeling-healthcare-data": {
+      "rds": 0.0019165,
+      "f1": 0.4373,
+      "tokens": 247.7,
+      "dag_richness": 131.8599
+    },
+    "computer-science": {
+      "rds": 0.00217924,
+      "f1": 0.4924,
+      "tokens": 258.9,
+      "dag_richness": 387.2
+    },
+    "algebra-1": {
+      "rds": 0.00231768,
+      "f1": 0.4868,
+      "tokens": 231.6,
+      "dag_richness": 158.2041
+    },
+    "quantum-computing": {
+      "rds": 0.00135944,
+      "f1": 0.3745,
+      "tokens": 308.6,
+      "dag_richness": 75.2016
+    },
+    "asl-book": {
+      "rds": 0.00241063,
+      "f1": 0.457,
+      "tokens": 225.9,
+      "dag_richness": 426.6667
+    },
+    "learning-linux": {
+      "rds": 0.002016,
+      "f1": 0.4628,
+      "tokens": 264.7,
+      "dag_richness": 311.7488
+    },
+    "automating-instructional-design": {
+      "rds": 0.00237898,
+      "f1": 0.5145,
+      "tokens": 236.0,
+      "dag_richness": 64.6556
+    },
+    "ethics-course": {
+      "rds": 0.00200736,
+      "f1": 0.4814,
+      "tokens": 276.1,
+      "dag_richness": 141.0968
+    },
+    "geometry-course": {
+      "rds": 0.00222158,
+      "f1": 0.4781,
+      "tokens": 239.3,
+      "dag_richness": 123.7032
+    },
+    "organizational-analytics": {
+      "rds": 0.00190518,
+      "f1": 0.4672,
+      "tokens": 271.1,
+      "dag_richness": 122.551
+    },
+    "theory-of-knowledge": {
+      "rds": 0.00174042,
+      "f1": 0.4182,
+      "tokens": 283.5,
+      "dag_richness": 444.6296
+    },
+    "personal-finance": {
+      "rds": 0.00196361,
+      "f1": 0.4457,
+      "tokens": 248.3,
+      "dag_richness": 74.4922
+    },
+    "linear-algebra": {
+      "rds": 0.00178254,
+      "f1": 0.4496,
+      "tokens": 287.6,
+      "dag_richness": 255.2522
+    },
+    "economics-course": {
+      "rds": 0.00200334,
+      "f1": 0.4503,
+      "tokens": 258.1,
+      "dag_richness": 253.574
+    },
+    "blockchain": {
+      "rds": 0.002125,
+      "f1": 0.5027,
+      "tokens": 270.7,
+      "dag_richness": 116.2223
+    },
+    "calculus": {
+      "rds": 0.00204513,
+      "f1": 0.4972,
+      "tokens": 280.0,
+      "dag_richness": 249.5207
+    },
+    "bioinformatics": {
+      "rds": 0.00205769,
+      "f1": 0.5044,
+      "tokens": 295.7,
+      "dag_richness": 138.4905
+    },
+    "statistics-course": {
+      "rds": 0.00182995,
+      "f1": 0.4434,
+      "tokens": 289.7,
+      "dag_richness": 264.6
+    },
+    "biology": {
+      "rds": 0.00176414,
+      "f1": 0.4972,
+      "tokens": 352.5,
+      "dag_richness": 234.2153
+    },
+    "digital-electronics": {
+      "rds": 0.0020495,
+      "f1": 0.4962,
+      "tokens": 284.2,
+      "dag_richness": 154.4813
+    },
+    "conversational-ai": {
+      "rds": 0.00203623,
+      "f1": 0.4311,
+      "tokens": 226.1,
+      "dag_richness": 59.3157
+    },
+    "tracking-ai-course": {
+      "rds": 0.00190418,
+      "f1": 0.4522,
+      "tokens": 314.3,
+      "dag_richness": 393.2738
+    },
+    "fft-benchmarking": {
+      "rds": 0.00220641,
+      "f1": 0.5153,
+      "tokens": 259.6,
+      "dag_richness": 81.3871
+    },
+    "us-geography": {
+      "rds": 0.00213282,
+      "f1": 0.456,
+      "tokens": 237.9,
+      "dag_richness": 477.3371
+    },
+    "moss": {
+      "rds": 0.00200986,
+      "f1": 0.5011,
+      "tokens": 300.2,
+      "dag_richness": 70.5265
+    },
+    "chemistry": {
+      "rds": 0.00186097,
+      "f1": 0.4878,
+      "tokens": 330.3,
+      "dag_richness": 319.0104
+    },
+    "intro-to-graph": {
+      "rds": 0.00214672,
+      "f1": 0.486,
+      "tokens": 251.2,
+      "dag_richness": 128.8013
+    },
+    "infographics": {
+      "rds": 0.00240496,
+      "f1": 0.5362,
+      "tokens": 261.8,
+      "dag_richness": 84.7646
+    },
+    "functions": {
+      "rds": 0.00210951,
+      "f1": 0.4968,
+      "tokens": 263.4,
+      "dag_richness": 97.011
+    },
+    "reading-for-kindergarten": {
+      "rds": 0.00203158,
+      "f1": 0.4624,
+      "tokens": 243.0,
+      "dag_richness": 134.6913
+    }
+  },
+  "rag": {
+    "modeling-healthcare-data": {
+      "rds": 3.917e-05,
+      "f1": 0.1124,
+      "tokens": 3149.8,
+      "dag_richness": 131.8599
+    },
+    "fft-benchmarking": {
+      "rds": 9.841e-05,
+      "f1": 0.151,
+      "tokens": 1779.6,
+      "dag_richness": 81.3871
+    },
+    "automating-instructional-design": {
+      "rds": 3.706e-05,
+      "f1": 0.0943,
+      "tokens": 3183.6,
+      "dag_richness": 64.6556
+    },
+    "moss": {
+      "rds": 4.361e-05,
+      "f1": 0.1188,
+      "tokens": 3048.6,
+      "dag_richness": 70.5265
+    },
+    "bioinformatics": {
+      "rds": 3.315e-05,
+      "f1": 0.0957,
+      "tokens": 3158.1,
+      "dag_richness": 138.4905
+    },
+    "functions": {
+      "rds": 5.722e-05,
+      "f1": 0.1467,
+      "tokens": 2900.9,
+      "dag_richness": 97.011
+    },
+    "biology": {
+      "rds": 4.14e-05,
+      "f1": 0.1113,
+      "tokens": 3188.4,
+      "dag_richness": 234.2153
+    },
+    "theory-of-knowledge": {
+      "rds": 2.962e-05,
+      "f1": 0.0732,
+      "tokens": 3020.1,
+      "dag_richness": 444.6296
+    },
+    "intro-to-graph": {
+      "rds": 4.463e-05,
+      "f1": 0.118,
+      "tokens": 3083.3,
+      "dag_richness": 128.8013
+    },
+    "chemistry": {
+      "rds": 3.989e-05,
+      "f1": 0.117,
+      "tokens": 3157.7,
+      "dag_richness": 319.0104
+    },
+    "prompt-class": {
+      "rds": 4.316e-05,
+      "f1": 0.1102,
+      "tokens": 2982.2,
+      "dag_richness": 506.0095
+    },
+    "glp1-obesity": {
+      "rds": 6.021e-05,
+      "f1": 0.1538,
+      "tokens": 2828.1,
+      "dag_richness": 164.7361
+    },
+    "statistics-course": {
+      "rds": 4.353e-05,
+      "f1": 0.1181,
+      "tokens": 3069.5,
+      "dag_richness": 264.6
+    },
+    "blockchain": {
+      "rds": 3.788e-05,
+      "f1": 0.1055,
+      "tokens": 3091.0,
+      "dag_richness": 116.2223
+    },
+    "calculus": {
+      "rds": 0,
+      "f1": 0.0,
+      "tokens": 0.0,
+      "dag_richness": 249.5207
+    },
+    "conversational-ai": {
+      "rds": 4.337e-05,
+      "f1": 0.118,
+      "tokens": 3035.1,
+      "dag_richness": 59.3157
+    },
+    "linear-algebra": {
+      "rds": 5.559e-05,
+      "f1": 0.1679,
+      "tokens": 3193.9,
+      "dag_richness": 255.2522
+    },
+    "ethics-course": {
+      "rds": 4.192e-05,
+      "f1": 0.1057,
+      "tokens": 3029.7,
+      "dag_richness": 141.0968
+    },
+    "geometry-course": {
+      "rds": 4.595e-05,
+      "f1": 0.1212,
+      "tokens": 2969.1,
+      "dag_richness": 123.7032
+    },
+    "digital-electronics": {
+      "rds": 4.612e-05,
+      "f1": 0.1352,
+      "tokens": 3212.0,
+      "dag_richness": 154.4813
+    },
+    "economics-course": {
+      "rds": 4.754e-05,
+      "f1": 0.1214,
+      "tokens": 2982.7,
+      "dag_richness": 253.574
+    },
+    "personal-finance": {
+      "rds": 4.716e-05,
+      "f1": 0.1332,
+      "tokens": 3066.9,
+      "dag_richness": 74.4922
+    },
+    "computer-science": {
+      "rds": 5.274e-05,
+      "f1": 0.1418,
+      "tokens": 3054.0,
+      "dag_richness": 387.2
+    },
+    "algebra-1": {
+      "rds": 4.95e-05,
+      "f1": 0.1356,
+      "tokens": 3000.8,
+      "dag_richness": 158.2041
+    },
+    "data-science-course": {
+      "rds": 5.483e-05,
+      "f1": 0.1432,
+      "tokens": 3043.9,
+      "dag_richness": 215.3307
+    },
+    "infographics": {
+      "rds": 4.26e-05,
+      "f1": 0.1165,
+      "tokens": 3104.3,
+      "dag_richness": 84.7646
+    },
+    "microsims": {
+      "rds": 4.561e-05,
+      "f1": 0.1228,
+      "tokens": 3096.6,
+      "dag_richness": 114.8816
+    },
+    "Dementia": {
+      "rds": 4.517e-05,
+      "f1": 0.1072,
+      "tokens": 2900.6,
+      "dag_richness": 126.635
+    },
+    "circuits": {
+      "rds": 4.289e-05,
+      "f1": 0.1212,
+      "tokens": 3060.6,
+      "dag_richness": 295.5857
+    },
+    "reading-for-kindergarten": {
+      "rds": 0.00010177,
+      "f1": 0.174,
+      "tokens": 2155.0,
+      "dag_richness": 134.6913
+    },
+    "us-geography": {
+      "rds": 4.884e-05,
+      "f1": 0.1279,
+      "tokens": 2978.5,
+      "dag_richness": 477.3371
+    },
+    "ecology": {
+      "rds": 3.87e-05,
+      "f1": 0.0929,
+      "tokens": 3016.8,
+      "dag_richness": 190.1759
+    },
+    "it-management-graph": {
+      "rds": 5.05e-05,
+      "f1": 0.1426,
+      "tokens": 3090.0,
+      "dag_richness": 42.8099
+    },
+    "digital-citizenship": {
+      "rds": 5.139e-05,
+      "f1": 0.1368,
+      "tokens": 2955.9,
+      "dag_richness": 225.3928
+    },
+    "genetics": {
+      "rds": 4.119e-05,
+      "f1": 0.1226,
+      "tokens": 3168.7,
+      "dag_richness": 111.639
+    },
+    "learning-linux": {
+      "rds": 5.848e-05,
+      "f1": 0.1507,
+      "tokens": 2959.7,
+      "dag_richness": 311.7488
+    },
+    "signal-processing": {
+      "rds": 3.969e-05,
+      "f1": 0.1127,
+      "tokens": 3096.1,
+      "dag_richness": 260.0152
+    },
+    "tracking-ai-course": {
+      "rds": 4.823e-05,
+      "f1": 0.1239,
+      "tokens": 2906.7,
+      "dag_richness": 393.2738
+    },
+    "quantum-computing": {
+      "rds": 3.463e-05,
+      "f1": 0.0937,
+      "tokens": 3200.1,
+      "dag_richness": 75.2016
+    },
+    "intro-to-physics-course": {
+      "rds": 4.665e-05,
+      "f1": 0.1294,
+      "tokens": 3148.5,
+      "dag_richness": 82.0455
+    },
+    "organizational-analytics": {
+      "rds": 4.091e-05,
+      "f1": 0.1078,
+      "tokens": 3026.2,
+      "dag_richness": 122.551
+    },
+    "systems-thinking": {
+      "rds": 6.617e-05,
+      "f1": 0.1158,
+      "tokens": 2192.4,
+      "dag_richness": 147.0025
+    }
+  },
+  "graphrag": {
+    "biology": {
+      "rds": 4.595e-05,
+      "f1": 0.1268,
+      "tokens": 3450.0,
+      "dag_richness": 234.2153
+    },
+    "conversational-ai": {
+      "rds": 4.288e-05,
+      "f1": 0.1084,
+      "tokens": 3450.0,
+      "dag_richness": 59.3157
+    },
+    "economics-course": {
+      "rds": 3.422e-05,
+      "f1": 0.0961,
+      "tokens": 3450.0,
+      "dag_richness": 253.574
+    },
+    "functions": {
+      "rds": 3.849e-05,
+      "f1": 0.093,
+      "tokens": 3450.0,
+      "dag_richness": 97.011
+    },
+    "modeling-healthcare-data": {
+      "rds": 4.297e-05,
+      "f1": 0.1188,
+      "tokens": 3450.0,
+      "dag_richness": 131.8599
+    },
+    "genetics": {
+      "rds": 4.545e-05,
+      "f1": 0.1196,
+      "tokens": 3450.0,
+      "dag_richness": 111.639
+    },
+    "fft-benchmarking": {
+      "rds": 3.781e-05,
+      "f1": 0.0958,
+      "tokens": 3450.0,
+      "dag_richness": 81.3871
+    },
+    "chemistry": {
+      "rds": 4.994e-05,
+      "f1": 0.1372,
+      "tokens": 3450.0,
+      "dag_richness": 319.0104
+    },
+    "Dementia": {
+      "rds": 4.721e-05,
+      "f1": 0.1275,
+      "tokens": 3450.0,
+      "dag_richness": 126.635
+    },
+    "circuits": {
+      "rds": 4.585e-05,
+      "f1": 0.1345,
+      "tokens": 3450.0,
+      "dag_richness": 295.5857
+    },
+    "bioinformatics": {
+      "rds": 4.399e-05,
+      "f1": 0.1149,
+      "tokens": 3450.0,
+      "dag_richness": 138.4905
+    },
+    "digital-electronics": {
+      "rds": 3.75e-05,
+      "f1": 0.0942,
+      "tokens": 3450.0,
+      "dag_richness": 154.4813
+    },
+    "data-science-course": {
+      "rds": 4.578e-05,
+      "f1": 0.1182,
+      "tokens": 3450.0,
+      "dag_richness": 215.3307
+    },
+    "glp1-obesity": {
+      "rds": 5.57e-05,
+      "f1": 0.1436,
+      "tokens": 3450.0,
+      "dag_richness": 164.7361
+    },
+    "calculus": {
+      "rds": 4.59e-05,
+      "f1": 0.1221,
+      "tokens": 3450.0,
+      "dag_richness": 249.5207
+    },
+    "digital-citizenship": {
+      "rds": 4.096e-05,
+      "f1": 0.1005,
+      "tokens": 3450.0,
+      "dag_richness": 225.3928
+    },
+    "ecology": {
+      "rds": 3.403e-05,
+      "f1": 0.1048,
+      "tokens": 3450.0,
+      "dag_richness": 190.1759
+    },
+    "ethics-course": {
+      "rds": 3.733e-05,
+      "f1": 0.1043,
+      "tokens": 3450.0,
+      "dag_richness": 141.0968
+    },
+    "computer-science": {
+      "rds": 4.613e-05,
+      "f1": 0.1279,
+      "tokens": 3450.0,
+      "dag_richness": 387.2
+    },
+    "algebra-1": {
+      "rds": 4.868e-05,
+      "f1": 0.1149,
+      "tokens": 3450.0,
+      "dag_richness": 158.2041
+    }
+  }
+}

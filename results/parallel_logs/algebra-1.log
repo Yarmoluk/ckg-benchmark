@@ -1,0 +1,51 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── algebra-1: 15 docs
+    indexing algebra-1 (this takes several minutes — many LLM calls)...
+    indexed algebra-1 in 1088s
+  querying 175 queries (method: local)
+    [10/175] avg F1=0.093
+    ✗ query error on algebra-1_T1_8: TIMEOUT
+    [20/175] avg F1=0.112
+    [30/175] avg F1=0.116
+    [40/175] avg F1=0.118
+    [50/175] avg F1=0.110
+    [60/175] avg F1=0.103
+    [70/175] avg F1=0.094
+    [80/175] avg F1=0.088
+    [90/175] avg F1=0.084
+    [100/175] avg F1=0.082
+    [110/175] avg F1=0.091
+    [120/175] avg F1=0.097
+    [130/175] avg F1=0.095
+    [140/175] avg F1=0.097
+    [150/175] avg F1=0.102
+    [160/175] avg F1=0.110
+    [170/175] avg F1=0.113
+   algebra-1: F1=0.1149  tokens~3450  cost=$2.881
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      174
+   Macro F1:     0.1149
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00004868
+   Total cost:   $2.881  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.1095
+     T2_dependency: 0.0547
+     T3_path: 0.1625
+     T4_aggregate: 0.0401
+     T5_cross_concept: 0.1932
+
+   Results: results/graphrag/

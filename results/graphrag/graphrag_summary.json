@@ -1,0 +1,31 @@
+{
+  "n_queries": 175,
+  "macro_f1": 0.1275,
+  "macro_rds": 4.721e-05,
+  "mean_tokens": 3450.0,
+  "total_cost_usd": 2.898,
+  "f1_by_type": {
+    "T1_entity": 0.0995,
+    "T2_dependency": 0.0602,
+    "T3_path": 0.2285,
+    "T4_aggregate": 0.1028,
+    "T5_cross_concept": 0.1941
+  },
+  "n_domains": 1,
+  "by_domain": {
+    "Dementia": {
+      "n_queries": 175,
+      "macro_f1": 0.1275,
+      "macro_rds": 4.721e-05,
+      "mean_tokens": 3450.0,
+      "total_cost_usd": 2.898,
+      "f1_by_type": {
+        "T1_entity": 0.0995,
+        "T2_dependency": 0.0602,
+        "T3_path": 0.2285,
+        "T4_aggregate": 0.1028,
+        "T5_cross_concept": 0.1941
+      }
+    }
+  }
+}

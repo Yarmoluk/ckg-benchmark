@@ -1,0 +1,275 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── ecology: 19 docs
+    indexing ecology (this takes several minutes — many LLM calls)...
+    indexed ecology in 2584s
+  querying 176 queries (method: local)
+    [10/176] avg F1=0.152
+    [20/176] avg F1=0.137
+    [30/176] avg F1=0.120
+    [40/176] avg F1=0.108
+    [50/176] avg F1=0.111
+    ✗ query error on ecology_T2_322: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_190: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_300: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_102: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_367: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_39: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_27: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_345: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_120: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_153: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_123: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_55: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_199: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_146: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_237: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_331: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_191: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_87: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_194: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_186: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_111: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_350: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_140: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_366: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_356: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_337: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_40: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_317: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_91: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_278: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_380: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_129: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_241: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_142: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_333: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_359: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_290: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_116: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_357: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_171: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_32: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_121: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_20: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T2_166: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_151_179: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_146: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_13_176: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_34: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_106: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_13_264: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_176: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_13_226: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_13_305: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_222: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_158: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_278: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_302: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_13_305: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_342_374: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_13_199: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_209: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_58: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_342_350: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_27: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_14_58: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_13_272: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_83: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_342_361: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T3_1_167: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_FOUND: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_ECOS: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_ENFL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_CYCL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_INTR: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_BIOD: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_POPU: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_ERTH: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_LAND: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_POLL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_GLOB: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_SYST: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T4_CRIT: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_126_127: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_125_10: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_346_341: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_290_35: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_94_81: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_273_201: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_121_7: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_180_201: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_297_5: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_160_4: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_58_55: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_287_286: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_356_345: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_71_14: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_42_2: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_349_348: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_12_9: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_68_63: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_149_147: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_110_9: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_263_20: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_310_298: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_307_5: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_135_132: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_259_197: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_47_46: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_109_5: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_244_239: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_4_2: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_252_242: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_170_169: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_293_36: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_185_77: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_274_279: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_361_358: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_310_300: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_102_6: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ecology_T5_190_202: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+   ecology: F1=0.1048  tokens~3450  cost=$0.927
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      56
+   Macro F1:     0.1048
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00003403
+   Total cost:   $0.927  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.111
+     T2_dependency: 0.0532
+
+   Results: results/graphrag/

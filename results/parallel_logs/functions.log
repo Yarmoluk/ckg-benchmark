@@ -1,0 +1,362 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── functions: 15 docs
+    indexing functions (this takes several minutes — many LLM calls)...
+    indexed functions in 1790s
+  querying 176 queries (method: local)
+    [10/176] avg F1=0.093
+    ✗ query error on functions_T1_174: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_205: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_140: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_23: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_152: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_109: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_9: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_8: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_24: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_56: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_60: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_130: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_155: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_206: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_144: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_51: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_167: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_180: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_196: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_108: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_57: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_115: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_151: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_72: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_2: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_41: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_193: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_88: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_175: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_40: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_200: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_87: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_199: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_197: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_98: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_25: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_92: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_89: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_186: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T1_68: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_16: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_197: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_123: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_143: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_36: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_101: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_25: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_147: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_80: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_167: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_165: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_97: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_153: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_54: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_191: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_22: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_208: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_180: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_63: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_79: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_201: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_64: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_30: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_102: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_76: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_122: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_169: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_98: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_46: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_99: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_95: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_58: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_73: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_23: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_162: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_48: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_142: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_67: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_179: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_124: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_184: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_74: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_148: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_61: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_88: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_19: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_189: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_10: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_85: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T2_108: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_15_164: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_15_163: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_14_149: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_1_42: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_14_202: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_1_202: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_12_202: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_170_53: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_14_148: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_172_176: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_15_49: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_1_42: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_15_32: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_15_164: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_12_35: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_14_85: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_172_176: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_170_74: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_15_207: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_106_123: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_15_33: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_12_206: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_15_33: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_1_103: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T3_12_149: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_FOUND: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_GRAPH: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_ALG: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_LIN: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_QUAD: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_INVC: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_RAT: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_EXP: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_LOG: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_POLY: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_CLASS: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_TRANS: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T4_MODEL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_66_67: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_75_71: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_182_171: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_130_127: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_62_2: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_142_143: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_40_174: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_200_199: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_150_18: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_151_3: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_126_170: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_67_51: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_109_105: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_55_54: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_30_27: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_30_28: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_180_179: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_115_121: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_95_94: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_113_197: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_110_106: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_125_62: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_201_197: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_20_18: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_184_18: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_178_177: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_174_173: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_31_26: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_21_4: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_108_105: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_201_199: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_90_89: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_33_17: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_68_185: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_56_28: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_142_2: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_120_111: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on functions_T5_41_183: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+   functions: F1=0.093  tokens~3450  cost=$0.166
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      10
+   Macro F1:     0.093
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00003849
+   Total cost:   $0.166  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.093
+
+   Results: results/graphrag/
