@@ -1,0 +1,81 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,CPT Code System,,FOUND
+2,Evaluation and Management,1,CATEGORY
+3,Office and Outpatient Visit,2,SUBCATEGORY
+4,Inpatient Hospital Services,2,SUBCATEGORY
+5,Emergency Department Services,2,SUBCATEGORY
+6,Preventive Medicine Services,2,SUBCATEGORY
+7,Telehealth Services,2,SUBCATEGORY
+8,New Patient Office Visit,3,CODE_GROUP
+9,Established Patient Office Visit,3,CODE_GROUP
+10,New Patient Definition,8,PATIENT_TYPE
+11,Established Patient Definition,9,PATIENT_TYPE
+12,Medical Decision Making,2,COMPONENT
+13,Total Time Basis,2,COMPONENT
+14,Number and Complexity of Problems,12,MDM_ELEMENT
+15,Amount and Complexity of Data,12,MDM_ELEMENT
+16,Risk of Complications and Morbidity,12,MDM_ELEMENT
+17,Straightforward MDM,12,MDM_LEVEL
+18,Low Complexity MDM,12,MDM_LEVEL
+19,Moderate Complexity MDM,12,MDM_LEVEL
+20,High Complexity MDM,12,MDM_LEVEL
+21,Minimal Problem,14,PROBLEM_TYPE
+22,Acute Self-Limited Problem,14,PROBLEM_TYPE
+23,Chronic Stable Condition,14,PROBLEM_TYPE
+24,Chronic with Exacerbation,14,PROBLEM_TYPE
+25,Undiagnosed New Problem,14,PROBLEM_TYPE
+26,Acute Illness with Systemic Symptoms,14,PROBLEM_TYPE
+27,Review External Records,15,DATA_ELEMENT
+28,Independent Interpretation of Test,15,DATA_ELEMENT
+29,Discussion with External Physician,15,DATA_ELEMENT
+30,Prescription Drug Management Risk,16,RISK_ELEMENT
+31,Elective Major Surgery Risk,16,RISK_ELEMENT
+32,Drug Therapy Requiring Monitoring,16|30,RISK_ELEMENT
+33,CPT 99202 New Patient Straightforward,8|17,CODE
+34,CPT 99203 New Patient Low,8|18,CODE
+35,CPT 99204 New Patient Moderate,8|19,CODE
+36,CPT 99205 New Patient High,8|20,CODE
+37,CPT 99211 Established Minimal,9,CODE
+38,CPT 99212 Established Straightforward,9|17,CODE
+39,CPT 99213 Established Low,9|18,CODE
+40,CPT 99214 Established Moderate,9|19,CODE
+41,CPT 99215 Established High,9|20,CODE
+42,Initial Hospital Inpatient Care,4,CODE_GROUP
+43,Subsequent Hospital Inpatient Care,4,CODE_GROUP
+44,Hospital Discharge Services,4,CODE_GROUP
+45,CPT 99221 Initial Hospital Low,42|18,CODE
+46,CPT 99222 Initial Hospital Moderate,42|19,CODE
+47,CPT 99223 Initial Hospital High,42|20,CODE
+48,CPT 99231 Subsequent Hospital Low,43|18,CODE
+49,CPT 99232 Subsequent Hospital Moderate,43|19,CODE
+50,CPT 99233 Subsequent Hospital High,43|20,CODE
+51,CPT 99238 Hospital Discharge 30min,44,CODE
+52,CPT 99239 Hospital Discharge Over 30min,44,CODE
+53,Emergency Department New Patient,5,CODE_GROUP
+54,CPT 99281-99285 ED Visit,53|17|18|19|20,CODE
+55,Preventive New Patient,6,CODE_GROUP
+56,Preventive Established Patient,6,CODE_GROUP
+57,CPT 99381-99387 Preventive New,55,CODE
+58,CPT 99391-99397 Preventive Established,56,CODE
+59,Online Digital E&M,7,CODE_GROUP
+60,CPT 99421-99423 Online E&M,59,CODE
+61,Telephone E&M,7,CODE_GROUP
+62,CPT 99441-99443 Telephone E&M,61,CODE
+63,CPT Modifier,1,MODIFIER
+64,Modifier 25 Significant Separate E&M,63,MODIFIER
+65,Modifier 59 Distinct Procedural Service,63,MODIFIER
+66,Modifier 32 Mandated Service,63,MODIFIER
+67,Split-Shared Visit Rules,4|3,BILLING_CONCEPT
+68,Incident-To Billing Rules,3|11,BILLING_CONCEPT
+69,Teaching Physician Rules,4|47,BILLING_CONCEPT
+70,2021 AMA E&M Guideline Changes,12|13,COMPLIANCE
+71,Documentation Requirements,12|13|70,COMPLIANCE
+72,Audit Risk and Compliance,71|70,COMPLIANCE
+73,Relative Value Unit,1,ECONOMICS
+74,Work RVU,73,ECONOMICS
+75,Practice Expense RVU,73,ECONOMICS
+76,Malpractice RVU,73,ECONOMICS
+77,Conversion Factor,73,ECONOMICS
+78,Physician Fee Schedule,74|75|76|77,ECONOMICS
+79,Quality Payment Program,78,ECONOMICS
+80,MIPS Reporting,79,ECONOMICS

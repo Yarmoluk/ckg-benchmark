@@ -1,0 +1,76 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Healthcare Payer,,FOUND
+2,Commercial Payer,1,PAYER_TYPE
+3,Medicare Advantage Plan,1,PAYER_TYPE
+4,Medicaid Managed Care Organization,1,PAYER_TYPE
+5,Pharmacy Benefit Manager,1,PAYER_TYPE
+6,United Healthcare,2,PAYER_EXAMPLE
+7,Cigna,2,PAYER_EXAMPLE
+8,Aetna,2,PAYER_EXAMPLE
+9,Anthem,2,PAYER_EXAMPLE
+10,CVS Caremark,5,PBM_EXAMPLE
+11,Express Scripts,5,PBM_EXAMPLE
+12,OptumRx,5,PBM_EXAMPLE
+13,Formulary,,FOUND
+14,Formulary Tier,,FOUND
+15,Tier 1 Generic,14,TIER
+16,Tier 2 Preferred Brand,14,TIER
+17,Tier 3 Non-Preferred Brand,14,TIER
+18,Tier 4 Specialty,14,TIER
+19,Tier 5 Specialty Non-Preferred,14,TIER
+20,Coverage Criteria,,FOUND
+21,Prior Authorization,20,COVERAGE_CRITERIA
+22,Step Therapy,20|21,COVERAGE_CRITERIA
+23,Quantity Limits,20,COVERAGE_CRITERIA
+24,Medical Exception Process,20,COVERAGE_CRITERIA
+25,Utilization Management,20|21|22|23,UTILIZATION_MGMT
+26,Drug Class,,FOUND
+27,GLP-1 Receptor Agonist,26,DRUG_CLASS
+28,SGLT-2 Inhibitor,26,DRUG_CLASS
+29,DPP-4 Inhibitor,26,DRUG_CLASS
+30,Insulin Analogue,26,DRUG_CLASS
+31,Semaglutide,27,DRUG
+32,Tirzepatide,27,DRUG
+33,Dulaglutide,27,DRUG
+34,Liraglutide,27,DRUG
+35,Exenatide,27,DRUG
+36,Wegovy,31,BRANDED_DRUG
+37,Ozempic,31,BRANDED_DRUG
+38,Mounjaro,32,BRANDED_DRUG
+39,Zepbound,32,BRANDED_DRUG
+40,Victoza,34,BRANDED_DRUG
+41,Obesity Indication,20,INDICATION
+42,Type 2 Diabetes Indication,20,INDICATION
+43,Cardiovascular Risk Reduction,20,INDICATION
+44,BMI Threshold Criterion,41,COVERAGE_CRITERIA
+45,Comorbidity Requirement,41,COVERAGE_CRITERIA
+46,Diet Program Requirement,41|22,COVERAGE_CRITERIA
+47,Prescriber Specialty Requirement,21,COVERAGE_CRITERIA
+48,Formulary Exception,13|24,COVERAGE_CRITERIA
+49,Non-Formulary Drug,13,FORMULARY_STATUS
+50,Formulary Preferred Drug,13|16,FORMULARY_STATUS
+51,Specialty Drug Criteria,14|18|19,TIER
+52,Commercial Formulary,2|13,FORMULARY_TYPE
+53,Medicare Part D Formulary,3|13,FORMULARY_TYPE
+54,Medicaid Preferred Drug List,4|13,FORMULARY_TYPE
+55,Coverage Determination,21|24,PROCESS
+56,Appeal Process,55,PROCESS
+57,Peer-to-Peer Review,55|47,PROCESS
+58,Electronic Prior Authorization,21,PROCESS
+59,Real-Time Benefit Tool,13|14,TECHNOLOGY
+60,Formulary Lookup,13|59,TECHNOLOGY
+61,PBM Contract,5|13,CONTRACT
+62,Rebate Agreement,61|26,CONTRACT
+63,Net Drug Cost,18|62,ECONOMICS
+64,Patient Out-of-Pocket Cost,14|15|16|17|18|19,ECONOMICS
+65,Copay,64,ECONOMICS
+66,Coinsurance,64,ECONOMICS
+67,Deductible,64,ECONOMICS
+68,Out-of-Pocket Maximum,64|67,ECONOMICS
+69,Manufacturer Copay Card,65|36|37|38|39,ECONOMICS
+70,Coverage Gap Donut Hole,53|64,MEDICARE_PART_D
+71,Low Income Subsidy,53|65,MEDICARE_PART_D
+72,Formulary Change Notification,13|2|3|4,COMPLIANCE
+73,Annual Formulary Review,13|62,PROCESS
+74,Specialty Pharmacy Requirement,18|19,COVERAGE_CRITERIA
+75,Home Delivery Requirement,23|15,COVERAGE_CRITERIA

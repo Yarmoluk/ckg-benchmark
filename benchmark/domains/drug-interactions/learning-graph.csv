@@ -1,0 +1,71 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Drug Interaction,,FOUND
+2,Pharmacokinetic Interaction,1,MECHANISM
+3,Pharmacodynamic Interaction,1,MECHANISM
+4,Drug Absorption Interaction,2,MECHANISM
+5,Drug Distribution Interaction,2,MECHANISM
+6,Drug Metabolism Interaction,2,MECHANISM
+7,Drug Excretion Interaction,2,MECHANISM
+8,CYP450 Enzyme System,6,MECHANISM
+9,CYP3A4,8,ENZYME
+10,CYP2D6,8,ENZYME
+11,CYP2C9,8,ENZYME
+12,CYP2C19,8,ENZYME
+13,CYP1A2,8,ENZYME
+14,Enzyme Inhibition,8|6,MECHANISM
+15,Enzyme Induction,8|6,MECHANISM
+16,P-glycoprotein,4|7,TRANSPORTER
+17,OATP Transporter,4,TRANSPORTER
+18,Interaction Severity,,FOUND
+19,Contraindicated Interaction,18,SEVERITY
+20,Major Interaction,18,SEVERITY
+21,Moderate Interaction,18,SEVERITY
+22,Minor Interaction,18,SEVERITY
+23,Additive Effect,3,MECHANISM
+24,Synergistic Effect,3,MECHANISM
+25,Antagonistic Effect,3,MECHANISM
+26,Drug Class,,FOUND
+27,Anticoagulant,26,DRUG_CLASS
+28,Warfarin,27,DRUG
+29,Antiplatelet,26,DRUG_CLASS
+30,Aspirin,29,DRUG
+31,NSAID,26,DRUG_CLASS
+32,Ibuprofen,31,DRUG
+33,Statin,26,DRUG_CLASS
+34,Simvastatin,33,DRUG
+35,Atorvastatin,33,DRUG
+36,Antibiotic,26,DRUG_CLASS
+37,Fluoroquinolone,36,DRUG_CLASS
+38,Macrolide,36,DRUG_CLASS
+39,Clarithromycin,38,DRUG
+40,Azithromycin,38,DRUG
+41,Antifungal,26,DRUG_CLASS
+42,Fluconazole,41,DRUG
+43,Ketoconazole,41,DRUG
+44,Antidepressant,26,DRUG_CLASS
+45,SSRI,44,DRUG_CLASS
+46,MAOI,44,DRUG_CLASS
+47,Fluoxetine,45,DRUG
+48,Serotonin Syndrome,46|45,INTERACTION_OUTCOME
+49,Bleeding Risk,27|29|31,INTERACTION_OUTCOME
+50,Rhabdomyolysis Risk,33|14,INTERACTION_OUTCOME
+51,QT Prolongation,3,INTERACTION_OUTCOME
+52,Digoxin,26,DRUG
+53,Narrow Therapeutic Index Drug,26,DRUG_CLASS
+54,Warfarin CYP2C9 Interaction,28|11,INTERACTION
+55,Statin CYP3A4 Interaction,33|9|14,INTERACTION
+56,SSRI-MAOI Interaction,45|46|48,INTERACTION
+57,Antibiotic-Warfarin Interaction,36|28|54,INTERACTION
+58,Drug-Food Interaction,1,INTERACTION_TYPE
+59,Grapefruit CYP3A4 Inhibition,9|14|58,INTERACTION
+60,INR Monitoring,28|54,CLINICAL_MONITORING
+61,Drug Interaction Database,,TECHNOLOGY
+62,Medication Reconciliation,1,CLINICAL_PRACTICE
+63,Polypharmacy Risk,1|53,CLINICAL_RISK
+64,High-Alert Medication,53|63,DRUG_CLASS
+65,Anticoagulation Reversal Agent,27,DRUG
+66,Heparin,27,DRUG
+67,Direct Oral Anticoagulant,27,DRUG_CLASS
+68,Apixaban,67,DRUG
+69,Rivaroxaban,67,DRUG
+70,DOAC-Drug Interaction,67|16,INTERACTION

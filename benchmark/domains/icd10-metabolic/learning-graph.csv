@@ -1,0 +1,71 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,ICD-10 Classification,,FOUND
+2,Chapter IV Endocrine Nutritional Metabolic,1,CHAPTER
+3,Thyroid Gland Disorders,2,BLOCK
+4,Diabetes Mellitus,2,BLOCK
+5,Other Glucose Regulation Disorders,2,BLOCK
+6,Obesity,2,BLOCK
+7,Metabolic Disorders,2,BLOCK
+8,Nutritional Deficiencies,2,BLOCK
+9,Hypothyroidism,3,CATEGORY
+10,Hyperthyroidism,3,CATEGORY
+11,Thyroiditis,3,CATEGORY
+12,Congenital Hypothyroidism,9,CODE
+13,Primary Hypothyroidism E03,9,CODE
+14,Secondary Hypothyroidism E03.1,9,CODE
+15,Graves Disease E05.0,10,CODE
+16,Toxic Multinodular Goiter E05.2,10,CODE
+17,Type 1 Diabetes Mellitus E10,4,CATEGORY
+18,Type 2 Diabetes Mellitus E11,4,CATEGORY
+19,Gestational Diabetes O24,4,CATEGORY
+20,Other Specified Diabetes E13,4,CATEGORY
+21,T2DM with Diabetic Nephropathy E11.65,18,CODE
+22,T2DM with Diabetic Neuropathy E11.40,18,CODE
+23,T2DM with Diabetic Retinopathy E11.31,18,CODE
+24,T2DM with Diabetic Foot E11.621,18,CODE
+25,T2DM with Hypoglycemia E11.641,18,CODE
+26,T2DM with Hyperglycemia E11.65,18,CODE
+27,HbA1c Clinical Monitoring,18|17,CLINICAL_CONCEPT
+28,Impaired Glucose Tolerance R73.02,5,CODE
+29,Impaired Fasting Glucose R73.01,5,CODE
+30,Prediabetes R73.09,28|29,CODE
+31,Insulin Resistance,30|18,MECHANISM
+32,Metabolic Syndrome E88.81,31|6,CATEGORY
+33,Overweight E66.9,6,CATEGORY
+34,Obesity Class I BMI 30-35 E66.09,6,CODE
+35,Obesity Class II BMI 35-40 E66.01,6,CODE
+36,Obesity Class III BMI Over 40 E66.01,6,CODE
+37,Morbid Obesity E66.01,36,CODE
+38,Obesity Hypoventilation Syndrome E66.2,37,CODE
+39,Lipid Disorders E78,7,BLOCK
+40,Hypercholesterolemia E78.0,39,CODE
+41,Hypertriglyceridemia E78.1,39,CODE
+42,Mixed Hyperlipidemia E78.2,39|40|41,CODE
+43,Low HDL Cholesterol E78.6,39,CODE
+44,Gout M10,7,CATEGORY
+45,Acute Gout M10.00,44,CODE
+46,Chronic Gout M1A,44,CODE
+47,Hyperuricemia E79.0,44,CODE
+48,Electrolyte Disorders,7,CATEGORY
+49,Hyponatremia E87.1,48,CODE
+50,Hypernatremia E87.0,48,CODE
+51,Hypokalemia E87.6,48,CODE
+52,Hyperkalemia E87.5,48,CODE
+53,Vitamin D Deficiency E55,8,CODE
+54,Iron Deficiency E61.1,8,CODE
+55,Iron Deficiency Anemia D50.9,54,CODE
+56,Vitamin B12 Deficiency E53.8,8,CODE
+57,Folate Deficiency E53.8,8,CODE
+58,Protein-Calorie Malnutrition E46,8,CODE
+59,Dehydration E86.0,48,CODE
+60,Acidosis,7,CATEGORY
+61,Metabolic Acidosis E87.2,60,CODE
+62,Diabetic Ketoacidosis E10.10,17|60,CODE
+63,Hyperosmolar Hyperglycemic State E11.01,18|60,CODE
+64,NASH Nonalcoholic Steatohepatitis K75.81,32|18,CODE
+65,Insulin Therapy Concept,17|18,TREATMENT_CONCEPT
+66,Bariatric Surgery Indication,37|18,CLINICAL_CONCEPT
+67,Cardiovascular Risk from Metabolic Disease,32|18|40|41,CLINICAL_CONCEPT
+68,ASCVD Risk Calculator,67,CLINICAL_CONCEPT
+69,Lipid-Lowering Therapy,40|41|42,TREATMENT_CONCEPT
+70,GLP-1 Agonist Indication,18|37|43,TREATMENT_CONCEPT
