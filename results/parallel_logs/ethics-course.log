@@ -1,0 +1,341 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── ethics-course: 11 docs
+    indexing ethics-course (this takes several minutes — many LLM calls)...
+    indexed ethics-course in 2228s
+  querying 176 queries (method: local)
+    [10/176] avg F1=0.073
+    [20/176] avg F1=0.094
+    ✗ query error on ethics-course_T1_60: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_130: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_155: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_248: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_144: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_51: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_184: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_167: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_180: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_237: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_108: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_57: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_115: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_151: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_72: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_208: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_2: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_195: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_207: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_41: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_179: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_234: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_88: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_215: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_40: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_230: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_196: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_87: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T1_241: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_28: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_103: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_29: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_97: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_222: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_94: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_160: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_72: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_212: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_16: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_192: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_123: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_143: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_36: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_102: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_25: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_147: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_80: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_218: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_166: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_164: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_226: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_98: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_153: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_54: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_186: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_22: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_241: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_175: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_63: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_203: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_79: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_235: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_64: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_30: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_249: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_76: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_122: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_168: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_99: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_46: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_100: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_96: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_58: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_177: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_73: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_185: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_180: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_171: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T2_23: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_82_215: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_6_80: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_9_156: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_7_215: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_82_113: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_7_56: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_6_198: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_7_112: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_9_75: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_6_197: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_82_122: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_7_113: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_9_63: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_6_214: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_6_235: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_1_157: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_1_235: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_1_235: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_82_125: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_7_66: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_7_166: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_1_245: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_7_181: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_1_214: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T3_7_215: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_FOUND: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_HARM: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_DATA: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_SYSF: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_ARCH: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_MRKT: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_CASE: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_LEVR: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_ADVOC: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_BEHAV: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_COMM: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_CAP: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T4_CORP: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_161_51: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_189_188: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_64_23: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_51_48: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_116_81: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_241_240: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_52_53: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_170_24: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_246_193: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_167_51: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_2_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_187_186: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_103_100: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_155_52: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_10_9: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_39_27: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_113_107: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_99_92: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_75_11: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_22_7: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_76_13: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_178_173: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_28_10: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_30_28: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_230_228: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_154_168: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_26_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_240_239: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_167_52: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_243_231: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_44_27: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_44_30: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_207_24: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_152_51: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_173_171: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_53_41: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_83_81: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on ethics-course_T5_166_133: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+   ethics-course: F1=0.1043  tokens~3450  cost=$0.348
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      21
+   Macro F1:     0.1043
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00003733
+   Total cost:   $0.348  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.1043
+
+   Results: results/graphrag/

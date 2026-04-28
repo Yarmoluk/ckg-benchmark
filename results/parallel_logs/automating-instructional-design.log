@@ -1,0 +1,18 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── automating-instructional-design: 15 docs
+    indexing automating-instructional-design (this takes several minutes — many LLM calls)...
+    ERROR indexing automating-instructional-design (exit 1, 1104s):
+/opt/homebrew/Caskroom/miniconda/base/envs/mkdocs/lib/python3.11/site-packages/graphrag/index/operations/extract_graph/extract_graph.py:119: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  all_relationships = pd.concat(relationship_dfs, ignore_index=False)
+
+  ✗ indexing failed for automating-instructional-design

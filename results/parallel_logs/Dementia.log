@@ -1,0 +1,16 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── Dementia: 16 docs
+    indexing Dementia (this takes several minutes — many LLM calls)...
+    ERROR indexing Dementia (exit 1, 426s):
+
+  ✗ indexing failed for Dementia

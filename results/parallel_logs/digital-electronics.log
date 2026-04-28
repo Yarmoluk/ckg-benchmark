@@ -1,0 +1,224 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── digital-electronics: 17 docs
+    indexing digital-electronics (this takes several minutes — many LLM calls)...
+    indexed digital-electronics in 2592s
+  querying 174 queries (method: local)
+    [10/174] avg F1=0.071
+    [20/174] avg F1=0.076
+    [30/174] avg F1=0.087
+    [40/174] avg F1=0.099
+    [50/174] avg F1=0.095
+    [60/174] avg F1=0.095
+    [70/174] avg F1=0.097
+    [80/174] avg F1=0.095
+    ✗ query error on digital-electronics_T2_139: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_74: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_130: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_294: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_282: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_138: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_224: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_209: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_190: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_73: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_266: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_258: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_49: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_27: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_59: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_81: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_84: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_221: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T2_35: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_148_164: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_280_285: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_239_293: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_1_127: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_280_285: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_239_250: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_15_78: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_1_111: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_239_295: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_1_112: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_15_50: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_15_50: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_15_122: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_239_243: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_148_175: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_15_56: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_148_158: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_148_175: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_148_288: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_148_288: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_15_94: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_148_233: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_15_86: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_148_213: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T3_239_270: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_NUMSYS: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_BOOL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_GATES: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_COMB: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_BLOCKS: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_SEQ: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_FLIPFLOP: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_FSM: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_REG: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_HDL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T4_VERIFY: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_286_36: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_87_84: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_104_103: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_171_148: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_121_119: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_35_28: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_35_31: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_181_180: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_35_27: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_33_32: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_279_277: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_296_68: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_89_19: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_298_297: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_43_22: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_102_101: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_39_36: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_38_21: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_131_130: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_233_165: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_70_68: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_139_41: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_27_22: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_44_43: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_245_133: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_182_181: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_147_137: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_113_108: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_133_57: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_152_148: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_230_226: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_75_17: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_173_172: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_267_266: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_41_37: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_9_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_267_262: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-electronics_T5_56_36: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+   digital-electronics: F1=0.0942  tokens~3450  cost=$1.341
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      81
+   Macro F1:     0.0942
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00003750
+   Total cost:   $1.341  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.0948
+     T2_dependency: 0.0933
+
+   Results: results/graphrag/

@@ -1,0 +1,299 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── economics-course: 16 docs
+    indexing economics-course (this takes several minutes — many LLM calls)...
+    indexed economics-course in 2363s
+  querying 176 queries (method: local)
+    [10/176] avg F1=0.106
+    [20/176] avg F1=0.096
+    [30/176] avg F1=0.092
+    [40/176] avg F1=0.099
+    ✗ query error on economics-course_T1_98: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T1_25: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T1_92: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T1_89: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T1_184: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T1_68: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T1_12: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_188: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_119: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_139: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_33: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_98: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_22: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_143: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_77: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_162: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_160: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_94: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_149: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_51: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_182: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_19: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_13: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_171: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_60: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_76: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_200: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_61: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_27: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_99: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_73: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_118: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_164: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_95: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_43: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_96: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_92: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_55: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_173: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_70: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_167: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_20: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_157: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_180: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_45: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_138: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_64: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_178: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_120: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_183: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_71: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_144: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_58: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_85: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_16: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_206: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T2_10: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_146: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_200: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_131: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_125: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_83: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_75: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_87: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_75: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_139: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_201_206: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_206: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_140: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_86: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_152: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_164: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_120: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_60: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_79: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_104: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_110: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_155: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_116: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_15: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_43: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T3_1_50: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_FOUND: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_MICRO: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_MKSTR: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_PUBEC: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_MACRO: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_MONEY: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_POLICY: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_INTL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_PFIN: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_INVEST: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_DIGITAL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_THINK: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T4_CAPSTONE: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_10_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_88_45: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_21_19: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_142_126: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_61_33: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_73_72: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_185_183: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_135_134: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_56_55: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_148_147: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_36_33: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_200_73: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_157_16: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_158_157: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_132_128: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_64_61: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_111_98: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_50_3: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_26_23: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_27_19: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_182_170: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_119_118: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_94_93: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_117_114: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_113_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_131_126: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_203_201: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_15_14: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_186_185: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_180_179: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_178_3: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_27_23: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_18_3: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_110_108: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_202_201: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_90_89: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_29_28: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on economics-course_T5_65_64: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+   economics-course: F1=0.0961  tokens~3450  cost=$0.712
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      43
+   Macro F1:     0.0961
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00003422
+   Total cost:   $0.712  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.0961
+
+   Results: results/graphrag/

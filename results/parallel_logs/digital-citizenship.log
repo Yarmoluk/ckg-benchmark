@@ -1,0 +1,119 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── digital-citizenship: 19 docs
+    indexing digital-citizenship (this takes several minutes — many LLM calls)...
+    indexed digital-citizenship in 431s
+  querying 172 queries (method: local)
+    [10/172] avg F1=0.111
+    [20/172] avg F1=0.113
+    [30/172] avg F1=0.105
+    [40/172] avg F1=0.104
+    [50/172] avg F1=0.102
+    ✗ query error on digital-citizenship_T2_197: TIMEOUT
+    [60/172] avg F1=0.099
+    [70/172] avg F1=0.096
+    [80/172] avg F1=0.090
+    [90/172] avg F1=0.087
+    [100/172] avg F1=0.085
+    [110/172] avg F1=0.096
+    [120/172] avg F1=0.103
+    [130/172] avg F1=0.101
+    ✗ query error on digital-citizenship_T5_220_4: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_261_259: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_219_33: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_87_19: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_160_159: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_231_88: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_63_62: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_162_160: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_39_34: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_260_259: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_193_56: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_100_92: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_252_64: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_196_195: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_188_187: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_68_46: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_55_4: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_123_115: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_58_14: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_172_140: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_235_111: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_169_166: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_3_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_186_115: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_106_105: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_157_147: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_7_6: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_41_34: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_118_116: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_262_187: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_250_137: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_243_125: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_102_5: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_81_74: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_23_9: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on digital-citizenship_T5_82_81: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+   digital-citizenship: F1=0.1005  tokens~3450  cost=$2.236
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      135
+   Macro F1:     0.1005
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00004096
+   Total cost:   $2.236  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.1025
+     T2_dependency: 0.0668
+     T3_path: 0.1868
+     T4_aggregate: 0.0188
+     T5_cross_concept: 0.1649
+
+   Results: results/graphrag/

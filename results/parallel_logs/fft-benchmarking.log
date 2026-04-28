@@ -1,0 +1,193 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── fft-benchmarking: 5 docs
+    indexing fft-benchmarking (this takes several minutes — many LLM calls)...
+    indexed fft-benchmarking in 87s
+  querying 175 queries (method: local)
+    [10/175] avg F1=0.106
+    [20/175] avg F1=0.127
+    [30/175] avg F1=0.128
+    [40/175] avg F1=0.129
+    [50/175] avg F1=0.123
+    [60/175] avg F1=0.110
+    [70/175] avg F1=0.104
+    [80/175] avg F1=0.106
+    [90/175] avg F1=0.101
+    ✗ query error on fft-benchmarking_T2_156: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T2_162: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_1_60: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_4_190: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_4_173: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_4_190: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_33_62: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_33_116: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_73_125: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_1_43: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_4_24: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_4_30: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_73_83: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_1_191: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_1_198: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_1_198: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_4_32: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_73_155: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_4_195: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_177_184: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_73_126: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_1_167: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_4_43: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_105_120: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_33_116: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_1_11: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T3_1_60: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_MATH: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_SIGP: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_FOUR: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_FFTA: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_HARD: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_DSPI: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_PROG: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_LIBS: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_BNCH: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_PERF: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_PIPE: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T4_VAPP: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_25_17: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_43_12: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_166_165: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_14_7: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_118_105: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_175_40: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_168_31: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_42_40: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_136_85: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_37_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_16_7: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_93_89: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_116_115: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_15_7: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_113_112: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_60_52: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_70_69: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_198_17: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_32_16: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_112_74: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_170_42: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_126_121: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_185_182: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_44_42: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_67_49: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_46_41: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_50_49: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_129_128: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_11_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_51_49: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_103_85: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_128_121: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_198_49: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_77_76: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_45_42: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_34_9: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_121_49: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on fft-benchmarking_T5_15_4: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+   fft-benchmarking: F1=0.0958  tokens~3450  cost=$1.623
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      98
+   Macro F1:     0.0958
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00003781
+   Total cost:   $1.623  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.1226
+     T2_dependency: 0.0679
+
+   Results: results/graphrag/

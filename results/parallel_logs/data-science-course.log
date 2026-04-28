@@ -1,0 +1,139 @@
+    local embed server already running on port 4001
+
+GraphRAG Harness — LIVE
+LLM: claude-haiku-4-5-20251001 (Anthropic)
+Embed: local/sentence-transformers via LiteLLM proxy
+Query method: local
+Domains: 1
+
+Note: GraphRAG indexing requires many LLM calls per domain (entity extraction,
+      community reports). Expect 15-30 min and $2-5 per domain in API costs.
+
+── data-science-course: 16 docs
+    indexing data-science-course (this takes several minutes — many LLM calls)...
+    indexed data-science-course in 668s
+  querying 178 queries (method: local)
+    [10/178] avg F1=0.117
+    [20/178] avg F1=0.096
+    [30/178] avg F1=0.102
+    [40/178] avg F1=0.108
+    [50/178] avg F1=0.105
+    [60/178] avg F1=0.100
+    [70/178] avg F1=0.091
+    [80/178] avg F1=0.088
+    [90/178] avg F1=0.091
+    [100/178] avg F1=0.088
+    [110/178] avg F1=0.105
+    [120/178] avg F1=0.115
+    [130/178] avg F1=0.119
+    ✗ query error on data-science-course_T4_STATS: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T4_REGR: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T4_EVAL: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T4_ADVR: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T4_NUMPY: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T4_ML: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T4_NN: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T4_TORCH: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T4_PROJ: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_171_106: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_84_113: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_150_147: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_23_22: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_66_65: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_141_136: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_4_1: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_146_137: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_103_101: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_277_241: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_164_163: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_113_101: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_156_132: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_249_247: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_259_253: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_195_141: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_234_158: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_256_136: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_173_132: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_62_41: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_75_74: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_116_115: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_85_108: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_22_21: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_205_197: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_261_231: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_191_190: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_24_22: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_265_258: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_121_114: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_19_18: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_208_205: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_170_169: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_178_172: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_299_290: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_187_185: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_63_41: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+    ✗ query error on data-science-course_T5_180_161: el,                              │
+│    702 │   │   │   │   │   │   │   llm_provider="anthropic",   
+   data-science-course: F1=0.1182  tokens~3450  cost=$2.169
+
+── GRAPHRAG GLOBAL SUMMARY ──
+   Domains:      1
+   Queries:      131
+   Macro F1:     0.1182
+   Mean tokens:  3450  (estimate)
+   Macro RDS:    0.00004578
+   Total cost:   $2.169  (estimate)
+
+   F1 by query type:
+     T1_entity: 0.1048
+     T2_dependency: 0.0708
+     T3_path: 0.2551
+     T4_aggregate: 0.0539
+
+   Results: results/graphrag/
