@@ -1,0 +1,41 @@
+{
+  "corpus": {
+    "source": "ClinicalTrials.gov API v2",
+    "search_terms": [
+      "semaglutide",
+      "tirzepatide",
+      "liraglutide",
+      "dulaglutide",
+      "exenatide",
+      "GLP-1 receptor agonist"
+    ],
+    "unique_trials": 1894,
+    "total_tokens": 2682496,
+    "total_chars": 11852155,
+    "file_size_kb": 11587.4,
+    "file_size_mb": 11.32
+  },
+  "ckg": {
+    "source": "benchmark/domains/glp1-obesity/learning-graph.csv",
+    "nodes": 146,
+    "tokens": 2614,
+    "file_size_kb": 7.2,
+    "macro_f1": 0.5298,
+    "bert_f1": 0.857,
+    "cpca_usd": 0.000506
+  },
+  "compression": {
+    "token_ratio": 1026.2,
+    "size_ratio": 1605.4
+  },
+  "cost_projection": {
+    "longctx_tokens_per_query": 2682696,
+    "longctx_cost_per_query_usd": 8.0505,
+    "longctx_cost_170_queries_usd": 1368.58,
+    "ckg_avg_tokens_per_query": 350,
+    "ckg_cost_per_query_usd": 0.00108,
+    "ckg_cost_170_queries_usd": 0.1836,
+    "cost_reduction_ratio": 7454.0,
+    "note": "Long-context cost uses Claude claude-sonnet-4-6 input pricing ($3/1M tokens). CKG uses Claude Haiku pricing ($0.80/1M input). Projections only \u2014 long-context LLM run not executed."
+  }
+}
