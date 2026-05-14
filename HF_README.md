@@ -144,7 +144,7 @@ GLP-1/Obesity pharmacology assembled from ClinicalTrials.gov API in one session.
          and Commercial Domains: RAG, GraphRAG, and Compact Knowledge Graphs},
   author={Yarmoluk, Daniel and McCreary, Dan},
   year={2026},
-  note={Pre-print in preparation. v0.6.2. Patent pending App #64/040,804.}
+  note={Pre-print in preparation. v0.6.2. Patent pending.}
 }
 ```
 
