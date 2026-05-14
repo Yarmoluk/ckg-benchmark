@@ -1,17 +1,19 @@
-# CKG Applied to clj-surgeon — Live Benchmark
+# CKG Applied to a Real Codebase — Live Benchmark
 
 **Built:** 2026-05-14  
-**Source:** [github.com/realgenekim/clj-surgeon](https://github.com/realgenekim/clj-surgeon)  
+**Source codebase:** [clj-surgeon](https://github.com/realgenekim/clj-surgeon) — a Babashka CLI for Clojure AST manipulation  
 **CKG artifact:** [`examples/ckg_clj_surgeon.md`](./ckg_clj_surgeon.md)  
-**Codebase:** 13 files · 2,436 lines · 74 functions · 13 CLI operations
+**Codebase size:** 13 files · 2,436 lines · 74 functions · 13 CLI operations
 
 ---
 
 ## What We Did
 
-Gene Kim published a benchmark showing his [clj-surgeon](https://github.com/realgenekim/clj-surgeon) tool — an AST-based Clojure code explorer — gets **150× fewer tokens** than RAG when exploring a codebase. We ran the same codebase through a Compact Knowledge Graph and measured how CKG compares to both RAG and Gene Kim's own AST outline.
+[clj-surgeon](https://github.com/realgenekim/clj-surgeon) is a public Clojure tool that itself uses AST-based structural analysis to help coding agents explore codebases more efficiently. Its README documents a measured benchmark: AST-based outline gets **150× fewer tokens** than having an agent read full source files.
 
-The CKG was built in a single session from the live public repo. No pre-training, no indexing pipeline, no external database. The result is a 847-token typed semantic graph of the entire codebase.
+We took that same codebase and ran it through a Compact Knowledge Graph to see how CKG compares to both approaches — full source read and AST outline.
+
+The CKG was built in a single session from the live public repo. No pre-training, no indexing pipeline, no external database. The result is an 847-token typed semantic graph of the entire codebase.
 
 ---
 
@@ -19,21 +21,21 @@ The CKG was built in a single session from the live public repo. No pre-training
 
 | Approach | What It Does | Tokens (13 files) |
 |---|---|---|
-| **RAG** | Embeds chunks, retrieves by similarity | 30,472 |
-| **Gene Kim AST outline** | clj-surgeon `:outline` command, ~200 tok/file | 2,600 |
+| **Full source read (RAG baseline)** | Agent reads all source files | 30,472 |
+| **AST structural outline** | Structural summary, ~200 tok/file | 2,600 |
 | **CKG (this work)** | Typed semantic graph, built once | **847** |
 
-**CKG vs RAG:** 36× fewer tokens for the full graph  
-**CKG vs Gene Kim AST:** 3.1× fewer tokens per session
+**CKG vs full source read:** 36× fewer tokens  
+**CKG vs AST outline:** 3.1× fewer tokens per session
 
-Gene Kim's measured numbers from his own README:
+From the clj-surgeon README (their own measured numbers):
 > "clj-surgeon outlined 5 files in ~1,000 tokens total. The Explore agents burned ~150K tokens producing similar information."
 
 ---
 
 ## 5 Coding Agent Questions — Token Cost Per Answer
 
-| Question | RAG | Gene Kim AST | CKG |
+| Question | Full Source Read | AST Outline | CKG |
 |---|---|---|---|
 | "What does fix-declares.clj depend on, and what depends on it?" | ~4,600 | ~400 | **38** |
 | "Which functions in analyze.clj are used by other namespaces?" | ~12,000 | ~600 | **61** |
@@ -42,13 +44,13 @@ Gene Kim's measured numbers from his own README:
 | "Which namespaces are leaf-safe to modify without cascading changes?" | ~30,000 | ~2,600 | **49** |
 | **5-question session total** | **64,200** | **4,000** | **259** |
 
-The fourth question — behavioral invariants — is one the AST outline cannot answer at all. CKG captures it in 67 tokens via `INVARIANT` typed edges.
+The fourth question — behavioral invariants — is one an AST outline cannot answer at all. CKG captures it in 67 tokens via `INVARIANT` typed edges.
 
 ---
 
 ## What CKG Captures That AST Outline Cannot
 
-| Capability | RAG | clj-surgeon AST | CKG |
+| Capability | Full Source Read | AST Outline | CKG |
 |---|---|---|---|
 | Function signatures + arglists | ✓ (expensive) | ✓ | ✓ |
 | Namespace dependency graph | ✓ (expensive) | Partial | ✓ typed edges |
@@ -57,7 +59,7 @@ The fourth question — behavioral invariants — is one the AST outline cannot 
 | Behavioral invariants | Partial (in docs) | ✗ | ✓ INVARIANT nodes |
 | Leaf vs compound dependencies | ✗ | ✗ | ✓ LEAF-DEPENDENCY tag |
 | Side-effect markers | Buried in code | ✗ | ✓ SIDE-EFFECT typed edge |
-| Topological refactor order | Manual | Via `:topo` op | ✓ Pre-computed in graph |
+| Topological refactor order | Manual | Via tool call | ✓ Pre-computed in graph |
 
 ---
 
@@ -97,18 +99,18 @@ Compare the Market published a [study](https://www.comparethemarket.com/meerkat-
 | Tokens per review | ~14K | ~45K | 75K |
 | Cost per MR | $0.58 | $0.90 | $2.37 |
 
-Key finding: **RAG performs worse than no tools at all** on nearly every metric. AST graph wins by 21% on inline comment coverage.
+Key finding: **RAG performs worse than no tools at all** on nearly every metric. Structured graph representation wins by 21% on inline comment coverage.
 
 Their open problem, stated directly in the paper:
 > "GKG is currently in beta, running as a sidecar that **re-indexes the codebase on every pipeline run**."
 
-CKG is already persistent. Build once. Query across 1,000 MRs. At $2.37/MR for GKG vs ~$0.001/query for CKG: 500 MRs/month costs **$1,185 (GKG) vs ~$1 (CKG)**.
+CKG is already persistent. Build once. Query across 1,000 MRs. At $2.37/MR for AST graph approaches vs ~$0.001/query for CKG: 500 MRs/month costs **$1,185 vs ~$1**.
 
 ---
 
 ## Why CKG Extends Beyond Code
 
-Gene Kim's clj-surgeon and Compare the Market's GKG both prove the thesis for code. CKG applies the same typed-graph approach to any domain:
+The same structural approach that works for code extends to any domain. CKG applies typed-graph representation to:
 
 - **Code** — namespaces, functions, call chains, invariants (this benchmark)
 - **Clinical data** — drug pathways, trial eligibility, prior auth logic
