@@ -41,4 +41,4 @@ KNOWLEDGE GRAPH SUBGRAPH:
   [TAXONOMY_ID] Prereq1 | prerequisites: ...
 ```
 
-This is the `.md` delivery format claimed in USPTO Provisional Patent Application #64/040,804.
+This is the `.md` delivery format. Patent pending.
