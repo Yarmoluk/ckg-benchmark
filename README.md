@@ -16,13 +16,10 @@
 ## Read the Paper
 
 > **[→ Read the paper (graphifymd.com/paper.html)](https://graphifymd.com/paper.html)**
->
-> **[→ Download PDF](https://github.com/Yarmoluk/ckg-benchmark/raw/main/paper/main.pdf)**
 
 | Format | Link |
 |--------|------|
 | HTML pre-print (full paper) | [paper/paper.html](paper/paper.html) — renders in browser |
-| PDF | [paper/main.pdf](paper/main.pdf) — download or view |
 | Mobile-optimized | [paper/read-on-phone.html](paper/read-on-phone.html) |
 | LaTeX source | [paper/main.tex](paper/main.tex) — v0.6.2 |
 | ArXiv | Pre-print in preparation |
