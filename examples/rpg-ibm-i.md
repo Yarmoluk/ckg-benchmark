@@ -4,7 +4,7 @@ version: 1.0.0
 domain: rpg-ibm-i
 description: Compact knowledge graph of RPG language evolution, IBM i platform architecture, ILE concepts, data access patterns, and modernization blockers for legacy system migration.
 nodes: 50
-edges: 77
+edges: 75
 source: Graphify.md Domain Library
 license: MIT
 
@@ -159,6 +159,9 @@ license: MIT
 [CONCEPT|sqlrpgle|SQLRPGLE
   |An ILE RPG source type that embeds SQL statements precompiled by the SQL precompiler, enabling set-based database access within RPG programs and representing the primary modernization path for file I/O replacement.]
 
+[CONCEPT|output_queue|Output Queue
+  |An IBM i object (*OUTQ) that holds spool files awaiting printing or processing, associated with a printer device or writer job that dequeues and outputs the spooled data.]
+
 ---
 
 ## EDGES
@@ -224,6 +227,7 @@ commitment_control       -[SCOPED_TO]->               activation_group
 db2_for_i                -[JOURNALED_BY]->            journal
 program_object           -[WRITES_TO]->               spool_file_ibmi
 printer_file             -[ROUTES_TO]->               spool_file_ibmi
+spool_file_ibmi          -[HELD_IN]->                 output_queue
 cl_program               -[READS_FROM]->              data_area
 cl_program               -[SENDS_TO]->                message_queue
 batch_job_ibmi           -[SENDS_TO]->                message_queue
