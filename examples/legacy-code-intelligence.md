@@ -3,8 +3,8 @@ name: Legacy Code Intelligence
 version: 1.1.0
 domain: legacy-code-intelligence
 description: Schema and methodology for building a navigable knowledge graph of any legacy codebase — COBOL, Fortran, PL/I, RPG, or old Java monoliths. Covers risk analysis, copybook dependency mapping, batch job architecture, and COBOL-to-Java migration.
-nodes: 70
-edges: 127
+nodes: 73
+edges: 149
 source: Graphify.md; IBM mainframe documentation; ADM literature; Strangler Fig (Fowler 2004)
 license: MIT
 
@@ -188,6 +188,15 @@ license: MIT
 
 [CONCEPT|sort_step|SORT Step
   |JCL utility step that sorts an input file before the next program reads it. Not a COBOL program — commonly overlooked in migrations because it has no source to parse. The receiving program implicitly depends on sort order; remove the sort step and get wrong results silently.]
+
+[CONCEPT|rehosting|Rehosting (Lift and Shift)
+  |Move COBOL applications to cloud infrastructure using mainframe emulators (AWS Mainframe Modernization, Micro Focus Enterprise Server on EC2, Google DUAL). Zero code changes — the COBOL runs as-is on emulated z/OS. Fastest path off physical mainframe hardware. Lowest risk but defers the hard problem: the code is still COBOL.]
+
+[CONCEPT|replatforming|Replatforming
+  |Run COBOL on modern OS and containers with z/OS-compatible runtime (IBM LinuxONE, Micro Focus Visual COBOL on Linux). Infrastructure modernizes; code changes minimally. Middle path: cheaper than rehosting long-term, far less risky than full conversion. The practical choice when the business needs cloud benefits without code migration risk.]
+
+[CONCEPT|hybrid_architecture|Hybrid Architecture
+  |Mainframe remains system of record for high-volume core transactions (payments, claims, ledger); cloud handles new customer-facing features, analytics, and microservices. Not a migration strategy — a steady-state architectural pattern. The actual production reality at 90% of major banks. Strangler Fig is how you get there; hybrid is where you stay.]
 
 [CONCEPT|cobol_to_java|COBOL-to-Java Migration
   |The most common COBOL modernization target. Involves: data type mapping (PIC → Java types), control flow restructuring (GOTO elimination), runtime replacement (z/OS → JVM), and interface migration (CICS → REST, JCL → Spring Batch). Typically takes 3-7 years for a major bank.]
@@ -380,3 +389,20 @@ jcl_to_pipeline         -[COMPONENT_OF]->       cobol_to_java
 jcl_to_pipeline         -[REQUIRES]->           job_scheduler
 golden_record_testing   -[VALIDATES]->          cobol_to_java
 golden_record_testing   -[REQUIRES]->           legacy_ckg
+
+rehosting               -[INSTANCE_OF]->        modernization
+rehosting               -[CONTRASTS_WITH]->     big_bang_rewrite
+rehosting               -[PREREQUISITE_FOR]->   replatforming
+rehosting               -[PRESERVES]->          cobol_program
+rehosting               -[REQUIRES]->           legacy_ckg
+
+replatforming           -[INSTANCE_OF]->        modernization
+replatforming           -[PREREQUISITE_FOR]->   cobol_to_java
+replatforming           -[CONTRASTS_WITH]->     rehosting
+replatforming           -[ENABLES]->            hybrid_architecture
+
+hybrid_architecture     -[USES]->               strangler_fig
+hybrid_architecture     -[USES]->               api_wrapper
+hybrid_architecture     -[REQUIRES]->           legacy_ckg
+hybrid_architecture     -[CONTRASTS_WITH]->     big_bang_rewrite
+mainframe               -[COMPONENT_OF]->       hybrid_architecture
