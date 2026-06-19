@@ -34,7 +34,7 @@
 | RAG | 0.1231 | 2,982 | 0.0000482 | $76.23 |
 | GraphRAG | 0.1200 | 3,450 | 0.0000452 | $44.43 |
 
-**65× more efficient per token than RAG. Zero hallucinations by construction.**
+**42× more efficient per token than RAG. Zero hallucinations by construction.**
 
 ### F1 by Query Type
 
@@ -130,7 +130,7 @@ GLP-1/Obesity pharmacology — assembled from the ClinicalTrials.gov API in one 
 
 1. ✅ CKG achieves higher F1 on T2 (dependency) and T3 (multi-hop) queries — **confirmed** (0.634 vs 0.078; 0.660 vs 0.201)
 2. ✅ CKG F1 does not degrade with hop depth — **confirmed and stronger**: improves continuously to hop=5 (0.772)
-3. ✅ CKG RDS ≥ 10× vs RAG — **confirmed**: 65×
+3. ✅ CKG RDS ≥ 10× vs RAG — **confirmed**: 42×
 4. ✅ CKG Hallucination Rate = 0 by construction — **confirmed**
 5. ✅ Structure Premium hypothesis — **null result**: r = −0.09; advantage is uniform across all DAG richness levels
 6. ✅ Track 2 cross-domain transfer — **confirmed**: pipeline-generated pharma F1 = 0.530 > hand-curated average 0.471
@@ -222,11 +222,11 @@ A Compact Knowledge Graph (CKG) is a pre-structured, LLM-ready knowledge format 
 |---|---|---|
 | Tokens per query | **269** | 2,982 |
 | Macro F1 | **0.4709** | 0.1231 |
-| RDS (intelligence/token) | **0.001751** | 0.0000413 |
+| RDS (intelligence/token) | **0.00201** | 0.0000482 |
 | Benchmark cost | **$7.81** | $76.23 |
 | Hallucination rate | **0 by construction** | Variable |
 
-CKG is 65× more efficient per token, 3.8× more accurate, and produces zero hallucinations by construction. Source: 45 domains, 7,928 queries, fully reproducible.
+CKG is 42× more efficient per token, 3.8× more accurate, and produces zero hallucinations by construction. Source: 45 domains, 7,928 queries, fully reproducible.
 
 ### Why does RAG hallucinate?
 
@@ -249,7 +249,7 @@ Multi-hop reasoning is where graph structure compounds in value. RAG's retrieval
 
 ### What is Retrieval Density Score (RDS)?
 
-**RDS = F1 / mean_tokens_used.** It measures how much correct information a system delivers per token spent — the compound efficiency metric. CKG is 65× higher than RAG. RDS was introduced in Yarmoluk & McCreary (2026) as a standardized metric for comparing knowledge delivery systems.
+**RDS = F1 / mean_tokens_used.** It measures how much correct information a system delivers per token spent — the compound efficiency metric. CKG is 42× higher than RAG. RDS was introduced in Yarmoluk & McCreary (2026) as a standardized metric for comparing knowledge delivery systems.
 
 ### What domains benefit most from CKG?
 
