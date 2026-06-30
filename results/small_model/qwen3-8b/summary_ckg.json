@@ -1,0 +1,36 @@
+{
+  "model": "qwen3:8b",
+  "backend": "ollama",
+  "mode": "ckg",
+  "n_queries": 3,
+  "macro_f1": 0.3542,
+  "mean_tokens": 728.3,
+  "f1_by_type": {
+    "T4_aggregate": 0.6341,
+    "T1_entity": 0.4286,
+    "T3_path": 0.0
+  },
+  "f1_by_hop": {
+    "0": 0.5313,
+    "3": 0.0
+  },
+  "by_domain": {
+    "calculus": {
+      "model": "qwen3:8b",
+      "backend": "ollama",
+      "mode": "ckg",
+      "n_queries": 3,
+      "macro_f1": 0.3542,
+      "mean_tokens": 728.3,
+      "f1_by_type": {
+        "T4_aggregate": 0.6341,
+        "T1_entity": 0.4286,
+        "T3_path": 0.0
+      },
+      "f1_by_hop": {
+        "0": 0.5313,
+        "3": 0.0
+      }
+    }
+  }
+}
