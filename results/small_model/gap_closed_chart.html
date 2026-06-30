@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Small-Model CKG Benchmark — Gap-Closed Analysis</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: #0f172a; color: #e2e8f0; padding: 32px; }
+  h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { font-size: 0.9rem; color: #94a3b8; margin-bottom: 32px; }
+  .card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+  .card h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; color: #cbd5e1; }
+  .frontier-line { border-left: 4px solid #22C55E;
+                    padding: 8px 12px; background: #14532d33; border-radius: 4px;
+                    font-size: 0.85rem; margin-bottom: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th { text-align: left; padding: 10px 12px; color: #94a3b8;
+        border-bottom: 1px solid #334155; font-weight: 500; }
+  td { padding: 10px 12px; border-bottom: 1px solid #1e293b; }
+  tr:hover td { background: #334155; }
+  .formula { font-family: monospace; background: #0f172a; padding: 12px 16px;
+              border-radius: 8px; font-size: 0.85rem; color: #7dd3fc;
+              margin-top: 16px; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 12px; margin-bottom: 24px; }
+  .stat { background: #1e293b; border-radius: 10px; padding: 16px; text-align: center; }
+  .stat .val { font-size: 1.8rem; font-weight: 700; color: #38bdf8; }
+  .stat .lbl { font-size: 0.75rem; color: #94a3b8; margin-top: 4px; }
+  canvas { max-height: 360px; }
+</style>
+</head>
+<body>
+
+<h1>Small-Model CKG Benchmark</h1>
+<p class="subtitle">How much does deterministic CKG context close the gap between a 7–8B OSS model and a frontier model?</p>
+
+<div class="stat-grid">
+  <div class="stat"><div class="val">0.4926</div><div class="lbl">Frontier + CKG F1 (ceiling)</div></div>
+  <div class="stat"><div class="val">0.1231</div><div class="lbl">Frontier + RAG F1</div></div>
+  <div class="stat"><div class="val">264</div><div class="lbl">Frontier CKG mean tokens</div></div>
+</div>
+
+<div class="card">
+  <h2>F1 Score: CKG vs Baseline (no context)</h2>
+  <div class="frontier-line">
+    Frontier CKG ceiling: <strong>0.4926</strong> — shown as dashed line
+  </div>
+  <canvas id="f1Chart"></canvas>
+</div>
+
+<div class="card">
+  <h2>Gap-Closed % by Model</h2>
+  <canvas id="gapChart"></canvas>
+</div>
+
+<div class="card">
+  <h2>Results Summary</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Baseline F1 (no ctx)</th>
+        <th>CKG F1</th>
+        <th>Gap-Closed %</th>
+        <th>Mean Tokens (CKG)</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><strong>Qwen3 8B</strong></td>
+          <td>0.2333</td>
+          <td>0.7056 <span style="color:green">+0.4723</span></td>
+          <td><strong>182.1%</strong></td>
+          <td style="color:#64748b">313</td>
+        </tr>
+      <tr style="border-top: 2px solid #22c55e; opacity:0.7">
+        <td><em>Frontier (Claude Haiku 4.5)</em></td>
+        <td>—</td>
+        <td><em>0.4926</em></td>
+        <td><em>100% (ceiling)</em></td>
+        <td><em>264</em></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="formula">
+    Gap-Closed = (small+CKG_F1 − small_baseline_F1) / (frontier_CKG_F1 − small_baseline_F1)
+  </div>
+</div>
+
+<script>
+const labels = ["Qwen3 8B"];
+const ckgF1  = [0.7056];
+const baseF1 = [0.2333];
+const gapPct = [182.14423447743928];
+
+// ── F1 grouped bar chart ───────────────────────────────────────────────────────
+new Chart(document.getElementById('f1Chart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [
+      {
+        label: 'Baseline F1 (no context)',
+        data: baseF1,
+        backgroundColor: '#94A3B8cc',
+        borderRadius: 4,
+      },
+      {
+        label: 'CKG F1',
+        data: ckgF1,
+        backgroundColor: '#3B82F6dd',
+        borderRadius: 4,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { labels: { color: '#cbd5e1' } },
+      annotation: { annotations: { frontier: {
+        type: 'line', yMin: 0.4926, yMax: 0.4926,
+        borderColor: '#22C55E', borderWidth: 2, borderDash: [6,3],
+        label: { content: 'Frontier CKG 0.4926', display: true,
+                  color: '#22C55E', position: 'end', font: { size: 11 } },
+      } } },
+    },
+    scales: {
+      x: { ticks: { color: '#94a3b8' }, grid: { color: '#1e293b' } },
+      y: { min: 0, max: 0.6, ticks: { color: '#94a3b8' },
+            grid: { color: '#334155' },
+            title: { display: true, text: 'Macro F1', color: '#64748b' } },
+    },
+  },
+});
+
+// ── Gap-closed horizontal bar ──────────────────────────────────────────────────
+new Chart(document.getElementById('gapChart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [{
+      label: 'Gap-Closed %',
+      data: gapPct,
+      backgroundColor: gapPct.map(v =>
+        v === null ? '#33415580' :
+        v >= 60 ? '#22C55Ecc' : v >= 40 ? '#f59e0bcc' : '#ef4444cc'
+      ),
+      borderRadius: 4,
+    }],
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: {
+        label: ctx => ctx.raw !== null ? ctx.raw.toFixed(1) + '%' : 'N/A'
+      } },
+    },
+    scales: {
+      x: { min: 0, max: 100,
+            ticks: { color: '#94a3b8', callback: v => v + '%' },
+            grid: { color: '#334155' } },
+      y: { ticks: { color: '#cbd5e1' }, grid: { color: '#1e293b' } },
+    },
+  },
+});
+</script>
+
+</body>
+</html>

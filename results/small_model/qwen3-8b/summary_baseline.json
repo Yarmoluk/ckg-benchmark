@@ -1,0 +1,20 @@
+{
+  "model": "qwen3:8b",
+  "backend": "ollama",
+  "mode": "baseline",
+  "n_queries": 20,
+  "macro_f1": 0.2333,
+  "mean_tokens": 149.1,
+  "f1_by_type": {
+    "T2_dependency": 0.2594,
+    "T1_entity": 0.1758,
+    "T5_cross_concept": 0.252,
+    "T4_aggregate": 0.0232,
+    "T3_path": 0.5
+  },
+  "f1_by_hop": {
+    "1": 0.2565,
+    "0": 0.1377,
+    "5": 0.5
+  }
+}

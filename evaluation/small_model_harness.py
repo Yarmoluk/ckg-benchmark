@@ -257,17 +257,21 @@ def token_f1(predicted: str, ground_truth: list) -> dict:
 
 # ── LLM adapters ──────────────────────────────────────────────────────────────
 
+import urllib.request
+
+OLLAMA_BASE = "http://localhost:11434"
+
+
 def make_client(backend: str):
     if backend == "anthropic":
         import anthropic as sdk
         return sdk.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    else:  # ollama
-        from openai import OpenAI
-        return OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+    return None  # ollama uses direct HTTP; no client object needed
 
 
 def call_model(client, model: str, backend: str,
-               system: str, user_msg: str, max_tokens: int = 512) -> tuple:
+               system: str, user_msg: str, max_tokens: int = 512,
+               no_think: bool = False) -> tuple:
     """Returns (answer_text, input_tokens, output_tokens, latency_ms)."""
     t0 = time.time()
     if backend == "anthropic":
@@ -278,18 +282,28 @@ def call_model(client, model: str, backend: str,
         )
         answer = resp.content[0].text
         in_tok, out_tok = resp.usage.input_tokens, resp.usage.output_tokens
-    else:  # openai-compatible (ollama)
-        resp = client.chat.completions.create(
-            model=model, temperature=0, max_tokens=max_tokens,
-            messages=[
+    else:
+        # Ollama native /api/chat — supports top-level think: false
+        payload = json.dumps({
+            "model":  model,
+            "stream": False,
+            "think":  not no_think,
+            "options": {"temperature": 0, "num_predict": max_tokens},
+            "messages": [
                 {"role": "system", "content": system},
                 {"role": "user",   "content": user_msg},
             ],
+        }).encode()
+        req  = urllib.request.Request(
+            f"{OLLAMA_BASE}/api/chat",
+            data=payload,
+            headers={"Content-Type": "application/json"},
         )
-        answer  = resp.choices[0].message.content or ""
-        # Ollama reports usage in prompt_tokens / completion_tokens
-        in_tok  = getattr(resp.usage, "prompt_tokens",     0)
-        out_tok = getattr(resp.usage, "completion_tokens", 0)
+        with urllib.request.urlopen(req, timeout=120) as r:
+            d = json.loads(r.read())
+        answer  = d.get("message", {}).get("content", "")
+        in_tok  = d.get("prompt_eval_count", 0)
+        out_tok = d.get("eval_count", 0)
     latency_ms = int((time.time() - t0) * 1000)
     return answer, in_tok, out_tok, latency_ms
 
@@ -350,7 +364,7 @@ def run_domain(domain: str, queries: list, client, model: str, backend: str,
 
         try:
             answer, in_tok, out_tok, lat = call_model(
-                client, model, backend, system, user_msg)
+                client, model, backend, system, user_msg, no_think=no_think)
         except Exception as e:
             print(f"    ✗ {q.get('id','?')}: {e}")
             continue
