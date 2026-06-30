@@ -1,4 +1,9 @@
 ▶ Small-Model CKG Benchmark Suite — Tue Jun 30 03:36:33 CDT 2026
   Options: resume=--resume dry_run=
 
-  Waiting for qwen3....
+  Waiting for qwen3.... ready.
+
+════════════════════════════════════════════════════════
+ MODEL: qwen3:8b   backend=ollama
+════════════════════════════════════════════════════════
+[03:37:03] Starting CKG mode for qwen3:8b...
