@@ -317,7 +317,7 @@ def stratified_sample(domain: str, n: int, rng: random.Random) -> list:
 # ── Domain runner ──────────────────────────────────────────────────────────────
 
 def run_domain(domain: str, queries: list, client, model: str, backend: str,
-               mode: str, dry_run: bool) -> list:
+               mode: str, dry_run: bool, no_think: bool = False) -> list:
     csv_path = DOMAINS_DIR / domain / "learning-graph.csv"
     if not csv_path.exists():
         print(f"  ✗ no CSV for {domain}")
@@ -326,13 +326,15 @@ def run_domain(domain: str, queries: list, client, model: str, backend: str,
     concepts = load_graph(csv_path) if mode == "ckg" else {}
     results  = []
 
+    no_think_suffix = "\n\nIMPORTANT: Do NOT show your reasoning or thinking process. Output ONLY the final answer."
+
     for i, q in enumerate(queries):
         if mode == "ckg":
             context, _ = retrieve(concepts, q)
-            system     = CKG_SYSTEM
+            system     = CKG_SYSTEM + (no_think_suffix if no_think else "")
             user_msg   = f"{context}\n\nQuestion: {q['query']}"
         else:
-            system   = BASELINE_SYSTEM
+            system   = BASELINE_SYSTEM + (no_think_suffix if no_think else "")
             user_msg = q["query"]
 
         if dry_run:
@@ -469,6 +471,10 @@ def main():
                         help="Print gap-closed report from saved results and exit")
     parser.add_argument("--workers", type=int, default=1,
                         help="Parallel domain workers (use 1 for Ollama; higher for Anthropic)")
+    parser.add_argument("--resume", action="store_true",
+                        help="Skip domains that already have result files")
+    parser.add_argument("--no-think", action="store_true",
+                        help="Disable chain-of-thought for qwen3/deepseek models via system prompt")
     args = parser.parse_args()
 
     if args.gap_report:
@@ -498,20 +504,32 @@ def main():
         domain_summaries = {}
 
         def process(domain):
+            out_path = out_dir / f"{mode}_{domain}.jsonl"
+            if args.resume and out_path.exists():
+                existing = [json.loads(l) for l in out_path.open() if l.strip()]
+                # Only skip if there are real (non-dry-run) results with actual token counts
+                live = [r for r in existing if r.get("total_tokens", 0) > 0]
+                if live:
+                    print(f"  {domain}: SKIP (resume, {len(live)} live results)")
+                    return domain, live
             queries = stratified_sample(domain, args.n, random.Random(args.seed))
             if not queries:
                 return domain, []
             print(f"  {domain}: {len(queries)} queries")
             results = run_domain(domain, queries, client, args.model,
-                                 args.backend, mode, args.dry_run)
-            if results:
+                                 args.backend, mode, args.dry_run,
+                                 no_think=args.no_think)
+            if results and not args.dry_run:
                 out_path = out_dir / f"{mode}_{domain}.jsonl"
                 with open(out_path, "w") as fh:
                     for r in results:
                         fh.write(json.dumps(r) + "\n")
                 s = summarize(results)
-                if not args.dry_run:
-                    print(f"   {domain}: F1={s['macro_f1']}  tokens={s['mean_tokens']:.0f}")
+                print(f"   {domain}: F1={s['macro_f1']}  tokens={s['mean_tokens']:.0f}")
+                return domain, results
+            elif results:
+                s = summarize(results)
+                print(f"   {domain}: [DRY] F1={s['macro_f1']}  queries={s['n_queries']}")
                 return domain, results
             return domain, []
 
@@ -533,9 +551,10 @@ def main():
         if all_results:
             global_summary = summarize(all_results)
             global_summary["by_domain"] = domain_summaries
-            summary_path = out_dir / f"summary_{mode}.json"
-            with open(summary_path, "w") as fh:
-                json.dump(global_summary, fh, indent=2)
+            if not args.dry_run:
+                summary_path = out_dir / f"summary_{mode}.json"
+                with open(summary_path, "w") as fh:
+                    json.dump(global_summary, fh, indent=2)
 
             print(f"\n── {mode.upper()} SUMMARY ──")
             print(f"   Domains   : {len(domain_summaries)}")
