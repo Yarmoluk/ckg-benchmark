@@ -24,10 +24,23 @@ configs:
   data_files:
   - split: train
     path: queries/*.jsonl
-- config_name: results
+  drop_labels: true
+- config_name: results_macro_f1
   data_files:
   - split: train
-    path: results/*.csv
+    path: results/table1_macro_f1.csv
+- config_name: results_by_query_type
+  data_files:
+  - split: train
+    path: results/table2_by_query_type.csv
+- config_name: results_tokenomics
+  data_files:
+  - split: train
+    path: results/table3_tokenomics.csv
+- config_name: results_hop_degradation
+  data_files:
+  - split: train
+    path: results/table4_hop_degradation.csv
 ---
 
 # CKG Benchmark
