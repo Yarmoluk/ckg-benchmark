@@ -27,7 +27,7 @@ size_categories:
 | RAG | 0.1231 | 2,982 | 0.0000413 | $76.23 |
 | GraphRAG | 0.1200 | 3,450 | 0.0000452 | $44.43 |
 
-**42× more intelligence per token than RAG. Zero hallucinations by construction.**
+**42× more intelligence per token than RAG. Auditable by design — every answer traces to a declared edge.**
 
 ## Dataset Contents
 
@@ -150,7 +150,7 @@ GLP-1/Obesity pharmacology assembled from ClinicalTrials.gov API in one session.
 
 ## Links
 
-- Paper: [graphifymd.com/paper.html](https://graphifymd.com/paper.html)
+- Paper: [github.com/Yarmoluk/ckg-benchmark/blob/main/paper/main.pdf](https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/main.pdf)
 - Benchmark repo: [github.com/Yarmoluk/ckg-benchmark](https://github.com/Yarmoluk/ckg-benchmark)
 - MCP server: [github.com/Yarmoluk/ckg-mcp](https://github.com/Yarmoluk/ckg-mcp) — `pip install ckg-mcp`
 - Live demo: [huggingface.co/spaces/danyarm/ckg-demo](https://huggingface.co/spaces/danyarm/ckg-demo)
