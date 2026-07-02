@@ -15,6 +15,19 @@ language:
 pretty_name: CKG Benchmark
 size_categories:
 - 10K<n<100K
+configs:
+- config_name: domains
+  data_files:
+  - split: train
+    path: domains/**/*.csv
+- config_name: queries
+  data_files:
+  - split: train
+    path: queries/*.jsonl
+- config_name: results
+  data_files:
+  - split: train
+    path: results/*.csv
 ---
 
 # CKG Benchmark
