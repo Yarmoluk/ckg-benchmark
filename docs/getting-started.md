@@ -25,22 +25,42 @@ python evaluation/generate_queries.py \
   --output benchmark/queries/queries_calculus.jsonl
 ```
 
-## Run Experiments
+## Run the CKG Baseline
 
-When the evaluation harness is complete:
-
-```bash
-python evaluation/harness.py \
-  --queries benchmark/queries/queries_calculus.jsonl \
-  --systems rag graphrag ckg \
-  --output results/
-```
-
-## Reproduce Paper Results
+Evaluate the built-in CKG system against any domain:
 
 ```bash
-python evaluation/harness.py --reproduce-table-1
+# Single domain (~$0.12 with Haiku)
+ANTHROPIC_API_KEY=sk-ant-... python evaluation/krb_eval.py --system ckg --domain calculus
+
+# All domains (~$5)
+ANTHROPIC_API_KEY=sk-ant-... python evaluation/krb_eval.py --system ckg --all
+
+# Test retrieval pipeline without API calls
+python evaluation/krb_eval.py --system ckg --domain calculus --dry-run
 ```
+
+## Plug In Your Own System
+
+Subclass `Retriever` and implement one method:
+
+```python
+from evaluation.krb_eval import Retriever, run_eval
+
+class MyRetriever(Retriever):
+    def retrieve(self, domain: str, query_text: str, meta: dict) -> str:
+        # Return the context string to prepend to the query.
+        return my_retrieval_function(domain, query_text)
+
+results = run_eval(
+    retriever=MyRetriever(),
+    system_name="my-system-v1",
+    domains=["calculus", "biology"],   # or None for all 45
+)
+# → writes krb_results/krb_submission_my-system-v1.json
+```
+
+See [Submit Your System](submit.md) for full RAG and LlamaIndex examples.
 
 ## Extract Corpus from Source Repos
 

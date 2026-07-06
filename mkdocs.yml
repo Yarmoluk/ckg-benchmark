@@ -43,6 +43,7 @@ nav:
     - RAG Workflow: sims/workflow-rag/index.md
 
   - Getting Started: getting-started.md
+  - Submit Your System: submit.md
   - License: license.md
   - Contact: contact.md
 
