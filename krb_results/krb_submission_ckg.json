@@ -1,1 +1,29 @@
-{}
+{
+  "system": "ckg",
+  "krb_version": "v0.6.2",
+  "dataset": "danyarm/ckg-benchmark",
+  "n_queries": 180,
+  "n_domains": 1,
+  "macro_f1": 0.4929,
+  "mean_tokens": 244.9,
+  "macro_rds": 0.00240542,
+  "total_cost_usd": 0.0752,
+  "f1_by_type": {
+    "T1_entity": 0.1955,
+    "T2_dependency": 0.6045,
+    "T3_path": 0.7275,
+    "T4_aggregate": 0.9935,
+    "T5_cross_concept": 0.3592
+  },
+  "f1_by_hop": {
+    "0": 0.398,
+    "1": 0.4986,
+    "3": 0.5043,
+    "5": 0.7961,
+    "4": 0.8365,
+    "2": 0.7778
+  },
+  "f1_by_domain": {
+    "calculus": 0.4929
+  }
+}
