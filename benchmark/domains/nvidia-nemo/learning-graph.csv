@@ -1,0 +1,51 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,NeMo Framework,2|4|3,FRAMEWOR
+2,Megatron-Core,11|7|9|8,ENGINE
+3,PyTorch Lightning,,FRAMEWOR
+4,Tokenizer Support,,COMPONEN
+5,NeMo Collections,1,MODULE
+6,Model Evaluation,1,TOOL
+7,Tensor Parallelism,,TECHNIQU
+8,Pipeline Parallelism,,TECHNIQU
+9,Sequence Parallelism,,TECHNIQU
+10,Context Parallelism,9,TECHNIQU
+11,Expert Parallelism,,TECHNIQU
+12,Distributed Optimizer,,COMPONEN
+13,Flash Attention,,TECHNIQU
+14,NeMo Curator,15|18|16|17,MODULE
+15,Deduplication,,TECHNIQU
+16,Quality Filtering,,TECHNIQU
+17,PII Redaction,,TECHNIQU
+18,Constitutional AI Filtering,,TECHNIQU
+19,Data Blending,14,WORKFLOW
+20,Data Preprocessing,14|4,WORKFLOW
+21,Synthetic Data Generation,14|49,WORKFLOW
+22,Supervised Fine-Tuning,2|1,WORKFLOW
+23,LoRA Fine-Tuning,24,TECHNIQU
+24,PEFT Methods,,TECHNIQU
+25,Continual Pretraining,2|19,WORKFLOW
+26,Multimodal Training,2|5|1,WORKFLOW
+27,Speech Model Training,5,WORKFLOW
+28,NeMo Aligner,29|31|2|1|30,MODULE
+29,RLHF Pipeline,22|32,WORKFLOW
+30,DPO Training,22,WORKFLOW
+31,GRPO Training,22|21,WORKFLOW
+32,Reward Model,22,MODEL
+33,NeMo Skills,1,MODULE
+34,NeMo Guardrails,35,MODULE
+35,Colang Language,,LANGUAGE
+36,NeMo Retriever,37|38,MODULE
+37,Embedding Microservice,,SERVICE
+38,Reranking Microservice,,SERVICE
+39,Checkpoint Conversion,1,WORKFLOW
+40,NeMo Export,39|42|41,TOOL
+41,TensorRT-LLM,,BACKEND
+42,vLLM Backend,,BACKEND
+43,NIM Deployment,,SERVICE
+44,HuggingFace Integration,,COMPONEN
+45,NeMo Launcher,46|47,TOOL
+46,SLURM Integration,,COMPONEN
+47,Kubernetes Training,,COMPONEN
+48,NeMo Microservices,,MODULE
+49,Nemotron Model Family,,MODEL
+50,NeMo Models Hub,,SERVICE

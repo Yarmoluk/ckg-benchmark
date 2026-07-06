@@ -1,0 +1,47 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,nvdiffrast,3,LIBRARY
+2,Differentiable Rendering,,CONCEPT
+3,Triangle Rasterization,,ALGORITH
+4,Differentiable Antialiasing,,ALGORITH
+5,Inverse Rendering,,TASK
+6,nvdiffrec,1|5,FRAMEWOR
+7,nvdiffrecmc,6|1|11,FRAMEWOR
+8,PBR Material,9,CONCEPT
+9,Environment Map Lighting,,CONCEPT
+10,Neural Texture,8,REPRESEN
+11,Neural Importance Sampling,,ALGORITH
+12,Instant-NGP,34|13|14,FRAMEWOR
+13,NeRF,16|19,REPRESEN
+14,Multi-Resolution Hash Encoding,39|15,ALGORITH
+15,Multiresolution Hash Table,,DATA_STR
+16,Volume Rendering,17|18,ALGORITH
+17,Ray Marching,,ALGORITH
+18,Alpha Compositing,,ALGORITH
+19,Appearance Model,40,CONCEPT
+20,Opacity / Density Field,13,REPRESEN
+21,Deformable NeRF,13,FRAMEWOR
+22,3D Gaussian Splatting,23,FRAMEWOR
+23,Gaussian Rasterizer,3,COMPONEN
+24,Spherical Harmonics,,TECHNIQU
+25,Kaolin,32,LIBRARY
+26,Kaolin-Wisp,25|34|36|13,FRAMEWOR
+27,Mesh Operations,,MODULE
+28,Point Cloud Operations,29,MODULE
+29,Chamfer Distance,,METRIC
+30,Mesh-to-SDF Conversion,27,ALGORITH
+31,Marching Cubes,,ALGORITH
+32,PyTorch,,PLATFORM
+33,3D Scene Reconstruction,,TASK
+34,tiny-cuda-nn,35,LIBRARY
+35,Custom CUDA Kernel Optimization,,TECHNIQU
+36,Neural SDF,37,REPRESEN
+37,Signed Distance Function,,REPRESEN
+38,Occupancy Networks,40,REPRESEN
+39,Feature Grid,15,DATA_STR
+40,MLP Backbone,35,COMPONEN
+41,StyleGAN,,FRAMEWOR
+42,EG3D,16|41|43,FRAMEWOR
+43,Tri-Plane Representation,3,REPRESEN
+44,eDiff-I,,FRAMEWOR
+45,NVlabs GitHub,,ORGANIZA
+46,Coarse-to-Fine Training,,STRATEGY

@@ -1,0 +1,51 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,NVIDIA AI Enterprise,4|2|3,PLATFORM
+2,NVAIE License,,COMMERCI
+3,Enterprise Support,1,SUPPORT
+4,Long-Term Support Branch,1|8,POLICY
+5,90-Day Trial,,COMMERCI
+6,Subscription Tiers,2,COMMERCI
+7,License Renewal,2,COMMERCI
+8,CVE Patching SLA,3,POLICY
+9,Compliance Frameworks,8,REGULATO
+10,Enterprise Support Portal,3,TOOL
+11,License Server,2,INFRASTR
+12,NGC Private Registry,2,REGISTRY
+13,AI Enterprise Hub,12,CATALOG
+14,Hardened Container Images,2|12,ARTIFACT
+15,Container Security Scanning,14,SECURITY
+16,Certified Software Catalog,13,CATALOG
+17,NVIDIA API Catalog,2|13,SERVICE
+18,NIM Enterprise,2|21,MICROSER
+19,NeMo Enterprise,23|2,FRAMEWOR
+20,RAPIDS Enterprise,2,LIBRARY
+21,Triton Enterprise,23|2,SERVER
+22,TensorRT Enterprise,23|2,LIBRARY
+23,CUDA Enterprise Runtime,2,RUNTIME
+24,cuOpt Enterprise,23|2,MICROSER
+25,Merlin Enterprise,2|20,FRAMEWOR
+26,Parabricks Enterprise,23|2,APPLICAT
+27,DeepStream Enterprise,2|22,SDK
+28,Riva Enterprise,2|21,MICROSER
+29,MONAI Enterprise,2,FRAMEWOR
+30,GPU Operator,33,OPERATOR
+31,Network Operator,33,OPERATOR
+32,NIM Operator,33,OPERATOR
+33,Kubernetes Cluster,,INFRASTR
+34,Run:AI Integration,33,INTEGRAT
+35,DCGM,30,MONITOR
+36,Prometheus / Grafana Stack,35,MONITOR
+37,DOCA Enterprise,31,SDK
+38,Cloud Partners,,PARTNER
+39,DGX Cloud,40,SERVICE
+40,Base Command Platform,,PLATFORM
+41,Certified Systems,2,HARDWARE
+42,Private Cloud,41,INFRASTR
+43,vGPU Software,2,SOFTWARE
+44,Multi-Node Training,40,WORKLOAD
+45,Fleet Command,2,PLATFORM
+46,Jetson Edge Fleet,45,HARDWARE
+47,ISV Partner Program,2,PROGRAM
+48,MLOps Pipeline,19|20,WORKFLOW
+49,AI Workflow Catalog,13,CATALOG
+50,NVAIE Manager Portal,1,TOOL

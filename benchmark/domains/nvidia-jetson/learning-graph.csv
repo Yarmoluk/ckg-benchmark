@@ -1,0 +1,50 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Jetson Orin,,PLATFORM
+2,Jetson Thor,9,PLATFORM
+3,Jetpack Sdk,2|1,SDK
+4,Jetson Linux,5|3,PLATFORM
+5,Linux Kernel 68,4,PLATFORM
+6,Ubuntu 2404,5|4,STANDARD
+7,Yocto Oe4T,4,TOOL
+8,Enterprise Linux Support,4,STANDARD
+9,Sbsa,,STANDARD
+10,Cuda Toolkit,3,SDK
+11,Cudnn,10,API
+12,Tensorrt,11|10,SDK
+13,Multi Instance Gpu,10|1,CONCEPT
+14,Pytorch,10,TOOL
+15,Vllm,10,TOOL
+16,Sglang,15|10,TOOL
+17,Triton Inference Server,12|14,SDK
+18,Ngc Containers,3,TOOL
+19,Nvidia Isaac,10|3,SDK
+20,Isaac Ros,21|19|10,SDK
+21,Ros2,,STANDARD
+22,Groot N Series,19,API
+23,Amr,19|27,CONCEPT
+24,Opencv,10,TOOL
+25,Holoscan Sdk,10|3,SDK
+26,Holoscan Sensor Bridge,25|27,API
+27,Rt Kernel,5,CONCEPT
+28,Deepstream Sdk,12|3,SDK
+29,Metropolis Vss,28,SDK
+30,Visionworks,10,TOOL
+31,Vulkan,4,API
+32,Opengl,4,API
+33,Secure Boot,35|3,CONCEPT
+34,Disk Encryption,35|3,CONCEPT
+35,Ftpm,,CONCEPT
+36,Secure Ota,33,WORKFLOW
+37,Runtime Integrity,33,CONCEPT
+38,Ota Update,36|3,WORKFLOW
+39,Nsight,10,TOOL
+40,Sdk Manager,3,TOOL
+41,Jetson Ai Lab,3,TOOL
+42,Kubernetes Edge,3,TOOL
+43,Nemoclaw,41,API
+44,Openclaw,43|41,API
+45,Jetson Agent Skills,41,WORKFLOW
+46,Bsp Customization,45,WORKFLOW
+47,Memory Optimization,45,WORKFLOW
+48,Model Benchmarking,45,WORKFLOW
+49,Cloud To Edge Workflow,42|3,WORKFLOW

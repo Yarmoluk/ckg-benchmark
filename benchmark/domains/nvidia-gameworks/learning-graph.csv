@@ -1,0 +1,51 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Dlss 4,26|27|2,PLATFORM
+2,Dlss 45,3|4|1,PLATFORM
+3,Transformer Super Resolution,27|5|2|1,ALGORITH
+4,Dynamic Multi Frame Gen,7|26|2|1,ALGORITH
+5,Dlss Super Resolution,27|1,ALGORITH
+6,Dlss Ray Reconstruction,27|1|22,ALGORITH
+7,Dlss Frame Generation,27|1,ALGORITH
+8,Rtx Kit,15|16|14|10|9,SDK
+9,Rtx Mega Geometry,28|8|17,ALGORITH
+10,Rtx Neural Shaders,26|27|11,SDK
+11,Neural Shaders Runtime,27,ALGORITH
+12,Radiance Caching,10|22,ALGORITH
+13,Neural Texture Compression,10,ALGORITH
+14,Geometry Optimization,8|22|17,WORKFLOW
+15,Ai Asset Rendering,8|27,WORKFLOW
+16,Character Creation Tools,8,TOOL
+17,Bvh Traversal,28,ALGORITH
+18,Kickstart Rt,21|24|25|23|20,SDK
+19,Nvidia Optix,28|17,API
+20,Microsoft Dxr,28,API
+21,Vulkan Ray Tracing,28,API
+22,Path Tracing,28|17,ALGORITH
+23,Global Illumination,18|22,CONCEPT
+24,Ambient Occlusion,18,CONCEPT
+25,Ray Traced Shadows,28|18|17,CONCEPT
+26,Blackwell Sm,28|27|29,PLATFORM
+27,Tensor Cores 5Th,26|31|32|30,PLATFORM
+28,Rt Cores 4Th,26|33,PLATFORM
+29,Cuda,,PLATFORM
+30,Fp4 Precision,27,CONCEPT
+31,Fp8 Transformer Engine,27,ALGORITH
+32,Sparse Neural Processing,27,ALGORITH
+33,Ada Lovelace,34,PLATFORM
+34,Ampere,,PLATFORM
+35,Reflex,38,PLATFORM
+36,Reflex 2,35|37,PLATFORM
+37,Frame Warp,36,ALGORITH
+38,Click To Photon Latency,,CONCEPT
+39,Ace,27,PLATFORM
+40,Nsight Tools,26|29,TOOL
+41,Gfn Sdk,42,SDK
+42,Gfn Cloud Playtest,,TOOL
+43,Unreal Engine,35|1|22,PLATFORM
+44,Unity,1|40,PLATFORM
+45,Deep Learning Institute,27|29,PLATFORM
+46,Inception Program,,PLATFORM
+47,Developer Program,8|18|1|40,PLATFORM
+48,Rtx Pro Desktop,26|10,PLATFORM
+49,Rtx Pro Laptop,26,PLATFORM
+50,Rtx Pro Data Center,26|42,PLATFORM

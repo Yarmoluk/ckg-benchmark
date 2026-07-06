@@ -1,0 +1,49 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Nsight Systems,48|37|45|46|19|29,TOOL
+2,Nsight Compute,31|48|19|46|45|34,TOOL
+3,Nsight Graphics,48|27|25|26|24|28,TOOL
+4,Nsight Vse,12|19,TOOL
+5,Nsight Vsce,12|19,TOOL
+6,Nsight Cloud,38|2|1,TOOL
+7,Nsight Copilot,19,TOOL
+8,Nsight Jupyterlab,2|36|1,TOOL
+9,Nsight Python,15|1,TOOL
+10,Nsight Dl Designer,21|22,TOOL
+11,Nsight Aftermath Sdk,27|39,SDK
+12,Cuda Gdb,19|18,TOOL
+13,Compute Sanitizer,40|19,TOOL
+14,Compute Sanitizer Api,13,API
+15,Cupti,19|45,API
+16,Nvtx Sdk,29,SDK
+17,Nsight Perf Sdk,27|30|24|25,SDK
+18,Debugger Api,19,API
+19,Cuda,,API
+20,Cublas,19,API
+21,Cudnn,19,API
+22,Tensorrt,21|19,SDK
+23,Optix,19,API
+24,Vulkan,,STANDARD
+25,Opengl,,STANDARD
+26,Directx11,,STANDARD
+27,Directx12,,STANDARD
+28,Dxr,27,STANDARD
+29,Unified Timeline Profiling,,CONCEPT
+30,Gpu Metrics Sampling,,CONCEPT
+31,Sm Utilization,30,CONCEPT
+32,Tensor Core Activity,30,CONCEPT
+33,Warp Occupancy,34,CONCEPT
+34,Kernel Profiling,,CONCEPT
+35,System Bottleneck Analysis,29,CONCEPT
+36,Python Backtrace Sampling,,CONCEPT
+37,Plugin Architecture,16,CONCEPT
+38,Multi Node Profiling,29,CONCEPT
+39,Gpu Crash Dump,,CONCEPT
+40,Memory Access Validation,,CONCEPT
+41,Dgx Systems,19,PLATFORM
+42,Nvidia Rtx,19,PLATFORM
+43,Nvidia Drive,19,PLATFORM
+44,Nvidia Jetson,19|47,PLATFORM
+45,Cuda Toolkit,2|19|15|1,SDK
+46,Hpc Sdk,2|19|1,SDK
+47,Jetpack Sdk,21|19|22,SDK
+48,Profiling Workflow,2|3|1,WORKFLOW
