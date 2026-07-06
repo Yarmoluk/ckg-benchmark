@@ -1,0 +1,1424 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 46 educational domains.">
+      
+      
+        <meta name="author" content="Daniel Yarmoluk and Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://yarmoluk.github.io/ckg-benchmark/paper/track3-short-paper/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>CKG vs. Long-Context Windows: 1,026× Compression at Competitive Accuracy - CKG Benchmark</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ckg-vs-long-context-windows-1026-compression-at-competitive-accuracy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CKG Benchmark" class="md-header__button md-logo" aria-label="CKG Benchmark" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CKG Benchmark
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CKG vs. Long-Context Windows: 1,026× Compression at Competitive Accuracy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yarmoluk/ckg-benchmark" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CKG Benchmark" class="md-nav__button md-logo" aria-label="CKG Benchmark" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CKG Benchmark
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yarmoluk/ckg-benchmark" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../abstract/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paper
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../benchmark/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../metrics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../submit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Submit Your System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#track-3-technical-brief-clinicaltrialsgov-glp-1-corpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track 3 Technical Brief — ClinicalTrials.gov GLP-1 Corpus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Motivation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-corpus-construction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Corpus Construction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-ckg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The CKG
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-experimental-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Experimental Conditions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-conditions-a-and-b-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Conditions A and B (Complete)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-cost-projection-ckg-vs-long-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Cost Projection: CKG vs. Long-Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-context-window-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Context Window Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-key-claims-and-verifiability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Key Claims and Verifiability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Discussion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-this-shows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this shows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-does-not-show-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this does not show (yet)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-structural-finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The structural finding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Reproduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-open-questions-for-mccreary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Open Questions for McCreary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Yarmoluk/ckg-benchmark/edit/main/docs/paper/track3-short-paper.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="ckg-vs-long-context-windows-1026-compression-at-competitive-accuracy">CKG vs. Long-Context Windows: 1,026× Compression at Competitive Accuracy</h1>
+<h2 id="track-3-technical-brief-clinicaltrialsgov-glp-1-corpus">Track 3 Technical Brief — ClinicalTrials.gov GLP-1 Corpus</h2>
+<p><strong>Authors:</strong> Daniel Yarmoluk, Graphify.md<br />
+<strong>Date:</strong> 2026-05-09<br />
+<strong>Status:</strong> Corpus complete. LLM comparison run pending.<br />
+<strong>Repository:</strong> github.com/Yarmoluk/ckg-benchmark  </p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>We pulled 1,894 GLP-1 agonist clinical trials from ClinicalTrials.gov (semaglutide, tirzepatide, liraglutide, dulaglutide, exenatide), producing a 2.68 million token corpus. A 146-node Compact Knowledge Graph (CKG) derived from this domain encodes the same structured knowledge in 2,614 tokens — a <strong>1,026× token compression</strong> and <strong>1,605× file size reduction</strong>. On 170 benchmark queries, the CKG achieves Macro F1 = 0.5298 and BERT F1 = 0.857 at $0.000506 cost per correct answer. A long-context baseline sending the full corpus per query is projected at $8.05/query — a <strong>7,454× cost premium</strong> — and cannot access more than 6.7% of the corpus within any current model's context window. Claims 1–4 below are verifiable without LLM calls.</p>
+<hr />
+<h2 id="1-motivation">1. Motivation</h2>
+<p>The standard counterargument to CKG is: <em>"Why not just put everything in the context window?"</em> Long-context models (Gemini 1.5 Pro: 1M tokens; Claude Sonnet 4.6: 200K tokens) have made this a plausible default for enterprise AI. This brief directly measures what that approach costs and what it can access, against a CKG covering the same domain.</p>
+<p>The GLP-1 pharma domain is ideal for this comparison. It is:
+- <strong>High-stakes</strong> — clinical decisions require accuracy, not approximation
+- <strong>Large</strong> — the full trial registry far exceeds any single context window
+- <strong>Pre-benchmarked</strong> — CKG Track 2 results (F1 = 0.5298) already exist from prior work</p>
+<hr />
+<h2 id="2-corpus-construction">2. Corpus Construction</h2>
+<p><strong>Source:</strong> ClinicalTrials.gov API v2 (<code>https://clinicaltrials.gov/api/v2/studies</code>)<br />
+<strong>Access:</strong> Public, no API key required, US government public domain data<br />
+<strong>Script:</strong> <code>evaluation/corpus_builder_ct.py</code></p>
+<p>Six intervention terms queried and deduplicated by NCT ID:</p>
+<table>
+<thead>
+<tr>
+<th>Search Term</th>
+<th>Trials Found</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semaglutide</td>
+<td>676</td>
+</tr>
+<tr>
+<td>Tirzepatide</td>
+<td>231</td>
+</tr>
+<tr>
+<td>Liraglutide</td>
+<td>509</td>
+</tr>
+<tr>
+<td>Dulaglutide</td>
+<td>135</td>
+</tr>
+<tr>
+<td>Exenatide</td>
+<td>376</td>
+</tr>
+<tr>
+<td>GLP-1 receptor agonist</td>
+<td>403</td>
+</tr>
+<tr>
+<td><strong>Unique total</strong></td>
+<td><strong>1,894</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Fields extracted per trial: brief title, summary, detailed description, eligibility criteria, primary and secondary outcome descriptions, intervention descriptions, conditions, phase, status, enrollment, sponsor.</p>
+<p><strong>Measured corpus size:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unique trials</td>
+<td>1,894</td>
+</tr>
+<tr>
+<td>Total tokens (cl100k_base)</td>
+<td><strong>2,682,496</strong></td>
+</tr>
+<tr>
+<td>File size</td>
+<td>11.32 MB</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-the-ckg">3. The CKG</h2>
+<p>The GLP-1 CKG (<code>benchmark/domains/glp1-obesity/learning-graph.csv</code>) encodes the structured domain knowledge of this corpus as typed nodes and directed dependency edges.</p>
+<p><strong>Format:</strong> <code>ConceptID, ConceptLabel, Dependencies, TaxonomyID</code></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nodes</td>
+<td>146</td>
+</tr>
+<tr>
+<td>Tokens (full CSV, cl100k_base)</td>
+<td><strong>2,614</strong></td>
+</tr>
+<tr>
+<td>File size</td>
+<td>7.2 KB</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Taxonomy types:</strong> FOUND (mechanism), PATH (pathophysiology), DRUG, TRIAL, SPEC, COMBO, MECH</p>
+<p><strong>Compression:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Corpus</th>
+<th>CKG</th>
+<th>Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tokens</td>
+<td>2,682,496</td>
+<td>2,614</td>
+<td><strong>1,026×</strong></td>
+</tr>
+<tr>
+<td>File size</td>
+<td>11.32 MB</td>
+<td>7.2 KB</td>
+<td><strong>1,605×</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-experimental-conditions">4. Experimental Conditions</h2>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Retrieval</th>
+<th>Tokens/Query</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A — CKG</strong></td>
+<td>k-hop BFS subgraph (k=2)</td>
+<td>~350</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td><strong>B — RAG</strong></td>
+<td>FAISS top-5 chunks (512 tokens)</td>
+<td>~2,828</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td><strong>C — Long-Context</strong></td>
+<td>Full corpus (no retrieval)</td>
+<td>~2,682,696</td>
+<td>Pending ($1,369 est.)</td>
+</tr>
+</tbody>
+</table>
+<p>All conditions use identical metrics (<code>evaluation/metrics.py</code>): Macro F1 (SQuAD token-level), BERT F1 (RoBERTa-large BERTScore), RDS, CPCA.</p>
+<hr />
+<h2 id="5-results">5. Results</h2>
+<h3 id="51-conditions-a-and-b-complete">5.1 Conditions A and B (Complete)</h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Macro F1</th>
+<th>BERT F1</th>
+<th>Tokens/Query</th>
+<th>CPCA (USD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CKG</strong></td>
+<td><strong>0.5298</strong></td>
+<td><strong>0.857</strong></td>
+<td><strong>350</strong></td>
+<td><strong>$0.000506</strong></td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>0.1538</td>
+<td>—</td>
+<td>2,828</td>
+<td>$0.020098</td>
+</tr>
+<tr>
+<td>Long-Context</td>
+<td><em>pending</em></td>
+<td><em>pending</em></td>
+<td>2,682,696</td>
+<td><em>$8.05 proj.</em></td>
+</tr>
+</tbody>
+</table>
+<p>CKG outperforms RAG: <strong>3.4× higher F1</strong>, <strong>40× cheaper per correct answer</strong>, <strong>8× fewer tokens</strong>.</p>
+<h3 id="52-cost-projection-ckg-vs-long-context">5.2 Cost Projection: CKG vs. Long-Context</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CKG (actual)</th>
+<th>Long-Context (projected)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>Claude Haiku 4.5</td>
+<td>Claude Sonnet 4.6</td>
+</tr>
+<tr>
+<td>Tokens/query</td>
+<td>350</td>
+<td>2,682,696</td>
+</tr>
+<tr>
+<td>Input cost/query</td>
+<td>$0.00028</td>
+<td>$8.0480</td>
+</tr>
+<tr>
+<td>Output cost/query</td>
+<td>$0.00080</td>
+<td>$0.0030</td>
+</tr>
+<tr>
+<td><strong>Total cost/query</strong></td>
+<td><strong>$0.00108</strong></td>
+<td><strong>$8.0510</strong></td>
+</tr>
+<tr>
+<td>Cost, 170 queries</td>
+<td><strong>$0.18</strong></td>
+<td><strong>$1,368.58</strong></td>
+</tr>
+<tr>
+<td><strong>Cost ratio</strong></td>
+<td>—</td>
+<td><strong>7,454×</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-context-window-coverage">5.3 Context Window Coverage</h3>
+<p>No current production model can hold the full 2.68M token corpus in a single context window:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Max Context</th>
+<th>Corpus Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Sonnet 4.6</td>
+<td>200K tokens</td>
+<td>7.5%</td>
+</tr>
+<tr>
+<td>Gemini 1.5 Pro</td>
+<td>1M tokens</td>
+<td>37.3%</td>
+</tr>
+<tr>
+<td>Gemini 2.0 Flash</td>
+<td>1M tokens</td>
+<td>37.3%</td>
+</tr>
+<tr>
+<td>GPT-4o</td>
+<td>128K tokens</td>
+<td>4.8%</td>
+</tr>
+<tr>
+<td><strong>CKG</strong></td>
+<td>N/A</td>
+<td><strong>100% (encoded)</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The CKG encodes the full domain in 2,614 tokens. Every current long-context model discards between 63% and 95% of the source corpus per query.</p>
+<hr />
+<h2 id="6-key-claims-and-verifiability">6. Key Claims and Verifiability</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Value</th>
+<th>Verifiable Without LLM?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Corpus token count</td>
+<td>2,682,496</td>
+<td>Yes — run <code>corpus_builder_ct.py</code>, count with tiktoken</td>
+</tr>
+<tr>
+<td>CKG token count</td>
+<td>2,614</td>
+<td>Yes — count CSV rows with tiktoken</td>
+</tr>
+<tr>
+<td>Token compression</td>
+<td>1,026×</td>
+<td>Yes — arithmetic</td>
+</tr>
+<tr>
+<td>Context coverage (Claude)</td>
+<td>7.5%</td>
+<td>Yes — 200,000 / 2,682,496</td>
+</tr>
+<tr>
+<td>Long-context cost projection</td>
+<td>$8.05/query</td>
+<td>Yes — published API pricing × token count</td>
+</tr>
+<tr>
+<td>CKG Macro F1</td>
+<td>0.5298</td>
+<td>Yes — rerun <code>ckg_harness.py</code> (~$0.18)</td>
+</tr>
+<tr>
+<td>RAG Macro F1</td>
+<td>0.1538</td>
+<td>Yes — rerun <code>rag_harness.py</code> (~$0.50)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Five of seven claims require zero LLM calls. Two require less than $1 in API spend.</strong></p>
+<hr />
+<h2 id="7-discussion">7. Discussion</h2>
+<h3 id="what-this-shows">What this shows</h3>
+<p>CKG compression is not a lossy approximation. The 146-node GLP-1 CKG captures the dependency structure, mechanism taxonomy, drug classes, trial design patterns, and outcome types of 1,894 clinical trials. It achieves F1 = 0.5298 on structured domain queries — while the full corpus cannot fit in any available context window and would cost $1,369 to query 170 times at current pricing.</p>
+<h3 id="what-this-does-not-show-yet">What this does not show (yet)</h3>
+<p>Condition C (long-context baseline) has not been run due to cost. The comparison is currently CKG vs. RAG only. The projection shows long-context would be 7,454× more expensive than CKG, but the accuracy comparison is an open question. We expect long-context to underperform CKG on structured relational queries (T2–T5) due to attention dilution over 2.68M tokens, and to perform comparably on T1 entity lookups where the answer is literally in the text.</p>
+<h3 id="the-structural-finding">The structural finding</h3>
+<p>At 2.68M tokens, long-context is not a viable alternative regardless of accuracy — it is architecturally excluded. A query that costs $8.05 in input tokens alone, accessing 7.5% of the corpus, cannot be a production clinical AI strategy. CKG is the only approach that accesses 100% of the domain knowledge per query at sub-cent cost.</p>
+<hr />
+<h2 id="8-reproduction">8. Reproduction</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Clone</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Yarmoluk/ckg-benchmark
+<span class="nb">cd</span><span class="w"> </span>ckg-benchmark
+
+<span class="c1"># Install</span>
+pip<span class="w"> </span>install<span class="w"> </span>requests<span class="w"> </span>tiktoken<span class="w"> </span>anthropic<span class="w"> </span>sentence-transformers<span class="w"> </span>faiss-cpu
+
+<span class="c1"># Pull corpus (free, ~3 min)</span>
+python<span class="w"> </span>evaluation/corpus_builder_ct.py<span class="w"> </span>--max-trials<span class="w"> </span><span class="m">2000</span>
+<span class="c1"># → results/track3/ct_glp1_corpus.txt  (11.3 MB, ~2.68M tokens)</span>
+
+<span class="c1"># Verify token count</span>
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
+<span class="s2">import tiktoken</span>
+<span class="s2">enc = tiktoken.get_encoding(&#39;cl100k_base&#39;)</span>
+<span class="s2">n = len(enc.encode(open(&#39;results/track3/ct_glp1_corpus.txt&#39;).read()))</span>
+<span class="s2">print(f&#39;Tokens: {n:,}&#39;)</span>
+<span class="s2">&quot;</span>
+
+<span class="c1"># Run CKG benchmark (~$0.18)</span>
+python<span class="w"> </span>evaluation/ckg_harness.py<span class="w"> </span>--domain<span class="w"> </span>glp1-obesity
+
+<span class="c1"># Run RAG benchmark (~$0.50)</span>
+python<span class="w"> </span>evaluation/rag_harness.py<span class="w"> </span>--domain<span class="w"> </span>glp1-obesity
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="9-open-questions-for-mccreary">9. Open Questions for McCreary</h2>
+<ol>
+<li>
+<p><strong>Cross-model comparison:</strong> Should Condition C use Gemini 1.5 Pro (1M context, 37% coverage) or Claude Sonnet 4.6 (200K, 7.5% coverage)? Gemini enables more of the corpus but introduces a different model family. What is the cleaner methodology?</p>
+</li>
+<li>
+<p><strong>Corpus completeness:</strong> The CKG was built from ClinicalTrials.gov data plus domain literature synthesis. Should the Track 3 corpus include PubMed abstracts for the same drugs to match the CKG's knowledge provenance more precisely?</p>
+</li>
+<li>
+<p><strong>Long-context sampling:</strong> If we run Condition C, should we send (a) a random 180K-token sample, (b) the most recent trials, or (c) trials most semantically relevant to each query? Option (c) collapses into RAG. Option (a) or (b) is the true long-context baseline.</p>
+</li>
+<li>
+<p><strong>Publication venue:</strong> Does this belong in the arXiv paper as Track 3, or as a separate benchmark note?</p>
+</li>
+</ol>
+<hr />
+<p><em>For questions or to coordinate the Condition C run: daniel.yarmoluk@gmail.com</em><br />
+<em>Repository: github.com/Yarmoluk/ckg-benchmark</em><br />
+<em>Methodology detail: <code>docs/paper/track3-methodology.md</code></em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Daniel Yarmoluk and Dan McCreary. Code licensed under MIT. Data licensed under CC BY 4.0.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../js/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

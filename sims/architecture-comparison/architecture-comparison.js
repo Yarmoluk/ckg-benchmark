@@ -13,8 +13,8 @@ let pipelines = [
     color: [66, 133, 244],  // Blue
     steps: [
       {
-        name: 'MkDocs\nText',
-        desc: 'Source documents are MkDocs Markdown chapters from the intelligent textbook. Each chapter contains 3,000-8,000 words of educational content covering domain concepts.'
+        name: 'Text Corpus',
+        desc: 'Source documents are markdown documents from the intelligent textbook. Each chapter contains 3,000-8,000 words of educational content covering domain concepts.'
       },
       {
         name: 'Chunking',
@@ -39,8 +39,8 @@ let pipelines = [
     color: [142, 68, 173],  // Purple
     steps: [
       {
-        name: 'MkDocs\nText',
-        desc: 'Same MkDocs Markdown chapters used by RAG. GraphRAG processes the full text to extract entities and relationships, rather than chunking it into fixed-size windows.'
+        name: 'Text Corpus',
+        desc: 'Same markdown documents used by RAG. GraphRAG processes the full text to extract entities and relationships, rather than chunking it into fixed-size windows.'
       },
       {
         name: 'Entity\nExtraction',
@@ -61,12 +61,12 @@ let pipelines = [
     ]
   },
   {
-    label: 'CKG',
+    label: 'Compact\nKnowledge\nGraph\n(CKG)',
     color: [39, 174, 96],  // Green
     steps: [
       {
-        name: 'CSV\nFile',
-        desc: 'A pre-structured learning-graph.csv with 4 columns: ConceptID, ConceptLabel, Dependencies, TaxonomyID. This is the canonical knowledge representation — zero build cost, zero ambiguity.'
+        name: 'Learning\nGraph',
+        desc: 'A pre-structured concept DAG learning-graph.csv with 4 columns: ConceptID, ConceptLabel, Dependencies, TaxonomyID. This is the canonical knowledge representation — zero build cost, zero ambiguity.'
       },
       {
         name: 'Concept\nLookup',

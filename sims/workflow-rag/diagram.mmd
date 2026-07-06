@@ -1,0 +1,24 @@
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Helvetica, Arial, sans-serif','fontSize':'14px','primaryColor':'#E8EEF7','primaryBorderColor':'#3F51B5','primaryTextColor':'#1A237E','lineColor':'#3F51B5','clusterBkg':'#FAFAFE','clusterBorder':'#C5CAE9'}}}%%
+flowchart TB
+  classDef input fill:#E3F2FD,stroke:#1565C0,stroke-width:1.5px,color:#0D47A1
+  classDef process fill:#E8EAF6,stroke:#3949AB,stroke-width:1.5px,color:#1A237E
+  classDef store fill:#FFF8E1,stroke:#F9A825,stroke-width:1.5px,color:#E65100
+  classDef output fill:#E8F5E9,stroke:#2E7D32,stroke-width:1.5px,color:#1B5E20
+
+  subgraph Index[Build&nbsp;time]
+    direction LR
+    Text["Domain text<br/>(Markdown chapters)"]:::input --> Chunk["Split into<br/>512-token chunks"]:::process
+    Chunk --> Embed["Embed each chunk<br/>(all-MiniLM-L6-v2)"]:::process
+    Embed --> FAISS[("FAISS<br/>vector index")]:::store
+  end
+
+  subgraph Query[Query&nbsp;time]
+    direction LR
+    Q(["User query"]):::input --> QE["Embed query"]:::process
+    QE --> Retrieve["Top-5 similarity<br/>retrieval"]:::process
+    Retrieve --> Ctx["≈ 2,400 tokens<br/>of retrieved context"]:::process
+    Ctx --> LLM["LLM<br/>(Claude)"]:::process
+    LLM --> Ans(["Answer"]):::output
+  end
+
+  FAISS -.-> Retrieve
