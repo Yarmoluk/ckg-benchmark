@@ -524,7 +524,7 @@ def main():
     )
     p.add_argument("--system",   default="ckg",
                    help="System name tag for output files (default: ckg)")
-    p.add_argument("--domain",   help="Single domain to evaluate")
+    p.add_argument("--domain",   nargs="+", help="One or more domains to evaluate")
     p.add_argument("--all",      action="store_true", help="Run all available domains")
     p.add_argument("--model",    default=DEFAULT_MODEL, help=f"Anthropic model (default: {DEFAULT_MODEL})")
     p.add_argument("--dry-run",  action="store_true", help="Test retrieval pipeline without API calls")
@@ -532,7 +532,7 @@ def main():
     p.add_argument("--output",   default="krb_results", help="Output directory (default: krb_results/)")
     args = p.parse_args()
 
-    if not args.domain and not args.all:
+    if not args.domain and not getattr(args, 'all', False):
         p.print_help()
         return
 
@@ -547,7 +547,7 @@ def main():
         return
 
     retriever = SYSTEMS[args.system]()
-    domains   = [args.domain] if args.domain else None
+    domains   = args.domain if args.domain else None
 
     run_eval(
         retriever=retriever,
