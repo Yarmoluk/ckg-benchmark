@@ -8,7 +8,9 @@ Evaluation: standard KRB token F1 + optional RAGAS metrics
 
 Install:
     pip install chromadb sentence-transformers langchain-anthropic langchain-huggingface
-    pip install ragas  # only needed for --ragas-eval
+    pip install "ragas==0.2.15"  # only needed for --ragas-eval
+    # ragas 0.2.x has a broken import of a removed langchain-community module.
+    # Fix: pip install langchain-google-vertexai  (provides the missing ChatVertexAI)
 
 Usage:
     # Test retrieval pipeline — no API calls
