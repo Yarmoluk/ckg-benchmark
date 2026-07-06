@@ -45,7 +45,9 @@ configs:
 
 # CKG Benchmark
 
-**Pre-structured knowledge graphs outperform RAG by 4× F1 at 11× lower token cost — across 47 benchmarked domains.**
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21222965.svg)](https://doi.org/10.5281/zenodo.21222965)
+
+**Pre-structured knowledge graphs outperform RAG by 4× F1 at 11× lower token cost — across 64 benchmarked domains.**
 
 | System | Macro F1 | Tokens/query | RDS | Run Cost |
 |--------|----------|-------------|-----|----------|
