@@ -1,0 +1,46 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,OpenShell Runtime,,PLATFORM
+2,Gateway,1,COMPONENT
+3,Sandbox,2|6,COMPONENT
+4,Privacy Router,1|11,COMPONENT
+5,Policy Engine,1|7,COMPONENT
+6,K3s Substrate,,INFRASTR
+7,YAML Policy,,CONCEPT
+8,Filesystem Policy,7|13,POLICY
+9,Network Policy,7|14,POLICY
+10,Process Policy,7|12,POLICY
+11,Inference Policy,7|4,POLICY
+12,seccomp,,KERNEL
+13,Landlock,,KERNEL
+14,eBPF,,KERNEL
+15,cgroups v2,6,KERNEL
+16,Unprivileged User Namespace,,KERNEL
+17,Defense-in-Depth,12|13|14|16,CONCEPT
+18,Credential Provider,2,COMPONENT
+19,Environment Variable Injection,18,MECHANISM
+20,API Key Isolation,4|19,CONCEPT
+21,Claude Code,3|18,CLIENT
+22,OpenCode / Codex,3|18,CLIENT
+23,GitHub Copilot CLI,3|18,CLIENT
+24,Cursor,3|18,CLIENT
+25,Ollama Agent,3|11,CLIENT
+26,OpenShell CLI,2,TOOL
+27,sandbox create,26|3|7,COMMAND
+28,policy set,26|5,COMMAND
+29,term Dashboard,26|2,TOOL
+30,Helm Chart,6,DEPLOY
+31,DGX Cloud Remote,27,INTEGRA
+32,OpenClaw,,FRAMEWO
+33,Claw Chain,32,EXPLOIT
+34,CVE-2026-44112,33,CVE
+35,CVE-2026-44113,33,CVE
+36,CVE-2026-44115,33,CVE
+37,CVE-2026-44118,33,CVE
+38,Threat: Data Exfiltration,8|9,THREAT
+39,Threat: Credential Theft,20,THREAT
+40,Threat: Privilege Escalation,10|16,THREAT
+41,Threat: Prompt Injection Sandbox Escape,17,THREAT
+42,Authorization Record Gap,7|5,GAP
+43,Policy Source Gap,42,GAP
+44,Cross-Session Context Gap,42,GAP
+45,CKG Integration Point,42|43|44,GAP
