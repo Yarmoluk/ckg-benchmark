@@ -1,0 +1,46 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Nvidia Drive Platform,,PLATFORM
+2,Av Data Factory,1|37,WORKFLOW
+3,Av Simulation Validation,1,PLATFORM
+4,Drive Agx Thor,1,PLATFORM
+5,Drive Agx Orin,1,PLATFORM
+6,Drive Agx Thor Sku10,4,PLATFORM
+7,Drive Agx Thor Sku12,4,PLATFORM
+8,Thor Sensor Ecosystem,4|25,PLATFORM
+9,Driveos 7 0 3,4,SDK
+10,Driveos 6 0 10,5,SDK
+11,Driveworks Sdk V5 20,10,SDK
+12,Driveworks Api,11|43,API
+13,Cgf,11|15,CONCEPT
+14,Stm,13|11,CONCEPT
+15,Dag Pipeline,13,CONCEPT
+16,Parallel Execution,13|14,CONCEPT
+17,Tensorrt 10 10,21|9,TOOL
+18,Tensorrt 8 6 13,22|10,TOOL
+19,Cuda 12 8,9,SDK
+20,Cuda 11 4,10,SDK
+21,Cudnn 9 7,19|9,SDK
+22,Cudnn 8 9 2,20|10,SDK
+23,Nvmedia,9|10|25,API
+24,Nvstreams,9|10,API
+25,Sensor Abstraction Layer,27|23|26|28|12,CONCEPT
+26,Camera Interface,25,API
+27,Lidar Interface,25,API
+28,Radar Interface,25,API
+29,Perception Stack,13|25,CONCEPT
+30,Prediction Stack,13|29,CONCEPT
+31,Planning Stack,13|30,CONCEPT
+32,Omniverse Nurec,3|35,TOOL
+33,Cosmos Wfm,3,TOOL
+34,Synthetic Data Generation,35|33,WORKFLOW
+35,Real World Sensor Replay,32,WORKFLOW
+36,Scenario Variation,32|33,CONCEPT
+37,Dgx Cloud,,PLATFORM
+38,Sensor Dataset Curation,2,WORKFLOW
+39,Model Training Pipeline,38|37,WORKFLOW
+40,Nsight Systems,9,TOOL
+41,Nsight Graphics,9,TOOL
+42,Developer Workflow,10|11|43,WORKFLOW
+43,Drive Agx Sdk Program,,CONCEPT
+44,Tensorrt Migration 8 To 10,18|17,WORKFLOW
+45,Driveos 5 To 6 Migration,10,WORKFLOW

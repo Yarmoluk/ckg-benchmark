@@ -1,0 +1,51 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Kit Sdk,13|8|3|23,SDK
+2,Web Sdk,1|38,SDK
+3,Open Usd,,STANDARD
+4,Usd Exchange Sdk,3,SDK
+5,Simready Specs,3|49,STANDARD
+6,Nucleus,3,PLATFORM
+7,Farm,50,PLATFORM
+8,Ovphysx,9|3|50,TOOL
+9,Physx Sdk,50,SDK
+10,Digital Twin,8|3,CONCEPT
+11,Robotics Simulation,8|3|12,WORKFLOW
+12,Ovrtx,13|3|50,TOOL
+13,Rtx Technology,50,PLATFORM
+14,Sensor Simulation,12,CONCEPT
+15,Synthetic Data Gen,7|37|12,WORKFLOW
+16,Pbr Rendering,13|12,CONCEPT
+17,Usd Search Api,3|28,API
+18,Usd Code Api,3,API
+19,Kit App Streaming Api,47|1|29,API
+20,Storage Api,3|46,API
+21,Ovstream,50|1,TOOL
+22,Ovstorage,20|6,TOOL
+23,Ovui,1,TOOL
+24,Ovpackage,22|26,TOOL
+25,Enterprise Nucleus Server,6|26,PLATFORM
+26,Ngc Catalog,28,PLATFORM
+27,Dgx Cloud,28|19,PLATFORM
+28,Cloud Deployment,29|26,PLATFORM
+29,Kubernetes Orchestration,,PLATFORM
+30,Dsx Blueprint,10|8|3,WORKFLOW
+31,Robotics Blueprint,48|8|35|15,WORKFLOW
+32,Virtual Facility Guide,5|3|41,WORKFLOW
+33,Remote Monitoring 3D,39|10|3,WORKFLOW
+34,Spatial Streaming,3|40|19,WORKFLOW
+35,Nvidia Isaac,8|3|12,PLATFORM
+36,Nvidia Cosmos,15,PLATFORM
+37,Cosmos Transfer Wfm,36|12,ALGORITH
+38,Ov Web Rtc,1|47,TOOL
+39,Azure Arc,,PLATFORM
+40,Apple Vision Pro,,PLATFORM
+41,Cad Ingestion,3|43|4,WORKFLOW
+42,Physical Ai Agents,17|18|1|3,CONCEPT
+43,Partner Connectors,3|4,TOOL
+44,Omniverse Launcher Deprecated,,PLATFORM
+45,Github Distribution,,PLATFORM
+46,Grpc Rest,,STANDARD
+47,Webrtc Streaming,,STANDARD
+48,Trajectory Generation,11,ALGORITH
+49,Usd Native Asset,3,CONCEPT
+50,Multi Gpu Compute,,PLATFORM

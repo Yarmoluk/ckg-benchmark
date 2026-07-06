@@ -1,0 +1,49 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Isaac Platform,,PLATFORM
+2,Isaac Sim,1|6,PLATFORM
+3,Isaac Lab,2,SDK
+4,Isaac Ros,1|40,SDK
+5,Isaac Manipulator,1,SDK
+6,Omniverse,,PLATFORM
+7,Cosmos Transfer,2,TOOL
+8,Gr00T,27|3,SDK
+9,Usd,,STANDARD
+10,Physx,2,ALGORITH
+11,Newton,2,ALGORITH
+12,Omnigraph,6,TOOL
+13,Replicator,9|2,TOOL
+14,Infinigen,13,TOOL
+15,Scene Randomization,13,WORKFLOW
+16,Synthetic Data,15|13,CONCEPT
+17,Urdf,,STANDARD
+18,Mjcf,,STANDARD
+19,Nurec,9,TOOL
+20,Asset Pipeline,9|19|17|18,WORKFLOW
+21,Rgb Depth Camera,9|2,API
+22,Rtx Sensors,9|6,API
+23,Lidar Sensor,22,API
+24,Imu,9|2,API
+25,Contact Sensors,9|2,API
+26,Reinforcement Learning,3,ALGORITH
+27,Imitation Learning,3,ALGORITH
+28,Supervised Learning,16,ALGORITH
+29,Pre Trained Models,26|28,SDK
+30,Sim To Real,7|2|15,CONCEPT
+31,Amr,1,CONCEPT
+32,Robotic Manipulator,5,CONCEPT
+33,Humanoid System,8|3,CONCEPT
+34,Path Planning,43,ALGORITH
+35,Obstacle Avoidance,44,ALGORITH
+36,Trajectory Planning,43|5,ALGORITH
+37,Force Control,25,ALGORITH
+38,Bipedal Locomotion,26|10,ALGORITH
+39,Whole Body Motion,38|36,ALGORITH
+40,Ros2,,STANDARD
+41,Ros2 Bridge,40|12,API
+42,Software In Loop,41|2,WORKFLOW
+43,Cuda Libraries,,SDK
+44,Perception Pipeline,43|21|23|24,WORKFLOW
+45,Fleet Coordination,31|4,CONCEPT
+46,Python Api,2,API
+47,Cli Tools,2,TOOL
+48,Physics Tuning,11|20|10,WORKFLOW

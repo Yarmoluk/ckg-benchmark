@@ -1,0 +1,51 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Metropolis Platform,,PLATFORM
+2,Cosmos Omnimodel,1,PLATFORM
+3,Cosmos Reason,2,API
+4,Cosmos Embed,2|8,API
+5,Cosmos Transfer,2,API
+6,Cosmos Predict,2,API
+7,C Radio,2,ALGORITH
+8,Nv Clip,2,ALGORITH
+9,Deepstream Sdk,10|11|1,SDK
+10,Gstreamer Pipeline,11,FRAMEWOR
+11,Cuda Tensorrt,,SDK
+12,Gst Nvdspostprocess,10|9,API
+13,Deepstream App,29|20|9,TOOL
+14,Deepstream Nmos App,21|9,TOOL
+15,Pipetuner,9,TOOL
+16,Deepstream Service Maker,10|9,TOOL
+17,Graph Composer,18|9,TOOL
+18,Gxf Cli,,TOOL
+19,Multi Stream Ingestion,10|9,WORKFLOW
+20,Rest Api Server,9,API
+21,Nmos Standard,,STANDARD
+22,Zero Code Extension,10,TOOL
+23,Vss Blueprint,9|1|3,WORKFLOW
+24,Vss Skills,23,TOOL
+25,Deepstream Skills,23|9,TOOL
+26,Tao Skills,29|23,TOOL
+27,Synthetic Data Skills,5|23|34,TOOL
+28,Cosmos Cookbook,2,WORKFLOW
+29,Tao Toolkit,11|31|1|30,SDK
+30,Supervised Fine Tuning,29|36,ALGORITH
+31,Reinforcement Learning Posttraining,28|29|36,ALGORITH
+32,Lora Finetuning,29,ALGORITH
+33,Accuracy Tuning Tools,29,TOOL
+34,Isaac Sim,,PLATFORM
+35,Carla Simulator,,PLATFORM
+36,Physical Ai Dataset,35|34,DATASET
+37,Defect Image Generation,5|27,WORKFLOW
+38,Video Augmentation,5|27,WORKFLOW
+39,Bevfusion,41|11,ALGORITH
+40,V2Xfusion,39,ALGORITH
+41,Lidar Depth Inference,11|9,ALGORITH
+42,Action 3D Recognition,43|9,ALGORITH
+43,Temporal 3D Conv,11,ALGORITH
+44,Vision Ai Nims,2|11|1|45,API
+45,Ngc Registry,,PLATFORM
+46,Docker Containerization,45,TOOL
+47,Kubernetes Orchestration,46,TOOL
+48,Edge Deployment,46|9,WORKFLOW
+49,Brev Cloud,47,PLATFORM
+50,Nvaie,9,PLATFORM

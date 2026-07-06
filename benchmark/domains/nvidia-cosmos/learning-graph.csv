@@ -1,0 +1,47 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Cosmos World Foundation Model,12|41|11|24|29|21,PLATFORM
+2,Cosmos-1.0-Predict,4|23|22|1,MODEL
+3,Cosmos-1.0-Transfer,17|1,MODEL
+4,Cosmos Tokenizer,31|10|32,TOOL
+5,Cosmos-1.0-Reason,1,MODEL
+6,Cosmos-1.0-Nano,36|1,MODEL
+7,Physical AI,16|15,CONCEPT
+8,Synthetic Data Pipeline,45|2,PIPELINE
+9,Sim-to-Real Transfer,17|3|43,CONCEPT
+10,Video Tokenization,4,PROCESS
+11,Autoregressive WFM,32,ARCHITEC
+12,Diffusion WFM,31|30,ARCHITEC
+13,Text-to-World Generation,40|2,CAPABILI
+14,Video-to-World Prediction,10|2,CAPABILI
+15,Robot Policy Training,23|7|8|43,PROCESS
+16,AV Scenario Simulation,22|7|2|13,PROCESS
+17,Omniverse Integration,45,INTEGRAT
+18,Isaac Lab Integration,15,INTEGRAT
+19,DRIVE Sim Integration,16,INTEGRAT
+20,GR00T Integration,15|18,INTEGRAT
+21,Physical Laws Conditioning,42,MECHANIS
+22,Camera Model Conditioning,40,MECHANIS
+23,Action Conditioning,40,MECHANIS
+24,Cosmos Dataset,35,DATA
+25,Safety Filter,,COMPONEN
+26,NVIDIA Open Model License,,POLICY
+27,HuggingFace Release,26,DISTRIBU
+28,Post-Training / Fine-Tuning,4|37,PROCESS
+29,Spatiotemporal Attention,,MECHANIS
+30,Video Diffusion Transformer (DiT),29,ARCHITEC
+31,Continuous Tokenizer,,COMPONEN
+32,Discrete Tokenizer,,COMPONEN
+33,World State Representation,10,CONCEPT
+34,Multi-View Generation,22|2,CAPABILI
+35,Teleoperation Data,,DATA
+36,Edge Deployment,,PROCESS
+37,NeMo Framework,,TOOL
+38,WFM Inference API,,API
+39,Generative World Simulation,1,CONCEPT
+40,Conditioning Framework,22|23|13,MECHANIS
+41,Video Pretraining Corpus,24,DATA
+42,Physics Simulation Engine,17,TOOL
+43,Domain Randomization,9,TECHNIQU
+44,Robot Manipulation,15,CAPABILI
+45,3D Scene Generation,17,CAPABILI
+46,NVIDIA Cloud Functions (NVCF),,PLATFORM

@@ -1,0 +1,46 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Clara Platform,,PLATFORM
+2,Cuda X Libraries,,SDK
+3,Nvidia Ngc,,PLATFORM
+4,Dgx Systems,,PLATFORM
+5,Base Command Platform,4,PLATFORM
+6,Bionemo Agent Toolkit,2,PLATFORM
+7,Agent Skills Framework,6,SDK
+8,Skill Cards,7,STANDARD
+9,Digital Biology Skills,7,CONCEPT
+10,Digital Health Skills,7,CONCEPT
+11,Medtech Skills,7,CONCEPT
+12,Closed Loop Discovery,6,CONCEPT
+13,Parabricks,2,SDK
+14,Gatk4 Best Practices,,STANDARD
+15,Variant Calling,14,WORKFLOW
+16,Short Read Sequencing,13,WORKFLOW
+17,Long Read Sequencing,13,WORKFLOW
+18,Gpu Seq Acceleration,2,ALGORITH
+19,Monai Toolkit,2|3,SDK
+20,Monai Core,,SDK
+21,Monai Label,20,TOOL
+22,Nvidia Flare,,SDK
+23,Federated Learning,22,ALGORITH
+24,Clara Viz,2,SDK
+25,Monai Pretrained Models,19,CONCEPT
+26,Bionemo Training Framework,2|4|5,SDK
+27,Protein Structure Prediction,26,ALGORITH
+28,Molecular Docking,26,ALGORITH
+29,Generative Chemistry,26,ALGORITH
+30,Generative Protein Design,26,ALGORITH
+31,Protein Binder Design,27|30|28,WORKFLOW
+32,Biomolecular Formats,,STANDARD
+33,Rapids Singlecell,2,SDK
+34,Single Cell Transcriptomics,33,WORKFLOW
+35,Dimensionality Reduction Sc,33,ALGORITH
+36,Gpu Clustering,33,ALGORITH
+37,Holoscan Sdk,2,SDK
+38,Isaac Healthcare,2,PLATFORM
+39,Surgical Robotics Policy,38,WORKFLOW
+40,Medical Device Streaming,37,WORKFLOW
+41,Biomedical Aiq Agent,6,TOOL
+42,Ambient Healthcare Agents,6,TOOL
+43,Clinical Data Privacy,23,CONCEPT
+44,Automated Documentation,42,WORKFLOW
+45,Real World Evidence,,CONCEPT

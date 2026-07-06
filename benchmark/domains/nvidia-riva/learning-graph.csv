@@ -1,0 +1,49 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Nemotron Speech,4|5|3,PLATFORM
+2,Riva Library,1|26,SDK
+3,Riva Asr,2|9|11,API
+4,Riva Tts,2|16|17,API
+5,Riva Nmt,20|2,API
+6,Riva S2S,4|5|3,WORKFLOW
+7,Streaming Asr,23|3,CONCEPT
+8,Offline Asr,3,CONCEPT
+9,Acoustic Model,10,ALGORITH
+10,Conformer Ctc,9|43,ALGORITH
+11,Language Model Asr,9,ALGORITH
+12,Word Boost,11|13,API
+13,Custom Vocabulary,,CONCEPT
+14,Punctuation Capitalization,3,API
+15,Speaker Diarization,3,API
+16,Tts Fastpitch,,ALGORITH
+17,Hifigan Vocoder,16,ALGORITH
+18,Ssml Support,4,STANDARD
+19,Voice Customization,16|18,CONCEPT
+20,Nmt Model,,ALGORITH
+21,Nmt 32 Languages,20,CONCEPT
+22,Riva Grpc Api,23,API
+23,Grpc Protocol,,STANDARD
+24,Riva Python Client,22,SDK
+25,Riva Java Client,22,SDK
+26,Nvidia Nim,28|2,PLATFORM
+27,Triton Inference Server,43,PLATFORM
+28,Riva Server,27|2,PLATFORM
+29,Riva Container,28,TOOL
+30,Build Nvidia Com,26,PLATFORM
+31,Nvidia Ai Enterprise,2|26,PLATFORM
+32,Riva Train,33,TOOL
+33,Tao Toolkit,,SDK
+34,Domain Adaptation,13|32,WORKFLOW
+35,Custom Asr Model,34|9,CONCEPT
+36,Custom Tts Voice,34|16,CONCEPT
+37,Voice Agent Pipeline,7|40|38|39|4,WORKFLOW
+38,Multimodal Rag,40,CONCEPT
+39,Safety Guardrails,,CONCEPT
+40,Long Context Reasoning,38,CONCEPT
+41,Real Time Factor,7,CONCEPT
+42,Parallel Streams,28|43,CONCEPT
+43,Gpu Acceleration,,CONCEPT
+44,12 Language Asr,9,CONCEPT
+45,5 Language Tts,16,CONCEPT
+46,Edge Deployment,26|29,CONCEPT
+47,Data Center Deployment,31|27,CONCEPT
+48,Webrtc Integration,23|7,CONCEPT

@@ -1,0 +1,78 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,CUDA Toolkit,,PLATFORM
+2,CUDA-X Libraries,1,SDK
+3,cuDNN,2,SDK
+4,CUTLASS,1,SDK
+5,NVIDIA Warp,1,SDK
+6,Nsight Systems,1,TOOL
+7,TensorRT,3|1|4,SDK
+8,TensorRT-LLM,7,SDK
+9,Triton Inference Server,1|7,PLATFORM
+10,NVIDIA NIM,9|8|64,PLATFORM
+11,NVIDIA Dynamo,1|8,PLATFORM
+12,NIM Operator,10,INTEGRAT
+13,NeMo Framework,3|1,FRAMEWOR
+14,NeMo Curator,13|67,SDK
+15,NeMo RL,13,SDK
+16,NeMo AutoModel,13,SDK
+17,NeMo Megatron-Bridge,13,SDK
+18,NeMo Export & Deploy,13|9|7,INTEGRAT
+19,NeMo Run,13,TOOL
+20,NeMo Customizer,16|10|15,SDK
+21,NeMo Evaluator,13,SDK
+22,NeMo Data Designer,13,SDK
+23,NeMo Gym,15,SDK
+24,TAO Toolkit,13|7,SDK
+25,BioNeMo,13,FRAMEWOR
+26,NeMo Retriever,28|10|27,PLATFORM
+27,Embedding NIM,10,SDK
+28,Reranker NIM,10,SDK
+29,OCR / Object Detection NIM,10,SDK
+30,NIM RAG Pipeline,28|26|27,CONCEPT
+31,NVIDIA AgentIQ,10|26|32,PLATFORM
+32,NeMo Guardrails,33,SDK
+33,Colang DSL,,CONCEPT
+34,NeMo Relay,31,SDK
+35,NeMo Auditor,32|31,SDK
+36,NVIDIA Omniverse,37|38,PLATFORM
+37,OpenUSD,,STANDARD
+38,PhysX,1,SDK
+39,Newton Physics,5,SDK
+40,PhysicsNeMo,13|5,FRAMEWOR
+41,NVIDIA Cosmos,10|13|36,PLATFORM
+42,Cosmos Curator,41,TOOL
+43,Cosmos Evaluator,41,TOOL
+44,Isaac Sim,37|36|38,PLATFORM
+45,Isaac Lab,39|44|5|38,FRAMEWOR
+46,Isaac ROS,58|1,SDK
+47,NITROS,46|1,INTEGRAT
+48,Isaac Perceptor,58|46,SDK
+49,NVIDIA GR00T,41|45,PLATFORM
+50,NVIDIA Halos,52|44,PLATFORM
+51,NVIDIA Riva,10|13,SDK
+52,DRIVE AGX,1,PLATFORM
+53,DRIVE OS,52|54|7,SDK
+54,DriveWorks,1|7,SDK
+55,DRIVE Sim,41|36,PLATFORM
+56,AV Data Factory,65|42,PLATFORM
+57,AlpaSim,55|36,TOOL
+58,Jetson Platform,1,PLATFORM
+59,JetPack SDK,62|9|1|7,SDK
+60,Holoscan SDK,61|1,PLATFORM
+61,NVIDIA IGX,1,PLATFORM
+62,DeepStream SDK,9|1,SDK
+63,NVIDIA AI Enterprise,67|71|10|62|13|9,PLATFORM
+64,NGC Catalog,,PLATFORM
+65,DGX Cloud,13|1,PLATFORM
+66,NVIDIA Blueprint,10|9|26|31,PLATFORM
+67,RAPIDS,1,SDK
+68,cuDF,67,SDK
+69,cuML,67,SDK
+70,cuGraph,67,SDK
+71,Morpheus,67|9|1,PLATFORM
+72,Knowledge / Context Layer Gap,30|26|31,GAP
+73,Agent Memory & Context Window Gap,34|31,GAP
+74,Digital Twin Knowledge Layer Gap,50|44|36,GAP
+75,Physical AI Context Layer Gap,49|41|45,GAP
+76,Multi-NIM Context Coordination Gap,10|11|26|31,GAP
+77,RAG Schema / Declarative Retrieval Gap,28|72|30,GAP

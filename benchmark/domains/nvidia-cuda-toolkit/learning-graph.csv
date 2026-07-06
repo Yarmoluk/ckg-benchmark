@@ -1,0 +1,51 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Nvcc Compiler,8|3|2|7|4,TOOL
+2,Ptx Ir,4|3|6,STANDARD
+3,Cubin,4,TOOL
+4,Fatbinary,3|2,TOOL
+5,Nvrtc,2|6,SDK
+6,Ptx Jit,3|2,ALGORITH
+7,Libdevice,9,SDK
+8,Cuda Cpp Extensions,17|11|33|12,STANDARD
+9,Cuda Math Api,,API
+10,Thread Hierarchy,11|13|12|15,CONCEPT
+11,Warp,10,CONCEPT
+12,Cooperative Groups,11|10,API
+13,Cuda Cluster,44|10,CONCEPT
+14,Occupancy Calculator,16,TOOL
+15,Sm Architecture,,CONCEPT
+16,Device Properties,,API
+17,Shared Memory,15,CONCEPT
+18,Global Memory,19,CONCEPT
+19,Hbm Memory,,PLATFORM
+20,L2 Cache,15,CONCEPT
+21,Unified Memory,18|29,API
+22,Pinned Memory,,CONCEPT
+23,Memory Pool,18|28,API
+24,Texture Memory,15,CONCEPT
+25,Constant Memory,15,CONCEPT
+26,Cudamemcpyasync,22|30,API
+27,Peer Access,49,API
+28,Cuda Runtime,30|3|29|31|23,API
+29,Cuda Driver Api,15|6,API
+30,Stream Api,28,API
+31,Event Api,30|28,API
+32,Cuda Graphs,30|28,API
+33,Atomic Operations,,CONCEPT
+34,Cublas,9|28,SDK
+35,Cusparse,28,SDK
+36,Cudss,35|28,SDK
+37,Thrust,28|38,SDK
+38,Cub,15,SDK
+39,Cupti,28,SDK
+40,Nsight Systems,30|39,TOOL
+41,Nsight Compute,14|39,TOOL
+42,Compute Sanitizer,17|28,TOOL
+43,Hopper Architecture,44|13|45|49,PLATFORM
+44,Tma Hopper,18|17,API
+45,Warpgroup Mma,17|11|15,API
+46,Blackwell Architecture,49|48|47|43,PLATFORM
+47,Fp4 Blackwell,34|45,CONCEPT
+48,Mxfp8,34|45,CONCEPT
+49,Nvlink,,PLATFORM
+50,Multi Gpu Api,27|49|28,API

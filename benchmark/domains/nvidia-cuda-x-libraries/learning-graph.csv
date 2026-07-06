@@ -1,0 +1,51 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Cuda Foundation,,PLATFORM
+2,Tensor Cores,1,PLATFORM
+3,Cublas,1|2,API
+4,Cufft,1,API
+5,Curand,1,API
+6,Cusolver,1|3,API
+7,Cusparse,1,API
+8,Cutensor,1|2,API
+9,Cudss,1|6,API
+10,Amgx,1|7|6,API
+11,Nvmath Python,4|3,SDK
+12,Cudnn,1|3|2,API
+13,Operation Graph,12,CONCEPT
+14,Multi Op Fusion,13,ALGORITH
+15,Frontend Api,12|13,API
+16,Cutlass,1|2,SDK
+17,Flashinfer,16|2,API
+18,Cuda Graph,1,TOOL
+19,Tensorrt,12|3|16,SDK
+20,Tensorrt Llm,17|41|19|39,SDK
+21,Thrust,1,API
+22,Cub,1,API
+23,Cuda Parallel,21|22,API
+24,Rapids,1|21,PLATFORM
+25,Cudf,24,API
+26,Cuml,3|24,API
+27,Cugraph,7|24,API
+28,Cuvs,24,API
+29,Cuopt,1|3,API
+30,Nemo Curator,28|25,TOOL
+31,Morpheus,26|25|19,SDK
+32,Gpu Direct Storage,1,PLATFORM
+33,Dali,1|34,SDK
+34,Nvimagecodec,1,API
+35,Cv Cuda,1|36,API
+36,Npp,1,API
+37,Video Codec Sdk,1,SDK
+38,Optical Flow Sdk,1,SDK
+39,Nccl,1,API
+40,Nvshmem,1|39,API
+41,Nixl,1|32,API
+42,Cuequivariance,1,API
+43,Culitho,1|7|4,API
+44,Warp Nvidia,1,SDK
+45,Physics Nemo,1|12|44|42,SDK
+46,Earth2,12|39|45,PLATFORM
+47,Cuquantum,1|8,SDK
+48,Cupqc,1|5,API
+49,Cuda Q Qec,47,SDK
+50,Cuda Q Solvers,3|47,SDK

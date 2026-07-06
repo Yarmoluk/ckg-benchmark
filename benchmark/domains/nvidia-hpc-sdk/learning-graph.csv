@@ -1,0 +1,50 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Nvc,5|34,TOOL
+2,Nvc Plus,7|35|5,TOOL
+3,Nvfortran,12|8|36|5|6,TOOL
+4,Nvcc,42|9|49,STANDARD
+5,Openmp Offload,42|38,STANDARD
+6,Cuda Fortran,9|36,STANDARD
+7,Stdpar,42|35,STANDARD
+8,Do Concurrent,42|12|36,STANDARD
+9,Cuda Programming Model,42,CONCEPT
+10,Cublas,42|48|33,API
+11,Cublasmp,20|10,API
+12,Cutensor,42|48|33,API
+13,Cusparse,42,API
+14,Cusolver,42|13|10,API
+15,Cusolvermp,20|14,API
+16,Cufft,42,API
+17,Cufftmp,16|20,API
+18,Curand,42,API
+19,Nvpl,39,API
+20,Nccl,42|41,API
+21,Nvshmem,42|9|37,API
+22,Hpcx Mpi,23|20,SDK
+23,Cuda Aware Mpi,47|24,API
+24,Gpudirect Rdma,42,CONCEPT
+25,Cuda Gdb,9,TOOL
+26,Nsight Compute,9|29,TOOL
+27,Nsight Systems,41|29,TOOL
+28,Compute Sanitizer,9,TOOL
+29,Nvtx,,API
+30,Blackwell Arch,31|33,PLATFORM
+31,Hopper Arch,33|32,PLATFORM
+32,Ampere Arch,33,PLATFORM
+33,Tensor Cores,42|31|30|32,CONCEPT
+34,Iso C11,,STANDARD
+35,Iso Cpp17,,STANDARD
+36,Fortran 2003 2008,,STANDARD
+37,Openshmem Standard,,STANDARD
+38,X86 64 Cpu,,PLATFORM
+39,Arm Aarch64 Cpu,,PLATFORM
+40,Aws Graviton3,39,PLATFORM
+41,Multi Node Gpu Cluster,42,PLATFORM
+42,Cuda Capable Gpu,,PLATFORM
+43,Hpc Container Maker,45,TOOL
+44,Ngc,45,PLATFORM
+45,Nvidia Container Runtime,42,PLATFORM
+46,Singularity Container,45,PLATFORM
+47,Cuda Unified Memory,9,CONCEPT
+48,Mixed Precision,33,CONCEPT
+49,Hpc App Ports,42,CONCEPT

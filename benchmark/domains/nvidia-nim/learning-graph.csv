@@ -1,0 +1,51 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,NIM Microservice,3|2,SERVICE
+2,NIM REST API,30,SERVICE
+3,NIM Docker Container,7|9|22|33,CONTAINE
+4,GPU Profile,32,CONFIG
+5,NIM Kubernetes Operator,31,OPERATOR
+6,NVIDIA API Catalog,34,REGISTRY
+7,NVIDIA AI Enterprise License,,LICENSE
+8,NIM Weight Cache,38|1,STORAGE
+9,Triton Inference Server Backend,10,ENGINE
+10,TensorRT-LLM Engine,4,ENGINE
+11,LLM NIM,8|9,SERVICE
+12,Vision-Language NIM,9|11,SERVICE
+13,Embedding NIM,9,SERVICE
+14,Reranking NIM,9,SERVICE
+15,ASR NIM,9|1,SERVICE
+16,Digital Biology NIM,32|1,SERVICE
+17,NeMo Retriever,14|13,PIPELINE
+18,Agentic NIM,11|24,CAPABILI
+19,NIM Blueprint,7,ARTIFACT
+20,NIM Helm Chart,,ARTIFACT
+21,Model Card,33,ARTIFACT
+22,vLLM Backend,32,ENGINE
+23,NIM Python SDK,2,SDK
+24,Function Calling,30,CAPABILI
+25,Context Length,4,CONFIG
+26,Batching Modes,9,CONFIG
+27,LoRA Adapter,11,MODEL
+28,Multi-GPU Serving,32|39,CONFIG
+29,NIM Health Check,3,MONITORI
+30,OpenAI-Compatible API,,CAPABILI
+31,Kubernetes Cluster,,INFRASTR
+32,NVIDIA GPU,,HARDWARE
+33,NGC Container Registry,34,REGISTRY
+34,NGC API Key,,CONFIG
+35,RAG Pipeline,17|11,PIPELINE
+36,Structured Output,30,CAPABILI
+37,Token Streaming,30,CAPABILI
+38,Model Weights,8|33,ARTIFACT
+39,Tensor Parallelism,,CONFIG
+40,Prometheus Metrics,,MONITORI
+41,LangChain Integration,2,SDK
+42,Llama Model,11,MODEL
+43,Nemotron Model,11,MODEL
+44,DeepSeek Model,11,MODEL
+45,PEFT Customization,,PIPELINE
+46,NIM Scaling Config,31,CONFIG
+47,NIM Telemetry,,MONITORI
+48,NIM Environment Config,,CONFIG
+49,TTS NIM,9|1,SERVICE
+50,NeMo Guardrails NIM,11|1,SERVICE
