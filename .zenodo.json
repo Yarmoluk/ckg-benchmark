@@ -1,0 +1,54 @@
+{
+  "title": "CKG Benchmark v0.6.2: Knowledge Retrieval Benchmark — CKG vs RAG vs GraphRAG",
+  "description": "Open, reproducible benchmark comparing three LLM knowledge retrieval architectures across 64 domains and 10,838 queries drawn from the McCreary Intelligent Textbook Corpus and the NVIDIA developer documentation corpus.\n\nKey results (v0.6.2 locked):\n- CKG Macro F1: 0.471 vs RAG 0.123 vs GraphRAG 0.120 (3.8× gap)\n- Tokens per query: CKG 269 vs RAG 2,982 (11× fewer)\n- 5-hop F1: CKG 0.772 vs RAG 0.170 (4.5× gap on hard multi-hop queries)\n- Cost per 1,000 queries: CKG $7.81 vs RAG $76.23 (10× cheaper)\n\nThe benchmark includes structured CSV concept graphs (ConceptID, ConceptLabel, Dependencies, TaxonomyID), 10,838 generated benchmark queries across 5 query types (T1 entity lookup through T5 cross-concept), and full evaluation code. Ground truth is deterministic — derived from DAG edges, not human annotation.\n\nDataset also published at: https://huggingface.co/datasets/danyarm/ckg-benchmark",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Yarmoluk, Daniel",
+      "affiliation": "Graphify.md",
+      "orcid": ""
+    },
+    {
+      "name": "McCreary, Dan",
+      "affiliation": "Independent"
+    }
+  ],
+  "keywords": [
+    "knowledge graph",
+    "RAG",
+    "GraphRAG",
+    "benchmark",
+    "structured retrieval",
+    "LLM evaluation",
+    "compact knowledge graph",
+    "CKG",
+    "token efficiency",
+    "multi-hop reasoning",
+    "NVIDIA",
+    "agentic AI"
+  ],
+  "license": "MIT",
+  "version": "0.6.2",
+  "language": "eng",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://huggingface.co/datasets/danyarm/ckg-benchmark",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/Yarmoluk/ckg-benchmark",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://huggingface.co/spaces/danyarm/krb-leaderboard",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ],
+  "communities": [
+    {"identifier": "zenodo"}
+  ]
+}
