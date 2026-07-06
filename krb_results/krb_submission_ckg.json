@@ -1,0 +1,20 @@
+{
+  "system": "ckg",
+  "krb_version": "v0.6.2",
+  "dataset": "danyarm/ckg-benchmark",
+  "n_queries": 5,
+  "n_domains": 1,
+  "macro_f1": 0.0,
+  "mean_tokens": 0.0,
+  "macro_rds": 0,
+  "total_cost_usd": 0.0,
+  "f1_by_type": {
+    "T1_entity": 0.0
+  },
+  "f1_by_hop": {
+    "0": 0.0
+  },
+  "f1_by_domain": {
+    "calculus": 0.0
+  }
+}
