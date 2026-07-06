@@ -91,6 +91,45 @@ if __name__ == "__main__":
 
 ---
 
+## RAGAS example (runnable — see `evaluation/ragas_retriever.py`)
+
+ChromaDB + sentence-transformers retrieval with optional RAGAS v0.2 scoring
+(Faithfulness, ResponseRelevancy, LLMContextRecall) after the KRB eval.
+
+```bash
+pip install chromadb sentence-transformers langchain-anthropic langchain-huggingface
+pip install ragas   # only for --ragas-eval
+
+# Test pipeline — no API calls
+python evaluation/ragas_retriever.py --domain calculus --dry-run
+
+# KRB eval — 2 domains (~$0.30 Haiku)
+ANTHROPIC_API_KEY=sk-ant-... python evaluation/ragas_retriever.py --domain calculus biology
+
+# KRB + RAGAS metrics (Faithfulness / Relevancy / Context Recall)
+ANTHROPIC_API_KEY=sk-ant-... python evaluation/ragas_retriever.py --domain calculus --ragas-eval
+
+# Full benchmark — all domains (~$5)
+ANTHROPIC_API_KEY=sk-ant-... python evaluation/ragas_retriever.py --all
+```
+
+Or call it directly from Python:
+
+```python
+from evaluation.ragas_retriever import RAGASRetriever
+from evaluation.krb_eval import run_eval
+
+retriever = RAGASRetriever(embed_model="all-MiniLM-L6-v2", top_k=5)
+results = run_eval(
+    retriever=retriever,
+    system_name="chromadb-minilm-top5",
+    domains=["calculus", "biology"],
+)
+print(f"Macro F1: {results['macro_f1']}")
+```
+
+---
+
 ## LlamaIndex example
 
 ```python
