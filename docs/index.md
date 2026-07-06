@@ -1,10 +1,6 @@
 # CKG Benchmark
 
-**Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 25 educational domains.**
-
-!!! note "Status: Pre-experiment"
-    Paper outline, metrics specification, and evaluation harness are complete.
-    Corpus extraction and query generation are done. Experimental runs are pending.
+**Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 64 domains.**
 
 ## Overview
 
@@ -26,11 +22,11 @@ $$\text{RDS} = \frac{\text{F1}}{\text{tokens\_consumed}}$$
 
 ## By the Numbers
 
-- **22 domains** extracted (STEM, Professional, Foundational)
-- **6,351 concepts** with standardized CSV schema
-- **3,854 benchmark queries** across 5 query types
-- **16 evaluation metrics** (10 novel)
+- **64 domains** (STEM, Professional, Foundational, Life Sciences)
+- **over 10,800 benchmark queries** across 5 query types
 - **3 retrieval architectures** compared
+- **16 evaluation metrics** (10 novel)
+- CKG: 4× higher F1, 11× fewer tokens, 42× better RDS vs RAG
 
 ## Authors
 
@@ -43,4 +39,5 @@ $$\text{RDS} = \frac{\text{F1}}{\text{tokens\_consumed}}$$
 - [Explore the benchmark](benchmark/index.md)
 - [Metrics specification](metrics/index.md)
 - [Get started](getting-started.md)
+- [Submit your system](submit.md)
 - [GitHub repository](https://github.com/Yarmoluk/ckg-benchmark)
