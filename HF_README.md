@@ -47,7 +47,7 @@ configs:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21222965.svg)](https://doi.org/10.5281/zenodo.21222965)
 
-**Pre-structured knowledge graphs outperform RAG by 4× F1 at 11× lower token cost — across 64 benchmarked domains.**
+**Pre-structured knowledge graphs outperform RAG by 4× F1 at 11× lower token cost — across 65 benchmarked domains.**
 
 | System | Macro F1 | Tokens/query | RDS | Run Cost |
 |--------|----------|-------------|-----|----------|
@@ -61,7 +61,7 @@ configs:
 
 ```
 domains/{domain}/learning-graph.csv   — structured DAG (ConceptID, ConceptLabel, Dependencies, TaxonomyID)
-queries/queries_{domain}.jsonl        — 7,928 benchmark queries (T1–T5 types)
+queries/queries_{domain}.jsonl        — 11,031 benchmark queries (T1–T5 types)
 results/                              — per-system JSONL results + summary CSVs
 ```
 

@@ -1,12 +1,12 @@
 # CKG Benchmark
 
-**Pre-structured knowledge graphs outperform RAG by 4× F1 using 11× fewer tokens per query — across 45 domains.**
+**Pre-structured knowledge graphs outperform RAG by 4× F1 using 11× fewer tokens per query — across 65 domains.**
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Status: Complete](https://img.shields.io/badge/Status-Complete-brightgreen.svg)]()
-[![Domains: 45](https://img.shields.io/badge/Domains-45-green.svg)]()
-[![Queries: 7,928](https://img.shields.io/badge/Queries-7%2C928-green.svg)]()
+[![Domains: 65](https://img.shields.io/badge/Domains-65-green.svg)]()
+[![Queries: 11,031](https://img.shields.io/badge/Queries-11%2C031-green.svg)]()
 [![Version: 0.6.2](https://img.shields.io/badge/Paper-v0.6.2-blue.svg)]()
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21222965.svg)](https://doi.org/10.5281/zenodo.21222965)
 
