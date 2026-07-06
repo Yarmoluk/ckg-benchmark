@@ -8,6 +8,7 @@
 [![Domains: 45](https://img.shields.io/badge/Domains-45-green.svg)]()
 [![Queries: 7,928](https://img.shields.io/badge/Queries-7%2C928-green.svg)]()
 [![Version: 0.6.2](https://img.shields.io/badge/Paper-v0.6.2-blue.svg)]()
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21222965.svg)](https://doi.org/10.5281/zenodo.21222965)
 
 > **Deploy this architecture in your organization → [graphifymd.com](https://graphifymd.com)**
 
