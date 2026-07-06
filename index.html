@@ -888,12 +888,7 @@
 
 
 <h1 id="ckg-benchmark">CKG Benchmark</h1>
-<p><strong>Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 25 educational domains.</strong></p>
-<div class="admonition note">
-<p class="admonition-title">Status: Pre-experiment</p>
-<p>Paper outline, metrics specification, and evaluation harness are complete.
-Corpus extraction and query generation are done. Experimental runs are pending.</p>
-</div>
+<p><strong>Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 64 domains.</strong></p>
 <h2 id="overview">Overview</h2>
 <p>This benchmark evaluates three LLM knowledge retrieval architectures on structured educational domains from the McCreary Intelligent Textbook Corpus.</p>
 <table>
@@ -932,11 +927,11 @@ Corpus extraction and query generation are done. Experimental runs are pending.<
 <div class="arithmatex">\[\text{RDS} = \frac{\text{F1}}{\text{tokens\_consumed}}\]</div>
 <h2 id="by-the-numbers">By the Numbers</h2>
 <ul>
-<li><strong>22 domains</strong> extracted (STEM, Professional, Foundational)</li>
-<li><strong>6,351 concepts</strong> with standardized CSV schema</li>
-<li><strong>3,854 benchmark queries</strong> across 5 query types</li>
-<li><strong>16 evaluation metrics</strong> (10 novel)</li>
+<li><strong>64 domains</strong> (STEM, Professional, Foundational, Life Sciences)</li>
+<li><strong>over 10,800 benchmark queries</strong> across 5 query types</li>
 <li><strong>3 retrieval architectures</strong> compared</li>
+<li><strong>16 evaluation metrics</strong> (10 novel)</li>
+<li>CKG: 4× higher F1, 11× fewer tokens, 42× better RDS vs RAG</li>
 </ul>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -949,6 +944,7 @@ Corpus extraction and query generation are done. Experimental runs are pending.<
 <li><a href="benchmark/">Explore the benchmark</a></li>
 <li><a href="metrics/">Metrics specification</a></li>
 <li><a href="getting-started/">Get started</a></li>
+<li><a href="submit/">Submit your system</a></li>
 <li><a href="https://github.com/Yarmoluk/ckg-benchmark">GitHub repository</a></li>
 </ul>
 
