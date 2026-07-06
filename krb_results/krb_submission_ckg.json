@@ -2,28 +2,29 @@
   "system": "ckg",
   "krb_version": "v0.6.2",
   "dataset": "danyarm/ckg-benchmark",
-  "n_queries": 180,
-  "n_domains": 1,
-  "macro_f1": 0.4955,
-  "mean_tokens": 244.3,
-  "macro_rds": 0.00242419,
-  "total_cost_usd": 0.0748,
+  "n_queries": 331,
+  "n_domains": 2,
+  "macro_f1": 0.0,
+  "mean_tokens": 0.0,
+  "macro_rds": 0,
+  "total_cost_usd": 0.0,
   "f1_by_type": {
-    "T1_entity": 0.198,
-    "T2_dependency": 0.6084,
-    "T3_path": 0.7366,
-    "T4_aggregate": 0.9935,
-    "T5_cross_concept": 0.3571
+    "T1_entity": 0.0,
+    "T2_dependency": 0.0,
+    "T3_path": 0.0,
+    "T4_aggregate": 0.0,
+    "T5_cross_concept": 0.0
   },
   "f1_by_hop": {
-    "0": 0.3998,
-    "1": 0.4999,
-    "3": 0.5183,
-    "5": 0.8147,
-    "4": 0.8365,
-    "2": 0.7778
+    "0": 0.0,
+    "1": 0.0,
+    "5": 0.0,
+    "4": 0.0,
+    "3": 0.0,
+    "2": 0.0
   },
   "f1_by_domain": {
-    "calculus": 0.4955
+    "nvidia-nim": 0.0,
+    "nvidia-cuda-toolkit": 0.0
   }
 }
