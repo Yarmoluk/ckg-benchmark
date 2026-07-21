@@ -1,0 +1,42 @@
+{
+  "model": "phi4-mini:latest",
+  "backend": "ollama",
+  "mode": "ckg",
+  "n_queries": 28,
+  "macro_f1": 0.5756,
+  "mean_tokens": 178.3,
+  "f1_by_type": {
+    "T5_cross_concept": 0.6524,
+    "T4_aggregate": 0.6146,
+    "T3_path": 0.6349,
+    "T2_dependency": 0.5655,
+    "T1_entity": 0.4852
+  },
+  "f1_by_hop": {
+    "1": 0.6074,
+    "0": 0.5284,
+    "5": 0.6667
+  },
+  "by_domain": {
+    "nemoclaw": {
+      "model": "phi4-mini:latest",
+      "backend": "ollama",
+      "mode": "ckg",
+      "n_queries": 28,
+      "macro_f1": 0.5756,
+      "mean_tokens": 178.3,
+      "f1_by_type": {
+        "T5_cross_concept": 0.6524,
+        "T4_aggregate": 0.6146,
+        "T3_path": 0.6349,
+        "T2_dependency": 0.5655,
+        "T1_entity": 0.4852
+      },
+      "f1_by_hop": {
+        "1": 0.6074,
+        "0": 0.5284,
+        "5": 0.6667
+      }
+    }
+  }
+}
