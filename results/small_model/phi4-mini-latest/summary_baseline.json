@@ -1,0 +1,42 @@
+{
+  "model": "phi4-mini:latest",
+  "backend": "ollama",
+  "mode": "baseline",
+  "n_queries": 27,
+  "macro_f1": 0.156,
+  "mean_tokens": 101.9,
+  "f1_by_type": {
+    "T5_cross_concept": 0.3213,
+    "T4_aggregate": 0.0,
+    "T3_path": 0.2667,
+    "T2_dependency": 0.0,
+    "T1_entity": 0.1854
+  },
+  "f1_by_hop": {
+    "1": 0.1742,
+    "0": 0.1348,
+    "5": 0.1143
+  },
+  "by_domain": {
+    "nemoclaw": {
+      "model": "phi4-mini:latest",
+      "backend": "ollama",
+      "mode": "baseline",
+      "n_queries": 27,
+      "macro_f1": 0.156,
+      "mean_tokens": 101.9,
+      "f1_by_type": {
+        "T5_cross_concept": 0.3213,
+        "T4_aggregate": 0.0,
+        "T3_path": 0.2667,
+        "T2_dependency": 0.0,
+        "T1_entity": 0.1854
+      },
+      "f1_by_hop": {
+        "1": 0.1742,
+        "0": 0.1348,
+        "5": 0.1143
+      }
+    }
+  }
+}
