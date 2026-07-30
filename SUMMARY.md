@@ -1,7 +1,7 @@
 # CKG Benchmark — One-Page Summary
 
 > Pre-structured knowledge graphs outperform RAG 4× at 11× lower token cost.
-> Full paper · 45 domains · 7,928 queries · open source.
+> Full paper · 44 domains · 7,758 queries · open source.
 
 ---
 
@@ -91,7 +91,7 @@ A domain CSV with 500 concepts and 1,200 edges fits in ~50KB. The same knowledge
 pip install ckg-mcp
 ```
 
-**Full dataset** (45 domain CSVs + 7,928 query JSONL + results):
+**Full dataset** (44 domain CSVs + 7,758 query JSONL + results):
 huggingface.co/datasets/danyarm/ckg-benchmark
 
 **Paper + LaTeX source:**
