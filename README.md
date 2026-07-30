@@ -35,7 +35,7 @@
 | RAG | 0.1231 | 2,982 | 0.0000482 | $76.23 |
 | GraphRAG | 0.1200 | 3,450 | 0.0000452 | $44.43 |
 
-**42× more efficient per token than RAG. Zero hallucinations by construction.**
+**11× more token-efficient than RAG. Every answer traced to a declared relationship.**
 
 ### F1 by Query Type
 
@@ -194,9 +194,9 @@ The benchmark numbers translate directly to enterprise cost and accuracy:
 | What RAG costs you | What CKG delivers |
 |--------------------|-------------------|
 | 2,982 tokens/query average | 269 tokens/query — 11× reduction |
-| $76.23 to run 7,928 queries | $7.81 for the same workload |
+| $76.23 to run 7,191 RAG queries | $7.81 for the CKG workload (7,758 queries) |
 | F1 = 0.123 on structural queries | F1 = 0.471 — 4× more accurate answers |
-| Hallucinations on multi-hop chains | Zero hallucinations by construction |
+| Hallucinations on multi-hop chains | Every answer traced to a declared edge |
 | F1 degrades past hop=2 | F1 improves to hop=5 (0.772) |
 
 **Any domain where knowledge has stable structure — clinical, regulatory, legal, financial, educational — is a candidate.** Track 2 proved this extends beyond hand-curated data: a GLP-1/Obesity pharmacology CKG built entirely from the ClinicalTrials.gov API in one session achieved F1 = 0.530, exceeding the hand-curated educational average.
@@ -227,7 +227,7 @@ A Compact Knowledge Graph (CKG) is a pre-structured, LLM-ready knowledge format 
 | Benchmark cost | **$7.81** | $76.23 |
 | Hallucination rate | **0 by construction** | Variable |
 
-CKG is 42× more efficient per token, 3.8× more accurate, and produces zero hallucinations by construction. Source: 45 domains, 7,928 queries, fully reproducible.
+CKG is 11× more token-efficient, 3.8× more accurate, and traces every answer to a declared relationship. Source: 44 domains, 7,758 queries, fully reproducible.
 
 ### Why does RAG hallucinate?
 
