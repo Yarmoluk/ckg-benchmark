@@ -74,7 +74,7 @@ Three architectures. Same questions. Wildly different results.
 | **GraphRAG** | Dynamically extracted entity graph | Community search | ~3,450 |
 | **CKG** | Pre-structured DAG + taxonomy | BFS/DFS subgraph extraction | ~269 |
 
-**Core finding:** Pre-structured knowledge graphs (CKG) outperform RAG and GraphRAG on structural queries — dependency resolution, multi-hop path traversal, category aggregation — at 11× lower token cost and zero hallucination rate.
+**Core finding:** Pre-structured knowledge graphs (CKG) outperform RAG and GraphRAG on structural queries — dependency resolution, multi-hop path traversal, category aggregation — at 11× lower token cost, with every answer traced to a declared edge.
 
 The advantage holds whether knowledge is hand-curated (Track 1, 44 educational domains) or assembled programmatically from external APIs (Track 2, pharma domain). Structure is the signal — not curation effort.
 
@@ -123,7 +123,7 @@ GLP-1/Obesity pharmacology — assembled from the ClinicalTrials.gov API in one 
 | **Hop-Depth F1** | F1 at hop depth k=0…5 | Multi-hop reasoning quality vs. chain length |
 | **CUR** | relevant_tokens / total_retrieved | Retrieval precision |
 | **CPCA** | cost_per_query / F1 | Real-world cost efficiency |
-| **Hallucination Rate** | hallucinated_concepts / total | CKG = 0 by construction |
+| **Answer provenance** | answers traced to a declared edge / total | CKG = every answer |
 
 ---
 
@@ -132,7 +132,7 @@ GLP-1/Obesity pharmacology — assembled from the ClinicalTrials.gov API in one 
 1. ✅ CKG achieves higher F1 on T2 (dependency) and T3 (multi-hop) queries — **confirmed** (0.634 vs 0.078; 0.660 vs 0.201)
 2. ✅ CKG F1 does not degrade with hop depth — **confirmed and stronger**: improves continuously to hop=5 (0.772)
 3. ✅ CKG RDS ≥ 10× vs RAG — **confirmed**: 42×
-4. ✅ CKG Hallucination Rate = 0 by construction — **confirmed**
+4. ✅ CKG answers trace to declared edges by construction — **confirmed**
 5. ✅ Structure Premium hypothesis — **null result**: r = −0.09; advantage is uniform across all DAG richness levels
 6. ✅ Track 2 cross-domain transfer — **confirmed**: pipeline-generated pharma F1 = 0.530 > hand-curated average 0.471
 
@@ -195,7 +195,7 @@ The benchmark numbers translate directly to enterprise cost and accuracy:
 |--------------------|-------------------|
 | 2,982 tokens/query average | 269 tokens/query — 11× reduction |
 | $76.23 to run 7,191 RAG queries | $7.81 for the CKG workload (7,758 queries) |
-| F1 = 0.123 on structural queries | F1 = 0.471 — 4× more accurate answers |
+| F1 = 0.123 on structural queries | F1 = 0.471 — 3.8× more accurate answers |
 | Hallucinations on multi-hop chains | Every answer traced to a declared edge |
 | F1 degrades past hop=2 | F1 improves to hop=5 (0.772) |
 
@@ -225,7 +225,7 @@ A Compact Knowledge Graph (CKG) is a pre-structured, LLM-ready knowledge format 
 | Macro F1 | **0.4709** | 0.1231 |
 | RDS (intelligence/token) | **0.00201** | 0.0000482 |
 | Benchmark cost | **$7.81** | $76.23 |
-| Hallucination rate | **0 by construction** | Variable |
+| Answer provenance | **every answer traces to a declared edge** | Variable |
 
 CKG is 11× more token-efficient, 3.8× more accurate, and traces every answer to a declared relationship. Source: 44 domains, 7,758 queries, fully reproducible.
 
