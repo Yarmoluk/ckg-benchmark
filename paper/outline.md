@@ -143,7 +143,7 @@ All 25 DAGs validated for:
 ```
 Source:      MkDocs .md chapters per textbook
 Chunking:    512 tokens, 50-token overlap
-Embeddings:  text-embedding-3-small (OpenAI)
+Embeddings:  all-MiniLM-L6-v2 (sentence-transformers, local)
 Index:       FAISS flat L2
 Retrieval:   top-5 chunks
 Generation:  Claude Sonnet 4.6, temperature=0

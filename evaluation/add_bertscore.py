@@ -31,8 +31,11 @@ from collections import defaultdict
 from pathlib import Path
 
 RESULTS_DIR  = Path("results")
-PRICE_INPUT  = 3.0  / 1_000_000
-PRICE_OUTPUT = 15.0 / 1_000_000
+# claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
+# All harnesses call the same model — pricing MUST be identical across them or the
+# cost comparison is an artifact of the constants, not the systems.
+PRICE_INPUT  = 1.00  / 1_000_000   # Haiku 4.5
+PRICE_OUTPUT = 5.00 / 1_000_000   # Haiku 4.5
 
 QUERY_TYPES = ["T1_entity", "T2_dependency", "T3_path", "T4_aggregate", "T5_cross_concept"]
 

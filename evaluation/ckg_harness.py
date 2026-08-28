@@ -32,8 +32,15 @@ MODEL = "claude-haiku-4-5-20251001"
 DOMAINS_DIR = Path("benchmark/domains")
 QUERIES_DIR = Path("benchmark/queries")
 RESULTS_DIR = Path("results/ckg")
-PRICE_INPUT  = 0.80 / 1_000_000   # $0.80 per 1M input tokens (Haiku)
-PRICE_OUTPUT = 4.0  / 1_000_000   # $4.00 per 1M output tokens (Haiku)
+
+# Set by --honest-retrieval. Default False preserves the published v0.6.2 path
+# so prior results stay reproducible; publish under the honest path only.
+HONEST_RETRIEVAL = False
+# claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
+# All harnesses call the same model — pricing MUST be identical across them or the
+# cost comparison is an artifact of the constants, not the systems.
+PRICE_INPUT  = 1.00 / 1_000_000   # Haiku 4.5
+PRICE_OUTPUT = 5.00  / 1_000_000   # Haiku 4.5
 
 SYSTEM_PROMPT = """You are a knowledge graph query engine. You will be given a structured
 knowledge graph subgraph and a question. Answer the question using ONLY the information
@@ -257,6 +264,107 @@ def retrieve(concepts: dict, query: dict) -> tuple[str, list[int]]:
 
     return "Query type not recognized.", []
 
+
+# ── Honest retrieval: query text only, no ground-truth annotations ────────────
+# retrieve() above reads concept_id / path_ids / taxonomy_id, which
+# generate_queries.py wrote into each query alongside ground_truth. Even where
+# that does not change the retrieved set, it is indefensible in a published
+# benchmark: a reviewer reading retrieve() sees the harness consulting the answer
+# key. This path resolves everything from the query STRING, the way the shipped
+# MCP server does via find_concept/search_concepts.
+#
+# Measured 2026-08-01 over all 11,264 queries / 67 domains, answer coverage
+# (fraction of ground-truth labels present in the retrieved context, the ceiling
+# on recall): oracle 0.999 -> honest 0.994. The annotations were NOT load-bearing.
+# The gap widens with depth, which is the direction a real system should show:
+# hop_0 1.000->1.000, hop_3 0.996->0.981, hop_5 1.000->0.925.
+
+_RE_T1 = re.compile(r"^(?:what is|describe|explain|define)\s+(.+?)\??$", re.I)
+_RE_T2 = re.compile(r"prerequisites? for (.+?)\??$", re.I)
+_RE_T3 = re.compile(r"prerequisite chain from (.+?) to (.+?)\??$", re.I)
+_RE_T4 = re.compile(r"list all (.+?) concepts", re.I)
+_RE_T5 = re.compile(
+    r"how (?:does|do|is|are) (.+?) (?:relate|related|connect|connected)(?: to)? (.+?)\??$|"
+    r"(?:relationship|connection) between (.+?) and (.+?)\??$", re.I)
+
+
+def _resolve_from_text(concepts: dict, text: str):
+    """Substring match over labels — same discipline as the server's find_concept."""
+    if not text:
+        return None
+    c = find_concept_by_label(concepts, text)
+    if c:
+        return c
+    q = text.lower().strip()
+    for cc in concepts.values():
+        if q in cc.label.lower() or cc.label.lower() in q:
+            return cc
+    return None
+
+
+def retrieve_honest(concepts: dict, query: dict) -> tuple[str, list[int]]:
+    """Resolve the subgraph using only query['query']. Reads no annotations."""
+    qtype = query.get("query_type") or query.get("type", "")
+    text = query["query"]
+
+    if qtype == "T1_entity":
+        m = _RE_T1.search(text)
+        c = _resolve_from_text(concepts, m.group(1) if m else text)
+        if not c:
+            return "No matching concept found.", []
+        rev = [cc.id for cc in concepts.values() if c.id in cc.dependencies]
+        rel = list(dict.fromkeys([c.id] + c.dependencies + rev[:5]))
+        return subgraph_to_context(concepts, rel), rel
+
+    if qtype == "T2_dependency":
+        m = _RE_T2.search(text)
+        c = _resolve_from_text(concepts, m.group(1) if m else text)
+        if not c:
+            return "No matching concept found.", []
+        rel = [c.id] + c.dependencies
+        return subgraph_to_context(concepts, rel), rel
+
+    if qtype == "T3_path":
+        m = _RE_T3.search(text)
+        if not m:
+            return "No matching concept found.", []
+        a = _resolve_from_text(concepts, m.group(1))
+        b = _resolve_from_text(concepts, m.group(2))
+        if not b:
+            return "No matching concept found.", []
+        rel = bfs_shortest_path(concepts, a.id, b.id) if a else []
+        if not rel:
+            rel = bfs_path_to_root(concepts, b.id)
+        return subgraph_to_context(concepts, rel), rel
+
+    if qtype == "T4_aggregate":
+        m = _RE_T4.search(text)
+        tag = m.group(1).strip() if m else ""
+        rel = [c.id for c in concepts.values()
+               if c.taxonomy_id and c.taxonomy_id.lower() == tag.lower()]
+        if not rel and tag:
+            rel = [c.id for c in concepts.values()
+                   if tag.lower() in (c.taxonomy_id or "").lower()]
+        return subgraph_to_context(concepts, rel), rel
+
+    if qtype == "T5_cross_concept":
+        m = _RE_T5.search(text)
+        if not m:
+            return "No matching concept found.", []
+        g = [x for x in m.groups() if x]
+        if len(g) < 2:
+            return "No matching concept found.", []
+        a, b = _resolve_from_text(concepts, g[0]), _resolve_from_text(concepts, g[1])
+        if not (a and b):
+            return "No matching concept found.", []
+        path = bfs_shortest_path(concepts, a.id, b.id)
+        shared = get_shared_neighbors(concepts, a, b)
+        rel = list(dict.fromkeys(path + [c.id for c in shared]
+                                 + a.dependencies[:3] + b.dependencies[:3]))
+        return subgraph_to_context(concepts, rel), rel
+
+    return "Query type not recognized.", []
+
 # ── F1 scoring ────────────────────────────────────────────────────────────────
 
 STOPWORDS = {
@@ -316,7 +424,8 @@ def run_domain(domain: str, client: anthropic.Anthropic, dry_run: bool = False, 
 
     results = []
     for i, q in enumerate(queries):
-        context, relevant_ids = retrieve(concepts, q)
+        _retrieve = retrieve_honest if HONEST_RETRIEVAL else retrieve
+        context, relevant_ids = _retrieve(concepts, q)
 
         user_message = f"{context}\n\nQuestion: {q['query']}"
 

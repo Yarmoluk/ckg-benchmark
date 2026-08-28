@@ -48,8 +48,11 @@ QUERIES_DIR = Path("benchmark/queries")
 RESULTS_DIR = Path("results/rag")
 INDEX_DIR   = Path("results/rag_indexes")   # cached FAISS indexes
 
-PRICE_INPUT  = 3.0  / 1_000_000   # Claude Sonnet 4.6: $3 per 1M input
-PRICE_OUTPUT = 15.0 / 1_000_000   # $15 per 1M output
+# claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
+# All harnesses call the same model — pricing MUST be identical across them or the
+# cost comparison is an artifact of the constants, not the systems.
+PRICE_INPUT  = 1.00  / 1_000_000   # Haiku 4.5
+PRICE_OUTPUT = 5.00 / 1_000_000   # Haiku 4.5
 PRICE_EMBED  = 0.0                 # local embedding: free
 
 SYSTEM_PROMPT = """You are a knowledgeable tutor. Answer the question using ONLY the

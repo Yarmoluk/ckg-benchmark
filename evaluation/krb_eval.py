@@ -64,8 +64,11 @@ def _require(pkg, install_hint=None):
 
 DATASET_REPO   = "danyarm/ckg-benchmark"
 DEFAULT_MODEL  = "claude-haiku-4-5-20251001"
-PRICE_INPUT    = 0.80 / 1_000_000   # Haiku input  $/token
-PRICE_OUTPUT   = 4.00 / 1_000_000   # Haiku output $/token
+# claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
+# All harnesses call the same model — pricing MUST be identical across them or the
+# cost comparison is an artifact of the constants, not the systems.
+PRICE_INPUT    = 1.00 / 1_000_000   # Haiku 4.5
+PRICE_OUTPUT   = 5.00 / 1_000_000   # Haiku 4.5
 
 LOCAL_DOMAINS  = Path(__file__).parent.parent / "benchmark" / "domains"
 LOCAL_QUERIES  = Path(__file__).parent.parent / "benchmark" / "queries"

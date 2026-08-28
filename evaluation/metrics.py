@@ -19,8 +19,11 @@ import statistics
 
 
 # Claude Sonnet 4.6 pricing (April 2026)
-PRICE_INPUT_PER_TOKEN = 3.0 / 1_000_000   # $3 per 1M input tokens
-PRICE_OUTPUT_PER_TOKEN = 15.0 / 1_000_000  # $15 per 1M output tokens
+# claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
+# All harnesses call the same model — pricing MUST be identical across them or the
+# cost comparison is an artifact of the constants, not the systems.
+PRICE_INPUT_PER_TOKEN = 1.00 / 1_000_000   # Haiku 4.5
+PRICE_OUTPUT_PER_TOKEN = 5.00 / 1_000_000   # Haiku 4.5
 
 
 @dataclass
