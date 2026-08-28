@@ -29,8 +29,11 @@ TABLES_DIR    = Path("results/tables")
 FIG_DATA_DIR  = Path("results/figures/data")
 DOMAINS_DIR   = Path("benchmark/domains")
 
-PRICE_INPUT  = 3.0  / 1_000_000
-PRICE_OUTPUT = 15.0 / 1_000_000
+# claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
+# All harnesses call the same model — pricing MUST be identical across them or the
+# cost comparison is an artifact of the constants, not the systems.
+PRICE_INPUT  = 1.00  / 1_000_000   # Haiku 4.5
+PRICE_OUTPUT = 5.00 / 1_000_000   # Haiku 4.5
 
 QUERY_TYPES = ["T1_entity", "T2_dependency", "T3_path", "T4_aggregate", "T5_cross_concept"]
 
@@ -70,7 +73,22 @@ def compute_domain_stats(records: list[dict]) -> dict:
     all_f1   = [r["f1"] for r in records]
     all_rds  = [r.get("rds", 0) for r in records if r.get("rds", 0) > 0]
     all_tok  = [r.get("total_tokens", 0) for r in records]
-    all_cost = [r.get("cost_usd", 0) for r in records]
+    # Cost is DERIVED from token counts at analysis time — never read from the
+    # stored cost_usd field. Stored costs were written by whatever constants the
+    # harness had at generation time; through v0.6.2 those constants disagreed
+    # across harnesses ($0.80/$4.00 for ckg vs $3/$15 for rag/graphrag on the
+    # same model), so summing them compares pricing artifacts, not systems.
+    # Records lacking a prompt/completion split (older graphrag runs) fall back
+    # to stored cost and are counted so the caller can flag them.
+    all_cost = []
+    n_cost_fallback = 0
+    for r in records:
+        pi, po = r.get("prompt_tokens"), r.get("completion_tokens")
+        if pi is not None and po is not None:
+            all_cost.append(pi * PRICE_INPUT + po * PRICE_OUTPUT)
+        else:
+            all_cost.append(r.get("cost_usd", 0))
+            n_cost_fallback += 1
     all_ret  = [r.get("retrieved_tokens", 0) for r in records]
 
     type_f1 = {k: round(sum(r["f1"] for r in v) / len(v), 4) for k, v in by_type.items()}
@@ -95,8 +113,8 @@ def compute_domain_stats(records: list[dict]) -> dict:
             cur_vals.append(min(ret, total) / total)
     mean_cur = sum(cur_vals) / len(cur_vals) if cur_vals else 0
 
-    # CPCA: cost / F1 (cost per unit of correctness)
-    cpca_vals = [r.get("cost_usd", 0) / r["f1"] for r in records if r.get("f1", 0) > 0]
+    # CPCA: cost / F1 (cost per unit of correctness) — derived cost, same as above
+    cpca_vals = [c / r["f1"] for r, c in zip(records, all_cost) if r.get("f1", 0) > 0]
     mean_cpca = sum(cpca_vals) / len(cpca_vals) if cpca_vals else float("inf")
 
     # Hallucination Rate proxy: F1 == 0 on T1 with non-empty answer
@@ -114,6 +132,7 @@ def compute_domain_stats(records: list[dict]) -> dict:
         "mean_tokens": round(mean_tok, 1),
         "mean_retrieved_tokens": round(mean_ret, 1),
         "total_cost_usd": round(total_cost, 4),
+        "n_cost_fallback": n_cost_fallback,
         "mean_cur": round(mean_cur, 4),
         "mean_cpca": round(mean_cpca, 6) if math.isfinite(mean_cpca) else None,
         "f1_by_type": type_f1,

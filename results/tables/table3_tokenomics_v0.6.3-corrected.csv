@@ -1,0 +1,4 @@
+system,n_queries,macro_f1,mean_total_tokens,mean_retrieved_tokens,macro_rds,total_cost_usd
+ckg,8121,0.4926,263.5,43.9,0.0021579,4.3852
+rag,7414,0.1223,2986.4,2395.0,4.788e-05,26.2583
+graphrag,2683,0.12,3450.0,0.0,4.516e-05,44.4305

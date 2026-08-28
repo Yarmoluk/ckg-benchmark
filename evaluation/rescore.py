@@ -24,8 +24,11 @@ from pathlib import Path
 from collections import defaultdict
 
 RESULTS_DIR  = Path("results")
-PRICE_INPUT  = 3.0  / 1_000_000
-PRICE_OUTPUT = 15.0 / 1_000_000
+# claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
+# All harnesses call the same model — pricing MUST be identical across them or the
+# cost comparison is an artifact of the constants, not the systems.
+PRICE_INPUT  = 1.00  / 1_000_000   # Haiku 4.5
+PRICE_OUTPUT = 5.00 / 1_000_000   # Haiku 4.5
 
 STOPWORDS = {
     "what","is","the","a","an","of","for","are","in","and","or","to","with",

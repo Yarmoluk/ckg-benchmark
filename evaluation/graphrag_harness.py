@@ -60,8 +60,11 @@ QUERIES_DIR   = Path("benchmark/queries")
 RESULTS_DIR   = Path("results/graphrag")
 WORKSPACE_DIR = Path("results/graphrag_workspaces")
 
-PRICE_INPUT  = 3.0  / 1_000_000   # Claude Sonnet 4.6: $3 per 1M input
-PRICE_OUTPUT = 15.0 / 1_000_000   # $15 per 1M output
+# claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
+# All harnesses call the same model — pricing MUST be identical across them or the
+# cost comparison is an artifact of the constants, not the systems.
+PRICE_INPUT  = 1.00  / 1_000_000   # Haiku 4.5
+PRICE_OUTPUT = 5.00 / 1_000_000   # Haiku 4.5
 # Embedding: text-embedding-3-small $0.02/1M tokens
 PRICE_EMBED  = 0.02 / 1_000_000
 

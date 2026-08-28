@@ -1,0 +1,451 @@
+{
+  "automating-instructional-design": {
+    "n_queries": 175,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 139848.9,
+    "total_cost_usd": 73.4207,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "4": 0.0,
+      "3": 0.0,
+      "5": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 139800
+  },
+  "bioinformatics": {
+    "n_queries": 177,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 149326.5,
+    "total_cost_usd": 79.2924,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0
+    },
+    "coverage": "truncated",
+    "corpus_tokens": 152600
+  },
+  "biology": {
+    "n_queries": 175,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 139748.2,
+    "total_cost_usd": 73.3678,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "2": 0.0,
+      "4": 0.0
+    },
+    "coverage": "truncated",
+    "corpus_tokens": 182371
+  },
+  "blockchain": {
+    "n_queries": 176,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 116411.8,
+    "total_cost_usd": 61.4654,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "4": 0.0,
+      "2": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 116363
+  },
+  "calculus": {
+    "n_queries": 180,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 145853.8,
+    "total_cost_usd": 78.7611,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "4": 0.0,
+      "2": 0.0
+    },
+    "coverage": "truncated",
+    "corpus_tokens": 190192
+  },
+  "circuits": {
+    "n_queries": 175,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 20331.1,
+    "total_cost_usd": 10.6739,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "4": 0.0,
+      "2": 0.0,
+      "5": 0.0,
+      "3": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 20282
+  },
+  "conversational-ai": {
+    "n_queries": 176,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 125804.5,
+    "total_cost_usd": 66.4248,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "2": 0.0,
+      "4": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 125756
+  },
+  "ecology": {
+    "n_queries": 176,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 144435.8,
+    "total_cost_usd": 76.2621,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "2": 0.0,
+      "5": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 144387
+  },
+  "economics-course": {
+    "n_queries": 176,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 122213.4,
+    "total_cost_usd": 64.5287,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "2": 0.0,
+      "4": 0.0,
+      "5": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 122165
+  },
+  "functions": {
+    "n_queries": 176,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 70323.4,
+    "total_cost_usd": 37.1308,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "4": 0.0,
+      "2": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 70274
+  },
+  "genetics": {
+    "n_queries": 177,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 142295.7,
+    "total_cost_usd": 75.559,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "2": 0.0,
+      "4": 0.0,
+      "5": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 142246
+  },
+  "geometry-course": {
+    "n_queries": 175,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 133922.9,
+    "total_cost_usd": 70.3095,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "2": 0.0,
+      "4": 0.0
+    },
+    "coverage": "truncated",
+    "corpus_tokens": 162097
+  },
+  "modeling-healthcare-data": {
+    "n_queries": 176,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 143238.7,
+    "total_cost_usd": 75.63,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "2": 0.0,
+      "5": 0.0
+    },
+    "coverage": "truncated",
+    "corpus_tokens": 166322
+  },
+  "organizational-analytics": {
+    "n_queries": 177,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 148817.1,
+    "total_cost_usd": 79.0219,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "3": 0.0,
+      "2": 0.0,
+      "4": 0.0,
+      "5": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 148768
+  },
+  "prompt-class": {
+    "n_queries": 180,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 125194.9,
+    "total_cost_usd": 67.6052,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "5": 0.0,
+      "4": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 125146
+  },
+  "quantum-computing": {
+    "n_queries": 182,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 142472.2,
+    "total_cost_usd": 77.7898,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "4": 0.0,
+      "2": 0.0,
+      "5": 0.0,
+      "3": 0.0
+    },
+    "coverage": "truncated",
+    "corpus_tokens": 173980
+  },
+  "statistics-course": {
+    "n_queries": 177,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 149747.2,
+    "total_cost_usd": 79.5158,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "3": 0.0
+    },
+    "coverage": "truncated",
+    "corpus_tokens": 150881
+  },
+  "systems-thinking": {
+    "n_queries": 173,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 9134.0,
+    "total_cost_usd": 4.7406,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "5": 0.0,
+      "4": 0.0,
+      "3": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 9086
+  },
+  "tracking-ai-course": {
+    "n_queries": 164,
+    "macro_f1": 0.0,
+    "macro_rds": 0,
+    "mean_tokens": 29770.7,
+    "total_cost_usd": 14.6472,
+    "f1_by_type": {
+      "T1_entity": 0.0,
+      "T2_dependency": 0.0,
+      "T3_path": 0.0,
+      "T4_aggregate": 0.0,
+      "T5_cross_concept": 0.0
+    },
+    "f1_by_hop": {
+      "0": 0.0,
+      "1": 0.0,
+      "4": 0.0,
+      "3": 0.0,
+      "2": 0.0
+    },
+    "coverage": "complete",
+    "corpus_tokens": 29722
+  }
+}
