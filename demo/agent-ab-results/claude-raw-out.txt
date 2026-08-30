@@ -1,0 +1,14 @@
+**Attack path: voltage/clock glitching to skip the signature-check branch**
+
+1. Attacker desolders/taps the SoC's power rail (or clock line) and identifies the boot ROM's signature-verification window using power side-channel traces or datasheet timing.
+2. During the `verify_signature()` / `verify_hash()` call in the boot ROM (before the CPU jumps to the loaded image), the attacker injects a fast voltage dip (or clock glitch) timed to corrupt the compare/branch instruction — causing the CPU to skip the conditional jump that would normally halt boot on a bad signature, or to corrupt a register so the check returns "pass" regardless of the actual result.
+3. With the branch skipped, the ROM jumps into unsigned/modified firmware in flash/SPI NOR that the attacker has already reflashed (via SPI programmer or JTAG) with their own payload.
+4. This is a single successful glitch out of many attempts — success is found by sweeping glitch offset/width/voltage across thousands of boot cycles and detecting a "stuck" or unusually long UART/power trace indicating a bypass.
+
+**Lab tool**
+
+ChipWhisperer (NewAE CW1200/Pro, or the cheaper CW-Lite/Husky) is the standard rig — it triggers off a UART pattern or GPIO, sweeps glitch parameters (ext_offset, width, voltage), and logs pass/fail per attempt. Riscure Inspector/Spider or a home-built MOSFET crowbar circuit on a Bus Pirate/FPGA are the other common setups. JTAG/SWD debuggers (Segger J-Link) or SPI flash programmers (Bus Pirate, CH341A) are used beforehand to dump/reflash the target image.
+
+**Countermeasure**
+
+Redundant/randomized checks defeat a single glitch: double-verify the signature with independent code paths and compare results with a non-trivial (non-zero/non-inverse) constant rather than a simple boolean, add random delays/instruction-order jitter so the attacker can't predict the timing window, and use hardware glitch detectors (voltage/clock sensors that trigger a reset or lock the device on anomaly, e.g., ST's or NXP's built-in active shield + glitch detection). Root-of-trust designs also fuse a hash of the public key into one-time-programmable eFuses/OTP so even a bypassed check can't load a re-signed image without the real private key, and some designs move the critical branch into hardware state machine logic instead of software, since gates are much harder to glitch predictably than a CPU pipeline.

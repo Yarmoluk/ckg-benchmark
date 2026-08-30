@@ -1,0 +1,17 @@
+Based on `hardware_security_ckg.md`, traversing only the declared edges:
+
+**Attack path** (node IDs cited per graph):
+
+1. **FI1** (Fault Injection Attack) is the root attack primitive.
+2. It's carried out via **FI2** (Voltage Glitching) or **FI3** (Clock Glitching), both declared as dependents of FI1 (`FI2,...,FI1` / `FI3,...,FI1`).
+3. **LAB4** (ChipWhisperer) is the lab tool that drives FI2/FI3 (`LAB4,...,FI2|FI3` — "Lab tool: LAB4 (ChipWhisperer) drives FI2/FI3").
+4. The glitch is timed against the boot sequence to defeat **BR14** (Secure Boot Bypass), which depends on FI1 (`BR14,...,FI1`) — declared explicitly in KEY PATHS as `FI1 --[defeats]--> BR14`.
+5. This in turn produces **BR15** (Signature Check Defeat), which depends on both FI1 and BR14 (`BR15,...,FI1|BR14`) — i.e., the glitch causes the signature-verification step itself to fail/be skipped.
+6. That enables **GA4** (Patched Firmware Loading), which depends on BR14|BR15 (`GA4,...,BR14|BR15`) — declared in KEY PATHS as `BR14 --[enables]--> GA4`: the modified/patched firmware image is loaded past the (now-defeated) secure boot check.
+7. From there, GA4 leads to **GA5** (Persistent Implant), which depends on GA4 (`GA5,...,GA4`) — the modified firmware becomes a persistent implant on the device.
+
+**So the specific path is:** FI1 → (via LAB4-driven FI2/FI3) → BR14 → BR15 → GA4 → GA5.
+
+**Lab tool:** **LAB4 — ChipWhisperer** (`newae.com`), which drives the FI2/FI3 glitching primitives used to defeat BR14. (**LAB5**, a JTAG Debugger, is also declared dependent on FI1, but the KEY PATHS section names ChipWhisperer, not JTAG, as the tool in this attack path.)
+
+**Countermeasure:** **HHC7** (Hardware Security Controls) --[enforces]--> **HHC8** (Secure Boot Enforcement) --[blocks]--> **BR14** — declared explicitly in KEY PATHS. So the defense that closes this path is Secure Boot Enforcement (HHC8), rooted in Hardware Security Controls (HHC7). Separately, **HHC9** (Physical Tamper Detection) depends on HHC7|FI1, i.e., it's the declared control aimed at detecting the fault-injection attempt itself, complementary to HHC8 blocking the bypass outcome.

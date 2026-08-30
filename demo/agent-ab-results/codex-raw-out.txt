@@ -1,0 +1,33 @@
+Reading additional input from stdin...
+OpenAI Codex v0.151.0
+--------
+workdir: /private/tmp/ab-agent/codex-raw
+model: gpt-5.6-sol
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: none
+reasoning summaries: none
+session id: 01a052d8-3317-7102-934f-a4e4b08eced6
+--------
+user
+You are a hardware security expert. Answer concisely.
+
+How does a hardware attacker get modified firmware to run past secure boot? Be specific about the attack path, lab tool used, and the countermeasure.
+codex
+A common path is a voltage/clock fault-injection attack:
+
+- **Attack path:** The attacker modifies firmware, then glitches the CPU or security controller precisely while secure boot verifies its signature or evaluates the verification result. A successful fault can skip a conditional branch, corrupt a comparison, or force an “authenticated” status, allowing execution to continue into the altered image.
+- **Lab tool:** A **ChipWhisperer** synchronized voltage-glitching setup, or an EM fault-injection probe such as **Riscure EM-FI**, typically triggered from SPI-flash or GPIO activity. More invasive attackers may use a laser fault-injection station.
+- **Countermeasure:** Use fault-resistant verification: verify twice using independent implementations or randomized timing, protect status/control flow with redundant encoded states, authenticate each execution stage, enable voltage/clock/tamper sensors, lock debug access, and fail closed/reset on any anomaly. Store rollback counters and root keys in protected hardware.
+
+Other practical paths include replacing an external SPI flash and exploiting a boot-ROM parser bug, or abusing unlocked JTAG/SWD; mitigations are memory-safe/minimal ROM parsing, signed-and-encrypted images where appropriate, immutable key roots, debug authentication/fusing, and measured boot with remote attestation.
+tokens used
+4,996
+A common path is a voltage/clock fault-injection attack:
+
+- **Attack path:** The attacker modifies firmware, then glitches the CPU or security controller precisely while secure boot verifies its signature or evaluates the verification result. A successful fault can skip a conditional branch, corrupt a comparison, or force an “authenticated” status, allowing execution to continue into the altered image.
+- **Lab tool:** A **ChipWhisperer** synchronized voltage-glitching setup, or an EM fault-injection probe such as **Riscure EM-FI**, typically triggered from SPI-flash or GPIO activity. More invasive attackers may use a laser fault-injection station.
+- **Countermeasure:** Use fault-resistant verification: verify twice using independent implementations or randomized timing, protect status/control flow with redundant encoded states, authenticate each execution stage, enable voltage/clock/tamper sensors, lock debug access, and fail closed/reset on any anomaly. Store rollback counters and root keys in protected hardware.
+
+Other practical paths include replacing an external SPI flash and exploiting a boot-ROM parser bug, or abusing unlocked JTAG/SWD; mitigations are memory-safe/minimal ROM parsing, signed-and-encrypted images where appropriate, immutable key roots, debug authentication/fusing, and measured boot with remote attestation.
