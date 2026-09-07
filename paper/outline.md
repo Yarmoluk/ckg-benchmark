@@ -198,7 +198,7 @@ Total: ~4,375 queries across 25 domains
 - DAG validation failures handled per domain (documented)
 
 ### 5.4 Reproducibility Protocol
-- All systems use Claude Haiku 4.5 at temperature=0
+- All systems use Claude Sonnet 4.6 at temperature=0
 - Token counts via Anthropic `count_tokens()` API
 - 3 runs per query, variance reported
 - Fixed random seed: 42

@@ -59,19 +59,19 @@ algorithmic, inter-annotator $\kappa$ does not apply to the ground truth
 generation process---there are no annotators to disagree.
 
 Benchmark validity is instead assessed structurally. The T1 negative-control
-result (\textbf{CKG F1 $= 0.222$} on entity lookup) confirms the evaluation
+result (\textbf{CKG F1 $= 0.207$} on entity lookup) confirms the evaluation
 is not constructed to favor CKG universally: a system reading only DAG edges
 appropriately fails on definitional queries the DAG cannot answer. The
-parallel RAG and GraphRAG T1 scores (0.093 and 0.108 respectively) show that
+parallel RAG and GraphRAG T1 scores (0.094 and 0.108 respectively) show that
 T1 is hard for all systems, ruling out an inflated CKG baseline. Additionally,
-the low GraphRAG T4 score (0.054 vs.\ CKG 0.980) confirms that the taxonomy
+the low GraphRAG T4 score (0.054 vs.\ CKG 0.964) confirms that the taxonomy
 advantage is structural---not an artifact of prompting---since GraphRAG and
 CKG use identical prompts and the same LLM.
 
 \subsection{Reproducibility Protocol}\label{sec:reproducibility}
 
 \begin{itemize}
-  \item All systems use Claude Haiku 4.5 at temperature$=$0.
+  \item All systems use Claude Sonnet 4.6 at temperature$=$0.
   \item Token counts via Anthropic \texttt{count\_tokens()} API.
   \item 3 runs per query, variance reported.
   \item Fixed random seed: 42.

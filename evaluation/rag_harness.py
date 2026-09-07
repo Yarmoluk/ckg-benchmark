@@ -6,7 +6,7 @@ For each benchmark query, this harness:
 2. Chunks into 512-token windows with 50-token overlap
 3. Embeds with a local sentence-transformers model and indexes with FAISS
 4. Retrieves top-5 chunks per query
-5. Sends chunks + query to Claude Haiku 4.5 for answer generation
+5. Sends chunks + query to Claude Sonnet 4.6 for answer generation
 6. Records F1, tokens, and RDS (same metrics as CKG harness)
 
 No OpenAI API key required. Embeddings run entirely locally using

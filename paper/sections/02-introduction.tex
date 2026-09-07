@@ -11,8 +11,8 @@ the structure is already known?
 Consider a deployed AI tutoring system serving 10,000 student sessions per day,
 each requiring 5--10 knowledge retrieval queries. At RAG's typical 3,000--5,000
 input tokens per query, daily token consumption exceeds 150M--500M tokens.
-At Claude Haiku 4.5 pricing (\$1 per 1M input tokens), this yields daily
-inference costs of \$150--\$500 for retrieval alone. A system that achieves
+At Claude Sonnet 4.6 pricing (\$3 per 1M input tokens), this yields daily
+inference costs of \$450--\$1,500 for retrieval alone. A system that achieves
 equivalent accuracy at 250--400 tokens per query reduces that cost by a factor
 of 10--15$\times$---the difference between a viable product and an unsustainable one.
 
@@ -52,10 +52,10 @@ Table~\ref{tab:paradigms} summarizes their key differences.
 \caption{Three retrieval architectures compared, each shown as a
 build-time swimlane above a runtime swimlane (chronological,
 top-to-bottom). RAG chunks text and retrieves top-$k$ by vector
-similarity ($\sim$2,986 tokens/query). GraphRAG extracts an entity graph
+similarity ($\sim$2,982 tokens/query). GraphRAG extracts an entity graph
 from text, clusters it into communities, then routes queries local
 vs.\ global ($\sim$3,450 tokens/query). CKG parses a pre-authored DAG
-directly and extracts the relevant subgraph per query ($\sim$264
+directly and extracts the relevant subgraph per query ($\sim$269
 tokens/query). The 11$\times$ context-size gap is the efficiency
 differential this paper quantifies.}
 \label{fig:architecture}
@@ -123,6 +123,6 @@ This paper makes the following contributions:
     (API extraction $\to$ concept and edge extraction $\to$ \texttt{learning-graph.csv}
     $\to$ benchmark queries) that produces a CKG domain from
     ClinicalTrials.gov with no manual annotation, and achieves macro F1
-    equal to or greater than the current CKG aggregate.
+    equal to or greater than the Track 1 hand-curated average.
   \item A HuggingFace dataset with one-command reproduction harness.
 \end{enumerate}

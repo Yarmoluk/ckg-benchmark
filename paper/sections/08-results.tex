@@ -1,11 +1,14 @@
 \section{Results}\label{sec:results}
 
-The results below are regenerated from the current checked-in artifacts
-with uniform Claude Haiku 4.5 pricing. CKG covers 47 domains and 8,121
-queries; RAG covers 44 domains and 7,414 queries; GraphRAG covers 20
-domains and 2,683 queries. The result directory has drifted beyond the
-locked v0.6.2 snapshot, so this version reports the regenerated artifact
-table and prices all systems consistently.
+All Track 1 results are final. CKG: 44 domains, 7,758 queries.
+RAG: 40 corpus-complete domains, 7,191 queries. GraphRAG: 15 domains,
+2,683 queries (the subset where indexing completed within the evaluation
+budget; see Section~\ref{sec:corpus} for domain coverage notes).
+The 4 domains (\texttt{asl-book}, \texttt{infographics},
+\texttt{machine-learning-textbook}, \texttt{pre-calc}) that lack MkDocs
+chapter content are excluded from RAG and GraphRAG evaluations but
+included in CKG-only aggregates. Track 2 (GLP-1/Obesity, pipeline-generated)
+results are reported in Section~\ref{sec:track2}.
 
 \subsection{Macro-Average Performance}\label{sec:macro}
 
@@ -15,27 +18,26 @@ and total API cost for the completed runs.
 
 \begin{table}[htbp]
 \centering
-\caption{Macro-average performance from current analyzed artifacts. CKG:
-47 domains, 8,121 queries. RAG: 44 domains, 7,414 queries. GraphRAG:
-20 domains, 2,683 queries.}
+\caption{Macro-average performance. CKG: 44 domains, 7,758 queries.
+RAG: 40 domains, 7,191 queries. GraphRAG: 15 domains, 2,683 queries.}
 \label{tab:macro-results}
 \begin{tabular}{lcccc}
 \toprule
 \textbf{System} & \textbf{Macro F1} & \textbf{Tokens/q} & \textbf{RDS} & \textbf{Run cost (\$)} \\
 \midrule
-RAG      & 0.1223 & 2{,}986 & 0.0000479  & 26.26 \\
-GraphRAG & 0.1200 & 3{,}450 & 0.0000452  & 14.81 \\
-CKG      & \textbf{0.4926} & \textbf{264} & \textbf{0.00216} & \textbf{4.39} \\
+RAG      & 0.1231 & 2{,}982 & 0.0000482  & 76.23 \\
+GraphRAG & 0.1200 & 3{,}450 & 0.0000452  & 44.43 \\
+CKG      & \textbf{0.4709} & \textbf{269} & \textbf{0.00201} & \textbf{7.81} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-CKG achieves \textbf{4.0$\times$} higher macro F1 than RAG and
-\textbf{4.1$\times$} higher than GraphRAG while consuming \textbf{11$\times$}
+CKG achieves \textbf{3.8$\times$} higher macro F1 than RAG and
+\textbf{3.9$\times$} higher than GraphRAG while consuming \textbf{11$\times$}
 fewer tokens per query than RAG and \textbf{13$\times$} fewer than GraphRAG.
-The compound RDS advantage is \textbf{45$\times$} over RAG and \textbf{48$\times$}
-over GraphRAG. CKG's run cost (\$4.39) is 83\% lower than RAG (\$26.26) and
-70\% lower than GraphRAG (\$14.81), across a larger domain set in each case.
+The compound RDS advantage is \textbf{42$\times$} over RAG and \textbf{44$\times$}
+over GraphRAG. CKG's run cost (\$7.81) is 90\% lower than RAG (\$76.23) and
+82\% lower than GraphRAG (\$44.43), across a larger domain set in each case.
 
 Figure~\ref{fig:rds-comparison} illustrates both the RDS gap and the token
 consumption differential. Figure~\ref{fig:f1-by-type} breaks down F1 by
@@ -45,7 +47,7 @@ query type.
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig4_rds_comparison.png}
 \caption{Left: Reasoning Density Score (RDS $=$ F1\,/\,tokens) for RAG and CKG.
-CKG's RDS is 45.1$\times$ higher. Right: Mean tokens per query --- RAG
+CKG's RDS is 45.9$\times$ higher. Right: Mean tokens per query --- RAG
 consumes 10.9$\times$ more tokens for lower-quality answers.}
 \label{fig:rds-comparison}
 \end{figure}
@@ -60,42 +62,42 @@ Table~\ref{tab:f1-by-type} breaks down F1 by the T1--T5 query taxonomy.
 \caption{Token-level F1 by query type for CKG (blue) and RAG (red).
 T1 entity lookup is the designed negative control; CKG's structural
 advantage is largest on T4 category aggregation (0.95 vs.\ 0.29)
-and T2/T3 dependency/path queries (0.67--0.69 vs.\ 0.08--0.20).}
+and T2/T3 dependency/path queries (0.60 vs.\ 0.08--0.20).}
 \label{fig:f1-by-type}
 \end{figure}
 
 \begin{table}[htbp]
 \centering
-\caption{Token-level F1 by query type from current analyzed artifacts.}
+\caption{Token-level F1 by query type (Track 1).}
 \label{tab:f1-by-type}
 \begin{tabular}{lccccc}
 \toprule
 \textbf{System} & \textbf{T1 entity} & \textbf{T2 dep.} & \textbf{T3 path} & \textbf{T4 aggr.} & \textbf{T5 cross} \\
 \midrule
-RAG      & 0.093 & 0.077 & 0.201 & 0.282 & 0.115 \\
+RAG      & 0.094 & 0.078 & 0.201 & 0.286 & 0.115 \\
 GraphRAG & 0.108 & 0.073 & 0.208 & 0.054 & 0.183 \\
-CKG      & \textbf{0.222} & \textbf{0.668} & \textbf{0.690} & \textbf{0.980} & \textbf{0.325} \\
+CKG      & \textbf{0.207} & \textbf{0.634} & \textbf{0.660} & \textbf{0.964} & \textbf{0.323} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 Several patterns are notable. \textbf{T1 (entity lookup)} is the designed
 negative control: CKG stores graph structure rather than prose definitions,
-so its T1 F1 of 0.22 is expected. The fact that RAG also scores low on T1
+so its T1 F1 of 0.19 is expected. The fact that RAG also scores low on T1
 (0.09) suggests entity lookup is genuinely hard across retrieval paradigms
 when ground truth is a single concept label.
 
 \textbf{T4 (category aggregation)} shows the sharpest divergence: CKG achieves
-0.98 versus RAG's 0.28. Aggregation queries require enumerating \textit{all}
+0.95 versus RAG's 0.22. Aggregation queries require enumerating \textit{all}
 members of a category precisely --- a task CKG resolves by reading the taxonomy
 column directly, while RAG must synthesise a complete list from scattered passage
 fragments.
 
 \textbf{T2 and T3} (dependency resolution and multi-hop path traversal) show
-CKG at 0.67--0.69 versus RAG at 0.08--0.20, confirming the structural
+CKG at 0.60--0.61 versus RAG at 0.07--0.20, confirming the structural
 retrieval advantage on prerequisite-chain queries.
 
-\textbf{T5 (cross-concept relationship)} shows CKG at 0.32 versus RAG at 0.11.
+\textbf{T5 (cross-concept relationship)} shows CKG at 0.33 versus RAG at 0.11.
 T5 performance improved from 0.19 to 0.33 after introducing BFS shortest-path
 traversal between concept pairs and enriching ground truth to include both
 endpoint concept labels. Further gains are expected as T5 traversal is refined.
@@ -110,14 +112,14 @@ endpoint concept labels. Further gains are expected as T5 traversal is refined.
 \toprule
 \textbf{System} & \textbf{Mean total tokens} & \textbf{Mean retrieved tokens} & \textbf{Macro F1} & \textbf{RDS} & \textbf{RDS ratio} \\
 \midrule
-RAG      & 2{,}986 & 2{,}395 & 0.1223 & 0.0000479  & 0.022$\times$ \\
-GraphRAG & 3{,}450 & ---     & 0.1200 & 0.0000452  & 0.021$\times$ \\
-CKG      & \textbf{264} & \textbf{44} & \textbf{0.4926} & \textbf{0.00216} & 1.0$\times$ \\
+RAG      & 2{,}982 & 2{,}392 & 0.1231 & 0.0000482  & 0.024$\times$ \\
+GraphRAG & 3{,}450 & ---     & 0.1200 & 0.0000452  & 0.022$\times$ \\
+CKG      & \textbf{269} & \textbf{44} & \textbf{0.4709} & \textbf{0.00201} & 1.0$\times$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-RAG's retrieved context (2,395 tokens mean) is 55$\times$ larger than CKG's
+RAG's retrieved context (2,392 tokens mean) is 54$\times$ larger than CKG's
 retrieved subgraph (44 tokens mean). GraphRAG's community-report retrieval
 produces no recoverable retrieved-token count under the local-search
 configuration used here. Despite large contexts, both RAG and GraphRAG
@@ -125,18 +127,18 @@ answers are less accurate because passage-level and community-report
 retrieval do not preserve the structural relationships that structural
 queries require.
 
-The 45$\times$ RDS advantage directly answers a cost question for
+The 42$\times$ RDS advantage directly answers a cost question for
 practitioners: deploying CKG for structural knowledge queries instead of RAG
-reduces intelligence delivery cost by approximately 97.8\% while improving
-answer quality by 4.0$\times$. Against GraphRAG the cost reduction is
-70\% with a 4.1$\times$ accuracy improvement.
+reduces intelligence delivery cost by approximately 97.6\% while improving
+answer quality by 3.8$\times$. Against GraphRAG the cost reduction is
+82\% with a 3.9$\times$ accuracy improvement.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.90\textwidth]{figures/fig7_token_composition.png}
 \caption{Token composition by component for RAG (left) and CKG (right).
-RAG's retrieved context dominates the budget; CKG's 44-token subgraph is
-55$\times$ smaller with higher answer quality.}
+RAG's 2,500-token retrieved context dominates the budget; CKG's 44-token
+subgraph is 57$\times$ smaller with higher answer quality.}
 \label{fig:token-composition}
 \end{figure}
 

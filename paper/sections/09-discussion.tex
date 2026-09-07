@@ -48,8 +48,8 @@ macro F1 is $r = -0.07$. Both are negligible. The Structure Premium hypothesis
 is \textbf{not supported}: CKG's efficiency advantage does not concentrate in
 domains with denser DAG structure. This is a stronger finding than a positive
 correlation would have been: the advantage is \emph{uniform across DAG richness
-levels}. CKG outperforms RAG and GraphRAG by 4.0--4.1$\times$ on F1 and
-45$\times$ on RDS whether the underlying graph is sparse (it-management-graph,
+levels}. CKG outperforms RAG and GraphRAG by 3.8--3.9$\times$ on F1 and
+42$\times$ on RDS whether the underlying graph is sparse (it-management-graph,
 $\text{richness} = 42.8$) or dense (prompt-class, $\text{richness} = 506$).
 The efficiency gain is architectural---a property of pre-structured retrieval
 itself---rather than a function of how rich any individual graph is.
@@ -77,7 +77,7 @@ itself---rather than a function of how rich any individual graph is.
     engineering cost was not included in the benchmark cost accounting.
   \item Ground truth derived from DAG edges may not capture all valid
     natural language answers.
-  \item All systems use the same LLM (Claude Haiku 4.5); results may
+  \item All systems use the same LLM (Claude Sonnet 4.6); results may
     differ with other models.
 \end{itemize}
 
@@ -88,7 +88,7 @@ generalizes across domain type and construction method. Track 1
 (44 hand-curated educational DAGs) and Track 2 (1 pipeline-generated
 commercial pharmacology DAG) share the same retrieval algorithm, the
 same metrics, and the same harness, and yield consistent structural-query
-outcomes (CKG macro F1 $=$ 0.4926 and 0.5298 respectively, against
+outcomes (CKG macro F1 $=$ 0.4709 and 0.5298 respectively, against
 RAG F1 $\approx$ 0.12--0.15 on both). This pattern indicates that the
 advantage is \emph{structural}---a property of representing knowledge
 as an explicit DAG---rather than an artifact of the educational setting

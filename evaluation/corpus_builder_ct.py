@@ -198,20 +198,15 @@ def main(max_trials: int = 1000):
     compression_ratio = total_tokens / ckg_tokens if ckg_tokens > 0 else 0
 
     # Cost projections (no LLM calls needed)
-    # Long-context projection keeps the larger Sonnet context window; CKG uses
-    # the benchmark's Haiku 4.5 constants.
-    sonnet_input_per_mtok = 3.0
-    sonnet_output_per_mtok = 15.0
-    haiku_input_per_mtok = 1.0
-    haiku_output_per_mtok = 5.0
+    # Claude claude-sonnet-4-6: $3/1M input, $15/1M output
     # Per query: send full corpus + query + get answer
     output_tokens_per_query = 200  # typical answer length
-    longctx_cost_per_query = (total_tokens * sonnet_input_per_mtok / 1_000_000) + (output_tokens_per_query * sonnet_output_per_mtok / 1_000_000)
+    longctx_cost_per_query = (total_tokens * 3.0 / 1_000_000) + (output_tokens_per_query * 15.0 / 1_000_000)
     longctx_cost_170 = longctx_cost_per_query * 170
 
     # CKG actual cost from benchmark (Track 2 result)
     ckg_avg_tokens = 350  # from existing benchmark results
-    ckg_cost_per_query = (ckg_avg_tokens * haiku_input_per_mtok / 1_000_000) + (output_tokens_per_query * haiku_output_per_mtok / 1_000_000)
+    ckg_cost_per_query = (ckg_avg_tokens * 0.80 / 1_000_000) + (output_tokens_per_query * 4.0 / 1_000_000)  # Haiku pricing
     ckg_cost_170 = ckg_cost_per_query * 170
 
     cost_ratio = longctx_cost_per_query / ckg_cost_per_query if ckg_cost_per_query > 0 else 0
@@ -247,7 +242,7 @@ def main(max_trials: int = 1000):
             "ckg_cost_per_query_usd": round(ckg_cost_per_query, 6),
             "ckg_cost_170_queries_usd": round(ckg_cost_170, 4),
             "cost_reduction_ratio": round(cost_ratio, 0),
-            "note": "Long-context cost uses Claude Sonnet input/output pricing ($3/$15 per 1M tokens). CKG uses Claude Haiku 4.5 pricing ($1/$5 per 1M tokens). Projections only — long-context LLM run not executed.",
+            "note": "Long-context cost uses Claude claude-sonnet-4-6 input pricing ($3/1M tokens). CKG uses Claude Haiku pricing ($0.80/1M input). Projections only — long-context LLM run not executed.",
         },
     }
 

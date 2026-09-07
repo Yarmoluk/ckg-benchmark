@@ -26,7 +26,7 @@ $$\text{RDS} = \frac{\text{F1}}{\text{tokens\_consumed}}$$
 - **over 10,800 benchmark queries** across 5 query types
 - **3 retrieval architectures** compared
 - **16 evaluation metrics** (10 novel)
-- CKG: 4.0× higher F1, 11× fewer tokens, 45× better RDS vs RAG
+- CKG: 4× higher F1, 11× fewer tokens, 42× better RDS vs RAG
 
 ## Authors
 

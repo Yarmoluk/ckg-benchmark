@@ -34,4 +34,4 @@ If the correlation between structure\_premium and dag\_richness exceeds $r = 0.7
 - The McCreary corpus is educational---results may not generalize to legal, financial, or medical domains.
 - CKG requires upfront expert curation investment; this cost is not reflected in the benchmark's zero-build-cost assumption.
 - Ground truth derived from DAG edges may not capture all valid natural language answers.
-- All systems use the same LLM (Claude Haiku 4.5); results may differ with other models.
+- All systems use the same LLM (Claude Sonnet 4.6); results may differ with other models.

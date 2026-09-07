@@ -33,9 +33,9 @@
     "longctx_cost_per_query_usd": 8.0505,
     "longctx_cost_170_queries_usd": 1368.58,
     "ckg_avg_tokens_per_query": 350,
-    "ckg_cost_per_query_usd": 0.00135,
-    "ckg_cost_170_queries_usd": 0.2295,
-    "cost_reduction_ratio": 5963.0,
-    "note": "Long-context cost uses Claude Sonnet input/output pricing ($3/$15 per 1M tokens). CKG uses Claude Haiku 4.5 pricing ($1/$5 per 1M tokens). Projections only \u2014 long-context LLM run not executed."
+    "ckg_cost_per_query_usd": 0.00108,
+    "ckg_cost_170_queries_usd": 0.1836,
+    "cost_reduction_ratio": 7454.0,
+    "note": "Long-context cost uses Claude claude-sonnet-4-6 input pricing ($3/1M tokens). CKG uses Claude Haiku pricing ($0.80/1M input). Projections only \u2014 long-context LLM run not executed."
   }
 }

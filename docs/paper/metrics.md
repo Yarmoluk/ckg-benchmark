@@ -51,7 +51,7 @@ $$\text{CUR} = \frac{\text{relevant\_tokens}}{\text{total\_retrieved\_tokens}}$$
 
 ### Cost Per Correct Answer $\star$ (CPCA)
 
-Real-world cost using Claude Haiku 4.5 pricing ($1/M input, $5/M output):
+Real-world cost using Claude Sonnet 4.6 pricing ($3/M input, $15/M output):
 
 $$\text{CPCA} = \frac{\text{cost\_per\_query}}{\text{F1}}$$
 

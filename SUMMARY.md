@@ -1,7 +1,7 @@
 # CKG Benchmark — One-Page Summary
 
-> Pre-structured knowledge graphs outperform RAG 4.0× at 11× lower token cost.
-> Current analyzed artifacts · 8,121 CKG queries · open source.
+> Pre-structured knowledge graphs outperform RAG 4× at 11× lower token cost.
+> Full paper · 44 domains · 7,758 queries · open source.
 
 ---
 
@@ -11,11 +11,11 @@ Three retrieval architectures. Same queries. Same LLM. Different structure going
 
 | System | F1 Score | Tokens/query | Cost/query |
 |---|---|---|---|
-| RAG (FAISS + Claude) | 0.122 | 2,986 | ~$0.0035 |
-| GraphRAG (Microsoft) | 0.120 | 3,450 | ~$0.0055 |
-| **CKG (pre-structured DAG)** | **0.493** | **264** | **~$0.0005** |
+| RAG (FAISS + Claude) | 0.123 | 2,982 | ~$0.009 |
+| GraphRAG (Microsoft) | 0.120 | 3,450 | ~$0.013 |
+| **CKG (pre-structured DAG)** | **0.471** | **269** | **~$0.001** |
 
-**CKG is 45× more efficient per correct answer than RAG.**
+**CKG is 42× more efficient per correct answer than RAG.**
 
 ---
 
@@ -44,13 +44,13 @@ CKG improves continuously. RAG plateaus at hop=2 and degrades. The deeper the qu
 
 | Query type | CKG F1 | RAG F1 | Advantage |
 |---|---|---|---|
-| Aggregate (T4) | 0.980 | 0.282 | 3.5× |
-| Path traversal (T3) | 0.690 | 0.201 | 3.4× |
-| Dependency (T2) | 0.668 | 0.077 | 8.7× |
-| Cross-concept (T5) | 0.325 | 0.115 | 2.8× |
-| Entity lookup (T1) | 0.222 | 0.093 | 2.4× |
+| Aggregate (T4) | 0.964 | 0.286 | 3.4× |
+| Path traversal (T3) | 0.660 | 0.201 | 3.3× |
+| Dependency (T2) | 0.634 | 0.078 | 8.1× |
+| Cross-concept (T5) | 0.323 | 0.115 | 2.8× |
+| Entity lookup (T1) | 0.207 | 0.094 | 2.2× |
 
-Biggest win: dependency queries (8.7×). These are the queries that matter most in clinical, legal, financial, and regulatory domains.
+Biggest win: dependency queries (8.1×). These are the queries that matter most in clinical, legal, financial, and regulatory domains.
 
 ---
 
@@ -58,7 +58,7 @@ Biggest win: dependency queries (8.7×). These are the queries that matter most 
 
 Track 2: GLP-1/pharma domain built from ClinicalTrials.gov API in a single session. No expert curation.
 
-**F1 = 0.530** — higher than the current CKG average.
+**F1 = 0.530** — higher than the 45-domain average.
 
 If a domain has knowable dependencies, it can be CKG-ified. The structure, not the effort, drives accuracy.
 
