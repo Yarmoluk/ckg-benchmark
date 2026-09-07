@@ -1,8 +1,9 @@
-# Cost Reconciliation — v0.6.2 → v0.6.3-corrected
+# Cost Reconciliation — v0.6.2 → v0.7.0
 
 Date: 2026-08-01. Scope: cost figures only, plus one reproducibility finding.
-`table3_tokenomics.csv` (v0.6.2) is left untouched; the corrected table is
-`table3_tokenomics_v0.6.3-corrected.csv`.
+The cost correction was originally staged as
+`table3_tokenomics_v0.6.3-corrected.csv`; v0.7.0 promotes the correction into
+`table3_tokenomics.csv` and updates public-facing text.
 
 ## 1. What was wrong
 
@@ -22,8 +23,10 @@ published cost comparison measured the constants, not the systems.
 
 - All 8 evaluation scripts now carry uniform $1.00/$5.00 constants.
 - `analyze_results.py` now DERIVES cost from `prompt_tokens`/`completion_tokens`
-  at analysis time and never trusts stored `cost_usd`. Records lacking the
-  split fall back to stored cost and are counted in `n_cost_fallback`.
+  at analysis time and never trusts stored `cost_usd`.
+- Records lacking the split but carrying `total_tokens` are repriced with the
+  documented 85% input / 15% output estimate. Only records without usable token
+  counts fall back to stored cost and are counted in `n_cost_fallback`.
 
 ## 3. Corrected numbers (current artifacts, uniform pricing)
 
@@ -33,12 +36,10 @@ published cost comparison measured the constants, not the systems.
 | rag | 7,414 | 0.1223 | **$26.26** | $76.23 |
 | graphrag | 2,683 | 0.1200 | **$14.81**† | $44.43 |
 
-† graphrag records store no prompt/completion split, so the pipeline's
-corrected table still shows the stale $44.43 (all 2,683 records took the
-`n_cost_fallback` path). $14.81 is recovered algebraically: stored cost was
-exactly `prompt·3e-6 + completion·15e-6` with `total = prompt + completion`,
-two equations in two unknowns; the solution is non-negative and consistent for
-all 2,683 records (0 failures), so the recovery is exact, not estimated.
+† graphrag records store no prompt/completion split, so v0.7.0 uses the same
+85% input / 15% output estimate used by the GraphRAG harness when writing
+`cost_usd`. The analyzer now reports 2,683 total-token estimates and 0
+stored-cost fallbacks for GraphRAG.
 
 **Headline change: RAG/CKG cost ratio ≈ 9.8× published → 6.0× corrected.**
 CKG's cost rises under honest pricing (output is 26% of its tokens and 64% of
@@ -69,8 +70,7 @@ the critique this project levels at LOCOMO-based evaluations.
 1. Decide: re-lock on current artifacts (n=8,121, F1 0.4926, cost $4.39) or
    re-run all three systems from scratch for a clean lineage.
 2. Update paper + site: cost claim $76.23/$7.81 → corrected pair; ratio ~6×.
-   Keep 11× tokens and 3.8× F1 as the headline — both survive unchanged.
 3. Regenerate graphrag with the fixed harness so the split is stored and the
    fallback path goes quiet.
-4. Bump `\paperversion` (PATCH by repo convention: corrected numbers, no
-   methodology change — though the F1 drift note in §4 may warrant MINOR).
+4. Bump `\paperversion`. This landed as 0.7.0 because the repository
+   versioning rule treats reviewer-visible numeric changes as a MINOR bump.

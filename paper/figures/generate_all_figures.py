@@ -52,44 +52,44 @@ OUT_DIR = Path("paper/figures")
 
 # ── Data ──────────────────────────────────────────────────────────────────────
 
-# Final CKG numbers (44 domains, 7,758 queries) — v0.6.1
+# Current analyzed CKG artifacts (47 domains, 8,121 queries)
 CKG = {
-    "macro_f1":   0.4709,
-    "mean_tokens": 269,
-    "rds":         0.00201,
-    "cost":        7.81,
+    "macro_f1":   0.4926,
+    "mean_tokens": 264,
+    "rds":         0.00216,
+    "cost":        4.39,
     "f1_by_type": {
-        "T1 Entity":     0.207,
-        "T2 Prereq":     0.634,
-        "T3 Path":       0.660,
-        "T4 Aggregate":  0.964,
-        "T5 Cross":      0.323,
+        "T1 Entity":     0.222,
+        "T2 Prereq":     0.668,
+        "T3 Path":       0.690,
+        "T4 Aggregate":  0.980,
+        "T5 Cross":      0.325,
     },
     "f1_by_hop": {0: 0.374, 1: 0.519, 2: 0.573, 3: 0.671, 4: 0.751, 5: 0.772},
 }
 
-# Final RAG numbers (40 domains, 7,191 queries)
+# Current analyzed RAG artifacts (44 domains, 7,414 queries)
 RAG = {
-    "macro_f1":    0.1231,
-    "mean_tokens": 2982,
-    "rds":         4.82e-5,
-    "cost":        76.23,
+    "macro_f1":    0.1223,
+    "mean_tokens": 2986,
+    "rds":         4.788e-5,
+    "cost":        26.26,
     "f1_by_type": {
-        "T1 Entity":     0.094,
-        "T2 Prereq":     0.078,
+        "T1 Entity":     0.093,
+        "T2 Prereq":     0.077,
         "T3 Path":       0.201,
-        "T4 Aggregate":  0.286,
+        "T4 Aggregate":  0.282,
         "T5 Cross":      0.115,
     },
     "f1_by_hop": {0: 0.073, 1: 0.066, 2: 0.226, 3: 0.138, 4: 0.166, 5: 0.170},
 }
 
-# Final GraphRAG numbers (15 domains, 2,683 queries)
+# Current analyzed GraphRAG artifacts (20 domains, 2,683 queries)
 GR = {
     "macro_f1":    0.1200,
     "mean_tokens": 3450,
     "rds":         4.52e-5,
-    "cost":        44.43,
+    "cost":        14.81,
     "f1_by_type": {
         "T1 Entity":     0.108,
         "T2 Prereq":     0.073,
@@ -191,7 +191,7 @@ def fig_rds_comparison():
 
     # Left: RDS comparison (all 3 systems)
     ax = axes[0]
-    systems  = ["RAG\n(40 dom.)", "GraphRAG\n(15 dom.)", "CKG\n(44 dom.)"]
+    systems  = ["RAG\n(44 dom.)", "GraphRAG\n(20 dom.)", "CKG\n(47 dom.)"]
     rds_vals = [RAG["rds"], GR["rds"], CKG["rds"]]
     colors   = [RAG_COLOR, GR_COLOR, CKG_COLOR]
     bars = ax.bar(systems, rds_vals, color=colors, alpha=0.88, width=0.45, zorder=3)

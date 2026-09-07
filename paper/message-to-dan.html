@@ -167,24 +167,24 @@
 
   <div class="stat-grid">
     <div class="stat">
-      <div class="number">42×</div>
+      <div class="number">45×</div>
       <div class="label">Higher Reasoning Density Score — more correct information per token spent</div>
     </div>
     <div class="stat">
-      <div class="number">3.8×</div>
+      <div class="number">4.0×</div>
       <div class="label">Higher accuracy on structural queries</div>
     </div>
     <div class="stat">
       <div class="number">11×</div>
-      <div class="label">Fewer tokens per query (269 vs. 2,982)</div>
+      <div class="label">Fewer tokens per query (264 vs. 2,986)</div>
     </div>
     <div class="stat">
       <div class="number">0</div>
       <div class="label">Hallucination rate — by mathematical construction, not tuning</div>
     </div>
     <div class="stat">
-      <div class="number">90%</div>
-      <div class="label">Lower cost — $7.81 CKG vs. $76.23 RAG for the full benchmark run</div>
+      <div class="number">83%</div>
+      <div class="label">Lower cost — $4.39 CKG vs. $26.26 RAG for the full benchmark run</div>
     </div>
     <div class="stat">
       <div class="number">↑ depth</div>
@@ -200,7 +200,7 @@
 
   <div class="highlight">
     <strong>Track 2 answers that.</strong> I built a complete GLP-1/obesity pharmacology domain from the ClinicalTrials.gov API — no hand curation, no educational source material, no McCreary corpus. A four-stage automated pipeline: API extraction → concept and edge extraction → learning-graph.csv → benchmark queries. Machine-built.<br><br>
-    It scored <strong>F1 = 0.530</strong> — 12.5% higher than your hand-curated average of 0.471.<br><br>
+    It scored <strong>F1 = 0.530</strong> — 7.5% higher than the current CKG average of 0.493.<br><br>
     The structure is the thing. Not the curation source.
   </div>
 
@@ -237,11 +237,11 @@ function copyText() {
     "We ran 23,900 queries across 45 domains — your 44 hand-curated educational DAGs plus one commercial pharmacology domain built from ClinicalTrials.gov — against three systems: RAG (prose chunks), GraphRAG (dynamically extracted graph from prose), and CKG (your DAG, directly). Every system used the same LLM. Same prompts. Same evaluation. The only variable was the representation.",
     "",
     "The DAG representation produced:",
-    "• 42× higher Reasoning Density Score — more correct information per token spent",
-    "• 3.8× higher accuracy on structural queries",
-    "• 11× fewer tokens per query (269 vs. 2,982)",
+    "• 45× higher Reasoning Density Score — more correct information per token spent",
+    "• 4.0× higher accuracy on structural queries",
+    "• 11× fewer tokens per query (264 vs. 2,986)",
     "• Hallucination Rate = 0 — by mathematical construction, not tuning",
-    "• 90% lower cost — $7.81 CKG vs. $76.23 RAG for the full benchmark run",
+    "• 83% lower cost — $4.39 CKG vs. $26.26 RAG for the full benchmark run",
     "• F1 improves with query depth — CKG gets better as chains get longer. RAG degrades.",
     "",
     "A system reading DAG edges cannot return a concept that doesn't exist in the graph. There is nothing to hallucinate around. Retrieval becomes computation, not search. Deterministic. Exact. The hardest problem in AI is representation. You had the right representation. The numbers confirm it across every query type, every domain, every depth.",
@@ -252,7 +252,7 @@ function copyText() {
     "",
     "Track 2 answers that. I built a complete GLP-1/obesity pharmacology domain from the ClinicalTrials.gov API — no hand curation, no educational source material, no McCreary corpus. A four-stage automated pipeline: API extraction → concept and edge extraction → learning-graph.csv → benchmark queries. Machine-built.",
     "",
-    "It scored F1 = 0.530 — 12.5% higher than your hand-curated average of 0.471.",
+    "It scored F1 = 0.530 — 7.5% higher than the current CKG average of 0.493.",
     "",
     "The structure is the thing. Not the curation source. Your insight generalizes to every domain where knowledge has DAG shape — pharmacology, law, finance, regulation, supply chains, clinical pathways. I compressed the representation for portability: a flat CSV with four columns, readable by any LLM natively, no database, no index, no infrastructure. It travels as a file.",
     "",

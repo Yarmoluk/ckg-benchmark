@@ -1,6 +1,6 @@
 # Architecture Specifications
 
-All three systems use Claude Sonnet 4.6 at temperature=0 for generation, ensuring fair comparison. The systems differ only in how knowledge is stored and retrieved.
+All three systems use Claude Haiku 4.5 at temperature=0 for generation, ensuring fair comparison. The systems differ only in how knowledge is stored and retrieved.
 
 ## RAG Baseline
 
@@ -11,7 +11,7 @@ All three systems use Claude Sonnet 4.6 at temperature=0 for generation, ensurin
 | Embeddings | `all-MiniLM-L6-v2` (sentence-transformers, local) |
 | Index | FAISS flat L2 |
 | Retrieval | Top-5 chunks |
-| Generation | Claude Sonnet 4.6, temperature=0 |
+| Generation | Claude Haiku 4.5, temperature=0 |
 
 **Token profile:** 3,000--5,000 tokens per query. High noise ratio (chunks contain off-topic content).
 
@@ -23,7 +23,7 @@ All three systems use Claude Sonnet 4.6 at temperature=0 for generation, ensurin
 | System | Microsoft GraphRAG v1.x, default configuration |
 | Search | Local mode for T1/T2/T5, global mode for T4 |
 | Note | Does **not** use `learning-graph.csv`---dynamic extraction only |
-| Generation | Claude Sonnet 4.6, temperature=0 |
+| Generation | Claude Haiku 4.5, temperature=0 |
 
 **Token profile:** 2,000--8,000 tokens per query (high variance). Medium noise ratio. Build cost: HIGH.
 
@@ -35,7 +35,7 @@ All three systems use Claude Sonnet 4.6 at temperature=0 for generation, ensurin
 | Lookup | Exact label match -> concept node retrieval |
 | Traversal | BFS for T2 (1-hop), DFS for T3 (full path), filter for T4 |
 | Subgraph | Matched concept + direct neighbors + edges |
-| Generation | Claude Sonnet 4.6, temperature=0 |
+| Generation | Claude Haiku 4.5, temperature=0 |
 | Note | Zero build cost---CSV-native |
 
 **Token profile:** 150--400 tokens per query. Near-zero noise ratio.

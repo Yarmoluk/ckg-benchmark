@@ -37,10 +37,10 @@ Standard IR benchmarks measure quality only. In production LLM systems, token co
 
 ## Pricing Model
 
-All costs computed at Claude Sonnet 4.6 pricing:
+All benchmark costs are computed at Claude Haiku 4.5 pricing:
 
-- **Input:** $3 per 1M tokens
-- **Output:** $15 per 1M tokens
+- **Input:** $1 per 1M tokens
+- **Output:** $5 per 1M tokens
 
 ## The Structure Premium Hypothesis
 

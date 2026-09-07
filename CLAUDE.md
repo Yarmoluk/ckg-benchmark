@@ -48,7 +48,7 @@ ConceptID,ConceptLabel,Dependencies,TaxonomyID
 - Hallucination Rate, Paraphrase Stability
 
 ### Pricing Constants
-Claude Sonnet 4.6: $3/M input tokens, $15/M output tokens
+Claude Haiku 4.5: $1/M input tokens, $5/M output tokens
 
 ## Development Commands
 

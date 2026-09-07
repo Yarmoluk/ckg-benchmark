@@ -18,7 +18,6 @@ from typing import Optional
 import statistics
 
 
-# Claude Sonnet 4.6 pricing (April 2026)
 # claude-haiku-4-5: $1.00 per 1M input, $5.00 per 1M output (verified 2026-08-01).
 # All harnesses call the same model — pricing MUST be identical across them or the
 # cost comparison is an artifact of the constants, not the systems.

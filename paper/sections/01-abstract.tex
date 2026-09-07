@@ -7,21 +7,21 @@ DAG representations with explicit concept taxonomy and pipe-delimited
 dependency encoding---and present a two-track benchmark comparing CKG,
 RAG, and GraphRAG across educational and commercial domains.
 
-Track 1 evaluates the McCreary Intelligent Textbook Corpus: 44
-hand-curated educational domains spanning STEM, professional, and
-foundational subjects (7,758 queries). CKG achieves macro-average
-F1 of \textbf{0.4709} versus \textbf{0.1231} for RAG and \textbf{0.1200}
-for GraphRAG, at \textbf{11$\times$ fewer tokens per query} (269 vs.\
-2,982 vs.\ 3,450). CKG F1 increases with hop depth (peaking at hop=3:
-0.64) while RAG degrades. The compound Reasoning Density Score (RDS)
-advantage is \textbf{42$\times$}. T1 entity lookup (CKG 0.207, RAG 0.094)
+The current analyzed artifacts include 47 CKG domains (8,121 queries),
+44 RAG domains (7,414 queries), and 20 GraphRAG domains (2,683 queries).
+CKG achieves macro-average F1 of \textbf{0.4926} versus \textbf{0.1223}
+for RAG and \textbf{0.1200} for GraphRAG, at \textbf{11$\times$ fewer
+tokens per query} (264 vs.\ 2,986 vs.\ 3,450). CKG F1 increases with
+hop depth to 0.772 while RAG remains substantially lower. The compound
+Reasoning Density Score (RDS) advantage is \textbf{45$\times$}. T1
+entity lookup (CKG 0.222, RAG 0.093)
 serves as a designed negative control.
 
 Track 2 tests whether the architecture generalizes beyond hand-curated
 educational data. We build a complete GLP-1/Obesity pharmacology CKG
 programmatically from the ClinicalTrials.gov API with no expert
 annotation (170 queries). The pipeline-generated CKG reaches macro F1
-\textbf{0.5298}---exceeding the Track 1 hand-curated average by 12.5\%
+\textbf{0.5298}---exceeding the current CKG average by 7.5\%
 and preserving a \textbf{28$\times$} RDS advantage over RAG. Automated
 construction does not degrade retrieval quality; it matches or improves
 it. Together the two tracks establish CKG as a distinct architecture

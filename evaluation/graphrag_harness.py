@@ -9,7 +9,7 @@ For each benchmark domain, this harness:
 4. Queries using 'graphrag query --method local' per benchmark query
 5. Parses the CLI output, scores F1/RDS, and writes results
 
-LLM:        Claude Sonnet 4.6 via Anthropic API (using LiteLLM's anthropic provider)
+LLM:        Claude Haiku 4.5 via Anthropic API (using LiteLLM's anthropic provider)
 Embeddings: OpenAI text-embedding-3-small (configurable via --embed-key)
             OR local sentence-transformers via a LiteLLM proxy (see --local-embed)
 

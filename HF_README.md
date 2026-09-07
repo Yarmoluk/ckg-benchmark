@@ -47,15 +47,15 @@ configs:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21222965.svg)](https://doi.org/10.5281/zenodo.21222965)
 
-**Pre-structured knowledge graphs outperform RAG by 4× F1 at 11× lower token cost — across 65 benchmarked domains.**
+**Pre-structured knowledge graphs outperform RAG by 4.0× F1 at 11× lower token cost — across 65 benchmarked domains.**
 
 | System | Macro F1 | Tokens/query | RDS | Run Cost |
 |--------|----------|-------------|-----|----------|
-| **CKG** | **0.4709** | **269** | **0.00175** | **$7.81** |
-| RAG | 0.1231 | 2,982 | 0.0000413 | $76.23 |
-| GraphRAG | 0.1200 | 3,450 | 0.0000452 | $44.43 |
+| **CKG** | **0.4926** | **264** | **0.00216** | **$4.39** |
+| RAG | 0.1223 | 2,986 | 0.0000479 | $26.26 |
+| GraphRAG | 0.1200 | 3,450 | 0.0000452 | $14.81 |
 
-**42× more intelligence per token than RAG. Auditable by design — every answer traces to a declared edge.**
+**45× more intelligence per token than RAG. Auditable by design — every answer traces to a declared edge.**
 
 ## Dataset Contents
 
@@ -172,7 +172,7 @@ GLP-1/Obesity pharmacology assembled from ClinicalTrials.gov API in one session.
          and Commercial Domains: RAG, GraphRAG, and Compact Knowledge Graphs},
   author={Yarmoluk, Daniel and McCreary, Dan},
   year={2026},
-  note={Pre-print in preparation. v0.6.2. Patent pending.}
+  note={Pre-print in preparation. v0.7.0. Patent pending.}
 }
 ```
 
