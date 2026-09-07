@@ -1,17 +1,17 @@
 {
   "ckg": {
-    "T1_entity": 0.2065,
-    "T2_dependency": 0.6342,
-    "T3_path": 0.6598,
-    "T4_aggregate": 0.964,
-    "T5_cross_concept": 0.3234
+    "T1_entity": 0.2218,
+    "T2_dependency": 0.6682,
+    "T3_path": 0.69,
+    "T4_aggregate": 0.9803,
+    "T5_cross_concept": 0.3249
   },
   "rag": {
-    "T1_entity": 0.0939,
-    "T2_dependency": 0.0781,
+    "T1_entity": 0.0928,
+    "T2_dependency": 0.0768,
     "T3_path": 0.2014,
-    "T4_aggregate": 0.2861,
-    "T5_cross_concept": 0.1153
+    "T4_aggregate": 0.2823,
+    "T5_cross_concept": 0.1149
   },
   "graphrag": {
     "T1_entity": 0.1081,

@@ -1,277 +1,295 @@
 {
   "ckg": {
     "circuits": {
-      "rds": 0.00205487,
-      "f1": 0.5131,
-      "tokens": 294.0,
+      "rds": 0.0020562,
+      "f1": 0.5136,
+      "tokens": 294.1,
       "dag_richness": 295.5857
     },
     "Dementia": {
-      "rds": 0.00221738,
-      "f1": 0.4812,
-      "tokens": 231.7,
+      "rds": 0.00221656,
+      "f1": 0.4826,
+      "tokens": 231.1,
       "dag_richness": 126.635
     },
     "pre-calc": {
-      "rds": 0.00182821,
-      "f1": 0.4727,
-      "tokens": 310.2,
+      "rds": 0.00209492,
+      "f1": 0.5169,
+      "tokens": 292.2,
       "dag_richness": 221.9281
     },
+    "claude-skills": {
+      "rds": 0.00250169,
+      "f1": 0.4916,
+      "tokens": 220.1,
+      "dag_richness": 9.1589
+    },
     "it-management-graph": {
-      "rds": 0.00195491,
-      "f1": 0.4186,
-      "tokens": 230.1,
+      "rds": 0.00235873,
+      "f1": 0.4787,
+      "tokens": 220.4,
       "dag_richness": 42.8099
     },
     "digital-citizenship": {
-      "rds": 0.00208254,
-      "f1": 0.4668,
-      "tokens": 259.5,
+      "rds": 0.00207199,
+      "f1": 0.4643,
+      "tokens": 258.5,
       "dag_richness": 225.3928
     },
     "genetics": {
-      "rds": 0.00191792,
-      "f1": 0.4702,
-      "tokens": 297.6,
+      "rds": 0.00188436,
+      "f1": 0.4649,
+      "tokens": 299.6,
       "dag_richness": 111.639
     },
     "glp1-obesity": {
-      "rds": 0.00166791,
-      "f1": 0.5308,
-      "tokens": 346.7,
-      "dag_richness": 164.7361
+      "rds": 0.00167413,
+      "f1": 0.5306,
+      "tokens": 346.2,
+      "dag_richness": 0
     },
     "data-science-course": {
-      "rds": 0.00213009,
-      "f1": 0.4771,
-      "tokens": 249.4,
+      "rds": 0.00213883,
+      "f1": 0.4786,
+      "tokens": 248.9,
       "dag_richness": 215.3307
     },
     "prompt-class": {
-      "rds": 0.00183532,
-      "f1": 0.4934,
-      "tokens": 308.0,
+      "rds": 0.00210157,
+      "f1": 0.5337,
+      "tokens": 292.5,
       "dag_richness": 506.0095
     },
     "machine-learning-textbook": {
-      "rds": 0.00198598,
-      "f1": 0.4379,
-      "tokens": 246.0,
+      "rds": 0.00227843,
+      "f1": 0.4788,
+      "tokens": 236.0,
       "dag_richness": 316.3674
     },
+    "unicorns": {
+      "rds": 0.00224347,
+      "f1": 0.4953,
+      "tokens": 248.3,
+      "dag_richness": 43.967
+    },
     "systems-thinking": {
-      "rds": 0.0016213,
-      "f1": 0.3575,
-      "tokens": 231.1,
+      "rds": 0.00191665,
+      "f1": 0.3872,
+      "tokens": 220.3,
       "dag_richness": 147.0025
     },
     "microsims": {
-      "rds": 0.00209587,
-      "f1": 0.4834,
-      "tokens": 258.1,
+      "rds": 0.00230992,
+      "f1": 0.5153,
+      "tokens": 247.5,
       "dag_richness": 114.8816
     },
     "signal-processing": {
-      "rds": 0.00180113,
-      "f1": 0.4115,
-      "tokens": 248.4,
+      "rds": 0.00208324,
+      "f1": 0.4568,
+      "tokens": 236.7,
       "dag_richness": 260.0152
     },
     "intro-to-physics-course": {
-      "rds": 0.00200016,
-      "f1": 0.4464,
-      "tokens": 244.2,
+      "rds": 0.00223135,
+      "f1": 0.4771,
+      "tokens": 236.3,
       "dag_richness": 82.0455
     },
     "ecology": {
-      "rds": 0.00202305,
-      "f1": 0.4756,
-      "tokens": 278.1,
+      "rds": 0.00204772,
+      "f1": 0.4799,
+      "tokens": 277.5,
       "dag_richness": 190.1759
     },
     "modeling-healthcare-data": {
-      "rds": 0.0019165,
-      "f1": 0.4373,
-      "tokens": 247.7,
+      "rds": 0.00227659,
+      "f1": 0.4854,
+      "tokens": 237.5,
       "dag_richness": 131.8599
     },
     "computer-science": {
-      "rds": 0.00217924,
-      "f1": 0.4924,
-      "tokens": 258.9,
+      "rds": 0.00220285,
+      "f1": 0.4955,
+      "tokens": 258.8,
       "dag_richness": 387.2
     },
     "algebra-1": {
-      "rds": 0.00231768,
-      "f1": 0.4868,
-      "tokens": 231.6,
+      "rds": 0.00229888,
+      "f1": 0.4836,
+      "tokens": 232.8,
       "dag_richness": 158.2041
     },
     "quantum-computing": {
-      "rds": 0.00135944,
-      "f1": 0.3745,
-      "tokens": 308.6,
+      "rds": 0.00208672,
+      "f1": 0.5482,
+      "tokens": 295.3,
       "dag_richness": 75.2016
     },
     "asl-book": {
-      "rds": 0.00241063,
-      "f1": 0.457,
-      "tokens": 225.9,
+      "rds": 0.00243905,
+      "f1": 0.4618,
+      "tokens": 226.3,
       "dag_richness": 426.6667
     },
     "learning-linux": {
-      "rds": 0.002016,
-      "f1": 0.4628,
-      "tokens": 264.7,
+      "rds": 0.0024749,
+      "f1": 0.5253,
+      "tokens": 254.3,
       "dag_richness": 311.7488
     },
     "automating-instructional-design": {
-      "rds": 0.00237898,
-      "f1": 0.5145,
-      "tokens": 236.0,
+      "rds": 0.00240566,
+      "f1": 0.5182,
+      "tokens": 236.6,
       "dag_richness": 64.6556
     },
     "ethics-course": {
-      "rds": 0.00200736,
-      "f1": 0.4814,
-      "tokens": 276.1,
+      "rds": 0.00197662,
+      "f1": 0.477,
+      "tokens": 275.7,
       "dag_richness": 141.0968
     },
     "geometry-course": {
-      "rds": 0.00222158,
-      "f1": 0.4781,
-      "tokens": 239.3,
+      "rds": 0.00225747,
+      "f1": 0.4837,
+      "tokens": 238.5,
       "dag_richness": 123.7032
     },
     "organizational-analytics": {
-      "rds": 0.00190518,
-      "f1": 0.4672,
-      "tokens": 271.1,
+      "rds": 0.00219434,
+      "f1": 0.5075,
+      "tokens": 264.0,
       "dag_richness": 122.551
     },
     "theory-of-knowledge": {
-      "rds": 0.00174042,
-      "f1": 0.4182,
-      "tokens": 283.5,
+      "rds": 0.00193657,
+      "f1": 0.4497,
+      "tokens": 265.4,
       "dag_richness": 444.6296
     },
     "personal-finance": {
-      "rds": 0.00196361,
-      "f1": 0.4457,
-      "tokens": 248.3,
+      "rds": 0.00232917,
+      "f1": 0.4983,
+      "tokens": 234.4,
       "dag_richness": 74.4922
     },
     "linear-algebra": {
-      "rds": 0.00178254,
-      "f1": 0.4496,
-      "tokens": 287.6,
+      "rds": 0.002086,
+      "f1": 0.4953,
+      "tokens": 271.4,
       "dag_richness": 255.2522
     },
     "economics-course": {
-      "rds": 0.00200334,
-      "f1": 0.4503,
-      "tokens": 258.1,
+      "rds": 0.00202848,
+      "f1": 0.4547,
+      "tokens": 257.1,
       "dag_richness": 253.574
     },
     "blockchain": {
-      "rds": 0.002125,
-      "f1": 0.5027,
-      "tokens": 270.7,
+      "rds": 0.00209238,
+      "f1": 0.4954,
+      "tokens": 271.4,
       "dag_richness": 116.2223
     },
     "calculus": {
-      "rds": 0.00204513,
-      "f1": 0.4972,
-      "tokens": 280.0,
+      "rds": 0.00202315,
+      "f1": 0.4941,
+      "tokens": 281.4,
       "dag_richness": 249.5207
     },
     "bioinformatics": {
-      "rds": 0.00205769,
-      "f1": 0.5044,
-      "tokens": 295.7,
+      "rds": 0.00203922,
+      "f1": 0.5016,
+      "tokens": 296.8,
       "dag_richness": 138.4905
     },
     "statistics-course": {
-      "rds": 0.00182995,
-      "f1": 0.4434,
-      "tokens": 289.7,
+      "rds": 0.00203958,
+      "f1": 0.4762,
+      "tokens": 272.8,
       "dag_richness": 264.6
     },
     "biology": {
-      "rds": 0.00176414,
-      "f1": 0.4972,
-      "tokens": 352.5,
+      "rds": 0.0017797,
+      "f1": 0.4999,
+      "tokens": 352.2,
       "dag_richness": 234.2153
     },
     "digital-electronics": {
-      "rds": 0.0020495,
-      "f1": 0.4962,
+      "rds": 0.00205801,
+      "f1": 0.4972,
       "tokens": 284.2,
       "dag_richness": 154.4813
     },
     "conversational-ai": {
-      "rds": 0.00203623,
-      "f1": 0.4311,
-      "tokens": 226.1,
+      "rds": 0.0020442,
+      "f1": 0.4317,
+      "tokens": 226.4,
       "dag_richness": 59.3157
     },
     "tracking-ai-course": {
-      "rds": 0.00190418,
-      "f1": 0.4522,
-      "tokens": 314.3,
+      "rds": 0.00200723,
+      "f1": 0.4641,
+      "tokens": 302.4,
       "dag_richness": 393.2738
     },
     "fft-benchmarking": {
-      "rds": 0.00220641,
-      "f1": 0.5153,
-      "tokens": 259.6,
+      "rds": 0.00219056,
+      "f1": 0.5135,
+      "tokens": 259.7,
       "dag_richness": 81.3871
     },
     "us-geography": {
-      "rds": 0.00213282,
-      "f1": 0.456,
-      "tokens": 237.9,
+      "rds": 0.00268492,
+      "f1": 0.5317,
+      "tokens": 226.5,
       "dag_richness": 477.3371
     },
     "moss": {
-      "rds": 0.00200986,
-      "f1": 0.5011,
-      "tokens": 300.2,
+      "rds": 0.00218184,
+      "f1": 0.5255,
+      "tokens": 291.7,
       "dag_richness": 70.5265
     },
     "chemistry": {
-      "rds": 0.00186097,
-      "f1": 0.4878,
-      "tokens": 330.3,
+      "rds": 0.00187467,
+      "f1": 0.491,
+      "tokens": 329.5,
       "dag_richness": 319.0104
     },
     "intro-to-graph": {
-      "rds": 0.00214672,
-      "f1": 0.486,
-      "tokens": 251.2,
+      "rds": 0.0021652,
+      "f1": 0.4894,
+      "tokens": 250.2,
       "dag_richness": 128.8013
     },
     "infographics": {
-      "rds": 0.00240496,
-      "f1": 0.5362,
-      "tokens": 261.8,
+      "rds": 0.00238564,
+      "f1": 0.5325,
+      "tokens": 262.0,
       "dag_richness": 84.7646
     },
     "functions": {
-      "rds": 0.00210951,
-      "f1": 0.4968,
-      "tokens": 263.4,
+      "rds": 0.00209983,
+      "f1": 0.4947,
+      "tokens": 263.5,
       "dag_richness": 97.011
     },
     "reading-for-kindergarten": {
-      "rds": 0.00203158,
-      "f1": 0.4624,
-      "tokens": 243.0,
+      "rds": 0.00279482,
+      "f1": 0.5742,
+      "tokens": 227.8,
       "dag_richness": 134.6913
     }
   },
   "rag": {
+    "claude-skills": {
+      "rds": 5.893e-05,
+      "f1": 0.1584,
+      "tokens": 3190.9,
+      "dag_richness": 9.1589
+    },
     "modeling-healthcare-data": {
       "rds": 3.917e-05,
       "f1": 0.1124,
@@ -342,7 +360,7 @@
       "rds": 6.021e-05,
       "f1": 0.1538,
       "tokens": 2828.1,
-      "dag_richness": 164.7361
+      "dag_richness": 0
     },
     "statistics-course": {
       "rds": 4.353e-05,
@@ -451,6 +469,12 @@
       "f1": 0.174,
       "tokens": 2155.0,
       "dag_richness": 134.6913
+    },
+    "unicorns": {
+      "rds": 3.031e-05,
+      "f1": 0.0794,
+      "tokens": 3105.7,
+      "dag_richness": 43.967
     },
     "us-geography": {
       "rds": 4.884e-05,
@@ -608,7 +632,7 @@
       "rds": 5.57e-05,
       "f1": 0.1436,
       "tokens": 3450.0,
-      "dag_richness": 164.7361
+      "dag_richness": 0
     },
     "calculus": {
       "rds": 4.59e-05,

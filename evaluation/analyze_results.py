@@ -34,6 +34,8 @@ DOMAINS_DIR   = Path("benchmark/domains")
 # cost comparison is an artifact of the constants, not the systems.
 PRICE_INPUT  = 1.00  / 1_000_000   # Haiku 4.5
 PRICE_OUTPUT = 5.00 / 1_000_000   # Haiku 4.5
+ESTIMATED_INPUT_SHARE = 0.85
+ESTIMATED_OUTPUT_SHARE = 0.15
 
 QUERY_TYPES = ["T1_entity", "T2_dependency", "T3_path", "T4_aggregate", "T5_cross_concept"]
 
@@ -58,6 +60,28 @@ def load_system_results(system: str) -> dict[str, list[dict]]:
     return by_domain
 
 
+def derive_record_cost(record: dict) -> tuple[float, str]:
+    """Return analysis-time cost and the method used to derive it."""
+    prompt_tokens = record.get("prompt_tokens")
+    completion_tokens = record.get("completion_tokens")
+    if prompt_tokens is not None and completion_tokens is not None:
+        return (
+            prompt_tokens * PRICE_INPUT + completion_tokens * PRICE_OUTPUT,
+            "token_split",
+        )
+
+    total_tokens = record.get("total_tokens")
+    if total_tokens:
+        estimated_input = total_tokens * ESTIMATED_INPUT_SHARE
+        estimated_output = total_tokens * ESTIMATED_OUTPUT_SHARE
+        return (
+            estimated_input * PRICE_INPUT + estimated_output * PRICE_OUTPUT,
+            "estimated_total_split",
+        )
+
+    return record.get("cost_usd", 0), "stored_cost_fallback"
+
+
 def compute_domain_stats(records: list[dict]) -> dict:
     """Compute per-domain statistics."""
     if not records:
@@ -78,16 +102,19 @@ def compute_domain_stats(records: list[dict]) -> dict:
     # harness had at generation time; through v0.6.2 those constants disagreed
     # across harnesses ($0.80/$4.00 for ckg vs $3/$15 for rag/graphrag on the
     # same model), so summing them compares pricing artifacts, not systems.
-    # Records lacking a prompt/completion split (older graphrag runs) fall back
-    # to stored cost and are counted so the caller can flag them.
+    # Records lacking a prompt/completion split (older GraphRAG runs) are
+    # repriced from total_tokens using the documented 85/15 input/output split.
+    # Only records with no usable token counts fall back to stored cost and are
+    # counted so the caller can flag them.
     all_cost = []
+    n_cost_estimated_from_total = 0
     n_cost_fallback = 0
     for r in records:
-        pi, po = r.get("prompt_tokens"), r.get("completion_tokens")
-        if pi is not None and po is not None:
-            all_cost.append(pi * PRICE_INPUT + po * PRICE_OUTPUT)
-        else:
-            all_cost.append(r.get("cost_usd", 0))
+        cost, method = derive_record_cost(r)
+        all_cost.append(cost)
+        if method == "estimated_total_split":
+            n_cost_estimated_from_total += 1
+        elif method == "stored_cost_fallback":
             n_cost_fallback += 1
     all_ret  = [r.get("retrieved_tokens", 0) for r in records]
 
@@ -132,6 +159,7 @@ def compute_domain_stats(records: list[dict]) -> dict:
         "mean_tokens": round(mean_tok, 1),
         "mean_retrieved_tokens": round(mean_ret, 1),
         "total_cost_usd": round(total_cost, 4),
+        "n_cost_estimated_from_total": n_cost_estimated_from_total,
         "n_cost_fallback": n_cost_fallback,
         "mean_cur": round(mean_cur, 4),
         "mean_cpca": round(mean_cpca, 6) if math.isfinite(mean_cpca) else None,
@@ -333,6 +361,9 @@ def analyze(systems: list[str]):
               f"tokens={s['mean_tokens']:.0f}  "
               f"RDS={s['macro_rds']:.6f}  "
               f"cost=${s['total_cost_usd']:.2f}")
+        if s["n_cost_estimated_from_total"] or s["n_cost_fallback"]:
+            print(f"  {'':<12}  cost estimates={s['n_cost_estimated_from_total']}  "
+                  f"stored-cost fallbacks={s['n_cost_fallback']}")
 
 
 def main():
