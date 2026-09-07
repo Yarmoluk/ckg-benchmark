@@ -1,10 +1,9 @@
 \section{Conclusion}\label{sec:conclusion}
 
 We presented the CKG Benchmark, a two-track comparison of Compact
-Knowledge Graphs against RAG and GraphRAG across 44 hand-curated
-educational domains (Track 1, 7,758 queries) and one pipeline-generated
-commercial pharmacology domain (Track 2, 170 queries). Our key findings
-are:
+Knowledge Graphs against RAG and GraphRAG across current checked-in
+artifacts and one pipeline-generated commercial pharmacology domain
+(Track 2, 170 queries). Our key findings are:
 
 \begin{enumerate}
   \item \textbf{CKG achieves 4$\times$ higher macro F1 than RAG} on
@@ -17,7 +16,7 @@ are:
     for CKG vs.\ 0.282 for RAG and 0.054 for GraphRAG, because the
     answer is fully determined by the taxonomy column of the CSV.
   \item \textbf{CKG F1 increases continuously with hop depth} (peaking at
-    hop=5: \textbf{0.772}) while RAG is irregular and plateaus near 0.17,
+    hop=5: \textbf{0.772}) while RAG remains substantially lower,
     confirming that deterministic edge traversal does not suffer the
     multi-hop retrieval recall failures inherent to passage-based systems.
     The deeper the prerequisite chain, the larger CKG's advantage.
@@ -55,7 +54,7 @@ construction strategies remains future work.
     financial filings, product catalogues) to test the Track 2 transfer
     result at scale.
   \item Extend T5 cross-concept retrieval with deeper BFS path-finding;
-    the current T5 F1 of 0.323 (Track 1) and 0.425 (Track 2) has a clear
+    the current T5 F1 of 0.325 and Track 2 T5 F1 of 0.425 show a clear
     improvement trajectory.
   \item Hybrid architectures combining CKG structural precision with
     RAG's prose retrieval for T1 and T5 query types.

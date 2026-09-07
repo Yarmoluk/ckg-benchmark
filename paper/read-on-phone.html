@@ -467,7 +467,7 @@
 <h3>F1 by Query Type</h3>
 
 <div class="data-table-wrap">
-  <div class="caption">Token-level F1 by query type (Track 1).</div>
+  <div class="caption">Token-level F1 by query type from current analyzed artifacts.</div>
   <table class="data">
     <thead>
       <tr><th>System</th><th>T1 entity</th><th>T2 dep.</th><th>T3 path</th><th>T4 aggr.</th><th>T5 cross</th></tr>
@@ -475,10 +475,10 @@
     <tbody>
       <tr>
         <td data-label="System">RAG</td>
-        <td data-label="T1 entity">0.094</td>
-        <td data-label="T2 dep.">0.078</td>
+        <td data-label="T1 entity">0.093</td>
+        <td data-label="T2 dep.">0.077</td>
         <td data-label="T3 path">0.201</td>
-        <td data-label="T4 aggr.">0.286</td>
+        <td data-label="T4 aggr.">0.282</td>
         <td data-label="T5 cross">0.115</td>
       </tr>
       <tr>
@@ -768,7 +768,7 @@
 
 <ul>
   <li><strong>Structural query scope:</strong> Ground truth for T2, T3, and T4 queries is derived directly from DAG edges. CKG retrieves this ground truth by construction; RAG and GraphRAG must infer it from text. The comparison demonstrates that <em>explicit structure outperforms inferred structure on structural tasks</em> — not that CKG is a general-purpose retrieval system.</li>
-  <li><strong>T1 as boundary test:</strong> CKG scores F1 ≈ 0.09 on T1 entity lookup queries because the DAG contains no explanatory prose. For open-ended definitional knowledge retrieval, RAG remains the appropriate architecture.</li>
+  <li><strong>T1 as boundary test:</strong> CKG scores F1 ≈ 0.22 on T1 entity lookup queries because the DAG contains no explanatory prose. For open-ended definitional knowledge retrieval, RAG remains the appropriate architecture.</li>
   <li>The McCreary corpus is educational — results may not generalize to legal, financial, or medical domains (though Track 2 provides initial counter-evidence).</li>
   <li>CKG build cost with automated construction has not been formally measured; the Track 2 pipeline demonstrates feasibility but pipeline engineering cost was not included in the benchmark cost accounting.</li>
   <li>Ground truth derived from DAG edges may not capture all valid natural language answers.</li>
@@ -790,9 +790,9 @@
 
 <ol>
   <li><strong>CKG achieves 4× higher macro F1 than RAG</strong> on structural knowledge queries (0.4926 vs 0.1223 vs 0.1200 for GraphRAG), using 11× fewer tokens per query (264 vs 2,986 vs 3,450). The compound RDS advantage is 45× in the current analyzed artifacts.</li>
-  <li><strong>Structural query performance is near-ceiling for aggregation:</strong> T4 category aggregates reach F1 = 0.964 for CKG vs 0.286 for RAG and 0.054 for GraphRAG, because the answer is fully determined by the taxonomy column of the CSV.</li>
+  <li><strong>Structural query performance is near-ceiling for aggregation:</strong> T4 category aggregates reach F1 = 0.980 for CKG vs 0.282 for RAG and 0.054 for GraphRAG, because the answer is fully determined by the taxonomy column of the CSV.</li>
   <li><strong>CKG F1 increases with hop depth</strong> (peaking at hop=5: 0.772) while RAG remains substantially lower, confirming that deterministic edge traversal does not suffer the multi-hop retrieval recall failures inherent to passage-based systems.</li>
-  <li><strong>T1 (entity lookup) is a documented negative control:</strong> CKG scores 0.207 on explanatory queries, confirming the benchmark is not constructed to favor CKG universally. Both systems struggle on T1, which requires prose definitions absent from DAG structure.</li>
+  <li><strong>T1 (entity lookup) is a documented negative control:</strong> CKG scores 0.222 on explanatory queries, confirming the benchmark is not constructed to favor CKG universally. Both systems struggle on T1, which requires prose definitions absent from DAG structure.</li>
   <li><strong>RDS and Hop-Depth F1</strong> are practical additions to IR evaluation that jointly measure quality and efficiency — metrics missing from existing benchmarks such as BEIR and RAGAS.</li>
   <li><strong>The CKG advantage transfers to a pipeline-generated commercial domain.</strong> Track 2 builds a GLP-1/Obesity CKG programmatically from the ClinicalTrials.gov API, with no expert curation and no educational source material. Macro F1 = 0.5298, exceeding the current CKG aggregate by 7.5%, and preserves a 28× RDS advantage over RAG.</li>
 </ol>
@@ -803,7 +803,7 @@
 <h3>Future Work</h3>
 <ul>
   <li>Extend the automated construction pipeline to additional structured data sources (regulatory registries, legal codes, financial filings, product catalogues) to test the Track 2 transfer result at scale.</li>
-  <li>Extend T5 cross-concept retrieval with deeper BFS path-finding; the current T5 F1 of 0.323 (Track 1) and 0.425 (Track 2) has a clear improvement trajectory.</li>
+  <li>Extend T5 cross-concept retrieval with deeper BFS path-finding; the current T5 F1 of 0.325 and Track 2 T5 F1 of 0.425 show a clear improvement trajectory.</li>
   <li>Hybrid architectures combining CKG structural precision with RAG's prose retrieval for T1 and T5 query types.</li>
   <li>Formal build-cost accounting that includes pipeline engineering, taxonomy-schema design, and source-API cost, enabling end-to-end CPCA comparison across all three architectures.</li>
   <li>Model-robustness experiments replicating the benchmark across additional LLM families.</li>

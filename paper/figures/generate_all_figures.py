@@ -81,7 +81,7 @@ RAG = {
         "T4 Aggregate":  0.282,
         "T5 Cross":      0.115,
     },
-    "f1_by_hop": {0: 0.073, 1: 0.066, 2: 0.226, 3: 0.138, 4: 0.166, 5: 0.170},
+    "f1_by_hop": {0: 0.131, 1: 0.094, 2: 0.191, 3: 0.203, 4: 0.206, 5: 0.205},
 }
 
 # Current analyzed GraphRAG artifacts (20 domains, 2,683 queries)
@@ -174,7 +174,7 @@ def fig_f1_by_type():
     ax.legend(framealpha=0.9)
     ax.set_axisbelow(True)
 
-    ax.annotate("negative\ncontrol", xy=(0 - width, 0.094), xytext=(0.4, 0.35),
+    ax.annotate("negative\ncontrol", xy=(0 - width, 0.093), xytext=(0.4, 0.35),
                 fontsize=8, color=GRAY, style="italic",
                 arrowprops=dict(arrowstyle="->", color=GRAY, lw=0.8))
 

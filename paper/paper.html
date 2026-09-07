@@ -1059,7 +1059,7 @@
       <section id="sec-validation">
         <h2>5.3 Ground Truth Validity</h2>
         <p>Benchmark ground truth is derived <em>deterministically</em> from DAG edges: T2 answers are the direct dependency labels of a concept; T3 answers are the BFS shortest-path node sequence between two concepts; T4 answers are all concept labels sharing a TaxonomyID; T5 answers are the union of BFS path nodes between a randomly selected concept pair. Because derivation is algorithmic, inter-annotator &kappa; does not apply to the ground truth generation process.</p>
-        <p>Benchmark validity is instead assessed structurally. The T1 negative-control result (<strong>CKG F1 = 0.207</strong> on entity lookup) confirms the evaluation is not constructed to favor CKG universally. Additionally, the low GraphRAG T4 score (0.054 vs. CKG 0.964) confirms that the taxonomy advantage is structural — not an artifact of prompting — since GraphRAG and CKG use identical prompts and the same LLM.</p>
+        <p>Benchmark validity is instead assessed structurally. The T1 negative-control result (<strong>CKG F1 = 0.222</strong> on entity lookup) confirms the evaluation is not constructed to favor CKG universally. Additionally, the low GraphRAG T4 score (0.054 vs. CKG 0.980) confirms that the taxonomy advantage is structural — not an artifact of prompting — since GraphRAG and CKG use identical prompts and the same LLM.</p>
       </section>
 
       <section id="sec-reproducibility">
@@ -1363,7 +1363,7 @@
         </div>
 
         <p>CKG F1 <em>increases continuously</em> with hop depth, from 0.374 at hop=0 to <strong>0.772 at hop=5</strong> — the deepest chains produce the highest accuracy. This is structurally opposite to the typical RAG pattern: RAG retrieval recall falls as multi-hop queries require evidence from multiple documents. CKG traverses edges deterministically, so deeper chains do not degrade performance.</p>
-        <p>RAG shows irregular behavior across hop depths (0.073 at hop=0, peaking at 0.226 at hop=2, then declining), consistent with retrieval recall variance rather than systematic improvement.</p>
+        <p>RAG shows irregular behavior across hop depths (0.131 at hop=0, peaking near 0.206 at hop=4, then flattening), consistent with retrieval recall variance rather than systematic improvement.</p>
 
         <figure class="figure">
           <div class="figure-box">
@@ -1432,7 +1432,7 @@
         <h2>8.5 Limitations</h2>
         <ul>
           <li><strong>Structural query scope:</strong> Ground truth for T2, T3, and T4 queries is derived directly from DAG edges. The comparison therefore demonstrates that <em>explicit structure outperforms inferred structure on structural tasks</em> — not that CKG is a general-purpose retrieval system.</li>
-          <li><strong>T1 as boundary test:</strong> CKG scores F1 &approx; 0.207 on T1 entity lookup queries because the DAG contains no explanatory prose. For open-ended definitional knowledge retrieval, RAG remains the appropriate architecture.</li>
+          <li><strong>T1 as boundary test:</strong> CKG scores F1 &approx; 0.222 on T1 entity lookup queries because the DAG contains no explanatory prose. For open-ended definitional knowledge retrieval, RAG remains the appropriate architecture.</li>
           <li>The McCreary corpus is educational — results may not generalize to legal, financial, or medical domains.</li>
           <li>CKG build cost with automated construction has not been formally measured; the Track 2 pipeline demonstrates feasibility but pipeline engineering cost was not included in the benchmark cost accounting.</li>
           <li>Ground truth derived from DAG edges may not capture all valid natural language answers.</li>
@@ -1712,12 +1712,12 @@
     <!-- ===== SECTION 11: CONCLUSION ===== -->
     <section id="sec-conclusion">
       <h1><span class="section-number">11.</span> Conclusion</h1>
-      <p>We presented the CKG Benchmark, a two-track comparison of Compact Knowledge Graphs against RAG and GraphRAG across 44 hand-curated educational domains (Track 1, 7,758 queries) and one pipeline-generated commercial pharmacology domain (Track 2, 170 queries). Our key findings are:</p>
+      <p>We presented the CKG Benchmark, a two-track comparison of Compact Knowledge Graphs against RAG and GraphRAG across current checked-in artifacts and one pipeline-generated commercial pharmacology domain (Track 2, 170 queries). Our key findings are:</p>
       <ol>
         <li><strong>CKG achieves 4&times; higher macro F1 than RAG</strong> on structural knowledge queries ( <strong>0.4926</strong> vs. <strong>0.1223</strong> vs. <strong>0.1200</strong> for GraphRAG), using <strong>11&times; fewer tokens per query</strong> (264 vs. 2,986 vs. 3,450). The compound RDS advantage is <strong>45&times;</strong> in the current analyzed artifacts.</li>
-        <li><strong>Structural query performance is near-ceiling for aggregation:</strong> T4 category aggregates reach F1 = <strong>0.964</strong> for CKG vs. 0.286 for RAG and 0.054 for GraphRAG, because the answer is fully determined by the taxonomy column of the CSV.</li>
-        <li><strong>CKG F1 increases continuously with hop depth</strong> (peaking at hop=5: <strong>0.772</strong>) while RAG is irregular and plateaus near 0.17, confirming that deterministic edge traversal does not suffer the multi-hop retrieval recall failures inherent to passage-based systems.</li>
-        <li><strong>T1 (entity lookup) is a documented negative control:</strong> CKG scores <strong>0.207</strong> on explanatory queries, confirming the benchmark is not constructed to favour CKG universally.</li>
+        <li><strong>Structural query performance is near-ceiling for aggregation:</strong> T4 category aggregates reach F1 = <strong>0.980</strong> for CKG vs. 0.282 for RAG and 0.054 for GraphRAG, because the answer is fully determined by the taxonomy column of the CSV.</li>
+        <li><strong>CKG F1 increases continuously with hop depth</strong> (peaking at hop=5: <strong>0.772</strong>) while RAG remains substantially lower, confirming that deterministic edge traversal does not suffer the multi-hop retrieval recall failures inherent to passage-based systems.</li>
+        <li><strong>T1 (entity lookup) is a documented negative control:</strong> CKG scores <strong>0.222</strong> on explanatory queries, confirming the benchmark is not constructed to favour CKG universally.</li>
         <li><strong>RDS and Hop-Depth F1</strong> are practical additions to IR evaluation that jointly measure quality and efficiency — metrics missing from existing benchmarks such as BEIR and RAGAS.</li>
         <li><strong>The CKG advantage transfers to a pipeline-generated commercial domain.</strong> Track 2 builds a GLP-1/Obesity CKG programmatically from the ClinicalTrials.gov API, with no expert curation. The resulting domain achieves CKG macro F1 = <strong>0.5298</strong>, exceeding the current CKG aggregate by 7.5%, and preserves a <strong>28&times;</strong> RDS advantage over RAG.</li>
       </ol>
@@ -1728,7 +1728,7 @@
       <h3>Future Work</h3>
       <ul>
         <li>Extend the automated construction pipeline to additional structured data sources (regulatory registries, legal codes, financial filings, product catalogues) to test the Track 2 transfer result at scale.</li>
-        <li>Extend T5 cross-concept retrieval with deeper BFS path-finding; the current T5 F1 of 0.323 (Track 1) and 0.425 (Track 2) has a clear improvement trajectory.</li>
+        <li>Extend T5 cross-concept retrieval with deeper BFS path-finding; the current T5 F1 of 0.325 and Track 2 T5 F1 of 0.425 show a clear improvement trajectory.</li>
         <li>Hybrid architectures combining CKG structural precision with RAG's prose retrieval for T1 and T5 query types.</li>
         <li>Formal build-cost accounting that includes pipeline engineering, taxonomy-schema design, and source-API cost, enabling end-to-end CPCA comparison across all three architectures.</li>
         <li>Model-robustness experiments replicating the benchmark across additional LLM families.</li>
