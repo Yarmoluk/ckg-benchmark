@@ -1,5 +1,5 @@
 site_name: CKG Benchmark
-site_description: 'Benchmarking RAG, GraphRAG, and Compressed Knowledge Graphs across 46 educational domains.'
+site_description: 'Benchmarking RAG, GraphRAG, and Compact Knowledge Graphs: 47 evaluated domains, 8,121 CKG queries, deterministic ground truth.'
 site_author: 'Daniel Yarmoluk and Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://yarmoluk.github.io/ckg-benchmark'

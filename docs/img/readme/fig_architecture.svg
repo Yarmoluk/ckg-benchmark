@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="330" viewBox="0 0 920 330" role="img" aria-label="The three retrieval architectures compared in the benchmark">
+  <rect width="920" height="330" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#777"/>
+    </marker>
+  </defs>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+    <!-- Shared source -->
+    <rect x="20" y="118" width="172" height="94" rx="4" fill="#f4f4f4" stroke="#bbb"/>
+    <text x="106" y="146" font-size="12" font-weight="600" fill="#222" text-anchor="middle">Learning graph</text>
+    <text x="106" y="164" font-size="10" fill="#555" text-anchor="middle">learning-graph.csv</text>
+    <text x="106" y="180" font-size="10" fill="#555" text-anchor="middle">concepts · prerequisite edges</text>
+    <text x="106" y="196" font-size="10" fill="#555" text-anchor="middle">taxonomy categories</text>
+
+    <!-- Textbook (derived) -->
+    <rect x="215" y="40" width="150" height="56" rx="4" fill="#f4f4f4" stroke="#bbb"/>
+    <text x="290" y="63" font-size="12" font-weight="600" fill="#222" text-anchor="middle">Textbook chapters</text>
+    <text x="290" y="81" font-size="10" fill="#555" text-anchor="middle">MkDocs Markdown (prose)</text>
+    <line x1="192" y1="134" x2="213" y2="90" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+    <text x="218" y="118" font-size="9" fill="#777">authored from</text>
+
+    <!-- Row 1: RAG -->
+    <g>
+      <text x="440" y="40" font-size="12" font-weight="700" fill="#9a9a9a">RAG</text>
+      <line x1="365" y1="68" x2="438" y2="68" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <rect x="440" y="46" width="118" height="44" rx="4" fill="#fff" stroke="#9a9a9a"/>
+      <text x="499" y="64" font-size="10" fill="#333" text-anchor="middle">512-token chunks</text>
+      <text x="499" y="79" font-size="10" fill="#333" text-anchor="middle">MiniLM-L6 + FAISS</text>
+      <line x1="558" y1="68" x2="596" y2="68" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <rect x="598" y="46" width="118" height="44" rx="4" fill="#fff" stroke="#9a9a9a"/>
+      <text x="657" y="64" font-size="10" fill="#333" text-anchor="middle">top-5 chunks</text>
+      <text x="657" y="79" font-size="10" fill="#333" text-anchor="middle">cosine similarity</text>
+      <line x1="716" y1="68" x2="754" y2="68" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <text x="770" y="64" font-size="10" fill="#333">≈ 2,986 tokens</text>
+      <text x="770" y="79" font-size="10" fill="#333">per query (measured)</text>
+    </g>
+
+    <!-- Row 2: GraphRAG -->
+    <g>
+      <text x="440" y="137" font-size="12" font-weight="700" fill="#3f8f7a">GraphRAG</text>
+      <path d="M365,80 C 400,80 400,165 438,165" fill="none" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <rect x="440" y="143" width="118" height="44" rx="4" fill="#fff" stroke="#3f8f7a"/>
+      <text x="499" y="161" font-size="10" fill="#333" text-anchor="middle">LLM entity extraction</text>
+      <text x="499" y="176" font-size="10" fill="#333" text-anchor="middle">Microsoft GraphRAG ≥1.0</text>
+      <line x1="558" y1="165" x2="596" y2="165" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <rect x="598" y="143" width="118" height="44" rx="4" fill="#fff" stroke="#3f8f7a"/>
+      <text x="657" y="161" font-size="10" fill="#333" text-anchor="middle">local search</text>
+      <text x="657" y="176" font-size="10" fill="#333" text-anchor="middle">community context</text>
+      <line x1="716" y1="165" x2="754" y2="165" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <text x="770" y="161" font-size="10" fill="#333">≈ 3,450 tokens</text>
+      <text x="770" y="176" font-size="10" fill="#333">per query (estimated)</text>
+    </g>
+
+    <!-- Row 3: CKG -->
+    <g>
+      <text x="440" y="249" font-size="12" font-weight="700" fill="#1f4e79">CKG</text>
+      <path d="M192,190 C 300,190 300,277 438,277" fill="none" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <rect x="440" y="255" width="118" height="44" rx="4" fill="#fff" stroke="#1f4e79"/>
+      <text x="499" y="273" font-size="10" fill="#333" text-anchor="middle">DAG in memory</text>
+      <text x="499" y="288" font-size="10" fill="#333" text-anchor="middle">no index, no embeddings</text>
+      <line x1="558" y1="277" x2="596" y2="277" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <rect x="598" y="255" width="118" height="44" rx="4" fill="#fff" stroke="#1f4e79"/>
+      <text x="657" y="273" font-size="10" fill="#333" text-anchor="middle">BFS subgraph</text>
+      <text x="657" y="288" font-size="10" fill="#333" text-anchor="middle">serialized as text</text>
+      <line x1="716" y1="277" x2="754" y2="277" stroke="#777" stroke-width="1.2" marker-end="url(#arr)"/>
+      <text x="770" y="273" font-size="10" fill="#333">≈ 264 tokens</text>
+      <text x="770" y="288" font-size="10" fill="#333">per query (measured)</text>
+    </g>
+
+    <!-- Shared sink -->
+    <rect x="20" y="236" width="172" height="56" rx="4" fill="#f4f4f4" stroke="#bbb"/>
+    <text x="106" y="259" font-size="12" font-weight="600" fill="#222" text-anchor="middle">Answering model</text>
+    <text x="106" y="277" font-size="10" fill="#555" text-anchor="middle">Claude Haiku 4.5, temperature 0</text>
+    <text x="20" y="318" font-size="9" fill="#888">Every arm sends its context to the same model and is scored with the same token-level F1 against ground truth derived from the learning graph.</text>
+  </g>
+</svg>

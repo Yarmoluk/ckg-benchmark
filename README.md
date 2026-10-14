@@ -10,7 +10,14 @@ Daniel Yarmoluk (Graphify.md) · Dan McCreary
 
 [Paper (PDF)](paper/main.pdf) · [Paper (HTML)](paper/paper.html) · [Documentation site](https://yarmoluk.github.io/ckg-benchmark/) · [Dataset on Hugging Face](https://huggingface.co/datasets/danyarm/ckg-benchmark) · [Zenodo DOI 10.5281/zenodo.21222965](https://doi.org/10.5281/zenodo.21222965)
 
-Code: MIT · Benchmark data: CC BY 4.0 · Paper version 0.6.2
+[![Code: MIT](https://img.shields.io/badge/code-MIT-1f4e79.svg)](LICENSE)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-1f4e79.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Paper v0.6.2](https://img.shields.io/badge/paper-v0.6.2-555.svg)](paper/main.pdf)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21222965.svg)](https://doi.org/10.5281/zenodo.21222965)
+[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-danyarm%2Fckg--benchmark-ffcc4d.svg)](https://huggingface.co/datasets/danyarm/ckg-benchmark)
+[![Leaderboard](https://img.shields.io/badge/%F0%9F%A4%97%20leaderboard-krb--leaderboard-ffcc4d.svg)](https://huggingface.co/spaces/danyarm/krb-leaderboard)
+[![Docs](https://img.shields.io/badge/docs-yarmoluk.github.io%2Fckg--benchmark-3f8f7a.svg)](https://yarmoluk.github.io/ckg-benchmark/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-555.svg)](evaluation/requirements.txt)
 
 ---
 
