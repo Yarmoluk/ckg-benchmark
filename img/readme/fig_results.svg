@@ -1,0 +1,104 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='920' height='300' viewBox='0 0 920 300' role='img' aria-label='CKG benchmark results: F1 by query type and by hop depth'>
+<rect width='920' height='300' fill='#ffffff'/>
+<text x='16' y='46' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='12' font-weight='600' fill='#222'>a. Macro F1 by query type</text>
+<line x1='50' y1='230.0' x2='508' y2='230.0' stroke='#e6e6e6' stroke-width='1'/>
+<text x='44' y='233.5' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.0</text>
+<line x1='50' y1='196.4' x2='508' y2='196.4' stroke='#e6e6e6' stroke-width='1'/>
+<text x='44' y='199.9' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.2</text>
+<line x1='50' y1='162.8' x2='508' y2='162.8' stroke='#e6e6e6' stroke-width='1'/>
+<text x='44' y='166.3' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.4</text>
+<line x1='50' y1='129.2' x2='508' y2='129.2' stroke='#e6e6e6' stroke-width='1'/>
+<text x='44' y='132.7' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.6</text>
+<line x1='50' y1='95.6' x2='508' y2='95.6' stroke='#e6e6e6' stroke-width='1'/>
+<text x='44' y='99.1' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.8</text>
+<line x1='50' y1='62.0' x2='508' y2='62.0' stroke='#e6e6e6' stroke-width='1'/>
+<text x='44' y='65.5' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>1.0</text>
+<line x1='50' y1='62' x2='50' y2='230' stroke='#999' stroke-width='1'/>
+<line x1='50' y1='230' x2='508' y2='230' stroke='#999' stroke-width='1'/>
+<rect x='65.6' y='192.7' width='18.2' height='37.3' fill='#1f4e79'/>
+<text x='74.6' y='189.7' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.22</text>
+<rect x='85.7' y='214.4' width='18.2' height='15.6' fill='#9a9a9a'/>
+<text x='94.8' y='211.4' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.09</text>
+<rect x='105.9' y='211.8' width='18.2' height='18.2' fill='#3f8f7a'/>
+<text x='115.0' y='208.8' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.11</text>
+<text x='95.8' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>T1 entity</text>
+<rect x='157.2' y='117.7' width='18.2' height='112.3' fill='#1f4e79'/>
+<text x='166.2' y='114.7' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.67</text>
+<rect x='177.3' y='217.1' width='18.2' height='12.9' fill='#9a9a9a'/>
+<text x='186.4' y='214.1' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.08</text>
+<rect x='197.5' y='217.8' width='18.2' height='12.2' fill='#3f8f7a'/>
+<text x='206.6' y='214.8' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.07</text>
+<text x='187.4' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>T2 dependency</text>
+<rect x='248.8' y='114.1' width='18.2' height='115.9' fill='#1f4e79'/>
+<text x='257.8' y='111.1' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.69</text>
+<rect x='268.9' y='196.2' width='18.2' height='33.8' fill='#9a9a9a'/>
+<text x='278.0' y='193.2' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.20</text>
+<rect x='289.1' y='195.1' width='18.2' height='34.9' fill='#3f8f7a'/>
+<text x='298.2' y='192.1' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.21</text>
+<text x='279.0' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>T3 path</text>
+<rect x='340.4' y='65.3' width='18.2' height='164.7' fill='#1f4e79'/>
+<text x='349.4' y='62.3' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.98</text>
+<rect x='360.5' y='182.6' width='18.2' height='47.4' fill='#9a9a9a'/>
+<text x='369.6' y='179.6' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.28</text>
+<rect x='380.7' y='221.0' width='18.2' height='9.0' fill='#3f8f7a'/>
+<text x='389.8' y='218.0' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.05</text>
+<text x='370.6' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>T4 aggregate</text>
+<rect x='432.0' y='175.4' width='18.2' height='54.6' fill='#1f4e79'/>
+<text x='441.0' y='172.4' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.32</text>
+<rect x='452.1' y='210.7' width='18.2' height='19.3' fill='#9a9a9a'/>
+<text x='461.2' y='207.7' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.11</text>
+<rect x='472.3' y='199.3' width='18.2' height='30.7' fill='#3f8f7a'/>
+<text x='481.4' y='196.3' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='7.5' fill='#333' text-anchor='middle'>0.18</text>
+<text x='462.2' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>T5 cross-concept</text>
+<text x='279.0' y='262' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='middle'>CKG n = 8,121 · RAG n = 7,414 · GraphRAG n = 2,683 queries</text>
+<text x='540' y='46' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='12' font-weight='600' fill='#222'>b. Macro F1 by hop depth</text>
+<line x1='574' y1='230.0' x2='892' y2='230.0' stroke='#e6e6e6' stroke-width='1'/>
+<text x='568' y='233.5' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.0</text>
+<line x1='574' y1='196.4' x2='892' y2='196.4' stroke='#e6e6e6' stroke-width='1'/>
+<text x='568' y='199.9' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.2</text>
+<line x1='574' y1='162.8' x2='892' y2='162.8' stroke='#e6e6e6' stroke-width='1'/>
+<text x='568' y='166.3' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.4</text>
+<line x1='574' y1='129.2' x2='892' y2='129.2' stroke='#e6e6e6' stroke-width='1'/>
+<text x='568' y='132.7' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.6</text>
+<line x1='574' y1='95.6' x2='892' y2='95.6' stroke='#e6e6e6' stroke-width='1'/>
+<text x='568' y='99.1' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>0.8</text>
+<line x1='574' y1='62.0' x2='892' y2='62.0' stroke='#e6e6e6' stroke-width='1'/>
+<text x='568' y='65.5' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='end'>1.0</text>
+<line x1='574' y1='62' x2='574' y2='230' stroke='#999' stroke-width='1'/>
+<line x1='574' y1='230' x2='892' y2='230' stroke='#999' stroke-width='1'/>
+<text x='592.0' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>0</text>
+<text x='648.4' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>1</text>
+<text x='704.8' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>2</text>
+<text x='761.2' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>3</text>
+<text x='817.6' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>4</text>
+<text x='874.0' y='244' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#333' text-anchor='middle'>5</text>
+<text x='733.0' y='262' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#666' text-anchor='middle'>hop depth of the query (CKG n per hop: 2,885 / 4,104 / 199 / 361 / 286 / 286)</text>
+<path d='M592.0,167.2 L648.4,142.8 L704.8,133.7 L761.2,117.3 L817.6,103.9 L874.0,100.4' fill='none' stroke='#1f4e79' stroke-width='2'/>
+<circle cx='592.0' cy='167.2' r='2.8' fill='#1f4e79'/>
+<circle cx='648.4' cy='142.8' r='2.8' fill='#1f4e79'/>
+<circle cx='704.8' cy='133.7' r='2.8' fill='#1f4e79'/>
+<circle cx='761.2' cy='117.3' r='2.8' fill='#1f4e79'/>
+<circle cx='817.6' cy='103.9' r='2.8' fill='#1f4e79'/>
+<circle cx='874.0' cy='100.4' r='2.8' fill='#1f4e79'/>
+<path d='M592.0,208.0 L648.4,214.2 L704.8,197.9 L761.2,195.8 L817.6,195.4 L874.0,195.6' fill='none' stroke='#9a9a9a' stroke-width='2'/>
+<circle cx='592.0' cy='208.0' r='2.8' fill='#9a9a9a'/>
+<circle cx='648.4' cy='214.2' r='2.8' fill='#9a9a9a'/>
+<circle cx='704.8' cy='197.9' r='2.8' fill='#9a9a9a'/>
+<circle cx='761.2' cy='195.8' r='2.8' fill='#9a9a9a'/>
+<circle cx='817.6' cy='195.4' r='2.8' fill='#9a9a9a'/>
+<circle cx='874.0' cy='195.6' r='2.8' fill='#9a9a9a'/>
+<path d='M592.0,213.3 L648.4,210.9 L704.8,190.8 L761.2,195.5 L817.6,196.9 L874.0,194.6' fill='none' stroke='#3f8f7a' stroke-width='2'/>
+<circle cx='592.0' cy='213.3' r='2.8' fill='#3f8f7a'/>
+<circle cx='648.4' cy='210.9' r='2.8' fill='#3f8f7a'/>
+<circle cx='704.8' cy='190.8' r='2.8' fill='#3f8f7a'/>
+<circle cx='761.2' cy='195.5' r='2.8' fill='#3f8f7a'/>
+<circle cx='817.6' cy='196.9' r='2.8' fill='#3f8f7a'/>
+<circle cx='874.0' cy='194.6' r='2.8' fill='#3f8f7a'/>
+<rect x='16' y='10' width='10' height='10' fill='#1f4e79'/>
+<text x='31' y='19' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='10' fill='#333'>CKG</text>
+<rect x='108' y='10' width='10' height='10' fill='#9a9a9a'/>
+<text x='123' y='19' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='10' fill='#333'>RAG</text>
+<rect x='200' y='10' width='10' height='10' fill='#3f8f7a'/>
+<text x='215' y='19' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='10' fill='#333'>GraphRAG</text>
+<text x='904' y='18' font-family='-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif' font-size='9' fill='#888' text-anchor='end'>Source: results/tables/table2_by_query_type.csv, table4_hop_degradation.csv · Claude Haiku 4.5, temperature 0</text>
+</svg>

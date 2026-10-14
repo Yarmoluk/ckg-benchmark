@@ -1,0 +1,15 @@
+/* CKG Benchmark extra styles */
+
+/* Comparison tables */
+table {
+  width: 100%;
+}
+
+/* Metric formula blocks */
+.formula {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  font-family: monospace;
+  margin: 1rem 0;
+}

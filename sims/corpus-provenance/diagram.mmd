@@ -1,0 +1,19 @@
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'Helvetica, Arial, sans-serif','fontSize':'14px','primaryColor':'#ECEFF1','primaryBorderColor':'#455A64','primaryTextColor':'#263238','lineColor':'#455A64','clusterBkg':'#FAFAFA','clusterBorder':'#B0BEC5'}}}%%
+flowchart LR
+  classDef human fill:#FFF3E0,stroke:#E65100,stroke-width:1.5px,color:#BF360C
+  classDef skill fill:#ECEFF1,stroke:#37474F,stroke-width:1.5px,color:#263238
+  classDef artifact fill:#FFF8E1,stroke:#F9A825,stroke-width:2px,color:#E65100
+  classDef rag fill:#E3F2FD,stroke:#1565C0,stroke-width:1.5px,color:#0D47A1
+  classDef graphrag fill:#E0F2F1,stroke:#00695C,stroke-width:1.5px,color:#004D40
+  classDef ckg fill:#FCE4EC,stroke:#AD1457,stroke-width:1.5px,color:#880E4F
+
+  Author(["Course author"]):::human --> Desc["Course description<br/>(~1 page: audience,<br/>prerequisites,<br/>learning objectives)"]:::human
+  Desc --> LGG["/learning-graph-generator<br/>Claude Code agent skill"]:::skill
+  LGG --> SME{{"SME review<br/>(2–4 hours)"}}:::human
+  SME --> DAG[("learning-graph.csv<br/>G = (C, E, T, τ)<br/>200–550 concepts")]:::artifact
+  DAG --> CCG["/chapter-content-generator<br/>Claude Code agent skill"]:::skill
+  CCG --> MD[("Markdown chapter corpus<br/>(MkDocs textbook)")]:::artifact
+
+  MD -.consumed by.-> RAG["RAG pipeline<br/>(Fig. 1, top)"]:::rag
+  MD -.consumed by.-> GRAG["GraphRAG pipeline<br/>(Fig. 1, middle)"]:::graphrag
+  DAG -.consumed by.-> CKG["CKG pipeline<br/>(Fig. 1, bottom)"]:::ckg
