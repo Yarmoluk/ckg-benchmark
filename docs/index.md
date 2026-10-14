@@ -1,6 +1,6 @@
 # CKG Benchmark
 
-<img src="img/readme/banner.svg" alt="CKG Benchmark" style="width:100%">
+<img src="img/readme/banner.png" alt="CKG Benchmark" style="width:100%">
 
 **Benchmarking Knowledge Retrieval Architectures: RAG, GraphRAG, and Compact Knowledge Graphs**
 

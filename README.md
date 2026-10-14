@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme/banner.svg" alt="CKG Benchmark" width="100%">
+  <img src="assets/readme/banner.png" alt="CKG Benchmark" width="100%">
 </p>
 
 # CKG Benchmark
