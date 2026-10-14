@@ -19,3 +19,7 @@ paper/*.blg
 paper/*.log
 paper/*.out
 paper/sections/*.aux
+
+# Internal strategy notes and local Claude Code settings — never public
+logs/ckg-benchmark-master-intelligence-*.md
+.claude/settings.local.json
