@@ -97,7 +97,7 @@ GraphRAG dynamically extracts structure from text that was *originally generated
 - Generate results tables (Tables 1-5 in paper outline)
 - Validate the Structure Premium hypothesis (RDS vs DAG richness correlation)
 - Finalize paper for ArXiv submission
-- Publish dataset to HuggingFace (`graphify-md/ckg-benchmark`)
+- ~~Publish dataset to HuggingFace~~ -- done, live at `danyarm/ckg-benchmark` (see `upload_hf.py`)
 
 ## Paper Versioning
 

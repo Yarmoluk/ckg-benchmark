@@ -282,7 +282,7 @@ Drop the `.md` file into your LLM system prompt. That's it. No graph database, n
 | All figures generated | ✅ Complete |
 | Paper draft (v0.6.2) | ✅ In review |
 | ArXiv submission | Pending Dan McCreary review |
-| HuggingFace dataset | Pending |
+| HuggingFace dataset | ✅ Live at [danyarm/ckg-benchmark](https://huggingface.co/datasets/danyarm/ckg-benchmark) |
 
 ## License
 
